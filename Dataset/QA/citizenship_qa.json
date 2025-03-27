@@ -1,0 +1,1442 @@
+[
+  {
+    "code": "V2014005",
+    "topic": "Citizenship",
+    "question": "There are different opinions as to what it takes to be a good citizen. As far as you are concerned personally on a scale of 1 to 7, where 1 is not at all important and 7 is very important, how important is it: Always to vote in elections",
+    "option_code": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8"
+    ],
+    "option_text": [
+      "Not at all Important",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "Very Important",
+      "Can't Choose"
+    ]
+  },
+  {
+    "code": "V2014006",
+    "topic": "Citizenship",
+    "question": "There are different opinions as to what it takes to be a good citizen. As far as you are concerned personally on a scale of 1 to 7, where 1 is not at all important and 7 is very important, how important is it: Never to try to evade taxes",
+    "option_code": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8"
+    ],
+    "option_text": [
+      "Not at all Important",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "Very Important",
+      "Can't Choose"
+    ]
+  },
+  {
+    "code": "V2014007",
+    "topic": "Citizenship",
+    "question": "There are different opinions as to what it takes to be a good citizen. As far as you are concerned personally on a scale of 1 to 7, where 1 is not at all important and 7 is very important, how important is it: Always to obey laws and regulations",
+    "option_code": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8"
+    ],
+    "option_text": [
+      "Not at all Important",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "Very Important",
+      "Can't Choose"
+    ]
+  },
+  {
+    "code": "V2014008",
+    "topic": "Citizenship",
+    "question": "There are different opinions as to what it takes to be a good citizen. As far as you are concerned personally on a scale of 1 to 7, where 1 is not at all important and 7 is very important, how important is it: To keep watch on the actions of government",
+    "option_code": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8"
+    ],
+    "option_text": [
+      "Not at all Important",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "Very Important",
+      "Can't Choose"
+    ]
+  },
+  {
+    "code": "V2014009",
+    "topic": "Citizenship",
+    "question": "There are different opinions as to what it takes to be a good citizen. As far as you are concerned personally on a scale of 1 to 7, where 1 is not at all important and 7 is very important, how important is it: To be active in social or political associations",
+    "option_code": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8"
+    ],
+    "option_text": [
+      "Not at all Important",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "Very Important",
+      "Can't Choose"
+    ]
+  },
+  {
+    "code": "V2014010",
+    "topic": "Citizenship",
+    "question": "There are different opinions as to what it takes to be a good citizen. As far as you are concerned personally on a scale of 1 to 7, where 1 is not at all important and 7 is very important, how important is it: To try to understand the reasoning of people with other opinions",
+    "option_code": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8"
+    ],
+    "option_text": [
+      "Not at all Important",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "Very Important",
+      "Can't Choose"
+    ]
+  },
+  {
+    "code": "V2014011",
+    "topic": "Citizenship",
+    "question": "There are different opinions as to what it takes to be a good citizen. As far as you are concerned personally on a scale of 1 to 7, where 1 is not at all important and 7 is very important, how important is it: To choose products for political, ethical or environmental reasons, even if they cost a bit more.",
+    "option_code": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8"
+    ],
+    "option_text": [
+      "Not at all Important",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "Very Important",
+      "Can't Choose"
+    ]
+  },
+  {
+    "code": "V2014012",
+    "topic": "Citizenship",
+    "question": "There are different opinions as to what it takes to be a good citizen. As far as you are concerned personally on a scale of 1 to 7, where 1 is not at all important and 7 is very important, how important is it: To help people in (COUNTRY) who are worse off than yourself",
+    "option_code": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8"
+    ],
+    "option_text": [
+      "Not at all Important",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "Very Important",
+      "Can't Choose"
+    ]
+  },
+  {
+    "code": "V2014013",
+    "topic": "Citizenship",
+    "question": "There are different opinions as to what it takes to be a good citizen. As far as you are concerned personally on a scale of 1 to 7, where 1 is not at all important and 7 is very important, how important is it: To help people in the rest of the world who are worse off than yourself",
+    "option_code": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8"
+    ],
+    "option_text": [
+      "Not at all Important",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "Very Important",
+      "Can't Choose"
+    ]
+  },
+  {
+    "code": "V2014014",
+    "topic": "Citizenship",
+    "question": "There are a number of groups in society. What do you think about the following groups holding public meetings? Should religious extremists be allowed to hold public meetings?",
+    "option_code": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "8"
+    ],
+    "option_text": [
+      "Should definitely be allowed",
+      "Should probably be allowed",
+      "Should probably not be allowed",
+      "Should definitely not be allowed",
+      "Can't Choose"
+    ]
+  },
+  {
+    "code": "V2014015",
+    "topic": "Citizenship",
+    "question": "There are a number of groups in society. What do you think about the following groups holding public meetings? Should people who want to overthrow the government by force be allowed to hold public meetings?",
+    "option_code": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "8"
+    ],
+    "option_text": [
+      "Should definitely be allowed",
+      "Should probably be allowed",
+      "Should probably not be allowed",
+      "Should definitely not be allowed",
+      "Can't Choose"
+    ]
+  },
+  {
+    "code": "V2014016",
+    "topic": "Citizenship",
+    "question": "There are a number of groups in society. What do you think about the following groups holding public meetings? Should people prejudiced against any racial or ethnic group be allowed to hold public meetings?",
+    "option_code": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "8"
+    ],
+    "option_text": [
+      "Should definitely be allowed",
+      "Should probably be allowed",
+      "Should probably not be allowed",
+      "Should definitely not be allowed",
+      "Can't Choose"
+    ]
+  },
+  {
+    "code": "V2014017",
+    "topic": "Citizenship",
+    "question": "Here are some different forms of political and social action that people can take. Please indicate, for each one, whether you have done any of these things in the past year, whether you have done it in the more distant past, whether you have not done it but might do it or have not done it and would never, under any circumstances, do it: Signed a petition",
+    "option_code": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "8"
+    ],
+    "option_text": [
+      "Have done it in the past year",
+      "Have done it in the more distant past",
+      "Have not done it but might do it",
+      "Have not done it and would never do it",
+      "Can't Choose"
+    ]
+  },
+  {
+    "code": "V2014018",
+    "topic": "Citizenship",
+    "question": "Here are some different forms of political and social action that people can take. Please indicate, for each one, whether you have done any of these things in the past year, whether you have done it in the more distant past, whether you have not done it but might do it or have not done it and would never, under any circumstances, do it: Boycotted, or deliberately bought, certain products for political, ethical or environmental reasons",
+    "option_code": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "8"
+    ],
+    "option_text": [
+      "Have done it in the past year",
+      "Have done it in the more distant past",
+      "Have not done it but might do it",
+      "Have not done it and would never do it",
+      "Can't Choose"
+    ]
+  },
+  {
+    "code": "V2014019",
+    "topic": "Citizenship",
+    "question": "Here are some different forms of political and social action that people can take. Please indicate, for each one, whether you have done any of these things in the past year, whether you have done it in the more distant past, whether you have not done it but might do it or have not done it and would never, under any circumstances, do it: Took part in a demonstration",
+    "option_code": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "8"
+    ],
+    "option_text": [
+      "Have done it in the past year",
+      "Have done it in the more distant past",
+      "Have not done it but might do it",
+      "Have not done it and would never do it",
+      "Can't Choose"
+    ]
+  },
+  {
+    "code": "V2014020",
+    "topic": "Citizenship",
+    "question": "Here are some different forms of political and social action that people can take. Please indicate, for each one, whether you have done any of these things in the past year, whether you have done it in the more distant past, whether you have not done it but might do it or have not done it and would never, under any circumstances, do it: Attended a political meeting or rally",
+    "option_code": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "8"
+    ],
+    "option_text": [
+      "Have done it in the past year",
+      "Have done it in the more distant past",
+      "Have not done it but might do it",
+      "Have not done it and would never do it",
+      "Can't Choose"
+    ]
+  },
+  {
+    "code": "V2014021",
+    "topic": "Citizenship",
+    "question": "Here are some different forms of political and social action that people can take. Please indicate, for each one, whether you have done any of these things in the past year, whether you have done it in the more distant past, whether you have not done it but might do it or have not done it and would never, under any circumstances, do it: Contacted, or attempted to contact, a politician or a civil servant to express your views",
+    "option_code": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "8"
+    ],
+    "option_text": [
+      "Have done it in the past year",
+      "Have done it in the more distant past",
+      "Have not done it but might do it",
+      "Have not done it and would never do it",
+      "Can't Choose"
+    ]
+  },
+  {
+    "code": "V2014022",
+    "topic": "Citizenship",
+    "question": "Here are some different forms of political and social action that people can take. Please indicate, for each one, whether you have done any of these things in the past year, whether you have done it in the more distant past, whether you have not done it but might do it or have not done it and would never, under any circumstances, do it: Donated money or raised funds for a social or political activity",
+    "option_code": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "8"
+    ],
+    "option_text": [
+      "Have done it in the past year",
+      "Have done it in the more distant past",
+      "Have not done it but might do it",
+      "Have not done it and would never do it",
+      "Can't Choose"
+    ]
+  },
+  {
+    "code": "V2014023",
+    "topic": "Citizenship",
+    "question": "Here are some different forms of political and social action that people can take. Please indicate, for each one, whether you have done any of these things in the past year, whether you have done it in the more distant past, whether you have not done it but might do it or have not done it and would never, under any circumstances, do it: Contacted or appeared in the media to express your views",
+    "option_code": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "8"
+    ],
+    "option_text": [
+      "Have done it in the past year",
+      "Have done it in the more distant past",
+      "Have not done it but might do it",
+      "Have not done it and would never do it",
+      "Can't Choose"
+    ]
+  },
+  {
+    "code": "V2014024",
+    "topic": "Citizenship",
+    "question": "Here are some different forms of political and social action that people can take. Please indicate, for each one, whether you have done any of these things in the past year, whether you have done it in the more distant past, whether you have not done it but might do it or have not done it and would never, under any circumstances, do it: Expressed political views on the internet",
+    "option_code": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "8"
+    ],
+    "option_text": [
+      "Have done it in the past year",
+      "Have done it in the more distant past",
+      "Have not done it but might do it",
+      "Have not done it and would never do it",
+      "Can't Choose"
+    ]
+  },
+  {
+    "code": "V2014025",
+    "topic": "Citizenship",
+    "question": "How often do you use the media, including television, newspapers, radio and the internet, to get political news or information?",
+    "option_code": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8"
+    ],
+    "option_text": [
+      "Several times a day",
+      "Once a day",
+      "5-6 days a week",
+      "3-4 days a week",
+      "1-2 days a week",
+      "Less than 1 day a week",
+      "Never",
+      "Can't Choose"
+    ]
+  },
+  {
+    "code": "V2014026",
+    "topic": "Citizenship",
+    "question": "On average, about how many people do you have contact with in a typical week day, including people you live with. We are interested in contact on a one-to-one basis, including everyone with whom you chat, talk, or discuss matters. This can be face-to-face, by telephone, by mail, or on the internet. Please include only people you know. Please select one from the following categories that best matches your estimate.",
+    "option_code": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "8",
+      "9"
+    ],
+    "option_text": [
+      "0-4 persons",
+      "5-9 persons",
+      "10-19 persons",
+      "20-49 persons",
+      "50 persons or more",
+      "Can't choose",
+      "No answer"
+    ]
+  },
+  {
+    "code": "V2014027",
+    "topic": "Citizenship",
+    "question": "People sometimes belong to different kinds of groups or associations. For each type of group, please indicate whether you, A political party",
+    "option_code": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "8"
+    ],
+    "option_text": [
+      "Belong and actively participate",
+      "Belong but don't participate",
+      "Used to belong",
+      "Never belonged",
+      "Can't Choose"
+    ]
+  },
+  {
+    "code": "V2014028",
+    "topic": "Citizenship",
+    "question": "People sometimes belong to different kinds of groups or associations. For each type of group, please indicate whether you, A trade union, business, or professional association",
+    "option_code": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "8"
+    ],
+    "option_text": [
+      "Belong and actively participate",
+      "Belong but don't participate",
+      "Used to belong",
+      "Never belonged",
+      "Can't Choose"
+    ]
+  },
+  {
+    "code": "V2014029",
+    "topic": "Citizenship",
+    "question": "People sometimes belong to different kinds of groups or associations. For each type of group, please indicate whether you, A church or other religious organization",
+    "option_code": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "8"
+    ],
+    "option_text": [
+      "Belong and actively participate",
+      "Belong but don't participate",
+      "Used to belong",
+      "Never belonged",
+      "Can't Choose"
+    ]
+  },
+  {
+    "code": "V2014030",
+    "topic": "Citizenship",
+    "question": "People sometimes belong to different kinds of groups or associations. For each type of group, please indicate whether you, A sports, leisure or cultural group",
+    "option_code": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "8"
+    ],
+    "option_text": [
+      "Belong and actively participate",
+      "Belong but don't participate",
+      "Used to belong",
+      "Never belonged",
+      "Can't Choose"
+    ]
+  },
+  {
+    "code": "V2014031",
+    "topic": "Citizenship",
+    "question": "People sometimes belong to different kinds of groups or associations. For each type of group, please indicate whether you, Another voluntary association",
+    "option_code": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "8"
+    ],
+    "option_text": [
+      "Belong and actively participate",
+      "Belong but don't participate",
+      "Used to belong",
+      "Never belonged",
+      "Can't Choose"
+    ]
+  },
+  {
+    "code": "V2014032",
+    "topic": "Citizenship",
+    "question": "There are different opinions about people's rights in a democracy. On a scale of 1 to 7, where 1 is not at all important and 7 is very important, how important is it: That all citizens have an adequate standard of living",
+    "option_code": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8"
+    ],
+    "option_text": [
+      "Not at all Important",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "Very Important",
+      "Can't Choose"
+    ]
+  },
+  {
+    "code": "V2014033",
+    "topic": "Citizenship",
+    "question": "There are different opinions about people's rights in a democracy. On a scale of 1 to 7, where 1 is not at all important and 7 is very important, how important is it: That government authorities respect and protect the rights of minorities",
+    "option_code": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8"
+    ],
+    "option_text": [
+      "Not at all Important",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "Very Important",
+      "Can't Choose"
+    ]
+  },
+  {
+    "code": "V2014034",
+    "topic": "Citizenship",
+    "question": "There are different opinions about people's rights in a democracy. On a scale of 1 to 7, where 1 is not at all important and 7 is very important, how important is it: That people be given more opportunities to participate in public decision-making",
+    "option_code": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8"
+    ],
+    "option_text": [
+      "Not at all Important",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "Very Important",
+      "Can't Choose"
+    ]
+  },
+  {
+    "code": "V2014035",
+    "topic": "Citizenship",
+    "question": "There are different opinions about people's rights in a democracy. On a scale of 1 to 7, where 1 is not at all important and 7 is very important, how important is it: That citizens may engage in acts of civil disobedience when they oppose government actions.",
+    "option_code": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8"
+    ],
+    "option_text": [
+      "Not at all Important",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "Very Important",
+      "Can't Choose"
+    ]
+  },
+  {
+    "code": "V2014036",
+    "topic": "Citizenship",
+    "question": "There are different opinions about people's rights in a democracy. On a scale of 1 to 7, where 1 is not at all important and 7 is very important, how important is it: That governments respect democratic rights whatever the circumstances",
+    "option_code": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8"
+    ],
+    "option_text": [
+      "Not at all Important",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "Very Important",
+      "Can't Choose"
+    ]
+  },
+  {
+    "code": "V2014037",
+    "topic": "Citizenship",
+    "question": "There are different opinions about people's rights in a democracy. On a scale of 1 to 7, where 1 is not at all important and 7 is very important, how important is it: That people convicted of serious crimes lose their citizen rights",
+    "option_code": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8"
+    ],
+    "option_text": [
+      "Not at all Important",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "Very Important",
+      "Can't Choose"
+    ]
+  },
+  {
+    "code": "V2014038",
+    "topic": "Citizenship",
+    "question": "There are different opinions about people's rights in a democracy. On a scale of 1 to 7, where 1 is not at all important and 7 is very important, how important is it: That long-term residents of a country, who are not citizens, have the right to vote in that country’s national elections",
+    "option_code": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8"
+    ],
+    "option_text": [
+      "Not at all Important",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "Very Important",
+      "Can't Choose"
+    ]
+  },
+  {
+    "code": "V2014039",
+    "topic": "Citizenship",
+    "question": "There are different opinions about people's rights in a democracy. On a scale of 1 to 7, where 1 is not at all important and 7 is very important, how important is it: That citizens have the right not to vote",
+    "option_code": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8"
+    ],
+    "option_text": [
+      "Not at all Important",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "Very Important",
+      "Can't Choose"
+    ]
+  },
+  {
+    "code": "V2014040",
+    "topic": "Citizenship",
+    "question": "There are different opinions about people's rights in a democracy. On a scale of 1 to 7, where 1 is not at all important and 7 is very important, how important is it: That health care be provided for everyone",
+    "option_code": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8"
+    ],
+    "option_text": [
+      "Not at all Important",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "Very Important",
+      "Can't Choose"
+    ]
+  },
+  {
+    "code": "V2014041",
+    "topic": "Citizenship",
+    "question": "To what extent do you agree or disagree with the following statements: People like me don’t have any say about what the government does",
+    "option_code": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "8"
+    ],
+    "option_text": [
+      "Strongly Agree",
+      "Agree",
+      "Neither Agree nor Disagree",
+      "Disagree",
+      "Strongly Disagree",
+      "Can't Choose"
+    ]
+  },
+  {
+    "code": "V2014042",
+    "topic": "Citizenship",
+    "question": "To what extent do you agree or disagree with the following statements: I don’t think the government cares much what people like me think",
+    "option_code": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "8"
+    ],
+    "option_text": [
+      "Strongly Agree",
+      "Agree",
+      "Neither Agree nor Disagree",
+      "Disagree",
+      "Strongly Disagree",
+      "Can't Choose"
+    ]
+  },
+  {
+    "code": "V2014043",
+    "topic": "Citizenship",
+    "question": "To what extent do you agree or disagree with the following statements: I feel I have a pretty good understanding of the important political issues facing (COUNTRY).",
+    "option_code": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "8"
+    ],
+    "option_text": [
+      "Strongly Agree",
+      "Agree",
+      "Neither Agree nor Disagree",
+      "Disagree",
+      "Strongly Disagree",
+      "Can't Choose"
+    ]
+  },
+  {
+    "code": "V2014044",
+    "topic": "Citizenship",
+    "question": "To what extent do you agree or disagree with the following statements: I think most people in (COUNTRY) are better informed about politics and government than I am.",
+    "option_code": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "8"
+    ],
+    "option_text": [
+      "Strongly Agree",
+      "Agree",
+      "Neither Agree nor Disagree",
+      "Disagree",
+      "Strongly Disagree",
+      "Can't Choose"
+    ]
+  },
+  {
+    "code": "V2014045",
+    "topic": "Citizenship",
+    "question": "Suppose a law were being considered by [appropriate national legislature] that you considered to be unjust or harmful. If such a case arose, how likely is it that you, acting alone or together with others, would be able to try to do something about it?",
+    "option_code": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "8"
+    ],
+    "option_text": [
+      "Very likely",
+      "Fairly likely",
+      "Not very likely",
+      "Not at all likely",
+      "Can't Choose"
+    ]
+  },
+  {
+    "code": "V2014046",
+    "topic": "Citizenship",
+    "question": "Suppose a law were being considered by [appropriate national legislature] that you considered to be unjust or harmful. If you made such an effort, how likely is it that [appropriate national legislature] would give serious attention to your demands?",
+    "option_code": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "8"
+    ],
+    "option_text": [
+      "Very likely",
+      "Fairly likely",
+      "Not very likely",
+      "Not at all likely",
+      "Can't Choose"
+    ]
+  },
+  {
+    "code": "V2014047",
+    "topic": "Citizenship",
+    "question": "How interested would you say you personally are in politics?",
+    "option_code": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "8"
+    ],
+    "option_text": [
+      "Very interested",
+      "Fairly interested",
+      "Not very interested",
+      "Not at all interested",
+      "Can't Choose"
+    ]
+  },
+  {
+    "code": "V2014048",
+    "topic": "Citizenship",
+    "question": "In politics people sometimes talk of left and right. Where would you place yourself on a scale from 0 to 10 where 0 means the left and 10 means the right?",
+    "option_code": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9",
+      "10",
+      "98",
+      "99"
+    ],
+    "option_text": [
+      "Left extreme",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "Right extreme",
+      "Can't Choose",
+      "No answer"
+    ]
+  },
+  {
+    "code": "V2014049",
+    "topic": "Citizenship",
+    "question": "To what extent do you agree or disagree with the following statements: Most of the time we can trust people in government to do what is right",
+    "option_code": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "8"
+    ],
+    "option_text": [
+      "Strongly Agree",
+      "Agree",
+      "Neither Agree nor Disagree",
+      "Disagree",
+      "Strongly Disagree",
+      "Can't Choose"
+    ]
+  },
+  {
+    "code": "V2014050",
+    "topic": "Citizenship",
+    "question": "To what extent do you agree or disagree with the following statements: Most politicians are in politics only for what they can get out of it personally",
+    "option_code": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "8"
+    ],
+    "option_text": [
+      "Strongly Agree",
+      "Agree",
+      "Neither Agree nor Disagree",
+      "Disagree",
+      "Strongly Disagree",
+      "Can't Choose"
+    ]
+  },
+  {
+    "code": "V2014051",
+    "topic": "Citizenship",
+    "question": "To what extent do you agree or disagree with the following statements: How often do you think that people would try to take advantage of you if they got the chance, and how often would they try to be fair?",
+    "option_code": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "8"
+    ],
+    "option_text": [
+      "Try to take advantage almost all of the time",
+      "Try to take advantage most of the time",
+      "Try to be fair most of the time",
+      "Try to be fair almost all of the time",
+      "Can't Choose"
+    ]
+  },
+  {
+    "code": "V2014052",
+    "topic": "Citizenship",
+    "question": "To what extent do you agree or disagree with the following statements: Generally speaking, would you say that people can be trusted or that you can’t be too careful in dealing with people?",
+    "option_code": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "8"
+    ],
+    "option_text": [
+      "People can almost always be trusted",
+      "People can usually be trusted",
+      "You usually can’t be too careful in dealing with people",
+      "You almost always can’t be too careful in dealing with people",
+      "Can't Choose"
+    ]
+  },
+  {
+    "code": "V2014053",
+    "topic": "Citizenship",
+    "question": "When you get together with your friends, relatives or fellow workers, how often do you discuss politics?",
+    "option_code": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "8"
+    ],
+    "option_text": [
+      "Often",
+      "Sometimes",
+      "Rarely",
+      "Never",
+      "Can't Choose"
+    ]
+  },
+  {
+    "code": "V2014054",
+    "topic": "Citizenship",
+    "question": "When you hold a strong opinion about politics, how often do you try to persuade your friends, relatives or fellow workers to share your views?",
+    "option_code": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "8"
+    ],
+    "option_text": [
+      "Often",
+      "Sometimes",
+      "Rarely",
+      "Never",
+      "Can't Choose"
+    ]
+  },
+  {
+    "code": "V2014055",
+    "topic": "Citizenship",
+    "question": "Thinking now about politics in (COUNTRY), to what extent do you agree or disagree with the following statements: Political parties encourage people to become active in politics",
+    "option_code": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "8"
+    ],
+    "option_text": [
+      "Strongly Agree",
+      "Agree",
+      "Neither Agree nor Disagree",
+      "Disagree",
+      "Strongly Disagree",
+      "Can't Choose"
+    ]
+  },
+  {
+    "code": "V2014056",
+    "topic": "Citizenship",
+    "question": "Thinking now about politics in (COUNTRY), to what extent do you agree or disagree with the following statements: Political parties do not give voters real policy choices",
+    "option_code": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "8"
+    ],
+    "option_text": [
+      "Strongly Agree",
+      "Agree",
+      "Neither Agree nor Disagree",
+      "Disagree",
+      "Strongly Disagree",
+      "Can't Choose"
+    ]
+  },
+  {
+    "code": "V2014057",
+    "topic": "Citizenship",
+    "question": "Thinking now about politics in (COUNTRY), to what extent do you agree or disagree with the following statements: Referendums are a good way to decide important political questions.",
+    "option_code": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "8"
+    ],
+    "option_text": [
+      "Strongly Agree",
+      "Agree",
+      "Neither Agree nor Disagree",
+      "Disagree",
+      "Strongly Disagree",
+      "Can't Choose"
+    ]
+  },
+  {
+    "code": "V2014058",
+    "topic": "Citizenship",
+    "question": "Thinking of the last national election in (COUNTRY), how honest was it regarding the counting and reporting of the votes?",
+    "option_code": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "8"
+    ],
+    "option_text": [
+      "Very honest",
+      "Somewhat honest",
+      "Neither honest nor dishonest",
+      "Somewhat dishonest",
+      "Very dishonest",
+      "Can't Choose"
+    ]
+  },
+  {
+    "code": "V2014059",
+    "topic": "Citizenship",
+    "question": "Thinking of the last national election in (COUNTRY), how fair was it regarding the opportunities of the candidates and parties to campaign?",
+    "option_code": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "8"
+    ],
+    "option_text": [
+      "Very fair",
+      "Somewhat fair",
+      "Neither fair nor unfair",
+      "Somewhat unfair",
+      "Very unfair",
+      "Can't Choose"
+    ]
+  },
+  {
+    "code": "V2014060",
+    "topic": "Citizenship",
+    "question": "Thinking of the public service in (COUNTRY), how committed is it to serve the people?",
+    "option_code": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "8"
+    ],
+    "option_text": [
+      "Very committed",
+      "Somewhat committed",
+      "Not very committed",
+      "Not at all committed",
+      "Can't Choose"
+    ]
+  },
+  {
+    "code": "V2014061",
+    "topic": "Citizenship",
+    "question": "How widespread do you think corruption is in the public service in (COUNTRY)?",
+    "option_code": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "8"
+    ],
+    "option_text": [
+      "Hardly anyone is involved",
+      "A small number of people are involved",
+      "A moderate number of people are involved",
+      "A lot of people are involved",
+      "Almost everyone is involved",
+      "Can't Choose"
+    ]
+  },
+  {
+    "code": "V2014062",
+    "topic": "Citizenship",
+    "question": "How well does democracy work in (COUNTRY) today?",
+    "option_code": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9",
+      "10",
+      "98"
+    ],
+    "option_text": [
+      "Very Poorly",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "Very Well",
+      "Can't Choose"
+    ]
+  },
+  {
+    "code": "V2014063",
+    "topic": "Citizenship",
+    "question": "And what about 10 years ago? How well did democracy work in (COUNTRY) then?",
+    "option_code": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9",
+      "10",
+      "98"
+    ],
+    "option_text": [
+      "Very Poorly",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "Very Well",
+      "Can't Choose"
+    ]
+  },
+  {
+    "code": "V2014064",
+    "topic": "Citizenship",
+    "question": "And how about 10 years from now? How well do you think democracy will work in (COUNTRY) then?",
+    "option_code": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9",
+      "10",
+      "98"
+    ],
+    "option_text": [
+      "Very Poorly",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "Very Well",
+      "Can't Choose"
+    ]
+  },
+  {
+    "code": "V2014065",
+    "topic": "Citizenship",
+    "question": "OPTIONAL: On average, how often do you: Read the political content of a newspaper",
+    "option_code": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8"
+    ],
+    "option_text": [
+      "Several times a day",
+      "Once a day",
+      "5-6 days a week",
+      "3-4 days a week",
+      "1-2 days a week",
+      "Less than 1 day a week",
+      "Never",
+      "Can't Choose"
+    ]
+  },
+  {
+    "code": "V2014066",
+    "topic": "Citizenship",
+    "question": "OPTIONAL: On average, how often do you: Watch political news on television",
+    "option_code": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8"
+    ],
+    "option_text": [
+      "Several times a day",
+      "Once a day",
+      "5-6 days a week",
+      "3-4 days a week",
+      "1-2 days a week",
+      "Less than 1 day a week",
+      "Never",
+      "Can't Choose"
+    ]
+  },
+  {
+    "code": "V2014067",
+    "topic": "Citizenship",
+    "question": "OPTIONAL: On average, how often do you: Listen to political news on the radio",
+    "option_code": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8"
+    ],
+    "option_text": [
+      "Several times a day",
+      "Once a day",
+      "5-6 days a week",
+      "3-4 days a week",
+      "1-2 days a week",
+      "Less than 1 day a week",
+      "Never",
+      "Can't Choose"
+    ]
+  },
+  {
+    "code": "V2014068",
+    "topic": "Citizenship",
+    "question": "OPTIONAL: On average, how often do you: Use the Internet to get political news or information",
+    "option_code": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8"
+    ],
+    "option_text": [
+      "Several times a day",
+      "Once a day",
+      "5-6 days a week",
+      "3-4 days a week",
+      "1-2 days a week",
+      "Less than 1 day a week",
+      "Never",
+      "Can't Choose"
+    ]
+  }
+]
