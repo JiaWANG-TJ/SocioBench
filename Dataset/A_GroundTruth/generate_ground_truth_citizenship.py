@@ -1,3 +1,11 @@
+'''
+Author: jiawang jiawang@tongji.edu.cn
+Date: 2025-03-24 22:20:57
+LastEditors: jiawang jiawang@tongji.edu.cn
+LastEditTime: 2025-03-31 16:56:14
+FilePath: \interview_scenario\Social_Benchmark\Dataset\A_GroundTruth\generate_ground_truth_citizenship.py
+Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+'''
 import pandas as pd
 import json
 import os
@@ -10,7 +18,7 @@ from typing import Dict, List, Any, Union, Optional
 def parse_args():
     """解析命令行参数"""
     parser = argparse.ArgumentParser(description='生成ground truth数据')
-    parser.add_argument('--records', type=str, default='10', help='每个领域处理的记录数量，默认为10，设置为"all"将处理所有记录')
+    parser.add_argument('--records', type=str, default='5', help='每个领域处理的记录数量，默认为10，设置为"all"将处理所有记录')
     return parser.parse_args()
 
 # 添加调试信息
@@ -28,10 +36,7 @@ print(f"输出目录: {output_dir}")
 
 # 检查文件是否存在
 excel_files = [
-    "A_Citizenship.xlsx",
-    "A_Environment.xlsx",
-    "A_Family.xlsx",
-    "A_Health.xlsx"
+    "A_Citizenship.xlsx"
 ]
 
 for file in excel_files:
@@ -52,18 +57,10 @@ def load_excel_files(nrows=50):
         
         excel_files = {}
         
-        # 逐个读取Excel文件
-        for domain, filename in {
-            "citizenship": "A_Citizenship.xlsx",
-            "environment": "A_Environment.xlsx",
-            "family": "A_Family.xlsx",
-            "health": "A_Health.xlsx"
-        }.items():
-            # 不打印读取过程信息
-            # print(f"读取 {filename}...")
-            file_path = os.path.join(base_dir, filename)
-            excel_files[domain] = pd.read_excel(file_path, nrows=nrows)
-            # print(f"{filename} 读取完成，共 {len(excel_files[domain])} 行")
+        # 只读取Citizenship文件
+        filename = "A_Citizenship.xlsx"
+        file_path = os.path.join(base_dir, filename)
+        excel_files["citizenship"] = pd.read_excel(file_path, nrows=nrows)
             
         return excel_files
     except Exception as e:
@@ -236,15 +233,9 @@ def process_questions_answers(row: pd.Series, qa_mapping: Dict, domain: str) -> 
             # 找到对应的问题代码
             answer_value = row[col]
             
-            # 对于citizenship，需要在"V2014"前缀加上数字
+            # 公民领域的问题代码
             if domain == "citizenship":
                 question_code = f"V2014{num.zfill(3)}"
-            elif domain == "environment":
-                question_code = f"V2020{num.zfill(3)}"
-            elif domain == "family":
-                question_code = f"V2012{num.zfill(3)}"
-            elif domain == "health":
-                question_code = f"V2021{num.zfill(3)}"
             
             # 检查问题代码是否存在于映射中
             if question_code in qa_mapping:
@@ -325,46 +316,20 @@ def main():
         qa_mapping = load_qa_mappings()
         print("问题答案映射加载成功")
         
-        # 处理各领域数据
-        domain_data = []
-        
-        # 公民领域
+        # 处理公民领域数据
         print("处理公民领域数据...")
         citizenship_data = process_domain("citizenship", 1, excel_files["citizenship"], qa_mapping, attribute_mappings, records_per_domain)
-        domain_data.extend(citizenship_data)
         print(f"公民领域数据处理完成，共 {len(citizenship_data)} 条")
         
-        # 环境领域
-        print("处理环境领域数据...")
-        environment_data = process_domain("environment", 2, excel_files["environment"], qa_mapping, attribute_mappings, records_per_domain)
-        domain_data.extend(environment_data)
-        print(f"环境领域数据处理完成，共 {len(environment_data)} 条")
-        
-        # 家庭领域
-        print("处理家庭领域数据...")
-        family_data = process_domain("family", 3, excel_files["family"], qa_mapping, attribute_mappings, records_per_domain)
-        domain_data.extend(family_data)
-        print(f"家庭领域数据处理完成，共 {len(family_data)} 条")
-        
-        # 健康领域
-        print("处理健康领域数据...")
-        health_data = process_domain("health", 4, excel_files["health"], qa_mapping, attribute_mappings, records_per_domain)
-        domain_data.extend(health_data)
-        print(f"健康领域数据处理完成，共 {len(health_data)} 条")
-        
         # 输出到JSON文件
-        output_path = os.path.join(output_dir, "issp_A.json")
+        output_path = os.path.join(output_dir, "issp_answer_citizenship.json")
         print(f"开始写入JSON文件: {output_path}")
         with open(output_path, 'w', encoding='utf-8') as f:
-            json.dump(domain_data, f, ensure_ascii=False, indent=2)
+            json.dump(citizenship_data, f, ensure_ascii=False, indent=2)
         
         print(f"成功生成ground truth数据，保存到: {output_path}")
-        print(f"总共生成 {len(domain_data)} 条数据")
-        print(f"各领域数据明细:")
+        print(f"总共生成 {len(citizenship_data)} 条数据")
         print(f"- 公民领域: {len(citizenship_data)} 条")
-        print(f"- 环境领域: {len(environment_data)} 条")
-        print(f"- 家庭领域: {len(family_data)} 条")
-        print(f"- 健康领域: {len(health_data)} 条")
         
     except Exception as e:
         print(f"生成数据时出错: {str(e)}")
