@@ -2,7 +2,7 @@
 Author: jiawang jiawang@tongji.edu.cn
 Date: 2025-03-31 16:52:00
 LastEditors: jiawang jiawang@tongji.edu.cn
-LastEditTime: 2025-03-31 20:06:29
+LastEditTime: 2025-04-01 13:01:58
 FilePath: /interview_scenario/Social_Benchmark/Dataset/A_GroundTruth/generate_ground_truth_environment.py
 Description: 这是基于citizenship脚本修改的environment领域数据生成脚本
 更新说明: 

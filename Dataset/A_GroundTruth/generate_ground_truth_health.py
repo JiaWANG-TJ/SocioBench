@@ -2,15 +2,24 @@
 Author: jiawang jiawang@tongji.edu.cn
 Date: 2025-03-31 16:52:00
 LastEditors: jiawang jiawang@tongji.edu.cn
-LastEditTime: 2025-03-31 19:58:44
+LastEditTime: 2025-04-01 14:20:22
 FilePath: /interview_scenario/Social_Benchmark/Dataset/A_GroundTruth/generate_ground_truth_health.py
 Description: 这是基于environment脚本修改的health领域数据生成脚本
 更新说明: 
-2025-03-31 20:30
-1. 修改为health领域数据生成
-2. 确保所有非vxx格式的属性都输出到attributes中，即使它们的值是特殊值
-3. 确保所有vxx和国家_vxx格式的问题都正确收集到questions_answer中
-4. 保留所有原始内容输出，不进行任何修改或删减
+2025-03-31 17:30
+1. 修复了属性处理，确保所有非vxx格式的属性都输出到attributes中，即使它们的值是特殊值
+2. 改进了问题答案处理，确保所有vxx和国家_vxx格式的问题都正确收集到questions_answer中
+
+2025-03-31 19:45
+3. 恢复原始输出方式，确保所有属性和问题答案都按照原始内容输出，不进行任何修改或删减
+
+2025-04-01 13:20
+4. 修复问题：确保所有vxx和国家代码_vxx格式的问题只出现在questions_answer中，不会出现在attributes中
+5. 改进属性解析：确保国家特定区域等字段显示有意义的内容，而不是简单的"0"值
+
+2025-04-01 14:20
+6. 进一步修复问题：确保Q开头的问题答案从attributes中移除，如"Q61 Frequency..."等
+7. 强化属性解析：确保所有非当前国家的Country specific字段值为"Not applicable"而非"0"
 '''
 import pandas as pd
 import json
@@ -88,16 +97,24 @@ def load_health_mappings():
         attribute_dict = {}
         qa_dict = {}
         
+        # 保存所有v开头、国家代码_v开头和Q开头的问题标识符，用于后续过滤
+        qa_identifiers = set()
+        
         # 提取所有属性和QA数据
         for item in health_mappings:
             attribute = item["attribute"]
             # 如果属性是v开头或xx_v开头(国家专用题目)，则为QA数据
-            if re.match(r'^v\d+$', attribute) or re.match(r'^[A-Z]{2}_v\d+$', attribute):
+            if (re.match(r'^v\d+$', attribute) or 
+                re.match(r'^[A-Z]{2}_v\d+$', attribute) or 
+                attribute.startswith('Q')):  # 添加Q开头的问题
+                
                 qa_dict[attribute] = {
                     "meaning": item["meaning"],
                     "content": item["content"],
                     "special": item.get("special", {})
                 }
+                # 添加到问题标识符集合
+                qa_identifiers.add(attribute.lower())
             else:
                 # 否则为普通属性
                 attribute_dict[attribute] = {
@@ -111,7 +128,7 @@ def load_health_mappings():
         # 从属性映射中提取所有属性名称构建ALL_ATTRIBUTES列表
         all_attributes = list(attribute_dict.keys())
         
-        return attribute_dict, qa_dict, all_attributes
+        return attribute_dict, qa_dict, all_attributes, qa_identifiers
     except Exception as e:
         print(f"读取health领域配置文件时出错: {str(e)}")
         import traceback
@@ -119,8 +136,8 @@ def load_health_mappings():
         raise
 
 # 处理属性信息
-def process_attributes(row: pd.Series, attribute_mappings: Dict) -> Dict[str, str]:
-    """使用issp_profile_health.json中的映射处理属性信息，包含所有定义的属性"""
+def process_attributes(row: pd.Series, attribute_mappings: Dict, qa_identifiers: set) -> Dict[str, str]:
+    """使用issp_profile_health.json中的映射处理属性信息，排除问题答案字段"""
     attributes = {}
     country_code = None
     
@@ -154,56 +171,99 @@ def process_attributes(row: pd.Series, attribute_mappings: Dict) -> Dict[str, st
         if mapping_info["meaning"] in excluded_attributes:
             continue
             
+        # 跳过Q开头的问题属性 - 添加额外过滤逻辑
+        if mapping_info["meaning"].startswith("Q"):
+            continue
+            
         # 检查是否在数据行中存在该列（大小写不敏感）
         attr_found = False
         attr_value = None
         
         # 尝试在row中找到属性（可能大小写不同）
         for col in row.index:
-            if col.lower() == attr.lower():
+            col_lower = col.lower()
+            
+            # 排除所有属于问题答案的字段(vxx、XX_vxx格式或Q开头)
+            if col_lower in qa_identifiers or col.startswith('Q'):
+                continue
+                
+            if col_lower == attr.lower():
                 attr_found = True
                 attr_value = row[col]
                 break
         
         # 如果在数据行中找到了该属性
         if attr_found and not pd.isna(attr_value):
-            value_str = str(int(attr_value) if isinstance(attr_value, (int, float)) else attr_value)
+            value_str = str(int(attr_value) if isinstance(attr_value, (int, float)) and int(attr_value) == attr_value else attr_value)
             
-            # 使用原始数据，不对特殊值进行处理
+            # 改进属性解析，确保显示有意义的内容
             if value_str in mapping_info["content"]:
-                # 使用映射的文本描述，不进行任何修改
+                # 使用映射的文本描述
                 display_value = mapping_info["content"][value_str]
-                # 保留所有原始值，不进行修改
-                # 即使是"不适用"或"无答案"类型的特殊值，也原样保留
+                
+                # 处理Country specific字段
+                if "Country specific" in mapping_info["meaning"]:
+                    # 识别当前国家代码是否存在于字段名中
+                    country_in_field = False
+                    if country_code:
+                        # 检查字段名结尾是否为当前国家代码
+                        country_in_field = mapping_info["meaning"].endswith(country_code)
+                        
+                    # 如果值为"0"且不是当前国家的字段，则设置为"Not applicable"
+                    if value_str == "0" and not country_in_field:
+                        display_value = "Not applicable"
+                
             else:
                 # 如果在content中没有定义，则使用原始值
                 display_value = value_str
+                
+                # 处理Country specific字段的特殊情况
+                if "Country specific" in mapping_info["meaning"] and value_str == "0":
+                    # 检查是否为当前国家的字段
+                    if country_code and mapping_info["meaning"].endswith(country_code):
+                        # 当前国家的字段保留原值
+                        pass
+                    else:
+                        # 对于其他国家的字段设置为"Not applicable"
+                        display_value = "Not applicable"
                 
             # 保存到属性字典中
             attributes[mapping_info["meaning"]] = display_value
         else:
             # 即使在数据行中没有找到该属性，也将其包含在结果中（使用空字符串）
             if mapping_info["meaning"] not in attributes:  # 避免覆盖已设置的值
-                attributes[mapping_info["meaning"]] = ""
+                # 对于国家特定字段，不使用空字符串，而使用"Not applicable"
+                if "Country specific" in mapping_info["meaning"]:
+                    # 检查是否是当前国家的字段
+                    if country_code and mapping_info["meaning"].endswith(country_code):
+                        attributes[mapping_info["meaning"]] = ""
+                    else:
+                        attributes[mapping_info["meaning"]] = "Not applicable"
+                else:
+                    attributes[mapping_info["meaning"]] = ""
     
     return attributes
 
 # 处理问题答案
-def process_questions_answers(row: pd.Series, qa_mapping: Dict) -> Dict[str, Any]:
+def process_questions_answers(row: pd.Series, qa_mapping: Dict, qa_identifiers: set) -> Dict[str, Any]:
     """处理问题答案，直接从row中读取v开头和XX_v开头的列，保留所有原始内容"""
     answers = {}
     
-    # 首先尝试从行数据中查找所有v开头和XX_v开头的列
+    # 首先尝试从行数据中查找所有v开头、XX_v开头和Q开头的列
     for col in row.index:
         col_lower = col.lower()  # 转为小写进行匹配
         
-        # 检查是否是问题列（v开头或XX_v开头）
-        if re.match(r'^v\d+$', col_lower) or re.match(r'^[a-z]{2}_v\d+$', col_lower):
+        # 检查是否是问题列（v开头、XX_v开头或Q开头）
+        if (col_lower in qa_identifiers or 
+            re.match(r'^v\d+$', col_lower) or 
+            re.match(r'^[a-z]{2}_v\d+$', col_lower) or
+            col.startswith('Q')):  # 添加Q开头问题的处理
+            
             answer_value = row[col]
             
             # 保留所有原始答案值，不对特殊值进行过滤
             if not pd.isna(answer_value):
-                answers[col_lower] = int(answer_value) if isinstance(answer_value, (int, float)) else answer_value
+                answers[col_lower] = int(answer_value) if isinstance(answer_value, (int, float)) and float(answer_value).is_integer() else answer_value
     
     # 确保qa_mapping中的所有问题都在返回结果中
     # 这会检查是否有在映射中但不在行数据中的问题
@@ -217,7 +277,7 @@ def process_questions_answers(row: pd.Series, qa_mapping: Dict) -> Dict[str, Any
                     answer_value = row[col]
                     # 保留所有原始答案值，不对特殊值进行过滤
                     if not pd.isna(answer_value):
-                        answers[qa_key_lower] = int(answer_value) if isinstance(answer_value, (int, float)) else answer_value
+                        answers[qa_key_lower] = int(answer_value) if isinstance(answer_value, (int, float)) and float(answer_value).is_integer() else answer_value
                     found = True
                     break
     
@@ -235,7 +295,7 @@ def generate_person_id(domain_num: int, index: int) -> int:
     return int(f"{domain_num}{'0' * (6 - len(index_str) + 1)}{index}")
 
 # 处理health领域数据
-def process_health_data(df: pd.DataFrame, attribute_mappings: Dict, qa_mappings: Dict, all_attributes: List, max_records: int) -> List[Dict]:
+def process_health_data(df: pd.DataFrame, attribute_mappings: Dict, qa_mappings: Dict, all_attributes: List, qa_identifiers: set, max_records: int) -> List[Dict]:
     """处理health领域的数据"""
     result = []
     
@@ -244,11 +304,11 @@ def process_health_data(df: pd.DataFrame, attribute_mappings: Dict, qa_mappings:
         if i > max_records:  # 限制最多处理max_records条记录
             break
             
-        person_id = generate_person_id(2, i)  # health领域的domain_num为2
+        person_id = generate_person_id(4, i)  # health领域的domain_num为4
         
-        attributes = process_attributes(row, attribute_mappings)
+        attributes = process_attributes(row, attribute_mappings, qa_identifiers)
         
-        questions_answer = process_questions_answers(row, qa_mappings)
+        questions_answer = process_questions_answers(row, qa_mappings, qa_identifiers)
         
         person = {
             "person_id": person_id,
@@ -287,7 +347,7 @@ def main():
         print("Excel文件加载成功")
         
         # 加载health领域配置，提取属性和QA映射
-        attribute_mappings, qa_mappings, all_attributes = load_health_mappings()
+        attribute_mappings, qa_mappings, all_attributes, qa_identifiers = load_health_mappings()
         print("health领域配置加载成功")
         
         # 处理health领域数据
@@ -296,7 +356,8 @@ def main():
             excel_files["health"], 
             attribute_mappings, 
             qa_mappings, 
-            all_attributes, 
+            all_attributes,
+            qa_identifiers,
             records_per_domain
         )
         print(f"health领域数据处理完成，共 {len(health_data)} 条")
