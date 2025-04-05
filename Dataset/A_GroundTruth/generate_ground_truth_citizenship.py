@@ -10,30 +10,30 @@ from typing import Dict, List, Any, Union, Optional
 DOMAIN_MAPPING = {
     "Citizenship": 1,
     "Environment": 2,
-    "Family and Changing Gender Roles": 3,
-    "Health and Healthcare": 4,
+    "Family": 3,
+    "Health": 4,
     "Leisure Time and Sports": 5,
-    "National Identity": 6,
+    "NationalIdentity": 6,
     "Religion": 7,
-    "Role of Government": 8,
-    "Social Inequality": 9,
-    "Social Networks": 10,
-    "Work Orientations": 11
+    "RoleofGovernment": 8,
+    "SocialInequality": 9,
+    "SocialNetworks": 10,
+    "WorkOrientations": 11
 }
 
 # 各领域默认排除的题目列表
 DEFAULT_EXCLUDE_MAPPING = {
     "Citizenship": ["v1", "v2", "v3", "v4"],
     "Environment": ["v48", "v49", "SI_v49", "v51"],
-    "Family and Changing Gender Roles": ["v21", "V28", "V37", "V38", "V39", "V40", "v65", "v65a", "v66", "v67"],
-    "Health and Healthcare": ["v53", "v54"],
+    "Family": ["v21","V28","V37","V38","V39","V40","v65","v65a","v66","v67","v1","v2","v3","v4"],
+    "Health": ["v53", "v54"],
     "Leisure Time and Sports": [],
-    "National Identity": [],
+    "NationalIdentity": ["v1","v2","v3","v4"],
     "Religion": [],
-    "Role of Government": [],
-    "Social Inequality": [],
-    "Social Networks": [],
-    "Work Orientations": []
+    "RoleofGovernment": [],
+    "SocialInequality": [],
+    "SocialNetworks": [],
+    "WorkOrientations": ["v62","v85"]
 }
 
 # 文件路径常量，可根据需要修改以提取其他领域的内容
@@ -52,7 +52,7 @@ def parse_args():
     
     parser = argparse.ArgumentParser(description=f'生成领域数据ground truth数据')
     parser.add_argument('--records', type=str, default='5', help='每个领域处理的记录数量，默认为5，设置为"all"将处理所有记录')
-    parser.add_argument('--domain', type=int, default=2, 
+    parser.add_argument('--domain', type=int, default=4, 
                        help=f'领域号码(1-11)，默认为1。对应关系: {", ".join([f"{k}={v}" for k, v in reverse_domain_mapping.items()])}')
     parser.add_argument('--exclude', type=str, default='', 
                        help='要排除的内容列表，多个值用逗号分隔，例如"v1,v2,Q61"。留空则使用默认排除列表。')

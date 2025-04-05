@@ -1,0 +1,1076 @@
+[
+  {
+    "question_id": "v1",
+    "question": "Q1 In general, would you say that people should obey the law without exception, or are there exceptional occasions on which people should follow their consciences even if it means breaking the law?",
+    "answer": {
+      "1": "Obey the law without exception",
+      "2": "Follow conscience on occasions",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v2",
+    "question": "Q2 There are many ways people or organisations can protest against a government action they strongly oppose. Please show which you think should be allowed and which should not be allowed by ticking a box on each line. Q2a Organising public meetings to protest against the government.",
+    "answer": {
+      "1": "Definitely allowed",
+      "2": "Probably allowed",
+      "3": "Probably not allowed",
+      "4": "Definitely not allowed",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v3",
+    "question": "Q2 There are many ways people or organisations can protest against a government action they strongly oppose. Please show which you think should be allowed and which should not be allowed by ticking a box on each line. Q2b Organising protest marches and demonstrations.",
+    "answer": {
+      "1": "Definitely allowed",
+      "2": "Probably allowed",
+      "3": "Probably not allowed",
+      "4": "Definitely not allowed",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v4",
+    "question": "Q3 There are some people whose views are considered extreme by the majority. Consider people who want to overthrow the government by revolution. Do you think such people should be allowed to... Q3a ...hold public meetings to express their views?",
+    "answer": {
+      "1": "Definitely allowed",
+      "2": "Probably allowed",
+      "3": "Probably not allowed",
+      "4": "Definitely not allowed",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v5",
+    "question": "Q3 There are some people whose views are considered extreme by the majority. Consider people who want to overthrow the government by revolution. Do you think such people should be allowed to... Q3b ...publish books expressing their views?",
+    "answer": {
+      "1": "Definitely allowed",
+      "2": "Probably allowed",
+      "3": "Probably not allowed",
+      "4": "Definitely not allowed",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v6",
+    "question": "Q4 All systems of justice make mistakes, but which do you think is worse...",
+    "answer": {
+      "1": "Convict an innocent person",
+      "2": "Let a guilty person go free",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v7",
+    "question": "Q5 Here are some things the government might do for the economy. Please show which actions you are in favour of and which you are against. Q5a Cuts in government spending.",
+    "answer": {
+      "1": "Strongly in favour of",
+      "2": "In favour of",
+      "3": "Neither in favour of nor against",
+      "4": "Against",
+      "5": "Strongly against",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v8",
+    "question": "Q5 Here are some things the government might do for the economy. Please show which actions you are in favour of and which you are against. Q5b Government financing of projects to create new jobs.",
+    "answer": {
+      "1": "Strongly in favour of",
+      "2": "In favour of",
+      "3": "Neither in favour of nor against",
+      "4": "Against",
+      "5": "Strongly against",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v9",
+    "question": "Q5 Here are some things the government might do for the economy. Please show which actions you are in favour of and which you are against. Q5c Less government regulation of business.",
+    "answer": {
+      "1": "Strongly in favour of",
+      "2": "In favour of",
+      "3": "Neither in favour of nor against",
+      "4": "Against",
+      "5": "Strongly against",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v10",
+    "question": "Q5 Here are some things the government might do for the economy. Please show which actions you are in favour of and which you are against. Q5d Support for industry to develop new products and technology.",
+    "answer": {
+      "1": "Strongly in favour of",
+      "2": "In favour of",
+      "3": "Neither in favour of nor against",
+      "4": "Against",
+      "5": "Strongly against",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v11",
+    "question": "Q5 Here are some things the government might do for the economy. Please show which actions you are in favour of and which you are against. Q5e Support for declining industries to protect jobs.",
+    "answer": {
+      "1": "Strongly in favour of",
+      "2": "In favour of",
+      "3": "Neither in favour of nor against",
+      "4": "Against",
+      "5": "Strongly against",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v12",
+    "question": "Q5 Here are some things the government might do for the economy. Please show which actions you are in favour of and which you are against. Q5f Reducing the working week to create more jobs.",
+    "answer": {
+      "1": "Strongly in favour of",
+      "2": "In favour of",
+      "3": "Neither in favour of nor against",
+      "4": "Against",
+      "5": "Strongly against",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v13",
+    "question": "Q6 Listed below are various areas of government spending. Please show whether you would like to see more or less government spending in each area. Remember that if you say 'much more', it might require a tax increase to pay for it. Q6a The environment.",
+    "answer": {
+      "1": "Spend much more",
+      "2": "Spend more",
+      "3": "Spend the same as now",
+      "4": "Spend less",
+      "5": "Spend much less",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v14",
+    "question": "Q6 Listed below are various areas of government spending. Please show whether you would like to see more or less government spending in each area. Remember that if you say 'much more', it might require a tax increase to pay for it. Q6b Health.",
+    "answer": {
+      "1": "Spend much more",
+      "2": "Spend more",
+      "3": "Spend the same as now",
+      "4": "Spend less",
+      "5": "Spend much less",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v15",
+    "question": "Q6 Listed below are various areas of government spending. Please show whether you would like to see more or less government spending in each area. Remember that if you say 'much more', it might require a tax increase to pay for it. Q6c The police and law enforcement.",
+    "answer": {
+      "1": "Spend much more",
+      "2": "Spend more",
+      "3": "Spend the same as now",
+      "4": "Spend less",
+      "5": "Spend much less",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v16",
+    "question": "Q6 Listed below are various areas of government spending. Please show whether you would like to see more or less government spending in each area. Remember that if you say 'much more', it might require a tax increase to pay for it. Q6d Education.",
+    "answer": {
+      "1": "Spend much more",
+      "2": "Spend more",
+      "3": "Spend the same as now",
+      "4": "Spend less",
+      "5": "Spend much less",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v17",
+    "question": "Q6 Listed below are various areas of government spending. Please show whether you would like to see more or less government spending in each area. Remember that if you say 'much more', it might require a tax increase to pay for it. Q6e The military and defence.",
+    "answer": {
+      "1": "Spend much more",
+      "2": "Spend more",
+      "3": "Spend the same as now",
+      "4": "Spend less",
+      "5": "Spend much less",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {
+      "IS": {
+        "0": "Not available"
+      }
+    }
+  },
+  {
+    "question_id": "v18",
+    "question": "Q6 Listed below are various areas of government spending. Please show whether you would like to see more or less government spending in each area. Remember that if you say 'much more', it might require a tax increase to pay for it. Q6f Old age pensions.",
+    "answer": {
+      "1": "Spend much more",
+      "2": "Spend more",
+      "3": "Spend the same as now",
+      "4": "Spend less",
+      "5": "Spend much less",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v19",
+    "question": "Q6 Listed below are various areas of government spending. Please show whether you would like to see more or less government spending in each area. Remember that if you say 'much more', it might require a tax increase to pay for it. Q6g Unemployment benefits.",
+    "answer": {
+      "1": "Spend much more",
+      "2": "Spend more",
+      "3": "Spend the same as now",
+      "4": "Spend less",
+      "5": "Spend much less",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {
+      "PH": {
+        "0": "Not available, not applicable in the Philippines"
+      }
+    }
+  },
+  {
+    "question_id": "v20",
+    "question": "Q6 Listed below are various areas of government spending. Please show whether you would like to see more or less government spending in each area. Remember that if you say 'much more', it might require a tax increase to pay for it. Q6h Culture and the arts.",
+    "answer": {
+      "1": "Spend much more",
+      "2": "Spend more",
+      "3": "Spend the same as now",
+      "4": "Spend less",
+      "5": "Spend much less",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v21",
+    "question": "Q7 On the whole, do you think it should or should not be the government's responsibility to... Q7a ...provide a job for everyone who wants one.",
+    "answer": {
+      "1": "Definitely should be",
+      "2": "Probably should be",
+      "3": "Probably should not be",
+      "4": "Definitely should not be",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v22",
+    "question": "Q7 On the whole, do you think it should or should not be the government's responsibility to... Q7b ...keep prices under control.",
+    "answer": {
+      "1": "Definitely should be",
+      "2": "Probably should be",
+      "3": "Probably should not be",
+      "4": "Definitely should not be",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v23",
+    "question": "Q7 On the whole, do you think it should or should not be the government's responsibility to... Q7c ...provide health care for the sick.",
+    "answer": {
+      "1": "Definitely should be",
+      "2": "Probably should be",
+      "3": "Probably should not be",
+      "4": "Definitely should not be",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v24",
+    "question": "Q7 On the whole, do you think it should or should not be the government's responsibility to... Q7d ...provide a decent standard of living for the old.",
+    "answer": {
+      "1": "Definitely should be",
+      "2": "Probably should be",
+      "3": "Probably should not be",
+      "4": "Definitely should not be",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v25",
+    "question": "Q7 On the whole, do you think it should or should not be the government's responsibility to... Q7e ...provide industry with the help it needs to grow.",
+    "answer": {
+      "1": "Definitely should be",
+      "2": "Probably should be",
+      "3": "Probably should not be",
+      "4": "Definitely should not be",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v26",
+    "question": "Q7 On the whole, do you think it should or should not be the government's responsibility to... Q7f ...provide a decent standard of living for the unemployed.",
+    "answer": {
+      "1": "Definitely should be",
+      "2": "Probably should be",
+      "3": "Probably should not be",
+      "4": "Definitely should not be",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {
+      "GE": {
+        "0": "Not available"
+      }
+    }
+  },
+  {
+    "question_id": "v27",
+    "question": "Q7 On the whole, do you think it should or should not be the government's responsibility to... Q7g ...reduce income differences between the rich and the poor.",
+    "answer": {
+      "1": "Definitely should be",
+      "2": "Probably should be",
+      "3": "Probably should not be",
+      "4": "Definitely should not be",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v28",
+    "question": "Q7 On the whole, do you think it should or should not be the government's responsibility to... Q7h ...give financial help to university students from low-income families.",
+    "answer": {
+      "1": "Definitely should be",
+      "2": "Probably should be",
+      "3": "Probably should not be",
+      "4": "Definitely should not be",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v29",
+    "question": "Q7 On the whole, do you think it should or should not be the government's responsibility to... Q7i ...provide decent housing for those who can't afford it.",
+    "answer": {
+      "1": "Definitely should be",
+      "2": "Probably should be",
+      "3": "Probably should not be",
+      "4": "Definitely should not be",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v30",
+    "question": "Q7 On the whole, do you think it should or should not be the government's responsibility to... Q7j ...impose strict laws to make industry do less damage to the environment.",
+    "answer": {
+      "1": "Definitely should be",
+      "2": "Probably should be",
+      "3": "Probably should not be",
+      "4": "Definitely should not be",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v31",
+    "question": "Q7 On the whole, do you think it should or should not be the government's responsibility to... Q7k ...promote equality between men and women.",
+    "answer": {
+      "1": "Definitely should be",
+      "2": "Probably should be",
+      "3": "Probably should not be",
+      "4": "Definitely should not be",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v32",
+    "question": "Q8 People have different opinions on who should provide services in [COUNTRY]. Who do you think should primarily provide: Q8a Health care for the sick?",
+    "answer": {
+      "1": "Government",
+      "2": "Private companies/ for-profit organisations",
+      "3": "Non-profit organisations/ charities/ cooperatives",
+      "4": "Religious organisations",
+      "5": "Family, relatives or friends",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v33",
+    "question": "Q8 People have different opinions on who should provide services in [COUNTRY]. Who do you think should primarily provide: Q8b Care for older people?",
+    "answer": {
+      "1": "Government",
+      "2": "Private companies/ for-profit organisations",
+      "3": "Non-profit organisations/ charities/ cooperatives",
+      "4": "Religious organisations",
+      "5": "Family, relatives or friends",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v34",
+    "question": "Q8 People have different opinions on who should provide services in [COUNTRY]. Who do you think should primarily provide: Q8c School education for children?",
+    "answer": {
+      "1": "Government",
+      "2": "Private companies/ for-profit organisations",
+      "3": "Non-profit organisations/ charities/ cooperatives",
+      "4": "Religious organisations",
+      "5": "Family, relatives or friends",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v35",
+    "question": "Q9 Here is a list of people and organisations that can influence government actions. Q9a Please read through the list and write in the boxes below the letters corresponding to the ones you think have the MOST influence on the actions of the [COUNTRY] government?",
+    "answer": {
+      "1": "The media",
+      "2": "Trade unions",
+      "3": "Business, banks and industry",
+      "4": "Religious organisations/ authorities",
+      "5": "The military/ army",
+      "6": "Organised crime",
+      "7": "People who vote for the party/ the parties in government",
+      "8": "Citizens in general",
+      "9": "Civic and voluntary organisations",
+      "10": "International organisations (e.g. United Nations, International Monetary Fund)",
+      "98": "Can't choose",
+      "99": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v36",
+    "question": "Q9 Here is a list of people and organisations that can influence government actions. Q9b Please read through the list and write in the boxes below the letters corresponding to the ones you think have the SECOND MOST influence on the actions of the [COUNTRY] government?",
+    "answer": {
+      "1": "The media",
+      "2": "Trade unions",
+      "3": "Business, banks and industry",
+      "4": "Religious organisations/ authorities",
+      "5": "The military/ army",
+      "6": "Organised crime",
+      "7": "People who vote for the party/ the parties in government",
+      "8": "Citizens in general",
+      "9": "Civic and voluntary organisations",
+      "10": "International organisations (e.g. United Nations, International Monetary Fund)",
+      "98": "Can't choose",
+      "99": "No answer, no second most influence"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v37",
+    "question": "Q10 Here are two opinions about what affects policies in [COUNTRY]. Which of them comes closest to your view?",
+    "answer": {
+      "1": "Policies in [COUNTRY] depend more on what is happening in the world economy, rather than who is in government",
+      "2": "Policies in [COUNTRY] depend more on who is in government, rather than what is happening in the world economy",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v38",
+    "question": "Q11 Do you think that the [COUNTRY] government should or should not have the right to do the following: Q11a Keep people under video surveillance in public areas?",
+    "answer": {
+      "1": "Definitely should have right",
+      "2": "Probably should have right",
+      "3": "Probably should not have right",
+      "4": "Definitely should not have right",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {
+      "HU": {
+        "8": "Should have or not, can't choose"
+      }
+    }
+  },
+  {
+    "question_id": "v39",
+    "question": "Q11 Do you think that the [COUNTRY] government should or should not have the right to do the following: Q11b Monitor e-mails and any other information exchanged on the Internet?",
+    "answer": {
+      "1": "Definitely should have right",
+      "2": "Probably should have right",
+      "3": "Probably should not have right",
+      "4": "Definitely should not have right",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {
+      "HU": {
+        "8": "Should have or not, can't choose"
+      }
+    }
+  },
+  {
+    "question_id": "v40",
+    "question": "Q12 Here is a scale from 0 to 10 where 0 is 'all government information should be publicly available, even if this meant a risk to public security' and 10 is 'public security should be given priority, even if this meant limiting access to government information'. Where would you place yourself on such a scale?",
+    "answer": {
+      "0": "All government information should be publicly available, even if this meant a risk to public security, 0",
+      "1": "01",
+      "2": "02",
+      "3": "03",
+      "4": "04",
+      "5": "05",
+      "6": "06",
+      "7": "07",
+      "8": "08",
+      "9": "09",
+      "10": "Public security should be given priority, even if this meant limiting access to government information, 10",
+      "98": "Can't choose",
+      "99": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v41",
+    "question": "Q13 Some people think that governments should have the right to take certain measures in the name of national security. Others disagree. Do you think that the [COUNTRY] government should or should not have the right to do the following: Q13a ...collect information about anyone living in [COUNTRY] without their knowledge.",
+    "answer": {
+      "1": "Definitely should have right",
+      "2": "Probably should have right",
+      "3": "Probably should not have right",
+      "4": "Definitely should not have right",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {
+      "HU": {
+        "0": "NAP: Question differs from ISSP standard"
+      }
+    }
+  },
+  {
+    "question_id": "HU_v41",
+    "question": "Q13 Some people believe that the government should have the right to take some measures in the name of national security. Others do not agree. Please use this ANSWER SHEET to tell me your opinion if the government should have the right to... Q13a ...collect information about anyone living in [COUNTRY] without their knowledge.",
+    "answer": {
+      "0": "NAP, other countries",
+      "1": "Almost always",
+      "2": "Often",
+      "3": "Sometimes",
+      "4": "Almost never",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v42",
+    "question": "Q13 Some people think that governments should have the right to take certain measures in the name of national security. Others disagree. Do you think that the [COUNTRY] government should or should not have the right to do the following: Q13b ...collect information about anyone living in other countries without their knowledge.",
+    "answer": {
+      "1": "Definitely should have right",
+      "2": "Probably should have right",
+      "3": "Probably should not have right",
+      "4": "Definitely should not have right",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {
+      "HU": {
+        "0": "NAP: Question differs from ISSP standard"
+      }
+    }
+  },
+  {
+    "question_id": "HU_v42",
+    "question": "Q13 Some people believe that the government should have the right to take some measures in the name of national security. Others do not agree. Please use this ANSWER SHEET to tell me your opinion if the government should have the right to... Q13b ...collect information about anyone living in other countries without their knowledge.",
+    "answer": {
+      "0": "NAP, other countries",
+      "1": "Almost always",
+      "2": "Often",
+      "3": "Sometimes",
+      "4": "Almost never",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v43",
+    "question": "Q14 Suppose the government suspected that a terrorist act was about to happen. Do you think the authorities should have the right to… Q14a ...detain people for as long as they want without putting them on trial?",
+    "answer": {
+      "1": "Definitely should have right",
+      "2": "Probably should have right",
+      "3": "Probably should not have right",
+      "4": "Definitely should not have right",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v44",
+    "question": "Q14 Suppose the government suspected that a terrorist act was about to happen. Do you think the authorities should have the right to… Q14b ...tap people's telephone conversations?",
+    "answer": {
+      "1": "Definitely should have right",
+      "2": "Probably should have right",
+      "3": "Probably should not have right",
+      "4": "Definitely should not have right",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v45",
+    "question": "Q14 Suppose the government suspected that a terrorist act was about to happen. Do you think the authorities should have the right to… Q14c ...stop and search people in the street at random?",
+    "answer": {
+      "1": "Definitely should have right",
+      "2": "Probably should have right",
+      "3": "Probably should not have right",
+      "4": "Definitely should not have right",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v46",
+    "question": "Q15 How interested would you say you personally are in politics?",
+    "answer": {
+      "1": "Very interested",
+      "2": "Fairly interested",
+      "3": "Somewhat interested",
+      "4": "Not very interested",
+      "5": "Not at all interested",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {
+      "NZ": {
+        "0": "NAP: Answer categories differ from ISSP standard"
+      }
+    }
+  },
+  {
+    "question_id": "NZ_v46",
+    "question": "Q15 How interested would you say you personally are in politics?",
+    "answer": {
+      "0": "NAP, other countries",
+      "1": "Very interested",
+      "2": "Fairly interested",
+      "3": "Not very interested",
+      "4": "Not at all interested",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v47",
+    "question": "Q16 Please tick one box on each line to show how much you agree or disagree with each of the following statements. Q16a People like me don't have any say about what the government does.",
+    "answer": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {
+      "JP": {
+        "1": "I think so",
+        "2": "I rather think so",
+        "3": "Can't say one way or the other",
+        "4": "I rather don't think so",
+        "5": "I don't think so"
+      }
+    }
+  },
+  {
+    "question_id": "v48",
+    "question": "Q16 Please tick one box on each line to show how much you agree or disagree with each of the following statements. Q16b I feel that I have a pretty good understanding of the important political issues facing our country.",
+    "answer": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {
+      "JP": {
+        "1": "I think so",
+        "2": "I rather think so",
+        "3": "Can't say one way or the other",
+        "4": "I rather don't think so",
+        "5": "I don't think so"
+      }
+    }
+  },
+  {
+    "question_id": "v49",
+    "question": "Q16 Please tick one box on each line to show how much you agree or disagree with each of the following statements. Q16c People we elect as MPs try to keep the promises they have made during the election.",
+    "answer": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {
+      "JP": {
+        "1": "I think so",
+        "2": "I rather think so",
+        "3": "Can't say one way or the other",
+        "4": "I rather don't think so",
+        "5": "I don't think so"
+      }
+    }
+  },
+  {
+    "question_id": "v50",
+    "question": "Q16 Please tick one box on each line to show how much you agree or disagree with each of the following statements. Q16d Most civil servants can be trusted to do what is best for the country.",
+    "answer": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {
+      "JP": {
+        "1": "I think so",
+        "2": "I rather think so",
+        "3": "Can't say one way or the other",
+        "4": "I rather don't think so",
+        "5": "I don't think so"
+      }
+    }
+  },
+  {
+    "question_id": "v51",
+    "question": "Q17 Generally, how would you describe taxes in [COUNTRY] today? (We mean all taxes together, including [wage deductions], [income tax], [taxes on goods and services] and all the rest.) Q17a First, for those with high incomes, are taxes...",
+    "answer": {
+      "1": "Much too high",
+      "2": "Too high",
+      "3": "About right",
+      "4": "Too low",
+      "5": "Much too low",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v52",
+    "question": "Q17 Generally, how would you describe taxes in [COUNTRY] today? Q17b Next, for those with middle incomes, are taxes...",
+    "answer": {
+      "1": "Much too high",
+      "2": "Too high",
+      "3": "About right",
+      "4": "Too low",
+      "5": "Much too low",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v53",
+    "question": "Q17 Generally, how would you describe taxes in [COUNTRY] today? Q17c Lastly, for those with low incomes, are taxes...",
+    "answer": {
+      "1": "Much too high",
+      "2": "Too high",
+      "3": "About right",
+      "4": "Too low",
+      "5": "Much too low",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v54",
+    "question": "Q18 In general, how often do you think that the tax authorities in [COUNTRY] do the following... Q18a ...make sure people pay their taxes.",
+    "answer": {
+      "1": "Almost always",
+      "2": "Often",
+      "3": "Sometimes",
+      "4": "Almost never",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v55",
+    "question": "Q18 In general, how often do you think that the tax authorities in [COUNTRY] do the following... Q18b ...treat everyone in accordance with the law, regardless of their contacts or position in society?",
+    "answer": {
+      "1": "Almost always",
+      "2": "Often",
+      "3": "Sometimes",
+      "4": "Almost never",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v56",
+    "question": "Q19 In general, how often do you think that major private companies in [COUNTRY] do the following: Q19a ...comply with laws and regulations?",
+    "answer": {
+      "1": "Almost always",
+      "2": "Often",
+      "3": "Sometimes",
+      "4": "Almost never",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v57",
+    "question": "Q19 In general, how often do you think that major private companies in [COUNTRY] do the following: Q19b ...try to avoid paying their taxes?",
+    "answer": {
+      "1": "Almost always",
+      "2": "Often",
+      "3": "Sometimes",
+      "4": "Almost never",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v58",
+    "question": "Q20 In your opinion, about how many politicians in [COUNTRY] are involved in corruption?",
+    "answer": {
+      "1": "Almost none",
+      "2": "A few",
+      "3": "Some",
+      "4": "Quite a lot",
+      "5": "Almost all",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v59",
+    "question": "Q21 And in your opinion, about how many public officials in [COUNTRY] are involved in corruption?",
+    "answer": {
+      "1": "Almost none",
+      "2": "A few",
+      "3": "Some",
+      "4": "Quite a lot",
+      "5": "Almost all",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v60",
+    "question": "Q22 In the last five years, how often have you or a member of your immediate family come across a public official who hinted they wanted, or asked for, a bribe or favour in return for a service?",
+    "answer": {
+      "1": "Never",
+      "2": "Seldom",
+      "3": "Occasionally",
+      "4": "Quite often",
+      "5": "Very often",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v61",
+    "question": "OPTIONAL QUESTION Q23 How successful do you think the government in [COUNTRY] is nowadays in each of the following areas? Q23a Providing health care for the sick?",
+    "answer": {
+      "1": "Very successful",
+      "2": "Quite successful",
+      "3": "Neither successful nor unsuccessful",
+      "4": "Quite unsuccessful",
+      "5": "Very unsuccessful",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {
+      "BE": {
+        "0": "Not available"
+      },
+      "CL": {
+        "0": "Not available"
+      },
+      "DE": {
+        "0": "Not available"
+      },
+      "ES": {
+        "0": "Not available"
+      },
+      "HU": {
+        "0": "Not available"
+      },
+      "IL": {
+        "0": "Not available"
+      },
+      "NO": {
+        "0": "Not available"
+      },
+      "SI": {
+        "0": "Not available"
+      },
+      "SK": {
+        "0": "Not available"
+      },
+      "TW": {
+        "0": "Not available"
+      },
+      "US": {
+        "0": "Not available"
+      },
+      "ZA": {
+        "0": "Not available"
+      }
+    }
+  },
+  {
+    "question_id": "v62",
+    "question": "OPTIONAL QUESTION Q23 How successful do you think the government in [COUNTRY] is nowadays in each of the following areas? Q23b Providing a decent standard of living for the old?",
+    "answer": {
+      "1": "Very successful",
+      "2": "Quite successful",
+      "3": "Neither successful nor unsuccessful",
+      "4": "Quite unsuccessful",
+      "5": "Very unsuccessful",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {
+      "BE": {
+        "0": "Not available"
+      },
+      "CL": {
+        "0": "Not available"
+      },
+      "DE": {
+        "0": "Not available"
+      },
+      "ES": {
+        "0": "Not available"
+      },
+      "HU": {
+        "0": "Not available"
+      },
+      "IL": {
+        "0": "Not available"
+      },
+      "NO": {
+        "0": "Not available"
+      },
+      "SI": {
+        "0": "Not available"
+      },
+      "SK": {
+        "0": "Not available"
+      },
+      "US": {
+        "0": "Not available"
+      },
+      "ZA": {
+        "0": "Not available"
+      }
+    }
+  },
+  {
+    "question_id": "v63",
+    "question": "OPTIONAL QUESTION Q23 How successful do you think the government in [COUNTRY] is nowadays in each of the following areas? Q23c Dealing with threats to [COUNTRY'S] security?",
+    "answer": {
+      "1": "Very successful",
+      "2": "Quite successful",
+      "3": "Neither successful nor unsuccessful",
+      "4": "Quite unsuccessful",
+      "5": "Very unsuccessful",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {
+      "BE": {
+        "0": "Not available"
+      },
+      "CL": {
+        "0": "Not available"
+      },
+      "DE": {
+        "0": "Not available"
+      },
+      "ES": {
+        "0": "Not available"
+      },
+      "HU": {
+        "0": "Not available"
+      },
+      "IL": {
+        "0": "Not available"
+      },
+      "NO": {
+        "0": "Not available"
+      },
+      "SI": {
+        "0": "Not available"
+      },
+      "SK": {
+        "0": "Not available"
+      },
+      "US": {
+        "0": "Not available"
+      },
+      "ZA": {
+        "0": "Not available"
+      }
+    }
+  }
+]
