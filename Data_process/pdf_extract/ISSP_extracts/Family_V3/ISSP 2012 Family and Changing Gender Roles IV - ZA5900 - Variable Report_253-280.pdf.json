@@ -1,0 +1,365 @@
+[
+  {
+    "domain": "PT_DEGR",
+    "meaning": "Portugal: Country specific highest completed degree of education",
+    "question": "What is the highest degree of education that you completed?",
+    "content": {
+      "0": "NAP, other countries",
+      "1": "None",
+      "2": "Primary school (up to 4th grade, primary education, basic level 1 (3 or 4 years))",
+      "3": "Secondary school (preparatory/5 and 6 years/5th or 6th grade, basic level 2)",
+      "4": "Educational and vocational courses type 1; Certificate of professional qualification of level 1",
+      "5": "Basic Education 3, basis level 3 (9 years)",
+      "6": "Educational and vocational courses type 2; Certificate of professional qualification of level 2",
+      "7": "Educational and vocational courses type 3 and 4; Certificate of professional qualification of level 2",
+      "8": "Secondary Education - scientific humanistic courses; Certificate of completion of one of the following levels of educ",
+      "9": "Secondary Education - technology, specialised arts, professional courses type 5 6 and 7, Certificate prof qual level 3",
+      "10": "Courses of technological specialisation, Certificate of technological specialisation",
+      "11": "Polytechnic superior level: 3 years bachelor",
+      "12": "Polytechnic superior level: 3-4 years graduation",
+      "13": "University superior level : 3-4 years graduation, bi-stage degree of 4 years",
+      "14": "Post-graduation: specialisation post-degree without attribution of academic degree, MBA",
+      "15": "University superior level : more than 4 years degree, bi-stage degree of 5 years",
+      "16": "Master degree (including integrated master)",
+      "17": "PhD",
+      "99": "No answer, don't know"
+    },
+    "special": {}
+  },
+  {
+    "domain": "RU_DEGR",
+    "meaning": "Russia: Country specific highest completed degree of education",
+    "question": "What is your highest education level that you have attained?",
+    "content": {
+      "0": "NAP, other countries",
+      "1": "Primary or less",
+      "2": "Incomplete secondary",
+      "3": "Completed secondary school",
+      "4": "Vocational school, incomplete secondary education",
+      "5": "Secondary vocational or trade school",
+      "6": "Vocational secondary school (college, technical school (tekhnikum))",
+      "7": "Incomplete higher tertiary",
+      "8": "Completed higher tertiary"
+    },
+    "special": {}
+  },
+  {
+    "domain": "SE_DEGR",
+    "meaning": "Sweden: Country specific highest completed degree of education",
+    "question": "What is your highest level of education that you have attained?",
+    "content": {
+      "0": "NAP, other countries",
+      "1": "Incomplete primary/ comprehensive school",
+      "2": "Primary/ comprehensive school pre 1962 (6-8 years)",
+      "3": "Primary/ comprehensive school post 1962 (9 years)",
+      "4": "Lower secondary school",
+      "5": "Vocational school (1963-70)",
+      "6": "Vocational school (2 years)",
+      "7": "3 or 4 years gymnasium, academic track",
+      "8": "Vocational school post 1992",
+      "9": "Gymnasium, academic track post 1992",
+      "10": "University studies without degree",
+      "11": "University degree, less than 3 years",
+      "12": "University degree, 3 years or more",
+      "13": "Doctors degree",
+      "99": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "SI_DEGR",
+    "meaning": "Slovenia: Country specific highest completed degree of education",
+    "question": "Name last school that you have finished, regularly or irregularly.",
+    "content": {
+      "0": "NAP, other countries",
+      "1": "Not completed ISCED level",
+      "2": "ISCED 1, completed primary education",
+      "3": "General ISCED 2A, access ISCED 3A general/ all 3",
+      "4": "Vocational ISCED 3C >= 2 years, no access ISCED 5",
+      "5": "Vocational ISCED 3A, access upper tier ISCED 5A/ all 5",
+      "6": "General ISCED 3A, access upper tier ISCED 5A/ all 5",
+      "7": "ISCED 5B short, advanced vocational qualifications",
+      "8": "ISCED 5A medium, bachelor/ equivalent from lower tier tertiary",
+      "9": "ISCED 5A medium, bachelor/ equivalent from upper/ single tier tertiary",
+      "10": "ISCED 5A long, master/ equivalent from upper/ single tier tertiary",
+      "11": "ISCED 6 doctoral degree",
+      "99": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "SK_DEGR",
+    "meaning": "Slovakia: Country specific highest completed degree of education",
+    "question": "What is your highest achieved education level? (Achieved means to have a certificate/ degree.)",
+    "content": {
+      "0": "NAP, other countries",
+      "1": "Incomplete elementary school",
+      "2": "Completed elementary school",
+      "3": "Completed elementary and vocational training",
+      "4": "Vocational training with certificate, apprenticeship",
+      "5": "Vocational school or trade school",
+      "6": "Completed apprenticeship training with maturity level certificate",
+      "7": "Completed vocational upper secondary education",
+      "8": "Completed general upper secondary education, grammar school",
+      "9": "Follow-up, post-maturity education",
+      "10": "University, college education, bachelor degree",
+      "11": "University, college completed master or engineering programme",
+      "12": "Postgraduate level or higher education study"
+    },
+    "special": {}
+  },
+  {
+    "domain": "TR_DEGR",
+    "meaning": "Turkey: Country specific highest completed degree of education",
+    "question": "Levels of education/ Highest degree being hold by the respondent",
+    "content": {
+      "0": "NAP, other countries",
+      "1": "No formal education",
+      "2": "Primary completed",
+      "3": "Junior High School completed",
+      "4": "High School completed",
+      "5": "Incomplete University degree",
+      "6": "University degree",
+      "99": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "TW_DEGR",
+    "meaning": "Taiwan: Country specific highest completed degree of education",
+    "question": "What is your highest education level?",
+    "content": {
+      "0": "NAP, other countries",
+      "1": "None",
+      "2": "Self-study",
+      "3": "Elementary school",
+      "4": "Junior high school",
+      "5": "Vocational junior high school",
+      "6": "Senior high school general",
+      "7": "Senior high school vocational subject",
+      "8": "Vocational senior high school",
+      "9": "Cadet school, senior high level",
+      "10": "5 years junior college, after junior high",
+      "11": "2 years junior college after vocational high",
+      "12": "3 years junior college, after high general",
+      "13": "Military, police junior college, 1 year",
+      "14": "Military, police college, 2 years",
+      "15": "Open junior college",
+      "16": "Open college",
+      "17": "Military, police college",
+      "18": "Institute of technology",
+      "19": "College (bachelor degree)",
+      "20": "Graduate school, master degree",
+      "21": "Graduate school, doctorate degree, PhD"
+    },
+    "special": {}
+  },
+  {
+    "domain": "US_DEGR",
+    "meaning": "United States: Country specific highest completed degree of education",
+    "question": "What is the highest grade in elementary school or high school that you finished and got credit for? ...",
+    "content": {
+      "0": "NAP, other countries",
+      "1": "Less than High school",
+      "2": "High school",
+      "3": "Junior college",
+      "4": "Bachelor degree",
+      "5": "Graduate school"
+    },
+    "special": {}
+  },
+  {
+    "domain": "VE_DEGR",
+    "meaning": "Venezuela: Country specific highest completed degree of education",
+    "question": "What was the last grade, year or semester approved and of what level of education?",
+    "content": {
+      "0": "NAP, other countries",
+      "1": "No read nor write",
+      "2": "Without formal schooling, but could read and write",
+      "3": "Incomplete primary",
+      "4": "Primary completed",
+      "5": "Incomplete secondary",
+      "6": "Secondary completed",
+      "7": "Incomplete technical superior",
+      "8": "Technical superior (advanced) completed",
+      "9": "Incomplete university",
+      "10": "University completed",
+      "11": "Postgraduate"
+    },
+    "special": {}
+  },
+  {
+    "domain": "ZA_DEGR",
+    "meaning": "South Africa: Country specific highest completed degree of education",
+    "question": "What is the highest level of education you have ever completed?",
+    "content": {
+      "0": "NAP, other countries",
+      "1": "No schooling",
+      "2": "Grade 0/Grade 1",
+      "3": "Sub A/Grade 1",
+      "4": "Sub B/Grade 2",
+      "5": "Grade 3/Standard 1",
+      "6": "Grade 4/Standard 2",
+      "7": "Grade 5/Standard 3",
+      "8": "Grade 6/Standard 4",
+      "9": "Grade 7/Standard 5",
+      "10": "Grade 8/Standard 6/Form 1",
+      "11": "Grade 9/Standard 7/Form 2",
+      "12": "Grade 10/Standard 8/Form 3",
+      "13": "Grade 11/Standard 9/Form 4",
+      "14": "Grade 12/Standard 10/Form 5",
+      "15": "NTC I",
+      "16": "NTC II",
+      "17": "NTC III",
+      "18": "Diploma/certificate with less than Grade 12/Std 10",
+      "19": "Diploma/certificate with Grade 12/Std 10",
+      "20": "Degree",
+      "21": "Postgraduate degree or diploma",
+      "22": "Other",
+      "98": "Don't know",
+      "99": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "DEGREE",
+    "meaning": "Highest completed degree of education: Categories for international comparison",
+    "question": "Instructions for coding DEGREE from country-specific variables",
+    "content": {
+      "0": "No formal education",
+      "1": "Primary school (elementary school)",
+      "2": "Lower secondary (secondary completed does not allow entry to university: obligatory school)",
+      "3": "Upper secondary (programs that allow entry to university or programs that allow to entry other ISCED level 3 programs - designed to prepare students for direct entry into the labour market)",
+      "4": "Post secondary, non-tertiary (other upper secondary programs toward labour market or technical formation)",
+      "5": "Lower level tertiary, first stage (also technical schools at a tertiary level)",
+      "6": "Upper level tertiary (Master, Dr.)",
+      "9": "No answer, CH: don't know"
+    },
+    "special": {}
+  },
+  {
+    "domain": "WORK",
+    "meaning": "Currently, formerly, or never in paid work",
+    "question": "Are you currently working for pay, did you work for pay in the past, or have you never been in paid work?",
+    "content": {
+      "1": "Currently in paid work",
+      "2": "Currently not in paid work, paid work in the past",
+      "3": "Never had paid work",
+      "9": "No answer"
+    },
+    "special": {
+      "BE": {
+        "1": "Currently in paid work or working unpaid in a family business"
+      },
+      "DK": {
+        "1": "Yes, full time employed (30 hours or more per week), self-employed (30 hours or more per week), employed part time (10-29 hours per week), self-employed part time (10-29 hours per week), employed less than part time (less than 10 hours per week), employed but temporarily out of work because of illness, employed but temporarily out of work because of maternity leave, parents leave or education leave, helping family member, apprentice or trainee"
+      },
+      "GB-GBN": {
+        "1": "In paid work (or away temporarily) for at least 10 hours in week, waiting to take up paid work already accepted"
+      },
+      "NO": {
+        "1": "Yes, I am in paid work now, yes, but temporarily away, due to illness, on leave, or similar"
+      },
+      "PL": {
+        "1": "Work full time (including farmers and others persons working in their own business), working part time, by fits and starts, seasonly, commission, apprentice, maternity/ parental leave"
+      }
+    }
+  },
+  {
+    "domain": "WRKHRS",
+    "meaning": "Hours worked weekly",
+    "question": "How many hours, on average, do you usually work for pay in a normal week, including overtime?",
+    "content": {
+      "0": "NAP (code 2 or 3 in WORK)",
+      "1": "One hour",
+      "96": "96 hours and more",
+      "97": "TW: time varies",
+      "98": "Don't know",
+      "99": "No answer"
+    },
+    "special": {
+      "AR": {
+        "0": "NAP (code 3 in WORK)"
+      },
+      "DK": {
+        "0": "NAP (code 3 in WORK)"
+      },
+      "VE": {
+        "0": "NAP (code 3 in WORK)"
+      }
+    }
+  },
+  {
+    "domain": "EMPREL",
+    "meaning": "Employment relationship",
+    "question": "Are/ were you an employee, self-employed, or working for your own family's business?",
+    "content": {
+      "0": "NAP (code 3 in WORK)",
+      "1": "Employee",
+      "2": "Self-employed without employees",
+      "3": "Self-employed with employees",
+      "4": "Working for own family's business",
+      "8": "Don't know",
+      "9": "No answer"
+    },
+    "special": {
+      "HU": {
+        "0": "NAP (code 2, 3 in WORK)"
+      }
+    }
+  },
+  {
+    "domain": "NEMPLOY",
+    "meaning": "Self-employed: how many employees",
+    "question": "(If self-employed with employees) How many employees do/ did you have, not counting yourself?",
+    "content": {
+      "0": "NAP (code 1, 2, 4, 0 in EMPREL)",
+      "1": "1 employee",
+      "9995": "9995 employees or more",
+      "9998": "Don't know",
+      "9999": "No answer"
+    },
+    "special": {
+      "NL": {
+        "4": "2-5 employees",
+        "9": "6-11 employees",
+        "15": "> 11 employees"
+      },
+      "US": {
+        "97": "97 employees or more"
+      }
+    }
+  },
+  {
+    "domain": "WRKSUP",
+    "meaning": "Supervise other employees",
+    "question": "Do/ did you supervise other employees?",
+    "content": {
+      "0": "NAP (code 3 in WORK)",
+      "1": "Yes",
+      "2": "No",
+      "8": "Don't know",
+      "9": "No answer"
+    },
+    "special": {
+      "AR": {
+        "0": "NAP (code 2,3,0 in EMPREL)"
+      },
+      "BG": {
+        "0": "NAP (code 2,3,0 in EMPREL)"
+      },
+      "IE": {
+        "0": "NAP (code 2,0 in EMPREL)"
+      },
+      "SK": {
+        "0": "NAP (code 3,0 in EMPREL)"
+      },
+      "US": {
+        "0": "NAP (code 2,3 in WORK)"
+      },
+      "VE": {
+        "0": "NAP (code 2,0 in EMPREL)"
+      }
+    }
+  }
+]

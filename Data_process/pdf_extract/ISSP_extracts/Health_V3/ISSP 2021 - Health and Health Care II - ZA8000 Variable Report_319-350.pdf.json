@@ -1,0 +1,216 @@
+[
+  {
+    "domain": "SPMAINST",
+    "meaning": "Spouse/partner's main status",
+    "question": "Which of the following BEST describes your spouse's/partner's current situation? If temporarily not working due to illness/parental leave/etc., refer to normal work situation.",
+    "content": {
+      "1": "In paid work",
+      "2": "Unemployed and looking for a job",
+      "3": "In education",
+      "4": "Apprentice or trainee",
+      "5": "Permanently sick or disabled",
+      "6": "Retired",
+      "7": "Domestic work",
+      "8": "In compulsory military service or community service",
+      "9": "Other",
+      "-4": "NAP (Code -4 or 3 in SPWORK)",
+      "-9": "No answer"
+    },
+    "special": {
+      "AT": {
+        "9": "Includes partners on parental leave"
+      },
+      "AU": {
+        "8": "Category 8 not used"
+      },
+      "CZ": {
+        "8": "Category 8 not used"
+      },
+      "DE": {
+        "8": "Category 8 not used"
+      },
+      "HR": {
+        "8": "Category 8 omitted"
+      },
+      "FR": {
+        "8": "Includes Civic Service"
+      },
+      "HU": {
+        "8": "Category 8 not used"
+      },
+      "IS": {
+        "8": "Category 8 not used"
+      },
+      "IT": {
+        "8": "Category 8 not used"
+      },
+      "NL": {
+        "8": "Category 8 not used"
+      },
+      "NZ": {
+        "8": "Category 8 and 9 not used"
+      },
+      "PL": {
+        "8": "Category 8 not used"
+      },
+      "SI": {
+        "8": "Category 8 not used"
+      },
+      "SK": {
+        "8": "Category 8 not asked"
+      },
+      "ZA": {
+        "8": "Includes community service"
+      }
+    }
+  },
+  {
+    "domain": "UNION",
+    "meaning": "Trade union membership",
+    "question": "Are you or have you ever been a member of a trade union or similar organisation? If yes: is that currently or only previously?",
+    "content": {
+      "1": "Yes, currently",
+      "2": "Yes, previously but not currently",
+      "3": "No, never",
+      "-4": "NAP (Code 3 in WORK for IL/JP/NZ)",
+      "-7": "Refused",
+      "-9": "No answer"
+    },
+    "special": {
+      "IL": {
+        "-4": "NAP (Code 3 in WORK)"
+      },
+      "JP": {
+        "-4": "NAP (Code 3 in WORK)"
+      },
+      "NZ": {
+        "-4": "NAP (Code 3 in WORK)"
+      }
+    }
+  },
+  {
+    "domain": "AT_RELIG",
+    "meaning": "Country specific religious affiliation or denomination: Austria",
+    "question": "Which denomination do you belong to?",
+    "content": {
+      "0": "No religion",
+      "1": "Roman Catholic church",
+      "2": "Lutheran Church (without free churches)",
+      "3": "Lutheran free church",
+      "4": "Christian-orthodox denomination",
+      "5": "Other Christian denomination",
+      "6": "Muslim denomination",
+      "7": "Other non-christian denomination",
+      "-2": "NAP, other countries",
+      "-7": "Refused",
+      "-9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "AU_RELIG",
+    "meaning": "Country specific religious affiliation or denomination: Australia",
+    "question": "Do you belong to a religion and, if yes, which religion do you belong to?",
+    "content": {
+      "0": "No religion",
+      "1": "Catholic",
+      "2": "Protestant",
+      "3": "Anglican/ Church of England",
+      "4": "Uniting Church/ Methodist",
+      "5": "Pentecostal",
+      "6": "Orthodox",
+      "7": "Other Christian",
+      "8": "Jewish",
+      "9": "Islamic",
+      "10": "Buddhist",
+      "11": "Hindu",
+      "12": "Other Asian religions",
+      "13": "Other religions",
+      "-2": "NAP, other countries",
+      "-7": "Refused",
+      "-9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "CH_RELIG",
+    "meaning": "Country specific religious affiliation or denomination: Switzerland",
+    "question": "Currently, do you consider yourself as belonging to any particular religion or denomination? If yes: which one?",
+    "content": {
+      "0": "No religion",
+      "100": "Roman Catholic",
+      "200": "Protestant, reformed",
+      "290": "Other Protestant (no specific religion mentioned)",
+      "300": "Christian Orthodox",
+      "400": "Other Christian religions",
+      "500": "Jewish",
+      "600": "Islam",
+      "700": "Buddhism",
+      "800": "Hinduism",
+      "970": "Other non-Christian religions",
+      "-2": "NAP, other countries",
+      "-9": "No answer"
+    },
+    "special": {
+      "CH": {
+        "100": "Roman Catholic",
+        "200": "Protestant, reformed"
+      }
+    }
+  },
+  {
+    "domain": "CN_RELIG",
+    "meaning": "Country specific religious affiliation or denomination: China",
+    "question": "What is your religious belief?",
+    "content": {
+      "0": "No religion",
+      "1": "Catholicism",
+      "2": "Christianism",
+      "3": "Islamic",
+      "4": "Buddhist",
+      "5": "Other Asian religions",
+      "6": "Other religions",
+      "-2": "NAP, other countries"
+    },
+    "special": {}
+  },
+  {
+    "domain": "CZ_RELIG",
+    "meaning": "Country specific religious affiliation or denomination: Czech Republic",
+    "question": "Do you belong to any religion and if yes what religion do you belong to?",
+    "content": {
+      "0": "No religion",
+      "1": "Roman Catholic",
+      "2": "Czech-Brethren Evangelical Church",
+      "3": "Czechoslovak Hussite",
+      "4": "Other Christians",
+      "5": "Other Non-Christians",
+      "-2": "NAP, other countries",
+      "-7": "Refused",
+      "-9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "DE_RELIG",
+    "meaning": "Country specific religious affiliation or denomination: Germany",
+    "question": "Which religious confession do you belong to?",
+    "content": {
+      "0": "No religion",
+      "1": "Roman Catholic",
+      "2": "German Protestant Church",
+      "3": "Protestant Free Church",
+      "4": "Orthodox",
+      "5": "Other Christian denomination",
+      "6": "Islamic religion",
+      "7": "Jewish religion",
+      "8": "Buddhist religion",
+      "9": "Hindu religion",
+      "10": "Other non-Christian religion",
+      "-2": "NAP, other countries",
+      "-7": "Refused",
+      "-9": "No answer"
+    },
+    "special": {}
+  }
+]

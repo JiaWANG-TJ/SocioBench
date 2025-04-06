@@ -1,0 +1,281 @@
+[
+  {
+    "domain": "ZA_ISCD",
+    "meaning": "South Africa: Country specific highest completed degree of education",
+    "question": "What is the highest level of education you have ever completed?",
+    "content": {
+      "0": "No schooling",
+      "20": "Grade R; Grade 0",
+      "100": "Grade 1-7; Grade 1-Standard 5; ABET 2-3",
+      "244": "Grade 8-9; Standard 6-7; Form 1-2",
+      "254": "NTC 1-NTC 3; N1-N3; NC",
+      "344": "Grade 10-12; Standard 8-10; Form 3-5; Matric",
+      "353": "NTC 4-NTC 5; N4-N5",
+      "454": "NTC 6; N6",
+      "550": "Diploma",
+      "600": "Bachelor degree; Advanced diploma (AD); Post grad. diploma (PGD); Honours degree",
+      "700": "Master degree",
+      "800": "Doctorate degree, Laureatus in Technology",
+      "-2": "NAP, other countries",
+      "-9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "ISCED",
+    "meaning": "ISCED 2011: highest completed degree of education [merged variable]",
+    "question": "This variable collates the information on highest completed educational qualification/ degree of respondents coded in the nat_ISCD variables into a single variable for all countries.",
+    "content": {
+      "000": "Less than primary education",
+      "010": "Less than primary: Never attended an education programme",
+      "020": "Less than primary: Some early childhood education",
+      "030": "Less than primary: Some primary education (excl. level completion)",
+      "100": "Primary education",
+      "200": "Lower secondary education",
+      "240": "Lower secondary education: General",
+      "242": "Lower sec general: Partial level completion, excl. direct access to upper sec educ",
+      "243": "Lower sec general: Level completion, excl. direct access to upper sec educ",
+      "244": "Lower sec general: Level completion, incl. direct access to upper sec education",
+      "250": "Lower secondary education: Vocational",
+      "252": "Lower sec voc: Partial level completion, excl. direct access to upper sec educ",
+      "253": "Lower sec voc: Level completion, excl. direct access to upper sec educ",
+      "254": "Lower sec voc: Level completion, incl. direct access to upper sec educ",
+      "300": "Upper secondary education",
+      "340": "Upper secondary education: General",
+      "342": "Upper sec general: Partial level completion, excl. direct access to tert educ",
+      "343": "Upper sec general: Level completion, excl. direct access to tert educ",
+      "344": "Upper sec general: Level completion, incl. direct access to tert educ",
+      "350": "Upper secondary education: Vocational",
+      "352": "Upper sec voc: Partial level completion, excl. direct access to tert educ",
+      "353": "Upper sec voc: Level completion, excl. direct access to tert educ",
+      "354": "Upper sec voc: Level completion, incl. direct access to tert educ",
+      "400": "Post-secondary non-tertiary education",
+      "440": "Post-secondary non-tertiary education: General",
+      "443": "Post-sec non-tert educ gen: Level completion, excl. direct access to tert educ",
+      "444": "Post-sec non-tert educ gen: Level completion, incl. direct access to tert educ",
+      "450": "Post-secondary non-tertiary education: Vocational",
+      "453": "Post-sec non-tert educ voc: Level completion, excl. direct access to tert educ",
+      "454": "Post-sec non-tert educ voc: Level completion, incl. direct access to tert educ",
+      "500": "Short-cycle tertiary education",
+      "540": "Short-cycle tertiary education: General",
+      "550": "Short-cycle tertiary education: Vocational",
+      "600": "Bachelor’s or equivalent level",
+      "640": "Bachelor’s or equivalent level: Academic",
+      "650": "Bachelor’s or equivalent level: Professional",
+      "700": "Master’s or equivalent level",
+      "740": "Master’s or equivalent level: Academic",
+      "750": "Master’s or equivalent level: Professional",
+      "800": "Doctoral or equivalent level",
+      "840": "Doctoral or equivalent level: Academic",
+      "850": "Doctoral or equivalent level: Professional",
+      "900": "Not elsewhere classified",
+      "-9": "No answer"
+    },
+    "special": {
+      "NO": {
+        "700": "Master’s or equivalent level (including doctoral or equivalent degree)"
+      }
+    }
+  },
+  {
+    "domain": "EDULEVEL",
+    "meaning": "ISCED 2011 simplified: highest completed degree of education",
+    "question": "EDULEVEL is compiled from the variable ISCED by truncation. Reducing ISCED to the first digit takes EDULEVEL closer to an ordinal concept of educational achievement.",
+    "content": {
+      "0": "No formal education",
+      "1": "Primary education",
+      "2": "Lower secondary",
+      "3": "Upper secondary",
+      "4": "Post secondary, non-tertiary",
+      "5": "Short-cycle tertiary",
+      "6": "Lower level tertiary, BA",
+      "7": "Upper level tertiary, MA",
+      "8": "PhD, Post Tertiary Specialization",
+      "-9": "No answer, not classifiable"
+    },
+    "special": {
+      "NO": {
+        "7": "Master’s or equivalent level (including doctoral or equivalent degree)"
+      }
+    }
+  },
+  {
+    "domain": "WORK",
+    "meaning": "Currently, formerly, or never in paid work",
+    "question": "Are you currently working for pay, did you work for pay in the past, or have you never been in paid work?",
+    "content": {
+      "1": "Currently in paid work",
+      "2": "Currently not in paid work, paid work in the past",
+      "3": "Never had paid work",
+      "-9": "No answer"
+    },
+    "special": {
+      "DK": {
+        "2": "Currently not in paid work, paid work in the past (including unemployed, laid off, looking for work)"
+      },
+      "US": {
+        "2": "Currently not in paid work, paid work in the past (including unemployed, laid off, looking for work)"
+      }
+    }
+  },
+  {
+    "domain": "WRKHRS",
+    "meaning": "Hours worked weekly",
+    "question": "How many hours, on average, do you usually work for pay in a normal week, including overtime?",
+    "content": {
+      "01": "One hour",
+      "89": "89 hours; US: 89 hours or more",
+      "96": "96 hours or more",
+      "-4": "NAP (Code 2 or 3 in WORK)",
+      "-8": "Don't know",
+      "-9": "No answer"
+    },
+    "special": {
+      "CH": {
+        "-4": "NAP (Code 2 in WORK)"
+      },
+      "DK": {
+        "-4": "NAP (Code 2 in WORK)"
+      },
+      "IS": {
+        "-4": "NAP (Code 2 in WORK)"
+      },
+      "PL": {
+        "-4": "NAP (Code 2 in WORK)"
+      },
+      "TW": {
+        "-4": "NAP (Code 2 in WORK)"
+      }
+    }
+  },
+  {
+    "domain": "EMPREL",
+    "meaning": "Employment relationship",
+    "question": "Are/ were you an employee, self-employed, or working for your own family's business?",
+    "content": {
+      "1": "Employee",
+      "2": "Self-employed without employees",
+      "3": "Self-employed with 1 to 9 employees; SR: Self-empl. with 1 to 11 empl.",
+      "4": "Self-employed with 10 employees or more; SR: Self-empl. with 12 or more",
+      "5": "Working for own family's business",
+      "-4": "NAP (Code 3 in WORK)",
+      "-9": "No answer"
+    },
+    "special": {
+      "CN": {
+        "-9": "No answer (agricultural work not counted as paid work)"
+      },
+      "DK": {
+        "-4": "NAP (Code 3 in WORK)"
+      },
+      "SR": {
+        "3": "Self-employed with 1 to 11 employees",
+        "4": "Self-employed with 12 or more employees"
+      },
+      "TW": {
+        "-4": "NAP (Code 3 in WORK)"
+      }
+    }
+  },
+  {
+    "domain": "WRKSUP",
+    "meaning": "Supervise other employees",
+    "question": "Do/ did you supervise other employees?",
+    "content": {
+      "1": "Yes",
+      "2": "No",
+      "-4": "NAP (Code 3 in WORK; US: Code 2,3 in WORK)",
+      "-9": "No answer"
+    },
+    "special": {
+      "CH": {
+        "2": "No (self-employed without employees)"
+      },
+      "CN": {
+        "-9": "No answer (agricultural work not counted as paid work)"
+      },
+      "DK": {
+        "1": "Yes (self-employed with employees)"
+      },
+      "HU": {
+        "2": "No (not all professional groups addressed)"
+      },
+      "TW": {
+        "2": "No (self-employed without employees)"
+      },
+      "US": {
+        "-4": "NAP (Code 2,3 in WORK)"
+      }
+    }
+  },
+  {
+    "domain": "NSUP",
+    "meaning": "Number of other employees supervised",
+    "question": "How many other employees do/ did you supervise?",
+    "content": {
+      "1": "1 employee; SR: 0-1 subordinate, not supervised",
+      "4": "4 employees; NL, SR: 2-5 subordinates",
+      "8": "8 employees; NL: 6-9 subordinates",
+      "9": "9 employees; SR: 6-11 subordinates",
+      "18": "18 employees; NL: 10-25 subordinates",
+      "19": "19 employees; SR: 12-25 subordinates",
+      "30": "30 employees; NL, SR: More than 25 subordinates",
+      "1000": "1000 employees; FI: 1000 employees or more",
+      "9995": "9995 employees or more",
+      "-4": "NAP (code 2, -4 in WRKSUP)",
+      "-9": "No answer"
+    },
+    "special": {
+      "CN": {
+        "-9": "No answer (agricultural work not counted as paid work)"
+      },
+      "FI": {
+        "1000": "1000 employees or more (top-coded for anonymisation)"
+      },
+      "NL": {
+        "4": "2-5 subordinates",
+        "8": "6-9 subordinates",
+        "18": "10-25 subordinates",
+        "30": "More than 25 subordinates"
+      },
+      "NZ": {
+        "-9": "No answer (asked as free text)"
+      },
+      "SR": {
+        "1": "0-1 subordinate, not supervised",
+        "4": "2-5 subordinates",
+        "9": "6-11 subordinates",
+        "19": "12-25 subordinates",
+        "30": "More than 25 subordinates"
+      }
+    }
+  },
+  {
+    "domain": "TYPORG1",
+    "meaning": "Type of organisation, for-profit/non-profit",
+    "question": "Do/did you work for a for-profit organisation or for a non-profit organisation?",
+    "content": {
+      "1": "For-profit organisation",
+      "2": "Non-profit organisation",
+      "-1": "Not available (US)",
+      "-4": "NAP (Code 3 in WORK)",
+      "-8": "Don't know",
+      "-9": "No answer"
+    },
+    "special": {
+      "CN": {
+        "-9": "No answer (agricultural work not counted as paid work)"
+      },
+      "DK": {
+        "2": "Non-profit organisation (public sector employees)"
+      },
+      "FR": {
+        "1": "For-profit organisation (publicly owned firm, private firm, self-employed, family's business)",
+        "2": "Non-profit organisation (government or local communities, association, mutual company, cooperative)"
+      },
+      "TW": {
+        "-4": "NAP (Code 3 in WORK)"
+      }
+    }
+  }
+]

@@ -1,0 +1,738 @@
+[
+  {
+    "domain": "V18",
+    "meaning": "Q5a Single parent can raise child as well",
+    "question": "Children grow up in different kinds of families. To what extent do you agree or disagree to the following statements? (PLEASE TICK ONE BOX ON EACH LINE) Q5a One parent can bring up a child as well as two parents together.",
+    "content": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree",
+      "8": "Can't choose, CA:can't choose+ no answer, KR:don't know+refused, NL:don't know",
+      "9": "No answer"
+    },
+    "special": {
+      "ES": {
+        "0": "NAP: answer categories differ from ISSP standard"
+      },
+      "HU": {
+        "0": "NAP: answer categories differ from ISSP standard"
+      }
+    }
+  },
+  {
+    "domain": "ES_V18",
+    "meaning": "Q5a Single parent can raise child as well",
+    "question": "Children grow up in different kinds of families. To what extent do you agree or disagree to the following statements? (PLEASE TICK ONE BOX ON EACH LINE) Q5a One parent can bring up a child as well as two parents together.",
+    "content": {
+      "0": "NAP: other countries",
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Disagree",
+      "4": "Strongly disagree",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "HU_V18",
+    "meaning": "Q5a Single parent can raise child as well",
+    "question": "Children grow up in different kinds of families. To what extent do you agree or disagree to the following statements? (PLEASE TICK ONE BOX ON EACH LINE) Q5a One parent can bring up a child as well as two parents together.",
+    "content": {
+      "0": "NAP: other countries",
+      "1": "Completely agree",
+      "2": "Rather agree",
+      "3": "Rather disagree",
+      "4": "Not agree",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "V19",
+    "meaning": "Q5b Same sex female couple can raise child as well",
+    "question": "Children grow up in different kinds of families. To what extent do you agree or disagree to the following statements? (PLEASE TICK ONE BOX ON EACH LINE) Q5b A same sex female couple can bring up a child as well as a male-female couple.",
+    "content": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree",
+      "8": "Can't choose, CA:can't choose+ no answer, KR:don't know+refused, NL:don't know",
+      "9": "No answer"
+    },
+    "special": {
+      "ES": {
+        "0": "NAP: answer categories differ from ISSP standard"
+      },
+      "HU": {
+        "0": "NAP: answer categories differ from ISSP standard"
+      }
+    }
+  },
+  {
+    "domain": "ES_V19",
+    "meaning": "Q5b Same sex female couple can raise child as well",
+    "question": "Children grow up in different kinds of families. To what extent do you agree or disagree to the following statements? (PLEASE TICK ONE BOX ON EACH LINE) Q5b A same sex female couple can bring up a child as well as a male-female couple.",
+    "content": {
+      "0": "NAP: other countries",
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Disagree",
+      "4": "Strongly disagree",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "HU_V19",
+    "meaning": "Q5b Same sex female couple can raise child as well",
+    "question": "Children grow up in different kinds of families. To what extent do you agree or disagree to the following statements? (PLEASE TICK ONE BOX ON EACH LINE) Q5b A same sex female couple can bring up a child as well as a male-female couple.",
+    "content": {
+      "0": "NAP: other countries",
+      "1": "Completely agree",
+      "2": "Rather agree",
+      "3": "Rather disagree",
+      "4": "Not agree",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "V20",
+    "meaning": "Q5c Same sex male couple can raise child as well",
+    "question": "Children grow up in different kinds of families. To what extent do you agree or disagree to the following statements? (PLEASE TICK ONE BOX ON EACH LINE) Q5c A same sex male couple can bring up a child as well as a male-female couple.",
+    "content": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree",
+      "8": "Can't choose, CA:can't choose+ no answer, KR:don't know+refused, NL:don't know",
+      "9": "No answer"
+    },
+    "special": {
+      "ES": {
+        "0": "NAP: answer categories differ from ISSP standard"
+      },
+      "HU": {
+        "0": "NAP: answer categories differ from ISSP standard"
+      }
+    }
+  },
+  {
+    "domain": "ES_V20",
+    "meaning": "Q5c Same sex male couple can raise child as well",
+    "question": "Children grow up in different kinds of families. To what extent do you agree or disagree to the following statements? (PLEASE TICK ONE BOX ON EACH LINE) Q5c A same sex male couple can bring up a child as well as a male-female couple.",
+    "content": {
+      "0": "NAP: other countries",
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Disagree",
+      "4": "Strongly disagree",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "HU_V20",
+    "meaning": "Q5c Same sex male couple can raise child as well",
+    "question": "Children grow up in different kinds of families. To what extent do you agree or disagree to the following statements? (PLEASE TICK ONE BOX ON EACH LINE) Q5c A same sex male couple can bring up a child as well as a male-female couple.",
+    "content": {
+      "0": "NAP: other countries",
+      "1": "Completely agree",
+      "2": "Rather agree",
+      "3": "Rather disagree",
+      "4": "Not agree",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "V21",
+    "meaning": "Q6 Ideal number of children for a family",
+    "question": "All in all, what do you think is the ideal number of children for a family to have? (PLEASE WRITE THE NUMBER IN THE BOX)",
+    "content": {
+      "0": "No children",
+      "1": "1 child",
+      "2": "2 children",
+      "45": "45 children",
+      "98": "Can't choose",
+      "99": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "V22",
+    "meaning": "Q7a Children: Watching grow up is greatest joy",
+    "question": "To what extent do you agree or disagree...? (PLEASE TICK ONE BOX ON EACH LINE) Q7a Watching children grow up is life's greatest joy.",
+    "content": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree",
+      "8": "Can't choose, CA:can't choose+ no answer, KR:don't know+refused, NL:don't know",
+      "9": "No answer"
+    },
+    "special": {
+      "ES": {
+        "0": "NAP: answer categories differ from ISSP standard"
+      }
+    }
+  },
+  {
+    "domain": "ES_V22",
+    "meaning": "Q7a Children: Watching grow up is greatest joy",
+    "question": "To what extent do you agree or disagree...? (PLEASE TICK ONE BOX ON EACH LINE) Q7a Watching children grow up is life's greatest joy.",
+    "content": {
+      "0": "NAP: other countries",
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Disagree",
+      "4": "Strongly disagree",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "V23",
+    "meaning": "Q7b Children: Interfere too much with parents freedom",
+    "question": "To what extent do you agree or disagree...? (PLEASE TICK ONE BOX ON EACH LINE) Q7b Having children interferes too much with the freedom of parents.",
+    "content": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree",
+      "8": "Can't choose, CA:can't choose+ no answer, KR:don't know+refused, NL:don't know",
+      "9": "No answer"
+    },
+    "special": {
+      "ES": {
+        "0": "NAP: answer categories differ from ISSP standard"
+      }
+    }
+  },
+  {
+    "domain": "ES_V23",
+    "meaning": "Q7b Children: Interfere too much with parents freedom",
+    "question": "To what extent do you agree or disagree...? (PLEASE TICK ONE BOX ON EACH LINE) Q7b Having children interferes too much with the freedom of parents.",
+    "content": {
+      "0": "NAP: other countries",
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Disagree",
+      "4": "Strongly disagree",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "V24",
+    "meaning": "Q7c Children: Financial burden on their parents",
+    "question": "To what extent do you agree or disagree...? (PLEASE TICK ONE BOX ON EACH LINE) Q7c Children are a financial burden on their parents.",
+    "content": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree",
+      "8": "Can't choose, CA:can't choose+ no answer, KR:don't know+refused, NL:don't know",
+      "9": "No answer"
+    },
+    "special": {
+      "ES": {
+        "0": "NAP: answer categories differ from ISSP standard"
+      }
+    }
+  },
+  {
+    "domain": "ES_V24",
+    "meaning": "Q7c Children: Financial burden on their parents",
+    "question": "To what extent do you agree or disagree...? (PLEASE TICK ONE BOX ON EACH LINE) Q7c Children are a financial burden on their parents.",
+    "content": {
+      "0": "NAP: other countries",
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Disagree",
+      "4": "Strongly disagree",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "V25",
+    "meaning": "Q7d Children: Restrict career chances of one or both parents",
+    "question": "To what extent do you agree or disagree...? (PLEASE TICK ONE BOX ON EACH LINE) Q7d Having children restricts the employment and career chances of one or both parents.",
+    "content": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree",
+      "8": "Can't choose, CA:can't choose+ no answer, KR:don't know+refused, NL:don't know",
+      "9": "No answer"
+    },
+    "special": {
+      "ES": {
+        "0": "NAP: answer categories differ from ISSP standard"
+      }
+    }
+  },
+  {
+    "domain": "ES_V25",
+    "meaning": "Q7d Children: Restrict career chances of one or both parents",
+    "question": "To what extent do you agree or disagree...? (PLEASE TICK ONE BOX ON EACH LINE) Q7d Having children restricts the employment and career chances of one or both parents.",
+    "content": {
+      "0": "NAP: other countries",
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Disagree",
+      "4": "Strongly disagree",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "V26",
+    "meaning": "Q7e Children: Increase social standing in society",
+    "question": "To what extent do you agree or disagree...? (PLEASE TICK ONE BOX ON EACH LINE) Q7e Having children increases people's social standing in society.",
+    "content": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree",
+      "8": "Can't choose, CA:can't choose+ no answer, KR:don't know+refused, NL:don't know",
+      "9": "No answer"
+    },
+    "special": {
+      "ES": {
+        "0": "NAP: answer categories differ from ISSP standard"
+      }
+    }
+  },
+  {
+    "domain": "ES_V26",
+    "meaning": "Q7e Children: Increase social standing in society",
+    "question": "To what extent do you agree or disagree...? (PLEASE TICK ONE BOX ON EACH LINE) Q7e Having children increases people's social standing in society.",
+    "content": {
+      "0": "NAP: other countries",
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Disagree",
+      "4": "Strongly disagree",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "V27",
+    "meaning": "Q7f Children: Adult children are important source of help for elderly parents",
+    "question": "To what extent do you agree or disagree...? (PLEASE TICK ONE BOX ON EACH LINE) Q7f Adult children are an important source of help for elderly parents.",
+    "content": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree",
+      "8": "Can't choose, CA:can't choose+ no answer, KR:don't know+refused, NL:don't know",
+      "9": "No answer"
+    },
+    "special": {
+      "ES": {
+        "0": "NAP: answer categories differ from ISSP standard"
+      }
+    }
+  },
+  {
+    "domain": "ES_V27",
+    "meaning": "Q7f Children: Adult children are important source of help for elderly parents",
+    "question": "To what extent do you agree or disagree...? (PLEASE TICK ONE BOX ON EACH LINE) Q7f Adult children are an important source of help for elderly parents.",
+    "content": {
+      "0": "NAP: other countries",
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Disagree",
+      "4": "Strongly disagree",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "V28",
+    "meaning": "Q8 Paid leave: No/ Yes, how long should paid leave be available",
+    "question": "Consider a couple who both work full-time and now have a new born child. One of them stops working for some time to care for their child. Do you think there should be paid leave available and, if so, for how long? (PLEASE ENTER THE NUMBER)",
+    "content": {
+      "0": "No, there should be no paid leave",
+      "1": "Yes, 1 month",
+      "2": "Yes, 2 months",
+      "84": "Yes, 84 months",
+      "90": "Yes, 90 months",
+      "95": "Yes, 95 months or more",
+      "98": "Don't know, BG: can't choose",
+      "99": "No answer"
+    },
+    "special": {
+      "ES": {
+        "94": "Yes, 94 months and more",
+        "95": "Yes, doesn't specify period of paid leave"
+      },
+      "IS": {
+        "97": "Yes, but don't know how many months"
+      },
+      "TW": {
+        "93": "Yes, 4-6 years",
+        "94": "Yes, 7 or more years",
+        "95": "Yes, but don't know, how long it should be"
+      }
+    }
+  },
+  {
+    "domain": "V29",
+    "meaning": "Q9 Paid leave: Who should pay",
+    "question": "IF THERE SHOULD BE PAID LEAVE And who should pay for this leave? (PLEASE TICK ONE BOX ONLY)",
+    "content": {
+      "0": "Not applicable (code 0 in V28)",
+      "1": "The government",
+      "2": "The employer",
+      "3": "Both the government and the employer",
+      "4": "Other sources",
+      "8": "Can't choose, CA:can't choose+ no answer, KR:don't know+refused, NL:don't know",
+      "9": "No answer"
+    },
+    "special": {
+      "AR": {
+        "0": "NAP (code 0,98,99 in V28)"
+      },
+      "BG": {
+        "0": "NAP (code 0,98 in V28)"
+      },
+      "MX": {
+        "0": "NAP (code 0,98,99 in V28)"
+      },
+      "TW": {
+        "0": "NAP (code 0,98,99 in V28)"
+      }
+    }
+  },
+  {
+    "domain": "V30",
+    "meaning": "Q10 Paid leave: How to divide between parents",
+    "question": "IF THERE SHOULD BE PAID LEAVE Still thinking about the same couple, if both are in a similar work situation and are eligible for paid leave, how should this paid leave period be divided between the mother and the father? (PLEASE TICK ONE BOX ONLY)",
+    "content": {
+      "0": "Not applicable (code 0 in V28)",
+      "1": "Mother entire, father not any",
+      "2": "Mother most, father some",
+      "3": "Mother and father half",
+      "4": "Father most, mother some",
+      "5": "Father entire, mother not any",
+      "8": "Can't choose, CA:can't choose+no answer, NL:don't know",
+      "9": "No answer"
+    },
+    "special": {
+      "AR": {
+        "0": "NAP (code 0,98,99 in V28)"
+      },
+      "BG": {
+        "0": "NAP (code 0,98 in V28)"
+      },
+      "MX": {
+        "0": "NAP (code 0,98,99 in V28)"
+      },
+      "TW": {
+        "0": "NAP (code 0,98,99 in V28)"
+      }
+    }
+  },
+  {
+    "domain": "V31",
+    "meaning": "Q11a Child under school age: Best parental childcare option",
+    "question": "Consider a family with a child under school age. What, in your opinion, is the best way for them to organize their family and work life? (PLEASE TICK ONE BOX ONLY)",
+    "content": {
+      "1": "Mother at home, father full-time",
+      "2": "Mother part-time, father full-time",
+      "3": "Both, mother and father full-time",
+      "4": "Both, mother and father part-time",
+      "5": "Father part-time, mother full-time",
+      "6": "Father at home, mother full-time",
+      "8": "Can't choose, CA:can't choose+no answer, NL:don't know",
+      "9": "No answer"
+    },
+    "special": {
+      "ES": {
+        "6": "Not asked"
+      }
+    }
+  },
+  {
+    "domain": "V32",
+    "meaning": "Q11b Child under school age: Least desirable parental childcare",
+    "question": "And, in your opinion, which of these options would be the least desirable? (PLEASE TICK ONE BOX ONLY)",
+    "content": {
+      "1": "Mother at home, father full-time",
+      "2": "Mother part-time, father full-time",
+      "3": "Both, mother and father full-time",
+      "4": "Both, mother and father part-time",
+      "5": "Father part-time, mother full-time",
+      "6": "Father at home, mother full-time",
+      "8": "Can't choose, CA:can't choose+no answer, NL:don't know",
+      "9": "No answer"
+    },
+    "special": {
+      "ES": {
+        "6": "Not asked"
+      }
+    }
+  },
+  {
+    "domain": "V33",
+    "meaning": "Q12 Child under school age: Provider of childcare",
+    "question": "People have different views on childcare for children under school age. Who do you think should primarily provide childcare? (PLEASE TICK ONE BOX ONLY)",
+    "content": {
+      "1": "Family members",
+      "2": "Government agencies",
+      "3": "Non-profit organizations",
+      "4": "Private childcare providers",
+      "5": "Employers",
+      "8": "Can't choose, CA:can't choose+ no answer, KR:don't know+refused, NL:don't know",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "V34",
+    "meaning": "Q13 Child under school age: Covering childcare costs",
+    "question": "Who do you think should primarily cover the costs of childcare for children under school age? (PLEASE TICK ONE BOX ONLY)",
+    "content": {
+      "1": "The family itself",
+      "2": "The government/ public funds",
+      "3": "The employers",
+      "8": "Can't choose, CA:can't choose+no answer, NL:don't know",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "V35",
+    "meaning": "Q14 Elderly people: Provider of domestic help",
+    "question": "Thinking about elderly people who need some help in their everyday lives, such as help with grocery shopping, cleaning the house, doing the laundry etc. Who do you think should primarily provide this help? (PLEASE TICK ONE BOX ONLY)",
+    "content": {
+      "1": "Family members",
+      "2": "Government agencies",
+      "3": "Non-profit organizations",
+      "4": "Private providers",
+      "5": "NL: Employers",
+      "8": "Can't choose, CA:can't choose+ no answer, NL:don't know",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "V36",
+    "meaning": "Q15 Elderly people: Covering domestic help costs",
+    "question": "And who do you think should primarily cover the costs of this help to these elderly people? (PLEASE TICK ONE BOX ON EACH LINE)",
+    "content": {
+      "1": "The elderly people themselves/ their family",
+      "2": "The government/ public funds",
+      "8": "Can't choose, CA:can't choose+no answer, NL:don't know",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "V37",
+    "meaning": "Q16a How many hours spend on household work",
+    "question": "Now, thinking of your own situation: Q16a On average, how many hours a week do you personally spend on household work, not including childcare and leisure time activities?",
+    "content": {
+      "0": "None, no hours, does not apply",
+      "1": "1 hour or less than 1 hour",
+      "2": "2 hours",
+      "3": "3 hours",
+      "95": "95 hours and more",
+      "98": "Don't know, BG: can't choose",
+      "99": "No answer, CA: no answer, refused"
+    },
+    "special": {}
+  },
+  {
+    "domain": "V38",
+    "meaning": "Q16b How many hours spend on family members",
+    "question": "Now, thinking of your own situation: Q16b On average, how many hours a week do you spend looking after family members (e.g. children, elderly, ill or disabled family members)?",
+    "content": {
+      "0": "None, no hours, does not apply",
+      "1": "1 hour or less than 1 hour",
+      "2": "2 hours",
+      "3": "3 hours",
+      "95": "95 hours and more",
+      "98": "Don't know, BG: can't choose, KR: don't know, refused",
+      "99": "No answer, CA: no answer, refused"
+    },
+    "special": {
+      "IN": {
+        "0": "No hours, no partner"
+      }
+    }
+  },
+  {
+    "domain": "V39",
+    "meaning": "Q17a How many hours spouse, partner works on household",
+    "question": "And what about your spouse/ partner? On average, how many hours a week does he/ she spend on household work, not including childcare and leisure time activities?",
+    "content": {
+      "0": "NAP, no partner (code 3 in PARTLIV)",
+      "1": "1 hour or less than 1 hour",
+      "2": "2 hours",
+      "3": "3 hours",
+      "95": "95 hours and more",
+      "96": "None, no hours",
+      "98": "Don't know, BG: can't choose, KR: don't know, refused",
+      "99": "No answer, CA: no answer, refused"
+    },
+    "special": {
+      "BG": {
+        "0": "NAP (code 2,3,7 in PARTLIV)"
+      },
+      "CZ": {
+        "0": "NAP (code 2,3,7 in PARTLIV)"
+      },
+      "IL": {
+        "0": "NAP (code 3,7 in PARTLIV)"
+      },
+      "JP": {
+        "0": "NAP (code 2,3,9 in PARTLIV)"
+      },
+      "PT": {
+        "0": "NAP (code 2,3,7 in PARTLIV)"
+      },
+      "TW": {
+        "0": "NAP (code 3-6 in MARITAL)"
+      },
+      "AR": {
+        "0": "NAP (code 2,3 in PARTLIV)"
+      },
+      "AT": {
+        "0": "NAP (code 2,3 in PARTLIV)"
+      },
+      "BE": {
+        "0": "NAP (code 2,3 in PARTLIV)"
+      },
+      "CH": {
+        "0": "NAP (code 2,3 in PARTLIV)"
+      },
+      "CL": {
+        "0": "NAP (code 2,3 in PARTLIV)"
+      },
+      "ES": {
+        "0": "NAP (code 2,3 in PARTLIV)"
+      },
+      "IS": {
+        "0": "NAP (code 2,3 in PARTLIV)"
+      },
+      "KR": {
+        "0": "NAP (code 2,3 in PARTLIV)"
+      },
+      "NL": {
+        "0": "NAP (code 2,3 in PARTLIV)"
+      },
+      "NO": {
+        "0": "NAP (code 2,3 in PARTLIV)"
+      },
+      "PL": {
+        "0": "NAP (code 2,3 in PARTLIV)"
+      },
+      "SK": {
+        "0": "NAP (code 2,3 in PARTLIV)"
+      },
+      "US": {
+        "0": "NAP (code 2,3 in PARTLIV)"
+      }
+    }
+  },
+  {
+    "domain": "V40",
+    "meaning": "Q17b How many hours spouse, partner spends on family members",
+    "question": "And on average, how many hours a week does he/ she spend looking after family members (e.g. children, elderly, ill or disabled family members)?",
+    "content": {
+      "0": "NAP, no partner (code 3 in PARTLIV)",
+      "1": "1 hour or less than 1 hour",
+      "2": "2 hours",
+      "95": "95 hours and more",
+      "96": "None, no hour",
+      "98": "Don't know, BG: can't choose, KR: don't know, refused",
+      "99": "No answer, CA: no answer, refused"
+    },
+    "special": {
+      "BG": {
+        "0": "NAP (code 2,3,7 in PARTLIV)"
+      },
+      "CZ": {
+        "0": "NAP (code 2,3,7 in PARTLIV)"
+      },
+      "IL": {
+        "0": "NAP (code 3,7 in PARTLIV)"
+      },
+      "JP": {
+        "0": "NAP (code 2,3,9 in PARTLIV)"
+      },
+      "PT": {
+        "0": "NAP (code 2,3,7 in PARTLIV)"
+      },
+      "TW": {
+        "0": "NAP (code 3-6 in MARITAL)"
+      },
+      "AR": {
+        "0": "NAP (code 2,3 in PARTLIV)"
+      },
+      "AT": {
+        "0": "NAP (code 2,3 in PARTLIV)"
+      },
+      "BE": {
+        "0": "NAP (code 2,3 in PARTLIV)"
+      },
+      "CH": {
+        "0": "NAP (code 2,3 in PARTLIV)"
+      },
+      "CL": {
+        "0": "NAP (code 2,3 in PARTLIV)"
+      },
+      "ES": {
+        "0": "NAP (code 2,3 in PARTLIV)"
+      },
+      "IS": {
+        "0": "NAP (code 2,3 in PARTLIV)"
+      },
+      "KR": {
+        "0": "NAP (code 2,3 in PARTLIV)"
+      },
+      "NL": {
+        "0": "NAP (code 2,3 in PARTLIV)"
+      },
+      "NO": {
+        "0": "NAP (code 2,3 in PARTLIV)"
+      },
+      "PL": {
+        "0": "NAP (code 2,3 in PARTLIV)"
+      },
+      "SK": {
+        "0": "NAP (code 2,3 in PARTLIV)"
+      },
+      "US": {
+        "0": "NAP (code 2,3 in PARTLIV)"
+      }
+    }
+  }
+]

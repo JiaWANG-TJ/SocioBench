@@ -1,0 +1,287 @@
+[
+  {
+    "domain": "HHTODD",
+    "meaning": "How many toddlers in household: children up to [school age -1] years",
+    "question": "How many children in household: Children up to the age of school age.",
+    "content": {
+      "0": "0   No toddlers",
+      "1": "1   One toddler",
+      "2": "2   Two toddlers",
+      "3": "3   Three toddlers",
+      "4": "4   Four toddlers",
+      "5": "5   Five toddlers",
+      "6": "6   Six toddlers",
+      "7": "7   Seven toddlers",
+      "8": "8   Eight toddlers",
+      "96": "96   NAP (code 0 in HOMPOP)",
+      "99": "99   No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "HOMPOP",
+    "meaning": "How many persons in household",
+    "question": "Including yourself, how many people - including children - usually live in your household?",
+    "content": {
+      "0": "0   Not a private household",
+      "1": "1   One person (only respondent)",
+      "2": "2   Two persons",
+      "3": "3   Three persons",
+      "4": "4   Four persons",
+      "5": "5   Five persons",
+      "6": "6   Six persons",
+      "7": "7   Seven persons",
+      "8": "8   Eight persons",
+      "9": "9   Nine persons",
+      "10": "10   Ten persons",
+      "11": "11   Eleven persons",
+      "12": "12   Twelve persons",
+      "13": "13   Thirteen persons or more",
+      "14": "14   Fourteen persons",
+      "15": "15   Fifteen persons",
+      "16": "16   Sixteen persons",
+      "17": "17   Seventeen persons",
+      "18": "18   Eighteen persons",
+      "19": "19   Nineteen persons",
+      "20": "20   Twenty persons",
+      "22": "22   Twenty-two persons",
+      "97": "97   Refused",
+      "98": "98   Don't know",
+      "99": "99   No answer"
+    },
+    "special": {
+      "AU": {
+        "98": "Invalid response"
+      },
+      "DK": {
+        "13": "13 persons or more"
+      }
+    }
+  },
+  {
+    "domain": "AT_RINC",
+    "meaning": "Country specific personal income: Austria",
+    "question": "Before taxes and other deductions, what on average is your own total monthly income?",
+    "content": {
+      "0": "0   No income",
+      "125": "125   Up to 250 EUR per month, gross income",
+      "375": "375   251-500 EUR",
+      "625": "625   501-750 EUR",
+      "875": "875   751-1.000 EUR",
+      "1150": "1150   1.001-1.300 EUR",
+      "1450": "1450   1.301-1.600 EUR",
+      "1750": "1750   1.601-1.900 EUR",
+      "2050": "2050   1.901-2.200 EUR",
+      "2350": "2350   2.201-2.500 EUR",
+      "2750": "2750   2.501-3.000 EUR",
+      "3250": "3250   3.001-3.500 EUR",
+      "3750": "3750   3.501-4.000 EUR",
+      "4500": "4500   4.001-5.000 EUR",
+      "5500": "5500   5.001-6.000 EUR",
+      "6500": "6500   More than 6.000 EUR per month, gross income",
+      "999990": "999990   NAP, all other countries",
+      "999999": "999999   No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "AU_RINC",
+    "meaning": "Country specific personal income: Australia",
+    "question": "Before taxes and other deductions, what on average is your own total monthly income?",
+    "content": {
+      "0": "0   No income",
+      "20": "20   20 AUD per month, before taxes",
+      "240000": "240000   240.000 AUD per month, before taxes",
+      "999990": "999990   NAP, all other countries",
+      "999999": "999999   No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "BE_RINC",
+    "meaning": "Country specific personal income: Belgium",
+    "question": "What on average is your own net monthly income?",
+    "content": {
+      "0": "0   No income",
+      "10": "10   10 EUR per month, net",
+      "16000": "16000   16.000 EUR per month, net",
+      "999990": "999990   NAP, all other countries",
+      "999999": "999999   No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "CH_RINC",
+    "meaning": "Country specific personal income: Switzerland",
+    "question": "Using this card, if you accumulate all sources of your income, which letter best describes your personal total net income?",
+    "content": {
+      "0": "0   No income",
+      "700": "700   Less than 1.100 CHF per month, net",
+      "1450": "1450   1.100 - 1.799 CHF",
+      "2250": "2250   1.800 - 2.699 CHF",
+      "3150": "3150   2.700 - 3.599 CHF",
+      "4000": "4000   3.600 - 4.399 CHF",
+      "4800": "4800   4.400 - 5.199 CHF",
+      "5650": "5650   5.200 - 6.099 CHF",
+      "6700": "6700   6.100 - 7.299 CHF",
+      "8300": "8300   7.300 - 9.299 CHF",
+      "10250": "10250   9.300 CHF or more per month, net",
+      "999997": "999997   Refused",
+      "999998": "999998   Don't know",
+      "999999": "999999   No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "CL_RINC",
+    "meaning": "Country specific personal income: Chile",
+    "question": "From the following list of monthly income, could you tell me in which one do you fit, considering all net income from salaries, pensions, family help, etc.?",
+    "content": {
+      "20000": "20000   Less than 35.000 CLP per month, net",
+      "45000": "45000   35.001-56.000 CLP",
+      "66000": "66000   56.001-78.000 CLP",
+      "90000": "90000   78.001-101.000 CLP",
+      "122000": "122000   101.001-134.000 CLP",
+      "155000": "155000   134.001-179.000 CLP",
+      "200000": "200000   179.001-224.000 CLP",
+      "250000": "250000   224.001-291.000 CLP",
+      "310000": "310000   291.001-358.000 CLP",
+      "400000": "400000   358.001-448.000 CLP",
+      "750000": "750000   448.001-1.000.000 CLP",
+      "1500000": "1500000   1.000.001-2.000.000 CLP",
+      "2500000": "2500000   2.000.001-3.000.000 CLP",
+      "3100000": "3100000   More than 3.000.000 CLP per month, net",
+      "9999990": "9999990   NAP, all other countries",
+      "9999998": "9999998   Don't know",
+      "9999999": "9999999   No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "CZ_RINC",
+    "meaning": "Country specific personal income: Czech Republic",
+    "question": "What is your personal average net monthly income from all sources?",
+    "content": {
+      "0": "0   No income",
+      "700": "700   700 CZK per month, net",
+      "2500": "2500   2.500 / Up to 4.999 CZK",
+      "6500": "6500   6.500 / 5.000 - 7.999 CZK",
+      "9000": "9000   9.000 / 8.000 - 9.999 CZK",
+      "11000": "11000   11.000 / 10.000 - 11.999 CZK",
+      "13000": "13000   13.000 / 12.000 - 13.999 CZK",
+      "15000": "15000   15.000 / 14.000 - 15.999 CZK",
+      "17000": "17000   17.000 / 16.000 - 17.999 CZK",
+      "19000": "19000   19.000 / 18.000 - 19.999 CZK",
+      "21500": "21500   21.500 / 20.000 - 22.999 CZK",
+      "24500": "24500   24.500 / 23.000 - 25.999 CZK",
+      "28000": "28000   28.000 / 26.000 - 29.999 CZK",
+      "40000": "40000   40.000 / 30.000 - 49.999 CZK",
+      "65000": "65000   65.000 / More than 50.000 CZK",
+      "100000": "100000   100.000 CZK per month, net",
+      "999990": "999990   NAP, all other countries",
+      "999997": "999997   Refused",
+      "999998": "999998   Don't know"
+    },
+    "special": {}
+  },
+  {
+    "domain": "DE_RINC",
+    "meaning": "Country specific personal income: Germany",
+    "question": "How high is your own net monthly income?",
+    "content": {
+      "0": "0   No own income",
+      "60": "60   60 EUR per month, net",
+      "100": "100 / Less than 200 EUR",
+      "250": "250 / 200-299 EUR",
+      "350": "350 / 300-399 EUR",
+      "450": "450 / 400-499 EUR",
+      "562": "562 / 500-624 EUR",
+      "687": "687 / 625-749 EUR",
+      "812": "812 / 750-875 EUR",
+      "937": "937 / 875-999 EUR",
+      "1062": "1.062 / 1.000-1.124 EUR",
+      "1187": "1.187 / 1.125-1.249 EUR",
+      "1312": "1.312 / 1.250-1.374 EUR",
+      "1437": "1.437 / 1.375-1.499 EUR",
+      "1625": "1.625 / 1.500-1.749 EUR",
+      "1875": "1.875 / 1.750-1.999 EUR",
+      "2125": "2.125 / 2.000-2.249 EUR",
+      "2375": "2.375 / 2.250-2.499EUR",
+      "2625": "2.625 / 2.500-2.749 EUR",
+      "2875": "2.875 / 2.750-2.999 EUR",
+      "3500": "3.500 / 3.000-3.999 EUR",
+      "4500": "4.500 / 4.000-4.999 EUR",
+      "6250": "6.250 / 5.000-7.499 EUR",
+      "7500": "7.500 / 7.500 EUR and above",
+      "60000": "60.000 EUR per month, net",
+      "999990": "999990   NAP, all other countries",
+      "999999": "999999   No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "DK_RINC",
+    "meaning": "Country specific personal income: Denmark",
+    "question": "What is your total annual income - gross - i.e., before taxes?",
+    "content": {
+      "70000": "70000   Below 100.000 DKK per year, gross income",
+      "125000": "125000   100.000-149.999 DKK",
+      "175000": "175000   150.000-199.999 DKK",
+      "225000": "225000   200.000-249.999 DKK",
+      "275000": "275000   250.000-299.999 DKK",
+      "350000": "350000   300.000-399.999 DKK",
+      "450000": "450000   400.000-499.999 DKK",
+      "550000": "550000   500.000-599.999 DKK",
+      "650000": "650000   600.000-699.000 DKK",
+      "750000": "750000   700.000 DKK or more per year, gross income",
+      "999990": "999990   NAP, all other countries"
+    },
+    "special": {}
+  },
+  {
+    "domain": "ES_RINC",
+    "meaning": "Country specific personal income: Spain",
+    "question": "And in which interval of that same scale is included your individual personal income, after tax deductions?",
+    "content": {
+      "0": "0   No income",
+      "250": "250   300 EUR per month or less, net",
+      "450": "450   301-600 EUR",
+      "750": "750   601-900 EUR",
+      "1050": "1050   901-1.200 EUR",
+      "1500": "1500   1.201-1.800 EUR",
+      "2100": "2100   1.801-2.400 EUR",
+      "2700": "2700   2.401-3.000 EUR",
+      "3750": "3750   3.001-4.500 EUR",
+      "5250": "5250   4.501-6.000 EUR",
+      "7000": "7000   More than 6.000 EUR per month, net",
+      "999999": "999999   Don't know/ No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "FI_RINC",
+    "meaning": "Country specific personal income: Finland",
+    "question": "What is your average monthly income before taxes?",
+    "content": {
+      "0": "0   No income",
+      "1": "1   1 EUR per month, before taxes",
+      "95000": "95000   95.000 EUR per month, before taxes",
+      "999990": "999990   NAP, other countries",
+      "999999": "999999   No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "FR_RINC",
+    "meaning": "Country specific personal income: France",
+    "question": "What is the amount of your personal monthly net income?",
+    "content": {
+      "0": "0   No income",
+      "100": "100   100 EUR per month, net",
+      "60000": "60000   60.000 EUR per month, net",
+      "999990": "999990   NAP, all other countries",
+      "999999": "999999   No answer"
+    },
+    "special": {}
+  }
+]

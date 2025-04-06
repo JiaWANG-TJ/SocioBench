@@ -1,0 +1,28 @@
+[
+  {
+    "domain": "SPWRKSUP",
+    "meaning": "Spouse, partner: supervise other employees",
+    "question": "Does/ did your spouse/ partner supervise other employees? (Please tick one box only.)",
+    "content": {
+      "1": "Yes",
+      "2": "No",
+      "-4": "NAP (Code -4 or 3 in SPWORK; SR, US: Code -4, 2, 3 in SPWORK)",
+      "-8": "Don't know",
+      "-9": "No answer"
+    },
+    "special": {
+      "CH": {
+        "2": "Self-employed without employees are coded to code 2 (no supervision)"
+      },
+      "DK": {
+        "1": "Spouses/partners working self-employed with employees were not asked about their supervising function, encoded to code 1"
+      },
+      "SR": {
+        "-4": "NAP (Code -4, 2, 3 in SPWORK)"
+      },
+      "US": {
+        "-4": "NAP (Code -4, 2, 3 in SPWORK)"
+      }
+    }
+  }
+]

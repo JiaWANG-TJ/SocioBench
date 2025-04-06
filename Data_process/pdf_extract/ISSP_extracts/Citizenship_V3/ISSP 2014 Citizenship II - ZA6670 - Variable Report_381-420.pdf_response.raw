@@ -1,0 +1,374 @@
+```json
+[
+  {
+    "domain": "IS_PRTY",
+    "meaning": "Iceland: Party voted for in last election",
+    "question": "Which party did you vote for in the general election in April 2013?",
+    "content": {
+      "0": "NAP (code 0, 2, 7 in VOTE_LE)",
+      "1": "People's front of Iceland - Alþýðufylkinguna (R)",
+      "2": "Bright Future - Bjarta framtíð (A)",
+      "3": "Dawn - Dögun (P)",
+      "4": "Households Party - Flokk heimilanna (I)",
+      "5": "Sturla Jónsson - Framboð Sturlu Jónssonar (K)",
+      "6": "Progressive Party - Framsóknarflokkinn (B)",
+      "7": "Right Green People’s Party - Hægri græna (G)",
+      "8": "Humanist Party - Húmanistaflokkinn (H)",
+      "9": "Rural Party - Landsbyggðarflokkinn (M)",
+      "10": "Democracy Watch -Lýðræðisvaktina (L)",
+      "11": "Pirate Party - Pírata (Þ)",
+      "12": "Rainbow - Regnbogann (J)",
+      "13": "Social Democratic Alliance - Samfylkinguna (S)",
+      "14": "Independence Party - Sjálfstæðisflokkinn (D)",
+      "15": "Left-Green Movement - Vinstri hreyfinguna – græn framboð (V)",
+      "96": "Blank ballot",
+      "97": "Refused",
+      "99": "No answer",
+      "990": "NAP, other countries"
+    },
+    "special": {}
+  },
+  {
+    "domain": "JP_PRTY",
+    "meaning": "Japan: Party voted for in last election",
+    "question": "Which party did you vote for in the last Japanese House of Councillors election, under the proportional representation system [July 2013]? Circle one figure only.",
+    "content": {
+      "0": "NAP (code 0, 2, 7 in VOTE_LE)",
+      "1": "Liberal Democratic Party of Japan",
+      "2": "The Democratic Party of Japan",
+      "3": "Japan Restoration Party",
+      "4": "Komeito",
+      "5": "Your Party",
+      "6": "Japanese Communist Party",
+      "7": "People's Life Party",
+      "8": "Social Democratic Party",
+      "9": "Green Wind",
+      "10": "New Party Daichi",
+      "11": "The Happiness Realization Party",
+      "12": "Greens Japan",
+      "95": "Other Party",
+      "99": "No answer",
+      "990": "NAP, other countries"
+    },
+    "special": {}
+  },
+  {
+    "domain": "KR_PRTY",
+    "meaning": "Korea (South): Party voted for in last election",
+    "question": "Which party did you vote in the June (2014)s the 6th Nationwide local elections?",
+    "content": {
+      "0": "NAP (code 0, 2, 7 in VOTE_LE)",
+      "1": "Saenuri Party",
+      "2": "New Politics Alliance for Democracy",
+      "3": "Unified Progressive Party",
+      "4": "Liberal Justice Party",
+      "5": "Independent candidate",
+      "95": "Other",
+      "96": "Invalid ballot",
+      "97": "Refused",
+      "990": "NAP, other countries"
+    },
+    "special": {}
+  },
+  {
+    "domain": "LT_PRTY",
+    "meaning": "Lithuania: Party voted for in last election",
+    "question": "Which party did you vote for in the last Seimas election [October 2012]?",
+    "content": {
+      "0": "NAP (code 0, 2, 7 in VOTE_LE)",
+      "1": "Labour Party - DP",
+      "2": "Christian Party - KP",
+      "3": "Liberal and Centre Union - LiCS",
+      "4": "Electoral Action of Lithuanian Poles - LLRA",
+      "5": "Liberal Movement of Lithuanian Republic - LRLS",
+      "6": "Lithuanian Social Democratic Party - LSDP",
+      "7": "Lithuanian Peasants and Greens Union - LVŽS",
+      "8": "Party 'Order and Justice' - TT",
+      "9": "Political Party 'The Way of Courage' - DK",
+      "10": "Political Party 'Union Yes' - TAIP",
+      "11": "Socialist People's Front-SLF",
+      "12": "Homeland Union–Lithuanian Christian Democrats - TS-LKD",
+      "95": "Other",
+      "96": "Invalid ballot",
+      "97": "Refused",
+      "990": "NAP, other countries"
+    },
+    "special": {}
+  },
+  {
+    "domain": "NL_PRTY",
+    "meaning": "The Netherlands: Party voted for in last election",
+    "question": "Which party have you voted for in the last parliamentary elections on September 12 2012?",
+    "content": {
+      "0": "NAP (code 0, 2, 7 in VOTE_LE)",
+      "1": "'Liberal' - VVD",
+      "2": "Social Democrats - PvdA",
+      "3": "Wilders' Party - PVV",
+      "4": "Christen Democrats - CDA",
+      "5": "Socialists - SP",
+      "6": "'Liberal' Democrats - D66",
+      "7": "Green - GroenLinks",
+      "8": "Christian [Protestant] Party - Christen Unie",
+      "9": "Orthodox Protestant Party - SGP",
+      "10": "Animal Rights Party - Partij voor de Dieren",
+      "11": "Pensioners Party - 50 Plus",
+      "95": "Other party, specify",
+      "99": "No answer",
+      "990": "NAP, other countries"
+    },
+    "special": {}
+  },
+  {
+    "domain": "NO_PRTY",
+    "meaning": "Norway: Party voted for in last election",
+    "question": "Which party did you vote for in the last parliamentary election in 2013?",
+    "content": {
+      "0": "NAP (code 0, 2, 7 in VOTE_LE)",
+      "1": "Labour Party - DNA",
+      "2": "Progress Party - FRP",
+      "3": "Conservative Party - H",
+      "4": "Christian Democratic Party - KrF",
+      "5": "The Green Party - MDG",
+      "6": "The Party Red",
+      "7": "Centre Party - SP",
+      "8": "Socialist Left - SV",
+      "9": "Liberal Party - V",
+      "95": "Other Party",
+      "98": "Don't remember",
+      "99": "No answer",
+      "990": "NAP, other countries"
+    },
+    "special": {
+      "NO": {
+        "98": "Don't remember"
+      }
+    }
+  },
+  {
+    "domain": "PH_PRTY",
+    "meaning": "Philippines: Party voted for in last election",
+    "question": "Which party did you vote for in the last Philippines national election in May 2013?",
+    "content": {
+      "0": "NAP (code 0, 2, 7 in VOTE_LE)",
+      "1": "Nationalist Peoples Coalition - NPC",
+      "2": "Liberal Party - LP",
+      "5": "LAKAS-NUCD-UMDP Party",
+      "8": "Lapiang Bagong Lakas Ng Nueva Ecija - BALANE",
+      "9": "Partido Magdalo",
+      "18": "Philippine Democratic Party - PDP-LABAN, Partido Demokratiko",
+      "19": "Partido NG Masang Pilipino - PMP",
+      "33": "Nacionalista Party - NP",
+      "36": "Kabalikat Ng Malayang Pilipino - KAMPI",
+      "47": "Katipunan Ng Bagong Caloocan - KABAKA",
+      "48": "Citizens Action Party, Akbayan",
+      "74": "Bayan Muna",
+      "81": "Buhay Hayaan Yumabong - BUHAY",
+      "83": "Kilusan ng Nagkakaisang Pilipino - KNP",
+      "85": "Gabriela",
+      "86": "Citizens Battle against Corruption - CIBAC",
+      "87": "Bando Osmena Pundok Kauswagan - BOPK",
+      "88": "Independent",
+      "89": "Anak Mindanao-AMIN",
+      "90": "Ang Laban ng Indiginong Pilipino-ALIF",
+      "91": "Asenso Pilipino Party - APP",
+      "92": "Laban ng Demokratikong Pilipino - LDP",
+      "94": "No party affiliation",
+      "95": "Other Party",
+      "97": "Refused",
+      "98": "Don't Know",
+      "99": "No answer",
+      "990": "NAP, other countries"
+    },
+    "special": {
+      "PH": {
+        "96": "No party affiliation"
+      }
+    }
+  },
+  {
+    "domain": "PL_PRTY",
+    "meaning": "Poland: Party voted for in last election",
+    "question": "Did you vote in the elections to the Seym and Senate on the October 2011?",
+    "content": {
+      "0": "NAP (code 0, 2, 7 in VOTE_LE)",
+      "1": "Law and Justice Party - PIS",
+      "2": "Poland Comes First - PJN",
+      "3": "Democratic Left Alliance - SLD",
+      "4": "Palikot's Movement",
+      "5": "Polish Peasants Party - PSL",
+      "6": "Polish Labour Party (Sierpien 80)",
+      "7": "Civic Platform of Republic of Poland - PO",
+      "8": "Our Home Poland - Andrzej Lepper's Self-defense",
+      "9": "Janusz Korwin - Mikke New Right",
+      "10": "Right Wing",
+      "11": "German Minority",
+      "95": "Other Party",
+      "98": "Hard to say, don't remember",
+      "99": "No answer",
+      "990": "NAP, other countries"
+    },
+    "special": {}
+  },
+  {
+    "domain": "RU_PRTY",
+    "meaning": "Russia: Party voted for in last election",
+    "question": "Did you vote in the last elections of the State Duma of Russia in December 4, 2011? If yes, for whom did you vote?",
+    "content": {
+      "0": "NAP (code 0, 2, 7 in VOTE_LE)",
+      "1": "Fair Russia",
+      "2": "Liberal Democratic Party of Russia",
+      "3": "Party of Patriots of Russia",
+      "4": "Russian Communist Party",
+      "5": "Russian United Democratic Party Yabloko",
+      "6": "United Russia",
+      "7": "Party 'Pravoe delo'",
+      "96": "Invalid ballot",
+      "990": "NAP, other countries"
+    },
+    "special": {}
+  },
+  {
+    "domain": "SE_PRTY",
+    "meaning": "Sweden: Party voted for in last election",
+    "question": "Which political party did you vote for in the last general election?",
+    "content": {
+      "0": "NAP (code 0, 2, 7 in VOTE_LE)",
+      "1": "Centre Party - C",
+      "2": "Liberal Party - FP",
+      "3": "Christian Democrats - KD",
+      "4": "Green Party - MP",
+      "5": "Conservative Party - M",
+      "6": "Social Democratic Party - S",
+      "7": "Sweden Democrats - SD",
+      "8": "Left Party - V",
+      "95": "Other Party",
+      "99": "No answer",
+      "990": "NAP, other countries"
+    },
+    "special": {}
+  },
+  {
+    "domain": "SI_PRTY",
+    "meaning": "Slovenia: Party voted for in last election",
+    "question": "Did you vote in the last election (in December 2011) for the National Assembly? Which party or candidate did you vote for?",
+    "content": {
+      "0": "NAP (code 0, 2, 7 in VOTE_LE)",
+      "1": "Democratic Party of Slovenian Pensioners - DESUS",
+      "2": "Liberal Democrats - LDS",
+      "3": "Slovenian People's Party - SLS",
+      "4": "Slovenian National Party - SNS",
+      "5": "Slovenian Democratic Party - SDS",
+      "6": "New Slovenia - NSI",
+      "7": "Social Democrats - SD",
+      "8": "New Politics - ZARES",
+      "9": "Positive Slovenia - PS",
+      "10": "Gregor Virant's Citizens' List - DLGV",
+      "11": "Party for sustainable development - TRS",
+      "95": "Other Party",
+      "96": "Invalid ballot",
+      "97": "Refused",
+      "99": "No answer",
+      "990": "NAP, other countries"
+    },
+    "special": {}
+  },
+  {
+    "domain": "SK_PRTY",
+    "meaning": "Slovakia: Party voted for in last election",
+    "question": "Which political party did you vote for [parliamentary elections in March 2012]?",
+    "content": {
+      "0": "NAP (code 0, 2, 7 in VOTE_LE)",
+      "1": "Christian Democratic Movement - KDH",
+      "2": "Communist Party - KSS",
+      "3": "Movement for Democratic Slovakia, Peoples Party - HZDS",
+      "4": "Peoples Party - Our Slovakia",
+      "5": "MOST - HID",
+      "6": "Ordinary people and independent personalities/ OLaNO",
+      "7": "Freedom and Solidarity - SaS",
+      "8": "Slovak Democratic Christian Union - Democratic Party - SDKU-DS",
+      "9": "Slovak National Party - SNS",
+      "10": "Social Democracy - SMER-SD",
+      "11": "Party of Hungarian Coalition - SMK",
+      "13": "Change from below, DÚ/ Zmena zdola, DÚ",
+      "14": "99%",
+      "99": "No answer",
+      "990": "NAP, other countries"
+    },
+    "special": {}
+  },
+  {
+    "domain": "TR_PRTY",
+    "meaning": "Turkey: Party voted for in last election",
+    "question": "Which party did you vote for in the June 2011 elections?",
+    "content": {
+      "0": "NAP (code 0, 2, 7 in VOTE_LE)",
+      "1": "Justice and Development Party - AKP",
+      "2": "Grand Union Party - BBP",
+      "3": "Peace and Democracy Party - BDP",
+      "4": "Republican Peoples Party - CHP",
+      "5": "Democratic Party - True Path Party - DP-DYP",
+      "6": "Nationalist Action Party - MHP",
+      "7": "Felicity Party - SP",
+      "94": "Independent Candidate",
+      "96": "Invalid ballot",
+      "99": "No answer",
+      "990": "NAP, other countries"
+    },
+    "special": {}
+  },
+  {
+    "domain": "TW_PRTY",
+    "meaning": "Taiwan: Party voted for in last election",
+    "question": "Did you vote in the Presidential election held in January 2012? Which team of candidates did you vote for in that Presidential election?",
+    "content": {
+      "0": "NAP (code 0, 2, 7 in VOTE_LE)",
+      "1": "Kuo Min Tang - KMT",
+      "2": "Democratic Progressive Party - DPP",
+      "3": "People First Party - PFP",
+      "96": "Invalid ballot",
+      "97": "Refused",
+      "990": "NAP, other countries"
+    },
+    "special": {
+      "TW": {
+        "0": "Not available"
+      }
+    }
+  },
+  {
+    "domain": "US_PRTY",
+    "meaning": "United States: Party voted for in last election",
+    "question": "In 2012, you remember that Obama ran for President on the Democratic ticket against Romney for the Republicans. Do you remember for sure whether or not you voted in that election? Did you vote for Obama or Romney?",
+    "content": {
+      "0": "NAP (code 0, 2, 7 in VOTE_LE)",
+      "2": "Democrat",
+      "3": "Other candidate",
+      "6": "Republican",
+      "99": "No answer",
+      "990": "NAP, other countries"
+    },
+    "special": {}
+  },
+  {
+    "domain": "VE_PRTY",
+    "meaning": "Venezuela: Party voted for in last election",
+    "question": "Which party did you vote for [in the last election of Mayors in December 2013]?",
+    "content": {
+      "0": "NAP (code 0, 2, 7 in VOTE_LE)",
+      "1": "PSUV",
+      "2": "PPT",
+      "3": "PODEMOS",
+      "4": "TUPAMAROS",
+      "5": "MUD",
+      "95": "Other Party",
+      "99": "No answer",
+      "990": "NAP, other countries"
+    },
+    "special": {}
+  },
+  {
+    "domain": "ZA_PRTY",
+    "meaning": "South Africa: Party voted for in last election",
+    "question": "For which party did you vote in the last national election, which was held in 2014?",
+    "content": {
+      "0": "

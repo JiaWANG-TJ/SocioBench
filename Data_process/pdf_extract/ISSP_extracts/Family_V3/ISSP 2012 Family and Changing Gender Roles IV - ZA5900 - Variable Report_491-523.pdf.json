@@ -1,0 +1,382 @@
+[
+  {
+    "domain": "RU_ETHN",
+    "meaning": "Russia: Country specific origin country/ ethnic group / ethnic identity/ family origin",
+    "question": "What is your ethnicity (open ended question)?",
+    "content": {
+      "0": "NAP, other countries",
+      "1": "Russian",
+      "2": "Ukrainian",
+      "3": "Belorussian",
+      "4": "Tatar",
+      "5": "Bashkir",
+      "6": "Jewish",
+      "7": "Ethnicities of the Volga region",
+      "8": "Ethnicities of the Northern Caucasia region",
+      "9": "Ethnicities of the Siberia region",
+      "10": "Ethnicities of the Central Asia region",
+      "11": "Other",
+      "97": "Refused",
+      "99": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "SE_ETHN",
+    "meaning": "Sweden: Country specific origin country/ ethnic group / ethnic identity/ family origin",
+    "question": "Was your father a Swedish citizen at the time of your birth? Was your mother a Swedish citizen at the time of your birth?",
+    "content": {
+      "0": "NAP, other countries",
+      "32": "Argentina - ARG",
+      "51": "Armenia - ARM",
+      "56": "Belgium - BEL",
+      "70": "Bosnia and Herzegovina - BIH",
+      "112": "Belarus - BLR",
+      "156": "China - CHN",
+      "203": "Czech Republic - CZE",
+      "208": "Denmark - DNK",
+      "232": "Eritrea - ERI",
+      "233": "Estonia - EST",
+      "246": "Finland - FIN",
+      "250": "France - FRA",
+      "276": "Germany - DEU",
+      "348": "Hungary - HUN",
+      "364": "Iran, Islamic Republic of - IRN",
+      "368": "Iraq - IRQ",
+      "372": "Ireland - IRL",
+      "380": "Italy - ITA",
+      "422": "Lebanon - LBN",
+      "428": "Latvia - LVA",
+      "440": "Lithuania - LTU",
+      "442": "Luxembourg - LUX",
+      "496": "Mongolia - MNG",
+      "528": "Netherlands - NLD",
+      "578": "Norway - NOR",
+      "608": "Philippines - PHL",
+      "616": "Poland - POL",
+      "643": "Russian Federation - RUS",
+      "704": "Viet Nam - VNM",
+      "705": "Slovenia - SVN",
+      "752": "Sweden -SWE",
+      "756": "Switzerland - CHE",
+      "760": "Syrian Arab Republic - SYR",
+      "764": "Thailand - THA",
+      "792": "Turkey - TUR",
+      "818": "Egypt - EGY",
+      "826": "United Kingdom - GBR",
+      "840": "United States - USA",
+      "890": "Yugoslavia, Socialist federal Republic of - deleted code",
+      "891": "Serbia and Montenegro",
+      "9990": "Kurdistan, no country, geographical area",
+      "9991": "North Africa, no country, geographical area",
+      "9998": "Not Swedish citizenship - citizenship of country not mentioned",
+      "9999": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "SI_ETHN",
+    "meaning": "Slovenia: Country specific origin country/ ethnic group/ ethnic identity/ family origin",
+    "question": "What is your ethnic identity?",
+    "content": {
+      "0": "NAP, other countries",
+      "1": "Slovenian",
+      "2": "Italian",
+      "3": "Hungarian",
+      "5": "German",
+      "6": "Croatian",
+      "7": "Serbian",
+      "9": "Bosniak",
+      "10": "Macedonian",
+      "11": "Albanian",
+      "13": "Other national/ ethnic identity",
+      "99": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "SK_ETHN",
+    "meaning": "Slovakia: Country specific origin country/ ethnic group/ ethnic identity/ family origin",
+    "question": "What is your nationality?",
+    "content": {
+      "0": "NAP, other countries",
+      "1": "Slovak",
+      "2": "Hungarian",
+      "3": "Roma",
+      "4": "Other"
+    },
+    "special": {}
+  },
+  {
+    "domain": "TR_ETHN",
+    "meaning": "Turkey: Country specific origin country/ ethnic group / ethnic identity/ family origin",
+    "question": "0   Not available; NAP, other countries",
+    "content": {
+      "0": "Not available; NAP, other countries"
+    },
+    "special": {}
+  },
+  {
+    "domain": "TW_ETHN",
+    "meaning": "Taiwan: Country specific origin country/ ethnic group / ethnic identity/ family origin",
+    "question": "What is your father's ethnic background?",
+    "content": {
+      "0": "NAP, other countries",
+      "1": "Fukienese of Taiwan",
+      "2": "Hakka of Taiwan",
+      "3": "Mainlander",
+      "4": "Aborigine",
+      "24": "Thai, Khmer, Vietnam, South-East Asia",
+      "46": "Indonesian, Malay/ Malaysian",
+      "98": "Other, mixed origin",
+      "99": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "US_ETHN",
+    "meaning": "United States: Country specific origin country/ ethnic group/ ethnic identity/ family origin",
+    "question": "From what countries or part of the world did your ancestors come? If more than one country named, which of these countries do you feel closer to? What is your race? Indicate one or more races that you consider yourself to be",
+    "content": {
+      "0": "NAP, other countries, uncodeable",
+      "1": "Africa",
+      "2": "Austria",
+      "3": "French Canada",
+      "4": "Other Canada",
+      "5": "China",
+      "6": "Czechoslovakia",
+      "7": "Denmark",
+      "8": "England and Wales",
+      "9": "Finland",
+      "10": "France",
+      "11": "Germany",
+      "12": "Greece",
+      "13": "Hungary",
+      "14": "Ireland",
+      "15": "Italy",
+      "16": "Japan",
+      "17": "Mexico",
+      "18": "Netherlands",
+      "19": "Norway",
+      "20": "Philippines",
+      "21": "Poland",
+      "22": "Puerto Rico",
+      "23": "Russia",
+      "24": "Scotland",
+      "25": "Spain",
+      "26": "Sweden",
+      "27": "Switzerland",
+      "28": "West Indies",
+      "29": "Other",
+      "30": "American Indian",
+      "31": "India",
+      "32": "Portugal",
+      "33": "Lithuania",
+      "34": "Yugoslavia",
+      "35": "Rumania",
+      "36": "Belgium",
+      "37": "Arabic",
+      "38": "Other Spanish",
+      "39": "Non-spanish windies",
+      "40": "Other Asian",
+      "41": "Other European",
+      "97": "American only",
+      "99": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "VE_ETHN",
+    "meaning": "Venezuela: Country specific origin country/ ethnic group/ ethnic identity/ family origin",
+    "question": "0   NAP, other countries",
+    "content": {
+      "0": "NAP, other countries",
+      "1": "White",
+      "2": "Mestizo",
+      "3": "Mulatto",
+      "4": "Black",
+      "5": "Indigeneous",
+      "6": "Other",
+      "97": "Refused"
+    },
+    "special": {}
+  },
+  {
+    "domain": "ZA_ETHN",
+    "meaning": "South Africa: Country specific origin country/ ethnic group/ ethnic identity/ family origin",
+    "question": "Race of respondent",
+    "content": {
+      "0": "NAP, other countries",
+      "1": "Black African",
+      "2": "Coloured",
+      "3": "Indian",
+      "4": "White"
+    },
+    "special": {}
+  },
+  {
+    "domain": "HHCHILDR",
+    "meaning": "How many children in household: children between school age and 17 years of age",
+    "question": "Including yourself, how many people - including children - usually live in your household? How many children in household: children between school age and 17 years old",
+    "content": {
+      "0": "No children",
+      "1": "One child",
+      "2": "2 children",
+      "21": "21 children",
+      "96": "NAP (Code 0 in HOMPOP)",
+      "97": "Refused",
+      "99": "No answer"
+    },
+    "special": {
+      "TR": {
+        "96": "Not available"
+      }
+    }
+  },
+  {
+    "domain": "HHTODD",
+    "meaning": "How many toddlers in household: children up to school age -1 years",
+    "question": "How many children in household: Children up to the age of school age.",
+    "content": {
+      "0": "No toddlers",
+      "1": "One toddler",
+      "2": "2 toddlers",
+      "10": "10 toddlers",
+      "96": "NAP (Code 0 in HOMPOP)",
+      "97": "Refused",
+      "99": "No answer"
+    },
+    "special": {
+      "TR": {
+        "96": "Not available"
+      }
+    }
+  },
+  {
+    "domain": "HOMPOP",
+    "meaning": "How many persons in household",
+    "question": "Including yourself, how many people - including children - usually live in your household?",
+    "content": {
+      "0": "Not a private household",
+      "1": "One person (only respondent)",
+      "2": "2 persons",
+      "38": "38 persons",
+      "99": "No answer"
+    },
+    "special": {
+      "TR": {
+        "0": "Not available"
+      }
+    }
+  },
+  {
+    "domain": "AR_RINC",
+    "meaning": "Country specific personal income: Argentina",
+    "question": "Before taxes and other deductions, what on average is your own total monthly income?",
+    "content": {
+      "0": "No own income",
+      "240": "240 ARS per month",
+      "17000": "17.000 ARS per month",
+      "999990": "NAP, all other countries",
+      "999999": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "AT_RINC",
+    "meaning": "Country specific personal income: Austria",
+    "question": "How much approximately is your personal monthly net-income (after taxation and deduction of social security fees)?",
+    "content": {
+      "0": "No income",
+      "150": "Up to 300 EUR per month",
+      "450": "301-600 EUR",
+      "750": "601-900 EUR",
+      "1050": "901-1.200 EUR",
+      "1350": "1.201-1.500 EUR",
+      "1650": "1.501-1.800 EUR",
+      "1950": "1.801-2.100 EUR",
+      "2300": "2.101-2.500 EUR",
+      "2750": "2.501-3.000 EUR",
+      "3500": "3.001-4.000 EUR",
+      "4500": "More than 4.000 EUR per month",
+      "999999": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "AU_RINC",
+    "meaning": "Country specific personal income: Australia",
+    "question": "Before taxes and other deductions, what on average is your own total monthly income?",
+    "content": {
+      "0": "No income",
+      "10": "10 AUD per month",
+      "1000000": "1.000.000 AUD per month",
+      "9999990": "NAP, all other countries",
+      "9999999": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "BE_RINC",
+    "meaning": "Country specific personal income: Belgium",
+    "question": "What on average is your own net monthly income?",
+    "content": {
+      "0": "No own income",
+      "15": "15 EUR net per month",
+      "25000": "25.000 EUR net per month",
+      "999990": "NAP, all other countries",
+      "999999": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "BG_RINC",
+    "meaning": "Country specific personal income: Bulgaria",
+    "question": "0   No own income",
+    "content": {
+      "0": "No own income",
+      "40": "40 BGN, per month",
+      "2500": "2.500 BGN, per month",
+      "999990": "NAP, all other countries",
+      "999997": "Refused",
+      "999998": "Don't know"
+    },
+    "special": {}
+  },
+  {
+    "domain": "CA_RINC",
+    "meaning": "Country specific personal income: Canada",
+    "question": "Before taxes and other deductions, what on average is your own total monthly income?",
+    "content": {
+      "0": "No own income",
+      "150": "150 CAD per month",
+      "170000": "170.000 CAD per month",
+      "999990": "NAP, all other countries",
+      "999998": "Don't know",
+      "999999": "No answer, refused"
+    },
+    "special": {}
+  },
+  {
+    "domain": "CH_RINC",
+    "meaning": "Country specific personal income: Switzerland",
+    "question": "Using this card, if you accumulate all sources of your income, which letter best describes your total net income?",
+    "content": {
+      "0": "No income",
+      "700": "Less than 1.100 CHF per month",
+      "1450": "1.100-1.799 CHF",
+      "2200": "1.800-2.599 CHF",
+      "3100": "2.600-3.599 CHF",
+      "3950": "3.600-4.299 CHF",
+      "4750": "4.300-5.199 CHF",
+      "5550": "5.200-5.899 CHF",
+      "6500": "5.900-7.099 CHF",
+      "8050": "7.100-8.999 CHF",
+      "9950": "9.000 CHF or more per month",
+      "999997": "Refused",
+      "999998": "Don't know",
+      "999999": "No answer"
+    },
+    "special": {}
+  }
+]

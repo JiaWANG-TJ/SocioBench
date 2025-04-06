@@ -1,0 +1,693 @@
+[
+  {
+    "domain": "SR_INC",
+    "meaning": "Country specific household income: Suriname",
+    "question": "And what is the average monthly income of the entire household you belong to?",
+    "content": {
+      "0": "No income",
+      "250": "Less than 500 SRD per month",
+      "675": "500 - < 750 SRD (q version 1 + 2)",
+      "825": "750 - < 1 000 SRD (q version 1 + 2)",
+      "1125": "1 000 - <1 250 SRD (q version 1 + 2)",
+      "1375": "1 250 - < 1 500 SRD (q version 1 + 2)",
+      "1625": "1 500 - < 1 750 SRD (q version 1 + 2)",
+      "1875": "1 750 - < 2 000 SRD (q version 1 + 2)",
+      "2500": "2 000 - < 3 000 SRD (q version 1 + 2)",
+      "3500": "3 000 - < 4 000 SRD (q version 1 + 2)",
+      "4500": "4 000 - < 5 000 SRD (q version 1 + 2)",
+      "5500": "5 000 - < 6 000 SRD (q version 2) / 5 000+ SRD (q version 1)",
+      "6500": "5 000+ SRD per month (q version 1)",
+      "7000": "6 000 - < 8 000 SRD (q version 2)",
+      "9000": "8 000+ SRD per month (q version 2)",
+      "-2": "NAP , other countries",
+      "-9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "TH_INC",
+    "meaning": "Country specific household income: Thailand",
+    "question": "Before taxes and other deductions, what is your household's average total monthly income?",
+    "content": {
+      "0": "No income",
+      "600": "600 THB per month, before taxes",
+      "10000000": "10 000 000 THB per month, before taxes",
+      "-2": "NAP , other countries",
+      "-7": "Refused",
+      "-8": "Don't know",
+      "-9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "TW_INC",
+    "meaning": "Country specific household income: Taiwan",
+    "question": "What is your average monthly household income before taxes, including all income of your family members who live in your residence (e.g., allowance from parents or children, government subsidies, interest, earnings from work or part-time jobs, etc.)?",
+    "content": {
+      "0": "No income",
+      "5000": "9 999 TWD or less per month, before taxes",
+      "15000": "10 000 - 19 999 TWD",
+      "25000": "20 000 - 29 999 TWD",
+      "35000": "30 000 - 39 999 TWD",
+      "45000": "40 000 - 49 999 TWD",
+      "55000": "50 000 - 59 999 TWD",
+      "65000": "60 000 - 69 999 TWD",
+      "75000": "70 000 - 79 999 TWD",
+      "85000": "80 000 - 89 999 TWD",
+      "95000": "90 000 - 99 999 TWD",
+      "105000": "100 000 - 109 999 TWD",
+      "115000": "110 000 - 119 999 TWD",
+      "125000": "120 000 - 129 999 TWD",
+      "135000": "130 000 - 139 999 TWD",
+      "145000": "140 000 - 149 999 TWD",
+      "155000": "150 000 - 159 999 TWD",
+      "165000": "160 000 - 169 999 TWD",
+      "175000": "170 000 - 179 999 TWD",
+      "185000": "180 000 - 189 999 TWD",
+      "195000": "190 000 - 199 999 TWD",
+      "250000": "200 000 - 299 999 TWD",
+      "350000": "300 000 - 399 999 TWD",
+      "450000": "400 000 - 499 999 TWD",
+      "750000": "500 000 - 999 999 TWD",
+      "1250000": "1 000 000 TWD or more per month, before taxes",
+      "-2": "NAP , other countries",
+      "-7": "Refused",
+      "-8": "Don't know"
+    },
+    "special": {}
+  },
+  {
+    "domain": "US_INC",
+    "meaning": "Country specific household income: United States",
+    "question": "In which of these groups did your total family income, from all sources, fall last year - 2021 - before taxes, that is.",
+    "content": {
+      "500": "Under 1 000 USD per year, before taxes",
+      "2000": "1 000 - 2 999 USD",
+      "3500": "3 000 - 3 999 USD",
+      "4500": "4 000 - 4 999 USD",
+      "5500": "5 000 - 5 999 USD",
+      "6500": "6 000 - 6 999 USD",
+      "7500": "7 000 - 7 999 USD",
+      "9000": "8 000 - 9 999 USD",
+      "11250": "10 000 - 12 499 USD",
+      "13750": "12 500 - 14 999 USD",
+      "16750": "15 000 - 17 499 USD",
+      "18750": "17 500 - 19 999 USD",
+      "21750": "20 000 - 22 499 USD",
+      "23750": "22 500 - 24 999 USD",
+      "27500": "25 000 - 29 999 USD",
+      "32500": "30 000 - 34 999 USD",
+      "37500": "35 000 - 39 999 USD",
+      "45000": "40 000 - 49 999 USD",
+      "55000": "50 000 - 59 999 USD",
+      "67500": "60 000 - 74 999 USD",
+      "82500": "75 000 - 89 999 USD",
+      "100000": "90 000 - 109 999 USD",
+      "120000": "110 000 - 129 999 USD",
+      "140000": "130 000 - 149 999 USD",
+      "160000": "150 000 - 169 999 USD",
+      "180000": "170 000 USD or more per year, before taxes",
+      "-2": "NAP , other countries",
+      "-9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "ZA_INC",
+    "meaning": "Country specific household income: South Africa",
+    "question": "Please give me the letter that best describes the TOTAL MONTHLY HOUSEHOLD INCOME of all the people in your household before tax and other deductions.",
+    "content": {
+      "0": "No income",
+      "250": "1 - 500 ZAR per month, gross",
+      "625": "501 - 750 ZAR",
+      "875": "751 - 1 000 ZAR",
+      "1250": "1 001 - 1 500 ZAR",
+      "1750": "1 501 - 2 000 ZAR",
+      "2500": "2 001 - 3 000 ZAR",
+      "4000": "3 001 - 5 000 ZAR",
+      "6250": "5 001 - 7 500 ZAR",
+      "8750": "7 501 - 10 000 ZAR",
+      "12500": "10 001 - 15 000 ZAR",
+      "17500": "15 001 - 20 000 ZAR",
+      "25000": "20 001 - 30 000 ZAR",
+      "40000": "30 001 - 50 000 ZAR",
+      "60000": "50 001 and more ZAR per month, gross",
+      "-2": "NAP , other countries",
+      "-7": "Refused",
+      "-8": "Don't know",
+      "-9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "MARITAL",
+    "meaning": "Legal partnership status",
+    "question": "What is your current legal marital status?",
+    "content": {
+      "1": "Married",
+      "2": "Civil partnership; IS: Registered cohabitation; SR: Common law marriage (concubinaat)",
+      "3": "Separated from spouse/civil partner (still legally married/still legally in a civil partnership)",
+      "4": "Divorced from spouse/legally separated from civil partner",
+      "5": "Widowed/civil partner died",
+      "6": "Never married/never in a civil partnership",
+      "-7": "Refused",
+      "-9": "No answer; CN: Cohabit"
+    },
+    "special": {
+      "AT": {
+        "3": "Not used"
+      },
+      "AU": {
+        "2": "Not used"
+      },
+      "CH": {
+        "2": "Includes same-sex partnerships"
+      },
+      "CN": {
+        "-9": "Recoded from 'Cohabit'"
+      },
+      "DE": {
+        "2": "Includes same-sex partnerships since 2000"
+      },
+      "DK": {
+        "2": "Includes 'Registreret partnerskab'"
+      },
+      "FI": {
+        "2": "Includes registered civil partnerships for same-sex couples"
+      },
+      "FR": {
+        "2": "Includes 'Pacsé(e)'"
+      },
+      "HR": {
+        "2": "Includes extramarital unions"
+      },
+      "IN": {
+        "2": "Recoded to 6 for 'live-in'"
+      },
+      "IS": {
+        "2": "Registered cohabitation"
+      },
+      "IT": {
+        "2": "Includes 'Unione civile'"
+      },
+      "JP": {
+        "2": "Not used"
+      },
+      "MX": {
+        "2": "Includes 'Sociedad de convivencia'"
+      },
+      "NL": {
+        "2": "Standard part of LISS panel"
+      },
+      "NO": {
+        "2": "Includes registered partner"
+      },
+      "NZ": {
+        "2": "Includes civil unions"
+      },
+      "PH": {
+        "2": "Not used"
+      },
+      "PL": {
+        "2": "Recoded 'Kresy' to 950"
+      },
+      "RU": {
+        "2": "Recoded 'Living together' to 6"
+      },
+      "SI": {
+        "2": "Includes registered partnership"
+      },
+      "SK": {
+        "2": "Not asked"
+      },
+      "SR": {
+        "2": "Common-law marriage"
+      },
+      "TW": {
+        "2": "Recoded from 'Cohabitation'"
+      },
+      "US": {
+        "2": "Not used"
+      },
+      "ZA": {
+        "6": "Includes 'Never married but engaged'"
+      }
+    }
+  },
+  {
+    "domain": "F_BORN",
+    "meaning": "Father's country of birth",
+    "question": "In which country was your father born? _______",
+    "content": {
+      "4": "Afghanistan",
+      "5": "South America (M49)",
+      "8": "Albania",
+      "9": "Oceania (M49)",
+      "10": "Antarctica",
+      "11": "Western Africa (M49)",
+      "12": "Algeria",
+      "13": "Central America (M49)",
+      "14": "Eastern Africa (M49)",
+      "15": "Northern Africa (M49)",
+      "16": "American Samoa",
+      "17": "Middle Africa (M49)",
+      "18": "Southern Africa (M49)",
+      "20": "Andorra",
+      "21": "Northern America (M49)",
+      "24": "Angola",
+      "28": "Antigua and Barbuda",
+      "29": "Caribbean (M49)",
+      "30": "Eastern Asia (M49)",
+      "31": "Azerbaijan",
+      "32": "Argentina",
+      "34": "Southern Asia (M49)",
+      "35": "South-Eastern Asia (M49)",
+      "36": "Australia",
+      "39": "Southern Europe (M49)",
+      "40": "Austria",
+      "44": "Bahamas",
+      "48": "Bahrain",
+      "50": "Bangladesh",
+      "51": "Armenia",
+      "52": "Barbados",
+      "53": "Australia and New Zealand (M49)",
+      "54": "Melanesia (M49)",
+      "56": "Belgium",
+      "57": "Micronesia (M49)",
+      "60": "Bermuda",
+      "61": "Polynesia (M49)",
+      "64": "Bhutan",
+      "68": "Bolivia, Plurinational State of",
+      "70": "Bosnia and Herzegovina",
+      "72": "Botswana",
+      "74": "Bouvet Island",
+      "76": "Brazil",
+      "84": "Belize",
+      "86": "British Indian Ocean Territory",
+      "90": "Solomon Islands",
+      "92": "Virgin Islands, British",
+      "96": "Brunei Darussalam",
+      "100": "Bulgaria",
+      "104": "Myanmar",
+      "108": "Burundi",
+      "112": "Belarus",
+      "116": "Cambodia",
+      "120": "Cameroon",
+      "124": "Canada",
+      "132": "Cape Verde",
+      "136": "Cayman Islands",
+      "140": "Central African Republic",
+      "143": "Central Asia (M49)",
+      "144": "Sri Lanka",
+      "145": "Western Asia (M49)",
+      "148": "Chad",
+      "151": "Eastern Europe (M49)",
+      "152": "Chile",
+      "154": "Northern Europe (M49)",
+      "155": "Western Europe (M49)",
+      "156": "China",
+      "158": "Taiwan",
+      "162": "Christmas Island",
+      "166": "Cocos (Keeling) Islands",
+      "170": "Colombia",
+      "174": "Comoros",
+      "175": "Mayotte",
+      "178": "Congo",
+      "180": "Congo, the Democratic Republic of the",
+      "184": "Cook Islands",
+      "188": "Costa Rica",
+      "191": "Croatia",
+      "192": "Cuba",
+      "196": "Cyprus",
+      "200": "Czechoslovakia (old ISO code)",
+      "203": "Czech Republic",
+      "204": "Benin",
+      "208": "Denmark",
+      "212": "Dominica",
+      "214": "Dominican Republic",
+      "218": "Ecuador",
+      "222": "El Salvador",
+      "226": "Equatorial Guinea",
+      "231": "Ethiopia",
+      "232": "Eritrea",
+      "233": "Estonia",
+      "234": "Faroe Islands",
+      "238": "Falkland Islands (Malvinas)",
+      "239": "South Georgia and the South Sandwich Islands",
+      "242": "Fiji",
+      "246": "Finland",
+      "248": "Aland Islands",
+      "250": "France",
+      "254": "French Guiana",
+      "258": "French Polynesia",
+      "260": "French Southern Territories",
+      "262": "Djibouti",
+      "266": "Gabon",
+      "268": "Georgia",
+      "270": "Gambia",
+      "275": "Palestine, State of",
+      "276": "Germany",
+      "288": "Ghana",
+      "292": "Gibraltar",
+      "296": "Kiribati",
+      "300": "Greece",
+      "304": "Greenland",
+      "308": "Grenada",
+      "312": "Guadeloupe",
+      "316": "Guam",
+      "320": "Guatemala",
+      "324": "Guinea",
+      "328": "Guyana",
+      "332": "Haiti",
+      "334": "Heard Island and McDonald Islands",
+      "336": "Holy See (Vatican City State)",
+      "340": "Honduras",
+      "344": "Hong Kong",
+      "348": "Hungary",
+      "352": "Iceland",
+      "356": "India",
+      "360": "Indonesia",
+      "364": "Iran, Islamic Republic of",
+      "368": "Iraq",
+      "372": "Ireland",
+      "376": "Israel",
+      "380": "Italy",
+      "384": "Cote d'Ivoire",
+      "388": "Jamaica",
+      "392": "Japan",
+      "398": "Kazakhstan",
+      "400": "Jordan",
+      "404": "Kenya",
+      "408": "Korea, Democratic People's Republic of",
+      "410": "Korea, Republic of",
+      "414": "Kuwait",
+      "417": "Kyrgyzstan",
+      "418": "Lao People's Democratic Republic",
+      "422": "Lebanon",
+      "426": "Lesotho",
+      "428": "Latvia",
+      "430": "Liberia",
+      "434": "Libya",
+      "438": "Liechtenstein",
+      "440": "Lithuania",
+      "442": "Luxembourg",
+      "446": "Macao",
+      "450": "Madagascar",
+      "454": "Malawi",
+      "458": "Malaysia",
+      "462": "Maldives",
+      "466": "Mali",
+      "470": "Malta",
+      "474": "Martinique",
+      "478": "Mauritania",
+      "480": "Mauritius",
+      "484": "Mexico",
+      "492": "Monaco",
+      "496": "Mongolia",
+      "498": "Moldova, Republic of",
+      "499": "Montenegro",
+      "500": "Montserrat",
+      "504": "Morocco",
+      "508": "Mozambique",
+      "512": "Oman",
+      "516": "Namibia",
+      "520": "Nauru",
+      "524": "Nepal",
+      "528": "Netherlands",
+      "530": "Netherlands Antilles (old ISO code)",
+      "531": "Curaçao",
+      "533": "Aruba",
+      "534": "Sint Maarten (Dutch part)",
+      "535": "Bonaire, Sint Eustatius and Saba",
+      "540": "New Caledonia",
+      "548": "Vanuatu",
+      "554": "New Zealand",
+      "558": "Nicaragua",
+      "562": "Niger",
+      "566": "Nigeria",
+      "570": "Niue",
+      "574": "Norfolk Island",
+      "578": "Norway",
+      "580": "Northern Mariana Islands",
+      "581": "United States Minor Outlying Islands",
+      "583": "Micronesia, Federated States of",
+      "584": "Marshall Islands",
+      "585": "Palau",
+      "586": "Pakistan",
+      "591": "Panama",
+      "598": "Papua New Guinea",
+      "600": "Paraguay",
+      "604": "Peru",
+      "608": "Philippines",
+      "612": "Pitcairn",
+      "616": "Poland",
+      "620": "Portugal",
+      "624": "Guinea-Bissau",
+      "626": "Timor-Leste",
+      "630": "Puerto Rico",
+      "634": "Qatar",
+      "638": "Reunion",
+      "642": "Romania",
+      "643": "Russian Federation",
+      "646": "Rwanda",
+      "652": "Saint Barthelemy",
+      "654": "Saint Helena, Ascension and Tristan da Cunha",
+      "659": "Saint Kitts and Nevis",
+      "660": "Anguilla",
+      "662": "Saint Lucia",
+      "663": "Saint Martin (French part)",
+      "666": "Saint Pierre and Miquelon",
+      "670": "Saint Vincent and the Grenadines",
+      "674": "San Marino",
+      "678": "Sao Tome and Principe",
+      "682": "Saudi Arabia",
+      "686": "Senegal",
+      "688": "Serbia",
+      "690": "Seychelles",
+      "694": "Sierra Leone",
+      "702": "Singapore",
+      "703": "Slovakia",
+      "704": "Viet Nam",
+      "705": "Slovenia",
+      "706": "Somalia",
+      "710": "South Africa",
+      "716": "Zimbabwe",
+      "724": "Spain",
+      "728": "South Sudan",
+      "729": "Sudan",
+      "732": "Western Sahara",
+      "740": "Suriname",
+      "744": "Svalbard and Jan Mayen",
+      "748": "Swaziland",
+      "752": "Sweden",
+      "756": "Switzerland",
+      "760": "Syrian Arab Republic",
+      "762": "Tajikistan",
+      "764": "Thailand",
+      "768": "Togo",
+      "772": "Tokelau",
+      "776": "Tonga",
+      "780": "Trinidad and Tobago",
+      "784": "United Arab Emirates",
+      "788": "Tunisia",
+      "792": "Turkey",
+      "795": "Turkmenistan",
+      "796": "Turks and Caicos Islands",
+      "798": "Tuvalu",
+      "800": "Uganda",
+      "804": "Ukraine",
+      "807": "Macedonia, the former Yugoslav Republic of",
+      "810": "USSR (old ISO code)",
+      "818": "Egypt",
+      "826": "United Kingdom",
+      "831": "Guernsey",
+      "832": "Jersey",
+      "833": "Isle of Man",
+      "834": "Tanzania, United Republic of",
+      "840": "United States",
+      "850": "Virgin Islands, U.S.",
+      "854": "Burkina Faso",
+      "858": "Uruguay",
+      "860": "Uzbekistan",
+      "862": "Venezuela, Bolivarian Republic of",
+      "876": "Wallis and Futuna",
+      "882": "Samoa",
+      "887": "Yemen",
+      "891": "Yugoslavia",
+      "894": "Zambia",
+      "915": "Kosovo",
+      "950": "Outside of COUNTRY/ Not [COUNTRY] citizenship, other countries or specific regions/ former nations (no official ISO code)",
+      "-4": "CH: Not applicable, father unknown",
+      "-6": "NO: Answer not retrievable for paper questionnaire",
+      "-7": "Refused",
+      "-8": "DE, JP: Don't know",
+      "-9": "No answer"
+    },
+    "special": {
+      "DE": {
+        "codes": "Recoded to M49 for anonymity"
+      },
+      "DK": {
+        "codes": "Recoded to M49 for privacy"
+      },
+      "FI": {
+        "codes": "Recoded to M49 except Finland"
+      },
+      "HR": {
+        "codes": "ISO 3166"
+      },
+      "IL": {
+        "codes": "M49 for privacy"
+      },
+      "IS": {
+        "codes": "Recoded to M49"
+      },
+      "IT": {
+        "codes": "ISO 3166"
+      },
+      "NL": {
+        "codes": "950 for categories 7 and 8"
+      },
+      "NO": {
+        "codes": "Recoded to M49"
+      },
+      "NZ": {
+        "codes": "Recoded to M49"
+      },
+      "PL": {
+        "200": "Recoded to 950"
+      },
+      "RU": {
+        "codes": "ISO 3166"
+      },
+      "SK": {
+        "3": "ISO 3166"
+      },
+      "TH": {
+        "codes": "ISO 3166"
+      },
+      "US": {
+        "1": "840",
+        "950": "Outside"
+      }
+    }
+  },
+  {
+    "domain": "URBRURAL",
+    "meaning": "Place of living: urban - rural",
+    "question": "Would you describe the place where you live as…",
+    "content": {
+      "1": "A big city",
+      "2": "The suburbs or outskirts of a big city",
+      "3": "A town or a small city",
+      "4": "A country village",
+      "5": "A farm or home in the country",
+      "-1": "Not available (CN)",
+      "-9": "No answer; PL: Hard to say"
+    },
+    "special": {
+      "SR": {
+        "1": "Paramaribo",
+        "2": "Suburbs of Paramaribo",
+        "5": "Interior (Amazon forest)"
+      },
+      "US": {
+        "1": "XNORCSIZ=1/2",
+        "2": "XNORCSIZ=3/4/5/6",
+        "3": "XNORCSIZ=7",
+        "4": "XNORCSIZ=8/9",
+        "5": "XNORCSIZ=10"
+      }
+    }
+  },
+  {
+    "domain": "AT_REG",
+    "meaning": "Country specific region: Austria",
+    "question": "Provinces (NUTS 2):",
+    "content": {
+      "1": "Vienna",
+      "2": "Lower Austria",
+      "3": "Burgenland",
+      "4": "Upper Austria",
+      "5": "Styria",
+      "6": "Carinthia",
+      "7": "Salzburg",
+      "8": "Tyrol",
+      "9": "Vorarlberg",
+      "-2": "NAP , other countries"
+    },
+    "special": {}
+  },
+  {
+    "domain": "AU_REG",
+    "meaning": "Country specific region: Australia",
+    "question": "Derived from addressing information in sample list.",
+    "content": {
+      "1": "New South Wales",
+      "2": "Victoria",
+      "3": "Queensland",
+      "4": "South Australia",
+      "5": "Western Australia",
+      "6": "Tasmania",
+      "7": "Australian Capital Territory",
+      "8": "Northern Territory",
+      "-2": "NAP , other countries",
+      "-9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "CH_REG",
+    "meaning": "Country specific region: Switzerland",
+    "question": "Please enter the postal code of your place of residence.",
+    "content": {
+      "1": "Region Lemanique (VD, VS, GE)",
+      "2": "Espace Mittelland (BE, FR, SO, NE, JU)",
+      "3": "Nordschweiz (BS, BL, AG)",
+      "4": "Zuerich (ZH)",
+      "5": "Ostschweiz (GL, SH, AR, AI, SG, GR, TG)",
+      "6": "Zentralschweiz (LU, UR, SZ, OW, NW, ZG)",
+      "7": "Ticino (TI)",
+      "-2": "NAP , other countries"
+    },
+    "special": {}
+  },
+  {
+    "domain": "CN_REG",
+    "meaning": "Country specific region: China",
+    "question": "Interview location: Province/ autonomous region/ municipality",
+    "content": {
+      "110000": "Bejing",
+      "120000": "Tianjin",
+      "130000": "Hebei Province",
+      "140000": "Shanxi Province",
+      "150000": "Inner Mongolia Autonomous Region",
+      "210000": "Liaoning Province",
+      "220000": "Jilin Province",
+      "230000": "Heilongjiang Province",
+      "310000": "Shanghai",
+      "320000": "Jiangsu Province",
+      "330000": "Zhejiang Province",
+      "340000": "Anhui Province",
+      "350000": "Fujian Province",
+      "360000": "Jiangxi Province",
+      "370000": "Shandong Province",
+      "410000": "Henan Province",
+      "420000": "Hubei Province",
+      "430000": "Hunan Province",
+      "440000": "Guangdong Province",
+      "450000": "Guangxi Zhuan",
+      "500000": "Chongqing",
+      "510000": "Sichuan Province",
+      "520000": "Guizhou Province",
+      "530000": "Yunnan Province",
+      "610000": "Shaanxi Province",
+      "620000": "Gansu Province",
+      "630000": "Qinghai Province",
+      "640000": "Ningxia Hui Autonomous Region",
+      "650000": "Xinajing Uygur Autonomous Region",
+      "-2": "NAP , other countries"
+    },
+    "special": {}
+  }
+]

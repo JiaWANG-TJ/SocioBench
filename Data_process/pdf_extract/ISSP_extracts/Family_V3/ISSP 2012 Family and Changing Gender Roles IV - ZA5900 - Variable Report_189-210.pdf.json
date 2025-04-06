@@ -1,0 +1,452 @@
+[
+  {
+    "domain": "V61",
+    "meaning": "Q29b After the youngest child started school?",
+    "question": "Did you work outside the home full-time, part-time or not at all ...? ... After the youngest child started school?",
+    "content": {
+      "0": "Not applicable, never had children",
+      "1": "Worked full-time",
+      "2": "Worked part-time",
+      "3": "Stayed at home",
+      "8": "Does not apply, KR: don't know, refused",
+      "9": "No answer, don't know"
+    },
+    "special": {
+      "FI": {
+        "0": "NAP (no children, no answer)"
+      },
+      "TW": {
+        "4": "Worked at home"
+      }
+    }
+  },
+  {
+    "domain": "V62",
+    "meaning": "Q30a When a child was under school age?",
+    "question": "What about your spouse/ partner at that time - did he or she work outside the home full-time, part-time or not at all ...? ... When a child was under school age?",
+    "content": {
+      "0": "Not applicable, never had children",
+      "1": "Worked full-time",
+      "2": "Worked part-time",
+      "3": "Stayed at home",
+      "8": "Does not apply, never married, no partner, KR: don't know, refused",
+      "9": "No answer, don't know"
+    },
+    "special": {
+      "FI": {
+        "0": "NAP (no children, no answer)"
+      },
+      "TW": {
+        "4": "Worked at home"
+      }
+    }
+  },
+  {
+    "domain": "V63",
+    "meaning": "Q30b After the youngest child started school?",
+    "question": "What about your spouse/ partner at that time - did he or she work outside the home full-time, part-time or not at all ...? ... After the youngest child started school?",
+    "content": {
+      "0": "Not applicable, never had children",
+      "1": "Worked full-time",
+      "2": "Worked part-time",
+      "3": "Stayed at home",
+      "8": "Does not apply, never married, no partner, KR: don't know, refused",
+      "9": "No answer, don't know"
+    },
+    "special": {
+      "FI": {
+        "0": "NAP (no children, no answer)"
+      },
+      "TW": {
+        "4": "Worked at home"
+      }
+    }
+  },
+  {
+    "domain": "V64",
+    "meaning": "Q31 Who usually makes/ decided together how to bring up your children?",
+    "question": "Who usually makes/ made the decisions about how to bring up your children?",
+    "content": {
+      "0": "Not applicable, never had children",
+      "1": "Mostly me",
+      "2": "Mostly my spouse/ partner",
+      "3": "Sometimes me/ sometimes my spouse, partner",
+      "4": "We decide/ decided together",
+      "5": "Someone else",
+      "8": "Does not apply, never married, no partner, KR: don't know, refused",
+      "9": "No answer, don't know"
+    },
+    "special": {
+      "FI": {
+        "0": "NAP (no children, no answer)"
+      }
+    }
+  },
+  {
+    "domain": "V65",
+    "meaning": "Q32 Spouse, partner degree: Highest completed degree of education - cat for international comparison",
+    "question": "Education of current spouse/ partner: parallel to nat_DEGR to be harmonized into spouse_DEGR",
+    "content": {
+      "0": "No formal education",
+      "1": "Primary school",
+      "2": "Lower secondary (secondary completed does not allow entry to university: obligatory school)",
+      "3": "Upper secondary (programs that allows entry to university)",
+      "4": "Post secondary, non-tertiary",
+      "5": "Lower level tertiary, first stage",
+      "6": "Upper level tertiary (Master, Dr.)",
+      "9": "No answer, don't know, refused",
+      "99": "NAP, no partner (code 3 in PARTLIV)"
+    },
+    "special": {
+      "AR": {
+        "99": "NAP (code 3,7 in PARTLIV)"
+      },
+      "CZ": {
+        "99": "NAP (code 3,7 in PARTLIV)"
+      },
+      "IS": {
+        "99": "NAP (code 3,7,9 in PARTLIV)"
+      },
+      "PT": {
+        "99": "NAP (code 3,7 in PARTLIV)"
+      },
+      "TW": {
+        "99": "NAP (code 3-6 in MARITAL)"
+      },
+      "US": {
+        "99": "NAP (code 3-6 in MARITAL)"
+      },
+      "AT": {
+        "990": "Not available"
+      },
+      "BG": {
+        "990": "Not available"
+      },
+      "CL": {
+        "990": "Not available"
+      },
+      "GB": {
+        "990": "Not available"
+      },
+      "IE": {
+        "990": "Not available"
+      },
+      "IL": {
+        "990": "Not available"
+      },
+      "LV": {
+        "990": "Not available"
+      },
+      "NO": {
+        "990": "Not available"
+      },
+      "PH": {
+        "990": "Not available"
+      },
+      "RU": {
+        "990": "Not available"
+      },
+      "ZA": {
+        "990": "Not available"
+      }
+    }
+  },
+  {
+    "domain": "V65A",
+    "meaning": "Q32a Spouse, partner degree: Highest qualification - former 5-point educational scheme",
+    "question": "Education of current spouse/ partner",
+    "content": {
+      "0": "No formal education",
+      "1": "Lower formal qualification",
+      "2": "Above lowest qualification",
+      "3": "Higher secondary completed",
+      "4": "Above higher secondary level",
+      "5": "University degree completed",
+      "9": "No answer, don't know, refused",
+      "99": "NAP, no partner",
+      "990": "Not available"
+    },
+    "special": {
+      "LV": {
+        "99": "NAP (code 2,3 in PARTLIV)"
+      },
+      "AR": {
+        "990": "Not available"
+      },
+      "AT": {
+        "990": "Not available"
+      },
+      "AU": {
+        "990": "Not available"
+      },
+      "BE": {
+        "990": "Not available"
+      },
+      "BG": {
+        "990": "Not available"
+      },
+      "CA": {
+        "990": "Not available"
+      },
+      "CH": {
+        "990": "Not available"
+      },
+      "CN": {
+        "990": "Not available"
+      },
+      "CZ": {
+        "990": "Not available"
+      },
+      "DE": {
+        "990": "Not available"
+      },
+      "DK": {
+        "990": "Not available"
+      },
+      "ES": {
+        "990": "Not available"
+      },
+      "FI": {
+        "990": "Not available"
+      },
+      "FR": {
+        "990": "Not available"
+      },
+      "GB": {
+        "990": "Not available"
+      },
+      "HR": {
+        "990": "Not available"
+      },
+      "HU": {
+        "990": "Not available"
+      },
+      "IN": {
+        "990": "Not available"
+      },
+      "IS": {
+        "990": "Not available"
+      },
+      "JP": {
+        "990": "Not available"
+      },
+      "KR": {
+        "990": "Not available"
+      },
+      "LT": {
+        "990": "Not available"
+      },
+      "MX": {
+        "990": "Not available"
+      },
+      "NL": {
+        "990": "Not available"
+      },
+      "PL": {
+        "990": "Not available"
+      },
+      "PT": {
+        "990": "Not available"
+      },
+      "RU": {
+        "990": "Not available"
+      },
+      "SE": {
+        "990": "Not available"
+      },
+      "SI": {
+        "990": "Not available"
+      },
+      "SK": {
+        "990": "Not available"
+      },
+      "TR": {
+        "990": "Not available"
+      },
+      "TW": {
+        "990": "Not available"
+      },
+      "US": {
+        "990": "Not available"
+      },
+      "VE": {
+        "990": "Not available"
+      },
+      "ZA": {
+        "990": "Not available"
+      },
+      "CL": {
+        "99": "NAP (code 3 in PARTLIV)"
+      },
+      "IE": {
+        "99": "NAP (code 3 in PARTLIV)"
+      },
+      "IL": {
+        "99": "NAP (code 3 in PARTLIV)"
+      },
+      "NO": {
+        "99": "NAP (code 3 in PARTLIV)"
+      },
+      "PH": {
+        "99": "NAP (code 3 in PARTLIV)"
+      }
+    }
+  },
+  {
+    "domain": "V66",
+    "meaning": "Q33 Spouse, partner: Age",
+    "question": "Age of current spouse/ partner - parallel to age",
+    "content": {
+      "0": "NAP, no partner (code 3 in PARTLIV)",
+      "14": "14 years",
+      "15": "15 years",
+      "102": "102 years",
+      "998": "Don't know",
+      "999": "No answer"
+    },
+    "special": {
+      "AR": {
+        "0": "NAP (codes 3,7 in PARTLIV)"
+      },
+      "CZ": {
+        "0": "NAP (codes 3,7 in PARTLIV)"
+      },
+      "IS": {
+        "0": "NAP (codes 3,7,9 in PARTLIV)"
+      },
+      "LV": {
+        "0": "NAP (codes 2,3 in PARTLIV)"
+      },
+      "PT": {
+        "0": "NAP (codes 3,7 in PARTLIV)"
+      },
+      "TW": {
+        "0": "NAP (code 3-6 in MARITAL)"
+      },
+      "US": {
+        "0": "NAP (code 3-6 in MARITAL)"
+      },
+      "AT": {
+        "0": "Not available"
+      },
+      "BG": {
+        "0": "Not available"
+      },
+      "GB": {
+        "0": "Not available"
+      },
+      "HU": {
+        "0": "Not available"
+      },
+      "PH": {
+        "0": "Not available"
+      },
+      "RU": {
+        "0": "Not available"
+      },
+      "ZA": {
+        "0": "Not available"
+      }
+    }
+  },
+  {
+    "domain": "V67",
+    "meaning": "Q34 Duration of relationship",
+    "question": "How long have you and your spouse/ steady partner been living together?",
+    "content": {
+      "0": "Less than one year",
+      "1": "One year",
+      "2": "2 years",
+      "3": "3 years, CN: 3 or more",
+      "97": "Don't know",
+      "98": "No answer, refused, KR: don't know, refused",
+      "99": "NAP, no partner (code 3 in PARTLIV)"
+    },
+    "special": {
+      "PT": {
+        "99": "NAP (codes 3,7 in PARTLIV)"
+      },
+      "TW": {
+        "99": "NAP (code 3-6 in MARITAL)"
+      },
+      "US": {
+        "99": "NAP (code 3-6 in MARITAL)"
+      },
+      "AR": {
+        "99": "NAP (codes 3,7 in PARTLIV)"
+      },
+      "CZ": {
+        "99": "NAP (codes 3,7 in PARTLIV)"
+      },
+      "AT": {
+        "99": "NAP (codes 2,3 in PARTLIV)"
+      },
+      "BE": {
+        "99": "NAP (codes 2,3 in PARTLIV)"
+      },
+      "ES": {
+        "99": "NAP (codes 2,3 in PARTLIV)"
+      },
+      "IE": {
+        "99": "NAP (codes 2,3 in PARTLIV)"
+      },
+      "IS": {
+        "99": "NAP (codes 2,3 in PARTLIV)"
+      },
+      "KR": {
+        "99": "NAP (codes 2,3 in PARTLIV)"
+      },
+      "LV": {
+        "99": "NAP (codes 2,3 in PARTLIV)"
+      },
+      "BG": {
+        "990": "Not available"
+      },
+      "GB": {
+        "990": "Not available"
+      },
+      "PH": {
+        "990": "Not available"
+      },
+      "RU": {
+        "990": "Not available"
+      }
+    }
+  },
+  {
+    "domain": "SEX",
+    "meaning": "Sex of Respondent",
+    "question": "Sex of respondent",
+    "content": {
+      "1": "Male",
+      "2": "Female",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "BIRTH",
+    "meaning": "Year of birth",
+    "question": "When were you born?",
+    "content": {
+      "1910": "1910",
+      "1998": "1998",
+      "9999": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "AGE",
+    "meaning": "Age of respondent",
+    "question": "What was your age last birthday?",
+    "content": {
+      "15": "15 years",
+      "16": "16 years",
+      "17": "17 years",
+      "18": "18 years",
+      "102": "102 years",
+      "999": "No answer"
+    },
+    "special": {}
+  }
+]

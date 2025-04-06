@@ -1,0 +1,335 @@
+[
+  {
+    "domain": "US_ETHN2",
+    "meaning": "United States: Country specific ethnic group 2",
+    "question": "From what country or countries did your ancestors come?",
+    "content": {
+      "1": "Austria",
+      "3": "Czechoslovakia",
+      "4": "Denmark",
+      "5": "England and Wales",
+      "6": "Finland",
+      "7": "France",
+      "8": "Germany",
+      "9": "Greece",
+      "10": "Hungary",
+      "11": "Ireland",
+      "12": "Italy",
+      "13": "Lithuania",
+      "14": "Netherlands (Dutch/Holland)",
+      "15": "Norway",
+      "16": "Poland",
+      "17": "Portugal",
+      "18": "Romania",
+      "19": "Russia (USSR)",
+      "20": "Scotland",
+      "21": "Spain",
+      "22": "Sweden",
+      "23": "Switzerland",
+      "25": "Yugoslavia",
+      "26": "Other European",
+      "27": "Algeria",
+      "28": "Democratic Republic of the Congo",
+      "30": "Ethiopia",
+      "31": "Kenya",
+      "32": "Nigeria",
+      "33": "South Africa",
+      "36": "Uganda",
+      "37": "Other African",
+      "42": "Japan",
+      "43": "Pakistan",
+      "44": "Philippines",
+      "48": "Other Asian",
+      "49": "Iran",
+      "53": "Saudi Arabia",
+      "54": "Syria",
+      "57": "Other Middle Eastern",
+      "60": "Brazil",
+      "67": "Peru",
+      "71": "Other South American",
+      "72": "Belize",
+      "77": "Mexico",
+      "79": "Panama",
+      "80": "Other Central American",
+      "81": "American Indian",
+      "82": "Canada",
+      "83": "Canada (French)",
+      "84": "Puerto Rico",
+      "85": "Other North American",
+      "86": "Cuba",
+      "87": "Haiti",
+      "88": "Dominican Republic",
+      "89": "Jamaica",
+      "90": "Other Caribbean",
+      "92": "Papua New Guinea",
+      "-2": "NAP , other countries",
+      "-9": "No answer incl. no second mention"
+    },
+    "special": {}
+  },
+  {
+    "domain": "ZA_ETHN1",
+    "meaning": "South Africa: Country specific ethnic group 1",
+    "question": "What is your race group?",
+    "content": {
+      "1": "Black African",
+      "2": "Coloured",
+      "3": "Indian / Asian",
+      "4": "White",
+      "5": "Other",
+      "-2": "NAP , other countries"
+    },
+    "special": {}
+  },
+  {
+    "domain": "ZA_ETHN2",
+    "meaning": "South Africa: Country specific ethnic group 2",
+    "question": "Not asked.",
+    "content": {
+      "-1": "Not available",
+      "-2": "NAP , other countries"
+    },
+    "special": {}
+  },
+  {
+    "domain": "HOMPOP",
+    "meaning": "How many persons in household",
+    "question": "Including yourself, how many people - including children - usually live in your household?",
+    "content": {
+      "01": "One person (only respondent)",
+      "02": "Two persons",
+      "03": "Three persons",
+      "04": "Four persons",
+      "05": "Five persons",
+      "06": "Six persons",
+      "07": "Seven persons",
+      "08": "Eight persons",
+      "09": "Nine persons",
+      "10": "Ten persons",
+      "11": "Eleven persons",
+      "12": "Twelve persons",
+      "13": "Thirteen persons",
+      "14": "Fourteen persons",
+      "15": "Fiȇeen persons",
+      "16": "Sixteen persons",
+      "17": "Seventeen persons",
+      "18": "Eighteen persons",
+      "25": "Twenty-five persons",
+      "31": "Thirty-one persons",
+      "50": "Fiȇy persons",
+      "-4": "NAP (Not a private household)",
+      "-7": "HR: Refused",
+      "-9": "No answer"
+    },
+    "special": {
+      "HR": {
+        "-7": "Refused"
+      }
+    }
+  },
+  {
+    "domain": "HHADUL T",
+    "meaning": "How many adults in household",
+    "question": "Again including yourself, how many adults of 18 years and older live in your household?",
+    "content": {
+      "01": "One adult (only respondent)",
+      "02": "Two adults",
+      "03": "Three adults",
+      "04": "Four adults",
+      "05": "Five adults",
+      "06": "Six adults",
+      "07": "Seven adults",
+      "08": "Eight adults",
+      "09": "Nine adults; SR: Nine or more",
+      "10": "Ten adults",
+      "11": "Eleven adults",
+      "13": "Thirteen adults",
+      "14": "Fourteen adults",
+      "15": "Fiȇeen adults",
+      "18": "Eighteen adults",
+      "20": "Twenty adults",
+      "32": "Thirty-two adults",
+      "40": "Forty adults",
+      "44": "Forty-four adults",
+      "49": "Forty-nine adults",
+      "50": "Fiȇy adults",
+      "59": "Fiȇy-nine adults",
+      "63": "Sixty-three adults",
+      "-1": "Not available (CN)",
+      "-4": "NAP (Not a private household)",
+      "-7": "HR: Refused",
+      "-9": "No answer"
+    },
+    "special": {
+      "CN": {
+        "-1": "Not available"
+      },
+      "HR": {
+        "-7": "Refused"
+      }
+    }
+  },
+  {
+    "domain": "HHCHILDR",
+    "meaning": "How many children above school entry age in household",
+    "question": "And how many children between [school entry age] and 17 usually live in your household?",
+    "content": {
+      "0": "No children [school entry age] to 17; NL: No children (0 to 17)",
+      "01": "One child [school entry age] to 17; NL: One child (0 to 17)",
+      "02": "Two children [school entry age] to 17; NL: Two children (0 to 17)",
+      "03": "Three children [school entry age] to 17; NL: Three children (0 to 17)",
+      "04": "Four children [school entry age] to 17; NL: Four children (0 to 17)",
+      "05": "Five children [school entry age] to 17; NL: Five children (0 to 17)",
+      "06": "Six children [school entry age] to 17; NL: Six children (0 to 17)",
+      "07": "Seven children [school entry age] to 17",
+      "08": "Eight children [school entry age] to 17",
+      "09": "Nine children [school entry age] to 17",
+      "10": "Ten children [school entry age] to 17",
+      "11": "Eleven children [school entry age] to 17",
+      "12": "Twelve children [school entry age] to 17",
+      "13": "Thirteen children [school entry age] to 17",
+      "15": "Fiȇeeen children [school entry age] to 17",
+      "17": "Seventeen children [school entry age] to 17",
+      "-1": "Not available (CN)",
+      "-4": "NAP (Not a private household)",
+      "-7": "HR: Refused",
+      "-9": "No answer,  AU: No answer and no children between 5 to 17"
+    },
+    "special": {
+      "CN": {
+        "-1": "Not available"
+      },
+      "HR": {
+        "-7": "Refused"
+      }
+    }
+  },
+  {
+    "domain": "HHTODD",
+    "meaning": "How many children below school age in household",
+    "question": "How many children below [school entry age] live in your household?",
+    "content": {
+      "0": "No children below [age of school entry]",
+      "01": "One child below [age of school entry]",
+      "02": "Two children below [age of school entry]",
+      "03": "Three children below [age of school entry]",
+      "04": "Four children below [age of school entry]",
+      "05": "Five children below [age of school entry]",
+      "06": "Six children below [age of school entry]",
+      "07": "Seven children below [age of school entry]",
+      "08": "Eight children below [age of school entry]",
+      "19": "Nineteen children below [age of school entry]",
+      "-1": "Not available (CN, NL, FI-responses from Swedish paper questionnaire)",
+      "-4": "NAP (Not a private household)",
+      "-7": "HR: Refused",
+      "-9": "No answer;  AU: No answer and no children below 5"
+    },
+    "special": {
+      "CN": {
+        "-1": "Not available"
+      },
+      "NL": {
+        "-1": "Not available"
+      },
+      "FI": {
+        "-1": "Not available"
+      },
+      "HR": {
+        "-7": "Refused"
+      }
+    }
+  },
+  {
+    "domain": "AT_RINC",
+    "meaning": "Country specific personal income: Austria",
+    "question": "Before taxes and other deductions, what on average is your own total monthly income?",
+    "content": {
+      "0": "No income",
+      "1": "1 EUR per month, net",
+      "50000": "50 000 EUR per month, net",
+      "-2": "NAP , other countries",
+      "-9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "AU_RINC",
+    "meaning": "Country specific personal income: Australia",
+    "question": "Before taxes and other deductions, what on average is your own total WEEKLY income?",
+    "content": {
+      "0": "No income",
+      "41": "41 AUD per week, gross",
+      "59000": "59 000 AUD per week, gross",
+      "-2": "NAP , other countries",
+      "-9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "CH_RINC",
+    "meaning": "Country specific personal income: Switzerland",
+    "question": "If you add up income from all sources, which category best applies to your total net PERSONAL monthly income?",
+    "content": {
+      "400": "Less than 600 CHF per month, net",
+      "1150": "600 up to less than 1 700 CHF",
+      "2000": "1 700 up to less than 2 300 CHF",
+      "2700": "2 300 up to less than 3 100 CHF",
+      "3500": "3 100 up to less than 3 900 CHF",
+      "4300": "3 900 up to less than 4 700 CHF",
+      "5150": "4 700 up to less than 5 600 CHF",
+      "6100": "5 600 up to less than 6 600 CHF",
+      "7550": "6 600 up to less than 8 500 CHF",
+      "9250": "8 500 CHF or more per month, net",
+      "-2": "NAP , other countries",
+      "-7": "Refused",
+      "-8": "Don't know",
+      "-9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "CN_RINC",
+    "meaning": "Country specific personal income: China",
+    "question": "What was your total personal income last year (2020)?",
+    "content": {
+      "0": "No income",
+      "200": "200 CNY per year",
+      "9999996": "More than 1 million CNY per year",
+      "-2": "NAP , other countries",
+      "-7": "Refused",
+      "-8": "Don't know",
+      "-9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "CZ_RINC",
+    "meaning": "Country specific personal income: Czech Republic",
+    "question": "What is your personal average net monthly income from all sources?",
+    "content": {
+      "0": "No income",
+      "1080": "1080 CZK per month, net",
+      "2500": "2 500 CZK/ Up to 4 999 CZK per month, net",
+      "7500": "7 500 CZK/ 5 000 - 9 999 CZK per month, net",
+      "12500": "12 500 CZK/ 10 000 - 14 999 CZK per month, net",
+      "17500": "17 500 CZK/ 15 000 - 19 999 CZK per month, net",
+      "22500": "22 500 CZK/ 20 000 - 24 999 CZK per month, net",
+      "27500": "27 500 CZK/ 25 000 - 29 999 CZK per month, net",
+      "32500": "32 500 CZK/ 30 000 - 34 999 CZK per month, net",
+      "37500": "37 500 CZK/ 35 000 - 39 999 CZK per month, net",
+      "45000": "45 000 CZK/ 40 000 - 49 999 CZK per month, net",
+      "55000": "55 000 CZK/ 50 000 - 59 999 CZK per month, net",
+      "65000": "65 000 CZK/ 60 000 - 69 999 CZK per month, net",
+      "75000": "75 000 CZK/ 70 000 - 79 999 CZK per month, net",
+      "85000": "85 000 CZK/ 80 000 - 89 999 CZK per month, net",
+      "95000": "95 000 CZK/ 90 000 - 99 999 CZK per month, net",
+      "125000": "125 000 CZK/ 100 000 - 149 000 CZK per month, net",
+      "175000": "175 000 CZK/ 150 000 and more CZK per month, net",
+      "-2": "NAP , other countries",
+      "-7": "Refused",
+      "-8": "Don't know",
+      "-9": "No answer"
+    },
+    "special": {}
+  }
+]

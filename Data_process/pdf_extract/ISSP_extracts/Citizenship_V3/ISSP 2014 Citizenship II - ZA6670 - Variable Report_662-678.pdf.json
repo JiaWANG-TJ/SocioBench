@@ -1,0 +1,166 @@
+[
+  {
+    "domain": "US_REG",
+    "meaning": "United States: Country specific region",
+    "question": "Based on respondents' residential addresses.",
+    "content": {
+      "0": "NAP, other countries",
+      "1": "New England",
+      "2": "Middle Atlantic",
+      "3": "East North Central",
+      "4": "West North Central",
+      "5": "South Atlantic",
+      "6": "East South Central",
+      "7": "West South Central",
+      "8": "Mountain",
+      "9": "Pacific"
+    },
+    "special": {}
+  },
+  {
+    "domain": "VE_REG",
+    "meaning": "Venezuela: Country specific region",
+    "question": "",
+    "content": {
+      "0": "Not available; NAP, other countries"
+    },
+    "special": {}
+  },
+  {
+    "domain": "ZA_REG",
+    "meaning": "South Africa: Country specific region",
+    "question": "Provinces",
+    "content": {
+      "0": "NAP, other countries",
+      "1": "Western Cape",
+      "2": "Eastern Cape",
+      "3": "Northern Cape",
+      "4": "Free State",
+      "5": "Kwa-Zulu Natal",
+      "6": "North West",
+      "7": "Gauteng",
+      "8": "Mpumalanga",
+      "9": "Limpopo"
+    },
+    "special": {}
+  },
+  {
+    "domain": "CASEID",
+    "meaning": "Respondent Identification Number",
+    "question": "This variable attaches a unique identification number to each respondent with year of the module, country/ subsample (V3) and the original identification number of the respondents.",
+    "content": {},
+    "special": {}
+  },
+  {
+    "domain": "DATEYR",
+    "meaning": "Year of the interview (four digits)",
+    "question": "Year of interview: year of interview; YYYY (four digits)",
+    "content": {
+      "2013": "Year 2013",
+      "2014": "Year 2014",
+      "2015": "Year 2015",
+      "2016": "Year 2016"
+    },
+    "special": {}
+  },
+  {
+    "domain": "DATEMO",
+    "meaning": "Month of the interview",
+    "question": "Month of the interview: MM (two digits)",
+    "content": {
+      "1": "January",
+      "2": "February",
+      "3": "March",
+      "4": "April",
+      "5": "May",
+      "6": "June",
+      "7": "July",
+      "8": "August",
+      "9": "September",
+      "10": "October",
+      "11": "November",
+      "12": "December",
+      "99": "No answer, information missing"
+    },
+    "special": {
+      "AT": {
+        "0": "Not available"
+      }
+    }
+  },
+  {
+    "domain": "DATEDY",
+    "meaning": "Day of the interview",
+    "question": "Day of the interview: DD (two digits)",
+    "content": {
+      "1": "01.",
+      "31": "31.",
+      "99": "No answer, information missing"
+    },
+    "special": {
+      "AT": {
+        "0": "Not available"
+      }
+    }
+  },
+  {
+    "domain": "SUBSCASE",
+    "meaning": "Case substitution flag",
+    "question": "Substitution in this survey",
+    "content": {
+      "0": "NAP, no substitution in this survey",
+      "1": "Case from original sample",
+      "2": "Case substituted"
+    },
+    "special": {}
+  },
+  {
+    "domain": "WEIGHT",
+    "meaning": "Weighting factor",
+    "question": "Weighting factor",
+    "content": {},
+    "special": {}
+  },
+  {
+    "domain": "MODE",
+    "meaning": "Administrative mode of data collection",
+    "question": "This variable records the administrative mode/ method of data-collection.",
+    "content": {
+      "10": "Face-to-face, PAPI, no visuals",
+      "11": "Face-to-face, PAPI, visuals",
+      "12": "Face-to-face, PAPI, respondent reading questionnaire",
+      "13": "Face-to-face, PAPI, interpreter or translator, no visuals",
+      "14": "Face-to-face, PAPI, interpreter or translator, visuals",
+      "20": "CAPI, computer assisted personal interview, no visuals",
+      "21": "CAPI, computer assisted personal interview, visuals",
+      "22": "CAPI, respondent reading questionnaire (paper or on monitor)",
+      "23": "CAPI, interpreter or translator, no visuals",
+      "24": "CAPI, interpreter or translator, visuals",
+      "30": "Self completion, arrives with interviewer, interviewer attending",
+      "31": "Self completion, arrives with interviewer, drops-off, picks up later",
+      "32": "Self completion, arrives with interviewer, drops-off, mailed back by Respondent",
+      "33": "Self completion, mailed to, completed by R and hold for pick up",
+      "34": "Self completion, mailed to, mailed back by Respondent",
+      "40": "CASI, computer-assisted self-completion interview",
+      "41": "Self-completion, web questionnaire",
+      "50": "CAWI, computer assisted web interview",
+      "52": "CAPI, phone",
+      "60": "CATI, computer assisted telephone interview",
+      "99": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "GROUP",
+    "meaning": "Methods of data-collection in mixed modes experiment",
+    "question": "The variable 'GROUP' functions as a flag variable to show the participation in the experiment and to distinguish web respondents from 'standard mode' respondents.",
+    "content": {
+      "0": "Not available, country did not participate in 'Mixed Mode Experiment'",
+      "1": "Web only",
+      "2": "Paper only",
+      "3": "Web and paper",
+      "4": "Face-to-face only"
+    },
+    "special": {}
+  }
+]

@@ -1,0 +1,411 @@
+[
+  {
+    "domain": "studyno",
+    "meaning": "GESIS Study Number",
+    "question": "GESIS Study number ZA8000 for the ISSP 2021 on 'Health and Health Care II'. Study number of the data set producer and archiving number.",
+    "content": {
+      "8000": "GESIS Study Number ZA8000"
+    },
+    "special": {}
+  },
+  {
+    "domain": "version",
+    "meaning": "GESIS Archive version",
+    "question": "Version and Release Date of the Data Set. This variable identifies the GESIS archive version number of this data set and the corresponding release date, recorded as a string. The version number is composed of a sequence of three numbers. The major number is incremented when there are changes in the composition of the data set (e.g. additional variables or cases), the minor or second number is incremented when significant errors have been fixed (e.g. coding errors, misleading value labels), and the third or revision number is incremented when minor bugs are fixed (e.g. spelling errors in variable or value labels).",
+    "content": {
+      "2.0.0 (2024-08-30)": "2.0.0 (2024-08-30)"
+    },
+    "special": {}
+  },
+  {
+    "domain": "doi",
+    "meaning": "Digital Object Identifier",
+    "question": "Digital Object Identifier (DOI). This variable holds the Digital Object Identifier (DOI) for the data set at hand as registered via the DA|RA registration agency for economic and social science data. Each data set version (see the variable 'version') has a unique persistent DOI. For direct access to the complete archive dissemination package for this study, including new data set versions, the DOI needs to be appended to the resolver service URL: https://doi.org/10.4232/5.ZA8000.2.0.0. In terms of good scientific practice, the DOI is an important element for the correct citation of a data set.",
+    "content": {
+      "doi:10.4232/5.ZA8000.2.0.0": "doi:10.4232/5.ZA8000.2.0.0"
+    },
+    "special": {}
+  },
+  {
+    "domain": "country",
+    "meaning": "Country ISO 3166 Code",
+    "question": "ISO Code of the Countries (three digit). All countries are coded in accordance with the ISO 3166-1-alpha-2 country code.",
+    "content": {
+      "36": "AU-Australia",
+      "40": "AT-Austria",
+      "156": "CN-China",
+      "158": "TW-Taiwan",
+      "191": "HR-Croatia",
+      "203": "CZ-Czech Republic",
+      "208": "DK-Denmark",
+      "246": "FI-Finland",
+      "250": "FR-France",
+      "276": "DE-Germany",
+      "348": "HU-Hungary",
+      "352": "IS-Iceland",
+      "356": "IN-India",
+      "376": "IL-Israel",
+      "380": "IT-Italy",
+      "392": "JP-Japan",
+      "484": "MX-Mexico",
+      "528": "NL-Netherlands",
+      "554": "NZ-New Zealand",
+      "578": "NO-Norway",
+      "608": "PH-Philippines",
+      "616": "PL-Poland",
+      "643": "RU-Russia",
+      "703": "SK-Slovakia",
+      "705": "SI-Slovenia",
+      "710": "ZA-South Africa",
+      "740": "SR-Suriname",
+      "756": "CH-Switzerland",
+      "764": "TH-Thailand",
+      "840": "US-United States"
+    },
+    "special": {}
+  },
+  {
+    "domain": "c_sample",
+    "meaning": "Country/ Sample ISO 3166 Code",
+    "question": "Country/ Sample (see the variable 'country' for codes for whole nation states). To indicate the subsamples within the ISSP countries a code on the basis of ISO 3166 was constructed. For all countries without subsamples the three digit ISO 3166 Code (as in the variable 'country') was used. For those with subsamples a five digit numeric code is used. The first three-digits are based on the original ISO code and indicate the country. The following two-digit numeric appendices (01, 02) indicate the subsamples.",
+    "content": {
+      "36": "AU-Australia",
+      "40": "AT-Austria",
+      "156": "CN-China",
+      "158": "TW-Taiwan",
+      "191": "HR-Croatia",
+      "203": "CZ-Czech Republic",
+      "208": "DK-Denmark",
+      "246": "FI-Finland",
+      "250": "FR-France",
+      "348": "HU-Hungary",
+      "352": "IS-Iceland",
+      "356": "IN-India",
+      "380": "IT-Italy",
+      "392": "JP-Japan",
+      "484": "MX-Mexico",
+      "528": "NL-Netherlands",
+      "554": "NZ-New Zealand",
+      "578": "NO-Norway",
+      "608": "PH-Philippines",
+      "616": "PL-Poland",
+      "643": "RU-Russia",
+      "703": "SK-Slovakia",
+      "705": "SI-Slovenia",
+      "710": "ZA-South Africa",
+      "740": "SR-Suriname",
+      "756": "CH-Switzerland",
+      "764": "TH-Thailand",
+      "840": "US-United States",
+      "27601": "DE-W-Germany-West",
+      "27602": "DE-E-Germany-East",
+      "37601": "IL-J-Israel, Jews",
+      "37602": "IL-A-Israel, Arabs"
+    },
+    "special": {}
+  },
+  {
+    "domain": "c_alphan",
+    "meaning": "Country/ Sample Prefix ISO 3166 Code - alphanumeric",
+    "question": "Sample Prefix ISO 3166 Code - Alphanumeric. ISO 3166 Country/ Sample Prefix. This alphanumerical country sample identification variable c_alphan includes country codes that are based on ISO 3166. All countries are coded in accordance with the ISO 3166-1-alpha-2 country code, if available. For examining subsamples from Germany (East/ West) or Israel (Jews/ Arabs), the variable 'c_sample' can be used as a flag variable. This alphanumerical sample identification variable c_alphan is used for the tables shown in the Variable Report.",
+    "content": {
+      "AT": "Austria",
+      "AU": "Australia",
+      "CH": "Switzerland",
+      "CN": "China",
+      "CZ": "Czech Republic",
+      "DE": "Germany",
+      "DK": "Denmark",
+      "FI": "Finland",
+      "FR": "France",
+      "HR": "Croatia",
+      "HU": "Hungary",
+      "IL": "Israel",
+      "IN": "India",
+      "IS": "Iceland",
+      "IT": "Italy",
+      "JP": "Japan",
+      "MX": "Mexico",
+      "NL": "Netherlands",
+      "NO": "Norway",
+      "NZ": "New Zealand",
+      "PH": "Philippines",
+      "PL": "Poland",
+      "RU": "Russia",
+      "SI": "Slovenia",
+      "SK": "Slovakia",
+      "SR": "Suriname",
+      "TH": "Thailand",
+      "TW": "Taiwan",
+      "US": "United States",
+      "ZA": "South Africa"
+    },
+    "special": {}
+  },
+  {
+    "domain": "v1",
+    "meaning": "Q1 How happy or unhappy",
+    "question": "If you were to consider your life in general these days, how happy or unhappy would you say you are, on the whole? (Please tick one box only.)",
+    "content": {
+      "1": "Completely happy",
+      "2": "Very happy",
+      "3": "Fairly happy",
+      "4": "Neither happy nor unhappy",
+      "5": "Fairly unhappy",
+      "6": "Very unhappy",
+      "7": "Completely unhappy",
+      "-8": "Can't choose",
+      "-9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "v2",
+    "meaning": "Q2 Confidence in health care system in [country]",
+    "question": "In general, how much confidence do you have in the health care system in [country]? (Please tick one box only.)",
+    "content": {
+      "1": "Complete confidence",
+      "2": "A great deal of confidence",
+      "3": "Some confidence",
+      "4": "Very little confidence",
+      "5": "No confidence at all",
+      "-8": "Can't choose",
+      "-9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "v3",
+    "meaning": "Q3 Fairness: health care",
+    "question": "Is it fair or unfair that people with higher incomes can afford better health care than people with lower incomes? (Please tick one box only.)",
+    "content": {
+      "1": "Very fair",
+      "2": "Somewhat fair",
+      "3": "Neither fair nor unfair",
+      "4": "Somewhat unfair",
+      "5": "Very unfair",
+      "-1": "ZA: Not available for Afrikaans and Zulu questionaire versions",
+      "-8": "Can't choose",
+      "-9": "No answer"
+    },
+    "special": {
+      "ZA": {
+        "-1": "Not available for Afrikaans and Zulu questionaire versions"
+      }
+    }
+  },
+  {
+    "domain": "v4",
+    "meaning": "Q4a More use of health care services than necessary",
+    "question": "How much do you agree or disagree with the following statements? (Please tick one box on each line.) Q4a People use health care services more than necessary.",
+    "content": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree",
+      "-8": "Can't choose",
+      "-9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "v5",
+    "meaning": "Q4b Government should provide only limited health care services",
+    "question": "How much do you agree or disagree with the following statements? (Please tick one box on each line.) Q4b The government should provide only limited health care services.",
+    "content": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree",
+      "-8": "Can't choose",
+      "-9": "No answer"
+    },
+    "special": {
+      "NO": {
+        "Note": "Translation of the word 'limited' changed compared to ISSP 2011."
+      }
+    }
+  },
+  {
+    "domain": "v6",
+    "meaning": "Q4c Health care system in [country] is inefficient",
+    "question": "How much do you agree or disagree with the following statements? (Please tick one box on each line.) Q4c In general, the health care system in [country] is inefficient.",
+    "content": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree",
+      "-8": "Can't choose",
+      "-9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "v7",
+    "meaning": "Q5 Pay higher taxes to improve health care system",
+    "question": "How willing would you be to pay higher taxes to improve the level of health care for all people in [country]? (Please tick one box only.)",
+    "content": {
+      "1": "Very willing",
+      "2": "Fairly willing",
+      "3": "Neither willing nor unwilling",
+      "4": "Fairly unwilling",
+      "5": "Very unwilling",
+      "-8": "Can't choose",
+      "-9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "v8",
+    "meaning": "Q6a Access to publicly funded health care: even if no citizenship of [country]",
+    "question": "How much do you agree or disagree with the following statements? (Please tick one box on each line.) Q6a People should have access to publicly funded health care even if they do not hold citizenship of [country].",
+    "content": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree",
+      "-8": "Can't choose",
+      "-9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "v9",
+    "meaning": "Q6b Access to publicly funded health care: even if health damaging behaviour",
+    "question": "How much do you agree or disagree with the following statements? (Please tick one box on each line.) Q6b People should have access to publicly funded health care even if they behave in ways that damage their health.",
+    "content": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree",
+      "-8": "Can't choose",
+      "-9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "v10",
+    "meaning": "Q7a Access to health care easier or harder: for rich than for poor people",
+    "question": "In [country], do you think it is easier or harder to get access to health care … (Please tick one box on each line.) Q7a ... for rich people than for poor people?",
+    "content": {
+      "1": "Much easier",
+      "2": "Somewhat easier",
+      "3": "About the same",
+      "4": "Somewhat harder",
+      "5": "Much harder",
+      "-8": "Can't choose",
+      "-9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "v11",
+    "meaning": "Q7b Access to health care easier or harder: for old than for young people",
+    "question": "In [country], do you think it is easier or harder to get access to health care … (Please tick one box on each line.) Q7b ... for old people than for young people?",
+    "content": {
+      "1": "Much easier",
+      "2": "Somewhat easier",
+      "3": "About the same",
+      "4": "Somewhat harder",
+      "5": "Much harder",
+      "-8": "Can't choose",
+      "-9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "v12",
+    "meaning": "Q7c Access to health care easier or harder: for women than for men",
+    "question": "In [country], do you think it is easier or harder to get access to health care … (Please tick one box on each line.) Q7c ... for women than for men?",
+    "content": {
+      "1": "Much easier",
+      "2": "Somewhat easier",
+      "3": "About the same",
+      "4": "Somewhat harder",
+      "5": "Much harder",
+      "-8": "Can't choose",
+      "-9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "v13",
+    "meaning": "Q7d Access to health care easier or harder: for citizens than for non-citizens of [country]",
+    "question": "In [country], do you think it is easier or harder to get access to health care … (Please tick one box on each line.) Q7d ... for citizens of [country] than for people who do not hold [country's] citizenship?",
+    "content": {
+      "1": "Much easier",
+      "2": "Somewhat easier",
+      "3": "About the same",
+      "4": "Somewhat harder",
+      "5": "Much harder",
+      "-8": "Can't choose",
+      "-9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "v14",
+    "meaning": "Q8a Causes of health problems: health damaging behaviour",
+    "question": "Severe health problems may have many causes. How much do you agree or disagree with the following statements? (Please tick one box on each line.) Q8a People suffer from severe health problems because they behaved in ways that damaged their health.",
+    "content": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree",
+      "-8": "Can't choose",
+      "-9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "v15",
+    "meaning": "Q8b Causes of health problems: environment",
+    "question": "Severe health problems may have many causes. How much do you agree or disagree with the following statements? (Please tick one box on each line.) Q8b People suffer from severe health problems because of the environment they are exposed to at work or where they live.",
+    "content": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree",
+      "-8": "Can't choose",
+      "-9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "v16",
+    "meaning": "Q8c Causes of health problems: genes",
+    "question": "Severe health problems may have many causes. How much do you agree or disagree with the following statements? (Please tick one box on each line.) Q8c People suffer from severe health problems because of their genes.",
+    "content": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree",
+      "-8": "Can't choose",
+      "-9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "v17",
+    "meaning": "Q8d Causes of health problems: poverty",
+    "question": "Severe health problems may have many causes. How much do you agree or disagree with the following statements? (Please tick one box on each line.) Q8d People suffer from severe health problems because they are poor.",
+    "content": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree",
+      "-8": "Can't choose",
+      "-9": "No answer"
+    },
+    "special": {}
+  }
+]

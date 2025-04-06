@@ -1,0 +1,305 @@
+[
+  {
+    "domain": "HU_INC",
+    "meaning": "Hungary: Country specific household income",
+    "question": "Overall, what is your household's total net monthly income (including your income as well)?",
+    "content": {
+      "22000": "22 000 HUF per month, net",
+      "50000": "50 000 HUF / 60 000 HUF or less per month, net",
+      "55000": "From HU_RINC: 55 000 HUF / 41 000 - 70 000 HUF per month, net",
+      "75000": "75 000 HUF / 61 000 - 90 000 HUF per month, net",
+      "85000": "From HU_RINC: 85 000 HUF / 71 000 - 100 000 HUF per month, net",
+      "105000": "From HU_RINC: 125 000 HUF / 101 000 - 150 000 HUF per month, net",
+      "125000": "125 000 HUF / 121 000 - 150 000 HUF per month, net",
+      "135000": "135 000 HUF / 121 000 - 150 000 HUF per month, net",
+      "175000": "175 000 HUF / 151 000 - 200 000 HUF per month, net",
+      "250000": "250 000 HUF / 201 000 - 300 000 HUF per month, net",
+      "400000": "400 000 HUF / 301 000 - 500 000 HUF per month, net",
+      "750000": "750 000 HUF/ 501 000 - 1 000 000 HUF; From HU_RINC: More than 500 000 HUF",
+      "1500000": "1 500 000 HUF per month / More than 1 000 000 HUF per month, net",
+      "-2": "NAP , other countries",
+      "-7": "Refused",
+      "-8": "Don't know",
+      "-9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "IL_INC",
+    "meaning": "Israel: Country specific household income",
+    "question": "On average, what is the gross monthly income of the entire household (before deductions such as income tax, social security, health insurance, etc.)?",
+    "content": {
+      "2500": "Up to 5 000 ILS per month, before taxes",
+      "6400": "5 001 - 7 800 ILS",
+      "9400": "7 801 - 11 000 ILS",
+      "12500": "11 001 - 14 000 ILS",
+      "15000": "14 001 - 16 000 ILS",
+      "17250": "16 001 - 18 500 ILS",
+      "20750": "18 501 - 23 000 ILS",
+      "25000": "23 001 - 27 000 ILS",
+      "29750": "27 001 - 32 500 ILS",
+      "36000": "More than 32 500 ILS per month, before taxes",
+      "-2": "NAP , other countries",
+      "-7": "Refused",
+      "-8": "Don't know",
+      "-9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "IN_INC",
+    "meaning": "India: Country specific household income",
+    "question": "Before taxes and other deductions, what on average is the total monthly income of your household?",
+    "content": {
+      "1500": "Less than 3 000 INR per month, before taxes",
+      "4500": "3 000 - 6 000 INR",
+      "8000": "6 001 - 10 000 INR",
+      "15000": "10 001 - 20 000 INR",
+      "35000": "20 001 - 50 000 INR",
+      "75000": "50 001 - 100 000 INR",
+      "150000": "More than 100 000 INR per month, before taxes",
+      "-2": "NAP , all other countries",
+      "-7": "Refused"
+    },
+    "special": {}
+  },
+  {
+    "domain": "IS_INC",
+    "meaning": "Iceland: Country specific household income",
+    "question": "Before taxes and other deductions, what on average is the total monthly income of your household?",
+    "content": {
+      "0": "No income",
+      "4000": "4 000 ISK per month, before taxes",
+      "5600000": "5 600 000 ISK per month, before taxes",
+      "-2": "NAP , other countries",
+      "-7": "Refused",
+      "-8": "Don't know",
+      "-9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "IT_INC",
+    "meaning": "Italy: Country specific household income",
+    "question": "What on average is instead the total income of your household aȇer taxes? Each row in the table corresponds to the total income of your household aȇer taxes. If you don't know the exact amount, please make an estimate.",
+    "content": {
+      "0": "No income",
+      "500": "Less than 750 EUR per month (Less than 9 000 EUR per year), net",
+      "950": "750 - 1 150 EUR p.m. (9 000 - 14 000 EUR p.y.)",
+      "1325": "1 151 - 1 500 EUR p.m. (14 001 - 17 500 EUR p.y.)",
+      "1625": "1 501 - 1 750 EUR p.m. (17 501 - 21 000 EUR p.y.)",
+      "1875": "1 751 - 2 000 EUR p.m. (21 001 - 25 000 EUR p.y.)",
+      "2250": "2 001 - 2 500 EUR p.m. (25 001 - 29 500 EUR p.y.)",
+      "2750": "2 501 - 3 000 EUR p.m. (29 501 - 36 000 EUR p.y.)",
+      "3250": "3 001 - 3 500 EUR p.m. (36 001 - 43 500 EUR p.y.)",
+      "4000": "3 501 - 4 500 EUR p.m. (43 501 - 56 000 EUR p.y.)",
+      "5000": "More than 4 500 EUR per month (More than 56 000 EUR per year), net",
+      "-2": "NAP , other countries",
+      "-4": "NAP , for single households personal income cannot be merged into household income",
+      "-7": "Refused",
+      "-8": "Don't know",
+      "-9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "JP_INC",
+    "meaning": "Japan: Country specific household income",
+    "question": "Before taxes and other deductions, what was the total yearly income of your household last year?  Please include any casual and part-time income.",
+    "content": {
+      "1000000": "Less than 2 000 000 JPY per year gross",
+      "2500000": "2 000 000 - 2 999 999 JPY",
+      "3500000": "3 000 000 - 3 999 999 JPY",
+      "4500000": "4 000 000 - 4 999 999 JPY",
+      "5500000": "5 000 000 - 5 999 999 JPY",
+      "6500000": "6 000 000 - 6 999 999 JPY",
+      "7500000": "7 000 000 - 7 999 999 JPY",
+      "8500000": "8 000 000 - 8 999 999 JPY",
+      "9500000": "9 000 000 - 9 999 999 JPY",
+      "11000000": "10 000 000 - 11 999 999 JPY",
+      "13500000": "12 000 000 - 14 999 999 JPY",
+      "20000000": "15 000 000 JPY and more per year gross",
+      "-2": "NAP , other countries",
+      "-7": "Refused",
+      "-8": "Don't know",
+      "-9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "MX_INC",
+    "meaning": "Mexico: Country specific household income",
+    "question": "Monthly net income of the family (aȇer taxes): _________________ Pesos",
+    "content": {
+      "2400": "2 400 MXN per month, net",
+      "65000": "65 000 MXN per month, net",
+      "-2": "NAP , all other countries",
+      "-7": "Refused",
+      "-8": "Don't know",
+      "-9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "NL_INC",
+    "meaning": "Netherlands: Country specific household income",
+    "question": "What is the average net income of your household?",
+    "content": {
+      "0": "No income",
+      "350": "500 EUR or less",
+      "750": "501 - 1 000 EUR",
+      "1250": "1 001 - 1 500 EUR",
+      "1750": "1 501 - 2 000 EUR",
+      "2250": "2 001 - 2 500 EUR",
+      "2750": "2 501 - 3 000 EUR",
+      "3250": "3 001 - 3 500 EUR",
+      "3750": "3 501 - 4 000 EUR",
+      "4250": "4 001 - 4 500 EUR",
+      "4750": "4 501 - 5 000 EUR",
+      "6250": "5 001 - 7 500 EUR",
+      "8000": "More than 7 500 EUR",
+      "-2": "NAP , all other countries",
+      "-9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "NO_INC",
+    "meaning": "Norway: Country specific household income",
+    "question": "Before tax and other deductions, approximately how high is your household's yearly gross income, including your own?",
+    "content": {
+      "147500": "295 000 NOK or less",
+      "378000": "296 000 - 460.000 NOK",
+      "526000": "461 000 - 591.000 NOK",
+      "657500": "592 000 - 723.000 NOK",
+      "795000": "724 000 - 866.000 NOK",
+      "937500": "867 000 - 1.008.000 NOK",
+      "1079500": "1 009 000 - 1 150 000 NOK",
+      "1246000": "1 151 000 - 1 341 000 NOK",
+      "1492500": "1 342 000 - 1 642 000 NOK",
+      "1704370": "1 643 000 NOK or more",
+      "-2": "NAP , other countries",
+      "-8": "Don't know",
+      "-9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "NZ_INC",
+    "meaning": "New Zealand: Country specific household income",
+    "question": "Which category best describes the total yearly income of everyone in your household, from all sources, before tax?",
+    "content": {
+      "0": "Loss/ Zero income",
+      "2500": "1 - 5 000 NZD per year, before taxes",
+      "7500": "5 001 - 10 000 NZD",
+      "12500": "10 001 - 15 000 NZD",
+      "17500": "15 001 - 20 000 NZD",
+      "22500": "20 001 - 25 000 NZD",
+      "27500": "25 001 - 30 000 NZD",
+      "32500": "30 001 - 35 000 NZD",
+      "37500": "35 001 - 40 000 NZD",
+      "45000": "40 001 - 50 000 NZD",
+      "55000": "50 001 - 60 000 NZD",
+      "65000": "60 001 - 70 000 NZD",
+      "85000": "70 001 - 100 000 NZD",
+      "125000": "100 001 - 150 000 NZD",
+      "150000": "150 001 or more NZD per year, before taxes",
+      "-2": "NAP , other countries",
+      "-9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "PH_INC",
+    "meaning": "Philippines: Country specific household income",
+    "question": "Before taxes and other deductions, what on average is the total monthly income of YOUR HOUSEHOLD?",
+    "content": {
+      "0": "No income",
+      "500": "500 PHP per month, before taxes",
+      "120000": "120 000 PHP per month, before taxes",
+      "-2": "NAP , other countries",
+      "-7": "Refused",
+      "-8": "Don't know",
+      "-9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "PL_INC",
+    "meaning": "Poland: Country specific household income",
+    "question": "Taking into account the last 12 months, please tell me what the total monthly income was for you and all people in your household from all sources.",
+    "content": {
+      "0": "No income",
+      "600": "600 PLN per month, net",
+      "144000": "144 000 PLN per month, net",
+      "-2": "NAP , other countries",
+      "-7": "Refused",
+      "-8": "Don't know"
+    },
+    "special": {}
+  },
+  {
+    "domain": "RU_INC",
+    "meaning": "Russia: Country specific household income",
+    "question": "What was your household total income last month from all sources, including income from main and second jobs, pensions, scholarships, other money income, which got all your family members last month (aȇer taxes and deductions)?",
+    "content": {
+      "0": "No income",
+      "1000": "1 000 RUB per month, net",
+      "3000": "3 000 RUB per month/ Less than 5 000 RUB per month",
+      "9500": "9 500 RUB/ 5 001 - 10 000 RUB",
+      "13500": "13 500 RUB/ 10 001 - 15 000 RUB",
+      "19000": "19 000 RUB/ 15 001 - 20 000 RUB",
+      "24000": "24 000 RUB/ 20 001 - 25 000 RUB",
+      "29500": "29 500 RUB/ 25 001 - 30 000 RUB",
+      "34500": "34 500 RUB/ 30 001 - 35 000 RUB",
+      "39500": "39 500 RUB/ 35 001 - 40 000 RUB",
+      "48000": "48 000 RUB/ 40 001 - 50 000 RUB",
+      "58500": "58 500 RUB/ 50 001 - 60 000 RUB",
+      "69000": "69 000 RUB/ 60 001 - 70 000 RUB",
+      "89500": "89 500 RUB/ 70 001 - 100 00 RUB",
+      "128500": "128 500 RUB/ 100 001 - 150 000 RUB",
+      "226000": "226 000/ 150 000 RUB per month or more",
+      "600000": "600 000 RUB per month, net",
+      "-2": "NAP , other countries",
+      "-7": "Refused",
+      "-8": "Don't know",
+      "-9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "SI_INC",
+    "meaning": "Slovenia: Country specific household income",
+    "question": "What is the average monthly income of all family members (aȇer deduction of taxes, social security, and other payments)?",
+    "content": {
+      "0": "No income",
+      "100": "100 EUR per month, net",
+      "60000": "60 000 EUR per month, net",
+      "-2": "NAP , other countries",
+      "-7": "Refused",
+      "-8": "Don't know",
+      "-9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "SK_INC",
+    "meaning": "Slovakia: Country specific household income",
+    "question": "From the following list, please choose the option that represents the size of net monthly income of all household members together when you include wages, pensions, scholarships and all other working and non-working incomes?",
+    "content": {
+      "175": "Up to 350 EUR per month, net",
+      "450": "351 - 550 EUR",
+      "700": "551 - 850 EUR",
+      "950": "851 - 1 050 EUR",
+      "1225": "1 051 - 1 400 EUR",
+      "1950": "1 401 - 2 500 EUR",
+      "3000": "2 501 - 3 500 EUR",
+      "4000": "3 501 - 4 500 EUR",
+      "5250": "More than 4 500 EUR per month, net",
+      "-2": "NAP , other countries",
+      "-7": "Refused",
+      "-8": "Don't know"
+    },
+    "special": {}
+  }
+]

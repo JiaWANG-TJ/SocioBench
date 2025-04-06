@@ -1,0 +1,375 @@
+[
+  {
+    "domain": "DE_RINC",
+    "meaning": "Germany: Country specific personal income",
+    "question": "How high is your own net monthly income (by net we mean the amount remaining aȇer deductions for tax and social security contributions)? If you are self-employed, please give your average monthly income aȇer deductions from overheads. If you do not know exactly, please give us an estimate.",
+    "content": {
+      "0": "No personal income",
+      "100": "Up to 199 EUR per month, net",
+      "250": "200 - 299 EUR",
+      "350": "300 - 399 EUR",
+      "450": "400 - 499 EUR",
+      "562": "500 - 624 EUR",
+      "687": "625 - 749 EUR",
+      "812": "750 - 874 EUR",
+      "937": "875 - 999 EUR",
+      "1062": "1 000 - 1 124 EUR",
+      "1187": "1 125 - 1 249 EUR",
+      "1312": "1 250 - 1 374 EUR",
+      "1437": "1 375 - 1 499 EUR",
+      "1625": "1 500 - 1 749 EUR",
+      "1875": "1 750 - 1 999 EUR",
+      "2125": "2 000 - 2 249 EUR",
+      "2375": "2 250 - 2 499 EUR",
+      "2625": "2 500 - 2 749 EUR",
+      "2875": "2 750 - 2 999 EUR",
+      "3250": "3 000 - 3 499 EUR",
+      "3750": "3 500 - 3 999 EUR",
+      "4250": "4 000 - 4 499 EUR",
+      "4750": "4 500 - 4 999 EUR",
+      "5500": "5 000 - 5 999 EUR",
+      "6750": "6 000 - 7 499 EUR",
+      "8750": "7 500 - 9 999 EUR",
+      "11250": "10 000 EUR and above per month, net",
+      "-2": "NAP , other countries",
+      "-7": "Refused",
+      "-9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "DK_RINC",
+    "meaning": "Denmark: Country specific personal income",
+    "question": "What is your average total monthly income - gross - i.e. before taxes?",
+    "content": {
+      "70000": "Below 100 000 DKK per year, gross",
+      "125000": "100 000 - 149 999 DKK",
+      "175000": "150 000 - 199 999 DKK",
+      "225000": "200 000 - 249 999 DKK",
+      "275000": "250 000 - 299 999 DKK",
+      "350000": "300 000 - 399 999 DKK",
+      "450000": "400 000 - 499 999 DKK",
+      "550000": "500 000 - 599 999 DKK",
+      "650000": "600 000 - 699 999 DKK",
+      "750000": "700 000 DKK or more per year, gross",
+      "-2": "NAP , other countries",
+      "-9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "FI_RINC",
+    "meaning": "Finland: Country specific personal income",
+    "question": "What is your average monthly income before taxes (=gross income), including capital income and all social security benefits?",
+    "content": {
+      "0": "No income",
+      "30": "30 EUR per month, before taxes",
+      "20000": "20 000 EUR or more per month, before taxes",
+      "-2": "NAP , other countries",
+      "-9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "FR_RINC",
+    "meaning": "France: Country specific personal income",
+    "question": "What is the amount of your personal monthly net income? Take into account all sources...",
+    "content": {
+      "0": "No personal income",
+      "1": "1 EUR per month",
+      "60000": "60 000 EUR per month",
+      "-2": "NAP , other countries",
+      "-9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "HR_RINC",
+    "meaning": "Croatia: Country specific personal income",
+    "question": "If you have regular monthly income, how much does your monthly net income amount...",
+    "content": {
+      "0": "No income",
+      "270": "270 HRK per month, net",
+      "1000": "1 000 HRK/ Up to 1 200 HRK per month, net",
+      "2000": "2 000 HRK/ 1 200 - 2 000 HRK per month, net",
+      "3000": "3 000 HRK/ 2 001 - 3 500 HRK per month, net",
+      "4508": "4 508 HRK/ 3 501 - 5 500 HRK per month, net",
+      "6500": "6 500 HRK/ 5 501 - 7 000 HRK per month, net",
+      "8000": "8 000 HRK/ 7 001 - 9 000 HRK per month, net",
+      "11000": "11 000 HRK/ More than 9 000 HRK per month, net",
+      "70000": "70 000 HRK per month, net",
+      "-2": "NAP , other countries",
+      "-7": "Refused",
+      "-8": "Don't know",
+      "-9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "HU_RINC",
+    "meaning": "Hungary: Country specific personal income",
+    "question": "What is your monthly net income aȇer taxes? If you have income from more than one source...",
+    "content": {
+      "6000": "6 000 HUF per month, net",
+      "10000": "10 000 HUF / 20 000 HUF or less per month, net",
+      "30000": "30 000 HUF / 21 000 - 40 000 HUF per month, net",
+      "55000": "55 000 HUF / 41 000 - 70 000 HUF per month, net",
+      "85000": "85 000 HUF / 71 000 - 100 000 HUF per month, net",
+      "125000": "125 000 HUF / 101 000 - 150 000 HUF per month, net",
+      "175000": "175 000 HUF / 151 000 - 200 000 HUF per month, net",
+      "250000": "250 000 HUF / 201 000 - 300 000 HUF per month, net",
+      "400000": "400 000 HUF / 301 000 - 500 000 HUF per month, net",
+      "750000": "750 000 HUF / More than 500 000 HUF per month, net",
+      "1500000": "1 500 000 HUF per month, net",
+      "-2": "NAP , other countries",
+      "-7": "Refused",
+      "-8": "Don't know",
+      "-9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "IL_RINC",
+    "meaning": "Israel: Country specific personal income",
+    "question": "On average, what is your own gross monthly income (before deductions such as income tax, social security, health insurance, etc.)?",
+    "content": {
+      "0": "No income",
+      "2000": "Up to 2 000 ILS per month, before taxes",
+      "3050": "2 001 - 4 100 ILS",
+      "4800": "4 101 - 5 500 ILS",
+      "6100": "5 501 - 6 700 ILS",
+      "7350": "6 701 - 8 000 ILS",
+      "8750": "8 001 - 9 500 ILS",
+      "10600": "9 501 - 11 700 ILS",
+      "13400": "11 701 - 15 100 ILS",
+      "18300": "15 101 - 21 500 ILS",
+      "25000": "More than 21 500 ILS per month, before taxes",
+      "-2": "NAP , other countries",
+      "-7": "Refused",
+      "-8": "Don't know"
+    },
+    "special": {}
+  },
+  {
+    "domain": "IN_RINC",
+    "meaning": "India: Country specific personal income",
+    "question": "Before taxes and other deductions, what on average is your own total monthly income?",
+    "content": {
+      "0": "No income",
+      "1500": "Less than 3 000 INR per month, before taxes",
+      "4500": "3 000 - 6 000 INR",
+      "8000": "6 001 - 10 000 INR",
+      "15000": "10 001 - 20 000 INR",
+      "35000": "20 001 - 50 000 INR",
+      "75000": "50 001 - 100 000 INR",
+      "150000": "More than 100 000 INR per month, before taxes",
+      "-2": "NAP , all other countries"
+    },
+    "special": {}
+  },
+  {
+    "domain": "IS_RINC",
+    "meaning": "Iceland: Country specific personal income",
+    "question": "Before taxes and other deductions, what on average is your own total monthly income?",
+    "content": {
+      "0": "No income",
+      "1000": "1 000 ISK per month, before taxes",
+      "3500000": "3 500 000 ISK per month, before taxes",
+      "-2": "NAP , other countries",
+      "-7": "Refused",
+      "-8": "Don't know",
+      "-9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "IT_RINC",
+    "meaning": "Italy: Country specific personal income",
+    "question": "What on average is your own total monthly income aȇer taxes? If you don't know the exact amount...",
+    "content": {
+      "0": "No income",
+      "300": "Less than 450 EUR per month (Less than 5 500 EUR per year), net",
+      "675": "450 - 900 EUR per month (5 500 - 11 000 EUR p.y.)",
+      "1050": "901 - 1 200 EUR p.m. (11 001 - 15 000 EUR p.y.)",
+      "1350": "1 201 - 1 500 EUR p.m. (15 001 - 18 000 EUR p.y.)",
+      "1650": "1 501 - 1 800 EUR p.m. (18 001 - 21 000 EUR p.y.)",
+      "1900": "1 801 - 2 000 EUR p.m. (21 001 - 25 000 EUR p.y.)",
+      "2250": "2 001 - 2 500 EUR p.m. (25 001 - 30 000 EUR p.y.)",
+      "2750": "2 501 - 3 000 EUR p.m. (30 001 - 35 000 EUR p.y.)",
+      "3750": "3 001 - 4 500 EUR p.m. (35 001 - 55 000 EUR p.y.)",
+      "5000": "More than 4 500 EUR per month (More than 55 000 EUR per year), net",
+      "-2": "NAP , other countries",
+      "-7": "Refused",
+      "-8": "Don't know",
+      "-9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "JP_RINC",
+    "meaning": "Japan: Country specific personal income",
+    "question": "Before taxes and other deductions, what was your own total yearly income last year?",
+    "content": {
+      "0": "No income",
+      "500000": "Less than 1 000 000 JPY per year gross",
+      "1500000": "1 000 000 - 1 999 999 JPY",
+      "2500000": "2 000 000 - 2 999 999 JPY",
+      "3500000": "3 000 000 - 3 999 999 JPY",
+      "4500000": "4 000 000 - 4 999 999 JPY",
+      "5500000": "5 000 000 - 5 999 999 JPY",
+      "6500000": "6 000 000 - 6 999 999 JPY",
+      "7500000": "7 000 000 - 7 999 999 JPY",
+      "8500000": "8 000 000 - 8 999 999 JPY",
+      "9500000": "9 000 000 - 9 999 999 JPY",
+      "11000000": "10 000 000 - 11 999 999 JPY",
+      "13500000": "12 000 000 - 14 999 999 JPY",
+      "20000000": "15 000 000 JPY and more per year gross",
+      "-2": "NAP , other countries",
+      "-7": "Refused",
+      "-8": "Don't know",
+      "-9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "MX_RINC",
+    "meaning": "Mexico: Country specific personal income",
+    "question": "Monthly net income of the interviewee (aȇer taxes):",
+    "content": {
+      "0": "No personal income",
+      "1500": "1 500 MXN per month, net",
+      "45000": "45 000 MXN per month, net",
+      "-2": "NAP , all other countries",
+      "-7": "Refused",
+      "-9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "NL_RINC",
+    "meaning": "Netherlands: Country specific personal income",
+    "question": "What is the average net income of yourself and your household (if applicable)?",
+    "content": {
+      "0": "No income",
+      "350": "500 EUR or less",
+      "750": "501 - 1 000 EUR",
+      "1250": "1 001 - 1 500 EUR",
+      "1750": "1 501 - 2 000 EUR",
+      "2250": "2 001 - 2 500 EUR",
+      "2750": "2 501 - 3 000 EUR",
+      "3250": "3 001 - 3 500 EUR",
+      "3750": "3 501 - 4 000 EUR",
+      "4250": "4 001 - 4 500 EUR",
+      "4750": "4 501 - 5 000 EUR",
+      "6250": "5 001 - 7 500 EUR",
+      "8000": "More than 7 500 EUR",
+      "-2": "NAP , all other countries",
+      "-9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "NO_RINC",
+    "meaning": "Norway: Country specific personal income",
+    "question": "Before tax and deductions, about how large is your own yearly gross income?",
+    "content": {
+      "63000": "126 000 NOK or less per year, gross",
+      "181000": "127 000 - 234 000 NOK",
+      "274500": "235 000 - 313 000 NOK",
+      "345500": "314 000 - 377 000 NOK",
+      "411000": "378 000 - 444 000 NOK",
+      "474500": "445 000 - 504 000 NOK",
+      "537000": "505 000 - 569 000 NOK",
+      "621000": "570 000 - 672 000 NOK",
+      "774000": "673 000 - 875 000 NOK",
+      "1221886": "876 000 NOK or more per year, gross",
+      "-2": "NAP , other countries",
+      "-8": "Don't know",
+      "-9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "NZ_RINC",
+    "meaning": "New Zealand: Country specific personal income",
+    "question": "Which category best describes your personal yearly income, from all sources, before tax?",
+    "content": {
+      "0": "Loss/ Zero income",
+      "2500": "1 - 5 000 NZD per year, before taxes",
+      "7500": "5 001 - 10 000 NZD",
+      "12500": "10 001 - 15 000 NZD",
+      "17500": "15 001 - 20 000 NZD",
+      "22500": "20 001 - 25 000 NZD",
+      "27500": "25 001 - 30 000 NZD",
+      "32500": "30 001 - 35 000 NZD",
+      "37500": "35 001 - 40 000 NZD",
+      "45000": "40 001 - 50 000 NZD",
+      "55000": "50 001 - 60 000 NZD",
+      "65000": "60 001 - 70 000 NZD",
+      "85000": "70 001 - 100 000 NZD",
+      "125000": "100 001 - 150 000 NZD",
+      "150000": "150 001 or more NZD per year, before taxes",
+      "-2": "NAP , other countries",
+      "-9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "PH_RINC",
+    "meaning": "Philippines: Country specific personal income",
+    "question": "Before taxes and other deductions, what on average is YOUR OWN total monthly income?",
+    "content": {
+      "0": "No income",
+      "200": "200 PHP per month, before taxes",
+      "96000": "96 000 PHP per month, before taxes",
+      "-2": "NAP , other countries",
+      "-7": "Refused",
+      "-8": "Don't know",
+      "-9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "PL_RINC",
+    "meaning": "Poland: Country specific personal income",
+    "question": "Taking into account the last 12 months, please tell me what your average monthly net earnings (income) were from your current job.",
+    "content": {
+      "0": "No income as currently not working (Code 2,3 in WORK)",
+      "100": "100 PLN per month, net",
+      "36000": "36 000 PLN per month, net",
+      "-2": "NAP , other countries",
+      "-7": "Refused",
+      "-8": "Don't know"
+    },
+    "special": {}
+  },
+  {
+    "domain": "RU_RINC",
+    "meaning": "Russia: Country specific personal income",
+    "question": "What was your average total personal income last month (aȇer taxes and deductions)?",
+    "content": {
+      "0": "No income",
+      "1000": "1.000 RUB per month, net",
+      "3000": "3 000 RUB per month/ Less than 5 000 RUB per month",
+      "9500": "9 500 RUB/ 5 001 - 10 000 RUB",
+      "13500": "13 500 RUB/ 10 001 - 15 000 RUB",
+      "19000": "19 000 RUB/ 15 001 - 20 000 RUB",
+      "24000": "24 000 RUB/ 20 001 - 25 000 RUB",
+      "29500": "29 500 RUB/ 25 001 - 30 000 RUB",
+      "34500": "34 500 RUB/ 30 001 - 35 000 RUB",
+      "39500": "39 500 RUB/ 35 001 - 40 000 RUB",
+      "48000": "48 000 RUB/ 40 001 - 50 000 RUB",
+      "58500": "58 500 RUB/ 50 001 - 60 000 RUB",
+      "69000": "69 000 RUB/ 60 001 - 70 000 RUB",
+      "89500": "89 500 RUB/ 70 001 - 100 000 RUB",
+      "128500": "128 500 RUB/ 100 001 - 150 000 RUB",
+      "226000": "226 000/ 150 000 RUB per month or more",
+      "300000": "300 000 RUB per month, net",
+      "-2": "NAP , other countries",
+      "-7": "Refused",
+      "-8": "Don't know",
+      "-9": "No answer"
+    },
+    "special": {}
+  }
+]

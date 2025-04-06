@@ -1,0 +1,149 @@
+[
+  {
+    "domain": "TOPBOT",
+    "meaning": "Top-Bottom self-placement (10 pt scale)",
+    "question": "In our society, there are groups which tend to be towards the top and groups which tend to be towards the bottom. Below is a scale that runs from the top to the bottom. Where would you put yourself on this scale?",
+    "content": {
+      "1": "Lowest, Bottom, 01",
+      "2": "02",
+      "3": "03",
+      "4": "04",
+      "5": "05",
+      "6": "06",
+      "7": "07",
+      "8": "08",
+      "9": "09",
+      "10": "Highest, Top, 10",
+      "97": "Refused",
+      "98": "Don't know",
+      "99": "No answer"
+    },
+    "special": {
+      "GB-GBN": {
+        "0": "Not available"
+      },
+      "US": {
+        "0": "Not available"
+      }
+    }
+  },
+  {
+    "domain": "VOTE_LE",
+    "meaning": "Did respondent vote in last general election?",
+    "question": "Some people don't vote nowadays for one reason or another. Did you vote in the last [country] national election in [month/year]?",
+    "content": {
+      "0": "NAP, not eligible to vote at last election",
+      "1": "Yes",
+      "2": "No",
+      "7": "Refused",
+      "8": "Don't know",
+      "9": "No answer"
+    },
+    "special": {
+      "GB-GBN": {
+        "0": "Not available"
+      }
+    }
+  },
+  {
+    "domain": "AR_PRTY",
+    "meaning": "Argentina: Party voted for in last election",
+    "question": "Thinking back to the last general election (in October 2011) Which party did you vote for? Note: Given that we have mandatory voting, we directly asked for whom they voted.",
+    "content": {
+      "0": "NAP (Code 0, 2 in VOTE_LE)",
+      "1": "Front for Victory - FVP",
+      "2": "Broad Progressive Front - FAP",
+      "3": "Union for Social Development - EDUSO",
+      "4": "Federal Commitment - Alianza Compromiso Federal",
+      "5": "Popular Front - Frente Popular",
+      "6": "Left Front - Frente de Izquierda",
+      "7": "Civic Coalition",
+      "96": "Blank or invalid ballot",
+      "97": "Refused",
+      "99": "No answer",
+      "990": "NAP, other countries"
+    },
+    "special": {}
+  },
+  {
+    "domain": "AT_PRTY",
+    "meaning": "Austria: Party voted for in last election",
+    "question": "Please tell me finally which party you voted for at the last national elections on 29th of September 2013?",
+    "content": {
+      "0": "NAP (Code 0, 2 in VOTE_LE)",
+      "1": "Austrian People's Party - OEVP",
+      "2": "Austrian Social Democratic Party - SPOE",
+      "3": "Austrian Freedom Party - FPOE",
+      "4": "Green Party - GRUENE",
+      "5": "Conferederation for the Future of Austria - BZOE",
+      "6": "Team Stronach",
+      "7": "NEOS",
+      "95": "Other party",
+      "99": "No answer, refused",
+      "990": "NAP, other countries"
+    },
+    "special": {}
+  },
+  {
+    "domain": "AU_PRTY",
+    "meaning": "Australia: Party voted for in last election",
+    "question": "Thinking back to the last general election in August 2010... Which party did you vote for?",
+    "content": {
+      "0": "NAP (did not vote)",
+      "1": "Liberal Party of Australia",
+      "2": "Australian Labor Party - ALP",
+      "3": "National Party of Australia - NPA",
+      "4": "Australian Democrats",
+      "5": "The Greens",
+      "6": "One Nation",
+      "7": "Family First Party",
+      "95": "Other Party",
+      "96": "Invalid ballot",
+      "97": "Refused",
+      "99": "No answer",
+      "990": "NAP, other countries"
+    },
+    "special": {}
+  },
+  {
+    "domain": "GB_PRTY",
+    "meaning": "Great Britain: Party supporting in next election",
+    "question": "Which political party do you think you would be most likely to support if there were a general election tomorrow?",
+    "content": {
+      "0": "NAP (not close to any party)",
+      "1": "Conservative Party - CONS",
+      "2": "Labour Party - LAB",
+      "3": "Liberal Democrats - SLD",
+      "6": "Scottish National Party - SNP",
+      "7": "Plaid Cymru - PC",
+      "8": "Green Party",
+      "93": "Other answer",
+      "95": "Other Party: UKIP, BNP/NF, Scottish Socialist/Respect/Socialist",
+      "96": "None",
+      "97": "Refused",
+      "990": "NAP, other countries"
+    },
+    "special": {}
+  },
+  {
+    "domain": "DE_PRTY",
+    "meaning": "Germany: Party voted for in last election",
+    "question": "The last general election took place in September 2009. Did you vote in that election? And which party did you vote for with your SECOND vote?",
+    "content": {
+      "0": "NAP (Code 0, 2, 7 in VOTE_LE)",
+      "1": "Christian Democratic Union/Christian Social Union - CDU/CSU",
+      "2": "Social Democratic Party of Germany - SPD",
+      "3": "Free Democratic Party - FDP",
+      "4": "The Left - Die Linke",
+      "5": "Alliance 90/ The Greens - Buendnis 90/ Die Gruenen",
+      "6": "Pirate Party - Piratenpartei",
+      "7": "National-Democratic Party of Germany - NPD",
+      "95": "Other Party",
+      "96": "Invalid ballot",
+      "97": "Refused",
+      "99": "No answer",
+      "990": "NAP, other countries"
+    },
+    "special": {}
+  }
+]

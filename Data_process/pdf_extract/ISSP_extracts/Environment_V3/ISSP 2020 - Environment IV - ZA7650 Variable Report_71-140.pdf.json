@@ -1,0 +1,530 @@
+[
+  {
+    "domain": "v15",
+    "meaning": "Q6 How concerned in environmental issues?",
+    "question": "Generally speaking, how concerned are you about environmental issues? Please tick one box below to indicate what you think, where 1 means you are not at all concerned and 5 means you are very concerned.",
+    "content": {
+      "-9": "No answer",
+      "-8": "Can't choose",
+      "1": "1 Not at all concerned",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5 Very concerned"
+    },
+    "special": {}
+  },
+  {
+    "domain": "v16",
+    "meaning": "Q7 Most important environmental problem for [COUNTRY] as a whole?",
+    "question": "Here is a list of some different environmental problems. Which problem, if any, do you think is the most important for [COUNTRY] as a whole?",
+    "content": {
+      "-9": "No answer",
+      "-8": "Can't choose",
+      "1": "Air pollution",
+      "2": "Chemicals and pesticides",
+      "3": "Water shortage",
+      "4": "Water pollution",
+      "5": "Nuclear waste",
+      "6": "Domestic waste disposal",
+      "7": "Climate change",
+      "8": "Genetically modified foods",
+      "9": "Using up our natural resources",
+      "10": "None of these"
+    },
+    "special": {}
+  },
+  {
+    "domain": "v17",
+    "meaning": "Q8 Opinion on climate change and potential causes?",
+    "question": "There has been a lot of discussion about the world’s climate and the idea it has been changing in recent decades. Which of the following statements comes closest to your opinion?",
+    "content": {
+      "-9": "No answer",
+      "-8": "Can't choose",
+      "1": "The world's climate has not been changing",
+      "2": "The world's climate has been changing mostly due to natural processes",
+      "3": "The world's climate has been changing about equally due to natural processes and human activity",
+      "4": "The world's climate has been changing mostly due to human activity"
+    },
+    "special": {}
+  },
+  {
+    "domain": "v18",
+    "meaning": "Q9a Assessment of impacts on climate change for world?",
+    "question": "IF NOT CODE 1 IN Q8 'THE WORLD'S CLIMATE HAS NOT BEEN CHANGING' On a scale from 0 to 10, how bad or good do you think the impacts of climate change will be for the WORLD as a whole? 0 means extremely bad, 10 means extremely good.",
+    "content": {
+      "-9": "No answer",
+      "-8": "Can't choose",
+      "-4": "NAP (Code 1 in v17)",
+      "0": "0 Extremely bad",
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7",
+      "8": "8",
+      "9": "9",
+      "10": "10 Extremely good"
+    },
+    "special": {}
+  },
+  {
+    "domain": "v19",
+    "meaning": "Q9b Assessment of impacts on climate change for [COUNTRY]?",
+    "question": "IF NOT CODE 1 IN Q8 'THE WORLD'S CLIMATE HAS NOT BEEN CHANGING' On a scale from 0 to 10, how bad or good do you think the impacts of climate change will be for [COUNTRY]? 0 means extremely bad, 10 means extremely good.",
+    "content": {
+      "-9": "No answer",
+      "-8": "Can't choose",
+      "-4": "NAP (Code 1 in v17)",
+      "0": "0 Extremely bad",
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7",
+      "8": "8",
+      "9": "9",
+      "10": "10 Extremely good"
+    },
+    "special": {}
+  },
+  {
+    "domain": "v20",
+    "meaning": "Q10a Science will solve environmental problems",
+    "question": "How much do you agree or disagree with each of these statements? Q10a Modern science will solve our environmental problems with little change to our way of life.",
+    "content": {
+      "-9": "No answer",
+      "-8": "Can't choose",
+      "1": "Agree strongly",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Disagree strongly"
+    },
+    "special": {}
+  },
+  {
+    "domain": "v21",
+    "meaning": "Q10b Worry too much about environment and not enough about prices and jobs",
+    "question": "How much do you agree or disagree with each of these statements? Q10b We worry too much about the future of the environment and not enough about prices and jobs today.",
+    "content": {
+      "-9": "No answer",
+      "-8": "Can't choose",
+      "1": "Agree strongly",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Disagree strongly"
+    },
+    "special": {}
+  },
+  {
+    "domain": "v22",
+    "meaning": "Q10c Modern life harms the environment",
+    "question": "How much do you agree or disagree with each of these statements? Q10c Almost everything we do in modern life harms the environment.",
+    "content": {
+      "-9": "No answer",
+      "-8": "Can't choose",
+      "1": "Agree strongly",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Disagree strongly"
+    },
+    "special": {}
+  },
+  {
+    "domain": "v23",
+    "meaning": "Q10d Worry too much about progress harming environment",
+    "question": "How much do you agree or disagree with each of these statements? Q10d People worry too much about human progress harming the environment.",
+    "content": {
+      "-9": "No answer",
+      "-8": "Can't choose",
+      "1": "Agree strongly",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Disagree strongly"
+    },
+    "special": {}
+  },
+  {
+    "domain": "v24",
+    "meaning": "Q10e [COUNTRY] needs economic growth to protect environment",
+    "question": "How much do you agree or disagree with each of these statements? Q10e In order to protect the environment [COUNTRY] needs economic growth.",
+    "content": {
+      "-9": "No answer",
+      "-8": "Can't choose",
+      "1": "Agree strongly",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Disagree strongly"
+    },
+    "special": {}
+  },
+  {
+    "domain": "v25",
+    "meaning": "Q10f Economic growth harms environment",
+    "question": "How much do you agree or disagree with each of these statements? Q10f Economic growth always harms the environment.",
+    "content": {
+      "-9": "No answer",
+      "-8": "Can't choose",
+      "1": "Agree strongly",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Disagree strongly"
+    },
+    "special": {}
+  },
+  {
+    "domain": "v26",
+    "meaning": "Q11a Protect environment: pay much higher prices",
+    "question": "How willing would you be to pay much higher prices in order to protect the environment?",
+    "content": {
+      "-9": "No answer",
+      "-8": "Can't choose",
+      "1": "Very willing",
+      "2": "Fairly willing",
+      "3": "Neither willing nor unwilling",
+      "4": "Fairly unwilling",
+      "5": "Very unwilling"
+    },
+    "special": {}
+  },
+  {
+    "domain": "v27",
+    "meaning": "Q11b Protect environment: pay much higher taxes",
+    "question": "And how willing would you be to pay much higher taxes in order to protect the environment?",
+    "content": {
+      "-9": "No answer",
+      "-8": "Can't choose",
+      "1": "Very willing",
+      "2": "Fairly willing",
+      "3": "Neither willing nor unwilling",
+      "4": "Fairly unwilling",
+      "5": "Very unwilling"
+    },
+    "special": {}
+  },
+  {
+    "domain": "v28",
+    "meaning": "Q11c Protect environment: cut your standard of living",
+    "question": "And how willing would you be to accept cuts in your standard of living in order to protect the environment?",
+    "content": {
+      "-9": "No answer",
+      "-8": "Can't choose",
+      "1": "Very willing",
+      "2": "Fairly willing",
+      "3": "Neither willing nor unwilling",
+      "4": "Fairly unwilling",
+      "5": "Very unwilling"
+    },
+    "special": {}
+  },
+  {
+    "domain": "v29",
+    "meaning": "Q11d Protect environment: accept reduction of protected nature areas for economic development",
+    "question": "How willing would you be to accept a reduction in the size of [COUNTRY's] protected nature areas, in order to open them up for economic development?",
+    "content": {
+      "-9": "No answer",
+      "-8": "Can't choose",
+      "1": "Very willing",
+      "2": "Fairly willing",
+      "3": "Neither willing nor unwilling",
+      "4": "Fairly unwilling",
+      "5": "Very unwilling"
+    },
+    "special": {}
+  },
+  {
+    "domain": "v30",
+    "meaning": "Q12a Too difficult to do much about environment",
+    "question": "How much do you agree or disagree with each of these statements? Q12a It is just too difficult for someone like me to do much about the environment.",
+    "content": {
+      "-9": "No answer",
+      "-8": "Can't choose",
+      "1": "Agree strongly",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Disagree strongly"
+    },
+    "special": {}
+  },
+  {
+    "domain": "v31",
+    "meaning": "Q12b I do what is right, even when it costs more money and time",
+    "question": "How much do you agree or disagree with each of these statements? Q12b I do what is right for the environment, even when it costs more money or takes more time.",
+    "content": {
+      "-9": "No answer",
+      "-8": "Can't choose",
+      "1": "Agree strongly",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Disagree strongly"
+    },
+    "special": {}
+  },
+  {
+    "domain": "v32",
+    "meaning": "Q12c There are more important things than protect environment",
+    "question": "How much do you agree or disagree with each of these statements? Q12c There are more important things to do in life than protect the environment.",
+    "content": {
+      "-9": "No answer",
+      "-8": "Can't choose",
+      "1": "Agree strongly",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Disagree strongly"
+    },
+    "special": {}
+  },
+  {
+    "domain": "v33",
+    "meaning": "Q12d No point unless others do the same",
+    "question": "How much do you agree or disagree with each of these statements? Q12d There is no point in doing what I can for the environment unless others do the same.",
+    "content": {
+      "-9": "No answer",
+      "-8": "Can't choose",
+      "1": "Agree strongly",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Disagree strongly"
+    },
+    "special": {}
+  },
+  {
+    "domain": "v34",
+    "meaning": "Q12e Many claims about environment exaggerated",
+    "question": "How much do you agree or disagree with each of these statements? Q12e Many of the claims about environmental threats are exaggerated.",
+    "content": {
+      "-9": "No answer",
+      "-8": "Can't choose",
+      "1": "Agree strongly",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Disagree strongly"
+    },
+    "special": {}
+  },
+  {
+    "domain": "v35",
+    "meaning": "Q12f Hard to know whether the way I live is helpful or harmful to the environment",
+    "question": "How much do you agree or disagree with each of these statements? Q12f I find it hard to know whether the way I live is helpful or harmful to the environment.",
+    "content": {
+      "-9": "No answer",
+      "-8": "Can't choose",
+      "1": "Agree strongly",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Disagree strongly"
+    },
+    "special": {}
+  },
+  {
+    "domain": "v36",
+    "meaning": "Q12g Environmental problems have direct effect on everyday life",
+    "question": "How much do you agree or disagree with each of these statements? Q12g Environmental problems have a direct effect on my everyday life.",
+    "content": {
+      "-9": "No answer",
+      "-8": "Can't choose",
+      "1": "Agree strongly",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Disagree strongly"
+    },
+    "special": {}
+  },
+  {
+    "domain": "v37",
+    "meaning": "Q13a Air pollution caused by cars is (dangerous/ not dangerous) for environment",
+    "question": "In general, do you think that air pollution caused by cars is …",
+    "content": {
+      "-9": "No answer",
+      "-8": "Can't choose",
+      "1": "Extremely dangerous for the environment",
+      "2": "Very dangerous",
+      "3": "Somewhat dangerous",
+      "4": "Not very dangerous",
+      "5": "Not dangerous at all for the environment"
+    },
+    "special": {}
+  },
+  {
+    "domain": "v38",
+    "meaning": "Q13b Air pollution caused by industry is (dangerous/ not dangerous) for environment",
+    "question": "In general, do you think that air pollution caused by industry is …",
+    "content": {
+      "-9": "No answer",
+      "-8": "Can't choose",
+      "1": "Extremely dangerous for the environment",
+      "2": "Very dangerous",
+      "3": "Somewhat dangerous",
+      "4": "Not very dangerous",
+      "5": "Not dangerous at all for the environment"
+    },
+    "special": {}
+  },
+  {
+    "domain": "v39",
+    "meaning": "Q13c Pesticides used in farming are (dangerous/ not dangerous) for environment",
+    "question": "And do you think that pesticides and chemicals used in farming are …",
+    "content": {
+      "-9": "No answer",
+      "-8": "Can't choose",
+      "1": "Extremely dangerous for the environment",
+      "2": "Very dangerous",
+      "3": "Somewhat dangerous",
+      "4": "Not very dangerous",
+      "5": "Not dangerous at all for the environment"
+    },
+    "special": {}
+  },
+  {
+    "domain": "v40",
+    "meaning": "Q13d Pollution of rivers is (dangerous/ not dangerous) for environment",
+    "question": "And do you think that pollution of COUNTRY'S rivers, lakes and streams is …",
+    "content": {
+      "-9": "No answer",
+      "-8": "Can't choose",
+      "1": "Extremely dangerous for the environment",
+      "2": "Very dangerous",
+      "3": "Somewhat dangerous",
+      "4": "Not very dangerous",
+      "5": "Not dangerous at all for the environment"
+    },
+    "special": {}
+  },
+  {
+    "domain": "v41",
+    "meaning": "Q13e A rise in world's temperature is (dangerous/ not dangerous) for environment",
+    "question": "In general, do you think that a rise in the world's temperature caused by climate change is …",
+    "content": {
+      "-9": "No answer",
+      "-8": "Can't choose",
+      "1": "Extremely dangerous for the environment",
+      "2": "Very dangerous",
+      "3": "Somewhat dangerous",
+      "4": "Not very dangerous",
+      "5": "Not dangerous at all for the environment"
+    },
+    "special": {}
+  },
+  {
+    "domain": "v42",
+    "meaning": "Q13f Modifying genes of certain crops is (dangerous/ not dangerous) for environment",
+    "question": "And do you think that modifying the genes of certain crops is …",
+    "content": {
+      "-9": "No answer",
+      "-8": "Can't choose",
+      "1": "Extremely dangerous for the environment",
+      "2": "Very dangerous",
+      "3": "Somewhat dangerous",
+      "4": "Not very dangerous",
+      "5": "Not dangerous at all for the environment"
+    },
+    "special": {}
+  },
+  {
+    "domain": "v43",
+    "meaning": "Q13g Nuclear power stations are (dangerous/ not dangerous) for environment",
+    "question": "And do you think that nuclear power stations are …",
+    "content": {
+      "-9": "No answer",
+      "-8": "Can't choose",
+      "1": "Extremely dangerous for the environment",
+      "2": "Very dangerous",
+      "3": "Somewhat dangerous",
+      "4": "Not very dangerous",
+      "5": "Not dangerous at all for the environment"
+    },
+    "special": {}
+  },
+  {
+    "domain": "v44",
+    "meaning": "Q14a Best way: getting business and industry to protect environment",
+    "question": "Which of these approaches do you think would be the best way of getting business and industry in [COUNTRY] to protect the environment?",
+    "content": {
+      "-9": "No answer",
+      "-8": "Can't choose",
+      "1": "Heavy fines for businesses that damage the environment",
+      "2": "Use the tax system to reward businesses that protect the environment",
+      "3": "More information and education for businesses about the advantages of protecting the environment"
+    },
+    "special": {}
+  },
+  {
+    "domain": "v45",
+    "meaning": "Q14b Best way: getting people and their families to protect environment",
+    "question": "Which of these approaches do you think would be the best way of getting people and their families in [COUNTRY] to protect the environment?",
+    "content": {
+      "-9": "No answer",
+      "-8": "Can't choose",
+      "1": "Heavy fines for people who damage the environment",
+      "2": "Use the tax system to reward people who protect the environment",
+      "3": "More information and education for people about the advantages of protecting the environment"
+    },
+    "special": {}
+  },
+  {
+    "domain": "v46",
+    "meaning": "Q15 Extent of pleasure being outside in nature?",
+    "question": "How much, if at all, do you enjoy being outside in nature?",
+    "content": {
+      "-9": "No answer",
+      "-8": "Can't choose",
+      "1": "Not at all",
+      "2": "To a small extent",
+      "3": "To some extent",
+      "4": "To a great extent",
+      "5": "To a very great extent"
+    },
+    "special": {}
+  },
+  {
+    "domain": "v47",
+    "meaning": "Q16 Last 12 months: how often engaged in leisure activities outside in nature?",
+    "question": "In the last twelve months how often, if at all, have you engaged in any leisure activities outside in nature, such as hiking, bird watching, swimming, skiing, other outdoor activities or just relaxing?",
+    "content": {
+      "-9": "No answer",
+      "-8": "Can't choose",
+      "1": "Daily",
+      "2": "Several times a week",
+      "3": "Several times a month",
+      "4": "Several times a year",
+      "5": "Never"
+    },
+    "special": {}
+  },
+  {
+    "domain": "v48",
+    "meaning": "Q17a Last 12 months: number of trips by plane?",
+    "question": "In the last twelve months, how many trips did you make by plane? Count outward and return journeys, including transfers, as one trip.",
+    "content": {
+      "-9": "No answer",
+      "-8": "Don't know",
+      "0": "No trips",
+      "1000": "1000 trips"
+    },
+    "special": {
+      "AU": {
+        "-8": "Not available"
+      },
+      "US": {
+        "-8": "Not available"
+      }
+    }
+  }
+]

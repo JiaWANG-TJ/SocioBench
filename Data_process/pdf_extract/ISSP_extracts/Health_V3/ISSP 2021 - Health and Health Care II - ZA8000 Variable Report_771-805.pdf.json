@@ -1,0 +1,288 @@
+[
+  {
+    "domain": "TW_REG",
+    "meaning": "Country specific region: Taiwan",
+    "question": "Derived from the sampling area (zip code).",
+    "content": {
+      "1": "Keelung city",
+      "2": "Taipei city",
+      "3": "New Taipei city",
+      "4": "Taoyuan city",
+      "5": "Hsinchu city",
+      "6": "Hsinchu county",
+      "7": "Miaoli county",
+      "8": "Taichung city",
+      "10": "Nantou county",
+      "11": "Changhua county",
+      "12": "Yunlin county",
+      "14": "Chiayi county",
+      "15": "Tainan city",
+      "17": "Kaohsiung city",
+      "19": "Pingtung county",
+      "20": "Ilan county",
+      "21": "Hualien county",
+      "22": "Taitung county",
+      "23": "Penghu county",
+      "-2": "NAP , other countries"
+    },
+    "special": {}
+  },
+  {
+    "domain": "US_REG",
+    "meaning": "Country specific region: United States",
+    "question": "Coded based on respondents' residential addresses; States were recoded into regions (U.S. Bureau of Census: Regional classification).",
+    "content": {
+      "1": "New England",
+      "2": "Middle Atlantic",
+      "3": "East North Central",
+      "4": "West North Central",
+      "5": "South Atlantic",
+      "6": "East South Central",
+      "7": "West South Central",
+      "8": "Mountain",
+      "9": "Pacific",
+      "-2": "NAP , other countries"
+    },
+    "special": {}
+  },
+  {
+    "domain": "ZA_REG",
+    "meaning": "South Africa: Country specific region",
+    "question": "Provinces.",
+    "content": {
+      "1": "Western Cape",
+      "2": "Eastern Cape",
+      "3": "Northern Cape",
+      "4": "Free State",
+      "5": "Kwa-Zulu Natal",
+      "6": "North West",
+      "7": "Gauteng",
+      "8": "Mpumalanga",
+      "9": "Limpopo",
+      "-2": "NAP , other countries"
+    },
+    "special": {}
+  },
+  {
+    "domain": "CASEID",
+    "meaning": "Respondent Identification Number",
+    "question": "This variable holds a unique identification number for each respondent including the ISSP module year (first 4 digits: 2021), the ISO 3166 country code (next 5 digits: for countries without subsamples starting with 00 plus the three digits for the country code, for countries with subsamples starting directly with the three digits country code supplemented by an appendix two digits long) and the original identification number of the respondents (the last 7 digits), making an identification number of 16 digits in total.",
+    "content": {},
+    "special": {}
+  },
+  {
+    "domain": "SUBSCASE",
+    "meaning": "Case substitution flag",
+    "question": "Case substitution flag is to indicate whether a respondent is from the original sampling frame or is substituted for some reason (interview not obtained because of invalid address, no contact, refusal, etc.)",
+    "content": {
+      "0": "No substitution in this survey",
+      "1": "Case from original sample",
+      "2": "Case substituted; SR: Address substitution",
+      "3": "SR: Case substituted: Within-household substitution"
+    },
+    "special": {}
+  },
+  {
+    "domain": "DATEYR",
+    "meaning": "Year of interview: YYYY (four digits)",
+    "question": "Year of the interview (four digits)",
+    "content": {
+      "2019": "Year 2019",
+      "2020": "Year 2020",
+      "2021": "Year 2021",
+      "2022": "Year 2022",
+      "2023": "Year 2023"
+    },
+    "special": {}
+  },
+  {
+    "domain": "DATEMO",
+    "meaning": "Month of interview: MM (two digits)",
+    "question": "Month of the interview (two digits)",
+    "content": {
+      "1": "January",
+      "2": "February",
+      "3": "March",
+      "4": "April",
+      "5": "May",
+      "6": "June",
+      "7": "July",
+      "8": "August",
+      "9": "September",
+      "10": "October",
+      "11": "November",
+      "12": "December",
+      "-9": "No answer/ No info"
+    },
+    "special": {}
+  },
+  {
+    "domain": "DATEDY",
+    "meaning": "Day of interview: DD (two digits)",
+    "question": "Day of the interview (two digits)",
+    "content": {
+      "1": "01.",
+      "31": "31.",
+      "-9": "No answer/ No info"
+    },
+    "special": {}
+  },
+  {
+    "domain": "INTLANG",
+    "meaning": "Language of the interview",
+    "question": "This variable includes information about the main language in which the interview was conducted. For self-administered surveys, this variable provides the language of the questionnaire. Information on languages is coded according to ISO 639-3.",
+    "content": {
+      "1": "Afrikaans (afr)",
+      "2": "Arabic (ara)",
+      "3": "Assamese (asm)",
+      "4": "Bengali (ben)",
+      "5": "Bikol (bik)",
+      "6": "Bulgarian (bul)",
+      "7": "Cebuano (ceb)",
+      "8": "Czech (ces)",
+      "9": "Chinese (cmd)",
+      "10": "Danish (dan)",
+      "11": "German (deu)",
+      "12": "English (eng)",
+      "13": "Estonian (est)",
+      "14": "Filipino (fil)",
+      "15": "Finnish (fin)",
+      "16": "French (fra)",
+      "17": "Gujarati (guj)",
+      "18": "Hebrew (heb)",
+      "19": "Hiligaynon (hil)",
+      "20": "Hindi (hin)",
+      "21": "Croatian (hrv)",
+      "22": "Hungarian (hun)",
+      "23": "Iloko (ilo)",
+      "24": "Icelandic (isl)",
+      "25": "Italian (ita)",
+      "26": "Japanese (jpn)",
+      "27": "Kannada (kan)",
+      "28": "Georgian (kat)",
+      "29": "Korean (kor)",
+      "30": "Latvian (lav)",
+      "31": "Lithuanian (lit)",
+      "32": "Malayalam (mal)",
+      "33": "Marathi (mar)",
+      "34": "Maranao (mrw)",
+      "35": "Dutch (nld)",
+      "36": "Norwegian (nor)",
+      "37": "Oriya (ory)",
+      "38": "Polish (pol)",
+      "39": "Punjabi (pan)",
+      "40": "Romanian (ron)",
+      "41": "Russian (rus)",
+      "42": "Slovak (slk)",
+      "43": "Slovenian (slv)",
+      "44": "Spanish (spa)",
+      "45": "Swedish (swe)",
+      "46": "Tamil (tam)",
+      "47": "Telugu (tel)",
+      "48": "Thai (tha)",
+      "49": "Tswana (tsn)",
+      "50": "Tsonga (tso)",
+      "51": "Turkish (tur)",
+      "52": "Venda (ven)",
+      "53": "Xhosa (xho)",
+      "54": "Zulu (zul)",
+      "55": "Waray (war)",
+      "56": "Tausug (tsg)",
+      "57": "Chavacano (cbk)",
+      "58": "Modern Greek (ell)",
+      "60": "Sranan Tongo (srn)",
+      "61": "Sarnami Hindustani (hns)",
+      "62": "Surinamese Javanese (jav)",
+      "63": "Sesotho (sot)",
+      "64": "Sepedi (nso)",
+      "65": "Swati (ssw)",
+      "66": "South Ndebele (nbl)",
+      "94": "Marroon language",
+      "95": "Other language, mixture",
+      "-9": "No information"
+    },
+    "special": {}
+  },
+  {
+    "domain": "DWEIGHT_HH",
+    "meaning": "Design weight - household samples",
+    "question": "This weight variable serves to compensate for unequal selection probabilities introduced by the sampling design, specifically, the use of household sampling.",
+    "content": {
+      "1": "No weighting"
+    },
+    "special": {}
+  },
+  {
+    "domain": "DWEIGHT_TS",
+    "meaning": "Design weight - target stratification",
+    "question": "In addition to DWEIGHT_HH, this weight variable serves as compensation for relevant non-proportional deviations from a 'nationally representative' sampling strategy that some ISSP members intentionally employ in their data collection, such as an intended oversampling of particular regions or groups.",
+    "content": {
+      "1": "No weighting"
+    },
+    "special": {}
+  },
+  {
+    "domain": "DWEIGHT_COM",
+    "meaning": "HH + TS combination of all design aspects",
+    "question": "This weight variable combines DWEIGHT_HH and other weights pertaining to any stratification elements that countries may have added for country-specific reasons covered by DWEIGHT_TS.",
+    "content": {
+      "1": "No weighting"
+    },
+    "special": {}
+  },
+  {
+    "domain": "PSWEIGHT",
+    "meaning": "Post-stratification weight",
+    "question": "This post-stratification weight serves as compensation for possible biases introduced by unit non-response or non-random sampling error that may occur during data collection.",
+    "content": {
+      "1": "No weighting"
+    },
+    "special": {}
+  },
+  {
+    "domain": "WEIGHT_COM",
+    "meaning": "Combination of all weights",
+    "question": "This weight variable combines all available design and post-stratification weights. The variable is provided for the convenience of ISSP users.",
+    "content": {
+      "1": "No weighting"
+    },
+    "special": {}
+  },
+  {
+    "domain": "MODE",
+    "meaning": "Administrative mode of data-collection",
+    "question": "This variable records the administrative mode/ method of data-collection.",
+    "content": {
+      "10": "F2F/PAPI, no visuals",
+      "11": "F2F/PAPI, visuals",
+      "12": "F2F/PAPI, respondent reading questionnaire",
+      "13": "F2F/PAPI, interpreter or translator - no visuals",
+      "14": "F2F/PAPI, interpreter or translator - visuals",
+      "20": "CAPI, no visuals",
+      "21": "CAPI, visuals",
+      "22": "CAPI, respondent reading questionnaire (paper or on monitor)",
+      "23": "CAPI, interpreter or translator - no visuals",
+      "24": "CAPI, interpreter or translator - visuals",
+      "30": "SC, arrives with interviewer, interviewer attending",
+      "31": "SC, arrives with interviewer, drops o ﬀ, picks up later",
+      "32": "SC, arrives with interviewer, drops o ﬀ, mailed back by R",
+      "33": "SC, mailed to, completed by R and hold for pick up",
+      "34": "SC, mailed to, mailed back by R",
+      "40": "CASI, self-completion, computer-assisted",
+      "50": "CAWI, self-completion, web questionnaire",
+      "60": "CATI, computer assisted telephone interview",
+      "-9": "No information"
+    },
+    "special": {}
+  },
+  {
+    "domain": "PARTIALS",
+    "meaning": "Flag variable indicating partially completed interviews",
+    "question": "This variable indicates cases of partially completed interviews.",
+    "content": {
+      "0": "Partial case (50-80 % answered)",
+      "1": "Complete case (> 80 % answered)"
+    },
+    "special": {}
+  }
+]

@@ -1,0 +1,478 @@
+[
+  {
+    "domain": "DK_ISCD",
+    "meaning": "Country specific highest completed degree of education: Denmark",
+    "question": "What school education do you have? (School education only include elementary school and the upper secondary educations as common gymnasium, HF, HHX, HTX and HH and HG). What vocational or higher education do you have beyond school education? (If you have completed additional educations, please mark the highest obtained education).",
+    "content": {
+      "0": "No formal education",
+      "100": "Primary school 0th to 6th grade",
+      "244": "Primary school 7th to 10th grade",
+      "344": "Gymnasium or HF/ Higher commercial courses (HH, HG, HHX) / Gymnasium Technical (HTX)",
+      "353": "Short vocational education under 2 years/ Vocational education (skilled work, business, agriculture etc.)",
+      "354": "Combined vocational and gymnasium education (EUX)",
+      "550": "Short-cycle tertiary education of 2-3 years",
+      "640": "University bachelors degree",
+      "650": "Medium-cycle tertiary education of 3-4 years",
+      "740": "Long-cylce tertiary education of 5-6 years",
+      "750": "Officer education/ masters course",
+      "840": "Research education/ PhD, doctors degree/ Licientate",
+      "-2": "NAP, other countries",
+      "-9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "FI_ISCD",
+    "meaning": "Country specific highest completed degree of education: Finland",
+    "question": "What is your education? Please choose the highest level of education attained, choose one alternative only.",
+    "content": {
+      "100": "Still in primary or lower secondary education - Viela peruskoulussa",
+      "243": "Primary education or short lower secondary level (pre-1972) - Kansakoulu tai kansalaiskoulu",
+      "244": "Lower secondary education - Peruskoulu",
+      "344": "General upper secondary education or certificate - Lukio tai ylioppilas",
+      "350": "Vocational school or course - Ammattikoulu tai -kurssi",
+      "454": "Specialist vocational qualification - Erikoisammattitutkinto",
+      "550": "Vocational post-secondary non-tertiary education - Opistotason ammatillinen koulutus",
+      "640": "Univ., Bachelor's degree (Lower acad. degree) - Yliopisto, alempi korkeakoulututkinto (esim. kandidaatin tutkinto)",
+      "650": "Bachelors' degree (University of applied sciences) - Ammattikorkeakoulututkinto (AMK)",
+      "740": "Univ., Master's degree (Higher acad. degree) - Yliopisto, ylempi korkeakoulututkinto (esim. maisterin tutkinto)",
+      "750": "Master's degree (University of applied sciences) - Ylempi ammattikorkeakoulututkinto (YAMK)",
+      "840": "Doctoral degree or equivalent - Lisensiaatin tai tohtorin tutkinto",
+      "-2": "NAP, other countries"
+    },
+    "special": {}
+  },
+  {
+    "domain": "FR_ISCD",
+    "meaning": "Country specific highest completed degree of education: France",
+    "question": "What is your highest level of education?",
+    "content": {
+      "0": "No schooling or not completed primary education",
+      "100": "Completed primary education, without and with the final certificate",
+      "242": "Secondary education 1st cycle, without the final certificate (Brevet elementaire, Brevet d'etude du premier cycle)",
+      "244": "Secondary education 1st cycle, with the final certificate (Brevet elementaire, Brevet d'etude du premier cycle)",
+      "342": "Secondary education 2nd cycle, without the final exam (Baccalaureat)",
+      "344": "Technological Baccalaureat or equivalent diploma/ General Baccalaureat or equivalent diploma",
+      "353": "Certificate of vocational ability: Certificat d'Aptitude Professionnelle/ Vocational qualification in care (home c., children c., health c.)",
+      "354": "Vocational Baccalaureat/ Qualifications of vocational secondary education in health and care institutions",
+      "444": "Certificate of ability in Law, Diploma allowing admission in tertiary education",
+      "540": "University education, 1st cycle Diploma in general tertiary education (2 years)",
+      "550": "Diploma in Technological Studies/ Qualification in paramedical and social sectors (social assistant, etc.)",
+      "640": "Vocational Bachelor (University education, 1st graduation and apprenticeship",
+      "650": "Bachelor (University education, 2nd cycle, 1st year and apprenticeship)",
+      "740": "Research Master Degree, qualification of university education teachers/ Diploma from selective 'grandes ecoles'",
+      "750": "Engineer Degree/ Voc Master/ Intermediate Master/ Quali of architects, veterinaries, notaries/ Doctorate in medecine, odontology, pharmacy",
+      "840": "Doctorate",
+      "-2": "NAP, other countries",
+      "-9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "HR_ISCD",
+    "meaning": "Country specific highest completed degree of education: Croatia",
+    "question": "Your highest level of education (schooling completed regularly or part-time). (For respondents who are currently involved in education, mark the highest completed level.)",
+    "content": {
+      "100": "Primary school not completed - Bez zavrsene osnovne skole",
+      "200": "Primary school completed - Zavrsena osnovna skola",
+      "344": "General secondary school (gymnasium) completed - Zavrsena gimnazija",
+      "353": "Three years vocational school completed - Zavrsena trogodisnja strukovna skola",
+      "354": "Four years vocational school completed - Zavrsena cetverogodisnja strukovna skola",
+      "550": "Short-cycle professional study completed - Zavrsena visa skola u trajanju od dvije godine, zavrsen dvogodisnji strucni studij",
+      "600": "Undergraduate study competed - Zavrsena prva razina visokog obrazovanja",
+      "740": "Graduate study completed - Zavrsena druga razina visokog obrazovanja, Zavrsen znanstveni magistarski studij",
+      "750": "Postgraduate specialist study competed - Zavrsen poslijediplomski specijalisticki studij",
+      "840": "Postgraduate university (doctoral) study completed - Zavrsen poslijediplomski doktorski studij",
+      "-2": "NAP, other countries",
+      "-9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "HU_ISCD",
+    "meaning": "Country specific highest completed degree of education: Hungary",
+    "question": "What is your highest level of education completed?",
+    "content": {
+      "30": "Less than 8th grade - Kevesebb, mint altalanos iskola",
+      "244": "8th grade - Befejezett altalanos iskola",
+      "253": "Trade school, voc training without high-school leav. ex - Erettsegit nem ado szakmunkaskepzo: szakiskola, szakkepzes",
+      "344": "Grammar school, high-school diploma - Gimnaziumi erettsegi",
+      "354": "Voc school with leaving exam - Erettsegit ado szakkoezep, szakgimnaziumi erettsegi",
+      "454": "Voc training following high-school leaving ex - Erettsegit koeveto, felsofokra nem akkr. koezepfoku techn.",
+      "550": "Accred. higher educ. prof. training; tertiary technical school - Akkreditalt felsofokuszakkepzes: felsofoku techn.",
+      "600": "College (BA/ BSc) - Foiskolai vagy egyetemi alapkepzesi szak",
+      "700": "University (MA/ MSc) - Foiskolai vagy egyetemi mesterkepzesi szak",
+      "-2": "NAP, other countries"
+    },
+    "special": {}
+  },
+  {
+    "domain": "IL_ISCD",
+    "meaning": "Country specific highest completed degree of education: Israel",
+    "question": "What is the highest level of education that you have attained?",
+    "content": {
+      "0": "No formal schooling",
+      "100": "Lowest formal qualification",
+      "342": "Incomplete academic secondary",
+      "343": "Full general without matriculation + Yeshiva without matriculation",
+      "344": "Academic secondary completed + Yeshiva with matriculation",
+      "352": "Incomplete vocational qualification",
+      "353": "Vocational completed without matriculation",
+      "354": "Vocational completed with matriculation",
+      "454": "Semi higher, post secondary",
+      "540": "Incomplete university",
+      "600": "University completed, BA",
+      "700": "University completed, MA or more",
+      "-2": "NAP, other countries",
+      "-9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "IN_ISCD",
+    "meaning": "Country specific highest completed degree of education: India",
+    "question": "What is the highest level of education that you have attained? We need to know the highest level of class/ degree that you have completed. Please write in verbatim: _______",
+    "content": {
+      "0": "Less than primary education (illiterate)",
+      "20": "Pre-primary certificate",
+      "100": "Primary certificate",
+      "244": "Upper primary/ Secondary - Matriculation",
+      "344": "Senior secondary",
+      "450": "Diploma",
+      "600": "Bachelor's degree (eg Bachelor of Arts, Bachelor of Science)",
+      "700": "Master's degree (MA, MSc ,M. Tech.)",
+      "-2": "NAP, other countries"
+    },
+    "special": {}
+  },
+  {
+    "domain": "IS_ISCD",
+    "meaning": "Country specific highest completed degree of education: Iceland",
+    "question": "What is the highest level of education that you have attained?",
+    "content": {
+      "0": "Primary school not completed - Barnaskolastigi ekki lokid",
+      "100": "Primary school (12/ 14 yrs old) - Barnaskolaprof, Unglingaprof",
+      "244": "Compulsory school (16 yrs old) - Grunnskolaprof, gagnfraedaprof, landsprof",
+      "344": "Secondary education (gymnasium) - Studentsprof, prof fra Haskolabru, prof ur frumgreinadeild",
+      "350": "Apprenticeship, upper secondary - Idnnam",
+      "352": "Longer voc training on sec level - Lengra starfsnam a framhalds-skolastigi",
+      "354": "Short voc training on secondary school level - Stutt starfsnam a framhaldsskolastigi",
+      "444": "Voc training on completion of sec school level - Starfsnam eȇir lok framhaldsskola-stigs",
+      "453": "Master craȇsman, licence to supervise apprentices - Idnmeistararettindi",
+      "454": "Short, practical training at uni level, diploma - Stutt hagnytt nam a haskolastigi, diploma",
+      "550": "Short voc training at uni level, basic diploma, 2-3 yrs - Stutt starfsnam a framhaldsskola-stigi, grunndiploma, 2-3 ar",
+      "600": "Undergrad. degree BA/BS/B.Ed. or add. diploma+Studies at uni>4 yrs - Grunnnam i haskola eda vidbotardiploma+Nam i haskol",
+      "700": "Master's degree MA/ MS - Meistaranam MA/ MS",
+      "800": "Doctoral degree, PhD - Doktorsprof PhD",
+      "-2": "NAP, other countries",
+      "-9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "IT_ISCD",
+    "meaning": "Country specific highest completed degree of education: Italy",
+    "question": "What is the highest level of education that you have attained?",
+    "content": {
+      "0": "No formal education - Nessun titolo di studio",
+      "100": "Primary school (2-5 years) - Scuola elementare (2-5 anni)",
+      "200": "Lower sec. school (including introduction to voc training) - Scuola media inferiore (compreso avviamento professionale)",
+      "340": "High school - Scuola media superiore con diploma maturita",
+      "350": "Post-secondary, non-tertiary (2-3 years) - Scuola professionale (2-3 anni)",
+      "500": "University diploma (2-3 years) - Diploma universitario (2-3 anni)",
+      "600": "Bachelor degree (3 years) - Laurea triennale (3 anni)",
+      "700": "Master degree (3+2 yrs)+Uni degree: old progr. (4-5-6 yrs) or long degree course - L. magistrale (3+2 anni)+L. vecchio ordinamento",
+      "800": "Post degree (specialisation, doctorate) - Post-laurea (specializzazione, dottorato)",
+      "-2": "NAP, other countries",
+      "-9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "JP_ISCD",
+    "meaning": "Country specific highest completed degree of education: Japan",
+    "question": "Please indicate the last school you attended or the school you are currently attending. Circle one figure only.",
+    "content": {
+      "244": "Junior high school completed/ Still at high school/ Still at college of technology 1st to 3rd Grade",
+      "344": "High school completed/ Still at college of technology 4th to 5th Grade/ Still at Junior college or university",
+      "540": "Junior college completed",
+      "550": "College of technology completed",
+      "600": "University completed/ Still at Graduate school master's course",
+      "700": "Graduate school master's course completed/ Still at Graduate school doctor's course",
+      "800": "Graduate school doctor's course completed",
+      "900": "Other",
+      "-2": "NAP, other countries",
+      "-9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "MX_ISCD",
+    "meaning": "Country specific highest completed degree of education: Mexico",
+    "question": "Highest level of education attained (level completed):",
+    "content": {
+      "10": "Less than primary: Never attended an education programme",
+      "30": "Less than primary: Some primary education (excl. level completion)",
+      "100": "Primary education",
+      "240": "Lower secondary education: General",
+      "340": "Upper secondary education: General",
+      "440": "Post-secondary non-tertiary education: General",
+      "540": "Short-cycle tertiary education: General",
+      "550": "Short-cycle tertiary education: Vocational",
+      "640": "Bachelor's or equivalent level: Academic",
+      "740": "Master's or equivalent level: Academic",
+      "840": "Doctoral or equivalent level: Academic",
+      "-2": "NAP, other countries",
+      "-9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "NL_ISCD",
+    "meaning": "Country specific highest completed degree of education: Netherlands",
+    "question": "What is the highest level of education you have COMPLETED with a diploma or certificate? (Choose the answer that is most applicable.)",
+    "content": {
+      "10": "No education - Geen onderwijs",
+      "20": "Primary school, unfinished - Basisonderwijs niet afgemaakt",
+      "100": "Primary school (formerly: lower school) - Basisonderwijs (oud: lagere school)",
+      "244": "VMBO theoretical and mixed learning path - VMBO-theoretisch en gemengde leerweg (oud: MAVO, ULO, MULO)",
+      "253": "VMBO job oriented, Practical education - VMBO-beroepsgericht, Praktijkonderwijs (oud: LBO, L TS, Huishoudschool)",
+      "254": "Sec Voc Ed 1 Voc Guidance Learning Path / Sec Voc Ed 1 Voc Ed Learning Path - MBO-1 BBL (oud: Leerlingwezen) / MBO-1 BOL",
+      "344": "HAVO - (oud: MMS) / VWO (HBS, Gymnasium, Atheneum)",
+      "353": "Secondary Vocational Education 2, Secondary Vocational Education 3 - MBO2, MBO3",
+      "354": "Secondary Vocational Education 4 for access to university of applied sciences - MBO4, MBO-plus voor toegang tot HBO",
+      "550": "Sec Voc Ed 4 specialist ed / Short uni of applied sciences (Associates Degree) - MBO4 specialistenopleiding / Kort HBO, HBO-Associate Degree",
+      "640": "University bachelor - WO-bachelor (oud: WO kandidaats)",
+      "650": "Uni of applied sciences bachelor - HBO-bachelor, HBO (bv. kweekschool, conservatorium, mo-akten, kunstacademie)",
+      "740": "Uni master - WO-master (oud: WO doctoraal)",
+      "750": "University of applied sciences master - HBO-master",
+      "840": "Doctorate, PhD programme - Doctoraat, PhD-opleiding",
+      "850": "Uni, post-doctoral (e.g. medical doctor, pharmacist, high school teacher) - WO postdoctoraal (bv arts, apotheker, 2e graads leraar)",
+      "900": "Other",
+      "-2": "NAP, other countries"
+    },
+    "special": {}
+  },
+  {
+    "domain": "NO_ISCD",
+    "meaning": "Country specific highest completed degree of education: Norway",
+    "question": "What general education or study specialization have you completed? (Multiple answers possible.) Which vocational education/ training have you completed? If you have not taken vocational education as shown below, go on to the next question. (Tick one.) Which tertiary education have you achieved? If you have not completed higher education as shown below, proceed to the next question. (Tick one.)",
+    "content": {
+      "0": "No formal education completed - Ingen utdanning eller ikke fullfort grunnskole",
+      "200": "9 or 10- year primary and lower sec compulsory school, 7-yr primary compulsory school (outdated) - Ungdomsskole, folkeskole, realskole, framhaldsskole",
+      "342": "Higher sec general not qualifying - Grunnutdanning ved videregaende skole (GK, VKI, VG1, VG2) ved allmennfaglige studieretninger/studiespesialiserende utdanningsprogram",
+      "344": "Higher sec general qualifying - Avsluttet videregaende skole, allmennfaglige studieretningerstudiespesialiserende utdanningsprogram, 1-arig pabygging til studiekompetanse (VKII, VG3, gymnas)",
+      "352": "Higher sec vocational, no craȇ certificate - Grunnutdanning ved videregaende skole (GK, VKI, VG1, VG2) eller yrkesskole",
+      "353": "Folk high school, 2-3-year lower sec school or Higher sec school, voc, with craȇ certificate - Folkehogskole eller Avsluttet videregaende skole, yrkesfaglige studieretninger/utdanningsprogram (VKII, VG3), fagbrev, svenneprove",
+      "540": "University/college, less than 3 yrs - Universitet/hogskole, mindre enn 3 ars normert varighet (hogskolekandidat, 2- og 2½- arig)",
+      "550": "Technical college, other approved training college - Teknisk fagskole, godkjent fagskole",
+      "600": "University/college, 3-4 yrs - Universitet/hogskole, 3-4 ars normert varighet (bachelor, cand. mag, laerer, sykepleier, ingenior, sivilokonom etc.)",
+      "700": "University/college, 5 yrs or more - Universitet/hogskole, 5 ars normert varighet eller mer (mastergrad, hovedfag, sivilingenior/master i teknologi o.l., master i okonomi og administrasjon/sivilokonom, jurist, lege, Dr. grad, Ph.D.)",
+      "-2": "NAP, other countries",
+      "-9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "NZ_ISCD",
+    "meaning": "Country specific highest completed degree of education: New Zealand",
+    "question": "Which one of these categories best describes your highest formal qualification?",
+    "content": {
+      "0": "No formal qualification",
+      "100": "Primary school completed",
+      "244": "School Certificate, National Certificate L1, NCEA L1",
+      "344": "Sixth Form Cert., Nat. Certificate L2, NCEA L2+3, Higher School Certificate, Higher Leaving Cert., Bursary/ Scholarship",
+      "450": "Trade or Professional Certificate",
+      "550": "Diploma below degree level",
+      "600": "Undergraduate university degree",
+      "700": "Postgraduate or higher qualification",
+      "-2": "NAP, other countries",
+      "-9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "PH_ISCD",
+    "meaning": "Country specific highest completed degree of education: Philippines",
+    "question": "What is the highest level of education that you have attained?",
+    "content": {
+      "10": "Less than primary/ No education  - Pre-primary school/ walang pormal na edukasyon",
+      "30": "Some elementary - Nakapag-elementarya",
+      "100": "Completed primary education - Tapos ng elementarya",
+      "244": "Lower secondary education - Junior high school o lower secondary education",
+      "344": "Upper secondary education - Senior high school o upper secondary education",
+      "454": "Post-secondary non-tertiary education - Nakatapos ng senior high school at nakatapos ng certificate/ national certification",
+      "540": "Sort-cycle tertiary education - Nakatapos ng senior high school at nakatapos ng associate/ diploma/ national certification",
+      "640": "Some college/Bachelor or equivalent - Nakapag-kolehiyo/Tapos ng kolehiyo o bachelor’s/college degree o kapareho",
+      "740": "Master or equivalent - Master’s degree o nakatapos ng medisina o abugasya o kapareho",
+      "-2": "NAP, other countries"
+    },
+    "special": {}
+  },
+  {
+    "domain": "PL_ISCD",
+    "meaning": "Country specific highest completed degree of education: Poland",
+    "question": "What education have you obtained so far?",
+    "content": {
+      "30": "Elementary not completed - Nieukonczona szkola podstawowa",
+      "100": "Elementary completed - Ukonczona szkola podstawowa",
+      "244": "Gymnasium completed - Ukonczone gimnazjum",
+      "254": "Basic voc compl aȇer primary - Uk szk zas zaw/ branzowa po szk podst",
+      "343": "Secondary general completed, no matriculation - Ukonczone liceum ogolnoksztalcace bez matury",
+      "344": "Secondary general completed with matriculation - Ukonczone liceum ogolnoksztalcace z matura",
+      "353": "Bacis voc compl aȇer gymn - Uk zas zaw po gimn/ Sec voc compl, no matriculation - Uk technikum/ liceum zaw bez matury",
+      "354": "Secondary vocational completed with matriculation - Ukonczone technikum lub liceum zawodowe z matura",
+      "454": "Post-secondary completed - Ukonczona szkola pomaturalna lub policealna",
+      "600": "B.A or ING - Mam licencjat lub dyplom inzyniera",
+      "700": "M.A or M.D - Mam tytul magistra lub dyplom lekarza",
+      "840": "PhD or PhD with habilitation or Professor - Mam stopien naukowy doktora, doktora habilitowanego, tytul profesora",
+      "-2": "NAP, other countries",
+      "-9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "RU_ISCD",
+    "meaning": "Country specific highest completed degree of education: Russia",
+    "question": "What is the highest level of education that you have attained?",
+    "content": {
+      "100": "Primary school or less",
+      "244": "Incomplete secondary (7-9 years of school)",
+      "344": "High secondary school completed (10-11 years of school)",
+      "353": "Trade school, intermediate school",
+      "454": "Trade school, high secondary completed",
+      "540": "Higher education incomplete",
+      "550": "Technical secondary school (college, technikum)",
+      "700": "Higher education completed, university degree",
+      "-2": "NAP, other countries",
+      "-9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "SI_ISCD",
+    "meaning": "Country specific highest completed degree of education: Slovenia",
+    "question": "Name the last school that you finished, regularly or irregularly:",
+    "content": {
+      "0": "Without formal education - Brez solske izobrazbe",
+      "100": "Incomplete elementary school - Nepopolna osnovnosolska izobrazba",
+      "244": "Completed 8(9) year of elementary school - Osnovnosolska izobrazba",
+      "344": "General high school - Srednja splosna izobrazba",
+      "353": "Lower high school or vocational school - Nizja ali srednja poklicna izobrazba",
+      "354": "High school - Srednja strokovna izobrazba",
+      "550": "Higher school - Visja strokovna izobrazba, visjesolska izobrazba",
+      "640": "College + 1st Bologna degree - Visokosolska strokovna izobrazba + 1 st. Bologna",
+      "740": "University degree + Bologna master - Visokosolska univerzitetna izobrazba + Bolonjski magisterij",
+      "750": "Specialisation - Specializacija",
+      "840": "Master degree / PHD - Magisterij/ Doktorat",
+      "900": "Other",
+      "-2": "NAP, other countries",
+      "-9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "SK_ISCD",
+    "meaning": "Country specific highest completed degree of education: Slovakia",
+    "question": "What is your highest achieved education level?",
+    "content": {
+      "244": "Completed elementary school - Ukoncena zakladna skola",
+      "253": "Completed elementary and vocational training - Zakladne vzdelanie + zaucenie, odborna priprava, kurz (bez vyucneho listu",
+      "344": "Completed general upper secondary education, Gymnasium school - Uplne stredoskolske vseobecne (gymnazium, SVS)",
+      "353": "Voc training with certificate, apprenticeship/ Voc school or trade school - Vyuceny/a s vyucnym listom alebo osvedcenim (bez maturity)/ Odborna skola alebo hospodarska skola (bez maturity)",
+      "354": "Completed apprenticeship training with maturity level certif./ Completed voc upper - Vyuceny/a s maturitou/ uplne stredoskolske odborne smaturitou (napr. priemyslovka, ekonomicka skola, obchodna akademia, stredna zdravotna skola)",
+      "454": "Follow-up, post-maturity education - Nadstavbove, pomaturitne studium",
+      "600": "University, college education, bachelor degree - Vysoka skola - bakalarske studium",
+      "700": "University, college completed master or engineering programme - Vysoka skola - magisterske, inzinierske studium (alebo jeho ekvivalent), vratane titulov MUDr., JUDr., PhDr. a podobne",
+      "800": "Postgraduate level or higher education study - Postgradualne studium (tituly CSc., PhD., Doc., atd.)",
+      "-2": "NAP, other countries"
+    },
+    "special": {}
+  },
+  {
+    "domain": "SR_ISCD",
+    "meaning": "Country specific highest completed degree of education: Suriname",
+    "question": "What is the highest education that you have attended? And what is your highest completed education?",
+    "content": {
+      "10": "Did not go to school, illiterate",
+      "20": "Some primary, literate",
+      "30": "BO: Special Education",
+      "100": "GLO: 6yr Primary",
+      "244": "MULO: Primary + 4yr midlevel academic",
+      "252": "EBO: Primary + 1-2yr vocational",
+      "254": "LBGO, L TO: Primary 3 yr vocational",
+      "344": "HAvO, vWO: Primary+lower secondary: 2-3 yr secondary academic",
+      "354": "MBO: COvAB, NATIN, PI, IMEO: 4 yr vocational",
+      "600": "Uni-BSC: Tertiary 4 yr academic",
+      "650": "HBO: Tertiary professional training",
+      "700": "Uni-MSC: Tertiary 2 yr academic aȇer Bsc",
+      "-2": "NAP, other countries",
+      "-9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "TH_ISCD",
+    "meaning": "Country specific highest completed degree of education: Thailand",
+    "question": "The highest level of education:",
+    "content": {
+      "10": "Informal education",
+      "100": "Primary school",
+      "200": "Lower secondary school",
+      "300": "Upper secondary school",
+      "500": "Post-secondary non-tert. education",
+      "600": "Bachelor's or equivalent level",
+      "700": "Master's or equivalent level",
+      "800": "Doctoral or equivalent level",
+      "900": "Not elsewhere classified",
+      "-2": "NAP, other countries"
+    },
+    "special": {}
+  },
+  {
+    "domain": "TW_ISCD",
+    "meaning": "Country specific highest completed degree of education: Taiwan",
+    "question": "What is your education level?  Please refer to the level of education that you are currently in or the highest level of education that you have attained, regardless of whether you have graduated or not.",
+    "content": {
+      "10": "None/ Illiterate",
+      "20": "Self-study",
+      "30": "Elementary school (<6 school years)",
+      "100": "Elementary school (6+ school years)",
+      "242": "Junior high school",
+      "243": "Junior high school (grad.)",
+      "253": "Vocational junior high school (grad.)",
+      "342": "Senior high school (general subjects)",
+      "343": "Senior high school (general subjects) (grad.)",
+      "352": "Senior high school (voc subj) or voc senior high or Cadet school",
+      "353": "Senior high (voc subj) or voc senior high or Cadet school (grad.)",
+      "450": "Five-year junior college",
+      "453": "Five-year junior college (grad.)",
+      "550": "2/3-yr junior college or Military/police 1/2-yr junior or Open jun. college",
+      "600": "Open university",
+      "640": "College (bachelor's degree)",
+      "650": "Military/police college or Institute of technology",
+      "740": "Graduate school (master’s degree)",
+      "840": "Graduate school (doctoral degree)",
+      "-2": "NAP, other countries"
+    },
+    "special": {}
+  },
+  {
+    "domain": "US_ISCD",
+    "meaning": "Country specific highest completed degree of education: United States",
+    "question": "What is the highest grade in elementary school or high school that you finished and got credit for? Did you ever get a high school diploma or a GED certificate? Was that a diploma awarded by your high school at graduation at the end of 12th grade, a GED awarded aȇer you took a test, or something else? Did you ever complete one or more years of college for credit - not including school such as business college, technical or vocational school? How many years did you complete? Do you have any college degrees? What degree or degrees? If you have more than one, please select the highest degree that you have.",
+    "content": {
+      "10": "Less than High school (EDUCYRS=0)",
+      "30": "Less than High school (EDUCYRS<9)",
+      "100": "Less than High school (EDUCYRS=9+)",
+      "240": "High school (EDUCYRS<12)",
+      "340": "High school (EDUCYRS=12+)",
+      "500": "Junior College",
+      "600": "Bachelor's Degree",
+      "700": "Graduate school (EDUCYRS<19)",
+      "800": "Graduate school (EDUCYRS=19+)",
+      "-2": "NAP, other countries"
+    },
+    "special": {}
+  }
+]

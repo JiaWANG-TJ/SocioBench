@@ -1,0 +1,782 @@
+[
+  {
+    "domain": "V39",
+    "meaning": "Rights in democracy: right for citizens NOT to vote",
+    "question": "There are different opinions about people's rights in a democracy. On a scale of 1 to 7, where 1 is not at all important and 7 is very important, how important is it: That citizens have the right NOT to vote",
+    "content": {
+      "1": "1, Not at all important",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7, Very important",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "V40",
+    "meaning": "Rights in democracy: health care be provided for everyone",
+    "question": "There are different opinions about people's rights in a democracy. On a scale of 1 to 7, where 1 is not at all important and 7 is very important, how important is it: That health care be provided for everyone",
+    "content": {
+      "1": "1, Not at all important",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7, Very important",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "V41",
+    "meaning": "Agree: no influence on what government does",
+    "question": "To what extent do you agree or disagree with the following statements? People like me don't have any say about what the government does",
+    "content": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {
+      "JP": {
+        "1": "I think so",
+        "2": "I rather think so",
+        "3": "Can't say one way or the other",
+        "4": "I rather don't think so",
+        "5": "I don't think so"
+      },
+      "VE": {
+        "1": "I agree",
+        "2": "I somewhat agree",
+        "3": "Neither agree nor disagree",
+        "4": "I somewhat disagree",
+        "5": "I disagree"
+      }
+    }
+  },
+  {
+    "domain": "V42",
+    "meaning": "Agree: government does not care what people like me think",
+    "question": "To what extent do you agree or disagree with the following statements? I don't think the government cares much what people like me think",
+    "content": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {
+      "JP": {
+        "1": "I think so",
+        "2": "I rather think so",
+        "3": "Can't say one way or the other",
+        "4": "I rather don't think so",
+        "5": "I don't think so"
+      },
+      "VE": {
+        "1": "I agree",
+        "2": "I somewhat agree",
+        "3": "Neither agree nor disagree",
+        "4": "I somewhat disagree",
+        "5": "I disagree"
+      }
+    }
+  },
+  {
+    "domain": "V43",
+    "meaning": "Agree: good understanding of important political issues",
+    "question": "To what extent do you agree or disagree with the following statements? I feel I have a pretty good understanding of the important political issues facing [COUNTRY].",
+    "content": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {
+      "JP": {
+        "1": "I think so",
+        "2": "I rather think so",
+        "3": "Can't say one way or the other",
+        "4": "I rather don't think so",
+        "5": "I don't think so"
+      },
+      "VE": {
+        "1": "I agree",
+        "2": "I somewhat agree",
+        "3": "Neither agree nor disagree",
+        "4": "I somewhat disagree",
+        "5": "I disagree"
+      }
+    }
+  },
+  {
+    "domain": "V44",
+    "meaning": "Agree: most people better informed than I am",
+    "question": "To what extent do you agree or disagree with the following statements? I think most people in [COUNTRY] are better informed about politics and government than I am.",
+    "content": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {
+      "JP": {
+        "1": "I think so",
+        "2": "I rather think so",
+        "3": "Can't say one way or the other",
+        "4": "I rather don't think so",
+        "5": "I don't think so"
+      },
+      "VE": {
+        "1": "I agree",
+        "2": "I somewhat agree",
+        "3": "Neither agree nor disagree",
+        "4": "I somewhat disagree",
+        "5": "I disagree"
+      }
+    }
+  },
+  {
+    "domain": "V45",
+    "meaning": "Unjust law: likeliness of counter-action",
+    "question": "Suppose a law were being considered by [appropriate national legislature] that you considered to be unjust or harmful. If such a case arose, how likely is it that you, acting alone or together with others, would be able to try to do something about it?",
+    "content": {
+      "1": "Very likely",
+      "2": "Fairly likely",
+      "3": "Not very likely",
+      "4": "Not at all likely",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "V46",
+    "meaning": "Unjust law: likeliness serious attention",
+    "question": "If you made such an effort, how likely is it that [appropriate national legislature] would give serious attention to your demands?",
+    "content": {
+      "1": "Very likely",
+      "2": "Fairly likely",
+      "3": "Not very likely",
+      "4": "Not at all likely",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {
+      "PL": {
+        "9": "No answer incl. not applicable (code 3, 4, 8 in V45)"
+      }
+    }
+  },
+  {
+    "domain": "V47",
+    "meaning": "Level of personal interest in politics",
+    "question": "How interested would you say you personally are in politics?",
+    "content": {
+      "1": "Very interested",
+      "2": "Fairly interested",
+      "3": "Not very interested",
+      "4": "Not at all interested",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "V48",
+    "meaning": "Political self-placement: Left - Right",
+    "question": "In politics people sometimes talk of left and right. Where would you place yourself on a scale from 0 to 10 where 0 means the left and 10 means the right?",
+    "content": {
+      "0": "0, Left",
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7",
+      "8": "8",
+      "9": "9",
+      "10": "10, Right",
+      "98": "Can't choose",
+      "99": "No answer"
+    },
+    "special": {
+      "CL": {
+        "98": "Don't know"
+      }
+    }
+  },
+  {
+    "domain": "V49",
+    "meaning": "Agree: most of the time we can trust people in government",
+    "question": "To what extent do you agree or disagree with the following statements? Most of the time we can trust people in government to do what is right",
+    "content": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {
+      "JP": {
+        "1": "I think so",
+        "2": "I rather think so",
+        "3": "Can't say one way or the other",
+        "4": "I rather don't think so",
+        "5": "I don't think so"
+      },
+      "VE": {
+        "1": "I agree",
+        "2": "I somewhat agree",
+        "3": "Neither agree nor disagree",
+        "4": "I somewhat disagree",
+        "5": "I disagree"
+      }
+    }
+  },
+  {
+    "domain": "V50",
+    "meaning": "Agree: politicians in politics only for personal profit",
+    "question": "To what extent do you agree or disagree with the following statements? Most politicians are in politics only for what they can get out of it personally",
+    "content": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {
+      "JP": {
+        "1": "I think so",
+        "2": "I rather think so",
+        "3": "Can't say one way or the other",
+        "4": "I rather don't think so",
+        "5": "I don't think so"
+      },
+      "VE": {
+        "1": "I agree",
+        "2": "I somewhat agree",
+        "3": "Neither agree nor disagree",
+        "4": "I somewhat disagree",
+        "5": "I disagree"
+      }
+    }
+  },
+  {
+    "domain": "V51",
+    "meaning": "How often people try to take advantage and how often try to be fair?",
+    "question": "How often do you think that people would try to take advantage of you if they got the chance, and how often would they try to be fair?",
+    "content": {
+      "1": "Try to take advantage almost all of the time",
+      "2": "Try to take advantage most of the time",
+      "3": "Try to be fair most of the time",
+      "4": "Try to be fair almost all of the time",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {
+      "VE": {
+        "1": "Always",
+        "2": "Almost always",
+        "3": "Almost never",
+        "4": "Never"
+      }
+    }
+  },
+  {
+    "domain": "V52",
+    "meaning": "People can be trusted or can't be too careful in dealing with?",
+    "question": "Generally speaking, would you say that people can be trusted or that you can't be too careful in dealing with people?",
+    "content": {
+      "1": "People can almost always be trusted",
+      "2": "People can usually be trusted",
+      "3": "You usually can't be too careful in dealing with people",
+      "4": "You almost always can't be too careful in dealing with people",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {
+      "VE": {
+        "1": "Always",
+        "2": "Almost always",
+        "3": "Almost never",
+        "4": "Never"
+      }
+    }
+  },
+  {
+    "domain": "V53",
+    "meaning": "Frequency: political discussion with friends",
+    "question": "When you get together with your friends, relatives or fellow workers, how often do you discuss politics?",
+    "content": {
+      "1": "Often",
+      "2": "Sometimes",
+      "3": "Rarely",
+      "4": "Never",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {
+      "VE": {
+        "1": "Always",
+        "2": "Almost always",
+        "3": "Almost never",
+        "4": "Never"
+      }
+    }
+  },
+  {
+    "domain": "V54",
+    "meaning": "Frequency: persuade friends to share political views",
+    "question": "When you hold a strong opinion about politics, how often do you try to persuade your friends, relatives or fellow workers to share your views?",
+    "content": {
+      "1": "Often",
+      "2": "Sometimes",
+      "3": "Rarely",
+      "4": "Never",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {
+      "VE": {
+        "1": "Always",
+        "2": "Almost always",
+        "3": "Almost never",
+        "4": "Never"
+      }
+    }
+  },
+  {
+    "domain": "V55",
+    "meaning": "Political parties - encourage people to become active",
+    "question": "Thinking now about politics in [COUNTRY], to what extent do you agree or disagree with the following statements? Political parties encourage people to become active in politics",
+    "content": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {
+      "JP": {
+        "1": "I think so",
+        "2": "I rather think so",
+        "3": "Can't say one way or the other",
+        "4": "I rather don't think so",
+        "5": "I don't think so"
+      },
+      "VE": {
+        "1": "I agree",
+        "2": "I somewhat agree",
+        "3": "Neither agree nor disagree",
+        "4": "I somewhat disagree",
+        "5": "I disagree"
+      }
+    }
+  },
+  {
+    "domain": "V56",
+    "meaning": "Political parties - not give real policy choices",
+    "question": "Thinking now about politics in [COUNTRY], to what extent do you agree or disagree with the following statements? Political parties do not give voters real policy choices",
+    "content": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {
+      "JP": {
+        "1": "I think so",
+        "2": "I rather think so",
+        "3": "Can't say one way or the other",
+        "4": "I rather don't think so",
+        "5": "I don't think so"
+      },
+      "VE": {
+        "1": "I agree",
+        "2": "I somewhat agree",
+        "3": "Neither agree nor disagree",
+        "4": "I somewhat disagree",
+        "5": "I disagree"
+      }
+    }
+  },
+  {
+    "domain": "V57",
+    "meaning": "Referendum - a good way to decide political questions",
+    "question": "Thinking now about politics in [COUNTRY], to what extent do you agree or disagree with the following statements? Referendums are a good way to decide important political questions",
+    "content": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {
+      "JP": {
+        "1": "I think so",
+        "2": "I rather think so",
+        "3": "Can't say one way or the other",
+        "4": "I rather don't think so",
+        "5": "I don't think so"
+      },
+      "VE": {
+        "1": "I agree",
+        "2": "I somewhat agree",
+        "3": "Neither agree nor disagree",
+        "4": "I somewhat disagree",
+        "5": "I disagree"
+      }
+    }
+  },
+  {
+    "domain": "V58",
+    "meaning": "Last national election: level of honesty",
+    "question": "Thinking of the last national election in [COUNTRY], how honest was it regarding the counting and reporting of the votes?",
+    "content": {
+      "1": "Very honest",
+      "2": "Somewhat honest",
+      "3": "Neither honest nor dishonest",
+      "4": "Somewhat dishonest",
+      "5": "Very dishonest",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {
+      "HR": {
+        "1": "Very fair",
+        "2": "Somewhat fair",
+        "3": "Neither fair nor unfair",
+        "4": "Somewhat unfair",
+        "5": "Very unfair"
+      }
+    }
+  },
+  {
+    "domain": "V59",
+    "meaning": "Last national election: level of fairness",
+    "question": "Thinking of the last national election in [COUNTRY], how fair was it regarding the opportunities of the candidates and parties to campaign?",
+    "content": {
+      "1": "Very fair",
+      "2": "Somewhat fair",
+      "3": "Neither fair nor unfair",
+      "4": "Somewhat unfair",
+      "5": "Very unfair",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "V60",
+    "meaning": "Public service: commitment to serve people",
+    "question": "Thinking of the public service in [COUNTRY], how committed is it to serve the people?",
+    "content": {
+      "1": "Very committed",
+      "2": "Somewhat committed",
+      "3": "Not very committed",
+      "4": "Not at all committed",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {
+      "HU": {
+        "0": "Not available"
+      }
+    }
+  },
+  {
+    "domain": "V61",
+    "meaning": "Public service: involvement in corruption",
+    "question": "How widespread do you think corruption is in the public service in [COUNTRY]?",
+    "content": {
+      "1": "Hardly anyone is involved",
+      "2": "A small number is involved",
+      "3": "A moderate number is involved",
+      "4": "A lot of people are involved",
+      "5": "Almost everyone is involved",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {
+      "VE": {
+        "1": "Almost all",
+        "2": "Many",
+        "3": "Some",
+        "4": "Few",
+        "5": "Almost nobody"
+      }
+    }
+  },
+  {
+    "domain": "V62",
+    "meaning": "Democracy in [COUNTRY]: today",
+    "question": "On the whole, on a scale of 0 to 10 where 0 is very poorly and 10 is very well. How well does democracy work in [COUNTRY] today?",
+    "content": {
+      "0": "0, Very poorly",
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7",
+      "8": "8",
+      "9": "9",
+      "10": "10, Very well",
+      "98": "Can't choose",
+      "99": "No answer"
+    },
+    "special": {
+      "IS": {
+        "0": "0, Very poorly (web version only)",
+        "1": "1 (paper version only)"
+      }
+    }
+  },
+  {
+    "domain": "V63",
+    "meaning": "Democracy in [COUNTRY]: 10 years ago",
+    "question": "On the whole, on a scale of 0 to 10 where 0 is very poorly and 10 is very well. And what about 10 years ago? How well did democracy work in [COUNTRY] then?",
+    "content": {
+      "0": "0, Very poorly",
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7",
+      "8": "8",
+      "9": "9",
+      "10": "10, Very well",
+      "98": "Can't choose",
+      "99": "No answer"
+    },
+    "special": {
+      "IS": {
+        "0": "0, Very poorly (web version only)",
+        "1": "1 (paper version only)"
+      }
+    }
+  },
+  {
+    "domain": "V64",
+    "meaning": "Democracy in [COUNTRY]: 10 years from now",
+    "question": "On the whole, on a scale of 0 to 10 where 0 is very poorly and 10 is very well. And how about 10 years from now? How well do you think democracy will work in [COUNTRY] then?",
+    "content": {
+      "0": "0, Very poorly",
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7",
+      "8": "8",
+      "9": "9",
+      "10": "10, Very well",
+      "98": "Can't choose",
+      "99": "No answer"
+    },
+    "special": {
+      "IS": {
+        "0": "0, Very poorly (web version only)",
+        "1": "1 (paper version only)"
+      }
+    }
+  },
+  {
+    "domain": "V65",
+    "meaning": "Frequency: read political content of a newspaper",
+    "question": "On average, how often do you: Read the political content of a newspaper?",
+    "content": {
+      "0": "Not available; CZ: answer categories differ from ISSP standard",
+      "1": "Several times a day",
+      "2": "Once a day",
+      "3": "5-6 days a week",
+      "4": "3-4 days a week",
+      "5": "1-2 days a week",
+      "6": "Less than 1 day a week",
+      "7": "Never",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {
+      "CZ": {
+        "0": "NAP, other countries",
+        "1": "Daily",
+        "2": "3-4 times a week",
+        "3": "1-2 times a week",
+        "4": "Less than 1-2 times a week",
+        "5": "Never",
+        "8": "Can't choose",
+        "9": "No answer"
+      }
+    }
+  },
+  {
+    "domain": "CZ_V65",
+    "meaning": "Frequency: read political content of a newspaper (CZ)",
+    "question": "On average, how often do you: Read the political content of a newspaper?",
+    "content": {
+      "0": "NAP, other countries",
+      "1": "Daily",
+      "2": "3-4 times a week",
+      "3": "1-2 times a week",
+      "4": "Less than 1-2 times a week",
+      "5": "Never",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "V66",
+    "meaning": "Frequency: watch political news on TV",
+    "question": "On average, how often do you: Watch political news on television?",
+    "content": {
+      "0": "Not available; CZ: answer categories differ from ISSP standard",
+      "1": "Several times a day",
+      "2": "Once a day",
+      "3": "5-6 days a week",
+      "4": "3-4 days a week",
+      "5": "1-2 days a week",
+      "6": "Less than 1 day a week",
+      "7": "Never",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {
+      "CZ": {
+        "0": "NAP, other countries",
+        "1": "Daily",
+        "2": "3-4 times a week",
+        "3": "1-2 times a week",
+        "4": "Less than 1-2 times a week",
+        "5": "Never",
+        "8": "Can't choose",
+        "9": "No answer"
+      }
+    }
+  },
+  {
+    "domain": "CZ_V66",
+    "meaning": "Frequency: watch political news on TV (CZ)",
+    "question": "On average, how often do you: Watch political news on television?",
+    "content": {
+      "0": "NAP, other countries",
+      "1": "Daily",
+      "2": "3-4 times a week",
+      "3": "1-2 times a week",
+      "4": "Less than 1-2 times a week",
+      "5": "Never",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "V67",
+    "meaning": "Frequency: listen to political news on radio",
+    "question": "On average, how often do you: Listen to political news on the radio?",
+    "content": {
+      "0": "Not available; CZ: answer categories differ from ISSP standard",
+      "1": "Several times a day",
+      "2": "Once a day",
+      "3": "5-6 days a week",
+      "4": "3-4 days a week",
+      "5": "1-2 days a week",
+      "6": "Less than 1 day a week",
+      "7": "Never",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {
+      "CZ": {
+        "0": "NAP, other countries",
+        "1": "Daily",
+        "2": "3-4 times a week",
+        "3": "1-2 times a week",
+        "4": "Less than 1-2 times a week",
+        "5": "Never",
+        "8": "Can't choose",
+        "9": "No answer"
+      }
+    }
+  },
+  {
+    "domain": "CZ_V67",
+    "meaning": "Frequency: listen to political news on radio (CZ)",
+    "question": "On average, how often do you: Listen to political news on the radio?",
+    "content": {
+      "0": "NAP, other countries",
+      "1": "Daily",
+      "2": "3-4 times a week",
+      "3": "1-2 times a week",
+      "4": "Less than 1-2 times a week",
+      "5": "Never",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "V68",
+    "meaning": "Frequency: use Internet to get political news",
+    "question": "On average, how often do you: Use the Internet to get political news or information?",
+    "content": {
+      "0": "Not available; CZ: answer categories differ from ISSP standard",
+      "1": "Several times a day",
+      "2": "Once a day",
+      "3": "5-6 days a week",
+      "4": "3-4 days a week",
+      "5": "1-2 days a week",
+      "6": "Less than 1 day a week",
+      "7": "Never",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {
+      "CZ": {
+        "0": "NAP, other countries",
+        "1": "Daily",
+        "2": "3-4 times a week",
+        "3": "1-2 times a week",
+        "4": "Less than 1-2 times a week",
+        "5": "Never",
+        "8": "Can't choose",
+        "9": "No answer"
+      }
+    }
+  }
+]

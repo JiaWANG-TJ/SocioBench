@@ -1,0 +1,580 @@
+[
+  {
+    "domain": "FI_ETHN1",
+    "meaning": "Finland: Country specific ethnic group 1",
+    "question": "Please indicate which of the following groups you consider yourself to belong to. Choose max. two options.",
+    "content": {
+      "-9": "No answer",
+      "-2": "NAP, other countries",
+      "1": "Finnish-speaking Finns",
+      "2": "Swedish-speaking Finns",
+      "3": "Sami",
+      "4": "Romani",
+      "5": "Estonians",
+      "6": "Russians",
+      "7": "Swedes",
+      "8": "Somalis",
+      "9": "Immigrants",
+      "10": "Returning migrants",
+      "11": "Other, please specify"
+    },
+    "special": {}
+  },
+  {
+    "domain": "FI_ETHN2",
+    "meaning": "Finland: Country specific ethnic group 2",
+    "question": "Please indicate which of the following groups you consider yourself to belong to. Choose max. two options.",
+    "content": {
+      "-9": "No answer, no second group",
+      "-2": "NAP, other countries",
+      "1": "Finnish-speaking Finns",
+      "2": "Swedish-speaking Finns",
+      "3": "Sami",
+      "4": "Romani",
+      "5": "Estonians",
+      "6": "Russians",
+      "7": "Swedes",
+      "8": "Somalis",
+      "9": "Immigrants",
+      "10": "Returning migrants",
+      "11": "Other, please specify"
+    },
+    "special": {}
+  },
+  {
+    "domain": "FR_ETHN1",
+    "meaning": "France: Country specific ethnic group 1",
+    "question": "Do you belong to a native group: Choose one or two answers maximum.",
+    "content": {
+      "-9": "No answer",
+      "-2": "NAP, other countries",
+      "1": "Sub-Saharan Africa",
+      "2": "Central America or South America",
+      "3": "Antilles or Caribbean",
+      "4": "Asia",
+      "5": "Europe",
+      "6": "Maghreb",
+      "7": "Indian subcontinent",
+      "8": "Other"
+    },
+    "special": {}
+  },
+  {
+    "domain": "FR_ETHN2",
+    "meaning": "France: Country specific ethnic group 2",
+    "question": "Do you belong to a native group: Choose one or two answers maximum.",
+    "content": {
+      "-9": "No answer",
+      "-8": "No secound group",
+      "-2": "NAP, other countries",
+      "5": "Europe",
+      "6": "Maghreb",
+      "7": "Indian subcontinent",
+      "8": "Other"
+    },
+    "special": {}
+  },
+  {
+    "domain": "HR_ETHN1",
+    "meaning": "Croatia: Country specific ethnic group 1",
+    "question": "Not asked.",
+    "content": {
+      "-2": "NAP, other countries",
+      "-1": "Not available"
+    },
+    "special": {}
+  },
+  {
+    "domain": "HR_ETHN2",
+    "meaning": "Croatia: Country specific ethnic group 2",
+    "question": "Not asked.",
+    "content": {
+      "-2": "NAP, other countries",
+      "-1": "Not available"
+    },
+    "special": {}
+  },
+  {
+    "domain": "HU_ETHN1",
+    "meaning": "Hungary: Country specific ethnic group 1",
+    "question": "In our land people belong to many nationalities or ethnicities. What is your nationality in the first place?",
+    "content": {
+      "-8": "Don't know",
+      "-7": "Refused",
+      "-2": "NAP, other countries",
+      "1": "Hungarian",
+      "2": "German",
+      "3": "Serb",
+      "4": "Croatian",
+      "5": "Romanian",
+      "6": "Slovak",
+      "7": "Roma/ Gypsy",
+      "8": "Other"
+    },
+    "special": {}
+  },
+  {
+    "domain": "HU_ETHN2",
+    "meaning": "Hungary: Country specific ethnic group 2",
+    "question": "And what nationality do you consider yourself in the second place?",
+    "content": {
+      "-8": "Don't know",
+      "-7": "Refused",
+      "-2": "NAP, other countries",
+      "0": "No other ethnic group",
+      "1": "Hungarian",
+      "2": "German",
+      "3": "Serb",
+      "4": "Croatian",
+      "5": "Romanian",
+      "6": "Slovak",
+      "7": "Roma/ Gypsy",
+      "8": "Other"
+    },
+    "special": {}
+  },
+  {
+    "domain": "IN_ETHN1",
+    "meaning": "India: Country specific ethnic group 1",
+    "question": "Please indicate which of the following group or groups you consider yourself to belong to?",
+    "content": {
+      "-2": "NAP, other countries",
+      "11": "Hindu: SC (Scheduled Caste/ Dalits)",
+      "12": "Hindu: ST (Scheduled Tribes)",
+      "13": "Hindu: OBC (Other Backward Classes)",
+      "14": "Hindu: UCH (Upper Caste Hindus)",
+      "21": "Muslim: Shiya",
+      "22": "Muslim: Sunni",
+      "23": "Muslim: Others",
+      "31": "Christians: General",
+      "32": "Christians: Others",
+      "41": "Sikhs: General",
+      "42": "Sikhs: Dalit",
+      "95": "Others"
+    },
+    "special": {}
+  },
+  {
+    "domain": "IN_ETHN2",
+    "meaning": "India: Country specific ethnic group 2",
+    "question": "Not asked.",
+    "content": {
+      "-2": "NAP, other countries",
+      "-1": "Not available"
+    },
+    "special": {}
+  },
+  {
+    "domain": "IS_ETHN1",
+    "meaning": "Iceland: Country specific ethnic group 1",
+    "question": "Please indicate which of the following group or groups you consider yourself to belong to. Please select one or two possible answers.",
+    "content": {
+      "-9": "No answer",
+      "-7": "Refused",
+      "-2": "NAP, other countries",
+      "0": "None",
+      "1": "Icelandic",
+      "2": "Polish",
+      "3": "Lithuanian",
+      "4": "Filipino",
+      "5": "Latvian",
+      "6": "Romanian",
+      "7": "German",
+      "8": "Thai",
+      "9": "British",
+      "10": "Portuguese",
+      "11": "American",
+      "12": "Vietnamese",
+      "13": "Spanish",
+      "14": "Danish",
+      "15": "Swedish",
+      "16": "Norwegian",
+      "18": "Other European",
+      "19": "African",
+      "20": "Other North American",
+      "22": "Other Asian",
+      "23": "Other countries"
+    },
+    "special": {}
+  },
+  {
+    "domain": "IS_ETHN2",
+    "meaning": "Iceland: Country specific ethnic group 2",
+    "question": "Please indicate which of the following group or groups you consider yourself to belong to. Please select one or two possible answers.",
+    "content": {
+      "-9": "No answer, no (second) group mentioned",
+      "-7": "Refused",
+      "-2": "NAP, other countries",
+      "1": "Icelandic",
+      "2": "Polish",
+      "3": "Lithuanian",
+      "4": "Filipino",
+      "5": "Latvian",
+      "6": "Romanian",
+      "7": "German",
+      "8": "Thai",
+      "9": "British",
+      "10": "Portuguese",
+      "11": "American",
+      "12": "Vietnamese",
+      "13": "Spanish",
+      "14": "Danish",
+      "15": "Swedish",
+      "16": "Norwegian",
+      "18": "Other European",
+      "19": "African",
+      "20": "Other North American",
+      "22": "Other Asian",
+      "23": "Other countries"
+    },
+    "special": {}
+  },
+  {
+    "domain": "IT_ETHN1",
+    "meaning": "Italy: Country specific ethnic group 1",
+    "question": "How would you describe the origins of your family? Please select no more than two groups.",
+    "content": {
+      "-9": "No answer",
+      "-8": "Don’t know",
+      "-7": "Refused",
+      "-2": "NAP, other countries",
+      "1": "Italian",
+      "2": "Occitan",
+      "3": "Griko/Grecanic",
+      "4": "Ladin",
+      "5": "Sicilian",
+      "6": "From Alto Adige",
+      "7": "Friulian",
+      "8": "Sardinian",
+      "9": "Italian-Albanian",
+      "10": "Roma/Gipsy/Sinti",
+      "11": "Slovenian",
+      "12": "French",
+      "13": "German",
+      "14": "Swiss",
+      "15": "Albanian",
+      "16": "Romanian",
+      "17": "Ukrainian",
+      "18": "Moroccan",
+      "19": "Berber",
+      "20": "Chinese",
+      "21": "Other (please specify)"
+    },
+    "special": {}
+  },
+  {
+    "domain": "IT_ETHN2",
+    "meaning": "Italy: Country specific ethnic group 2",
+    "question": "How would you describe the origins of your family? Please select no more than two groups.",
+    "content": {
+      "-9": "No answer, Don't know",
+      "-8": "No Second Group Belonging",
+      "-7": "Refused",
+      "-2": "NAP, other countries",
+      "1": "Italian",
+      "2": "Occitan",
+      "3": "Griko/Grecanic",
+      "4": "Ladin",
+      "5": "Sicilian",
+      "6": "From Alto Adige",
+      "7": "Friulian",
+      "8": "Sardinian",
+      "9": "Italian-Albanian",
+      "10": "Roma/Gipsy/Sinti",
+      "11": "Slovenian",
+      "12": "French",
+      "13": "German",
+      "14": "Swiss",
+      "15": "Albanian",
+      "16": "Romanian",
+      "17": "Ukrainian",
+      "18": "Moroccan",
+      "19": "Berber",
+      "20": "Chinese",
+      "21": "Other (please specify)"
+    },
+    "special": {}
+  },
+  {
+    "domain": "JP_ETHN1",
+    "meaning": "Japan: Country specific ethnic group 1",
+    "question": "Are you a citizen of Japan?",
+    "content": {
+      "-9": "No answer",
+      "-2": "NAP, other countries",
+      "1": "Japanese nationality",
+      "2": "Other"
+    },
+    "special": {}
+  },
+  {
+    "domain": "JP_ETHN2",
+    "meaning": "Japan: Country specific ethnic group 2",
+    "question": "Indicate which of the following ethnic group you consider yourself to belong to.",
+    "content": {
+      "-9": "No answer",
+      "-8": "Don't know",
+      "-2": "NAP, other countries",
+      "1": "Japanese",
+      "2": "Other"
+    },
+    "special": {}
+  },
+  {
+    "domain": "KR_ETHN1",
+    "meaning": "Korea (South): Country specific ethnic group 1",
+    "question": "Not asked because Korea is consisted of one ethnic group.",
+    "content": {
+      "-2": "NAP, other countries",
+      "-1": "Not available"
+    },
+    "special": {}
+  },
+  {
+    "domain": "KR_ETHN2",
+    "meaning": "Korea (South): Country specific ethnic group 2",
+    "question": "Not asked because Korea is consisted of one ethnic group.",
+    "content": {
+      "-2": "NAP, other countries",
+      "-1": "Not available"
+    },
+    "special": {}
+  },
+  {
+    "domain": "L_T_ETHN1",
+    "meaning": "Lithuania: Country specific ethnic group 1",
+    "question": "Using this card, please indicate which of the following group or groups you consider yourself to belong to? Please indicate one or two groups.",
+    "content": {
+      "-7": "Refused",
+      "-2": "NAP, other countries",
+      "1": "Lithuanian",
+      "2": "Polish",
+      "3": "Russian",
+      "4": "Belarusian",
+      "5": "Ukrainian",
+      "6": "Jewish",
+      "7": "Latvian",
+      "8": "Tatar",
+      "9": "German",
+      "10": "Romani",
+      "11": "Other"
+    },
+    "special": {}
+  },
+  {
+    "domain": "L_T_ETHN2",
+    "meaning": "Lithuania: Country specific ethnic group 2",
+    "question": "Using this card, please indicate which of the following group or groups you consider yourself to belong to? Please indicate one or two groups.",
+    "content": {
+      "-9": "No answer incl. refused and no second ethnic group",
+      "-2": "NAP, other countries",
+      "1": "Lithuanian",
+      "2": "Polish",
+      "3": "Russian",
+      "4": "Belarusian",
+      "5": "Ukrainian",
+      "6": "Jewish",
+      "7": "Latvian",
+      "8": "Tatar",
+      "9": "German",
+      "10": "Romani",
+      "11": "Other"
+    },
+    "special": {}
+  },
+  {
+    "domain": "NO_ETHN1",
+    "meaning": "Norway: Country specific ethnic group 1",
+    "question": "Which nation or ethnic group do you consider yourself as belonging to?",
+    "content": {
+      "-9": "No answer",
+      "-2": "NAP, other countries",
+      "1": "Norwegian",
+      "11": "West European",
+      "12": "North European (Nordic)",
+      "22": "South-East European",
+      "23": "East European",
+      "31": "Arab",
+      "34": "Iranian and Central Asian",
+      "39": "Other North African and Middle Eastern",
+      "42": "Africa’s Horn",
+      "70": "Latin American",
+      "98": "No particular group"
+    },
+    "special": {}
+  },
+  {
+    "domain": "NO_ETHN2",
+    "meaning": "Norway: Country specific ethnic group 2",
+    "question": "Would you say that you also consider yourself as belonging to another nation or ethnic group?",
+    "content": {
+      "-9": "No answer",
+      "-2": "NAP, other countries",
+      "1": "Norwegian",
+      "11": "West European",
+      "12": "North European (Nordic)",
+      "21": "South European",
+      "22": "South-East European",
+      "23": "East European",
+      "31": "Arab",
+      "34": "Iranian and Central Asian",
+      "39": "Other North African and Middle Eastern",
+      "42": "Africa’s Horn",
+      "51": "South Asian",
+      "70": "Latin American",
+      "71": "South American",
+      "91": "North American",
+      "98": "No particular group"
+    },
+    "special": {}
+  },
+  {
+    "domain": "NZ_ETHN1",
+    "meaning": "New Zealand: Country specific ethnic group 1",
+    "question": "To which of the following ethnic groups do you belong? Please tick as many boxes as apply.",
+    "content": {
+      "-9": "No answer",
+      "-2": "NAP, other countries",
+      "1": "New Zealand Maori",
+      "2": "New Zealand European",
+      "3": "Other European",
+      "4": "Samoan",
+      "5": "Cook Island Maori",
+      "6": "Tongan",
+      "7": "Niuean",
+      "8": "Fijian",
+      "9": "Chinese",
+      "10": "Indian",
+      "11": "Korean",
+      "12": "Filipino",
+      "13": "Sri Lankan",
+      "14": "Malaysian",
+      "15": "Other Asian",
+      "16": "Middle Eastern, Latin American, African"
+    },
+    "special": {}
+  },
+  {
+    "domain": "NZ_ETHN2",
+    "meaning": "New Zealand: Country specific ethnic group 2",
+    "question": "To which of the following ethnic groups do you belong? Please tick as many boxes as apply.",
+    "content": {
+      "-9": "No answer, no second ethnic group",
+      "-2": "NAP, other countries",
+      "1": "New Zealand Maori",
+      "2": "New Zealand European",
+      "3": "Other European",
+      "4": "Samoan",
+      "5": "Cook Island Maori",
+      "6": "Tongan",
+      "7": "Niuean",
+      "8": "Fijian",
+      "9": "Chinese",
+      "10": "Indian",
+      "11": "Korean",
+      "12": "Filipino",
+      "13": "Sri Lankan",
+      "14": "Malaysian",
+      "15": "Other Asian",
+      "16": "Middle Eastern, Latin American, African"
+    },
+    "special": {}
+  },
+  {
+    "domain": "PH_ETHN1",
+    "meaning": "Philippines: Country specific ethnic group 1",
+    "question": "Please indicate which of the following group or groups you consider yourself to belong to? (ALLOW UP TO TWO RESPONSES)",
+    "content": {
+      "-9": "No answer",
+      "-2": "NAP, other countries",
+      "0": "None",
+      "1": "Bicol",
+      "3": "Igorot",
+      "4": "Ilocano",
+      "5": "Ilonggo",
+      "6": "Cebuano",
+      "7": "Chinese",
+      "9": "Maguindanao",
+      "10": "Maranao",
+      "11": "Spanish",
+      "12": "Tagalog",
+      "13": "Tausug",
+      "14": "Yakan",
+      "15": "Masbateno",
+      "16": "Waray",
+      "18": "Kapampangan",
+      "19": "Aklanon",
+      "20": "Pangasinense",
+      "21": "Ibanag",
+      "22": "Bisaya",
+      "23": "Surigaonon",
+      "24": "Dumagat Tribe",
+      "25": "Aeta tribes",
+      "26": "Sambal",
+      "27": "Romblomanon",
+      "28": "Zamboangueno",
+      "30": "Subanen",
+      "31": "Mandaya",
+      "32": "Boholano",
+      "33": "Negrosanon",
+      "34": "Dibabawon",
+      "35": "Manguangan",
+      "36": "B'laan",
+      "37": "Manobo",
+      "38": "Tagakaolo"
+    },
+    "special": {}
+  },
+  {
+    "domain": "PH_ETHN2",
+    "meaning": "Philippines: Country specific ethnic group 2",
+    "question": "Please indicate which of the following group or groups you consider yourself to belong to? (ALLOW UP TO TWO RESPONSES)",
+    "content": {
+      "-9": "No answer, and no second group",
+      "-2": "NAP, other countries",
+      "6": "Cebuano",
+      "12": "Tagalog",
+      "16": "Waray",
+      "18": "Kapampangan",
+      "20": "Pangasinense",
+      "21": "Ibanag",
+      "22": "Bisaya",
+      "29": "Marinduqueno",
+      "31": "Mandaya"
+    },
+    "special": {}
+  },
+  {
+    "domain": "RU_ETHN1",
+    "meaning": "Russia: Country specific ethnic group 1",
+    "question": "What is your ethnicity?",
+    "content": {
+      "-8": "Don't know",
+      "-7": "Refused",
+      "-2": "NAP, other countries",
+      "1": "Russian",
+      "2": "Ukrainian",
+      "3": "Byelorussian",
+      "4": "Tatar",
+      "5": "Bashkir",
+      "6": "Jewish",
+      "7": "German",
+      "8": "Volga peoples (Mari, Mordva, Chuvash, Udmurt)",
+      "9": "North Caucasus peoples (Adyg, Cherkes, Chechen, etc.)",
+      "10": "Siberia and North peoples (Byrat, Khakas, Yakut, etc.)",
+      "11": "Middle Asia peoples (Kazakh, Uzbek, etc.)",
+      "12": "Other"
+    },
+    "special": {}
+  },
+  {
+    "domain": "RU_ETHN2",
+    "meaning": "Russia: Country specific ethnic group 2",
+    "question": "Not asked.",
+    "content": {
+      "-2": "NAP, other countries",
+      "-1": "Not available"
+    },
+    "special": {}
+  }
+]

@@ -1,0 +1,132 @@
+```json
+[
+    {
+        "domain": "MAINSTAT",
+        "meaning": "Main status",
+        "question": "Which of the following BEST describes your current situation? If you temporarily are not working because of temporary illness/ parental leave/ vacation/ strike etc., please refer to your normal work situation.",
+        "content": {
+            "1": "In paid work",
+            "2": "Unemployed and looking for a job",
+            "3": "In education",
+            "4": "Apprentice or trainee",
+            "5": "Permanently sick or disabled",
+            "6": "Retired",
+            "7": "Domestic work",
+            "8": "In compulsory military service or community service",
+            "9": "Other",
+            "-9": "No answer"
+        },
+        "special": {
+            "AT": {"-9": "Included in Code 9 'Other' for those on parental leave"},
+            "AU": {"8": "Category not used"},
+            "CN": {"4": "Category not used"},
+            "CZ": {"8": "Recoded to 'Other'"},
+            "DE": {"8": "Not asked"},
+            "FI": {"8": "Includes Finnish military/civilian service"},
+            "FR": {"8": "Includes Civic Service"},
+            "HR": {"8": "Omitted"},
+            "HU": {"8": "Not used"},
+            "IN": {"8": "Not used"},
+            "IS": {"8": "Not used"},
+            "IT": {"8": "Omitted"},
+            "NL": {"4,8": "Not used"},
+            "NZ": {"8,9": "Not used"},
+            "PL": {"8": "Not used, multiple answers prioritized"},
+            "SK": {"8": "Not asked"},
+            "US": {"4,8": "Not used", "5": "No cases in 2021 data"},
+            "ZA": {"8": "Not used"}
+        }
+    },
+    {
+        "domain": "PARTLIV",
+        "meaning": "Living in steady partnership",
+        "question": "Do you have a spouse or a steady partner and, if yes, do you share the same household?",
+        "content": {
+            "1": "Yes, have partner; live in same household",
+            "2": "Yes, have partner; don't live in same household",
+            "3": "No partner",
+            "-7": "Refused",
+            "-9": "No answer"
+        },
+        "special": {
+            "CN": {"3": "Includes unmarried/divorced/widowed without cohabitation"},
+            "IT": {"Sequence follows MARITAL question"},
+            "RU": {"Divorced/widowed encoded as 3"},
+            "TW": {"3 includes divorced/widowed/never married non-cohabiting"},
+            "US": {"Does not collect cohabitation info for non-cohabiting partners"}
+        }
+    },
+    {
+        "domain": "SPWORK",
+        "meaning": "Spouse/partner: currently, formerly or never in paid work",
+        "question": "Is your spouse/partner currently working for pay, did he/she work for pay in the past, or has he/she never been in paid work?",
+        "content": {
+            "1": "Currently in paid work",
+            "2": "Currently not in paid work, paid work in the past",
+            "3": "Never had paid work",
+            "-4": "NAP (C. 3 or -7 in PARTLIV; US: C. 2,3 in PARTLIV)",
+            "-9": "No answer"
+        },
+        "special": {
+            "US": {"Unemployed respondents assumed as code 2"}
+        }
+    },
+    {
+        "domain": "SPWRKHRS",
+        "meaning": "Spouse/partner: hours worked weekly",
+        "question": "How many hours, on average, does your spouse/partner usually work for pay in a normal week, including overtime?",
+        "content": {
+            "1": "One hour",
+            "89": "89 hours (US: 89+)",
+            "96": "96 hours or more",
+            "-4": "NAP (non-current/partner)",
+            "-6": "Invalid answers (IL: 96→-6)",
+            "-8": "Don't know",
+            "-9": "No answer"
+        },
+        "special": {
+            "IL": {"96": "Recoded to -6 due to monthly hours misreporting"},
+            "IS": {"Decimal values rounded to integers"}
+        }
+    },
+    {
+        "domain": "SPEMPREL",
+        "meaning": "Spouse/partner: employment relationship",
+        "question": "Is/was your spouse/partner an employee, self-employed, or working for his/her own family's business?",
+        "content": {
+            "1": "Employee",
+            "2": "Self-employed without employees",
+            "3": "Self-employed with 1-9 employees",
+            "4": "Self-employed with 10+ employees",
+            "5": "Working for own family's business",
+            "6": "Self-employed with employees (no numbers)",
+            "-4": "NAP (non-current/partner)",
+            "-8": "PL: Hard to say",
+            "-9": "No answer"
+        },
+        "special": {
+            "HR": {"3,4": "No cases, all self-employed→6"},
+            "SK": {"Self-employed→6 due to older format"},
+            "SR": {"Employee ranges differ"},
+            "US": {"Self-employed→6 due to legacy format"}
+        }
+    },
+    {
+        "domain": "SPWRKSUP",
+        "meaning": "Spouse/partner: supervise other employees",
+        "question": "Does/did your spouse/partner supervise other employees?",
+        "content": {
+            "1": "Yes",
+            "2": "No",
+            "-4": "NAP (non-current/partner)",
+            "-8": "Don't know",
+            "-9": "No answer"
+        },
+        "special": {
+            "CH": {"Self-employed without employees→2"},
+            "DK": {"Self-employed with employees→1"},
+            "US": {"Only asked if currently working"}
+        }
+    }
+]
+```

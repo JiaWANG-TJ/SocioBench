@@ -1,0 +1,363 @@
+[
+    {
+      "domain": "NZ_ISCD",
+      "meaning": "Country specific highest completed degree of education: New Zealand",
+      "question": "Which one of these categories best describes your highest formal qualification?",
+      "content": {
+        "-9": "No answer",
+        "-2": "NAP, other countries",
+        "0": "No formal qualification",
+        "100": "Primary school completed",
+        "244": "School Certificate, National Certificate L1, NCEA L1",
+        "344": "Sixth Form Cert., Nat. Certificate L2, NCEA L2+3, Higher School Certificate, Higher Leaving Cert., Bursary/ Scholarship",
+        "450": "Trade or Professional Certificate",
+        "550": "Diploma below degree level",
+        "600": "Undergraduate university degree",
+        "700": "Postgraduate or higher qualification"
+      },
+      "special": {}
+    },
+    {
+      "domain": "PH_ISCD",
+      "meaning": "Country specific highest completed degree of education: Philippines",
+      "question": "What is the highest level of education that you have attained?",
+      "content": {
+        "-2": "NAP, other countries",
+        "10": "Less than primary/ No education - Pre-primary school/walang pormal na edukasyon",
+        "30": "Some elementary - Nakapag-elementarya",
+        "100": "Completed primary education - Tapos ng elementarya",
+        "244": "Lower secondary education - Junior high school o lower secondary education",
+        "344": "Upper secondary education - Senior high school o upper secondary education",
+        "454": "Post-sec non-tertiary educ - Nakatapos ng senior high school at nakatapos ng certificate/ national certificate",
+        "540": "Short-cycle tert educ - Nakatapos ng senior high school at nakatapos ng associate/ diploma/ national certificate",
+        "640": "Some college/ Bachelor or equivalent - Nakapag-kolehiyo/ Tapos ng kolehiyo o bachelor’s/ college degree o kapareho",
+        "740": "Master or equivalent - Master’s degree o nakatapos ng medisina o abugasya o kapareho"
+      },
+      "special": {}
+    },
+    {
+      "domain": "RU_ISCD",
+      "meaning": "Country specific highest completed degree of education: Russia",
+      "question": "What is the highest level of education that you have attained?",
+      "content": {
+        "-2": "NAP, other countries",
+        "100": "Primary school or less - Начальное или ниже (не закончена неполная средняя школа)",
+        "244": "Incomplete secondary (7-9 years of school) - Неполнаясредняя школа (7-8, сейчас 9 классов)",
+        "344": "High secondary school completed (10-11 years of school) - Средняя школа (10, сейчас 11 классов)",
+        "353": "Trade school, intermediate school - ПТУ, колледж на базе неполной средней школы",
+        "454": "Trade school, high secondary completed - ПТУ на базе средней школы",
+        "540": "Higher education incomplete - Незаконченное высшее (не менее 3-хкурсоввуза)",
+        "550": "Technical secondary school (college, technikum) - Среднееспециальное образование (техникум)",
+        "700": "Higher educ compl., uni degree + 2 diplomas, postgrad - Высшее: Специалитет или бакалавриат + Магистратура, второе (третье ит.п.)"
+      },
+      "special": {}
+    },
+    {
+      "domain": "SE_ISCD",
+      "meaning": "Country specific highest completed degree of education: Sweden",
+      "question": "What is the highest level of education that you have attained?",
+      "content": {
+        "-9": "No answer",
+        "-2": "NAP, other countries",
+        "30": "Incomplete primary/comprehensive school",
+        "100": "Primary/comprehensive school pre 1962 (6-8 years)",
+        "244": "Primary/comprehensive school post 1962 (9 years)/ Lower secondary school",
+        "344": "3 or 4 yrs gymnasium, acad. track/ Gymnasium, acad. track post 1992/ Uni studies without degree",
+        "353": "Vocational school 1963-1970/ Vocational school (2 years)",
+        "354": "Vocational school post 1992",
+        "500": "University degree, less than 3 years",
+        "600": "University degree, 3 years or more",
+        "700": "University degree, 3 yrs or more, Master level",
+        "800": "Doctor's degree"
+      },
+      "special": {}
+    },
+    {
+      "domain": "SI_ISCD",
+      "meaning": "Country specific highest completed degree of education: Slovenia",
+      "question": "Name the last school that you finished, regularly or irregularly:",
+      "content": {
+        "-9": "No answer",
+        "-2": "NAP, other countries",
+        "0": "Without formal education - Brez šolske izobrazbe",
+        "100": "Incomplete elementary school - Nepopolna osnovnošolska izobrazba",
+        "244": "Completed 8(9) year of elementary school - Osnovnošolska izobrazba",
+        "344": "General high school - Srednja splošna izobrazba",
+        "353": "Lower high school or vocational school - Nižja ali srednja poklicna izobrazba",
+        "354": "High school - Srednja strokovna izobrazba",
+        "550": "Higher school - Višja strokovna izobrazba, višjesolska izobrazba",
+        "640": "College - Visokošolska strokovna izobrazba",
+        "740": "University degree - Visokošolska univerzitetna izobrazba",
+        "750": "Specialisation - Specializacija",
+        "840": "Master degree, PHD - Magisterij, doktorat",
+        "900": "Other"
+      },
+      "special": {}
+    },
+    {
+      "domain": "SK_ISCD",
+      "meaning": "Country specific highest completed degree of education: Slovakia",
+      "question": "What is your highest achieved education level?",
+      "content": {
+        "-2": "NAP, other countries",
+        "244": "Completed elementary school - Ukoncena zakladna skola",
+        "253": "Completed elementary and vocational training - Zakladne vzdelanie + zaucenie, odborna priprava, kurz (bez vyucneho listu)",
+        "344": "Completed general upper secondary education, Gymnasium school - Uplne stredoskolske vseobecne (gymnazium, SVS)",
+        "353": "Voc training with certificate, apprenticeship/ Voc school or trade school - Vyuceny/a s vyucnym listom alebo osvedcením (bez maturity)/ Odborna skola alebo hospodarska skola (bez maturity)",
+        "354": "Completed apprenticeship training with maturity level certif./ Completed voc upper - Vyuceny/a s maturitou/ uplne stredoskolske odborne s maturitou (napr. priemyslovka, ekonomicke skola, obchodna akademia, stredna zdravotna skola)",
+        "454": "Follow-up, post-maturity education - Nadstavbove, pomaturitne studium",
+        "600": "University, college education, bachelor degree - Vysoka skola - bakalarske studium",
+        "700": "University, college completed master or engineering programme - Vysoka skola - magisterske, inzinierske studium (alebo jeho ekvivalent), vratane titulov MUDr., JUDr., PhDr. a podobne",
+        "800": "Postgraduate level or higher education study - Postgradualne studium (tituly CSc., PhD., Doc., atd.)"
+      },
+      "special": {}
+    },
+    {
+      "domain": "TH_ISCD",
+      "meaning": "Country specific highest completed degree of education: Thailand",
+      "question": "The highest level of education:",
+      "content": {
+        "-2": "NAP, other countries",
+        "10": "Informal education",
+        "100": "Primary school",
+        "200": "Lower secondary school",
+        "300": "Upper secondary school",
+        "500": "Post-secondary non-tert. education",
+        "600": "Bachelor’s or equivalent level",
+        "700": "Master’s or equivalent level",
+        "800": "Doctoral or equivalent level",
+        "900": "Not elsewhere classified"
+      },
+      "special": {}
+    },
+    {
+      "domain": "TW_ISCD",
+      "meaning": "Country specific highest completed degree of education: Taiwan",
+      "question": "What is your education level? Please refer to the level of education that you are currently in or the highest level of education that you have attained, regardless of whether you have graduated or not.",
+      "content": {
+        "-9": "No answer",
+        "-2": "NAP, other countries",
+        "10": "None/ Illiterate - 無 不識字 /",
+        "20": "Self-study - 自修 識字 私塾 / /",
+        "30": "Elementary school",
+        "100": "Elementary school (grad.) - 小學 畢業 ( )",
+        "242": "Junior high school - 國 初 中 ( )",
+        "243": "Junior high school (grad.) - 國 初 中 畢業 ( ) ( )",
+        "253": "Vocational junior high school (grad.) - 初職 畢業 ( )",
+        "342": "Senior high school (general subjects)",
+        "343": "Senior high school (general subjects) (grad.) - 高中普通科 畢業 ( )",
+        "352": "Senior high school (voc subj) or voc senior high or Cadet school - 高中職業科 博士 士官學校 , ,",
+        "353": "Senior high (voc subj) or voc senior high or Cadet school (grad.) - 高中職業科 博士 士官學校 畢業 , , ( )",
+        "450": "Five-year junior college",
+        "453": "Five-year junior college (grad.) - 五專 畢業 ( )",
+        "550": "2/3-yr junior or Military/police 1/2-yr junior or Open jun. college - 二專 三專 軍警專修班 軍警專科班 空中行專 商專 / , / , /",
+        "600": "Open university",
+        "640": "College (bachelor's degree)",
+        "650": "Military/police college or Institute of technology - 軍警官學校或大學 技術學院、科大 ,",
+        "740": "Graduate school (master’s degree)",
+        "840": "Graduate school (doctoral degree) - 博士"
+      },
+      "special": {}
+    },
+    {
+      "domain": "US_ISCD",
+      "meaning": "Country specific highest completed degree of education: United States",
+      "question": "What is the highest grade in elementary school or high school that you finished and got credit for? (If finished 9th-12th grade or 'Don't know') Did you ever get a high school diploma or a GED certificate? Was that a diploma awarded by your high school at graduation at the end of 12th grade, a GED awarded after you took a test, or something else? Did you ever complete one or more years of college for credit - not including school such as business college, technical or vocational school? (If yes) How many years did you complete? Do you have any college degrees? (If yes) What degree or degrees? If you have more than one, please select the highest degree that you have.",
+      "content": {
+        "-9": "No answer",
+        "-2": "NAP, other countries",
+        "10": "Less than High school (EDUCYRS=0)",
+        "30": "Less than High school (EDUCYRS<9)",
+        "100": "Less than High school (EDUCYRS=9+)",
+        "240": "High school (EDUCYRS<12)",
+        "340": "High school (EDUCYRS=12+)",
+        "500": "Junior College",
+        "600": "Bachelor's Degree",
+        "700": "Graduate Degree (EDUCYRS<19)",
+        "800": "Graduate Degree (EDUCYRS=19+)"
+      },
+      "special": {}
+    },
+    {
+      "domain": "ZA_ISCD",
+      "meaning": "Country specific highest completed degree of education: South Africa",
+      "question": "What is the highest level of education you have ever completed?",
+      "content": {
+        "-9": "No answer",
+        "-2": "NAP, other countries",
+        "0": "No schooling",
+        "20": "Grade R/ Grade 0",
+        "100": "Grade 1-7; Grade 1-Standard 5; ABET 2-3",
+        "244": "Grade 8-9",
+        "254": "NTC1-NTC3; N1-N3; NC",
+        "344": "Grade 10-12/ Standard 8-10/Form 3-5/ Matric",
+        "353": "N4-N5/ NTC 4-5",
+        "454": "N6/ NTC 6",
+        "550": "Diploma",
+        "600": "Bachelor degree; Advanced diploma (AD); Post grad. diploma (PGD); Honours degree",
+        "700": "Master degree",
+        "800": "Doctorate degree, Laureatus in Technology"
+      },
+      "special": {}
+    },
+    {
+      "domain": "ISCED",
+      "meaning": "ISCED 2011: highest completed degree of education [merged variable]",
+      "question": "This variable collates the information on highest completed educational qualification/ degree of respondents coded in the nat_ISCD variables into a single variable for all countries.",
+      "content": {
+        "-9": "No answer",
+        "0": "Less than primary education",
+        "10": "Less than primary: Never attended an education programme",
+        "20": "Less than primary: Some early childhood education",
+        "30": "Less than primary: Some primary education (excl. level completion)",
+        "100": "Primary education",
+        "200": "Lower secondary education",
+        "240": "Lower secondary education: General",
+        "242": "Lower sec general: Partial level completion, excl. direct access to upper sec educ",
+        "243": "Lower sec general: Level completion, excl. direct access to upper sec educ",
+        "244": "Lower sec general: Level completion, incl. direct access to upper sec education",
+        "253": "Lower sec voc: Level completion, excl. direct access to upper sec educ",
+        "254": "Lower sec voc: Level completion, incl. direct access to upper sec educ",
+        "300": "Upper secondary education",
+        "340": "Upper secondary education: General",
+        "342": "Upper sec general: Partial level completion, excl. direct access to tert educ",
+        "343": "Upper sec general: Level completion, excl. direct access to tert educ",
+        "344": "Upper sec general: Level completion, incl. direct access to tert educ",
+        "350": "Upper secondary education: Vocational",
+        "352": "Upper sec voc: Partial level completion, excl. direct access to tert educ",
+        "353": "Upper sec voc: Level completion, excl. direct access to tert educ",
+        "354": "Upper sec voc: Level completion, incl. direct access to tert educ",
+        "443": "Post-sec non-tert educ gen: Level completion, excl. direct access to tert educ",
+        "444": "Post-sec non-tert educ gen: Level completion, incl. direct access to tert educ",
+        "450": "Post-secondary non-tertiary education: Vocational",
+        "453": "Post-sec non-tert educ voc: Level completion, excl. direct access to tert educ",
+        "454": "Post-sec non-tert educ voc: Level completion, incl. direct access to tert educ",
+        "500": "Short-cycle tertiary education",
+        "540": "Short-cycle tertiary education: General",
+        "550": "Short-cycle tertiary education: Vocational",
+        "600": "Bachelor's or equivalent level",
+        "640": "Bachelor's or equivalent level: Academic",
+        "650": "Bachelor's or equivalent level: Professional",
+        "700": "Master's or equivalent level",
+        "740": "Master's or equivalent level: Academic",
+        "750": "Master's or equivalent level: Professional",
+        "800": "Doctoral or equivalent level",
+        "840": "Doctoral or equivalent level: Academic",
+        "850": "Doctoral or equivalent level: Professional",
+        "900": "Not elsewhere classified"
+      },
+      "special": {}
+    },
+    {
+      "domain": "EDULEVEL",
+      "meaning": "ISCED 2011 simplified: highest completed degree of education",
+      "question": "EDULEVEL is compiled from the variable ISCED by truncation.",
+      "content": {
+        "-9": "No answer, not classifiable",
+        "0": "No education, incomplete primary",
+        "1": "Primary education",
+        "2": "Lower secondary education",
+        "3": "Upper secondary education",
+        "4": "Post secondary, non-tertiary",
+        "5": "Short-cycle tertiary",
+        "6": "Lower tertiary, BA",
+        "7": "Upper tertiary, MA",
+        "8": "PhD, Post tertiary specialization"
+      },
+      "special": {}
+    },
+    {
+      "domain": "WORK",
+      "meaning": "Currently, formerly, or never in paid work",
+      "question": "Are you currently working for pay, did you work for pay in the past, or have you never been in paid work?",
+      "content": {
+        "-9": "No answer",
+        "1": "Currently in paid work",
+        "2": "Currently not in paid work, paid work in the past",
+        "3": "Never had paid work"
+      },
+      "special": {}
+    },
+    {
+      "domain": "WRKHRS",
+      "meaning": "Hours worked weekly",
+      "question": "How many hours, on average, do you usually work for pay in a normal week, including overtime?",
+      "content": {
+        "-9": "No answer",
+        "-8": "Don't know",
+        "-4": "NAP (Code 2 or 3 in WORK)",
+        "1": "1 hour",
+        "89": "89 hours; US: 89 hours or more",
+        "96": "96 hours or more"
+      },
+      "special": {}
+    },
+    {
+      "domain": "EMPREL",
+      "meaning": "Employment relationship",
+      "question": "Are/ were you an employee, self-employed, or working for your own family's business?",
+      "content": {
+        "-9": "No answer",
+        "-4": "NAP (Code 3 in WORK)",
+        "1": "Employee",
+        "2": "Self-employed without employees",
+        "3": "Self-employed with 1 to 9 employees",
+        "4": "Self-employed with 10 employees or more",
+        "5": "Working for own family's business",
+        "6": "ZA: Self-employed with employees, no numbers available"
+      },
+      "special": {}
+    },
+    {
+      "domain": "WRKSUP",
+      "meaning": "Supervise other employees",
+      "question": "Do/ did you supervise other employees?",
+      "content": {
+        "-9": "No answer",
+        "-4": "NAP (Code 3 in WORK; US: Code 2, 3 in WORK)",
+        "1": "Yes",
+        "2": "No"
+      },
+      "special": {}
+    },
+    {
+      "domain": "NSUP",
+      "meaning": "Number of other employees supervised",
+      "question": "How many other employees do/ did you supervise?",
+      "content": {
+        "-9": "No answer",
+        "-4": "NAP (Code 2, -4 in WRKSUP; KR: C. 2, -4 WRKSUP + C. 1 WRKSUP & C. 2 WORK)",
+        "1": "1 employee",
+        "1000": "1000 employees; NO: 1000 or more",
+        "9995": "9995 employees or more"
+      },
+      "special": {}
+    },
+    {
+      "domain": "TYPORG1",
+      "meaning": "Type of organisation, for-profit/ non-profit",
+      "question": "Do/ did you work for a for-profit organisation or for a non-profit organisation?",
+      "content": {
+        "-9": "No answer",
+        "-8": "Don't know",
+        "-4": "NAP (Code 3 in WORK)",
+        "-1": "Not available (AT, US)",
+        "1": "For-profit organisation",
+        "2": "Non-profit organisation"
+      },
+      "special": {}
+    },
+    {
+      "domain": "TYPORG2",
+      "meaning": "Type of organisation, public/ private",
+      "question": "Do/ did you work for a public or a private employer?",
+      "content": {
+        "-9": "No answer",
+        "-8": "Don't know; NO: Other",
+        "-4": "NAP (Code 3 in WORK)",
+        "1": "Public employer",
+        "2": "Private employer"
+      },
+      "special": {}
+    }
+]

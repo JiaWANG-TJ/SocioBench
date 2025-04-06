@@ -1,0 +1,424 @@
+[
+  {
+    "domain": "studyno",
+    "meaning": "GESIS Study Number",
+    "question": "GESIS Study number ZA7650 for the ISSP 2020 on 'Environment IV'. Study number of the data set producer and archiving number.",
+    "content": {
+      "7650": "GESIS Study Number ZA7650"
+    },
+    "special": {}
+  },
+  {
+    "domain": "version",
+    "meaning": "GESIS Archive version",
+    "question": "VERSION AND RELEASE DATE OF THE DATA SET. This variable identifies the GESIS archive version number of this data set and the corresponding release date, recorded as a string. The version number is composed of a sequence of three numbers. The major number is incremented when there are changes in the composition of the data set (e.g. additional variables or cases), the minor or second number is incremented when significant errors have been fixed (e.g. coding errors, misleading value labels), and the third or revision number is incremented when minor bugs are fixed (e.g. spelling errors in variable or value labels).",
+    "content": {
+      "2.0.0 (2023-08-25)": "2.0.0 (2023-08-25)"
+    },
+    "special": {}
+  },
+  {
+    "domain": "doi",
+    "meaning": "Digital Object Identifier",
+    "question": "Digital Object Identifier (DOI). This variable holds the Digital Object Identifier (DOI) for the data set at hand as registered via the DA|RA registration agency for economic and social science data. Each data set version (see the variable 'version') has a unique persistent DOI. For direct access to the complete archive dissemination package for this study, including new data set versions, the DOI needs to be appended to the resolver service URL: https://doi.org/10.4232/1.14153. In terms of good scientific practice, the DOI is an important element for the correct citation of a data set.",
+    "content": {
+      "doi:10.4232/1.14153": "doi:10.4232/1.14153"
+    },
+    "special": {}
+  },
+  {
+    "domain": "country",
+    "meaning": "Country ISO 3166 Code",
+    "question": "ISO Code of the Countries (three digit). All countries are coded in accordance with the ISO 3166-1-alpha-2 country code.",
+    "content": {
+      "36": "AU-Australia",
+      "40": "AT-Austria",
+      "156": "CN-China",
+      "158": "TW-Taiwan",
+      "191": "HR-Croatia",
+      "208": "DK-Denmark",
+      "246": "FI-Finland",
+      "250": "FR-France",
+      "276": "DE-Germany",
+      "348": "HU-Hungary",
+      "352": "IS-Iceland",
+      "356": "IN-India",
+      "380": "IT-Italy",
+      "392": "JP-Japan",
+      "410": "KR-Korea (South)",
+      "440": "LT-Lithuania",
+      "554": "NZ-New Zealand",
+      "578": "NO-Norway",
+      "608": "PH-Philippines",
+      "643": "RU-Russia",
+      "703": "SK-Slovakia",
+      "705": "SI-Slovenia",
+      "710": "ZA-South Africa",
+      "724": "ES-Spain",
+      "752": "SE-Sweden",
+      "756": "CH-Switzerland",
+      "764": "TH-Thailand",
+      "840": "US-United States"
+    },
+    "special": {}
+  },
+  {
+    "domain": "c_sample",
+    "meaning": "Country/ Sample ISO 3166 Code",
+    "question": "Country/ Sample (see the variable 'country' for codes for whole nation states). To indicate the subsamples within the ISSP countries a code on the basis of ISO 3166 was constructed. For all countries without subsamples the three digit ISO 3166 Code (as in the variable 'country') was used. For those with subsamples a five digit numeric code is used. The first three-digits are based on the original ISO code and indicate the country. The following two-digit numeric appendices (01, 02) indicate the subsamples.",
+    "content": {
+      "36": "AU-Australia",
+      "40": "AT-Austria",
+      "156": "CN-China",
+      "158": "TW-Taiwan",
+      "191": "HR-Croatia",
+      "208": "DK-Denmark",
+      "246": "FI-Finland",
+      "250": "FR-France",
+      "348": "HU-Hungary",
+      "352": "IS-Iceland",
+      "356": "IN-India",
+      "380": "IT-Italy",
+      "392": "JP-Japan",
+      "410": "KR-Korea (South)",
+      "440": "LT-Lithuania",
+      "554": "NZ-New Zealand",
+      "578": "NO-Norway",
+      "608": "PH-Philippines",
+      "643": "RU-Russia",
+      "703": "SK-Slovakia",
+      "705": "SI-Slovenia",
+      "710": "ZA-South Africa",
+      "724": "ES-Spain",
+      "752": "SE-Sweden",
+      "756": "CH-Switzerland",
+      "764": "TH-Thailand",
+      "840": "US-United States",
+      "27601": "DE-W-Germany-West",
+      "27602": "DE-E-Germany-East"
+    },
+    "special": {}
+  },
+  {
+    "domain": "c_alphan",
+    "meaning": "Country/ Sample Prefix ISO 3166 Code - alphanumeric",
+    "question": "Sample Prefix ISO 3166 Code - Alphanumeric. ISO 3166 Country/ Sample Prefix. This alphanumerical country sample identification variable c_alphan includes country codes that are based on ISO 3166. All countries are coded in accordance with the ISO 3166-1-alpha-2 country code, if available. For examining subsamples from Germany (East/ West) the variable 'c_sample' can be used as a flag variable. This alphanumerical sample identification variable c_alphan is used for the tables shown in the Variable Report.",
+    "content": {
+      "AT": "Austria",
+      "AU": "Australia",
+      "CH": "Switzerland",
+      "CN": "China",
+      "DE": "Germany",
+      "DK": "Denmark",
+      "ES": "Spain",
+      "FI": "Finland",
+      "FR": "France",
+      "HR": "Croatia",
+      "HU": "Hungary",
+      "IN": "India",
+      "IS": "Iceland",
+      "IT": "Italy",
+      "JP": "Japan",
+      "KR": "Korea (South)",
+      "LT": "Lithuania",
+      "NO": "Norway",
+      "NZ": "New Zealand",
+      "PH": "Philippines",
+      "RU": "Russia",
+      "SE": "Sweden",
+      "SI": "Slovenia",
+      "SK": "Slovakia",
+      "TH": "Thailand",
+      "TW": "Taiwan",
+      "US": "United States",
+      "ZA": "South Africa"
+    },
+    "special": {}
+  },
+  {
+    "domain": "v1",
+    "meaning": "Most important issue for [R's COUNTRY] today",
+    "question": "Which of these issues is the most important for [COUNTRY] today? (Please tick one box only.)",
+    "content": {
+      "-9": "No answer",
+      "-8": "Can't choose",
+      "1": "Health care",
+      "2": "Education",
+      "3": "Crime",
+      "4": "The environment",
+      "5": "Immigration",
+      "6": "The economy",
+      "7": "Terrorism",
+      "8": "Poverty",
+      "9": "None of these"
+    },
+    "special": {}
+  },
+  {
+    "domain": "v2",
+    "meaning": "Next most important issue for [R's COUNTRY] today",
+    "question": "Which is the next most important? (Please tick one box only.)",
+    "content": {
+      "-9": "No answer",
+      "-8": "Can't choose",
+      "-7": "Wrong answer behaviour",
+      "1": "Health care",
+      "2": "Education",
+      "3": "Crime",
+      "4": "The environment",
+      "5": "Immigration",
+      "6": "The economy",
+      "7": "Terrorism",
+      "8": "Poverty",
+      "9": "None of these"
+    },
+    "special": {}
+  },
+  {
+    "domain": "v3",
+    "meaning": "Solve economic problems: private enterprise",
+    "question": "How much do you agree or disagree with each of these statements? (Please tick one box on each line.) Private enterprise is the best way to solve [COUNTRY'S] economic problems.",
+    "content": {
+      "-9": "No answer",
+      "-8": "Can't choose",
+      "1": "Agree strongly",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Disagree strongly"
+    },
+    "special": {
+      "CN": {
+        "Note": "A reversed answer scale was used; answers have been recoded before the data deposit to meet the ISSP standard."
+      }
+    }
+  },
+  {
+    "domain": "v4",
+    "meaning": "Responsibility of government: reduce income differences",
+    "question": "How much do you agree or disagree with each of these statements? (Please tick one box on each line.) It is the responsibility of the government to reduce the differences in income between people with high incomes and those with low incomes.",
+    "content": {
+      "-9": "No answer",
+      "-8": "Can't choose",
+      "1": "Agree strongly",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Disagree strongly"
+    },
+    "special": {
+      "CN": {
+        "Note": "A reversed answer scale was used; answers have been recoded before the data deposit to meet the ISSP standard."
+      }
+    }
+  },
+  {
+    "domain": "v5",
+    "meaning": "[COUNTRY] should limit import of foreign products to protect national economy",
+    "question": "How much do you agree or disagree with each of these statements? (Please tick one box on each line.) [COUNTRY] should limit the import of foreign products in order to protect its national economy.",
+    "content": {
+      "-9": "No answer",
+      "-8": "Can't choose",
+      "1": "Agree strongly",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Disagree strongly"
+    },
+    "special": {
+      "CN": {
+        "Note": "A reversed answer scale was used; answers have been recoded before the data deposit to meet the ISSP standard."
+      }
+    }
+  },
+  {
+    "domain": "v6",
+    "meaning": "[COUNTRY] should limit immigration to protect national way of life",
+    "question": "How much do you agree or disagree with each of these statements? (Please tick one box on each line.) [COUNTRY] should limit immigration in order to protect our national way of life.",
+    "content": {
+      "-9": "No answer",
+      "-8": "Can't choose",
+      "1": "Agree strongly",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Disagree strongly"
+    },
+    "special": {
+      "CN": {
+        "Note": "A reversed answer scale was used; answers have been recoded before the data deposit to meet the ISSP standard."
+      }
+    }
+  },
+  {
+    "domain": "v7",
+    "meaning": "International organizations are taking away too much power from the government",
+    "question": "How much do you agree or disagree with each of these statements? (Please tick one box on each line.) International organizations are taking away too much power from the [COUNTRY NATIONALITY] government.",
+    "content": {
+      "-9": "No answer",
+      "-8": "Can't choose",
+      "1": "Agree strongly",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Disagree strongly"
+    },
+    "special": {
+      "CN": {
+        "Note": "A reversed answer scale was used; answers have been recoded before the data deposit to meet the ISSP standard."
+      }
+    }
+  },
+  {
+    "domain": "v8",
+    "meaning": "Highest priority in [R's COUNTRY]?",
+    "question": "Looking at the list below, please tick a box next to the one thing you think should be [COUNTRY'S] highest priority, the MOST important thing it should do. (Please tick one box only.) [COUNTRY] should …",
+    "content": {
+      "-9": "No answer",
+      "-8": "Can't choose",
+      "1": "Maintain order in the nation",
+      "2": "Give people more say in government decisions",
+      "3": "Fight rising prices",
+      "4": "Protect freedom of speech"
+    },
+    "special": {}
+  },
+  {
+    "domain": "v9",
+    "meaning": "Next highest priority in [R's COUNTRY]?",
+    "question": "And which one do you think should be [COUNTRY'S] next highest priority, the SECOND most important thing it should do? (Please tick one box only.) [COUNTRY] should…",
+    "content": {
+      "-9": "No answer",
+      "-8": "Can't choose",
+      "-7": "Wrong answer behaviour",
+      "1": "Maintain order in the nation",
+      "2": "Give people more say in government decisions",
+      "3": "Fight rising prices",
+      "4": "Protect freedom of speech"
+    },
+    "special": {}
+  },
+  {
+    "domain": "v10",
+    "meaning": "Amount of trust in most people",
+    "question": "Generally speaking, would you say that most people can be trusted, or that you can't be too careful in dealing with people? Please tick one box to show what you think, where 1 means you can't be too careful and 5 means most people can be trusted. (Please tick one box only.)",
+    "content": {
+      "-9": "No answer",
+      "-8": "Can't choose",
+      "-1": "Not available: CN (Answer scale and direction of scale differ from ISSP standard)",
+      "1": "1 You can't be too careful",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5 Most people can be trusted"
+    },
+    "special": {
+      "CN": {
+        "Note": "The data from China are not comparable with the data from the other countries, as China used a reversed answer scale in Q4 with only four response options. For China's data, see CN_v10."
+      }
+    }
+  },
+  {
+    "domain": "CN_v10",
+    "meaning": "Q4 - China - Amount of trust in most people",
+    "question": "Generally speaking, would you say that most people can be trusted, or that you can't be too careful in dealing with people? Please tick one box to show what you think, where 1 means you can't be too careful and 5 means most people can be trusted. (Please tick one box only.)",
+    "content": {
+      "-9": "No answer",
+      "-8": "Can't choose",
+      "-1": "Not available: all other countries",
+      "1": "People can almost always be trusted",
+      "2": "People can often be trusted",
+      "3": "You often have to treat people with caution",
+      "4": "You almost always have to treat people with caution"
+    },
+    "special": {
+      "CN": {
+        "Note": "China used a reversed answer scale in Q4 with only four response options. Data from China were not merged into v10. An extra variable was created (CN_v10)."
+      }
+    }
+  },
+  {
+    "domain": "v11",
+    "meaning": "Trust in institutions: University research centres",
+    "question": "On a scale of 0 to 10, how much do you personally trust each of the following institutions? 0 means you do not trust an institution at all, and 10 means you trust it completely. (Please tick one box only.) University research centres",
+    "content": {
+      "-9": "No answer",
+      "-8": "Can't choose",
+      "0": "0 No trust at all",
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7",
+      "8": "8",
+      "9": "9",
+      "10": "10 Complete trust"
+    },
+    "special": {}
+  },
+  {
+    "domain": "v12",
+    "meaning": "Trust in institutions: The news media",
+    "question": "On a scale of 0 to 10, how much do you personally trust each of the following institutions? 0 means you do not trust an institution at all, and 10 means you trust it completely. (Please tick one box only.) The news media",
+    "content": {
+      "-9": "No answer",
+      "-8": "Can't choose",
+      "0": "0 No trust at all",
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7",
+      "8": "8",
+      "9": "9",
+      "10": "10 Complete trust"
+    },
+    "special": {}
+  },
+  {
+    "domain": "v13",
+    "meaning": "Trust in institutions: Business and industry",
+    "question": "On a scale of 0 to 10, how much do you personally trust each of the following institutions? 0 means you do not trust an institution at all, and 10 means you trust it completely. (Please tick one box only.) Business and industry",
+    "content": {
+      "-9": "No answer",
+      "-8": "Can't choose",
+      "0": "0 No trust at all",
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7",
+      "8": "8",
+      "9": "9",
+      "10": "10 Complete trust"
+    },
+    "special": {}
+  },
+  {
+    "domain": "v14",
+    "meaning": "Trust in institutions: The [COUNTRY NATIONALITY PARLIAMENT]",
+    "question": "On a scale of 0 to 10, how much do you personally trust each of the following institutions? 0 means you do not trust an institution at all, and 10 means you trust it completely. (Please tick one box only.) The [COUNTRY NATIONALITY PARLIAMENT]",
+    "content": {
+      "-9": "No answer",
+      "-8": "Can't choose",
+      "0": "0 No trust at all",
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7",
+      "8": "8",
+      "9": "9",
+      "10": "10 Complete trust"
+    },
+    "special": {}
+  }
+]

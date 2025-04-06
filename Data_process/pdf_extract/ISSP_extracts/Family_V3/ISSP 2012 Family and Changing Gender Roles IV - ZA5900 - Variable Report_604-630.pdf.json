@@ -1,0 +1,322 @@
+[
+  {
+    "domain": "CZ_INC",
+    "meaning": "Czech Republic: Country specific household income",
+    "question": "What is the average total net income of your household per month? We mean incomes and rents of all members of your household after taxation and all social welfare benefits, allowances and complementary incomes after taxation.",
+    "content": {
+      "2000": "Up to 4.000 CZK per month",
+      "5000": "4.001-6.000 CZK",
+      "7000": "6.001-8.000 CZK",
+      "9000": "8.001-10.000 CZK",
+      "11250": "10.001-12.500 CZK",
+      "13750": "12.501-15.000 CZK",
+      "16250": "15.001-17.500 CZK",
+      "18750": "17.501-20.000 CZK",
+      "22500": "20.001-25.000 CZK",
+      "27500": "25.001-30.000 CZK",
+      "35000": "30.001-40.000 CZK",
+      "45000": "40.000-50.000 CZK",
+      "62500": "50.001-75.000 CZK",
+      "87500": "75.001-100.000 CZK",
+      "112500": "100.001 CZK or more per month",
+      "999990": "NAP, all other countries",
+      "999998": "Don't know",
+      "999999": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "DE_INC",
+    "meaning": "Germany: Country specific household income",
+    "question": "How high is the total net monthly income of your household? By this I mean the amount remaining after deductions for tax and social security contributions. For self-employed, please ask for average net monthly income, after deductions for overheads.",
+    "content": {
+      "0": "No income",
+      "100": "100 EUR per month",
+      "33000": "33.000 EUR per month",
+      "999990": "NAP, all other countries",
+      "999997": "Refused",
+      "999999": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "DK_INC",
+    "meaning": "Denmark: Country specific household income",
+    "question": "What is your households' total annual income - gross - i.e., before taxes? (Total annual income refers to all forms of income, including wages, pensions, secondary income, child maintenance etc)",
+    "content": {
+      "70000": "Below 100.000 DKK per year",
+      "125000": "100.000-149.999 DKK",
+      "175000": "150.000-199.999 DKK",
+      "225000": "200.000-249.999 DKK",
+      "275000": "250.000-299.999 DKK",
+      "350000": "300.000-399.999 DKK",
+      "450000": "400.000-499.999 DKK",
+      "550000": "500.000-599.999 DKK",
+      "650000": "600.000-699.999 DKK",
+      "750000": "700.000-799.999 DKK",
+      "850000": "800.000-899.999 DKK",
+      "950000": "900.000-999.999 DKK",
+      "1050000": "1 million DKK or more per year",
+      "9999990": "NAP, all other countries",
+      "9999999": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "ES_INC",
+    "meaning": "Spain: Country specific household income",
+    "question": "At the present time, what is the monthly income, as an average, adding together the incomes of every household member, and considering all possible revenues of each of them, after tax deduction (that is, net income)? I am not asking you the exact amount, but to look at this card and point to me the interval in the scale where your home income is included.",
+    "content": {
+      "0": "No income",
+      "250": "300 EUR or less per month",
+      "450": "301-600 EUR",
+      "750": "601-900 EUR",
+      "1050": "901-1.200 EUR",
+      "1500": "1.201-1.800 EUR",
+      "2100": "1.801-2.400 EUR",
+      "2700": "2.401-3.000 EUR",
+      "3750": "3.001-4.500 EUR",
+      "5250": "4.501-6.000 EUR",
+      "7000": "More than 6.000 EUR per month",
+      "999990": "NAP, all other countries",
+      "999998": "Don't know",
+      "999999": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "FI_INC",
+    "meaning": "Finland: Country specific household income",
+    "question": "How much on average is the total income of your household before taxes (=gross income) including capital income and all social security benefits?",
+    "content": {
+      "0": "No income",
+      "1": "1 EUR per month",
+      "50": "50 EUR",
+      "60000": "60.000 EUR per month",
+      "999990": "NAP, all other countries",
+      "999999": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "FR_INC",
+    "meaning": "France: Country specific household income",
+    "question": "What is the amount of your monthly family net income? Take into account all sources: net wages, family allowances, rents or financial investments etc.",
+    "content": {
+      "0": "No income",
+      "100": "100 EUR per month",
+      "90000": "90.000 EUR per month",
+      "999990": "NAP, all other countries",
+      "999999": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "GB-GBN_INC",
+    "meaning": "Great Britain: Country specific household income",
+    "question": "Which of the letters on this card represents the total income of your household from all sources (incl. benefits, savings, etc.) before tax? Please just tell me the letter.",
+    "content": {
+      "590": "Less than 770 GBP per month",
+      "910": "771-1.000 GBP",
+      "1200": "1001-1.300 GBP",
+      "1500": "1.301-1.700 GBP",
+      "1900": "1.701-2.200 GBP",
+      "2400": "2.201-2.700 GBP",
+      "3000": "2.701-3.300 GBP",
+      "3700": "3.301-4.200 GBP",
+      "4800": "4.201-5.600 GBP",
+      "7200": "5.601 GBP or more per month",
+      "999997": "Refused",
+      "999998": "Don't know"
+    },
+    "special": {}
+  },
+  {
+    "domain": "HR_INC",
+    "meaning": "Croatia: Country specific household income",
+    "question": "Please state your family monthly income (incomes of all family members together) - including salaries, pensions, child benefits, income from rents and all other sources of income (after deduction).",
+    "content": {
+      "0": "No own income",
+      "300": "300 HRK per month",
+      "30000": "30.000 HRK per month",
+      "999990": "NAP, all other countries",
+      "999997": "Refused",
+      "999998": "Don't know",
+      "999999": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "HU_INC",
+    "meaning": "Hungary: Country specific household income",
+    "question": "Including everything, how much is your household’s monthly net (after taxes are deducted) income (including your income as well)? And, can you tell me, on the answer sheet which category do you belong to? Altogether how many persons, including you, live in your family (household)?",
+    "content": {
+      "0": "No own income",
+      "22500": "22.500 HUF per month",
+      "800000": "800.000 HUF per month",
+      "999990": "NAP, all other countries",
+      "999999": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "IE_INC",
+    "meaning": "Ireland: Country specific household income",
+    "question": "Before taxes and other deductions, what on average is the total monthly income of your household in euro?",
+    "content": {
+      "0": "No income",
+      "5000": "Under 6.000 EUR per year",
+      "7750": "6.001-9.500 EUR",
+      "10750": "9.501-12.000 EUR",
+      "15000": "12.001-18.000 EUR",
+      "21000": "18.001-24.000 EUR",
+      "27000": "24.001-30.000 EUR",
+      "33000": "30.001-36.000 EUR",
+      "48000": "36.001-60.000 EUR",
+      "75000": "60.001-90.000 EUR",
+      "105000": "90.001-120.000 EUR",
+      "140000": "120.001-160.000 EUR",
+      "170000": "160.001 EUR and more per year",
+      "999990": "NAP, all other countries",
+      "999997": "Refused",
+      "999998": "Don't know",
+      "999999": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "IL_INC",
+    "meaning": "Israel: Country specific household income",
+    "question": "Before taxes and other deductions, what on average is the total monthly income of your household?",
+    "content": {
+      "1500": "3.000 ILS and less per month",
+      "3750": "3.001-4.500 ILS",
+      "5250": "4.501-6.000 ILS",
+      "7000": "6.001-8.000 ILS",
+      "9000": "8.001-10.000 ILS",
+      "11000": "10.001-12.000 ILS",
+      "13500": "12.001-15.000 ILS",
+      "17500": "15.001-20.000 ILS",
+      "24000": "20.001-28.000 ILS",
+      "32000": "More than 28.001 ILS per month",
+      "999990": "NAP, all other countries",
+      "999997": "Refused",
+      "999998": "Don't know",
+      "999999": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "IN_INC",
+    "meaning": "India: Country specific household income",
+    "question": "Before taxes and other deductions, what on average is the total monthly income of your household?",
+    "content": {
+      "1500": "Less than 3.000 INR per month",
+      "4500": "3.000-6.000 INR",
+      "8000": "6.001-10.000 INR",
+      "15000": "10.001-20.000 INR",
+      "35000": "20.001-50.000 INR",
+      "75000": "50.001-100.000 INR",
+      "125000": "More than 100.000 INR per month",
+      "999990": "NAP, all other countries",
+      "999998": "Can't say"
+    },
+    "special": {}
+  },
+  {
+    "domain": "IS_INC",
+    "meaning": "Iceland: Country specific household income",
+    "question": "What is the total household income on average per month before tax. Please choose the appropriate letter on the card.",
+    "content": {
+      "50000": "99.999 ISK or less per month",
+      "125000": "100.000-149.999 ISK",
+      "175000": "150.000-199.999 ISK",
+      "225000": "200.000-249.999 ISK",
+      "275000": "250.000-299.999 ISK",
+      "325000": "300.000-349.999 ISK",
+      "375000": "350.000-399.999 ISK",
+      "425000": "400.000-449.999 ISK",
+      "475000": "450.000-499.999 ISK",
+      "525000": "500.000-549.999 ISK",
+      "575000": "550.000-599.999 ISK",
+      "625000": "600.000-649.999 ISK",
+      "675000": "650.000-699.999 ISK",
+      "750000": "700.000-799.999 ISK",
+      "900000": "800.000-999.999 ISK",
+      "1100000": "1.000.000-1.199.999 ISK",
+      "1300000": "1.200.000 ISK or more per month",
+      "9999990": "NAP, all other countries",
+      "9999997": "Refused",
+      "9999998": "Don't know",
+      "9999999": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "JP_INC",
+    "meaning": "Japan: Country specific household income",
+    "question": "How much income did your household earn last year, inclusive tax, casual and part time income?",
+    "content": {
+      "1000000": "Less than 2.000.000 JPY per year",
+      "2500000": "2.000.000-2.999.999 JPY",
+      "3500000": "3.000.000-3.999.999 JPY",
+      "4500000": "4.000.000-4.999.999 JPY",
+      "5500000": "5.000.000-5.999.999 JPY",
+      "6500000": "6.000.000-6.999.999 JPY",
+      "7500000": "7.000.000-7.999.999 JPY",
+      "8500000": "8.000.000-8.999.999 JPY",
+      "9500000": "9.000.000-9.999.999 JPY",
+      "11000000": "10.000.000-11.999.999 JPY",
+      "13500000": "12.000.000-14.999.999 JPY",
+      "20000000": "15.000.000 JPY and more per year",
+      "99999999": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "KR_INC",
+    "meaning": "Korea (South): Country specific household income",
+    "question": "Before taxes and other deductions, what is the total average monthly income of your household? This includes all sources of income of all household members including yourself.",
+    "content": {
+      "0": "No own income",
+      "300000": "Less than 500.000 KRW per month",
+      "750000": "500.000-999.999 KRW",
+      "1250000": "1.000.000-1.499.999 KRW",
+      "1750000": "1.500.000-1.999.999 KRW",
+      "2250000": "2.000.000-2.499.999 KRW",
+      "2750000": "2.500.000-2.999.999 KRW",
+      "3250000": "3.000.000-3.499.999 KRW",
+      "3750000": "3.500.000-3.999.999 KRW",
+      "4250000": "4.000.000-4.499.999 KRW",
+      "4750000": "4.500.000-4.999.999 KRW",
+      "5250000": "5.000.000-5.499.999 KRW",
+      "5750000": "5.500.000-5.999.999 KRW",
+      "6250000": "6.000.000-6.499.999 KRW",
+      "6750000": "6.500.000-6.999.999 KRW",
+      "7250000": "7.000.000-7.499.999 KRW",
+      "7750000": "7.500.000-7.999.999 KRW",
+      "8250000": "8.000.000-8.499.999 KRW",
+      "8750000": "8.500.000-8.999.999 KRW",
+      "9250000": "9.000.000-9.499.999 KRW",
+      "9750000": "9.500.000-9.999.999 KRW",
+      "10250000": "10.000.000 KRW and more per month",
+      "99999990": "NAP, other countries",
+      "99999998": "Don't know"
+    },
+    "special": {}
+  },
+  {
+    "domain": "LT_INC",
+    "meaning": "Lithuania: Country specific household income",
+    "question": "After tax and other deductions, what on average is the total monthly income of your household? Please sum up salaries, pensions, scholarships and other income of all the members of your family and divide it by the number of the members of your family. The total monthly income of my household is on average.",
+    "content": {
+      "0": "No income",
+      "160": "160 LTL per month",
+      "9000": "9.000 LTL per month",
+      "999990": "NAP, all other countries",
+      "999997": "Refused",
+      "999998": "Don't know"
+    },
+    "special": {}
+  }
+]

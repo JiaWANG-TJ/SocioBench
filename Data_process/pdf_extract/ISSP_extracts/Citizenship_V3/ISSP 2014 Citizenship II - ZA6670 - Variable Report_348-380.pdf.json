@@ -1,0 +1,475 @@
+[
+  {
+    "domain": "ATTEND",
+    "meaning": "Attendance of religious services",
+    "question": "Apart from such special occasions as weddings, funerals, etc., how often do you attend religious services?",
+    "content": {
+      "1": "Several times a week or more often (incl. every day, several times a day)",
+      "2": "Once a week",
+      "3": "2 or 3 times a month",
+      "4": "Once a month",
+      "5": "Several times a year",
+      "6": "Once a year",
+      "7": "Less frequently than once a year",
+      "8": "Never",
+      "97": "Refused",
+      "98": "Don't know",
+      "99": "No answer"
+    },
+    "special": {
+      "AT": {
+        "0": "NAP (code 0 in AT_RELIG)"
+      },
+      "DE": {
+        "3": "1-3 times a month"
+      },
+      "GB-GBN": {
+        "2": "Once a week or more"
+      },
+      "PL": {
+        "0": "NAP (code 0, 960 in PL_RELIG)",
+        "3": "2 or 3 times a month/ nearly every week"
+      },
+      "TR": {
+        "0": "NAP, no (islamic) religion",
+        "99": "No idea, don't know, no answer"
+      }
+    }
+  },
+  {
+    "domain": "TOPBOT",
+    "meaning": "Top-Bottom self-placement",
+    "question": "In our society, there are groups which tend to be towards the top and groups which tend to be towards the bottom. Below is a scale that runs from the top to the bottom. Where would you put yourself on this scale?",
+    "content": {
+      "1": "Lowest, Bottom, 01",
+      "2": "02",
+      "3": "03",
+      "4": "04",
+      "5": "05",
+      "6": "06",
+      "7": "07",
+      "8": "08",
+      "9": "09",
+      "10": "Highest, Top, 10",
+      "98": "Don't know",
+      "99": "No answer"
+    },
+    "special": {
+      "GB-GBN": {
+        "0": "Not available"
+      },
+      "HU": {
+        "0": "Not available"
+      },
+      "TW": {
+        "99": "No answer, refused"
+      }
+    }
+  },
+  {
+    "domain": "VOTE_LE",
+    "meaning": "Did respondent vote in last general election",
+    "question": "Some people don't vote nowadays for one reason or another. Did you vote in the last [country] national election in [month/year]?",
+    "content": {
+      "0": "NAP, not eligible to vote at last election",
+      "1": "Yes",
+      "2": "No",
+      "7": "Refused",
+      "8": "No answer",
+      "9": "No answer"
+    },
+    "special": {
+      "FR": {
+        "7": "Don't know, refused"
+      },
+      "GB-GBN": {
+        "0": "Not available"
+      },
+      "PL": {
+        "8": "Hard to say"
+      }
+    }
+  },
+  {
+    "domain": "AT_PRTY",
+    "meaning": "Country specific party voted for in last general election: Austria",
+    "question": "Which party did you vote for in the last general election in [month/year]?",
+    "content": {
+      "0": "NAP (code 0, 2, 7 in VOTE_LE)",
+      "1": "Irmgard Griss - Independent",
+      "2": "Norbert Hofer - Freedom Party - FPÖ",
+      "3": "Rudolf Hundstorfer - Social Democrats - SPÖ",
+      "4": "Andreas Kohl - Peoples Party - ÖVP",
+      "5": "Richard Lugner - Independent",
+      "6": "Alexander Van der Bellen - Green Party",
+      "99": "No answer",
+      "990": "NAP, other countries"
+    },
+    "special": {}
+  },
+  {
+    "domain": "AU_PRTY",
+    "meaning": "Country specific party voted for in last general election: Australia",
+    "question": "Thinking back to the last general election in September 2013 – Which party did you vote for?",
+    "content": {
+      "0": "NAP (code 0, 2, 7 in VOTE_LE)",
+      "1": "Liberal Party",
+      "2": "Australian Labor Party - ALP",
+      "3": "National Party of Australia - NPA",
+      "5": "The Greens",
+      "6": "One nation",
+      "7": "Family First Party",
+      "9": "Palmer United Party",
+      "11": "Animal Justice Party",
+      "12": "Australian Sex Party",
+      "16": "Christian Democratic Party (Fred Nile Group)",
+      "17": "Democratic Labour Party - DLP",
+      "19": "Shooters and Fishers Party",
+      "90": "Independent candidate",
+      "92": "Voted in election in country other than Australia",
+      "95": "Other Party",
+      "96": "Invalid ballot",
+      "97": "Refused",
+      "99": "No answer",
+      "990": "NAP, other countries"
+    },
+    "special": {}
+  },
+  {
+    "domain": "BE_PRTY",
+    "meaning": "Country specific party voted for in last general election: Belgium",
+    "question": "For which party did you vote for the last federal (national) elections on May, 25th 2014?",
+    "content": {
+      "0": "NAP (code 0, 2, 7 in VOTE_LE)",
+      "1": "Reformist Movement Francophone - MR",
+      "2": "Green Party Flemish - Groen",
+      "3": "Flemish Interest - Vlaams Belang",
+      "4": "Party active in German speaking community - Pro Deutschsprachige Gemeinschaft - ProDG",
+      "5": "Unitarian progressive liberal party - Vivant",
+      "6": "Federal Democratic Francophones - FDF",
+      "7": "Flemish Liberals and Democrats - Open VLD",
+      "8": "List Dedecker - Lijst Dedecker",
+      "9": "Green Party Francophone - Ecolo",
+      "10": "Socialist Party Francophone - PS",
+      "11": "Union of Francophone - UF",
+      "12": "Socialist Party Flemish- SP.a",
+      "13": "National Flemish Alliance N-VA",
+      "14": "Christian Democrats Francophone - cdH",
+      "15": "Christian Democrats Flemish - CD&V",
+      "16": "Popular Party - Parti Populaire",
+      "17": "Flemish Party of Labor in Belgium – PVDA+",
+      "18": "Francophone Party of Labor in Belgium – PTB-GO",
+      "19": "Front National – FN",
+      "95": "Other Party",
+      "96": "Invalid ballot",
+      "97": "Refused",
+      "99": "No answer",
+      "990": "NAP, other countries"
+    },
+    "special": {}
+  },
+  {
+    "domain": "CH_PRTY",
+    "meaning": "Country specific party voted for in last general election: Switzerland",
+    "question": "For which party did you vote at the last federal elections in October 2011?",
+    "content": {
+      "0": "NAP (code 0, 2, 7 in VOTE_LE)",
+      "1": "The Liberals (FDP/PLR)",
+      "2": "Christian-Democratic Party (CVP/PDC/PPD)",
+      "3": "Social Democratic Party (SP/PS)",
+      "4": "Swiss People's Party (SVP/UDC)",
+      "5": "Conservative-democratic Party (BDP/PBD)",
+      "6": "Evangelical Party (EVP/PEV)",
+      "7": "Christian Social Party (CSP/PCS)",
+      "8": "Labour Party (PdA/PST-POP/PSdL-PST)",
+      "9": "Green Party (GPS/PES/I Verdi)",
+      "10": "Green Liberal Party (GLP/PVL)",
+      "11": "Swiss Democrats (SD/DS)",
+      "12": "Federal Democratic Union (EDU/UDF)",
+      "13": "Lega dei Ticinese (Lega)",
+      "14": "Movement of the citizens of French-speaking Switzerland",
+      "94": "Mixed vote (Candidates of several lists)",
+      "96": "Invalid ballot",
+      "98": "Don't know",
+      "99": "No answer",
+      "990": "NAP, other countries"
+    },
+    "special": {}
+  },
+  {
+    "domain": "CL_PRTY",
+    "meaning": "Country specific party voted for in last general election: Chile",
+    "question": "For which party did you vote at the last presidential elections in November 2013?",
+    "content": {
+      "0": "NAP (code 0, 2, 7 in VOTE_LE)",
+      "1": "Christian Democratic Party - PDC",
+      "2": "Independent Democratic Union - UDI",
+      "3": "Communist Party of Chile - PC",
+      "4": "National Renewal Party - RN",
+      "5": "Socialist Party of Chile - PS",
+      "6": "Radical Social Democratic Party - PRSD",
+      "7": "Democratic Party - PPD",
+      "95": "Other party",
+      "96": "Invalid ballot",
+      "97": "Refused",
+      "99": "No answer",
+      "990": "NAP, other countries"
+    },
+    "special": {}
+  },
+  {
+    "domain": "CZ_PRTY",
+    "meaning": "Country specific party voted for in last general election: Czech Republic",
+    "question": "Which party did you vote for in the last elections to the Chamber of Deputies, which took place on October 25 and 26, 2013?",
+    "content": {
+      "0": "NAP (code 0, 2, 7 in VOTE_LE)",
+      "1": "Czech Social Democratic Party - CSSD",
+      "2": "ANO Yes",
+      "3": "Communist Party of Bohemia and Moravia - KSCM",
+      "4": "TOP 09",
+      "5": "Civic Democratic Party - ODS",
+      "6": "Christian Democratic Party-Czech Peoples Party - KDU-CSL",
+      "7": "Dawn of Direct Democracy Party - Úsvit",
+      "8": "Green Party - SZ",
+      "9": "Czech pirate party",
+      "10": "Party of Free Citizens",
+      "11": "Party of Citizens' Rights - Zemanovci - SPOZ",
+      "12": "Workers Party of Social Justice - DSSS",
+      "95": "Other",
+      "98": "Don't know, don't remember",
+      "99": "No answer, refused",
+      "990": "NAP, other countries"
+    },
+    "special": {}
+  },
+  {
+    "domain": "DE_PRTY",
+    "meaning": "Country specific party voted for in last general election: Germany",
+    "question": "Which party did you vote for with your SECOND VOTE in the last general election in September 2013?",
+    "content": {
+      "0": "NAP (code 0, 2, 7 in VOTE_LE)",
+      "1": "Christian Democratic Union/Christian Social Union - CDU/ CSU",
+      "2": "Social Democratic Party of Germany - SPD",
+      "3": "Party of Democratic Socialism - PDS/Linke Liste",
+      "4": "Alliance 90/The Greens - Buendnis 90/Gruene",
+      "5": "Free Democratic Party - FDP",
+      "6": "Alternative for Germany - AfD",
+      "7": "Pirates - Piratenpartei",
+      "8": "National-Democratic Party of Germany - NPD",
+      "9": "Freie Wähler",
+      "95": "Other Party",
+      "96": "Invalid ballot",
+      "97": "Refused",
+      "99": "No answer",
+      "990": "NAP, other countries"
+    },
+    "special": {}
+  },
+  {
+    "domain": "DK_PRTY",
+    "meaning": "Country specific party voted for in last general election: Denmark",
+    "question": "Which party did you vote for in the previous election on September 15, 2011?",
+    "content": {
+      "0": "NAP (code 0, 2, 7 in VOTE_LE)",
+      "1": "Social Democratic Party - Socialdemokratiet",
+      "2": "Radical Liberal Party - Det Radikale Venstre",
+      "3": "Conservative Party - Det Konservative Folkeparti",
+      "4": "Socialist Peoples Party - Socialistisk Folkeparti",
+      "5": "Christian Peoples Party - Kristendemokraterne",
+      "6": "Danish Peoples Party - Dansk Folkeparti",
+      "7": "Liberal Party - Venstre",
+      "8": "Liberal Alliance - Liberal Alliance",
+      "9": "Leftwing Alliance - Enhedslisten",
+      "96": "Voted blank",
+      "98": "Don't remember/ Don't know",
+      "990": "NAP, other countries"
+    },
+    "special": {}
+  },
+  {
+    "domain": "ES_PRTY",
+    "meaning": "Country specific party voted for in last general election: Spain",
+    "question": "Which party or coalition did you vote for in the last general election?",
+    "content": {
+      "0": "NAP (code 0, 2, 7 in VOTE_LE)",
+      "1": "Popular Party - PP",
+      "2": "Spanish Socialist Workers Party - PSOE",
+      "3": "United Left (Spanish Communist Party, Catalonia Greens) - IU (ICV en Cataluña)",
+      "4": "Union, Progress and Democracy - UPyD",
+      "5": "Convergence and Union - CiU",
+      "6": "Amaiur",
+      "7": "Basque Nationalist Party - PNV",
+      "8": "Republican Catalonian Left - ERC",
+      "9": "Nationalist Galician Bloque - BNG",
+      "10": "Canary Islands Coalition - CC-NC",
+      "11": "Compromis-Equo",
+      "12": "FAC",
+      "13": "Geroa Bai",
+      "94": "Blank vote",
+      "95": "Other Party",
+      "96": "Invalid ballot",
+      "98": "Doesn't remember",
+      "99": "No answer",
+      "990": "NAP, other countries"
+    },
+    "special": {}
+  },
+  {
+    "domain": "FI_PRTY",
+    "meaning": "Country specific party voted for in last general election: Finland",
+    "question": "Which party did you vote for in the 2011 parliamentary election?",
+    "content": {
+      "0": "NAP (code 0, 2, 7 in VOTE_LE)",
+      "1": "Social Democratic Party - SDP",
+      "2": "Centre Party of Finland - KESK",
+      "3": "National Coalition Party - KOK",
+      "4": "Left Alliance - VAS",
+      "5": "Swedish Peoples Party - SFP/RKP",
+      "6": "Green League - VIHR",
+      "7": "Christian Democrats - KD",
+      "8": "True Finns - PS",
+      "95": "Other Party",
+      "97": "Refused",
+      "99": "No answer",
+      "990": "NAP, other countries"
+    },
+    "special": {}
+  },
+  {
+    "domain": "FR_PRTY",
+    "meaning": "Country specific party voted for in last general election: France",
+    "question": "For which candidate did you vote in the first round of the 2012’s French Presidential Election?",
+    "content": {
+      "0": "NAP (code 0, 2, 7 in VOTE_LE)",
+      "1": "Workers' Struggle/ Lutte ouvrière - LO/ Nathalie Arthaud",
+      "2": "New Anticapitalist Party/ Nouveau parti anticapitaliste - NPA/ Philippe Poutou",
+      "3": "Left Front/ Front de gauche - FG/ Jean-Luc Mélenchon",
+      "4": "Socialist Party/ Parti socialiste - PS/ François Hollande",
+      "5": "Green party/ Europe écologie les Verts -EELV/ Eva Joly",
+      "6": "Democratic Movement/ Mouvement démocrate - MoDem/ François Bayrou",
+      "7": "Union for a Popular Movement/ Union pour un mouvement populaire -UMP/ Nicolas Sarkozy",
+      "8": "Arise the Republic/ Debout la République - DLR / Nicolas Dupont-Aignan",
+      "9": "National Front/ Front national - FN/ Marine Le Pen",
+      "10": "Solidarity and Progress/ Solidarité et progrès/ Jacques Cheminade",
+      "96": "Invalid ballot",
+      "99": "No answer",
+      "990": "NAP, other countries"
+    },
+    "special": {}
+  },
+  {
+    "domain": "GB_PRTY",
+    "meaning": "Country specific party voted for in last general election: Great Britain (GB-GBN)",
+    "question": "Which party did you vote for in the last general election?",
+    "content": {
+      "990": "Not available; NAP, other countries"
+    },
+    "special": {}
+  },
+  {
+    "domain": "GE_PRTY",
+    "meaning": "Country specific party voted for in last general election: Georgia",
+    "question": "Which party did you vote for in October 1, 2012 in the Georgian parliamentary elections?",
+    "content": {
+      "0": "NAP (code 0, 2, 7 in VOTE_LE)",
+      "2": "National Democratic Party - EDP",
+      "3": "United National Movement",
+      "4": "Georgian Dream - Bidzina Ivanishvili",
+      "5": "Giorgi Targamandze - CDU",
+      "6": "Shalva Natelashvili - GLP",
+      "7": "Sakhalkho Modzraoba",
+      "8": "New Rights",
+      "10": "Samartliani Saqartvelostvis",
+      "95": "Other party",
+      "99": "No answer",
+      "990": "NAP, other countries"
+    },
+    "special": {}
+  },
+  {
+    "domain": "HR_PRTY",
+    "meaning": "Country specific party voted for in last general election: Croatia",
+    "question": "For which party did you vote in the last parliamentary elections [December 2013]?",
+    "content": {
+      "0": "NAP (code 0, 2, 7 in VOTE_LE)",
+      "1": "Croatian Democratic Union (Conservative) - HDZ",
+      "2": "Social Democratic Party (Social-Democrat) - SDP",
+      "3": "Croatian Party of Rights (Right, Conservative) - HSP",
+      "4": "Croatian Peasant Party (Center) - HSS",
+      "5": "Croatian People's Party (Center) - HNS",
+      "6": "Croatian Social Liberal Party (Liberal) - HSLS",
+      "7": "Istrian Democratic Assembly (Regional) - IDS",
+      "8": "Croatian Party of Pensioners - HSU",
+      "9": "Croatian Democratic Union of Slavonija and Baranja - HDSSB",
+      "95": "Other Party",
+      "97": "Refused",
+      "99": "No answer",
+      "990": "NAP, other countries"
+    },
+    "special": {}
+  },
+  {
+    "domain": "HU_PRTY",
+    "meaning": "Country specific party voted for in last general election: Hungary",
+    "question": "Which party list did you vote on the parliamentary elections?",
+    "content": {
+      "0": "NAP (code 0, 2, 7 in VOTE_LE)",
+      "1": "Hungarian Socialist Party - MSZP-DK (Egütt-PM-MLP)",
+      "2": "Hungarian Civic Alliance-Christian Democratic People's Party - FIDESZ-KDNP",
+      "3": "Movement for a Better Hungary - Jobbik (Magyarorszagert Mozgalom)",
+      "4": "Politics Can Be Different - LMP (Lehet Mas a Politika)",
+      "95": "Other Party",
+      "96": "Invalid ballot",
+      "97": "Refused",
+      "99": "No answer, don't know",
+      "990": "NAP, other countries"
+    },
+    "special": {}
+  },
+  {
+    "domain": "IL_PRTY",
+    "meaning": "Country specific party voted for in last general election: Israel",
+    "question": "Which party did you vote in the last Knesset elections that were held in January 2013?",
+    "content": {
+      "0": "NAP (code 0, 2, 7 in VOTE_LE)",
+      "1": "Haavoda",
+      "2": "Likud",
+      "3": "Yesh atid",
+      "4": "Kadima",
+      "5": "Shase",
+      "6": "Meretz",
+      "7": "Habait hyehudi",
+      "8": "Yahadut-hatora",
+      "9": "Hatnua",
+      "10": "Hayerukim",
+      "11": "ale yarok",
+      "12": "Otzma leisrael",
+      "13": "Haadash",
+      "14": "Balad",
+      "15": "Raam, Taal",
+      "95": "Other party",
+      "96": "Invalid ballot",
+      "97": "Refused",
+      "98": "Don't know",
+      "99": "No answer",
+      "990": "NAP, other countries"
+    },
+    "special": {}
+  },
+  {
+    "domain": "IN_PRTY",
+    "meaning": "Country specific party voted for in last general election: India",
+    "question": "Which party did you vote for in the 2014 Lok Sabha election held in April-May?",
+    "content": {
+      "0": "NAP (code 0, 2, 7 in VOTE_LE)",
+      "1": "Congress +",
+      "2": "BJP +",
+      "3": "Left Front/ Communist Party",
+      "4": "Third Front",
+      "5": "Regional Party",
+      "95": "Other party",
+      "990": "NAP, other countries"
+    },
+    "special": {}
+  }
+]

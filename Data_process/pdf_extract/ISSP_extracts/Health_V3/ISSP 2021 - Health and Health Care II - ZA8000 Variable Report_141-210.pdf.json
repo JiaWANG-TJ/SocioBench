@@ -1,0 +1,824 @@
+[
+  {
+    "domain": "v52",
+    "meaning": "Q25 Long-standing illness/ chronic condition/ disability",
+    "question": "Do you have a long-standing illness, a chronic condition, or a disability?",
+    "content": {
+      "1": "Yes",
+      "2": "No",
+      "-8": "IS: Can't choose",
+      "-9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "v53",
+    "meaning": "Q26a Height",
+    "question": "What is your… (Please enter.) Q26a ...height: ________cm",
+    "content": {
+      "52": "52 cm",
+      "210": "210 cm",
+      "-8": "I don't know",
+      "-9": "No answer; HU: Don't know/ No answer"
+    },
+    "special": {
+      "AU": {
+        "-8": "Not available"
+      },
+      "FR": {
+        "-8": "Not available"
+      },
+      "NL": {
+        "-8": "Not available"
+      },
+      "NO": {
+        "-8": "Not available"
+      },
+      "US": {
+        "-8": "Not available"
+      }
+    }
+  },
+  {
+    "domain": "v54",
+    "meaning": "Q26b Weight",
+    "question": "What is your… (Please enter.) Q26b ...weight: ________kg",
+    "content": {
+      "28": "28 kg",
+      "290": "290 kg",
+      "-8": "I don't know",
+      "-9": "No answer; HU: Don't know/ No answer"
+    },
+    "special": {
+      "AU": {
+        "-8": "Not available"
+      },
+      "FR": {
+        "-8": "Not available"
+      },
+      "CN": {
+        "-8": "Not available"
+      },
+      "NL": {
+        "-8": "Not available"
+      },
+      "NO": {
+        "-8": "Not available"
+      },
+      "US": {
+        "-8": "Not available"
+      }
+    }
+  },
+  {
+    "domain": "v55",
+    "meaning": "Q27a Government rights during severe epidemics: shut down businesses and places of employment",
+    "question": "Do you think the [country] government should or should not have the right to do the following at times of severe epidemics? (Please tick one box on each line.) Q27a Shut down businesses and places of employment.",
+    "content": {
+      "1": "Definitely should have the right",
+      "2": "Probably should have the right",
+      "3": "Probably should not have the right",
+      "4": "Definitely should not have the right",
+      "-8": "Can't choose",
+      "-9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "v56",
+    "meaning": "Q27b Government rights during severe epidemics: demand that people stay at home",
+    "question": "Do you think the [country] government should or should not have the right to do the following at times of severe epidemics? (Please tick one box on each line.) Q27b Demand that people stay at home.",
+    "content": {
+      "1": "Definitely should have the right",
+      "2": "Probably should have the right",
+      "3": "Probably should not have the right",
+      "4": "Definitely should not have the right",
+      "-1": "NL, SR: Not available",
+      "-8": "Can't choose",
+      "-9": "No answer"
+    },
+    "special": {
+      "NL": {
+        "-1": "Not available"
+      },
+      "SR": {
+        "-1": "Not available"
+      }
+    }
+  },
+  {
+    "domain": "v57",
+    "meaning": "Q27c Government rights during severe epidemics: digital surveillance to track infected people",
+    "question": "Do you think the [country] government should or should not have the right to do the following at times of severe epidemics? (Please tick one box on each line.) Q27c Use digital (mobile phone) surveillance to track infected people.",
+    "content": {
+      "1": "Definitely should have the right",
+      "2": "Probably should have the right",
+      "3": "Probably should not have the right",
+      "4": "Definitely should not have the right",
+      "-8": "Can't choose",
+      "-9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "v58",
+    "meaning": "Q27d Government rights during severe epidemics: require people to wear face masks",
+    "question": "Do you think the [country] government should or should not have the right to do the following at times of severe epidemics? (Please tick one box on each line.) Q27d Require people to wear face masks.",
+    "content": {
+      "1": "Definitely should have the right",
+      "2": "Probably should have the right",
+      "3": "Probably should not have the right",
+      "4": "Definitely should not have the right",
+      "-8": "Can't choose",
+      "-9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "v59",
+    "meaning": "Q27e Government rights during severe epidemics: ban public gatherings",
+    "question": "Do you think the [country] government should or should not have the right to do the following at times of severe epidemics? (Please tick one box on each line.) Q27e Ban public gatherings.",
+    "content": {
+      "1": "Definitely should have the right",
+      "2": "Probably should have the right",
+      "3": "Probably should not have the right",
+      "4": "Definitely should not have the right",
+      "-8": "Can't choose",
+      "-9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "v60",
+    "meaning": "Q28 Kind of health insurance",
+    "question": "What kind of health insurance do you have?",
+    "content": {
+      "1": "Have no health insurance",
+      "2": "National/public health insurance (incl. coverage by public welfare) (A)",
+      "3": "Private insurance (B)",
+      "4": "Employer/union based insurance (C)",
+      "5": "National/public + private/complementary (A+B)",
+      "6": "Public/national health + employer/union  (A+C)",
+      "7": "Employer/union + private/complementary (B+C)",
+      "8": "Employer/union + private/complem. + national/public (A+B+C)",
+      "9": "Other (specify)",
+      "-1": "CZ: Not available",
+      "-8": "IS: Don't know",
+      "-9": "No answer"
+    },
+    "special": {
+      "CZ": {
+        "-1": "Not available"
+      }
+    }
+  },
+  {
+    "domain": "v61",
+    "meaning": "Q29a_OPT Government rights during severe epidemics: place infected people in isolation",
+    "question": "Do you think the [country] government should or should not have the right to do the following at times of severe epidemics? (Please tick one box on each line.) Q29a_OPT Place people known to carry the disease in isolation.",
+    "content": {
+      "1": "Definitely should have the right",
+      "2": "Probably should have the right",
+      "3": "Probably should not have the right",
+      "4": "Definitely should not have the right",
+      "-1": "AT, FR, IL, JP , MX, RU, SI, SK, US, ZA: Not available",
+      "-8": "Can't choose",
+      "-9": "No answer"
+    },
+    "special": {
+      "AT": {
+        "-1": "Not available"
+      },
+      "FR": {
+        "-1": "Not available"
+      },
+      "IL": {
+        "-1": "Not available"
+      },
+      "JP": {
+        "-1": "Not available"
+      },
+      "MX": {
+        "-1": "Not available"
+      },
+      "RU": {
+        "-1": "Not available"
+      },
+      "SI": {
+        "-1": "Not available"
+      },
+      "SK": {
+        "-1": "Not available"
+      },
+      "US": {
+        "-1": "Not available"
+      },
+      "ZA": {
+        "-1": "Not available"
+      }
+    }
+  },
+  {
+    "domain": "v62",
+    "meaning": "Q29b_OPT Government rights during severe epidemics: suspend compulsory education",
+    "question": "Do you think the [country] government should or should not have the right to do the following at times of severe epidemics? (Please tick one box on each line.) Q29b_OPT Suspend compulsory education and close schools and kindergartens.",
+    "content": {
+      "1": "Definitely should have the right",
+      "2": "Probably should have the right",
+      "3": "Probably should not have the right",
+      "4": "Definitely should not have the right",
+      "-1": "AT, FR, IL, JP , MX, RU, SI, US, ZA: Not available",
+      "-8": "Can't choose",
+      "-9": "No answer"
+    },
+    "special": {
+      "AT": {
+        "-1": "Not available"
+      },
+      "FR": {
+        "-1": "Not available"
+      },
+      "IL": {
+        "-1": "Not available"
+      },
+      "JP": {
+        "-1": "Not available"
+      },
+      "MX": {
+        "-1": "Not available"
+      },
+      "RU": {
+        "-1": "Not available"
+      },
+      "SI": {
+        "-1": "Not available"
+      },
+      "US": {
+        "-1": "Not available"
+      },
+      "ZA": {
+        "-1": "Not available"
+      }
+    }
+  },
+  {
+    "domain": "v63",
+    "meaning": "Q29c_OPT Government rights during severe epidemics: close borders",
+    "question": "Do you think the [country] government should or should not have the right to do the following at times of severe epidemics? (Please tick one box on each line.) Q29c_OPT Close borders to other countries.",
+    "content": {
+      "1": "Definitely should have the right",
+      "2": "Probably should have the right",
+      "3": "Probably should not have the right",
+      "4": "Definitely should not have the right",
+      "-1": "AT, FR, IL, JP , MX, RU, SI, US: Not available",
+      "-8": "Can't choose",
+      "-9": "No answer"
+    },
+    "special": {
+      "AT": {
+        "-1": "Not available"
+      },
+      "FR": {
+        "-1": "Not available"
+      },
+      "IL": {
+        "-1": "Not available"
+      },
+      "JP": {
+        "-1": "Not available"
+      },
+      "MX": {
+        "-1": "Not available"
+      },
+      "RU": {
+        "-1": "Not available"
+      },
+      "SI": {
+        "-1": "Not available"
+      },
+      "US": {
+        "-1": "Not available"
+      }
+    }
+  },
+  {
+    "domain": "v64",
+    "meaning": "Q30a_OPT [Country's] handling of Covid-19 pandemic increased/ decreased confidence in: the health care system",
+    "question": "Did the way the Covid-19 pandemic was handled in [country] increase or decrease your confidence in… (Please tick one box on each line.) Q30a_OPT ...the health care system?",
+    "content": {
+      "1": "Increased it a lot",
+      "2": "Increased it a little",
+      "3": "Neither increased it nor decreased it",
+      "4": "Decreased it a little",
+      "5": "Decreased it a lot",
+      "-1": "AT, CZ, FR, IL, MX, SI, US: Not available",
+      "-8": "Can't choose",
+      "-9": "No answer"
+    },
+    "special": {
+      "AT": {
+        "-1": "Not available"
+      },
+      "CZ": {
+        "-1": "Not available"
+      },
+      "FR": {
+        "-1": "Not available"
+      },
+      "IL": {
+        "-1": "Not available"
+      },
+      "MX": {
+        "-1": "Not available"
+      },
+      "SI": {
+        "-1": "Not available"
+      },
+      "US": {
+        "-1": "Not available"
+      }
+    }
+  },
+  {
+    "domain": "v65",
+    "meaning": "Q30b_OPT [Country's] handling of Covid-19 pandemic increased/ decreased confidence in: the government",
+    "question": "Did the way the Covid-19 pandemic was handled in [country] increase or decrease your confidence in… (Please tick one box on each line.) Q30b_OPT ...the government?",
+    "content": {
+      "1": "Increased it a lot",
+      "2": "Increased it a little",
+      "3": "Neither increased it nor decreased it",
+      "4": "Decreased it a little",
+      "5": "Decreased it a lot",
+      "-1": "AT, CZ, FR, IL, MX, SI, US: Not available",
+      "-8": "Can't choose",
+      "-9": "No answer"
+    },
+    "special": {
+      "AT": {
+        "-1": "Not available"
+      },
+      "CZ": {
+        "-1": "Not available"
+      },
+      "FR": {
+        "-1": "Not available"
+      },
+      "IL": {
+        "-1": "Not available"
+      },
+      "MX": {
+        "-1": "Not available"
+      },
+      "SI": {
+        "-1": "Not available"
+      },
+      "US": {
+        "-1": "Not available"
+      }
+    }
+  },
+  {
+    "domain": "v66",
+    "meaning": "Q31_OPT Current work activity compared to work activity before the Covid-19 pandemic",
+    "question": "Considering your work activity before the Covid-19 pandemic and at present, which of the following statements best describes your employment situation… (Please tick one box only.)",
+    "content": {
+      "1": "I did not have a job before the pandemic and I do not have a job now",
+      "2": "I have the same job as before the pandemic",
+      "3": "I lost my job due to the pandemic and now have a new job",
+      "4": "I lost my job due to the pandemic and could not find a new job",
+      "5": "I did not have a job before the pandemic and I do have a job now",
+      "6": "I changed or leȇ my job for reasons unrelated to the pandemic",
+      "-1": "AT, CZ, FR, HR, IL, MX, RU, SI, SK, US: Not available",
+      "-8": "Can't choose",
+      "-9": "No answer"
+    },
+    "special": {
+      "AT": {
+        "-1": "Not available"
+      },
+      "CZ": {
+        "-1": "Not available"
+      },
+      "FR": {
+        "-1": "Not available"
+      },
+      "HR": {
+        "-1": "Not available"
+      },
+      "IL": {
+        "-1": "Not available"
+      },
+      "MX": {
+        "-1": "Not available"
+      },
+      "RU": {
+        "-1": "Not available"
+      },
+      "SI": {
+        "-1": "Not available"
+      },
+      "SK": {
+        "-1": "Not available"
+      },
+      "US": {
+        "-1": "Not available"
+      }
+    }
+  },
+  {
+    "domain": "v67",
+    "meaning": "Q32_OPT Household income before the Covid-19 pandemic compared with now",
+    "question": "Thinking about the income of your household before the Covid-19 pandemic compared with now, would you say it has increased, decreased or stayed about the same? (Please tick one box only.)",
+    "content": {
+      "1": "Increased a lot",
+      "2": "Increased a little",
+      "3": "Stayed about the same",
+      "4": "Decreased a little",
+      "5": "Decreased a lot",
+      "-1": "AT, CZ, FR, HR, IL, MX, RU, SI, US: Not available",
+      "-8": "Can't choose",
+      "-9": "No answer"
+    },
+    "special": {
+      "AT": {
+        "-1": "Not available"
+      },
+      "CZ": {
+        "-1": "Not available"
+      },
+      "FR": {
+        "-1": "Not available"
+      },
+      "HR": {
+        "-1": "Not available"
+      },
+      "IL": {
+        "-1": "Not available"
+      },
+      "MX": {
+        "-1": "Not available"
+      },
+      "RU": {
+        "-1": "Not available"
+      },
+      "SI": {
+        "-1": "Not available"
+      },
+      "US": {
+        "-1": "Not available"
+      }
+    }
+  },
+  {
+    "domain": "v68",
+    "meaning": "Q33_OPT Frequency of meeting extended family/ friends in person before Covid-19 pandemic and now",
+    "question": "Thinking about how oȇen you met with your extended family and friends in person before the Covid-19 pandemic, would you say you now meet them in person more oȇen, less oȇen, or about the same? (Please tick one box only.)",
+    "content": {
+      "1": "Much less oȇen",
+      "2": "A little less oȇen",
+      "3": "About the same",
+      "4": "A little more oȇen",
+      "5": "Much more oȇen",
+      "-1": "AT, CZ, FR, IL, MX, RU, SI, US, ZA: NAV; TW: NAV, question split (see TW_v68a+b)",
+      "-8": "Can't choose",
+      "-9": "No answer"
+    },
+    "special": {
+      "AT": {
+        "-1": "Not available"
+      },
+      "CZ": {
+        "-1": "Not available"
+      },
+      "FR": {
+        "-1": "Not available"
+      },
+      "IL": {
+        "-1": "Not available"
+      },
+      "MX": {
+        "-1": "Not available"
+      },
+      "RU": {
+        "-1": "Not available"
+      },
+      "SI": {
+        "-1": "Not available"
+      },
+      "US": {
+        "-1": "Not available"
+      },
+      "ZA": {
+        "-1": "Not available"
+      },
+      "TW": {
+        "-1": "Not available"
+      }
+    }
+  },
+  {
+    "domain": "TW_v68a",
+    "meaning": "Q33_OPT Taiwan: Frequency of meeting family members (not living in same hh) in person before Covid-19 pandemic and now",
+    "question": "Thinking about how oȇen you met with your extended FAMILY in person before the Covid-19 pandemic, would you say you now meet them in person more oȇen, less oȇen, or about the same? (Please tick one box only.)",
+    "content": {
+      "1": "Much less oȇen",
+      "2": "A little less oȇen",
+      "3": "About the same",
+      "4": "A little more oȇen",
+      "5": "Much more oȇen",
+      "-8": "Can't choose",
+      "-9": "No answer",
+      "-1": "Not available: Other countries (see v68)"
+    },
+    "special": {
+      "TW": {
+        "-1": "Not available"
+      }
+    }
+  },
+  {
+    "domain": "TW_v68b",
+    "meaning": "Q33_OPT Taiwan: Frequency of meeting friends, colleagues or classmates in person before Covid-19 pandemic and now",
+    "question": "Thinking about how oȇen you met with your FRIENDS, COLLEAGUES or CLASSMATES in person before the Covid-19 pandemic, would you say you now meet them in person more oȇen, less oȇen, or about the same? (Please tick one box only.)",
+    "content": {
+      "1": "Much less oȇen",
+      "2": "A little less oȇen",
+      "3": "About the same",
+      "4": "A little more oȇen",
+      "5": "Much more oȇen",
+      "-8": "Can't choose",
+      "-9": "No answer",
+      "-1": "Not available: Other countries (see v68)"
+    },
+    "special": {
+      "TW": {
+        "-1": "Not available"
+      }
+    }
+  },
+  {
+    "domain": "v69",
+    "meaning": "Q34a_OPT Most people become very overweight because they are lazy",
+    "question": "There are di ﬀerent opinions about people that have certain health conditions. How much do you agree or disagree with the following statements? (Please tick one box on each line.) Q34a_OPT Most people become very overweight because they are lazy.",
+    "content": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree",
+      "-1": "AT, FR, IL, MX, RU, SI, SK, US: Not available",
+      "-8": "Can't choose",
+      "-9": "No answer"
+    },
+    "special": {
+      "AT": {
+        "-1": "Not available"
+      },
+      "FR": {
+        "-1": "Not available"
+      },
+      "IL": {
+        "-1": "Not available"
+      },
+      "MX": {
+        "-1": "Not available"
+      },
+      "RU": {
+        "-1": "Not available"
+      },
+      "SI": {
+        "-1": "Not available"
+      },
+      "SK": {
+        "-1": "Not available"
+      },
+      "US": {
+        "-1": "Not available"
+      }
+    }
+  },
+  {
+    "domain": "v70",
+    "meaning": "Q34b_OPT Most people contracted Covid-19 because they were careless",
+    "question": "There are di ﬀerent opinions about people that have certain health conditions. How much do you agree or disagree with the following statements? (Please tick one box on each line.) Q34b_OPT Most people who tested positive for Covid-19 contracted the virus because they were careless.",
+    "content": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree",
+      "-1": "AT, FR, IL, MX, RU, SI, SK, US: Not available",
+      "-8": "Can't choose",
+      "-9": "No answer"
+    },
+    "special": {
+      "AT": {
+        "-1": "Not available"
+      },
+      "FR": {
+        "-1": "Not available"
+      },
+      "IL": {
+        "-1": "Not available"
+      },
+      "MX": {
+        "-1": "Not available"
+      },
+      "RU": {
+        "-1": "Not available"
+      },
+      "SI": {
+        "-1": "Not available"
+      },
+      "SK": {
+        "-1": "Not available"
+      },
+      "US": {
+        "-1": "Not available"
+      }
+    }
+  },
+  {
+    "domain": "SEX",
+    "meaning": "Sex of respondent",
+    "question": "Are you...?",
+    "content": {
+      "1": "Male",
+      "2": "Female",
+      "-9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "BIRTH",
+    "meaning": "Year of birth",
+    "question": "When were you born? _ _ _ _ (Please, write in the year of your birth (use four digits for the year).",
+    "content": {
+      "1910": "1910",
+      "1933": "1933; US: 1933 or earlier",
+      "2007": "2007",
+      "-9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "AGE",
+    "meaning": "Age of respondent",
+    "question": "What was your age at your last birthday, in full years? _ _ _",
+    "content": {
+      "16": "16 years old",
+      "89": "89 years old; US: 89 years or more",
+      "111": "111 years old",
+      "-9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "EDUCYRS",
+    "meaning": "Years of full-time schooling",
+    "question": "How many years (full-time equivalent) have you been in formal education? Include all primary and secondary schooling, university and other post-secondary education, and full-time vocational training, but do not include repeated years. If you are currently in education, count the number of years you have completed so far.",
+    "content": {
+      "0": "No formal schooling, no years at school",
+      "1": "One year",
+      "20": "20 years; US: 20 or more years",
+      "79": "79 years",
+      "-8": "Don't know",
+      "-9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "AT_ISCD",
+    "meaning": "Country specific highest completed degree of education: Austria",
+    "question": "What is the highest level of education that you have completed? (Please tick one box only.)",
+    "content": {
+      "100": "Incomplete compulsory school - Keinen Pflichtschulabschluss",
+      "244": "Compulsary school finished - Pflichtschule beendet",
+      "344": "General higher school + Vocational matriculation exam - Allg.bild. höhere Schule (AHS) + Berufsreifeprüfung",
+      "354": "Apprenticeship + Vocational middle school - Lehre + Berufsbildende mittlere Schulen",
+      "453": "Apprenticeship with master exam - Lehre mit Meisterprüfung",
+      "550": "Voc higher school + Other post-sec degree - Berufsbild. höhere Sch. (BHS, HAK, HTL) + And. Abschl. nach Matura (Kolleg)",
+      "640": "Bachelor at uni of applied sciences or at university - Bachelor an Fachhochschule oder an Uni",
+      "740": "Diploma/Master at uni of appl. sciences/uni+Postgrad. uni course - Diplom/Master an FH/Uni+Postgrad. Unilehrgang (MBA)",
+      "840": "Ph.D. - Doktorat",
+      "-2": "NAP , other countries",
+      "-9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "AU_ISCD",
+    "meaning": "Country specific highest completed degree of education: Australia",
+    "question": "What is the highest year of schooling you have completed? What is the highest educational qualification you have completed outside of school?",
+    "content": {
+      "0": "Did not go to school",
+      "20": "Pre-primary, Preschool",
+      "100": "Primary school",
+      "244": "High School (Lower Secondary) (PLUS Y11 but not Y12)",
+      "254": "Certificate I and II",
+      "344": "Upper Secondary or College",
+      "353": "Certificate III",
+      "453": "Certificate IV",
+      "550": "Diploma OR Advanced Diploma",
+      "600": "Bachelor Degree or equivalent",
+      "700": "Masters programme (by coursework OR Research",
+      "800": "PhD programme (by research)",
+      "-2": "NAP , other countries",
+      "-9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "CH_ISCD",
+    "meaning": "Country specific highest completed degree of education: Switzerland",
+    "question": "What is the highest level of education that you have attained?",
+    "content": {
+      "30": "Uncompleted primary school",
+      "100": "Primary school (4-6 yrs of schooling)",
+      "244": "Secondary education (first stage, 8-9 yrs of schooling)",
+      "254": "Add. year of secondary education, prep. for voc training",
+      "343": "General training school (2-3 yrs)",
+      "344": "Baccalaureate preparing for university",
+      "353": "Elementary vocational training (enterprise+school, 1-2 yrs)",
+      "354": "Apprenticeship 3-4 yrs, Voc Bac, 2nd voc train., diploma f. teaching prim. school",
+      "454": "Vocational Bac for adults",
+      "444": "Bac for adults or apprenticeship aȇer Bac",
+      "540": "University diploma (intermed. level)",
+      "550": "Advanced voc qualification (specializ. exam), Higher voc training (diploma high school special domains)",
+      "640": "Uni diploma and post-graduate (also technical) (Bachelor and short uni degree)",
+      "650": "Higher voc training (diploma spec. high schools recognition of tert. level), Uni of appl. science + pedag. uni (Bachelor",
+      "740": "Uni diploma + post-graduate (also technical) (degree requiring > 4 yrs), Master",
+      "750": "Uni of applied science and pedag. uni (Master)",
+      "840": "Doctoral degree",
+      "900": "Not elsewhere classified",
+      "-2": "NAP , other countries",
+      "-9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "CN_ISCD",
+    "meaning": "Country specific highest completed degree of education: China",
+    "question": "What is your highest educational level currently?",
+    "content": {
+      "10": "No formal education",
+      "30": "Old style private school",
+      "100": "Primary school",
+      "243": "Junior middle school",
+      "344": "High school",
+      "354": "Vocational high school",
+      "443": "Secondary technical school",
+      "453": "Technical school",
+      "540": "Specialized college (regular higher education)",
+      "550": "Specialized college (adult higher education)",
+      "640": "University (regular higher education)",
+      "650": "University (adult higher education)",
+      "700": "Graduate and higher",
+      "-2": "NAP , other countries",
+      "-9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "CZ_ISCD",
+    "meaning": "Country specific highest completed degree of education: Czech Republic",
+    "question": "What is the highest level of education that you have attained?",
+    "content": {
+      "244": "Primary completed - Zakladni",
+      "344": "Academic secondary with GCSE - Stredni vseobecne s maturitou (gymnazium)",
+      "353": "Lower vocational+General secondary - Vyuceni bez maturity+Stredni bez maturity",
+      "354": "Vocational with GCSE+Technical secondary with GCSE - Vyuceni s maturitou+Stredni odborne s maturitou",
+      "640": "Tertiary, bachelor degree - Vysokoskolske, bakalarske",
+      "650": "Post secondary - Vyssi odborne",
+      "740": "Tertiary, master degree - Vysokoskolske – magisterske, inzenyrskre nebo ekvivalentni",
+      "840": "Post-graduate education (Ph.D., CSc., Doc. etc.) - Postgradualni vzdelani(Ph.D., CSc., Doc. atp.)",
+      "-2": "NAP , other countries",
+      "-9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "DE_ISCD",
+    "meaning": "Country specific highest completed degree of education: Germany",
+    "question": "Please enter the highest general school leaving certificate which you have. Please indicate which vocational qualification or university degree you have.",
+    "content": {
+      "0": "No degree (nr of school yrs < 6) - Kein Abschluss (Anzahl Schuljahre < 6)",
+      "100": "No degree (nr of school yrs >= 6) - Kein Abschluss (Anzahl Schuljahre >= 6)",
+      "244": "Lowest or intermediary sec qual; still pupil; other - Hauptschulabschluss; mittlere Reife; noch Schüler; anderer Abschluss",
+      "254": "Internship or civil servants: lower grade - Berufliches Praktikum oder Beamter einfacher Dienst: niedriger Schulabschluss",
+      "344": "Certificate to study at polytechnical college or uni - Fachhochschulreife, Abitur",
+      "353": "Voc college health+social services:1 yr or civil servant middle grade - Abschl. Gesundheits-/Sozialberuf:1 J. od. Beamter mittl Dienst",
+      "354": "Completed apprenticeship (general school leaving certificate low) - Abgeschlossene Lehre (mit niedrigem Schulabschluss)",
+      "453": "Voc college health+social services: 2-3 yrs - Abschluss in Gesundheits-/Sozialberuf: 2-3 Jahre",
+      "454": "Internship or civil servant lower or middle grade - Berufl. Praktikum/ abgeschlossene Lehre/ Beamter einfacher od. mittlerer Dienst",
+      "640": "University degree: bachelor - Universitätsabschluss: Bachelor",
+      "650": "Polytechnic degree: bachelor; civil servant upper grade; master craȇsmen - Hochsch.abschluss: Bachelor, Diplom, Beamter gehob. Dienst; Meister",
+      "740": "University degree: master or equivalent; civil servants higher grade - Uniabschluss: Master, Diplom, Magister, Staatsexamen; Beamter höherer Dienst",
+      "750": "Polytechnic degree: master or equivalent - Hochschulabschluss: Master, Staatsexamen",
+      "840": "Doctorate - Promotion",
+      "-2": "NAP , other countries",
+      "-9": "No answer"
+    },
+    "special": {}
+  }
+]

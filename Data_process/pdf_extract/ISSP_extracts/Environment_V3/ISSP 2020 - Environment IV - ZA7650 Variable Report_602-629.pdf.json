@@ -1,0 +1,573 @@
+[
+  {
+    "domain": "MARITAL",
+    "meaning": "Legal partnership status",
+    "question": "What is your current legal marital status?",
+    "content": {
+      "-7": "Refused",
+      "1": "Married",
+      "2": "Civil partnership",
+      "3": "Separated from spouse/ civil partner (still legally married/ still legally in a civil partnership)",
+      "4": "Divorced from spouse/ legally separated from civil partner",
+      "5": "Widowed/ civil partner died",
+      "6": "Never married/ never in a civil partnership"
+    },
+    "special": {
+      "AT": {
+        "4": "Divorced/ Separated"
+      },
+      "AU": {
+        "2": "Civil Partnership not used"
+      },
+      "CH": {
+        "2": "Civil partnership includes same-sex partnerships registered on federal level"
+      },
+      "CN": {
+        "6": "Cohabit"
+      },
+      "DE": {
+        "2": "Civil partnerships include same-sex, formally legalised partnerships (since 2000)"
+      },
+      "DK": {
+        "2": "Includes 'Registreret partnerskab' (same-sex)"
+      },
+      "ES": {
+        "2": "Includes 'Pareja de hecho'"
+      },
+      "FI": {
+        "2": "Includes registered civil partnerships for same-sex couples"
+      },
+      "FR": {
+        "2": "Includes PACS contracts"
+      },
+      "HR": {
+        "2": "Includes extramarital unions with cohabitation"
+      },
+      "IN": {
+        "6": "Cohabiting recoded to 'Never married'"
+      },
+      "IS": {
+        "2": "In registered cohabitation"
+      },
+      "IT": {
+        "2": "Includes same-sex unions"
+      },
+      "JP": {
+        "2": "Civil partnership not used"
+      },
+      "LT": {
+        "2": "No legal civil partnership"
+      },
+      "NO": {
+        "2": "Includes registered partner (same-sex)"
+      },
+      "NZ": {
+        "2": "Includes civil unions (same-sex)"
+      },
+      "SE": {
+        "2": "Includes 'Registered partnership'"
+      },
+      "SI": {
+        "2": "Includes 'extramarital community'"
+      },
+      "SK": {
+        "2": "Civil partnership not asked"
+      },
+      "TW": {
+        "6": "Cohabitation recoded to 'No answer'"
+      },
+      "US": {
+        "2": "No observations for 'Civil partnership'"
+      },
+      "ZA": {
+        "6": "Includes 'Never married but engaged' and 'Never married and not engaged'"
+      }
+    }
+  },
+  {
+    "domain": "F_BORN",
+    "meaning": "Father's country of birth",
+    "question": "In which country was your father born?",
+    "content": {
+      "-9": "No answer",
+      "-8": "Don't know",
+      "-7": "Refused",
+      "-4": "CH: Not applicable, father unknown",
+      "4": "Afghanistan",
+      "5": "South America (M49)",
+      "8": "Albania",
+      "9": "Oceania (M49)",
+      "10": "Antarctica",
+      "11": "Western Africa (M49)",
+      "12": "Algeria",
+      "13": "Central America (M49)",
+      "14": "Eastern Africa (M49)",
+      "15": "Northern Africa (M49)",
+      "16": "American Samoa",
+      "17": "Middle Africa (M49)",
+      "18": "Southern Africa (M49)",
+      "20": "Andorra",
+      "21": "Northern America (M49)",
+      "24": "Angola",
+      "28": "Antigua and Barbuda",
+      "29": "Caribbean (M49)",
+      "30": "Eastern Asia (M49)",
+      "31": "Azerbaijan",
+      "32": "Argentina",
+      "34": "Southern Asia (M49)",
+      "35": "South-Eastern Asia (M49)",
+      "36": "Australia",
+      "39": "Southern Europe (M49)",
+      "40": "Austria",
+      "44": "Bahamas",
+      "48": "Bahrain",
+      "50": "Bangladesh",
+      "51": "Armenia",
+      "52": "Barbados",
+      "53": "Australia and New Zealand (M49)",
+      "54": "Melanesia (M49)",
+      "56": "Belgium",
+      "57": "Micronesia (M49)",
+      "60": "Bermuda",
+      "61": "Polynesia (M49)",
+      "64": "Bhutan",
+      "68": "Bolivia, Plurinational State of",
+      "70": "Bosnia and Herzegovina",
+      "72": "Botswana",
+      "74": "Bouvet Island",
+      "76": "Brazil",
+      "84": "Belize",
+      "86": "British Indian Ocean Territory",
+      "90": "Solomon Islands",
+      "92": "Virgin Islands, British",
+      "96": "Brunei Darussalam",
+      "100": "Bulgaria",
+      "104": "Myanmar",
+      "108": "Burundi",
+      "112": "Belarus",
+      "116": "Cambodia",
+      "120": "Cameroon",
+      "124": "Canada",
+      "132": "Cape Verde",
+      "136": "Cayman Islands",
+      "140": "Central African Republic",
+      "143": "Central Asia (M49)",
+      "144": "Sri Lanka",
+      "145": "Western Asia (M49)",
+      "148": "Chad",
+      "151": "Eastern Europe (M49)",
+      "152": "Chile",
+      "154": "Northern Europe (M49)",
+      "155": "Western Europe (M49)",
+      "156": "China",
+      "158": "Taiwan",
+      "162": "Christmas Island",
+      "166": "Cocos (Keeling) Islands",
+      "170": "Colombia",
+      "174": "Comoros",
+      "175": "Mayotte",
+      "178": "Congo",
+      "180": "Congo, the Democratic Republic of the",
+      "184": "Cook Islands",
+      "188": "Costa Rica",
+      "191": "Croatia",
+      "192": "Cuba",
+      "196": "Cyprus",
+      "200": "Czechoslovakia (old ISO code)",
+      "202": "Sub-Saharan Africa (M49)",
+      "203": "Czech Republic",
+      "204": "Benin",
+      "208": "Denmark",
+      "212": "Dominica",
+      "214": "Dominican Republic",
+      "218": "Ecuador",
+      "222": "El Salvador",
+      "226": "Equatorial Guinea",
+      "231": "Ethiopia",
+      "232": "Eritrea",
+      "233": "Estonia",
+      "234": "Faroe Islands",
+      "238": "Falkland Islands (Malvinas)",
+      "239": "South Georgia and the South Sandwich Islands",
+      "242": "Fiji",
+      "246": "Finland",
+      "248": "Aland Islands",
+      "250": "France",
+      "254": "French Guiana",
+      "258": "French Polynesia",
+      "260": "French Southern Territories",
+      "262": "Djibouti",
+      "266": "Gabon",
+      "268": "Georgia",
+      "270": "Gambia",
+      "275": "Palestine, State of",
+      "276": "Germany",
+      "288": "Ghana",
+      "292": "Gibraltar",
+      "296": "Kiribati",
+      "300": "Greece",
+      "304": "Greenland",
+      "308": "Grenada",
+      "312": "Guadeloupe",
+      "316": "Guam",
+      "320": "Guatemala",
+      "324": "Guinea",
+      "328": "Guyana",
+      "332": "Haiti",
+      "334": "Heard Island and McDonald Islands",
+      "336": "Holy See (Vatican City State)",
+      "340": "Honduras",
+      "344": "Hong Kong",
+      "348": "Hungary",
+      "352": "Iceland",
+      "356": "India",
+      "360": "Indonesia",
+      "364": "Iran, Islamic Republic of",
+      "368": "Iraq",
+      "372": "Ireland",
+      "376": "Israel",
+      "380": "Italy",
+      "384": "Cote d'Ivoire",
+      "388": "Jamaica",
+      "392": "Japan",
+      "398": "Kazakhstan",
+      "400": "Jordan",
+      "404": "Kenya",
+      "408": "Korea, Democratic People's Republic of",
+      "410": "Korea, Republic of",
+      "414": "Kuwait",
+      "417": "Kyrgyzstan",
+      "418": "Lao People's Democratic Republic",
+      "422": "Lebanon",
+      "426": "Lesotho",
+      "428": "Latvia",
+      "430": "Liberia",
+      "434": "Libya",
+      "438": "Liechtenstein",
+      "440": "Lithuania",
+      "442": "Luxembourg",
+      "446": "Macao",
+      "450": "Madagascar",
+      "454": "Malawi",
+      "458": "Malaysia",
+      "462": "Maldives",
+      "466": "Mali",
+      "470": "Malta",
+      "474": "Martinique",
+      "478": "Mauritania",
+      "480": "Mauritius",
+      "484": "Mexico",
+      "492": "Monaco",
+      "496": "Mongolia",
+      "498": "Moldova, Republic of",
+      "499": "Montenegro",
+      "500": "Montserrat",
+      "504": "Morocco",
+      "508": "Mozambique",
+      "512": "Oman",
+      "516": "Namibia",
+      "520": "Nauru",
+      "524": "Nepal",
+      "528": "Netherlands",
+      "531": "Curaçao",
+      "533": "Aruba",
+      "534": "Sint Maarten (Dutch part)",
+      "535": "Bonaire, Sint Eustatius and Saba",
+      "540": "New Caledonia",
+      "548": "Vanuatu",
+      "554": "New Zealand",
+      "558": "Nicaragua",
+      "562": "Niger",
+      "566": "Nigeria",
+      "570": "Niue",
+      "574": "Norfolk Island",
+      "578": "Norway",
+      "580": "Northern Mariana Islands",
+      "581": "United States Minor Outlying Islands",
+      "583": "Micronesia, Federated States of",
+      "584": "Marshall Islands",
+      "585": "Palau",
+      "586": "Pakistan",
+      "591": "Panama",
+      "598": "Papua New Guinea",
+      "600": "Paraguay",
+      "604": "Peru",
+      "608": "Philippines",
+      "612": "Pitcairn",
+      "616": "Poland",
+      "620": "Portugal",
+      "624": "Guinea-Bissau",
+      "626": "Timor-Leste",
+      "630": "Puerto Rico",
+      "634": "Qatar",
+      "638": "Réunion",
+      "642": "Romania",
+      "643": "Russian Federation",
+      "646": "Rwanda",
+      "652": "Saint Barthélemy",
+      "654": "Saint Helena, Ascension and Tristan da Cunha",
+      "659": "Saint Kitts and Nevis",
+      "660": "Anguilla",
+      "662": "Saint Lucia",
+      "663": "Saint Martin (French part)",
+      "666": "Saint Pierre and Miquelon",
+      "670": "Saint Vincent and the Grenadines",
+      "674": "San Marino",
+      "678": "Sao Tome and Principe",
+      "682": "Saudi Arabia",
+      "686": "Senegal",
+      "688": "Serbia",
+      "690": "Seychelles",
+      "694": "Sierra Leone",
+      "702": "Singapore",
+      "703": "Slovakia",
+      "704": "Viet Nam",
+      "705": "Slovenia",
+      "706": "Somalia",
+      "710": "South Africa",
+      "716": "Zimbabwe",
+      "724": "Spain",
+      "728": "South Sudan",
+      "729": "Sudan",
+      "732": "Western Sahara",
+      "740": "Suriname",
+      "744": "Svalbard and Jan Mayen",
+      "748": "Swaziland",
+      "752": "Sweden",
+      "756": "Switzerland",
+      "760": "Syrian Arab Republic",
+      "762": "Tajikistan",
+      "764": "Thailand",
+      "768": "Togo",
+      "772": "Tokelau",
+      "776": "Tonga",
+      "780": "Trinidad and Tobago",
+      "784": "United Arab Emirates",
+      "788": "Tunisia",
+      "792": "Turkey",
+      "795": "Turkmenistan",
+      "796": "Turks and Caicos Islands",
+      "798": "Tuvalu",
+      "800": "Uganda",
+      "804": "Ukraine",
+      "807": "Macedonia, the former Yugoslav Republic of",
+      "810": "USSR (old ISO code)",
+      "818": "Egypt",
+      "826": "United Kingdom",
+      "831": "Guernsey",
+      "832": "Jersey",
+      "833": "Isle of Man",
+      "834": "Tanzania, United Republic of",
+      "840": "United States",
+      "850": "Virgin Islands, U.S.",
+      "854": "Burkina Faso",
+      "858": "Uruguay",
+      "860": "Uzbekistan",
+      "862": "Venezuela, Bolivarian Republic of",
+      "876": "Wallis and Futuna",
+      "882": "Samoa",
+      "887": "Yemen",
+      "891": "Yugoslavia (old ISO code)",
+      "894": "Zambia",
+      "915": "Kosovo",
+      "950": "Not [COUNTRY] citizenship, other countries or specific regions/ former nations (no official ISO code)"
+    },
+    "special": {
+      "AT": {
+        "4": "Answers assigned manually to country code"
+      },
+      "CN": {
+        "4": "Imputed based on China's data"
+      },
+      "DE": {
+        "4": "Recoded to M49 regions for privacy"
+      },
+      "DK": {
+        "4": "Recoded to M49 for privacy"
+      },
+      "ES": {
+        "4": "Recoded to M49 for privacy"
+      },
+      "FI": {
+        "4": "Recoded to M49 for non-Finland cases"
+      },
+      "HR": {
+        "4": "Encoded to ISO 3166"
+      },
+      "IS": {
+        "4": "Recoded to M49 for some cases"
+      },
+      "IT": {
+        "4": "Open-ended question"
+      },
+      "LT": {
+        "4": "Open-ended question"
+      },
+      "NO": {
+        "4": "Recoded to M49 for privacy"
+      },
+      "NZ": {
+        "4": "Recoded to M49 for privacy"
+      },
+      "RU": {
+        "4": "Open-ended question"
+      },
+      "SE": {
+        "4": "Recoded to M49 for non-Sweden cases"
+      },
+      "SK": {
+        "4": "Recoded to ISO 3166 for category 3"
+      },
+      "TH": {
+        "4": "Encoded to ISO 3166"
+      },
+      "US": {
+        "4": "Only yes/no on parents' birth in US"
+      }
+    }
+  },
+  {
+    "domain": "URBRURAL",
+    "meaning": "Place of living: urban - rural",
+    "question": "Would you describe the place where you live as…",
+    "content": {
+      "-9": "No answer",
+      "-1": "Not available (CN)",
+      "1": "A big city",
+      "2": "The suburbs or outskirts of a big city",
+      "3": "A town or a small city",
+      "4": "A country village",
+      "5": "A farm or home in the country"
+    },
+    "special": {
+      "AT": {
+        "1": "Over 100,000 inhabitants",
+        "2": "Suburbs of big cities",
+        "3": "Cities 40,000–100,000 or smaller",
+        "4": "Village",
+        "5": "Farm/country house"
+      },
+      "US": {
+        "1": "Large/medium central cities",
+        "2": "Suburbs of large/medium cities",
+        "3": "Small city outside SMSA",
+        "4": "Town/village",
+        "5": "Open country"
+      }
+    }
+  },
+  {
+    "domain": "AT_REG",
+    "meaning": "Austria: Country specific region",
+    "question": "Provinces (NUTS 2) - answered by interviewer",
+    "content": {
+      "-2": "NAP, other countries",
+      "1": "Vienna",
+      "2": "Lower Austria",
+      "3": "Burgenland",
+      "4": "Upper Austria",
+      "5": "Styria",
+      "6": "Carinthia",
+      "7": "Salzburg",
+      "8": "Tyrol",
+      "9": "Vorarlberg"
+    },
+    "special": {}
+  },
+  {
+    "domain": "AU_REG",
+    "meaning": "Australia: Country specific region",
+    "question": "Variable derived from addressing information in sample list",
+    "content": {
+      "-2": "NAP, other countries",
+      "1": "New South Wales",
+      "2": "Victoria",
+      "3": "Queensland",
+      "4": "South Australia",
+      "5": "Western Australia",
+      "6": "Tasmania",
+      "7": "Australian Capital Territory",
+      "8": "Northern Territory"
+    },
+    "special": {}
+  },
+  {
+    "domain": "CH_REG",
+    "meaning": "Switzerland: Country specific region",
+    "question": "Please enter the postal code of your place of residence",
+    "content": {
+      "-2": "NAP, other countries",
+      "1": "Region Lemanique (VD, VS, GE)",
+      "2": "Espace Mittelland (BE, FR, SO, NE, JU)",
+      "3": "Nordschweiz (BS, BL, AG)",
+      "4": "Zuerich (ZH)",
+      "5": "Ostschweiz (GL, SH, AR, AI, SG, GR, TG)",
+      "6": "Zentralschweiz (LU, UR, SZ, OW, NW, ZG)",
+      "7": "Ticino (TI)"
+    },
+    "special": {}
+  },
+  {
+    "domain": "CN_REG",
+    "meaning": "China: Country specific region",
+    "question": "Interview location: Province/ autonomous region/ municipality",
+    "content": {
+      "-2": "NAP, other countries",
+      "110000": "Beijing",
+      "120000": "Tianjin",
+      "130000": "Hebei Province",
+      "140000": "Shanxi Province",
+      "150000": "Inner Mongolia Autonomous Region",
+      "210000": "Liaoning Province",
+      "220000": "Jilin Province",
+      "230000": "Heilongjiang Province",
+      "310000": "Shanghai",
+      "320000": "Jiangsu Province",
+      "330000": "Zhejiang Province",
+      "340000": "Anhui Province",
+      "350000": "Fujian Province",
+      "360000": "Jiangxi Province",
+      "370000": "Shandong Province",
+      "410000": "Henan Province",
+      "420000": "Hubei Province",
+      "430000": "Hunan Province",
+      "440000": "Guangdong Province",
+      "450000": "Guangxi Zhuang",
+      "500000": "Chongqing",
+      "510000": "Sichuan Province",
+      "520000": "Guizhou Province",
+      "530000": "Yunnan Province",
+      "610000": "Shaanxi Province",
+      "620000": "Gansu Province",
+      "630000": "Qinghai Province",
+      "640000": "Ningxia Hui Autonomous Region",
+      "650000": "Xinjiang Uygur Autonomous Region"
+    },
+    "special": {}
+  },
+  {
+    "domain": "DE_REG",
+    "meaning": "Germany: Country specific region",
+    "question": "Region of interview (federal state) taken from sample frame",
+    "content": {
+      "-2": "NAP, other countries",
+      "1": "Schleswig-Holstein",
+      "2": "Hamburg",
+      "3": "Lower Saxony",
+      "4": "Bremen",
+      "5": "North Rhine-Westphalia",
+      "6": "Hesse",
+      "7": "Rhineland-Palatinate",
+      "8": "Baden-Wuerttemberg",
+      "9": "Bavaria",
+      "10": "Saarland",
+      "11": "Berlin",
+      "12": "Brandenburg",
+      "13": "Mecklenburg-Vorpommern",
+      "14": "Saxony",
+      "15": "Saxony-Anhalt",
+      "16": "Thuringia"
+    },
+    "special": {}
+  }
+]

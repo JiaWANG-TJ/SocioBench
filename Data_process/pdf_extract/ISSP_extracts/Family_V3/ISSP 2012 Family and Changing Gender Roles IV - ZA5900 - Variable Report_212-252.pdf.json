@@ -1,0 +1,820 @@
+[
+  {
+    "domain": "EDUCYRS",
+    "meaning": "Education I: years of schooling",
+    "question": "How many full years of schooling or education have you had? Please include primary and secondary schooling, university and full-time vocational training, but do not include repeated years.",
+    "content": {
+      "0": "No formal schooling, no years at school",
+      "1": "One year",
+      "73": "73 years",
+      "95": "BG,ES,GB: Still at school",
+      "96": "BG,ES,GB: Still at college, university, in vocational training",
+      "98": "Don't know",
+      "99": "No answer"
+    },
+    "special": {
+      "NL": {
+        "99": "No answer, refused"
+      }
+    }
+  },
+  {
+    "domain": "AR_DEGR",
+    "meaning": "Country specific highest completed degree of education: Argentina",
+    "question": "What is the highest level of education you have attained?",
+    "content": {
+      "0": "NAP, other countries",
+      "1": "No formal schooling",
+      "2": "Primary incomplete",
+      "3": "Primary completed",
+      "4": "Secondary incomplete",
+      "5": "Secondary completed",
+      "6": "Non-university higher incomplete",
+      "7": "Non-university higher completed",
+      "8": "University incomplete",
+      "9": "University completed",
+      "10": "Postgraduate completed",
+      "99": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "AT_DEGR",
+    "meaning": "Country specific highest completed degree of education: Austria",
+    "question": "What is your highest completed School degree?",
+    "content": {
+      "0": "NAP, other countries",
+      "2": "Primary completed, Hauptschule",
+      "3": "Apprenticeship completed",
+      "4": "Middle school, vocational",
+      "5": "Secondary completed, Matura",
+      "6": "Higher professional school, BHS",
+      "7": "University completed"
+    },
+    "special": {}
+  },
+  {
+    "domain": "AU_DEGR",
+    "meaning": "Country specific highest completed degree of education: Australia",
+    "question": "What is the highest year of schooling you have completed? What is the highest educational qualification you have completed outside of school?",
+    "content": {
+      "0": "NAP, other countries",
+      "1": "Did not complete High School to Year 10",
+      "2": "Completed High School to Year 10",
+      "3": "Completed High School to Year 12",
+      "4": "Trade qualification or apprenticeship",
+      "5": "Certificate or Diploma (TAFE or business college)",
+      "6": "Bachelor Degree (including Honors)",
+      "7": "Postgraduate Degree or Postgraduate Diploma",
+      "99": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "BE_DEGR",
+    "meaning": "Country specific highest completed degree of education: Belgium",
+    "question": "What’s the highest degree you completed?",
+    "content": {
+      "0": "NAP, other countries",
+      "1": "None",
+      "2": "Primary education",
+      "3": "Lower general secondary",
+      "4": "Lower technical art general secondary",
+      "5": "Lower vocational secondary",
+      "6": "Higher general secondary",
+      "7": "Higher technical art secondary",
+      "8": "Higher vocational secondary",
+      "9": "7th year vocational secondary education",
+      "10": "7th year general technical art secondary education",
+      "11": "Higher vocational education",
+      "12": "Professional bachelor non-university, bachelor university",
+      "13": "University (master, licentiate, engineer, doctor)",
+      "99": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "BG_DEGR",
+    "meaning": "Country specific highest completed degree of education: Bulgaria",
+    "question": "What is your highest completed School degree?",
+    "content": {
+      "0": "NAP, other countries",
+      "1": "None",
+      "2": "Primary and basic education",
+      "3": "Lower secondary",
+      "4": "Upper secondary",
+      "5": "Secondary technical",
+      "6": "College, 2 to 4 years",
+      "7": "Higher education/ university",
+      "8": "Higher than University"
+    },
+    "special": {}
+  },
+  {
+    "domain": "CA_DEGR",
+    "meaning": "Country specific highest completed degree of education: Canada",
+    "question": "How far did you go in school?",
+    "content": {
+      "0": "NAP, other countries",
+      "1": "No formal education",
+      "2": "Primary school",
+      "3": "Some high school",
+      "4": "Finished high school",
+      "5": "College/ CEGEP/ Technical",
+      "6": "Some university",
+      "7": "Completed university",
+      "8": "Graduate studies",
+      "99": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "CH_DEGR",
+    "meaning": "Country specific highest completed degree of education: Switzerland",
+    "question": "Which is the highest educational level you achieved?",
+    "content": {
+      "0": "NAP, other countries",
+      "1": "Incomplete primary education",
+      "2": "Primary school (4 to 6 years of schooling)",
+      "3": "Secondary education (first stage-including primary school with 8-9 years)",
+      "4": "Additional year of secondary education, preparation for vocational training",
+      "5": "Elementary vocational training (enterprise and school, 1-2 years)",
+      "6": "Apprenticeship (vocational training, dual system, 3-4 years)",
+      "7": "General training school (2-3 years)",
+      "8": "Vocational baccalaureate",
+      "9": "Diploma for teaching primary school or preprimary school",
+      "10": "Baccalaureate preparing for university",
+      "11": "Second vocational training (or apprenticeship as second education)",
+      "12": "Vocational baccalaureate for adults",
+      "13": "Baccalaureate for adults or apprenticeship after Baccalaureate",
+      "14": "Advanced vocational qualification - specialization exam, federal certificate",
+      "15": "Higher vocational training - diploma of a high school - technical, administration, health, social work, applied arts",
+      "16": "Higher vocational training - diploma of specific high schools recognized being of tertiary level",
+      "17": "Applied science and pedagogical university - Bachelor",
+      "18": "Applied science and pedagogical university - Master",
+      "19": "University diploma - intermediary level",
+      "20": "University (including technical) - Bachelor and short degree",
+      "21": "University (including technical) - requiring more than 4 years",
+      "22": "University (including technical) - Master",
+      "23": "Doctoral degree",
+      "98": "Don't know"
+    },
+    "special": {}
+  },
+  {
+    "domain": "CL_DEGR",
+    "meaning": "Country specific highest completed degree of education: Chile",
+    "question": "What is your educational level?",
+    "content": {
+      "0": "NAP, other countries",
+      "1": "None, no formal education",
+      "2": "Incomplete primary",
+      "3": "Primary completed",
+      "4": "Incomplete secondary",
+      "5": "Secondary completed",
+      "6": "Incomplete non-university higher education",
+      "7": "Completed non-university higher education",
+      "8": "Incomplete University",
+      "9": "University completed",
+      "10": "Master, Ph.D."
+    },
+    "special": {}
+  },
+  {
+    "domain": "CN_DEGR",
+    "meaning": "Country specific highest completed degree of education: China",
+    "question": "What is your highest educational level currently?",
+    "content": {
+      "0": "NAP, other countries",
+      "1": "No formal schooling",
+      "2": "Private school",
+      "3": "Primary school",
+      "4": "Junior high school",
+      "5": "Professional school",
+      "6": "High school",
+      "7": "College",
+      "8": "University",
+      "9": "Graduate",
+      "99": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "CZ_DEGR",
+    "meaning": "Country specific highest completed degree of education: Czech Republic",
+    "question": "What is the highest level of education that you have attained?",
+    "content": {
+      "0": "NAP, other countries",
+      "1": "Incomplete Primary",
+      "2": "Primary completed",
+      "3": "Lower vocational, no diploma",
+      "4": "General secondary, no diploma",
+      "5": "Vocational with diploma",
+      "6": "Technical secondary",
+      "7": "Academic secondary",
+      "8": "Post secondary",
+      "9": "Tertiary, bachelor degree",
+      "10": "Tertiary, master degree",
+      "11": "Post-graduate education",
+      "99": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "DE_DEGR",
+    "meaning": "Country specific highest completed degree of education: Germany",
+    "question": "What general school leaving certificate do you have? (highest certificate)",
+    "content": {
+      "0": "NAP, other countries",
+      "2": "Still at school: 7 years of schooling and more",
+      "3": "School left without certificate",
+      "4": "Lower secondary (Hauptschule)",
+      "5": "Middle school (mittlere Reife)",
+      "6": "Secondary, technical (Fachhochschulreife)",
+      "7": "Higher secondary (Abitur)",
+      "8": "Vocational training, degree from German dual system",
+      "9": "Vocational training, master craftsmen (Meister)",
+      "10": "University of applied sciences (Fachhochschule): bachelor",
+      "11": "University: bachelor",
+      "12": "University of applied sciences (Fachhochschule: master or other degree",
+      "13": "University: master or other degree",
+      "14": "University: doctorate",
+      "98": "Other qualification"
+    },
+    "special": {}
+  },
+  {
+    "domain": "DK_DEGR",
+    "meaning": "Country specific highest completed degree of education: Denmark",
+    "question": "What school education do you have? What business training or higher education do you have beyond school education?",
+    "content": {
+      "0": "NAP, other countries",
+      "1": "7 years primary school or shorter",
+      "2": "8 years primary school",
+      "3": "9 years primary school",
+      "4": "Secondary, 10 years or similar",
+      "5": "Gymnasium, general",
+      "6": "Gymnasium, technical",
+      "7": "Other school education",
+      "8": "Basic vocational and apprenticeship",
+      "9": "Other completed vocational education",
+      "10": "Short advanced education, less than 3 years",
+      "11": "Middle range advanced, 3-4 years",
+      "12": "Further advanced, more than 4 years",
+      "13": "Other vocational education"
+    },
+    "special": {}
+  },
+  {
+    "domain": "ES_DEGR",
+    "meaning": "Country specific highest completed degree of education: Spain",
+    "question": "Which are the highest level official studies that you have done (whether you have finished them or not)?",
+    "content": {
+      "0": "NAP, other countries",
+      "1": "No formal schooling, did not go to school",
+      "2": "Less than 5 years of formal schooling",
+      "3": "Primary School completed",
+      "4": "Low Secondary School, Junior High",
+      "5": "Vocational Training, medium level Professional Training",
+      "6": "High Secondary School completed",
+      "7": "Vocational Training, high level Professional Training",
+      "8": "Technical Architecture, technical Engineering, 3 years Technical School",
+      "9": "3 years completed non-technical University",
+      "10": "Architecture and Engineering, Technical Schools",
+      "11": "College Degree, 4 years",
+      "12": "Official Graduate Studies, PhD, Master",
+      "99": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "FI_DEGR",
+    "meaning": "Country specific highest completed degree of education: Finland",
+    "question": "What is your education? Please circle the highest level of education, choose one alternative only.",
+    "content": {
+      "0": "NAP, other countries",
+      "1": "Primary education",
+      "2": "Comprehensive, primary and lower secondary",
+      "3": "Post-comprehensive, vocational school or course",
+      "4": "General upper secondary education or certificate",
+      "5": "Vocational post-secondary non-tertiary education",
+      "6": "Polytechnics",
+      "7": "University, lower academic degree, BA",
+      "8": "University, higher academic degree, MA",
+      "99": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "FR_DEGR",
+    "meaning": "Country specific highest completed degree of education: France",
+    "question": "What is your education level?",
+    "content": {
+      "0": "NAP, other countries",
+      "1": "None",
+      "2": "Primary incomplete",
+      "3": "Primary completed",
+      "4": "General secondary level 1",
+      "5": "Vocational secondary level 1",
+      "6": "Vocational secondary level 2",
+      "7": "Incomplete general secondary level 2",
+      "8": "General secondary level 2",
+      "9": "College",
+      "10": "University",
+      "99": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "GB_DEGR",
+    "meaning": "Country specific highest completed degree of education: Great Britain",
+    "question": "Highest educational qualification obtained - derived from: Have you passed any of the examinations on this card?",
+    "content": {
+      "0": "NAP, other countries",
+      "1": "No (secondary) qualifications",
+      "2": "CSE, GCSE or equivalent, certificate of secondary qualification",
+      "3": "O-level or equivalent, certificate of secondary qualification",
+      "4": "A-level or equivalent",
+      "5": "Higher below degree level",
+      "6": "Degree, University or CNAA or Diploma",
+      "7": "Foreign or other",
+      "99": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "HR_DEGR",
+    "meaning": "Country specific highest completed degree of education: Croatia",
+    "question": "Your highest educational level (school completed regularly or part-time).",
+    "content": {
+      "0": "NAP, other countries",
+      "1": "Primary school not completed",
+      "2": "Primary school completed",
+      "3": "Three years vocational school completed",
+      "4": "Four years vocational school completed",
+      "5": "General secondary school (gymnasium) completed",
+      "6": "Completed higher school, post secondary degree, college",
+      "7": "University degree completed, university studies",
+      "99": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "HU_DEGR",
+    "meaning": "Country specific highest completed degree of education: Hungary",
+    "question": "What is your highest level of education completed?",
+    "content": {
+      "0": "NAP, other countries",
+      "1": "Less than primary",
+      "2": "8 years elementary",
+      "3": "Vocational",
+      "4": "Vocational with maturity",
+      "5": "Gymnasium with maturity",
+      "6": "Secondary technical after maturity",
+      "7": "Higher technical after maturity",
+      "8": "College",
+      "9": "University",
+      "99": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "IE_DEGR",
+    "meaning": "Country specific highest completed degree of education: Ireland",
+    "question": "What is the highest level of education that you have attained?",
+    "content": {
+      "0": "NAP, other countries",
+      "1": "None",
+      "2": "Incomplete primary education",
+      "3": "Primary completed, compulsory",
+      "4": "Incomplete first cycle secondary",
+      "5": "Completed first cycle secondary",
+      "6": "Secondary completed",
+      "7": "Incomplete third level",
+      "8": "Certificate or Diploma",
+      "9": "University first degree",
+      "10": "University higher degree, masters or equivalent",
+      "99": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "IL_DEGR",
+    "meaning": "Country specific highest completed degree of education: Israel",
+    "question": "What is the highest level of education that you have attained?",
+    "content": {
+      "0": "NAP, other countries",
+      "1": "No formal schooling",
+      "2": "Lowest formal qualification",
+      "3": "Incomplete vocational qualification",
+      "4": "Vocational completed without matriculation",
+      "5": "Vocational completed with matriculation",
+      "6": "Incomplete academic secondary",
+      "7": "Full general without matriculation",
+      "8": "Academic secondary completed",
+      "9": "Yeshiva without matriculation",
+      "10": "Yeshiva with matriculation",
+      "11": "Semi higher, post secondary",
+      "12": "Incomplete university",
+      "13": "University completed, BA or more",
+      "99": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "IN_DEGR",
+    "meaning": "Country specific highest completed degree of education: India",
+    "question": "What is the highest level of education that you have attained?",
+    "content": {
+      "0": "NAP, other countries",
+      "1": "Illiterate (can't read and write)",
+      "2": "Non-formal education (can read and write)",
+      "3": "Up to Primary level",
+      "4": "Primary completed",
+      "5": "Up to High School",
+      "6": "Higher Secondary",
+      "7": "Up to Graduation",
+      "8": "Up to Post Graduation",
+      "9": "Professional"
+    },
+    "special": {}
+  },
+  {
+    "domain": "IS_DEGR",
+    "meaning": "Country specific highest completed degree of education: Iceland",
+    "question": "If you take note of the categorization listed on this card, what is your highest degree of education?",
+    "content": {
+      "0": "NAP, other countries",
+      "1": "Primary school not completed",
+      "2": "Primary school (around 12 years old)",
+      "3": "Primary school (around 14 years old)",
+      "4": "Compulsory education (around 16 years old)",
+      "5": "Short vocational training to secondary school level",
+      "6": "Upper secondary completed (gymnasium, university bridging course",
+      "7": "Apprenticeship - upper secondary",
+      "8": "Longer vocational training to secondary school level",
+      "9": "Vocational training on completion of secondary school level",
+      "10": "Master craftsman - license to supervise apprentices",
+      "11": "Short, practical training at university level, diploma",
+      "12": "Short vocational training at university level, basic diploma, 2-3 years",
+      "13": "Undergraduate degree BA/BS/B.Ed. or additional diploma",
+      "14": "Studies at university longer than 4 years",
+      "15": "Master's degree MA/MS",
+      "16": "Doctoral degree PhD",
+      "99": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "JP_DEGR",
+    "meaning": "Country specific highest completed degree of education: Japan",
+    "question": "Please indicate the last school you attended or the school you are currently attending. Circle one figure only.",
+    "content": {
+      "0": "NAP, other countries",
+      "1": "Junior High school completed",
+      "2": "Still at High school",
+      "3": "High school completed",
+      "4": "Still at Junior college or university",
+      "5": "Junior college completed",
+      "6": "Still at Graduate school",
+      "7": "Finished university or graduate",
+      "8": "Others",
+      "99": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "KR_DEGR",
+    "meaning": "Country specific highest completed degree of education: Korea (South)",
+    "question": "What is the highest level of school you have attended? Did you graduate from this school, or are you currently attending?",
+    "content": {
+      "0": "NAP, other countries",
+      "1": "No formal schooling",
+      "2": "Elementary incomplete",
+      "3": "Elementary completed",
+      "4": "Middle school incomplete",
+      "5": "Middle school completed",
+      "6": "High school incomplete",
+      "7": "High school completed",
+      "8": "Junior college incomplete",
+      "9": "Junior college completed",
+      "10": "University incomplete",
+      "11": "University completed",
+      "12": "Master degree incomplete",
+      "13": "Master degree competed",
+      "14": "Doctoral degree incomplete",
+      "15": "Doctoral degree completed"
+    },
+    "special": {}
+  },
+  {
+    "domain": "LT_DEGR",
+    "meaning": "Country specific highest completed degree of education: Lithuania",
+    "question": "What is the highest level of education that you successfully completed?",
+    "content": {
+      "0": "NAP, other countries",
+      "1": "Not completed primary",
+      "2": "Primary",
+      "3": "Vocational (without completing basic)",
+      "4": "Basic (including youth schools, night schools)",
+      "5": "Vocational (completing basic)",
+      "6": "Vocational (after completing basic, the training program lasted less than two years)",
+      "7": "Vocational (after completing basic, the training program lasted more than two years)",
+      "8": "Secondary (including gymnasium schools, lyceum",
+      "9": "Vocational together with secondary (after completing basic)",
+      "10": "Vocational (after completing secondary)",
+      "11": "Higher vocational or special secondary after completing basic",
+      "12": "Higher vocational or special secondary after completing secondary",
+      "13": "Higher vocational (non-university degree)",
+      "14": "Higher (university degree attained in bachelor studies)",
+      "15": "Higher university degree attained in integrated studies or in special vocational studies after completing bachelor",
+      "16": "Higher (university degree attained in master or residents studies)",
+      "99": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "LV_DEGR",
+    "meaning": "Country specific highest completed degree of education: Latvia",
+    "question": "What is the highest level of education that you have attained?",
+    "content": {
+      "0": "NAP, other countries",
+      "1": "Incomplete basic education, less than 8 forms",
+      "2": "Primary completed, basic education, 9 years",
+      "3": "Incomplete secondary, vocational training 2-3 years",
+      "4": "Secondary completed, 3 years",
+      "5": "Secondary professional education, 4 years",
+      "6": "Incomplete higher education, at least 2 completed years",
+      "7": "Higher education, bachelor, master, doctor degree"
+    },
+    "special": {}
+  },
+  {
+    "domain": "MX_DEGR",
+    "meaning": "Country specific highest completed degree of education: Mexico",
+    "question": "Higher school level obtained (finished level)",
+    "content": {
+      "0": "NAP, other countries",
+      "1": "None",
+      "2": "Primary school completed",
+      "3": "Technical training without secondary qualification",
+      "4": "Secondary school completed",
+      "5": "Technical training after secondary qualification",
+      "6": "High school completed",
+      "7": "Technical training after high school qualification",
+      "8": "University completed",
+      "9": "Master, doctorate degree",
+      "99": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "NL_DEGR",
+    "meaning": "Country specific highest completed degree of education: Netherlands",
+    "question": "What is your highest completed education? If you are still in education: What is the education in which you are enrolled?",
+    "content": {
+      "0": "NAP, other countries",
+      "1": "Incomplete primary education (Basisonderwijs onvoltooid)",
+      "2": "Primary education completed (Basissonderwijs)",
+      "3": "Lower vocational (LBO-VBO-VMBOb)",
+      "4": "Middle secondary general 4 yrs (MAVO-MULO-VMBOt)",
+      "5": "Middle vocational 1-3 yrs/Apprenticeships (kMBO-BBL-BOL)",
+      "6": "Middle vocational 4 yrs (MBO-kHBO)",
+      "7": "Upper middle secondary general 5 yrs (HAVO-MMS)",
+      "8": "Upper secondary general 6 yrs (VWO-HBS)",
+      "9": "Higher vocational (HBO)",
+      "10": "University (WO, TH, EH)",
+      "11": "Post-University (Postdoctoraal)",
+      "12": "PhD (Promotie)",
+      "99": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "NO_DEGR",
+    "meaning": "Country specific highest completed degree of education: Norway",
+    "question": "Which general education or specialisation for studies have you completed? Which vocational education/training have you completed? Which tertiary education have you achieved?",
+    "content": {
+      "0": "NAP, other countries",
+      "1": "Primary completed",
+      "2": "Secondary, vocational, incomplete",
+      "3": "Secondary, academic, incomplete",
+      "4": "Secondary, vocational, completed",
+      "5": "Secondary, academic, completed",
+      "6": "University, college, less than 1 year",
+      "7": "University, college, 1-2 years",
+      "8": "University, college, 3-4 years",
+      "9": "University, college, 5 years or more",
+      "99": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "PH_DEGR",
+    "meaning": "Country specific highest completed degree of education: Philippines",
+    "question": "What is the highest level of education that you have attained?",
+    "content": {
+      "0": "NAP, other countries",
+      "1": "No formal education",
+      "2": "Some elementary, incomplete primary",
+      "3": "Completed elementary, primary completed",
+      "4": "Some high school, incomplete secondary",
+      "5": "Completed high school, secondary completed",
+      "6": "Some vocational",
+      "7": "Completed vocational",
+      "8": "Some college",
+      "9": "Completed college",
+      "10": "Post college"
+    },
+    "special": {}
+  },
+  {
+    "domain": "PL_DEGR",
+    "meaning": "Country specific highest completed degree of education: Poland",
+    "question": "What is the level of education that you have obtained until now?",
+    "content": {
+      "0": "NAP, other countries",
+      "1": "No formal schooling",
+      "2": "Incomplete elementary",
+      "3": "Completed elementary, primary completed",
+      "4": "Gymnasium",
+      "5": "Basic vocational",
+      "6": "Incomplete secondary",
+      "7": "Secondary general",
+      "8": "Secondary vocational",
+      "9": "Post secondary",
+      "10": "Incomplete higher",
+      "11": "Completed higher at licentiate level",
+      "12": "Completed higher at master level"
+    },
+    "special": {}
+  },
+  {
+    "domain": "PT_DEGR",
+    "meaning": "Country specific highest completed degree of education: Portugal",
+    "question": "I would like to ask you now about your education level. Please tell me for how many years did you go to school, including university studies?",
+    "content": {
+      "0": "NAP, other countries",
+      "1": "No formal schooling",
+      "2": "Primary incomplete",
+      "3": "Primary completed",
+      "4": "Secondary incomplete",
+      "5": "Secondary completed",
+      "6": "Non-university higher incomplete",
+      "7": "Non-university higher completed",
+      "8": "University incomplete",
+      "9": "University completed",
+      "10": "Postgraduate completed",
+      "99": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "RU_DEGR",
+    "meaning": "Country specific highest completed degree of education: Russia",
+    "question": "How many years have you completed in all educational institutions including primary, secondary and tertiary school but excluding training courses?",
+    "content": {
+      "0": "NAP, other countries",
+      "1": "No formal schooling",
+      "2": "Primary incomplete",
+      "3": "Primary completed",
+      "4": "Secondary incomplete",
+      "5": "Secondary completed",
+      "6": "Non-university higher incomplete",
+      "7": "Non-university higher completed",
+      "8": "University incomplete",
+      "9": "University completed",
+      "10": "Postgraduate completed",
+      "99": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "SE_DEGR",
+    "meaning": "Country specific highest completed degree of education: Sweden",
+    "question": "How many years of full-time education have you had? Include primary school, and, if applicable, gymnasium (=secondary school) and college/university education.",
+    "content": {
+      "0": "NAP, other countries",
+      "1": "No formal schooling",
+      "2": "Primary incomplete",
+      "3": "Primary completed",
+      "4": "Secondary incomplete",
+      "5": "Secondary completed",
+      "6": "Non-university higher incomplete",
+      "7": "Non-university higher completed",
+      "8": "University incomplete",
+      "9": "University completed",
+      "10": "Postgraduate completed",
+      "99": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "SI_DEGR",
+    "meaning": "Country specific highest completed degree of education: Slovenia",
+    "question": "How long lasted your schooling? Consider all types of schooling from primary school to university, including professional education, training period, but do not count class repetitions",
+    "content": {
+      "0": "NAP, other countries",
+      "1": "No formal schooling",
+      "2": "Primary incomplete",
+      "3": "Primary completed",
+      "4": "Secondary incomplete",
+      "5": "Secondary completed",
+      "6": "Non-university higher incomplete",
+      "7": "Non-university higher completed",
+      "8": "University incomplete",
+      "9": "University completed",
+      "10": "Postgraduate completed",
+      "99": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "SK_DEGR",
+    "meaning": "Country specific highest completed degree of education: Slovakia",
+    "question": "How long have you been in education so far? Please count all years of full time schooling if you did not finish the school. Don't forget to count basic school. Don’t count evening or distance study. Don’t include time spent on professional training or requalification.",
+    "content": {
+      "0": "NAP, other countries",
+      "1": "No formal schooling",
+      "2": "Primary incomplete",
+      "3": "Primary completed",
+      "4": "Secondary incomplete",
+      "5": "Secondary completed",
+      "6": "Non-university higher incomplete",
+      "7": "Non-university higher completed",
+      "8": "University incomplete",
+      "9": "University completed",
+      "10": "Postgraduate completed",
+      "99": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "TR_DEGR",
+    "meaning": "Country specific highest completed degree of education: Turkey",
+    "question": "What is your education? How many years have you spent in primary, secondary and university education other than professional training?",
+    "content": {
+      "0": "NAP, other countries",
+      "1": "No formal schooling",
+      "2": "Primary incomplete",
+      "3": "Primary completed",
+      "4": "Secondary incomplete",
+      "5": "Secondary completed",
+      "6": "University incomplete",
+      "7": "University completed",
+      "99": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "US_DEGR",
+    "meaning": "Country specific highest completed degree of education: United States",
+    "question": "What is the highest grade in elementary school or high school that you finished and got credit for? Did you ever get a high school diploma or a GED certificate? Did you ever complete one or more years of college for credit, not including schooling such as business college, technical or vocational school? How many years did you complete? Do you have any college degrees?",
+    "content": {
+      "0": "NAP, other countries",
+      "1": "No formal schooling",
+      "2": "Elementary incomplete",
+      "3": "Elementary completed",
+      "4": "Secondary incomplete",
+      "5": "Secondary completed",
+      "6": "University incomplete",
+      "7": "University completed",
+      "99": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "VE_DEGR",
+    "meaning": "Country specific highest completed degree of education: Venezuela",
+    "question": "What was the last grade approved? What was the last year approved? What was the last semester approved? Do you currently continue to study?",
+    "content": {
+      "0": "NAP, other countries",
+      "1": "No formal schooling",
+      "2": "Primary incomplete",
+      "3": "Primary completed",
+      "4": "Secondary incomplete",
+      "5": "Secondary completed",
+      "6": "University incomplete",
+      "7": "University completed",
+      "99": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "ZA_DEGR",
+    "meaning": "Country specific highest completed degree of education: South Africa",
+    "question": "How many years of full time education have you completed?",
+    "content": {
+      "0": "NAP, other countries",
+      "1": "No formal schooling",
+      "2": "Primary incomplete",
+      "3": "Primary completed",
+      "4": "Secondary incomplete",
+      "5": "Secondary completed",
+      "6": "University incomplete",
+      "7": "University completed",
+      "99": "No answer"
+    },
+    "special": {}
+  }
+]

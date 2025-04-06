@@ -1,0 +1,292 @@
+[
+  {
+    "domain": "US_RELIG",
+    "meaning": "Country specific religious affiliation or denomination: United States",
+    "question": "What is your religious preference?",
+    "content": {
+      "0": "No religion",
+      "1": "Protestant",
+      "2": "Catholic",
+      "3": "Jewish",
+      "5": "Other",
+      "6": "Buddhism",
+      "7": "Hinduism",
+      "8": "Other Eastern",
+      "9": "Moslem/ Islam",
+      "10": "Orthodox-Christian",
+      "11": "Christian",
+      "12": "Native American",
+      "13": "Inter- or Non-denominational",
+      "-2": "NAP , other countries",
+      "-9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "ZA_RELIG",
+    "meaning": "Country specific religious affiliation or denomination: South Africa",
+    "question": "Do you consider yourself as belonging to any religion? (If no, omit next question.) If answer is yes, which one? Please specify denomination:",
+    "content": {
+      "0": "No religion",
+      "1": "Christian (without specification)",
+      "2": "African Evangelical Church",
+      "3": "Anglican",
+      "4": "Assemblies of God",
+      "5": "Apostle Twelve",
+      "6": "Baptist",
+      "7": "Dutch Reformed",
+      "8": "Full Gospel Church of God",
+      "9": "Faith Mission",
+      "10": "Church of God and Saints of Christ",
+      "11": "Jehovah's Witness",
+      "12": "Lutheran",
+      "13": "Methodist",
+      "14": "Pentecostal Holiness Church",
+      "15": "Roman Catholic",
+      "16": "Salvation Army",
+      "17": "Seventh Day Adventist",
+      "18": "St John's Apostolic",
+      "19": "United Congregation Church",
+      "20": "Universal Church of God",
+      "21": "Nazareth",
+      "22": "Zionist Christian Church",
+      "23": "Other Christian",
+      "24": "Islam / Muslim",
+      "25": "Judaism /Jewish",
+      "26": "Hinduism / Hindu",
+      "27": "Buddhism / Buddhist",
+      "28": "Other (specify)",
+      "-2": "NAP , other countries",
+      "-7": "Refused",
+      "-9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "RELIGGRP",
+    "meaning": "Religious main groups: derived from nat_RELIG",
+    "question": "The aim of this variable is to measure the respondent's religious affiliation to facilitate international comparison.",
+    "content": {
+      "0": "No religion",
+      "1": "Catholic",
+      "2": "Protestant",
+      "3": "Orthodox",
+      "4": "Other Christian",
+      "5": "Jewish",
+      "6": "Islamic",
+      "7": "Buddhist",
+      "8": "Hindu",
+      "9": "Other Asian Religions",
+      "10": "Other Religions",
+      "-7": "Refused",
+      "-8": "Information insufficient",
+      "-9": "No answer"
+    },
+    "special": {
+      "IL": {
+        "3": "Recoded to code 10 'Other religions'"
+      }
+    }
+  },
+  {
+    "domain": "ATTEND",
+    "meaning": "Attendance of religious services",
+    "question": "Apart from such special occasions as weddings, funerals, etc., how often do you attend religious services?",
+    "content": {
+      "1": "Several times a week or more often",
+      "2": "Once a week",
+      "3": "2 or 3 times a month",
+      "4": "Once a month",
+      "5": "Several times a year",
+      "6": "Once a year; CH, HU, US: Once or twice a year",
+      "7": "Less frequently than once a year",
+      "8": "Never",
+      "-7": "Refused",
+      "-8": "Don't know",
+      "-9": "No answer"
+    },
+    "special": {
+      "CN": {
+        "2": "Merged into category 2 'Once a week'",
+        "6": "Merged into category 3 '2 or 3 times a month'"
+      },
+      "HU": {
+        "6": "Once or twice a year"
+      },
+      "IL": {
+        "1": "Merged into ISSP standard category 1"
+      },
+      "NO": {
+        "1": "Encoded as 'Several times a week'"
+      },
+      "PL": {
+        "3": "Encoded as ISSP code 3 '2 or 3 times a month'"
+      },
+      "US": {
+        "3": "Encoded to ISSP code 3 '2 or 3 times a month'"
+      }
+    }
+  },
+  {
+    "domain": "TOPBOT",
+    "meaning": "Top-Bottom self-placement",
+    "question": "Where would you put yourself on this scale?",
+    "content": {
+      "1": "Lowest, Bottom, 01",
+      "2": "02",
+      "3": "03",
+      "4": "04",
+      "5": "05",
+      "6": "06",
+      "7": "07",
+      "8": "08",
+      "9": "09",
+      "10": "Highest, Top, 10",
+      "-1": "CZ, US: Not available",
+      "-8": "Don't know",
+      "-9": "No answer"
+    },
+    "special": {
+      "CZ": {
+        "-1": "Not available"
+      },
+      "US": {
+        "-1": "Not available"
+      }
+    }
+  },
+  {
+    "domain": "VOTE_LE",
+    "meaning": "Did respondent vote in last general election?",
+    "question": "Did you vote in the last [country] national election in [month/ year]?",
+    "content": {
+      "1": "Yes",
+      "2": "No",
+      "-4": "Not eligible to vote in last election",
+      "-7": "Refused",
+      "-8": "FR: Don't know; NZ: Don't know / Can't remember",
+      "-9": "No answer; PL: No answer +  Don't remember"
+    },
+    "special": {
+      "NZ": {
+        "-4": "Not eligible to vote in last election",
+        "2": "No"
+      },
+      "PL": {
+        "-4": "Under 18 years of age"
+      },
+      "TW": {
+        "-4": "Not eligible to vote at last election"
+      }
+    }
+  },
+  {
+    "domain": "AT_PRTY",
+    "meaning": "Austria: Party voted for in last election",
+    "question": "Which party did you vote for?",
+    "content": {
+      "1": "Austrian peoples party - Oesterreichische Volkspartei (OEVP)",
+      "2": "Austrian social democratic party - Sozialdemokratische Partei Oesterreichs (SPOE)",
+      "3": "Austrian freedom party - Freiheitliche Partei Oesterreichs (FPOE)",
+      "4": "Green party - Die Gruenen-die Gruene Alternative (GRUENE)",
+      "5": "NEOS - Das Neue Oesterreich und Liberales Forum (NEOS)",
+      "6": "JETZT - Jetzt -Liste Pilz (JETZT)",
+      "7": "Communist party - Kommunistische Partei Oesterreichs (KPOE)",
+      "95": "Other party",
+      "-2": "NAP , other countries",
+      "-4": "NAP (Code 2, -4, -7 in VOTE_LE)",
+      "-7": "Refused",
+      "-9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "AU_PRTY",
+    "meaning": "Australia: Party voted for in last election",
+    "question": "Which party did you vote for?",
+    "content": {
+      "1": "Liberal Party",
+      "2": "Labor Party (ALP)",
+      "3": "National Party",
+      "5": "Greens",
+      "6": "One nation",
+      "7": "Family First Party",
+      "9": "Palmer United Party",
+      "16": "Christian Democratic Party (Fred Nile Group)",
+      "19": "Shooters and Fishers Party",
+      "25": "Liberal Democratic Party",
+      "26": "Australian Motoring Enthusiast Party",
+      "31": "Centre Alliance",
+      "33": "Derryn Hinch's Justice Party",
+      "90": "Independent candidate",
+      "93": "Information insufficient",
+      "95": "Other Party",
+      "96": "Invalid ballot",
+      "-2": "NAP , other countries",
+      "-4": "NAP (Code 2, -4, -7 in VOTE_LE)",
+      "-7": "Refused",
+      "-8": "Don't know, don't remember",
+      "-9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "CH_PRTY",
+    "meaning": "Switzerland: Party voted for in last election",
+    "question": "For which party did you vote at the last federal elections in October 2019?",
+    "content": {
+      "1": "Swiss People's Party (SVP/ UDC/ UDC)",
+      "2": "Social Democratic Party (SP/ PS/ PS)",
+      "3": "FDP . The Liberals (FDP/ PLR/ PLR)",
+      "4": "Green Party (GPS/ PES/ I Verdi)",
+      "5": "Christian Democratic People's Party (CVP/ PDC/ PPD, PDC)",
+      "6": "Green Liberal Party (GLP/ PVL/ PVL)",
+      "7": "Conservative Democratic Party (BDP/ PBD/ PBD)",
+      "8": "Evangelical People's Party (EVP/ PEV/ PEV)",
+      "9": "Federal Democratic Union (EDU/ UDF/ UDF)",
+      "10": "Ticino League (Lega/ Lega/ Lega)",
+      "11": "Swiss Labour Party, Solidarity, Ensemble a Gauche",
+      "94": "Mixed vote (Candidates of several lists)",
+      "95": "Other party",
+      "96": "Invalid ballot",
+      "-2": "NAP , other countries",
+      "-4": "NAP (Code 2, -4, in VOTE_LE)",
+      "-7": "Refused",
+      "-9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "CN_PRTY",
+    "meaning": "China: Party voted for in last election",
+    "question": "Not asked.",
+    "content": {
+      "-1": "Not available",
+      "-2": "NAP , other countries"
+    },
+    "special": {}
+  },
+  {
+    "domain": "CZ_PRTY",
+    "meaning": "Czech Republic: Country specific party voted for in last general election",
+    "question": "Which party did you vote for in last year's elections to the Chamber of Deputies?",
+    "content": {
+      "1": "Together - SPOLU-ODS, KDU-ČSL, TOP 09",
+      "2": "Yes 2011 - ANO 2011",
+      "3": "Pirates and Mayors - Piráti a starostové",
+      "4": "Freedom and direct democracy - Svoboda a p ř. demokracie (SPD)",
+      "5": "Oath - Prisaha Roberta Slachty",
+      "6": "Czech Social Democratic Party - Česká str.sociáln ě demokrat. (CSSD)",
+      "7": "Communist Party of Bohemia and Moravia - Komunistická str. Čech a Moravy (KSCM)",
+      "8": "Tricolour Freedomites Freeholders - Trikolora Svobodní Soukromníci",
+      "9": "Free Bloc - VOLNÝ blok",
+      "95": "Other party",
+      "96": "Invalid ballot",
+      "-2": "NAP , other countries",
+      "-4": "NAP (Code 2, -4, -7 in VOTE_LE)",
+      "-7": "Refused",
+      "-9": "No answer"
+    },
+    "special": {}
+  }
+]

@@ -1,0 +1,302 @@
+[
+  {
+    "domain": "LV_INC",
+    "meaning": "Latvia: Country specific household income",
+    "question": "What on average is the total monthly income of your household, before taxes and other deductions?",
+    "content": {
+      "0": "No income",
+      "35": "35 LVL per month",
+      "3800": "3.800 LVL per month",
+      "999990": "NAP, all other countries",
+      "999997": "Refused",
+      "999998": "Don't know"
+    },
+    "special": {}
+  },
+  {
+    "domain": "MX_INC",
+    "meaning": "Mexico: Country specific household income",
+    "question": "Monthly net family income (excluding taxes)",
+    "content": {
+      "0": "No income",
+      "250": "250 MXN per month",
+      "90000": "90.000 MXN per month",
+      "999990": "NAP, all other countries",
+      "999997": "Refused",
+      "999998": "Don't know",
+      "999999": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "NL_INC",
+    "meaning": "Netherlands: Country specific household income",
+    "question": "What is the average net income of you, and your household (if applicable) - Approximately per month ('Net' means the amount that your household receives monthly after payment of income tax, social security and pensions)",
+    "content": {
+      "0": "No income",
+      "500": "Less than 750 EUR per month",
+      "875": "750-1000 EUR",
+      "1125": "1000-1250 EUR",
+      "1375": "1250-1500 EUR",
+      "1625": "1500-1750 EUR",
+      "1875": "1750-2000 EUR",
+      "2125": "2000-2250 EUR",
+      "2375": "2250-2500 EUR",
+      "2750": "2500-3000 EUR",
+      "3250": "3000-3500 EUR",
+      "3750": "3500-4000 EUR",
+      "4500": "4000-5000 EUR",
+      "5500": "Over 5000 EUR per month",
+      "999990": "NAP, other countries",
+      "999999": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "NO_INC",
+    "meaning": "Norway: Country specific household income",
+    "question": "Before tax and deductions, how large is your household's yearly gross income included your own income? Include pensions, social security benefits, incidental earnings or similar, but not loans. Round to nearest 1000 Norwegian Kroner.",
+    "content": {
+      "0": "No income",
+      "1000": "1.000 NOK per year",
+      "55000000": "55.000.000 NOK per year",
+      "99999990": "NAP, all other countries",
+      "99999999": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "PH_INC",
+    "meaning": "Philippines: Country specific household income",
+    "question": "Before tax and other deductions, what on average is the total monthly income of your household?",
+    "content": {
+      "0": "No income",
+      "300": "300 PHP per month",
+      "800000": "800.000 PHP per month",
+      "999990": "NAP, all other countries",
+      "999997": "Refused",
+      "999998": "Don't know"
+    },
+    "special": {}
+  },
+  {
+    "domain": "PL_INC",
+    "meaning": "Poland: Country specific household income",
+    "question": "Taking into consideration last 12 months, please tell me your household total monthly income from all sources. Please calculate and tell me the monthly average after taxes?",
+    "content": {
+      "0": "No income",
+      "97": "97 PLN per month",
+      "180000": "180.000 PLN per month",
+      "999990": "NAP, all other countries",
+      "999998": "Don't know",
+      "999999": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "PT_INC",
+    "meaning": "Portugal: Country specific household income",
+    "question": "And which of the following income brackets corresponds to your household income (on average, per month, net income, in euros)",
+    "content": {
+      "0": "No income",
+      "305": "Less than 476 EUR per month",
+      "563": "477-648 EUR",
+      "730": "649-811 EUR",
+      "907": "812-1002 EUR",
+      "1099": "1003-1194 EUR",
+      "1303": "1195-1411 EUR",
+      "1541": "1412-1669 EUR",
+      "1856": "1670-2041 EUR",
+      "2397": "2042-2752 EUR",
+      "3108": "More than 2752 EUR per month",
+      "999990": "NAP, all other countries",
+      "999997": "Refused",
+      "999998": "Don't know"
+    },
+    "special": {}
+  },
+  {
+    "domain": "RU_INC",
+    "meaning": "Russia: Country specific household income",
+    "question": "What on average is the total monthly income of your household (after taxes and deductions)?",
+    "content": {
+      "1500": "1.500 RUB per month",
+      "200000": "200.000 RUB per month",
+      "999990": "NAP, all other countries",
+      "999997": "Refused",
+      "999998": "Don't know"
+    },
+    "special": {}
+  },
+  {
+    "domain": "SE_INC",
+    "meaning": "Sweden: Country specific household income",
+    "question": "On average, what is your household’s monthly income before taxes?",
+    "content": {
+      "0": "No income",
+      "2000": "2.000 SEK per month",
+      "999000": "999.000 SEK or more per month",
+      "999990": "NAP, all other countries",
+      "999999": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "SI_INC",
+    "meaning": "Slovenia: Country specific household income",
+    "question": "What is average monthly income of all family members (after deduction of taxes, social security, and other payments)? Count all kinds of income, wage, pension, scholarship, income from private business, income from farming. (If there is a problem with calculating average income, ask for income in last month.)",
+    "content": {
+      "0": "No income",
+      "1": "1 EUR per month",
+      "7500": "7.500 EUR per month",
+      "999990": "NAP, all other countries",
+      "999997": "Refused",
+      "999998": "Don't know",
+      "999999": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "SK_INC",
+    "meaning": "Slovakia: Country specific household income",
+    "question": "Please, what is the average total net income of all household members per month including wages, pensions, scholarships and all other working or non-working incomes? Estimate please as accurately as possible. From the following list, please, choose the option that represents the size of your net personal incomes.",
+    "content": {
+      "0": "No income",
+      "75": "Up to 150 EUR per month (approx. 4.500 SKK)",
+      "225": "151 - 300 (approx. 4.500-9.000 SKK)",
+      "375": "301 - 450 (approx. 9.000-13.500 SKK)",
+      "525": "451 - 600 (approx. 13.500-18.000 SKK)",
+      "675": "601 - 750 (approx. 18.000-22.500 SKK)",
+      "825": "751 - 900 (approx. 22.500-27.000 SKK)",
+      "1050": "901 - 1.200 (approx. 27.000-36.000 SKK)",
+      "1350": "1.201 - 1.500 (approx. 36.000-45.000 SKK)",
+      "1750": "1.501 - 2.000 (approx. 45.000-60.000 SKK)",
+      "2500": "2.001 - 3.000 (approx. 60.000-90.000 SKK)",
+      "3000": "More than 3.000 EUR per month (more than 90.000 SKK)",
+      "999990": "NAP, all other countries",
+      "999999": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "TR_INC",
+    "meaning": "Turkey: Country specific household income",
+    "question": "",
+    "content": {
+      "999990": "Not available; NAP, all other countries"
+    },
+    "special": {}
+  },
+  {
+    "domain": "TW_INC",
+    "meaning": "Taiwan: Country specific household income",
+    "question": "What is your average monthly household income, including incomes from work and other resources (such as rent, bonus, pension and interest)?",
+    "content": {
+      "0": "No income",
+      "5000": "Up to 10.000 TWD per month",
+      "15000": "10.001-20.000 TWD",
+      "25000": "20.001-30.000 TWD",
+      "35000": "30.001-40.000 TWD",
+      "45000": "40.001-50.000 TWD",
+      "55000": "50.001-60.000 TWD",
+      "65000": "60.001-70.000 TWD",
+      "75000": "70.001-80.000 TWD",
+      "85000": "80.001-90.000 TWD",
+      "95000": "90.001-100.000 TWD",
+      "105000": "100.001-110.000 TWD",
+      "115000": "110.001-120.000 TWD",
+      "125000": "120.001-130.000 TWD",
+      "135000": "130.001-140.000 TWD",
+      "145000": "140.001-150.000 TWD",
+      "155000": "150.001-160.000 TWD",
+      "165000": "160.001-170.000 TWD",
+      "175000": "170.001-180.000 TWD",
+      "185000": "180.001-190.000 TWD",
+      "195000": "190.001-200.000 TWD",
+      "250000": "200.001-300.000 TWD",
+      "350000": "300.001-400.000 TWD",
+      "450000": "400.001-500.000 TWD",
+      "750000": "500.001-1.000.000 TWD",
+      "1250000": "More than 1.000.000 TWD per month",
+      "9999990": "NAP, other countries",
+      "9999997": "Refused",
+      "9999998": "Don't know"
+    },
+    "special": {}
+  },
+  {
+    "domain": "US_INC",
+    "meaning": "United States: Country specific household income",
+    "question": "In which of these groups did your total family income, from all sources, fall last year - 2011 - before taxes, that is. Just tell me the letter. Total income includes interest or dividends, rent, social security, other pensions, alimony or child support, unemployment, compensation, public aid (welfare), armed forces or veterans allotment.",
+    "content": {
+      "500": "Under 1.000 USD per year",
+      "2000": "1.000-2.999 USD",
+      "3500": "3.000-3.999 USD",
+      "4500": "4.000-4.999 USD",
+      "5500": "5.000-5.999 USD",
+      "6500": "6.000-6.999 USD",
+      "7500": "7.000-7.999 USD",
+      "9000": "8.000-9.999 USD",
+      "11250": "10.000-12.499 USD",
+      "13750": "12.500-14.999 USD",
+      "16250": "15.000-17.499 USD",
+      "18750": "17.500-19.999 USD",
+      "21250": "20.000-22.499 USD",
+      "23750": "22.500-24.999 USD",
+      "27500": "25.000-29.999 USD",
+      "32500": "30.000-34.999 USD",
+      "37500": "35.000-39.999 USD",
+      "45000": "40.000-49.999 USD",
+      "55000": "50.000-59.999 USD",
+      "67500": "60.000-74.999 USD",
+      "82500": "75.000-89.999 USD",
+      "100000": "90.000-109.999 USD",
+      "120000": "110.000-129.999 USD",
+      "140000": "130.000-149.999 USD",
+      "160000": "150.000 USD or more per year",
+      "999990": "NAP, all other countries",
+      "999997": "Refused",
+      "999998": "Don't know"
+    },
+    "special": {}
+  },
+  {
+    "domain": "VE_INC",
+    "meaning": "Venezuela: Country specific household income",
+    "question": "And now, combined income of all persons living in this household, how much on average receive monthly?",
+    "content": {
+      "800": "800 VEF per month",
+      "55000": "55.000 VEF per month",
+      "999990": "NAP, all other countries",
+      "999999": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "ZA_INC",
+    "meaning": "South Africa: Country specific household income",
+    "question": "Please give me the letter that best describes the TOTAL MONTHLY HOUSEHOLD INCOME of all the people in your household before tax and other deductions. Please indicate all sources of income, i.e. salaries, pensions, income from investments, etc.",
+    "content": {
+      "0": "No income",
+      "250": "500 ZAR or less per month",
+      "625": "501-750 ZAR",
+      "875": "751-1.000 ZAR",
+      "1250": "1.001-1.500 ZAR",
+      "1750": "1.501-2.000 ZAR",
+      "2500": "2.001-3.000 ZAR",
+      "4000": "3.001-5.000 ZAR",
+      "6250": "5.001-7.500 ZAR",
+      "8750": "7.501-10.000 ZAR",
+      "12500": "10.001-15.000 ZAR",
+      "17500": "15.001-20.000 ZAR",
+      "25000": "20.001-30.000 ZAR",
+      "40000": "30.001-50.000 ZAR",
+      "60000": "More than 50.001 ZAR per month",
+      "999990": "NAP, other countries",
+      "999997": "Refused",
+      "999998": "Don't know",
+      "999999": "No answer"
+    },
+    "special": {}
+  }
+]

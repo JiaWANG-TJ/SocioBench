@@ -1,0 +1,615 @@
+[
+  {
+    "domain": "Q9",
+    "meaning": "Alternative medicine: better solutions than conventional medicine",
+    "question": "To what extent do you agree or disagree with the following statement: [Alternative/traditional/folk] medicine provides better solutions for health problems than [mainstream/Western conventional] medicine?",
+    "content": {
+      "-8": "Can't choose",
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree",
+      "-9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "Q10a",
+    "meaning": "Doctors: can be trusted",
+    "question": "How much do you agree or disagree with the following statements about doctors in general in [country]? All things considered, doctors can be trusted.",
+    "content": {
+      "-8": "Can't choose",
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree",
+      "-9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "Q10b",
+    "meaning": "Doctors: medical skills are not as good as they should be",
+    "question": "How much do you agree or disagree with the following statements about doctors in general in [country]? The medical skills of doctors are not as good as they should be.",
+    "content": {
+      "-8": "Can't choose",
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree",
+      "-9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "Q10c",
+    "meaning": "Doctors: care more about earnings",
+    "question": "How much do you agree or disagree with the following statements about doctors in general in [country]? Doctors care more about their earnings than about their patients.",
+    "content": {
+      "-8": "Can't choose",
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree",
+      "-9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "Q11",
+    "meaning": "Past 12 months, frequency of internet usage to look for health or medical information",
+    "question": "During the past 12 months, how often, if at all, did you use the internet on any device (such as computers, tablets and smartphones) to look for health or medical information for yourself or someone else?",
+    "content": {
+      "-8": "Can't choose",
+      "-4": "I do not have access to the internet",
+      "1": "Several times a day",
+      "2": "Once a day",
+      "3": "Several times a week",
+      "4": "Several times a month",
+      "5": "Several times a year",
+      "6": "Never or almost never; PL: 1-2 times a year + Never",
+      "-9": "No answer"
+    },
+    "special": {
+      "PL": {
+        "6": "1-2 times a year + Never"
+      }
+    }
+  },
+  {
+    "domain": "Q12a",
+    "meaning": "Past 12 months, frequency of internet usage to look for: information on healthy lifestyle",
+    "question": "IF NOT CODE -4 IN Q11 'I DO NOT HAVE ACCESS TO THE INTERNET' During the past 12 months, how often, if at all, have you used the internet to look for information on the following topics? Information on healthy lifestyle?",
+    "content": {
+      "-8": "Can't choose",
+      "1": "Never",
+      "2": "Seldom",
+      "3": "Sometimes",
+      "4": "Often",
+      "5": "Very often",
+      "-4": "NAP (code -4 in v22; PL: code -4 in v22 + never looked for health or medical information in v22)",
+      "-9": "No answer"
+    },
+    "special": {
+      "PL": {
+        "-4": "code -4 in v22 + never looked for health or medical information in v22"
+      }
+    }
+  },
+  {
+    "domain": "Q12b",
+    "meaning": "Past 12 months, frequency of internet usage to look for: information related to anxiety, stress, or similar problems",
+    "question": "IF NOT CODE -4 IN Q11 'I DO NOT HAVE ACCESS TO THE INTERNET' During the past 12 months, how often, if at all, have you used the internet to look for information on the following topics? Information related to anxiety, stress, or similar problems?",
+    "content": {
+      "-8": "Can't choose",
+      "1": "Never",
+      "2": "Seldom",
+      "3": "Sometimes",
+      "4": "Often",
+      "5": "Very often",
+      "-4": "NAP (code -4 in v22; PL: code -4 in v22 + never looked for health or medical information in v22)",
+      "-9": "No answer"
+    },
+    "special": {
+      "PL": {
+        "-4": "code -4 in v22 + never looked for health or medical information in v22"
+      }
+    }
+  },
+  {
+    "domain": "Q12c",
+    "meaning": "Past 12 months, frequency of internet usage to look for: information on vaccinations",
+    "question": "IF NOT CODE -4 IN Q11 'I DO NOT HAVE ACCESS TO THE INTERNET' During the past 12 months, how often, if at all, have you used the internet to look for information on the following topics? Information on vaccinations?",
+    "content": {
+      "-8": "Can't choose",
+      "1": "Never",
+      "2": "Seldom",
+      "3": "Sometimes",
+      "4": "Often",
+      "5": "Very often",
+      "-4": "NAP (code -4 in v22; PL: code -4 in v22 + never looked for health or medical information in v22)",
+      "-9": "No answer"
+    },
+    "special": {
+      "PL": {
+        "-4": "code -4 in v22 + never looked for health or medical information in v22"
+      }
+    }
+  },
+  {
+    "domain": "Q13a",
+    "meaning": "Past 12 months, information on internet: affected my health behaviour in a positive way",
+    "question": "IF NOT CODE -4 IN Q11 'I DO NOT HAVE ACCESS TO THE INTERNET' To what extent do you agree or disagree with the following statements? During the past 12 months, information on the internet… affected my health behaviour in a positive way.",
+    "content": {
+      "-8": "Can't choose",
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree",
+      "-4": "NAP (code -4 in v22; PL: code -4 in v22 + never looked for health or medical information in v22)",
+      "-9": "No answer"
+    },
+    "special": {
+      "PL": {
+        "-4": "code -4 in v22 + never looked for health or medical information in v22"
+      }
+    }
+  },
+  {
+    "domain": "Q13b",
+    "meaning": "Past 12 months, information on internet: helped me understand doctor's explanations",
+    "question": "IF NOT CODE -4 IN Q11 'I DO NOT HAVE ACCESS TO THE INTERNET' To what extent do you agree or disagree with the following statements? During the past 12 months, information on the internet… helped me understand what a doctor tried to explain to me.",
+    "content": {
+      "-8": "Can't choose",
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree",
+      "-4": "NAP (code -4 in v22; PL: code -4 in v22 + never looked for health or medical information in v22)",
+      "-9": "No answer"
+    },
+    "special": {
+      "PL": {
+        "-4": "code -4 in v22 + never looked for health or medical information in v22"
+      }
+    }
+  },
+  {
+    "domain": "Q14a",
+    "meaning": "Internet useful to help people decide whether to go to the doctor",
+    "question": "To what extent do you agree or disagree with the following statements? The internet is useful to help people decide if their symptoms are serious enough to go to the doctor.",
+    "content": {
+      "-8": "Can't choose; PL: Don't use the internet + Don't know",
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree",
+      "-9": "No answer"
+    },
+    "special": {
+      "PL": {
+        "-8": "Don't use the internet + Don't know"
+      }
+    }
+  },
+  {
+    "domain": "Q14b",
+    "meaning": "Internet useful to check doctor's advice",
+    "question": "To what extent do you agree or disagree with the following statements? The internet is useful to check that the doctor is giving people appropriate advice.",
+    "content": {
+      "-8": "Can't choose; PL: Don't use the internet + Don't know",
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree",
+      "-9": "No answer"
+    },
+    "special": {
+      "PL": {
+        "-8": "Don't use the internet + Don't know"
+      }
+    }
+  },
+  {
+    "domain": "Q14c",
+    "meaning": "Not easy to distinguish between reliable and unreliable health information on internet",
+    "question": "To what extent do you agree or disagree with the following statements? It is not easy to distinguish between reliable and unreliable health information on the internet.",
+    "content": {
+      "-8": "Can't choose; PL: Don't use the internet + Don't know",
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree",
+      "-9": "No answer"
+    },
+    "special": {
+      "PL": {
+        "-8": "Don't use the internet + Don't know"
+      }
+    }
+  },
+  {
+    "domain": "Q15a",
+    "meaning": "Overall, vaccinations do more harm than good",
+    "question": "How much do you agree or disagree with the following statements about vaccinations? Overall, vaccinations do more harm than good.",
+    "content": {
+      "-8": "Can't choose",
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree",
+      "-9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "Q15b",
+    "meaning": "Immunity by getting ill better than having a vaccination",
+    "question": "How much do you agree or disagree with the following statements about vaccinations? It is better to develop immunity by getting ill than having a vaccination.",
+    "content": {
+      "-8": "Can't choose",
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree",
+      "-9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "Q16a",
+    "meaning": "Past 4 weeks: health problems",
+    "question": "During the past 4 weeks how often… have you had difficulties with work or household activities because of health problems?",
+    "content": {
+      "-8": "Can't choose",
+      "1": "Never",
+      "2": "Seldom",
+      "3": "Sometimes",
+      "4": "Often",
+      "5": "Very often",
+      "-9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "Q16b",
+    "meaning": "Past 4 weeks: bodily aches or pains",
+    "question": "During the past 4 weeks how often… have you had bodily aches or pains?",
+    "content": {
+      "-8": "Can't choose",
+      "1": "Never",
+      "2": "Seldom",
+      "3": "Sometimes",
+      "4": "Often",
+      "5": "Very often",
+      "-9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "Q16c",
+    "meaning": "Past 4 weeks: felt unhappy and depressed",
+    "question": "During the past 4 weeks how often… have you felt unhappy and depressed?",
+    "content": {
+      "-8": "Can't choose",
+      "1": "Never",
+      "2": "Seldom",
+      "3": "Sometimes",
+      "4": "Often",
+      "5": "Very often",
+      "-9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "Q16d",
+    "meaning": "Past 4 weeks: lost confidence",
+    "question": "During the past 4 weeks how often… have you lost confidence in yourself?",
+    "content": {
+      "-8": "Can't choose",
+      "1": "Never",
+      "2": "Seldom",
+      "3": "Sometimes",
+      "4": "Often",
+      "5": "Very often",
+      "-9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "Q16e",
+    "meaning": "Past 4 weeks: not overcome problems",
+    "question": "During the past 4 weeks how often… have you felt you could not overcome your problems?",
+    "content": {
+      "-8": "Can't choose",
+      "1": "Never",
+      "2": "Seldom",
+      "3": "Sometimes",
+      "4": "Often",
+      "5": "Very often",
+      "-9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "Q17a",
+    "meaning": "Past 12 months: visit a doctor",
+    "question": "During the past 12 months, how often did you visit or were visited by... a doctor?",
+    "content": {
+      "-8": "Can't choose",
+      "1": "Never",
+      "2": "Seldom",
+      "3": "Sometimes",
+      "4": "Often",
+      "5": "Very often",
+      "-9": "No answer"
+    },
+    "special": {
+      "TW": {
+        "1": "Never (respondents who did not need medical treatment)"
+      }
+    }
+  },
+  {
+    "domain": "Q17b",
+    "meaning": "Past 12 months: visit alternative health care practitioner",
+    "question": "During the past 12 months, how often did you visit or were visited by... an [alternative/traditional/folk] health care practitioner?",
+    "content": {
+      "-8": "Can't choose",
+      "1": "Never",
+      "2": "Seldom",
+      "3": "Sometimes",
+      "4": "Often",
+      "5": "Very often",
+      "-9": "No answer"
+    },
+    "special": {
+      "TW": {
+        "1": "Never (respondents who did not need medical treatment)"
+      }
+    }
+  },
+  {
+    "domain": "Q18a",
+    "meaning": "Did not get medical treatment past 12 months: could not pay for it",
+    "question": "During the past 12 months did it ever happen that you did not get the medical treatment you needed because… you could not pay for it?",
+    "content": {
+      "-4": "Did not need medical treatment",
+      "1": "Yes",
+      "2": "No",
+      "-9": "No answer; PH: Can't choose/ No answer"
+    },
+    "special": {
+      "PH": {
+        "-9": "Can't choose/ No answer"
+      }
+    }
+  },
+  {
+    "domain": "Q18b",
+    "meaning": "Did not get medical treatment past 12 months: could not take time off",
+    "question": "During the past 12 months did it ever happen that you did not get the medical treatment you needed because… you could not take the time off work or had other commitments?",
+    "content": {
+      "-4": "Did not need medical treatment",
+      "1": "Yes",
+      "2": "No",
+      "-9": "No answer; PH: Can't choose/ No answer"
+    },
+    "special": {
+      "PH": {
+        "-9": "Can't choose/ No answer"
+      }
+    }
+  },
+  {
+    "domain": "Q18c",
+    "meaning": "Did not get medical treatment past 12 months: waiting list too long",
+    "question": "During the past 12 months did it ever happen that you did not get the medical treatment you needed because… the waiting list was too long?",
+    "content": {
+      "-4": "Did not need medical treatment",
+      "1": "Yes",
+      "2": "No",
+      "-1": "SR: Not available (see SR_v42)",
+      "-9": "No answer; PH: Can't choose/ No answer"
+    },
+    "special": {
+      "SR": {
+        "-1": "Not available (see SR_v42)"
+      },
+      "PH": {
+        "-9": "Can't choose/ No answer"
+      }
+    }
+  },
+  {
+    "domain": "SR_v42",
+    "meaning": "Suriname: Did not get medical treatment past 12 months: treatment not available in the area",
+    "question": "During the past 12 months did it ever happen that you did not get the medical treatment you needed because… the treatment you needed was not available in your place of residence or area?",
+    "content": {
+      "-4": "Did not need medical treatment",
+      "1": "Yes",
+      "2": "No",
+      "-1": "Not available: Other countries (see v42)",
+      "-9": "No answer"
+    },
+    "special": {
+      "SR": {
+        "-1": "Not available: Other countries (see v42)"
+      }
+    }
+  },
+  {
+    "domain": "Q19",
+    "meaning": "If seriously ill: get or not get best treatment available in [country]",
+    "question": "How likely is it that if you become seriously ill, you would get or not get the best treatment available in [country]?",
+    "content": {
+      "-8": "Can't choose",
+      "1": "It's certain I would get",
+      "2": "It's likely I would get",
+      "3": "Equal chance of getting or not getting",
+      "4": "It's likely I would not get",
+      "5": "It's certain I would not get",
+      "-9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "Q20",
+    "meaning": "Satisfaction with health care system in [country]",
+    "question": "In general, how satisfied or dissatisfied are you with the health care system in [country]?",
+    "content": {
+      "-8": "Can't choose",
+      "1": "Completely satisfied",
+      "2": "Very satisfied",
+      "3": "Fairly satisfied",
+      "4": "Neither satisfied nor dissatisfied",
+      "5": "Fairly dissatisfied",
+      "6": "Very dissatisfied",
+      "7": "Completely dissatisfied",
+      "-9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "Q21a",
+    "meaning": "Satisfaction with treatment: last visited a doctor",
+    "question": "How satisfied or dissatisfied were you with the treatment you received… when you last visited a doctor?",
+    "content": {
+      "-8": "Can't choose",
+      "-4": "Does not apply",
+      "1": "Completely satisfied",
+      "2": "Very satisfied",
+      "3": "Fairly satisfied",
+      "4": "Neither satisfied nor dissatisfied",
+      "5": "Fairly dissatisfied",
+      "6": "Very dissatisfied",
+      "7": "Completely dissatisfied",
+      "-9": "No answer"
+    },
+    "special": {
+      "NO": {
+        "-4": "Not offered in the Norwegian questionnaire"
+      },
+      "PH": {
+        "-4": "Omitted in the Philippines questionnaire"
+      }
+    }
+  },
+  {
+    "domain": "Q21b",
+    "meaning": "Satisfaction with treatment: alternative health care practitioner",
+    "question": "How satisfied or dissatisfied were you with the treatment you received… when you last visited an [alternative/traditional/folk] health care practitioner?",
+    "content": {
+      "-8": "Can't choose",
+      "-4": "Does not apply",
+      "1": "Completely satisfied",
+      "2": "Very satisfied",
+      "3": "Fairly satisfied",
+      "4": "Neither satisfied nor dissatisfied",
+      "5": "Fairly dissatisfied",
+      "6": "Very dissatisfied",
+      "7": "Completely dissatisfied",
+      "-9": "No answer"
+    },
+    "special": {
+      "NO": {
+        "-4": "Not offered in the Norwegian questionnaire"
+      },
+      "PH": {
+        "-4": "Omitted in the Philippines questionnaire"
+      }
+    }
+  },
+  {
+    "domain": "Q22",
+    "meaning": "Smoking cigarettes",
+    "question": "Do you smoke cigarettes, and if so about how many cigarettes a day?",
+    "content": {
+      "-8": "Can't choose",
+      "1": "Do not smoke and never did",
+      "2": "Do not smoke now but smoked in the past",
+      "3": "Smoke 1-5 cigarettes per day",
+      "4": "Smoke 6-10 cigarettes per day",
+      "5": "Smoke 11-20 cigarettes per day",
+      "6": "Smoke 21-40 cigarettes per day",
+      "7": "Smoke more than 40 cigarettes per day",
+      "-9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "Q23a",
+    "meaning": "How often: drink 4 or more alcoholic drinks on same day",
+    "question": "How often do you… drink 4 or more alcoholic drinks on the same day?",
+    "content": {
+      "-8": "Can't choose",
+      "1": "Never",
+      "2": "Once a month or less often",
+      "3": "Several times a month",
+      "4": "Several times a week",
+      "5": "Daily",
+      "-9": "No answer; TW: I don't drink like this now, but I used to"
+    },
+    "special": {
+      "TW": {
+        "1": "I don't drink like this now, but I used to"
+      }
+    }
+  },
+  {
+    "domain": "Q23b",
+    "meaning": "How often: physical activity for at least 20 minutes",
+    "question": "How often do you… do physical activity for at least 20 minutes that makes you sweat or breathe more heavily than usual?",
+    "content": {
+      "-8": "Can't choose",
+      "1": "Never",
+      "2": "Once a month or less often",
+      "3": "Several times a month",
+      "4": "Several times a week",
+      "5": "Daily",
+      "-9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "Q23c",
+    "meaning": "How often: eat fresh fruits or vegetables",
+    "question": "How often do you… eat fresh fruit or vegetables?",
+    "content": {
+      "-8": "Can't choose",
+      "1": "Never",
+      "2": "Once a month or less often",
+      "3": "Several times a month",
+      "4": "Several times a week",
+      "5": "Daily",
+      "-9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "Q24",
+    "meaning": "Health status",
+    "question": "In general, would you say your health is …",
+    "content": {
+      "-8": "Can't choose",
+      "1": "Excellent",
+      "2": "Very good",
+      "3": "Good",
+      "4": "Fair",
+      "5": "Poor",
+      "-9": "No answer"
+    },
+    "special": {}
+  }
+]

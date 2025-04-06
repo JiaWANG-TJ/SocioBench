@@ -1,0 +1,431 @@
+[
+  {
+    "domain": "IT_RELIG",
+    "meaning": "Italy: Country specific religious aﬀiliation or denomination",
+    "question": "Which religion do you now belong to? (Please refer to the religion the respondent belongs to now, and not the religion the respondent was raised in.)",
+    "content": {
+      "-9": "No answer, Don't know",
+      "-2": "NAP , other countries",
+      "0": "No religion",
+      "1": "Catholic",
+      "2": "Protestant",
+      "3": "Orthodox",
+      "4": "Other Christian religions",
+      "5": "Jewish",
+      "6": "Islamic",
+      "7": "Buddhist",
+      "8": "Hindu",
+      "9": "Other Asian religions",
+      "10": "Other religions"
+    },
+    "special": {}
+  },
+  {
+    "domain": "JP_RELIG",
+    "meaning": "Japan: Country specific religious aﬀiliation or denomination",
+    "question": "Do you follow any religion? Indicate the religion you profess, irrespective of ceremonial occasions, such as weddings or funerals.",
+    "content": {
+      "-9": "No answer",
+      "-2": "NAP , other countries",
+      "0": "No religion",
+      "4": "Other Christian",
+      "7": "Buddhist",
+      "10": "Other religions",
+      "11": "Shintoism"
+    },
+    "special": {}
+  },
+  {
+    "domain": "KR_RELIG",
+    "meaning": "Korea (South): Country specific religious aﬀiliation or denomination",
+    "question": "What is your religion?",
+    "content": {
+      "-9": "No answer",
+      "-2": "NAP , other countries",
+      "0": "No religion",
+      "1": "Catholic",
+      "2": "Protestant",
+      "7": "Buddhist",
+      "10": "Other religions"
+    },
+    "special": {}
+  },
+  {
+    "domain": "LT_RELIG",
+    "meaning": "Lithuania: Country specific religious aﬀiliation or denomination",
+    "question": "Do you belong to a religion? If yes, which religion do you belong to?",
+    "content": {
+      "-9": "No answer",
+      "-7": "Refused",
+      "-2": "NAP , other countries",
+      "0": "No religion",
+      "1": "Catholic",
+      "2": "Protestant",
+      "3": "Orthodox",
+      "4": "Other Christian",
+      "5": "Jewish",
+      "6": "Islamic",
+      "7": "Buddhist",
+      "8": "Hindu",
+      "9": "Other Asian religions",
+      "10": "Other religions"
+    },
+    "special": {}
+  },
+  {
+    "domain": "NO_RELIG",
+    "meaning": "Norway: Country specific religious aﬀiliation or denomination",
+    "question": "Do you belong to a particular religion or denomination, and if so, which one?",
+    "content": {
+      "-9": "No answer",
+      "-8": "Don't know",
+      "-2": "NAP , other countries",
+      "0": "No denomination or life stance organisation",
+      "1": "Church of Norway (formerly the State Church)",
+      "2": "Other Protestant Denomination (e.g. Free Churches, the Anglican Church, Pentecostal)",
+      "3": "Roman Catholic",
+      "4": "Orthodox (Greek, Russian, others)",
+      "5": "Other Christian Denomination (e.g. Jehova’s witnesses, Mormons)",
+      "6": "Jewish",
+      "7": "Islam",
+      "8": "Buddhism",
+      "9": "Hinduism",
+      "10": "Other Eastern religion (e.g. Sikh, Shinto, Taoism, Confucianism)",
+      "11": "Other religion",
+      "12": "Other life stance organisation (e.g. the Norwegian Humanist Association)"
+    },
+    "special": {}
+  },
+  {
+    "domain": "NZ_RELIG",
+    "meaning": "New Zealand: Country specific religious aﬀiliation or denomination",
+    "question": "Which one of these categories describes your current religion or religious denomination? If Christian, which one of these are you?",
+    "content": {
+      "-9": "No answer",
+      "-2": "NAP , other countries",
+      "0": "No religion",
+      "1": "Christian: Non-denominational",
+      "2": "Christian: Anglican",
+      "3": "Christian: Catholic",
+      "4": "Christian: Presbyterian",
+      "5": "Christian: Methodist",
+      "6": "Christian: Baptist",
+      "7": "Christian: The Church of Jesus Christ of Latter-Day Saints",
+      "8": "Christian: Ratana",
+      "9": "Christian: Other denomination",
+      "10": "Buddhist",
+      "11": "Hindu",
+      "12": "Muslim",
+      "13": "Jewish",
+      "14": "Other religion"
+    },
+    "special": {}
+  },
+  {
+    "domain": "PH_RELIG",
+    "meaning": "Philippines: Country specific religious aﬀiliation or denomination",
+    "question": "Do you belong to a religion and, if yes, which religion do you belong to?",
+    "content": {
+      "-7": "Refused",
+      "-2": "NAP , other countries",
+      "0": "No religion/ None",
+      "1": "Roman Catholic",
+      "2": "Iglesia ni Cristo",
+      "3": "Aglipayan",
+      "4": "Protestant",
+      "5": "Islam/ Islamic",
+      "6": "Jesus is Lord",
+      "7": "Born Again",
+      "10": "Baptist",
+      "11": "Church of Jesus Christ and the Latter Day Saints (Mormon)",
+      "12": "Seventh Day Adventist",
+      "13": "Methodist",
+      "16": "Jehovah's Witnesses",
+      "18": "Ang Dating Daan",
+      "23": "Church of Christ",
+      "27": "Assembly of God",
+      "28": "Four Square",
+      "31": "Pentecostal",
+      "32": "Church of God",
+      "36": "Alliance",
+      "47": "United Church of Christ in the Philippines",
+      "50": "Jewish",
+      "51": "Buddhist",
+      "58": "Evangelical Christian",
+      "59": "Kingdom of Jesus Christ (Kingdom Citizens)",
+      "75": "Journey Church Philippines",
+      "76": "Every Nation Churches (Victory Church)",
+      "77": "Christ's Commission Fellowship - CCF",
+      "78": "Christ the Livingstone Fellowship",
+      "79": "JLFCCI (Jesus Lord of Freedom Christian Community",
+      "80": "Jesus Christ Mission",
+      "81": "All Nations Full Gospel",
+      "82": "Kapatirang ang Litaw na Katalinuhan (K.A.L.K.)",
+      "83": "Members Church of God International",
+      "84": "Mystica",
+      "85": "Word for the World Christian Fellowship",
+      "87": "End Time Message Church",
+      "88": "Pagtulun-an gikan sa Diyos nga Amahan (PGDA)",
+      "89": "Apostolic Catholic Church",
+      "90": "Jesus Christ Life",
+      "91": "March of Faith",
+      "92": "Lords Recovery",
+      "93": "Christ the Healer",
+      "94": "The Church Body of Christ Filipinista"
+    },
+    "special": {}
+  },
+  {
+    "domain": "RU_RELIG",
+    "meaning": "Russia: Country specific religious aﬀiliation or denomination",
+    "question": "Do you belong to a religion and, if yes, which religion do you belong to?",
+    "content": {
+      "-9": "No answer",
+      "-7": "Refused",
+      "-2": "NAP , other countries",
+      "0": "No religion",
+      "1": "Russian Orthodox",
+      "2": "Roman Catholic",
+      "3": "Protestant",
+      "4": "Judaism",
+      "5": "Islam",
+      "6": "Buddhism",
+      "7": "Hinduism",
+      "8": "Other religion (specify)",
+      "9": "Atheist"
+    },
+    "special": {}
+  },
+  {
+    "domain": "SE_RELIG",
+    "meaning": "Sweden: Country specific religious aﬀiliation or denomination",
+    "question": "Do you belong to any church, parish, communion, or religion?",
+    "content": {
+      "-9": "No answer",
+      "-2": "NAP , other countries",
+      "0": "No religion",
+      "1": "Church of Sweden",
+      "2": "Roman Catholic",
+      "3": "Christian Orthodox",
+      "4": "Christian free-church",
+      "5": "Other Christian church/ community",
+      "6": "Jewish",
+      "7": "Islamic",
+      "8": "Buddhist",
+      "9": "Hindu",
+      "10": "Other religion"
+    },
+    "special": {}
+  },
+  {
+    "domain": "SI_RELIG",
+    "meaning": "Slovenia: Country specific religious aﬀiliation or denomination",
+    "question": "Do you consider yourself as a member of a certain religion? (If yes) To which religion do you belong to?",
+    "content": {
+      "-9": "No answer",
+      "-2": "NAP , other countries",
+      "0": "Does not belong to any religion",
+      "1": "Catholic",
+      "2": "Protestant",
+      "3": "Orthodox",
+      "4": "Other Christian religions",
+      "5": "Jewish",
+      "6": "Islamic",
+      "7": "Buddhist",
+      "8": "Hindu",
+      "10": "Other religions"
+    },
+    "special": {}
+  },
+  {
+    "domain": "SK_RELIG",
+    "meaning": "Slovakia: Country specific religious aﬀiliation or denomination",
+    "question": "Do you adhere to a religion? If yes, to which one?",
+    "content": {
+      "-9": "No answer",
+      "-2": "NAP , other countries",
+      "0": "No religion",
+      "1": "Roman Catholic",
+      "2": "Evangelical Lutheran",
+      "3": "Greek Catholic",
+      "4": "Reformed Calvinist",
+      "5": "Christian Orthodox",
+      "6": "Jehovah's Witnesses",
+      "7": "Other Christian",
+      "8": "Jewish",
+      "9": "Other Non-Christian"
+    },
+    "special": {}
+  },
+  {
+    "domain": "TH_RELIG",
+    "meaning": "Thailand: Country specific religious aﬀiliation or denomination",
+    "question": "Which religion do you belong to?",
+    "content": {
+      "-9": "No answer",
+      "-2": "NAP , other countries",
+      "0": "No religion",
+      "4": "Other Christian",
+      "6": "Islamic",
+      "7": "Buddhist",
+      "8": "Hindu",
+      "9": "Other Asian Religions",
+      "10": "Other Religions"
+    },
+    "special": {}
+  },
+  {
+    "domain": "TW_RELIG",
+    "meaning": "Taiwan: Country specific religious aﬀiliation or denomination",
+    "question": "Do you have any religious belief at present?",
+    "content": {
+      "-7": "Refused",
+      "-2": "NAP , other countries",
+      "0": "None",
+      "1": "Buddhism (converted, not converted)",
+      "2": "Taoism",
+      "3": "Folk religion",
+      "4": "Yiguan Dao",
+      "5": "Moslem/ Islam",
+      "6": "Catholicism",
+      "7": "Protestant Christianity",
+      "8": "Other"
+    },
+    "special": {}
+  },
+  {
+    "domain": "US_RELIG",
+    "meaning": "United States: Country specific religious aﬀiliation or denomination",
+    "question": "What is your religious preference?",
+    "content": {
+      "-9": "No answer",
+      "-2": "NAP , other countries",
+      "0": "No religion",
+      "1": "Protestant",
+      "2": "Catholic",
+      "3": "Jewish",
+      "5": "Other",
+      "6": "Buddhism",
+      "7": "Hinduism",
+      "8": "Other Eastern",
+      "9": "Moslem/ Islam",
+      "10": "Orthodox-Christian",
+      "11": "Christian",
+      "12": "Native American",
+      "13": "Inter- or Non-denominational"
+    },
+    "special": {}
+  },
+  {
+    "domain": "ZA_RELIG",
+    "meaning": "South Africa: Country specific religious aﬀiliation or denomination",
+    "question": "Do you consider yourself as belonging to any religion? (If no, omit next question.)",
+    "content": {
+      "-9": "No answer",
+      "-7": "Resused",
+      "-2": "NAP , other countries",
+      "0": "No religion",
+      "1": "Christian (without specification)",
+      "2": "African Evangelical Church",
+      "3": "Anglican",
+      "4": "Assembles of God",
+      "5": "Apostle Twelve",
+      "6": "Baptist",
+      "7": "Dutch Reformed",
+      "8": "Full Gospel Church of God",
+      "9": "Faith Mission",
+      "10": "Church of God and Saints of Christ",
+      "11": "Jehovah's Witness",
+      "12": "Lutheran",
+      "13": "Methodist",
+      "14": "Pentecostal Holiness Church",
+      "15": "Roman Catholic",
+      "16": "Salvation Army",
+      "17": "Seventh Day Adventist",
+      "18": "St Johns Apostolic",
+      "19": "United Congregational Church",
+      "20": "Universal Church of God",
+      "21": "Nazareth",
+      "22": "Zionist Christian Church",
+      "23": "Other Christian",
+      "24": "Islam/ Muslim",
+      "25": "Judaism/ Jewish",
+      "26": "Hinduism/ Hindu",
+      "27": "Buddhism/ Buddhist",
+      "28": "Other (specify)"
+    },
+    "special": {}
+  },
+  {
+    "domain": "RELIGGRP",
+    "meaning": "Religious main groups: compressed variable derived from nat_RELIG",
+    "question": "[Original question text see nat_RELIG: AT_RELIG-ZA_RELIG]",
+    "content": {
+      "-9": "No answer",
+      "-8": "Information insufficient",
+      "-7": "Refused",
+      "0": "No religion",
+      "1": "Catholic",
+      "2": "Protestant",
+      "3": "Orthodox",
+      "4": "Other Christian",
+      "5": "Jewish",
+      "6": "Islamic",
+      "7": "Buddhist",
+      "8": "Hindu",
+      "9": "Other Asian Religions",
+      "10": "Other Religions"
+    },
+    "special": {}
+  },
+  {
+    "domain": "ATTEND",
+    "meaning": "Attendance of religious services",
+    "question": "Apart from such special occasions as weddings, funerals, etc., how often do you attend religious services?",
+    "content": {
+      "-9": "No answer",
+      "-8": "Don't know",
+      "-7": "Refused",
+      "1": "Several times a week or more often (incl. every day, several times a day)",
+      "2": "Once a week",
+      "3": "2 or 3 times a month",
+      "4": "Once a month",
+      "5": "Several times a year",
+      "6": "Once a year; CH, NO, US: Once or twice a year",
+      "7": "Less frequently than once a year",
+      "8": "Never"
+    },
+    "special": {
+      "CH": {
+        "6": "Once or twice a year"
+      },
+      "NO": {
+        "6": "Once or twice a year"
+      },
+      "US": {
+        "6": "Once or twice a year"
+      },
+      "HU": {
+        "6": "Once or twice a year"
+      }
+    }
+  },
+  {
+    "domain": "TOPBOT",
+    "meaning": "Top-Bottom self-placement",
+    "question": "In our society, there are groups which tend to be towards the top and groups which tend to be towards the bottom. Where would you put yourself on this scale?",
+    "content": {
+      "1": "Lowest, Bottom, 01",
+      "2": "02",
+      "3": "03",
+      "4": "04",
+      "5": "05",
+      "6": "06",
+      "7": "07",
+      "8": "08",
+      "9": "09",
+      "10": "Highest, Top, 10"
+    },
+    "special": {}
+  }
+]

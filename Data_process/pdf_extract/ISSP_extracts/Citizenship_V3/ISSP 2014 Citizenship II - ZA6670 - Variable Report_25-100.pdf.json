@@ -1,0 +1,687 @@
+[
+  {
+    "domain": "V1",
+    "meaning": "GESIS Data Archive Study Number - 'Citizenship II'",
+    "question": "GESIS Data Archive Study number ZA6670 for the ISSP 2014 on 'Citizenship II'. Study number of the data set producer and archiving number",
+    "content": {
+      "6670": "GESIS Data Archive Study Number ZA6670"
+    },
+    "special": {}
+  },
+  {
+    "domain": "V2",
+    "meaning": "GESIS Archive Version",
+    "question": "VERSION AND RELEASE DATE OF THE ARCHIVE DATA SET This variable identifies the GESIS archive version number of this data set and the corresponding release date, recorded as a string. The version number is composed of a sequence of three numbers. The major number is incremented when there are changes in the composition of the data set (e.g. additional variables or cases), the minor or second number is incremented when significant errors have been fixed (e.g. coding errors, misleading value labels), and the third or revision number is incremented when minor bugs are fixed (e.g. spelling errors in variable or value labels).",
+    "content": {
+      "2.0.0 (2016-08-24)": "2.0.0 (2016-08-24)"
+    },
+    "special": {}
+  },
+  {
+    "domain": "DOI",
+    "meaning": "Digital Object Identifier (DOI)",
+    "question": "This variable holds the Digital Object Identifier (DOI) for the data set at hand as registered via the DA|RA registration agency for economic and social science data. Each data set version (see variable V2) has a unique persistent DOI. For direct access to the complete archive dissemination package for this study, including new data set versions, the DOI needs to be appended to the resolver service URL:http://dx.doi.org/10.4232/1.12590 In terms of good scientific practice, the DOI is an important element for the correct citation of a data set.",
+    "content": {
+      "doi:10.4232/1.12590": "doi:10.4232/1.12590"
+    },
+    "special": {}
+  },
+  {
+    "domain": "V3",
+    "meaning": "Country/Sample (see V4 for codes for whole nation states)",
+    "question": "Country/ Sample (see V4 for codes for whole nation states). To indicate the subsamples within the ISSP countries a code on the basis of ISO 3166 was constructed. For all countries without subsamples the three digit ISO 3166 Code (as in V4) was used. For those with subsamples a five digit numeric code is used. The first three-digits are based on the original ISO code (see V4) and indicate the country. The following two-digit numeric appendices (01, 02, 03) indicate the subsamples.",
+    "content": {
+      "36": "AU-Australia",
+      "40": "AT-Austria",
+      "152": "CL-Chile",
+      "158": "TW-Taiwan",
+      "191": "HR-Croatia",
+      "203": "CZ-Czech Republic",
+      "208": "DK-Denmark",
+      "246": "FI-Finland",
+      "250": "FR-France",
+      "268": "GE-Georgia",
+      "348": "HU-Hungary",
+      "352": "IS-Iceland",
+      "356": "IN-India",
+      "392": "JP-Japan",
+      "410": "KR-Korea (South)",
+      "440": "LT-Lithuania",
+      "528": "NL-Netherlands",
+      "578": "NO-Norway",
+      "608": "PH-Philippines",
+      "616": "PL-Poland",
+      "643": "RU-Russia",
+      "703": "SK-Slovak Republic",
+      "705": "SI-Slovenia",
+      "710": "ZA-South Africa",
+      "724": "ES-Spain",
+      "752": "SE-Sweden",
+      "756": "CH-Switzerland",
+      "792": "TR-Turkey",
+      "840": "US-United States",
+      "862": "VE-Venezeula",
+      "5601": "BE-FLA-Belgium/ Flanders",
+      "5602": "BE-WAL-Belgium/ Wallonia",
+      "5603": "BE-BRU-Belgium/ Brussels",
+      "27601": "DE-W-Germany-West",
+      "27602": "DE-E-Germany-East",
+      "37601": "IL-J-Israel, Jews",
+      "37602": "IL-A-Israel, Arabs",
+      "82601": "GB-GBN-Great Britain"
+    },
+    "special": {}
+  },
+  {
+    "domain": "V4",
+    "meaning": "Country (see V3 for codes for the sample)",
+    "question": "ISO Code of the countries (three digit) All countries are coded in accordance with the ISO 3166-1-alpha-2 country code.",
+    "content": {
+      "36": "AU-Australia",
+      "40": "AT-Austria",
+      "56": "BE-Belgium",
+      "152": "CL-Chile",
+      "158": "TW-Taiwan",
+      "191": "HR-Croatia",
+      "203": "CZ-Czech Republic",
+      "208": "DK-Denmark",
+      "246": "FI-Finland",
+      "250": "FR-France",
+      "268": "GE-Georgia",
+      "276": "DE-Germany",
+      "348": "HU-Hungary",
+      "352": "IS-Iceland",
+      "356": "IN-India",
+      "376": "IL-Israel",
+      "392": "JP-Japan",
+      "410": "KR-Korea (South)",
+      "440": "LT-Lithuania",
+      "528": "NL-Netherlands",
+      "578": "NO-Norway",
+      "608": "PH-Philippines",
+      "616": "PL-Poland",
+      "643": "RU-Russia",
+      "703": "SK-Slovak Republic",
+      "705": "SI-Slovenia",
+      "710": "ZA-South Africa",
+      "724": "ES-Spain",
+      "752": "SE-Sweden",
+      "756": "CH-Switzerland",
+      "792": "TR-Turkey",
+      "826": "GB-GBN-Great Britain and/or United Kingdom",
+      "840": "US-United States",
+      "862": "VE-Venezuela"
+    },
+    "special": {}
+  },
+  {
+    "domain": "C_ALPHAN",
+    "meaning": "Country Prefix ISO 3166",
+    "question": "Sample Prefix ISO 3166 Code - alphanumeric ISO 3166 Country/ Sample Prefix This alphanumerical sample identification variable C_ALPHAN includes country codes that are based on ISO 3166. All countries are coded in accordance with the ISO 3166-1-alpha-2 country code, if available. ISO 3166-2 is applied for the UK's subsample Great Britain (GB-GBN). For examining subsamples from Belgium (Flanders/ Wallonia/ Brussels), Germany (East/ West) and Israel (Jewish/ Arab population) V3 can be used as a flag variable. This variable is used for the cross tabulations shown in the Variable Report.",
+    "content": {
+      "AT": "Austria",
+      "AU": "Australia",
+      "BE": "Belgium",
+      "CH": "Switzerland",
+      "CL": "Chile",
+      "CZ": "Czech Republic",
+      "DE": "Germany",
+      "DK": "Denmark",
+      "ES": "Spain",
+      "FI": "Finland",
+      "FR": "France",
+      "GB-GBN": "Great Britain",
+      "GE": "Georgia",
+      "HR": "Croatia",
+      "HU": "Hungary",
+      "IL": "Israel",
+      "IN": "India",
+      "IS": "Iceland",
+      "JP": "Japan",
+      "KR": "Korea (South)",
+      "LT": "Lithuania",
+      "NL": "Netherlands",
+      "NO": "Norway",
+      "PH": "Philippines",
+      "PL": "Poland",
+      "RU": "Russia",
+      "SE": "Sweden",
+      "SI": "Slovenia",
+      "SK": "Slovakia",
+      "TR": "Turkey",
+      "TW": "Taiwan",
+      "US": "United States of America",
+      "VE": "Venezuela",
+      "ZA": "South Africa"
+    },
+    "special": {}
+  },
+  {
+    "domain": "V5",
+    "meaning": "Q1 Good citizen: always vote in elections",
+    "question": "There are different opinions as to what it takes to be a good citizen. As far as you are concerned personally on a scale of 1 to 7, where 1 is not at all important and 7 is very important, how important is it: Always to vote in elections",
+    "content": {
+      "1": "1, Not at all important",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7, Very important",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "V6",
+    "meaning": "Q2 Good citizen: never try to evade taxes",
+    "question": "There are different opinions as to what it takes to be a good citizen. As far as you are concerned personally on a scale of 1 to 7, where 1 is not at all important and 7 is very important, how important is it: Never to try to evade taxes",
+    "content": {
+      "1": "1, Not at all important",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7, Very important",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "V7",
+    "meaning": "Q3 Good citizen: always obey laws",
+    "question": "There are different opinions as to what it takes to be a good citizen. As far as you are concerned personally on a scale of 1 to 7, where 1 is not at all important and 7 is very important, how important is it: Always to obey laws and regulations",
+    "content": {
+      "1": "1, Not at all important",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7, Very important",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "V8",
+    "meaning": "Q4 Good citizen: keep watch on actions of government",
+    "question": "There are different opinions as to what it takes to be a good citizen. As far as you are concerned personally on a scale of 1 to 7, where 1 is not at all important and 7 is very important, how important is it: To keep watch on the actions of government",
+    "content": {
+      "1": "1, Not at all important",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7, Very important",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "V9",
+    "meaning": "Q5 Good citizen: active in social or political associations",
+    "question": "There are different opinions as to what it takes to be a good citizen. As far as you are concerned personally on a scale of 1 to 7, where 1 is not at all important and 7 is very important, how important is it: To be active in social or political associations",
+    "content": {
+      "1": "1, Not at all important",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7, Very important",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "V10",
+    "meaning": "Q6 Good citizen: understand other opinions",
+    "question": "There are different opinions as to what it takes to be a good citizen. As far as you are concerned personally on a scale of 1 to 7, where 1 is not at all important and 7 is very important, how important is it: To try to understand the reasoning of people with other opinions",
+    "content": {
+      "1": "1, Not at all important",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7, Very important",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "V11",
+    "meaning": "Q7 Good citizen: choose products for political or environmental reasons",
+    "question": "There are different opinions as to what it takes to be a good citizen. As far as you are concerned personally on a scale of 1 to 7, where 1 is not at all important and 7 is very important, how important is it: To choose products for political, ethical or environmental reasons, even if they cost a bit more",
+    "content": {
+      "1": "1, Not at all important",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7, Very important",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "V12",
+    "meaning": "Q8 Good citizen: help less privileged people in (COUNTRY)",
+    "question": "There are different opinions as to what it takes to be a good citizen. As far as you are concerned personally on a scale of 1 to 7, where 1 is not at all important and 7 is very important, how important is it: To help people in [COUNTRY] who are worse off than yourself",
+    "content": {
+      "1": "1, Not at all important",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7, Very important",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "V13",
+    "meaning": "Q9 Good citizen: help less privileged people in the rest of world",
+    "question": "There are different opinions as to what it takes to be a good citizen. As far as you are concerned personally on a scale of 1 to 7, where 1 is not at all important and 7 is very important, how important is it: To help people in the rest of the world who are worse off than yourself",
+    "content": {
+      "1": "1, Not at all important",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7, Very important",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "V14",
+    "meaning": "Q10 Allow public meetings - religious extremists",
+    "question": "There are a number of groups in society. What do you think about the following groups holding public meetings? Should religious extremists be allowed to hold public meetings?",
+    "content": {
+      "1": "Should definitely be allowed",
+      "2": "Should probably be allowed",
+      "3": "Should probably not be allowed",
+      "4": "Should definitely not be allowed",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "V15",
+    "meaning": "Q11 Allow public meetings - people overthrow government",
+    "question": "There are a number of groups in society. What do you think about the following groups holding public meetings? Should people who want to overthrow the government by force be allowed to hold public meetings?",
+    "content": {
+      "1": "Should definitely be allowed",
+      "2": "Should probably be allowed",
+      "3": "Should probably not be allowed",
+      "4": "Should definitely not be allowed",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "V16",
+    "meaning": "Q12 Allow public meetings - racist people",
+    "question": "There are a number of groups in society. What do you think about the following groups holding public meetings? Should people prejudiced against any racial or ethnic group be allowed to hold public meetings?",
+    "content": {
+      "1": "Should definitely be allowed",
+      "2": "Should probably be allowed",
+      "3": "Should probably not be allowed",
+      "4": "Should definitely not be allowed",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "V17",
+    "meaning": "Q13 Political actions: sign a petition",
+    "question": "Here are some different forms of political and social action, that people can take. Please indicate, for each one, whether you have done any of these things in the past year, whether you have done it in the more distant past, whether you have not done it but might do it or have not done it and would never, under any circumstances, do it. Signed a petition",
+    "content": {
+      "1": "Have done it in the past year",
+      "2": "Have done it in the more distant past",
+      "3": "Have not done it but might do it",
+      "4": "Have not done it and would never do it",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "V18",
+    "meaning": "Q14 Political actions: boycott certain products",
+    "question": "Here are some different forms of political and social action, that people can take. Please indicate, for each one, whether you have done any of these things in the past year, whether you have done it in the more distant past, whether you have not done it but might do it or have not done it and would never, under any circumstances, do it. Boycotted, or deliberately bought, certain products for political, ethical or environmental reasons",
+    "content": {
+      "1": "Have done it in the past year",
+      "2": "Have done it in the more distant past",
+      "3": "Have not done it but might do it",
+      "4": "Have not done it and would never do it",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "V19",
+    "meaning": "Q15 Political actions: take part in a demonstration",
+    "question": "Here are some different forms of political and social action, that people can take. Please indicate, for each one, whether you have done any of these things in the past year, whether you have done it in the more distant past, whether you have not done it but might do it or have not done it and would never, under any circumstances, do it. Took part in a demonstration (any kind of demonstration)",
+    "content": {
+      "1": "Have done it in the past year",
+      "2": "Have done it in the more distant past",
+      "3": "Have not done it but might do it",
+      "4": "Have not done it and would never do it",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "V20",
+    "meaning": "Q16 Political actions: attend political meeting or rally",
+    "question": "Here are some different forms of political and social action, that people can take. Please indicate, for each one, whether you have done any of these things in the past year, whether you have done it in the more distant past, whether you have not done it but might do it or have not done it and would never, under any circumstances, do it. Attended a political meeting or rally",
+    "content": {
+      "1": "Have done it in the past year",
+      "2": "Have done it in the more distant past",
+      "3": "Have not done it but might do it",
+      "4": "Have not done it and would never do it",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "V21",
+    "meaning": "Q17 Political actions: contact a politician",
+    "question": "Here are some different forms of political and social action, that people can take. Please indicate, for each one, whether you have done any of these things in the past year, whether you have done it in the more distant past, whether you have not done it but might do it or have not done it and would never, under any circumstances, do it. Contacted, or attempted to contact, a politician or a civil servant to express your views",
+    "content": {
+      "1": "Have done it in the past year",
+      "2": "Have done it in the more distant past",
+      "3": "Have not done it but might do it",
+      "4": "Have not done it and would never do it",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "V22",
+    "meaning": "Q18 Political actions: donate money or raise funds",
+    "question": "Here are some different forms of political and social action, that people can take. Please indicate, for each one, whether you have done any of these things in the past year, whether you have done it in the more distant past, whether you have not done it but might do it or have not done it and would never, under any circumstances, do it. Donated money or raised funds for a social or political activity",
+    "content": {
+      "1": "Have done it in the past year",
+      "2": "Have done it in the more distant past",
+      "3": "Have not done it but might do it",
+      "4": "Have not done it and would never do it",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "V23",
+    "meaning": "Q19 Political actions: contact media",
+    "question": "Here are some different forms of political and social action, that people can take. Please indicate, for each one, whether you have done any of these things in the past year, whether you have done it in the more distant past, whether you have not done it but might do it or have not done it and would never, under any circumstances, do it. Contacted or appeared in the media to express your views",
+    "content": {
+      "1": "Have done it in the past year",
+      "2": "Have done it in the more distant past",
+      "3": "Have not done it but might do it",
+      "4": "Have not done it and would never do it",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "V24",
+    "meaning": "Q20 Political actions: express views on the internet",
+    "question": "Here are some different forms of political and social action, that people can take. Please indicate, for each one, whether you have done any of these things in the past year, whether you have done it in the more distant past, whether you have not done it but might do it or have not done it and would never, under any circumstances, do it. Expressed political views on the internet. Expression could be public or private in nature",
+    "content": {
+      "1": "Have done it in the past year",
+      "2": "Have done it in the more distant past",
+      "3": "Have not done it but might do it",
+      "4": "Have not done it and would never do it",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "V25",
+    "meaning": "Q21 Frequency using media to get political news or information",
+    "question": "How often do you use the media, including television, newspapers, radio and the internet, to get political news or information?",
+    "content": {
+      "1": "Several times a day",
+      "2": "Once a day",
+      "3": "5-6 days a week",
+      "4": "3-4 days a week",
+      "5": "1-2 days a week",
+      "6": "Less than 1 day a week",
+      "7": "Never",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "V26",
+    "meaning": "Q22 Contact on one-to-one basis with how many people in a typical week day",
+    "question": "On average, about how many people do you have contact with in a typical week day, including people you live with. We are interested in contact on a one-to-one basis, including everyone with whom you chat, talk, or discuss matters. This can be face-to-face, by telephone, by mail, or on the internet. Please include only people you know. Please select one from the following categories that best matches your estimate.",
+    "content": {
+      "1": "0-4 persons",
+      "2": "5-9 persons",
+      "3": "10-19 persons",
+      "4": "20-49 persons",
+      "5": "50 persons or more",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "V27",
+    "meaning": "Q23 Status of belonging to: political party",
+    "question": "People sometimes belong to different kinds of groups or associations. For each type of group, please indicate whether you, belong and actively participate, belong but don’t actively participate, used to belong but do not any more, or have never belonged to it. A political party",
+    "content": {
+      "1": "Belong and actively participate",
+      "2": "Belong but don't actively participate",
+      "3": "Used to belong but do not any more",
+      "4": "Never belonged to it",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "V28",
+    "meaning": "Q24 Status of belonging to: trade union etc.",
+    "question": "People sometimes belong to different kinds of groups or associations. For each type of group, please indicate whether you, belong and actively participate, belong but don’t actively participate, used to belong but do not any more, or have never belonged to it. A trade union, business, or professional association",
+    "content": {
+      "1": "Belong and actively participate",
+      "2": "Belong but don't actively participate",
+      "3": "Used to belong but do not any more",
+      "4": "Never belonged to it",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "V29",
+    "meaning": "Q25 Status of belonging to: church or other religious organization",
+    "question": "People sometimes belong to different kinds of groups or associations. For each type of group, please indicate whether you, belong and actively participate, belong but don’t actively participate, used to belong but do not any more, or have never belonged to it. A church or other religious organization",
+    "content": {
+      "1": "Belong and actively participate",
+      "2": "Belong but don't actively participate",
+      "3": "Used to belong but do not any more",
+      "4": "Never belonged to it",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "V30",
+    "meaning": "Q26 Status of belonging to: sports group etc.",
+    "question": "People sometimes belong to different kinds of groups or associations. For each type of group, please indicate whether you, belong and actively participate, belong but don’t actively participate, used to belong but do not any more, or have never belonged to it. A sports, leisure or cultural group",
+    "content": {
+      "1": "Belong and actively participate",
+      "2": "Belong but don't actively participate",
+      "3": "Used to belong but do not any more",
+      "4": "Never belonged to it",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "V31",
+    "meaning": "Q27 Status of belonging to: another voluntary association",
+    "question": "People sometimes belong to different kinds of groups or associations. For each type of group, please indicate whether you, belong and actively participate, belong but don’t actively participate, used to belong but do not any more, or have never belonged to it. Another voluntary association",
+    "content": {
+      "1": "Belong and actively participate",
+      "2": "Belong but don't actively participate",
+      "3": "Used to belong but do not any more",
+      "4": "Never belonged to it",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "V32",
+    "meaning": "Q28 Rights in democracy: adequate standard of living for all",
+    "question": "There are different opinions about people's rights in a democracy. On a scale of 1 to 7, where 1 is not at all important and 7 is very important, how important is it: That all citizens have an adequate standard of living",
+    "content": {
+      "1": "1, Not at all important",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7, Very important",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "V33",
+    "meaning": "Q29 Rights in democracy: government authorities respect minorities",
+    "question": "There are different opinions about people's rights in a democracy. On a scale of 1 to 7, where 1 is not at all important and 7 is very important, how important is it: That government authorities respect and protect the rights of minorities",
+    "content": {
+      "1": "1, Not at all important",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7, Very important",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "V34",
+    "meaning": "Q30 Rights in democracy: people participate in public decision-making",
+    "question": "There are different opinions about people's rights in a democracy. On a scale of 1 to 7, where 1 is not at all important and 7 is very important, how important is it: That people be given more opportunities to participate in public decision-making",
+    "content": {
+      "1": "1, Not at all important",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7, Very important",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "V35",
+    "meaning": "Q31 Rights in democracy: acts of civil disobedience",
+    "question": "There are different opinions about people's rights in a democracy. On a scale of 1 to 7, where 1 is not at all important and 7 is very important, how important is it: That citizens may engage in acts of civil disobedience when they oppose government actions",
+    "content": {
+      "1": "1, Not at all important",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7, Very important",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "V36",
+    "meaning": "Q32 Rights in democracy: respect of democratic rights by government",
+    "question": "There are different opinions about people's rights in a democracy. On a scale of 1 to 7, where 1 is not at all important and 7 is very important, how important is it: That governments respect democratic rights whatever the circumstances",
+    "content": {
+      "1": "1, Not at all important",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7, Very important",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "V37",
+    "meaning": "Q33 Rights in democracy: people convicted of serious crimes lose citizen rights",
+    "question": "There are different opinions about people's rights in a democracy. On a scale of 1 to 7, where 1 is not at all important and 7 is very important, how important is it: That people convicted of serious crimes lose their citizen rights",
+    "content": {
+      "1": "1, Not at all important",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7, Very important",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "V38",
+    "meaning": "Q34 Rights in democracy: long-term residents have right to vote at national elections",
+    "question": "There are different opinions about people's rights in a democracy. On a scale of 1 to 7, where 1 is not at all important and 7 is very important, how important is it: That long-term residents of a country, who are not citizens, have the right to vote in that country's national elections",
+    "content": {
+      "1": "1, Not at all important",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7, Very important",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {}
+  }
+]

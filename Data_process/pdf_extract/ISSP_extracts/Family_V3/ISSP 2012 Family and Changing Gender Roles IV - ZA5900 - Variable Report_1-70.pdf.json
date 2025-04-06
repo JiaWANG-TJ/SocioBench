@@ -1,0 +1,593 @@
+[
+  {
+    "domain": "V1",
+    "meaning": "GESIS Data Archive Study Number",
+    "question": "GESIS Data Archive Study number ZA5900 for the ISSP 2012 on 'Family and Changing Gender Roles IV'. Study number of the data set producer and archiving number",
+    "content": {
+      "5900": "GESIS Data Archive Study Number ZA5900"
+    },
+    "special": {}
+  },
+  {
+    "domain": "V2",
+    "meaning": "GESIS Archive Version",
+    "question": "Version and Release Date of the Archive Data Set. This variable identifies the GESIS archive version number of this data set and the corresponding release date, recorded as a string. The version number is composed of a sequence of three numbers. The major number is incremented when there are changes in the composition of the data set (e.g. additional variables or cases), the minor or second number is incremented when significant errors have been fixed (e.g. coding errors, misleading value labels), and the third or revision number is incremented when minor bugs are fixed (e.g. spelling errors in variable or value labels).",
+    "content": {
+      "4.0.0 (2016-11-23)": "4.0.0 (2016-11-23)"
+    },
+    "special": {}
+  },
+  {
+    "domain": "DOI",
+    "meaning": "Digital Object Identifier",
+    "question": "This variable holds the Digital Object Identifier (DOI) for the data set at hand as registered via the DA|RA registration agency for economic and social science data. Each data set version (see variable V2) has a unique persistent DOI. For direct access to the complete archive dissemination package for this study, including new data set versions, the DOI needs to be appended to the resolver service URL: http://dx.doi.org/10.4232/1.12661. In terms of good scientific practice, the DOI is an important element for the correct citation of a data set.",
+    "content": {
+      "doi:10.4232/1.12661": "doi:10.4232/1.12661"
+    },
+    "special": {}
+  },
+  {
+    "domain": "V3",
+    "meaning": "Country/ Sample ISO 3166 Code",
+    "question": "Country/ Sample (see V4 for codes for whole nation states). All countries are coded in accordance with the ISO 3166-1-alpha-2 country code, if available. ISO 3166-2 is applied for the UK's subsample Great Britain. To indicate the subsamples within the ISSP countries a five digit numeric code on the basis of ISO 3166 was constructed. The first three-digits are based on the original ISO code (see V4) and indicate the country. The following two-digit numeric appendices (01, 02, 03) indicate the subsamples (see Belgium and Germany). For examining subsamples from Israel (Jewish/ Arab population) IL_REG can be used as a flag variable. PT: The Portuguese ISSP 2012 module was fielded (together with the ISSP 2013) in two rounds, the main sample including 898 interviews and a complementary sample with 103 interviews. The ISSP Methodological Committee approved the sample resulting from pooling the two rounds, which can still be separated using V3 as a FLAG variable. (More information see note).",
+    "content": {
+      "32": "AR-Argentina",
+      "36": "AU-Australia",
+      "40": "AT-Austria",
+      "100": "BG-Bulgaria",
+      "124": "CA-Canada",
+      "152": "CL-Chile",
+      "156": "CN-China",
+      "158": "TW-Taiwan",
+      "191": "HR-Croatia",
+      "203": "CZ-Czech Republic",
+      "208": "DK-Denmark",
+      "246": "FI-Finland",
+      "250": "FR-France",
+      "348": "HU-Hungary",
+      "352": "IS-Iceland",
+      "356": "IN-India",
+      "372": "IE-Ireland",
+      "376": "IL-Israel",
+      "392": "JP-Japan",
+      "410": "KR-Korea (South)",
+      "428": "LV-Latvia",
+      "440": "LT-Lithuania",
+      "484": "MX-Mexico",
+      "528": "NL-Netherlands",
+      "578": "NO-Norway",
+      "608": "PH-Philippines",
+      "616": "PL-Poland",
+      "643": "RU-Russia",
+      "703": "SK-Slovakia",
+      "705": "SI-Slovenia",
+      "710": "ZA-South Africa",
+      "724": "ES-Spain",
+      "752": "SE-Sweden",
+      "756": "CH-Switzerland",
+      "792": "TR-Turkey",
+      "840": "US-United States",
+      "862": "VE-Venezuela",
+      "5601": "BE-FLA-Belgium/ Flanders",
+      "5602": "BE-WAL-Belgium/ Wallonia",
+      "5603": "BE-BRU-Belgium/ Brussels",
+      "27601": "DE-W-Germany-West",
+      "27602": "DE-E-Germany-East",
+      "62001": "PT-Portugal 2012: first fieldwork round (main sample)",
+      "62002": "PT-Portugal 2012: second fieldwork round (complementary sample)",
+      "82601": "GB-GBN-Great Britain"
+    },
+    "special": {}
+  },
+  {
+    "domain": "V4",
+    "meaning": "Country ISO 3166 Code",
+    "question": "ISO Code of the countries (three digit). All countries are coded in accordance with the ISO 3166-1-alpha-2 country code.",
+    "content": {
+      "32": "AR-Argentina",
+      "36": "AU-Australia",
+      "40": "AT-Austria",
+      "56": "BE-Belgium",
+      "100": "BG-Bulgaria",
+      "124": "CA-Canada",
+      "152": "CL-Chile",
+      "156": "CN-China",
+      "158": "TW-Taiwan",
+      "191": "HR-Croatia",
+      "203": "CZ-Czech Republic",
+      "208": "DK-Denmark",
+      "246": "FI-Finland",
+      "250": "FR-France",
+      "276": "DE-Germany",
+      "348": "HU-Hungary",
+      "352": "IS-Iceland",
+      "356": "IN-India",
+      "372": "IE-Ireland",
+      "376": "IL-Israel",
+      "392": "JP-Japan",
+      "410": "KR-Korea (South)",
+      "428": "LV-Latvia",
+      "440": "LT-Lithuania",
+      "484": "MX-Mexico",
+      "528": "NL-Netherlands",
+      "578": "NO-Norway",
+      "608": "PH-Philippines",
+      "616": "PL-Poland",
+      "620": "PT-Portugal",
+      "643": "RU-Russia",
+      "703": "SK-Slovakia",
+      "705": "SI-Slovenia",
+      "710": "ZA-South Africa",
+      "724": "ES-Spain",
+      "752": "SE-Sweden",
+      "756": "CH-Switzerland",
+      "792": "TR-Turkey",
+      "826": "GB-Great Britain and/or United Kingdom",
+      "840": "US-United States",
+      "862": "VE-Venezuela"
+    },
+    "special": {}
+  },
+  {
+    "domain": "C_ALPHAN",
+    "meaning": "Country Prefix ISO 3166 Code - alphanumeric",
+    "question": "Country Prefix ISO 3166 Code - alphanumeric. ISO 3166 Country Prefix. This alphanumerical country identification variable C_ALPHAN includes ISO 3166-1-alpha-2 country codes, if available. ISO 3166-2 is applied for the UK's subsample Great Britain (GB-GBN). This variable is used for the cross tabulations shown in the Variable Report.",
+    "content": {
+      "AR": "Argentina",
+      "AT": "Austria",
+      "AU": "Australia",
+      "BE": "Belgium",
+      "BG": "Bulgaria",
+      "CA": "Canada",
+      "CH": "Switzerland",
+      "CL": "Chile",
+      "CN": "China",
+      "CZ": "Czech Republic",
+      "DE": "Germany",
+      "DK": "Denmark",
+      "ES": "Spain",
+      "FI": "Finland",
+      "FR": "France",
+      "GB-GBN": "Great Britain",
+      "HR": "Croatia",
+      "HU": "Hungary",
+      "IE": "Ireland",
+      "IL": "Israel",
+      "IN": "India",
+      "IS": "Iceland",
+      "JP": "Japan",
+      "KR": "Korea (South)",
+      "LT": "Lithuania",
+      "LV": "Latvia",
+      "MX": "Mexico",
+      "NL": "Netherlands",
+      "NO": "Norway",
+      "PH": "Philippines",
+      "PL": "Poland",
+      "PT": "Portugal",
+      "RU": "Russia",
+      "SE": "Sweden",
+      "SI": "Slovenia",
+      "SK": "Slovakia",
+      "TR": "Turkey",
+      "TW": "Taiwan",
+      "US": "United States of America",
+      "VE": "Venezuela",
+      "ZA": "South Africa"
+    },
+    "special": {}
+  },
+  {
+    "domain": "V5",
+    "meaning": "Q1a Working mom: warm relationship with children as a not working mom",
+    "question": "To begin, we have some questions about women. To what extent do you agree or disagree ...? (PLEASE TICK ONE BOX ON EACH LINE) Q1a A working mother can establish just as warm and secure a relationship with her children as a mother who does not work.",
+    "content": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree",
+      "8": "Can't choose, CA:can't choose+ no answer, KR:don't know+refused, NL:don't know",
+      "9": "No answer",
+      "0": "NAP: answer categories differ from ISSP standard"
+    },
+    "special": {
+      "ES": {
+        "0": "NAP: answer categories differ from ISSP standard"
+      }
+    }
+  },
+  {
+    "domain": "ES_V5",
+    "meaning": "Q1a Working mom: warm relationship with children as a not working mom",
+    "question": "To begin, we have some questions about women. To what extent do you agree or disagree ...? (PLEASE TICK ONE BOX ON EACH LINE) Q1a A working mother can establish just as warm and secure a relationship with her children as a mother who does not work.",
+    "content": {
+      "0": "NAP: other countries",
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Disagree",
+      "4": "Strongly disagree",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "V6",
+    "meaning": "Q1b Working mom: Preschool child is likely to suffer",
+    "question": "To begin, we have some questions about women. To what extent do you agree or disagree ...? (PLEASE TICK ONE BOX ON EACH LINE) Q1b A preschool child is likely to suffer if his or her mother works.",
+    "content": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree",
+      "8": "Can't choose, CA:can't choose+ no answer, KR:don't know+refused, NL:don't know",
+      "9": "No answer",
+      "0": "NAP: answer categories differ from ISSP standard"
+    },
+    "special": {
+      "ES": {
+        "0": "NAP: answer categories differ from ISSP standard"
+      }
+    }
+  },
+  {
+    "domain": "ES_V6",
+    "meaning": "Q1b Working mom: Preschool child is likely to suffer",
+    "question": "To begin, we have some questions about women. To what extent do you agree or disagree ...? (PLEASE TICK ONE BOX ON EACH LINE) Q1b A preschool child is likely to suffer if his or her mother works.",
+    "content": {
+      "0": "NAP: other countries",
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Disagree",
+      "4": "Strongly disagree",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "V7",
+    "meaning": "Q1c Working woman: Family life suffers when woman has full-time job",
+    "question": "To begin, we have some questions about women. To what extent do you agree or disagree ...? (PLEASE TICK ONE BOX ON EACH LINE) Q1c All in all, family life suffers when the woman has a full-time job.",
+    "content": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree",
+      "8": "Can't choose, CA:can't choose+ no answer, KR:don't know+refused, NL:don't know",
+      "9": "No answer",
+      "0": "NAP: answer categories differ from standard scale"
+    },
+    "special": {
+      "ES": {
+        "0": "NAP: answer categories differ from standard scale"
+      }
+    }
+  },
+  {
+    "domain": "ES_V7",
+    "meaning": "Q1c Working woman: Family life suffers when woman has full-time job",
+    "question": "To begin, we have some questions about women. To what extent do you agree or disagree ...? (PLEASE TICK ONE BOX ON EACH LINE) Q1c All in all, family life suffers when the woman has a full-time job.",
+    "content": {
+      "0": "NAP: other countries",
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Disagree",
+      "4": "Strongly disagree",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "V8",
+    "meaning": "Q1d Working woman: What women really want is home and kids",
+    "question": "To begin, we have some questions about women. To what extent do you agree or disagree ...? (PLEASE TICK ONE BOX ON EACH LINE) Q1d A job is all right, but what most women really want is a home and children.",
+    "content": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree",
+      "8": "Can't choose, CA:can't choose+ no answer, KR:don't know+refused, NL:don't know",
+      "9": "No answer",
+      "0": "NAP: answer categories differ from ISSP standard"
+    },
+    "special": {
+      "ES": {
+        "0": "NAP: answer categories differ from ISSP standard"
+      }
+    }
+  },
+  {
+    "domain": "ES_V8",
+    "meaning": "Q1d Working woman: What women really want is home and kids",
+    "question": "To begin, we have some questions about women. To what extent do you agree or disagree ...? (PLEASE TICK ONE BOX ON EACH LINE) Q1d A job is all right, but what most women really want is a home and children.",
+    "content": {
+      "0": "NAP: other countries",
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Disagree",
+      "4": "Strongly disagree",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "V9",
+    "meaning": "Q1e Working woman: Being housewife is as fulfilling as working for pay",
+    "question": "To begin, we have some questions about women. To what extent do you agree or disagree ...? (PLEASE TICK ONE BOX ON EACH LINE) Q1e Being a housewife is just as fulfilling as working for pay.",
+    "content": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree",
+      "8": "Can't choose, CA:can't choose+ no answer, KR:don't know+refused, NL:don't know",
+      "9": "No answer",
+      "0": "NAP: answer categories differ from ISSP standard"
+    },
+    "special": {
+      "ES": {
+        "0": "NAP: answer categories differ from ISSP standard"
+      }
+    }
+  },
+  {
+    "domain": "ES_V9",
+    "meaning": "Q1e Working woman: Being housewife is as fulfilling as working for pay",
+    "question": "To begin, we have some questions about women. To what extent do you agree or disagree ...? (PLEASE TICK ONE BOX ON EACH LINE) Q1e Being a housewife is just as fulfilling as working for pay.",
+    "content": {
+      "0": "NAP: other countries",
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Disagree",
+      "4": "Strongly disagree",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "V10",
+    "meaning": "Q2a Both should contribute to household income",
+    "question": "And to what extent do you agree or disagree...? (PLEASE TICK ONE BOX ON EACH LINE) Q2a Both the man and woman should contribute to the household income.",
+    "content": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree",
+      "8": "Can't choose, CA:can't choose+ no answer, KR:don't know+refused, NL:don't know",
+      "9": "No answer",
+      "0": "NAP: answer categories differ from ISSP standard"
+    },
+    "special": {
+      "ES": {
+        "0": "NAP: answer categories differ from ISSP standard"
+      }
+    }
+  },
+  {
+    "domain": "ES_V10",
+    "meaning": "Q2a Both should contribute to household income",
+    "question": "And to what extent do you agree or disagree...? (PLEASE TICK ONE BOX ON EACH LINE) Q2a Both the man and woman should contribute to the household income.",
+    "content": {
+      "0": "NAP: other countries",
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Disagree",
+      "4": "Strongly disagree",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "V11",
+    "meaning": "Q2b Men's job earn money, women's job look after home",
+    "question": "And to what extent do you agree or disagree...? (PLEASE TICK ONE BOX ON EACH LINE) Q2b A man's job is to earn money; a woman's job is to look after the home and family.",
+    "content": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree",
+      "8": "Can't choose, CA:can't choose+ no answer, KR:don't know+refused, NL:don't know",
+      "9": "No answer",
+      "0": "NAP: answer categories differ from ISSP standard"
+    },
+    "special": {
+      "ES": {
+        "0": "NAP: answer categories differ from ISSP standard"
+      }
+    }
+  },
+  {
+    "domain": "ES_V11",
+    "meaning": "Q2b Men's job earn money, women's job look after home",
+    "question": "And to what extent do you agree or disagree...? (PLEASE TICK ONE BOX ON EACH LINE) Q2b A man's job is to earn money; a woman's job is to look after the home and family.",
+    "content": {
+      "0": "NAP: other countries",
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Disagree",
+      "4": "Strongly disagree",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "V12",
+    "meaning": "Q3a Should women work: Child under school age",
+    "question": "Do you think that women should work outside the home full-time, part-time or not at all under the following circumstances? (PLEASE TICK ONE BOX ON EACH LINE) Q3a When there is a child under school age.",
+    "content": {
+      "1": "Work full-time",
+      "2": "Work part-time",
+      "3": "Stay at home",
+      "6": "TW: women should decide",
+      "8": "Can't choose, CA:can't choose+ no answer, KR:don't know+refused, NL:don't know",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "V13",
+    "meaning": "Q3b Should women work: Youngest kid at school",
+    "question": "Do you think that women should work outside the home full-time, part-time or not at all under the following circumstances? (PLEASE TICK ONE BOX ON EACH LINE) Q3b After the youngest child starts school.",
+    "content": {
+      "1": "Work full-time",
+      "2": "Work part-time",
+      "3": "Stay at home",
+      "6": "TW: women should decide",
+      "8": "Can't choose, CA:can't choose+ no answer, KR:don't know+refused, NL:don't know",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "V14",
+    "meaning": "Q4a Marriage: Married people generally happier",
+    "question": "To what extent do you agree or disagree...? (PLEASE TICK ONE BOX ON EACH LINE) Q4a Married people are generally happier than unmarried people.",
+    "content": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree",
+      "8": "Can't choose, CA:can't choose+ no answer, KR:don't know+refused, NL:don't know",
+      "9": "No answer",
+      "0": "NAP: answer categories differ from ISSP standard"
+    },
+    "special": {
+      "ES": {
+        "0": "NAP: answer categories differ from ISSP standard"
+      }
+    }
+  },
+  {
+    "domain": "ES_V14",
+    "meaning": "Q4a Marriage: Married people generally happier",
+    "question": "To what extent do you agree or disagree...? (PLEASE TICK ONE BOX ON EACH LINE) Q4a Married people are generally happier than unmarried people.",
+    "content": {
+      "0": "NAP: other countries",
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Disagree",
+      "4": "Strongly disagree",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "V15",
+    "meaning": "Q4b Marriage: Better, if people want kids",
+    "question": "To what extent do you agree or disagree...? (PLEASE TICK ONE BOX ON EACH LINE) Q4b People who want children ought to get married.",
+    "content": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree",
+      "8": "Can't choose, CA:can't choose+ no answer, KR:don't know+refused, NL:don't know",
+      "9": "No answer",
+      "0": "NAP: answer categories differ from ISSP standard"
+    },
+    "special": {
+      "ES": {
+        "0": "NAP: answer categories differ from ISSP standard"
+      }
+    }
+  },
+  {
+    "domain": "ES_V15",
+    "meaning": "Q4b Marriage: Better, if people want kids",
+    "question": "To what extent do you agree or disagree...? (PLEASE TICK ONE BOX ON EACH LINE) Q4b People who want children ought to get married.",
+    "content": {
+      "0": "NAP: other countries",
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Disagree",
+      "4": "Strongly disagree",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "V16",
+    "meaning": "Q4c Marriage: Couple living together without marriage ok",
+    "question": "To what extent do you agree or disagree...? (PLEASE TICK ONE BOX ON EACH LINE) Q4c It is all right for a couple to live together without intending to get married.",
+    "content": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree",
+      "8": "Can't choose, CA:can't choose+ no answer, KR:don't know+refused, NL:don't know",
+      "9": "No answer",
+      "0": "NAP: answer categories differ from ISSP standard"
+    },
+    "special": {
+      "ES": {
+        "0": "NAP: answer categories differ from ISSP standard"
+      }
+    }
+  },
+  {
+    "domain": "ES_V16",
+    "meaning": "Q4c Marriage: Couple living together without marriage ok",
+    "question": "To what extent do you agree or disagree...? (PLEASE TICK ONE BOX ON EACH LINE) Q4c It is all right for a couple to live together without intending to get married.",
+    "content": {
+      "0": "NAP: other countries",
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Disagree",
+      "4": "Strongly disagree",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "V17",
+    "meaning": "Q4d Marriage: Divorce best solution with marriage problems",
+    "question": "To what extent do you agree or disagree...? (PLEASE TICK ONE BOX ON EACH LINE) Q4d Divorce is usually the best solution when a couple can't seem to work out their marriage problems.",
+    "content": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree",
+      "8": "Can't choose, CA:can't choose+ no answer, KR:don't know+refused, NL:don't know",
+      "9": "No answer",
+      "0": "NAP: answer categories differ from ISSP standard"
+    },
+    "special": {
+      "ES": {
+        "0": "NAP: answer categories differ from ISSP standard"
+      }
+    }
+  },
+  {
+    "domain": "ES_V17",
+    "meaning": "Q4d Marriage: Divorce best solution with marriage problems",
+    "question": "To what extent do you agree or disagree...? (PLEASE TICK ONE BOX ON EACH LINE) Q4d Divorce is usually the best solution when a couple can't seem to work out their marriage problems.",
+    "content": {
+      "0": "NAP: other countries",
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Disagree",
+      "4": "Strongly disagree",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {}
+  }
+]

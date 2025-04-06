@@ -1,0 +1,257 @@
+[
+  {
+    "domain": "SI_REG",
+    "meaning": "Slovenia: Country specific region",
+    "question": "The information about region was taken from the national sample data file (without the interviewer having to fill it in).",
+    "content": {
+      "0": "NAP, other countries",
+      "1": "Pomurska",
+      "2": "Podravska",
+      "3": "Koroska",
+      "4": "Savinjska",
+      "5": "Gorenjska",
+      "6": "Zasavska",
+      "7": "Osrednja",
+      "8": "Spodnjeposavska",
+      "9": "Dolenjska",
+      "10": "Goriska",
+      "11": "Obalnokraska",
+      "12": "Kraska"
+    },
+    "special": {}
+  },
+  {
+    "domain": "SK_REG",
+    "meaning": "Slovakia: Country specific region",
+    "question": "Variable generated from municipality: Codes filled in by interviewer",
+    "content": {
+      "0": "NAP, other countries",
+      "1": "Bratislava county",
+      "2": "Trnava county",
+      "3": "Trencin county",
+      "4": "Nitra county",
+      "5": "Zilina county",
+      "6": "Banska Bystrica county",
+      "7": "Presov county",
+      "8": "Kosice county"
+    },
+    "special": {}
+  },
+  {
+    "domain": "TR_REG",
+    "meaning": "Turkey: Country specific region",
+    "question": "Province where the interview was held recoded to regions.",
+    "content": {
+      "0": "NAP, other countries",
+      "1": "Istanbul",
+      "2": "Aegean",
+      "3": "Mediterranean",
+      "4": "Southeastern Anatolia",
+      "5": "Western Anatolia",
+      "6": "Eastern Marmara",
+      "7": "Western Black Sea",
+      "8": "Central Anatolia",
+      "9": "Central Eastern Anatolia",
+      "10": "Eastern Black Sea",
+      "11": "Western Marmara",
+      "12": "North Eastern Anatolia"
+    },
+    "special": {}
+  },
+  {
+    "domain": "TW_REG",
+    "meaning": "Taiwan: Country specific region",
+    "question": "The place where you live: Province (open), County (open) Township (Town, city, district) (open)",
+    "content": {
+      "0": "NAP, other countries",
+      "1": "Keelung city",
+      "2": "Taipei city",
+      "3": "New Taipei city",
+      "4": "Taoyuan county",
+      "5": "Hsinchu city",
+      "6": "Hsinchu county",
+      "7": "Miaoli county",
+      "8": "Taichung city",
+      "9": "Taichung county",
+      "10": "Nantou county",
+      "11": "Changhua county",
+      "12": "Yunlin county",
+      "13": "Chiayi city",
+      "14": "Chiayi country",
+      "15": "Tainan city",
+      "16": "Tainan county",
+      "17": "Kaohsiung city",
+      "18": "Kaohsiung county",
+      "19": "Pingtung county",
+      "20": "Ilan county",
+      "21": "Hualien county",
+      "22": "Taitung county",
+      "9999": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "US_REG",
+    "meaning": "United States: Country specific region",
+    "question": "Respondent's residential addresses: States were recoded into regions (U.S. Bureau of Census: Regional classification).",
+    "content": {
+      "0": "NAP, other countries",
+      "1": "New England",
+      "2": "Middle Atlantic",
+      "3": "East North Central",
+      "4": "West North Central",
+      "5": "South Atlantic",
+      "6": "East South Central",
+      "7": "West South Central",
+      "8": "Mountain",
+      "9": "Pacific"
+    },
+    "special": {}
+  },
+  {
+    "domain": "VE_REG",
+    "meaning": "Venezuela: Country specific region",
+    "question": "The variable is derived from the survey database of respondent’s addresses in the different municipalities.",
+    "content": {
+      "0": "NAP, other countries",
+      "1": "Distrito Capital",
+      "2": "Amazonas",
+      "3": "Anzoátegui",
+      "4": "Apure",
+      "5": "Aragua",
+      "6": "Barinas",
+      "7": "Bolívar",
+      "8": "Carabobo",
+      "9": "Della Amacuro",
+      "10": "Falcón",
+      "11": "Guárico",
+      "12": "Lara",
+      "13": "Mérida",
+      "14": "Miranda",
+      "15": "Monagas",
+      "16": "Nueva Esparta",
+      "17": "Portuguesa",
+      "18": "Sucre",
+      "19": "Táchira",
+      "20": "Trujillo",
+      "21": "Yaracuy",
+      "22": "Zulia",
+      "23": "Vargas"
+    },
+    "special": {}
+  },
+  {
+    "domain": "ZA_REG",
+    "meaning": "South Africa: Country specific region",
+    "question": "Derived from Provinces",
+    "content": {
+      "0": "NAP, other countries",
+      "1": "Western Cape",
+      "2": "Eastern Cape",
+      "3": "Northern Cape",
+      "4": "Free State",
+      "5": "Kwa-Zulu Natal",
+      "6": "North West",
+      "7": "Gauteng",
+      "8": "Mpumalanga",
+      "9": "Limpopo"
+    },
+    "special": {}
+  },
+  {
+    "domain": "CASEID",
+    "meaning": "Respondent Identification Number",
+    "question": "This variable attaches a unique identification number to each respondent with year of the module, country/subsample (V3) and the original identification number of the respondents.",
+    "content": {},
+    "special": {}
+  },
+  {
+    "domain": "SUBSCASE",
+    "meaning": "Case substitution flag",
+    "question": "Case substitution flag\nSubstitution in this survey",
+    "content": {
+      "0": "No substitution in this survey",
+      "1": "Case from original sample",
+      "2": "Case substituted"
+    },
+    "special": {}
+  },
+  {
+    "domain": "DATEMO",
+    "meaning": "Month of the interview",
+    "question": "Month of the interview",
+    "content": {
+      "1": "January",
+      "2": "February",
+      "3": "March",
+      "4": "April",
+      "5": "May",
+      "6": "June",
+      "7": "July",
+      "8": "August",
+      "9": "September",
+      "10": "October",
+      "11": "November",
+      "12": "December",
+      "99": "No answer"
+    },
+    "special": {
+      "AT": {
+        "0": "Not available"
+      }
+    }
+  },
+  {
+    "domain": "DATEDY",
+    "meaning": "Day of the interview",
+    "question": "Day of the interview",
+    "content": {
+      "1": "1.",
+      "31": "31.",
+      "99": "No answer"
+    },
+    "special": {
+      "AT": {
+        "0": "Not available"
+      },
+      "BE": {
+        "0": "Not available"
+      },
+      "VE": {
+        "0": "Not available"
+      },
+      "ZA": {
+        "0": "Not available"
+      }
+    }
+  },
+  {
+    "domain": "MODE",
+    "meaning": "Administrative mode of data collection",
+    "question": "Administrative mode of data collection",
+    "content": {
+      "10": "Face-to-face, PAPI, no visuals",
+      "11": "Face-to-face, PAPI, visuals",
+      "12": "Face-to-face, PAPI, respondent reading questionnaire",
+      "13": "Face-to-face, PAPI, interpreter or translator, no visuals",
+      "14": "Face-to-face, PAPI, interpreter or translator, visuals",
+      "20": "CAPI, computer assisted personal interview, no visuals",
+      "21": "CAPI, computer assisted personal interview, visuals",
+      "22": "CAPI, respondent reading questionnaire (paper or on monitor)",
+      "23": "CAPI, interpreter or translator, no visuals",
+      "24": "CAPI, interpreter or translator, visuals",
+      "30": "Self completion, arrives with interviewer, interviewer attending",
+      "31": "Self completion, arrives with interviewer, drops-off, picks up later",
+      "32": "Self completion, arrives with interviewer, drops-off, mailed back by Respondent",
+      "33": "Self completion, mailed to, completed by R and hold for pick up",
+      "34": "Self completion, mailed to, mailed back by Respondent",
+      "40": "CASI, computer-assisted self completion interview",
+      "41": "Self-completion, web questionnaire",
+      "50": "CAWI, computer assisted web interview",
+      "52": "CAPI, phone",
+      "60": "CATI, computer assisted telephone interview",
+      "99": "No answer"
+    },
+    "special": {}
+  }
+]

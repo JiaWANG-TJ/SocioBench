@@ -52,30 +52,42 @@ def parse_args():
     
     parser = argparse.ArgumentParser(description=f'生成领域数据ground truth数据')
     parser.add_argument('--records', type=str, default='5', help='每个领域处理的记录数量，默认为5，设置为"all"将处理所有记录')
-    parser.add_argument('--domain', type=int, default=4, 
-                       help=f'领域号码(1-11)，默认为1。对应关系: {", ".join([f"{k}={v}" for k, v in reverse_domain_mapping.items()])}')
+    parser.add_argument('--domain', type=str, default='all', 
+                       help=f'领域号码(1-11)或"all"表示处理所有领域，默认为4。对应关系: {", ".join([f"{k}={v}" for k, v in reverse_domain_mapping.items()])}')
     parser.add_argument('--exclude', type=str, default='', 
                        help='要排除的内容列表，多个值用逗号分隔，例如"v1,v2,Q61"。留空则使用默认排除列表。')
     
     args = parser.parse_args()
     
-    # 根据领域号设置领域名称
-    if args.domain in reverse_domain_mapping:
-        global DOMAIN_NAME, DOMAIN_NUMBER
-        DOMAIN_NAME = reverse_domain_mapping[args.domain]
-        DOMAIN_NUMBER = args.domain
-        print(f"\n【领域设置】已选择: {DOMAIN_NUMBER} = {DOMAIN_NAME}")
+    # 如果domain参数为'all'，表示处理所有领域
+    if args.domain.lower() == 'all':
+        print(f"\n【领域设置】已选择: 处理所有领域(1-11)")
+        return args
+    
+    # 尝试将domain参数转换为整数
+    try:
+        domain_number = int(args.domain)
         
-        # 获取当前脚本所在目录作为基准路径
-        script_dir = os.path.dirname(os.path.abspath(__file__))
-        
-        # 更新文件路径为相对路径
-        global DOMAIN_EXCEL_PATH, DOMAIN_PROFILE_PATH, OUTPUT_JSON_PATH
-        DOMAIN_EXCEL_PATH = os.path.join(script_dir, f"A_{DOMAIN_NAME}.xlsx")
-        DOMAIN_PROFILE_PATH = os.path.join(script_dir, f"issp_profile_{DOMAIN_NAME.lower()}.json")
-        OUTPUT_JSON_PATH = os.path.join(script_dir, f"issp_answer_{DOMAIN_NAME.lower()}.json")
-    else:
-        print(f"错误: 无效的领域号 {args.domain}。请选择1-11之间的数字。")
+        # 根据领域号设置领域名称
+        if domain_number in reverse_domain_mapping:
+            global DOMAIN_NAME, DOMAIN_NUMBER
+            DOMAIN_NAME = reverse_domain_mapping[domain_number]
+            DOMAIN_NUMBER = domain_number
+            print(f"\n【领域设置】已选择: {DOMAIN_NUMBER} = {DOMAIN_NAME}")
+            
+            # 获取当前脚本所在目录作为基准路径
+            script_dir = os.path.dirname(os.path.abspath(__file__))
+            
+            # 更新文件路径为相对路径
+            global DOMAIN_EXCEL_PATH, DOMAIN_PROFILE_PATH, OUTPUT_JSON_PATH
+            DOMAIN_EXCEL_PATH = os.path.join(script_dir, f"A_{DOMAIN_NAME}.xlsx")
+            DOMAIN_PROFILE_PATH = os.path.join(script_dir, f"issp_profile_{DOMAIN_NAME.lower()}.json")
+            OUTPUT_JSON_PATH = os.path.join(script_dir, f"issp_answer_{DOMAIN_NAME.lower()}.json")
+        else:
+            print(f"错误: 无效的领域号 {domain_number}。请选择1-11之间的数字或'all'。")
+            sys.exit(1)
+    except ValueError:
+        print(f"错误: 无效的领域参数 '{args.domain}'。请选择1-11之间的数字或'all'。")
         sys.exit(1)
     
     # 如果exclude参数为空，使用当前领域的默认排除列表
@@ -85,6 +97,30 @@ def parse_args():
             print(f"使用{DOMAIN_NAME}领域的默认排除列表: {args.exclude}")
     
     return args
+
+# 设置指定领域的全局变量
+def setup_domain_globals(domain_number):
+    """设置指定领域的全局变量"""
+    # 创建反向映射表（领域号到领域名）
+    reverse_domain_mapping = {num: name for name, num in DOMAIN_MAPPING.items()}
+    
+    if domain_number in reverse_domain_mapping:
+        global DOMAIN_NAME, DOMAIN_NUMBER, DOMAIN_EXCEL_PATH, DOMAIN_PROFILE_PATH, OUTPUT_JSON_PATH
+        DOMAIN_NAME = reverse_domain_mapping[domain_number]
+        DOMAIN_NUMBER = domain_number
+        
+        # 获取当前脚本所在目录作为基准路径
+        script_dir = os.path.dirname(os.path.abspath(__file__))
+        
+        # 更新文件路径为相对路径
+        DOMAIN_EXCEL_PATH = os.path.join(script_dir, f"A_{DOMAIN_NAME}.xlsx")
+        DOMAIN_PROFILE_PATH = os.path.join(script_dir, f"issp_profile_{DOMAIN_NAME.lower()}.json")
+        OUTPUT_JSON_PATH = os.path.join(script_dir, f"issp_answer_{DOMAIN_NAME.lower()}.json")
+        
+        return True
+    else:
+        print(f"错误: 无效的领域号 {domain_number}。请选择1-11之间的数字。")
+        return False
 
 # 读取各Excel文件（优化方式：只读取前N行数据，如果nrows=None则读取所有行）
 def load_excel_files(nrows=50):
@@ -131,9 +167,9 @@ def load_domain_mappings():
         # 提取所有属性和QA数据
         for item in domain_mappings:
             attribute = item["domain"]
-            # 如果属性是v开头或xx_v开头(国家专用题目)，则为QA数据
-            if (re.match(r'^v\d+$', attribute) or 
-                re.match(r'^[A-Z]{2}_v\d+$', attribute) or 
+            # 如果属性是v开头或xx_v开头(国家专用题目，可能包含字母后缀)，则为QA数据
+            if (re.match(r'^v\d+[a-zA-Z]?$', attribute) or 
+                re.match(r'^[A-Z]{2}_v\d+[a-zA-Z]?$', attribute) or 
                 attribute.startswith('Q')):  # 添加Q开头的问题
                 
                 qa_dict[attribute] = {
@@ -288,10 +324,10 @@ def process_questions_answers(row: pd.Series, qa_mapping: Dict, qa_identifiers: 
         if col_lower in exclude_list or col in exclude_list:
             continue
         
-        # 检查是否是问题列（v开头、XX_v开头或Q开头）
+        # 检查是否是问题列（v开头、XX_v开头或Q开头），支持带字母后缀的格式如v68a或TW_v68a
         if (col_lower in qa_identifiers or 
-            re.match(r'^v\d+$', col_lower) or 
-            re.match(r'^[a-z]{2}_v\d+$', col_lower) or
+            re.match(r'^v\d+[a-zA-Z]?$', col_lower) or 
+            re.match(r'^[a-z]{2}_v\d+[a-zA-Z]?$', col_lower) or
             col.startswith('Q')):  # 添加Q开头问题的处理
             
             answer_value = row[col]
@@ -401,82 +437,69 @@ def process_domain_data(df: pd.DataFrame, attribute_mappings: Dict, qa_mappings:
     
     return result
 
-# 主函数
-def main():
+# 处理单个领域的数据
+def process_single_domain(domain_number, records_per_domain, exclude_list):
+    """处理单个领域的数据
+    
+    Returns:
+        tuple: (成功与否, 处理的样本数量)
+    """
     try:
-        # 解析命令行参数
-        args = parse_args()
+        # 设置当前领域的全局变量
+        if not setup_domain_globals(domain_number):
+            return False, 0
         
-        # 添加调试信息
-        print("\n" + "="*50)
-        print(f"【{DOMAIN_NAME}领域数据生成脚本】开始执行...")
-        print("="*50)
-        print(f"• 当前工作目录: {os.getcwd()}")
-        print(f"• Python版本: {sys.version.split()[0]}")
-        print(f"• 脚本路径: {__file__}")
-
-        # 定义路径
-        base_dir = os.path.dirname(os.path.abspath(__file__))
-        output_dir = base_dir
-
-        print(f"• 基础目录: {base_dir}")
-        print(f"• 输出目录: {output_dir}")
-
-        # 检查文件是否存在
-        excel_exists = os.path.exists(DOMAIN_EXCEL_PATH)
-        profile_exists = os.path.exists(DOMAIN_PROFILE_PATH)
-
-        print(f"• Excel文件 ({DOMAIN_NAME}): {'✓ 已找到' if excel_exists else '✗ 未找到'}")
-        print(f"• 配置文件 (profile): {'✓ 已找到' if profile_exists else '✗ 未找到'}")
-        print("="*50)
+        # 获取当前领域名称，用于错误提示
+        domain_name = {num: name for name, num in DOMAIN_MAPPING.items()}.get(domain_number, f"Unknown_{domain_number}")
         
-        # 确保领域和文件路径已设置
-        if DOMAIN_NAME is None or DOMAIN_EXCEL_PATH is None:
-            print("错误: 领域名称或文件路径未正确设置，请检查命令行参数。")
-            sys.exit(1)
-            
-        print(f"\n【当前处理领域】: {DOMAIN_NUMBER}-{DOMAIN_NAME}")
+        print(f"\n【处理领域】: {domain_number}-{domain_name}")
         print(f"• Excel文件: {os.path.basename(DOMAIN_EXCEL_PATH)}")
         print(f"• 配置文件: {os.path.basename(DOMAIN_PROFILE_PATH)}")
         print(f"• 输出文件: {os.path.basename(OUTPUT_JSON_PATH)}")
         
-        # 处理排除列表
-        exclude_list = []
-        if args.exclude:
-            # 处理带引号的情况，如"v1","v2","v3","v4"
-            # 首先将整个字符串按逗号分割
-            raw_items = args.exclude.split(',')
-            
-            # 然后处理每一项，移除引号
-            for item in raw_items:
-                cleaned_item = item.strip().strip('"').strip("'")
-                if cleaned_item:  # 确保不添加空字符串
-                    exclude_list.append(cleaned_item)
-                    
-            print(f"\n【参数设置】")
-            print(f"• 排除列表: {', '.join(exclude_list)}")
+        # 检查文件是否存在
+        excel_exists = os.path.exists(DOMAIN_EXCEL_PATH)
+        profile_exists = os.path.exists(DOMAIN_PROFILE_PATH)
         
-        if args.records.lower() == 'all':
-            records_per_domain = float('inf')  # 设置为无穷大，表示处理所有记录
-            print(f"• 处理记录数: 全部")
-            # 读取所有数据，不限制行数
+        if not excel_exists:
+            print(f"\n❌ 错误: Excel文件不存在: {DOMAIN_EXCEL_PATH}")
+            print(f"跳过领域 {domain_number}-{domain_name}")
+            return False, 0
+            
+        if not profile_exists:
+            print(f"\n❌ 错误: 配置文件不存在: {DOMAIN_PROFILE_PATH}")
+            print(f"跳过领域 {domain_number}-{domain_name}")
+            return False, 0
+            
+        # 如果exclude参数为空，使用当前领域的默认排除列表
+        if not exclude_list:
+            current_exclude_list = DEFAULT_EXCLUDE_MAPPING.get(DOMAIN_NAME, [])
+            if current_exclude_list:
+                print(f"使用{DOMAIN_NAME}领域的默认排除列表: {', '.join(current_exclude_list)}")
+        else:
+            current_exclude_list = exclude_list
+        
+        # 根据records_per_domain确定要读取的行数
+        if records_per_domain == float('inf'):
             nrows = None
         else:
-            try:
-                records_per_domain = int(args.records)
-                print(f"• 处理记录数: {records_per_domain}")
-                # 确保读取足够的数据
-                nrows = max(50, records_per_domain)
-            except ValueError:
-                print(f"• 警告: 无效的记录数量 '{args.records}'，使用默认值5")
-                records_per_domain = 5
-                nrows = 50
+            nrows = max(50, records_per_domain)
         
-        # 加载Excel文件
-        excel_files = load_excel_files(nrows=nrows)
+        try:
+            # 加载Excel文件
+            excel_files = load_excel_files(nrows=nrows)
+        except Exception as e:
+            print(f"\n❌ 处理领域 {domain_number}-{domain_name} 时出错: {str(e)}")
+            print(f"跳过领域 {domain_number}-{domain_name}")
+            return False, 0
         
-        # 加载领域配置，提取属性和QA映射
-        attribute_mappings, qa_mappings, all_attributes, qa_identifiers = load_domain_mappings()
+        try:
+            # 加载领域配置，提取属性和QA映射
+            attribute_mappings, qa_mappings, all_attributes, qa_identifiers = load_domain_mappings()
+        except Exception as e:
+            print(f"\n❌ 处理领域 {domain_number}-{domain_name} 配置文件时出错: {str(e)}")
+            print(f"跳过领域 {domain_number}-{domain_name}")
+            return False, 0
         
         # 处理领域数据
         domain_data = process_domain_data(
@@ -486,8 +509,11 @@ def main():
             all_attributes,
             qa_identifiers,
             records_per_domain,
-            exclude_list
+            current_exclude_list
         )
+        
+        # 获取样本数量
+        total_samples = len(domain_data)
         
         # 输出到JSON文件
         output_path = OUTPUT_JSON_PATH
@@ -505,7 +531,6 @@ def main():
         print("="*50)
         
         # 统计总样本个数
-        total_samples = len(domain_data)
         print(f"总样本数: {total_samples}")
         
         # 统计属性和问题个数
@@ -513,11 +538,11 @@ def main():
             first_sample = domain_data[0]
             attr_count = len(first_sample["attributes"])
             
-            # 计算问题数量（统计所有vxx或者xx_vxx这些格式的问题）
+            # 计算问题数量（统计所有vxx或者xx_vxx这些格式的问题，包括带字母后缀的）
             qa_count = 0
             for key in first_sample["questions_answer"].keys():
-                if (re.match(r'^v\d+', key.lower()) or 
-                    re.match(r'^[a-z]{2}_v\d+', key.lower())):
+                if (re.match(r'^v\d+[a-zA-Z]?', key.lower()) or 
+                    re.match(r'^[a-z]{2}_v\d+[a-zA-Z]?', key.lower())):
                     qa_count += 1
             
             print(f"每个样本包含属性数: {attr_count}")
@@ -550,11 +575,129 @@ def main():
         print("="*50)
         print(f"数据已成功生成并保存到: {output_path}")
         
+        return True, total_samples
+        
     except Exception as e:
-        print(f"生成数据时出错: {str(e)}")
+        # 捕获处理过程中的任何异常
+        domain_name = {num: name for name, num in DOMAIN_MAPPING.items()}.get(domain_number, f"Unknown_{domain_number}")
+        print(f"\n❌ 处理领域 {domain_number}-{domain_name} 时出现意外错误: {str(e)}")
+        print(f"跳过领域 {domain_number}-{domain_name}")
+        return False, 0
+
+# 主函数
+def main():
+    try:
+        # 解析命令行参数
+        args = parse_args()
+        
+        # 确定处理记录数
+        if args.records.lower() == 'all':
+            records_per_domain = float('inf')  # 设置为无穷大，表示处理所有记录
+            print(f"• 处理记录数: 全部")
+        else:
+            try:
+                records_per_domain = int(args.records)
+                print(f"• 处理记录数: {records_per_domain}")
+            except ValueError:
+                print(f"• 警告: 无效的记录数量 '{args.records}'，使用默认值5")
+                records_per_domain = 5
+        
+        # 处理排除列表
+        exclude_list = []
+        if args.exclude:
+            # 处理带引号的情况，如"v1","v2","v3","v4"
+            # 首先将整个字符串按逗号分割
+            raw_items = args.exclude.split(',')
+            
+            # 然后处理每一项，移除引号
+            for item in raw_items:
+                cleaned_item = item.strip().strip('"').strip("'")
+                if cleaned_item:  # 确保不添加空字符串
+                    exclude_list.append(cleaned_item)
+                    
+            print(f"\n【参数设置】")
+            print(f"• 排除列表: {', '.join(exclude_list)}")
+        
+        # 添加调试信息
+        print("\n" + "="*50)
+        print(f"【数据生成脚本】开始执行...")
+        print("="*50)
+        print(f"• 当前工作目录: {os.getcwd()}")
+        print(f"• Python版本: {sys.version.split()[0]}")
+        print(f"• 脚本路径: {__file__}")
+        
+        # 定义路径
+        base_dir = os.path.dirname(os.path.abspath(__file__))
+        output_dir = base_dir
+        print(f"• 基础目录: {base_dir}")
+        print(f"• 输出目录: {output_dir}")
+        
+        # 初始化样本统计
+        total_domains_processed = 0
+        successful_domains = 0
+        total_samples_processed = 0
+        domain_samples = {}
+        failed_domains = []
+        
+        # 检查是否处理所有领域
+        if args.domain.lower() == 'all':
+            print("\n" + "="*50)
+            print("【处理所有领域】")
+            print("="*50)
+            
+            # 处理所有领域
+            for domain_num in range(1, 12):
+                print(f"\n\n{'#'*70}")
+                print(f"## 开始处理领域 {domain_num} ##")
+                print(f"{'#'*70}")
+                
+                # 处理单个领域
+                success, samples = process_single_domain(domain_num, records_per_domain, exclude_list)
+                total_domains_processed += 1
+                
+                if success:
+                    successful_domains += 1
+                    total_samples_processed += samples
+                    # 记录每个领域的样本数
+                    domain_name = {num: name for name, num in DOMAIN_MAPPING.items()}.get(domain_num, f"Unknown_{domain_num}")
+                    domain_samples[domain_name] = samples
+                else:
+                    # 记录失败的领域
+                    domain_name = {num: name for name, num in DOMAIN_MAPPING.items()}.get(domain_num, f"Unknown_{domain_num}")
+                    failed_domains.append(domain_name)
+                
+            print("\n" + "="*50)
+            print("【所有领域处理完成】")
+            print(f"• 共尝试处理 {total_domains_processed} 个领域")
+            print(f"• 成功处理 {successful_domains} 个领域")
+            print(f"• 总样本数: {total_samples_processed}")
+            
+            if failed_domains:
+                print(f"\n失败的领域 ({len(failed_domains)}):")
+                for domain in failed_domains:
+                    print(f"  - {domain}")
+            
+            print("\n各领域样本数:")
+            for domain, count in domain_samples.items():
+                print(f"  - {domain}: {count}")
+            print("="*50)
+        else:
+            try:
+                # 处理单个领域
+                domain_num = int(args.domain)
+                success, samples = process_single_domain(domain_num, records_per_domain, exclude_list)
+                if not success:
+                    domain_name = {num: name for name, num in DOMAIN_MAPPING.items()}.get(domain_num, f"Unknown_{domain_num}")
+                    print(f"\n❌ 处理领域 {domain_name} 失败")
+            except ValueError:
+                print(f"\n❌ 错误: 无效的领域参数 '{args.domain}'。请选择1-11之间的数字或'all'。")
+        
+    except Exception as e:
+        print(f"\n❌ 生成数据时出错: {str(e)}")
         import traceback
         traceback.print_exc()
-        raise
+        # 主函数级别的错误不抛出，以便脚本仍然可以正常退出
+        return
 
 if __name__ == "__main__":
     try:

@@ -2,10 +2,6 @@
   {
     "person_id": 30000001,
     "attributes": {
-      "GESIS Data Archive Study Number": "GESIS Data Archive Study Number ZA5900",
-      "GESIS Archive Version": "",
-      "Country/ Sample ISO 3166 Code (see V4 for codes for whole nation states)": "AR-Argentina",
-      "Country ISO 3166 Code (see V3 for codes for the sample)": "AR-Argentina",
       "Country Prefix ISO 3166 Code - alphanumeric": "Argentina",
       "Sex of Respondent": "Male",
       "Year of birth": "1977",
@@ -336,10 +332,6 @@
       "Administrative mode of data-collection": "Face-to-face, PAPI, respondent reading questionnaire"
     },
     "questions_answer": {
-      "v1": 5900,
-      "v2": "4.0.0 (2016-11-23)",
-      "v3": 32,
-      "v4": 32,
       "v5": 4,
       "es_v5": 0,
       "v6": 2,
@@ -422,10 +414,6 @@
   {
     "person_id": 30000002,
     "attributes": {
-      "GESIS Data Archive Study Number": "GESIS Data Archive Study Number ZA5900",
-      "GESIS Archive Version": "",
-      "Country/ Sample ISO 3166 Code (see V4 for codes for whole nation states)": "AR-Argentina",
-      "Country ISO 3166 Code (see V3 for codes for the sample)": "AR-Argentina",
       "Country Prefix ISO 3166 Code - alphanumeric": "Argentina",
       "Sex of Respondent": "Female",
       "Year of birth": "1989",
@@ -756,10 +744,6 @@
       "Administrative mode of data-collection": "Face-to-face, PAPI, respondent reading questionnaire"
     },
     "questions_answer": {
-      "v1": 5900,
-      "v2": "4.0.0 (2016-11-23)",
-      "v3": 32,
-      "v4": 32,
       "v5": 4,
       "es_v5": 0,
       "v6": 2,
@@ -842,10 +826,6 @@
   {
     "person_id": 30000003,
     "attributes": {
-      "GESIS Data Archive Study Number": "GESIS Data Archive Study Number ZA5900",
-      "GESIS Archive Version": "",
-      "Country/ Sample ISO 3166 Code (see V4 for codes for whole nation states)": "AR-Argentina",
-      "Country ISO 3166 Code (see V3 for codes for the sample)": "AR-Argentina",
       "Country Prefix ISO 3166 Code - alphanumeric": "Argentina",
       "Sex of Respondent": "Female",
       "Year of birth": "1994",
@@ -1176,10 +1156,6 @@
       "Administrative mode of data-collection": "Face-to-face, PAPI, respondent reading questionnaire"
     },
     "questions_answer": {
-      "v1": 5900,
-      "v2": "4.0.0 (2016-11-23)",
-      "v3": 32,
-      "v4": 32,
       "v5": 4,
       "es_v5": 0,
       "v6": 3,
@@ -1262,10 +1238,6 @@
   {
     "person_id": 30000004,
     "attributes": {
-      "GESIS Data Archive Study Number": "GESIS Data Archive Study Number ZA5900",
-      "GESIS Archive Version": "",
-      "Country/ Sample ISO 3166 Code (see V4 for codes for whole nation states)": "AR-Argentina",
-      "Country ISO 3166 Code (see V3 for codes for the sample)": "AR-Argentina",
       "Country Prefix ISO 3166 Code - alphanumeric": "Argentina",
       "Sex of Respondent": "Male",
       "Year of birth": "1951",
@@ -1596,10 +1568,6 @@
       "Administrative mode of data-collection": "Face-to-face, PAPI, respondent reading questionnaire"
     },
     "questions_answer": {
-      "v1": 5900,
-      "v2": "4.0.0 (2016-11-23)",
-      "v3": 32,
-      "v4": 32,
       "v5": 2,
       "es_v5": 0,
       "v6": 2,
@@ -1682,10 +1650,6 @@
   {
     "person_id": 30000005,
     "attributes": {
-      "GESIS Data Archive Study Number": "GESIS Data Archive Study Number ZA5900",
-      "GESIS Archive Version": "",
-      "Country/ Sample ISO 3166 Code (see V4 for codes for whole nation states)": "AR-Argentina",
-      "Country ISO 3166 Code (see V3 for codes for the sample)": "AR-Argentina",
       "Country Prefix ISO 3166 Code - alphanumeric": "Argentina",
       "Sex of Respondent": "Female",
       "Year of birth": "1957",
@@ -2016,10 +1980,6 @@
       "Administrative mode of data-collection": "Face-to-face, PAPI, respondent reading questionnaire"
     },
     "questions_answer": {
-      "v1": 5900,
-      "v2": "4.0.0 (2016-11-23)",
-      "v3": 32,
-      "v4": 32,
       "v5": 4,
       "es_v5": 0,
       "v6": 3,

@@ -1,0 +1,85 @@
+[
+  {
+    "domain": "V57",
+    "meaning": "Q26 How satisfied are you with your family life?",
+    "question": "All things considered, how satisfied are you with your family life? (PLEASE TICK ONE BOX ONLY)",
+    "content": {
+      "0": "Not applicable",
+      "1": "Completely satisfied",
+      "2": "Very satisfied",
+      "3": "Fairly satisfied",
+      "4": "Neither satisfied nor dissatisfied",
+      "5": "Fairly dissatisfied",
+      "6": "Very dissatisfied",
+      "7": "Completely dissatisfied",
+      "8": "Can't choose, NL: Don't know",
+      "9": "No answer"
+    },
+    "special": {
+      "BG": {
+        "0": "NAP (code 2,3,7 in PARTLIV)"
+      },
+      "NL": {
+        "0": "Not applicable"
+      }
+    }
+  },
+  {
+    "domain": "V58",
+    "meaning": "Q27 Health status",
+    "question": "In general, would you say your health is...? (PLEASE TICK ONE BOX ONLY)",
+    "content": {
+      "1": "Excellent",
+      "2": "Very good",
+      "3": "Good",
+      "4": "Fair",
+      "5": "Poor",
+      "8": "Can't choose, NL: Don't know",
+      "9": "No answer"
+    },
+    "special": {
+      "HU": {
+        "1": "Very good",
+        "2": "Good",
+        "3": "Satisfactory",
+        "4": "Bad",
+        "5": "Very bad"
+      }
+    }
+  },
+  {
+    "domain": "V59",
+    "meaning": "Q28 Mother ever working for pay before respondent 14",
+    "question": "Did your mother ever work for pay for as long as one year, after you were born and before you were 14? (PLEASE TICK ONE BOX ONLY)",
+    "content": {
+      "0": "Not applicable, never had children",
+      "1": "Yes, she worked for pay",
+      "2": "No",
+      "6": "Doesn't apply, mother not present",
+      "8": "Don't know, KR: don't know, refused",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "V60",
+    "meaning": "Q29a When a child was under school age?",
+    "question": "Did you work outside the home full-time, part-time or not at all ...? When a child was under school age? (PLEASE TICK ONE BOX ON EACH LINE)",
+    "content": {
+      "0": "Not applicable, never had children",
+      "1": "Worked full-time",
+      "2": "Worked part-time",
+      "3": "Stayed at home",
+      "8": "Does not apply, KR: don't know, refused",
+      "9": "No answer, don't know"
+    },
+    "special": {
+      "FI": {
+        "0": "NAP (no children, no answer)"
+      },
+      "TW": {
+        "4": "Worked at home"
+      }
+    }
+  }
+]

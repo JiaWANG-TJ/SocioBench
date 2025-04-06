@@ -1,0 +1,331 @@
+[
+  {
+    "domain": "v49",
+    "meaning": "Typical week: number of hours spend in car/ another motor vehicle",
+    "question": "In a typical week, about how many hours do you spend in a car or another motor vehicle, including motorcycles, trucks, and vans, but not counting public transport? Do not include shared rides in buses, minibuses, and collective taxis.",
+    "content": {
+      "-9": "No answer",
+      "-8": "Don't know",
+      "-1": "Not available (SI)",
+      "0": "No hour",
+      "1": "One hour a week incl. one hour or less (but more than 0)",
+      "168": "168 hours a week"
+    },
+    "special": {
+      "AU": {
+        "-8": "Not offered"
+      },
+      "SI": {
+        "-1": "Not available"
+      },
+      "US": {
+        "-8": "Not available"
+      }
+    }
+  },
+  {
+    "domain": "SI_v49",
+    "meaning": "Slovenia - Typical day: number of hours spend in car/ another motor vehicle",
+    "question": "In a typical WEEKDAY, about how many hours do you spend in a car or another motor vehicle, including motorcycles, trucks, and vans, but not counting public transport? Do not include shared rides in buses, minibuses, and collective taxis.",
+    "content": {
+      "-9": "No answer",
+      "-8": "Don't know",
+      "-1": "Not available: all other countries",
+      "0": "No hour",
+      "1": "One hour a day incl. one hour or less (but more than 0)",
+      "20": "Twenty hours a day"
+    },
+    "special": {}
+  },
+  {
+    "domain": "v50",
+    "meaning": "Typical week: number of days that you eat beef/ lamb",
+    "question": "In a typical week, on how many days do you eat beef, lamb, or products that contain them?",
+    "content": {
+      "-9": "No answer",
+      "-8": "Can't choose",
+      "-4": "IN: NAP (vegetarian)",
+      "-1": "Not available (DK)",
+      "0": "0",
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7"
+    },
+    "special": {
+      "DK": {
+        "-1": "Not available"
+      },
+      "IN": {
+        "-4": "NAP"
+      }
+    }
+  },
+  {
+    "domain": "v51",
+    "meaning": "Number of rooms in your home",
+    "question": "How many rooms are there in your home (apartment or house)? Do not count any separate kitchens, bathrooms, garages, balconies, hallways or cupboards.",
+    "content": {
+      "-9": "No answer",
+      "-8": "Don't know",
+      "1": "One room",
+      "30": "Thirty rooms"
+    },
+    "special": {
+      "AU": {
+        "-8": "Not offered"
+      },
+      "CH": {
+        "1": "Rounded to complete number of rooms"
+      },
+      "FR": {
+        "1": "1 to 2-rooms is 18%"
+      },
+      "NO": {
+        "-8": "Not included"
+      },
+      "US": {
+        "-8": "Not available"
+      }
+    }
+  },
+  {
+    "domain": "v52",
+    "meaning": "How often effort to sort glass and so on for recycling",
+    "question": "How often do you make a special effort to sort glass or tins or plastic or newspapers and so on for recycling? (Please tick one box only.)",
+    "content": {
+      "-9": "No answer; AT: Can't choose",
+      "-4": "Recycling not available where I live",
+      "1": "Always",
+      "2": "Often",
+      "3": "Sometimes",
+      "4": "Never"
+    },
+    "special": {
+      "AT": {
+        "-4": "Not offered"
+      },
+      "SK": {
+        "-4": "Not provided"
+      }
+    }
+  },
+  {
+    "domain": "v53",
+    "meaning": "How often avoid buying certain products for environmental reasons",
+    "question": "And how often do you avoid buying certain products for environmental reasons? (Please tick one box only.)",
+    "content": {
+      "-9": "No answer; AT, IN: Can't choose",
+      "1": "Always",
+      "2": "Often",
+      "3": "Sometimes",
+      "4": "Never"
+    },
+    "special": {}
+  },
+  {
+    "domain": "v54",
+    "meaning": "Member of a group to preserve environment",
+    "question": "Are you a member of any group whose main aim is to preserve or protect the environment? (Please tick one box only.)",
+    "content": {
+      "-9": "No answer; AT, IN: Can't choose",
+      "1": "Yes",
+      "2": "No"
+    },
+    "special": {}
+  },
+  {
+    "domain": "v55",
+    "meaning": "Last five years: signed a petition",
+    "question": "In the last five years, have you ... (Please tick one box on each line.) Signed a petition about an environmental issue?",
+    "content": {
+      "-9": "No answer; AT, IN, PH: Can't choose",
+      "1": "Yes, I have",
+      "2": "No, I have not"
+    },
+    "special": {}
+  },
+  {
+    "domain": "v56",
+    "meaning": "Last five years: given money to an environmental group",
+    "question": "In the last five years, have you ... (Please tick one box on each line.) Given money to an environmental group?",
+    "content": {
+      "-9": "No answer; AT, IN, PH: Can't choose",
+      "1": "Yes, I have",
+      "2": "No, I have not"
+    },
+    "special": {}
+  },
+  {
+    "domain": "v57",
+    "meaning": "Last five years: taken part in protest demonstration",
+    "question": "In the last five years, have you ... (Please tick one box on each line.) Taken part in a protest or demonstration about an environmental issue?",
+    "content": {
+      "-9": "No answer; AT, IN, KR, PH: Can't choose",
+      "1": "Yes, I have",
+      "2": "No, I have not"
+    },
+    "special": {}
+  },
+  {
+    "domain": "v58",
+    "meaning": "Last 12 months, neighbourhood how much affected by: air pollution",
+    "question": "Thinking about your neighbourhood, to what extent, if at all, was it affected by the following things over the last twelve months? (Please tick one box only.) Air Pollution",
+    "content": {
+      "-9": "No answer",
+      "-8": "Can't choose",
+      "1": "Not at all",
+      "2": "To a small extent",
+      "3": "To some extent",
+      "4": "To a great extent",
+      "5": "To a very great extent"
+    },
+    "special": {}
+  },
+  {
+    "domain": "v59",
+    "meaning": "Last 12 months, neighbourhood how much affected by: water pollution",
+    "question": "Thinking about your neighbourhood, to what extent, if at all, was it affected by the following things over the last twelve months? (Please tick one box only.) Water Pollution",
+    "content": {
+      "-9": "No answer",
+      "-8": "Can't choose",
+      "1": "Not at all",
+      "2": "To a small extent",
+      "3": "To some extent",
+      "4": "To a great extent",
+      "5": "To a very great extent"
+    },
+    "special": {}
+  },
+  {
+    "domain": "v60",
+    "meaning": "Last 12 months, neighbourhood how much affected by: extreme weather events",
+    "question": "Thinking about your neighbourhood, to what extent, if at all, was it affected by the following things over the last twelve months? (Please tick one box only.) Extreme weather events (such as severe storms, droughts, floods, heat waves, cold snaps, etc.)",
+    "content": {
+      "-9": "No answer",
+      "-8": "Can't choose",
+      "1": "Not at all",
+      "2": "To a small extent",
+      "3": "To some extent",
+      "4": "To a great extent",
+      "5": "To a very great extent"
+    },
+    "special": {}
+  },
+  {
+    "domain": "SEX",
+    "meaning": "Sex of Respondent",
+    "question": "Are you...?",
+    "content": {
+      "-9": "No answer",
+      "1": "Male",
+      "2": "Female"
+    },
+    "special": {
+      "FR": {
+        "-9": "No option of non-response"
+      },
+      "IS": {
+        "-9": "No missing answers"
+      },
+      "JP": {
+        "-9": "Known from sampling frame"
+      },
+      "KR": {
+        "-9": "Derived from household roster"
+      },
+      "NZ": {
+        "-9": "Imputations taken from sampling frame"
+      }
+    }
+  },
+  {
+    "domain": "BIRTH",
+    "meaning": "Year of birth",
+    "question": "When were you born? (Please, write in the year of your birth, use four digits for the year.)",
+    "content": {
+      "-9": "No answer",
+      "1918": "1918",
+      "1932": "1932; US: 1932 or earlier",
+      "2006": "2006"
+    },
+    "special": {
+      "DE": {
+        "-9": "Mail survey"
+      },
+      "DK": {
+        "-9": "Drop-down list from 1940 to 2002"
+      },
+      "FI": {
+        "-9": "Lower age cut-off was 15 and upper age cut-off was 74"
+      },
+      "FR": {
+        "-9": "No option of non-response"
+      },
+      "IS": {
+        "-9": "No missing answers"
+      },
+      "JP": {
+        "-9": "Known from sampling frame"
+      },
+      "TH": {
+        "-9": "Computed from B.E. to A.D."
+      },
+      "TW": {
+        "-9": "R.O.C. year = A.D. year-1911"
+      }
+    }
+  },
+  {
+    "domain": "AGE",
+    "meaning": "Age of respondent",
+    "question": "What was your age at your last birthday, in full years?",
+    "content": {
+      "-9": "No answer",
+      "15": "15 years old",
+      "89": "89 years old; US: 89 years or more",
+      "103": "103 years old"
+    },
+    "special": {
+      "DK": {
+        "-9": "Lower age cut-off was 18 and upper age cut-off was 79"
+      },
+      "IS": {
+        "-9": "Data collection lasted from 2020 to 2021"
+      },
+      "KR": {
+        "-9": "Derived from household roster"
+      },
+      "TH": {
+        "-9": "Computed from B.E. to A.D."
+      },
+      "US": {
+        "-9": "Calculated as AGE=2021-BIRTH"
+      }
+    }
+  },
+  {
+    "domain": "EDUCYRS",
+    "meaning": "Years of full-time schooling",
+    "question": "How many years (full-time equivalent) have you been in formal education? Include all primary and secondary schooling, university and other post-secondary education, and full-time vocational training, but do not include repeated years. If you are currently in education, count the number of years you have completed so far.",
+    "content": {
+      "-9": "No answer",
+      "-8": "Don't know",
+      "0": "No formal schooling, no years at school",
+      "1": "1 year",
+      "20": "20 years; US: 20 or more years",
+      "78": "78 years"
+    },
+    "special": {
+      "CH": {
+        "-9": "Computed by adding the numbers of years of the two questions"
+      },
+      "DK": {
+        "-9": "Replies with more than 50 years were recoded to missing value -9"
+      }
+    }
+  }
+]

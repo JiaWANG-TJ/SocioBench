@@ -1,0 +1,665 @@
+[
+  {
+    "domain": "IL_PRTY",
+    "meaning": "Israel: Party voted for in last election",
+    "question": "Which party did you vote last Knesset elections were held in February 2009?",
+    "content": {
+      "0": "NAP (Code 0, 2, 7 in VOTE_LE)",
+      "1": "Haavoda",
+      "2": "Likud",
+      "3": "Kadima",
+      "4": "Shase",
+      "5": "Meretz",
+      "6": "Mafdal",
+      "7": "Yahadut-hatora",
+      "8": "Israel Beteno",
+      "9": "Haehud Halumi",
+      "10": "Hayerukim",
+      "11": "Hatnua Hayeruka-Memad",
+      "12": "ale yarok",
+      "13": "Gimlaim",
+      "14": "Haadash",
+      "15": "Balad",
+      "16": "Raam, Taal",
+      "95": "Other party",
+      "97": "Refused",
+      "99": "No answer",
+      "990": "NAP, other countries"
+    },
+    "special": {}
+  },
+  {
+    "domain": "IN_PRTY",
+    "meaning": "India: Party voted for in last election",
+    "question": "Thinking back to the last general election (Lok Sabha) 2009, which party did you vote for?",
+    "content": {
+      "0": "NAP (Code 0, 2, 7 in VOTE_LE)",
+      "1": "INC+",
+      "2": "BJP+",
+      "3": "Left front/ Communist Party",
+      "4": "Third front",
+      "5": "Regional Party",
+      "95": "Other Party",
+      "98": "Can't say",
+      "990": "NAP, other countries"
+    },
+    "special": {}
+  },
+  {
+    "domain": "IS_PRTY",
+    "meaning": "Iceland: Party voted for in last election",
+    "question": "Which party did you vote for in the general election in April 2013?",
+    "content": {
+      "0": "NAP (Code 0, 2, 7 in VOTE_LE)",
+      "1": "Social Democratic Alliance",
+      "2": "Progressive Party",
+      "3": "Independence Party",
+      "4": "Left - Green Movement",
+      "5": "Bright Future",
+      "6": "Pirate Party",
+      "7": "Dawn",
+      "8": "Democracy Watch",
+      "10": "Right - Green People's",
+      "13": "Rainbow",
+      "14": "Households Party",
+      "96": "Invalid ballot, can't say",
+      "97": "Refused",
+      "99": "No answer",
+      "990": "NAP, other countries"
+    },
+    "special": {}
+  },
+  {
+    "domain": "JP_PRTY",
+    "meaning": "Japan: Party voted for in last election",
+    "question": "Which party did you vote for in the last Japanese House of Councilors election, under the proportional representation system? Circle one figure only.",
+    "content": {
+      "0": "NAP (Code 0, 2, 7 in VOTE_LE)",
+      "1": "Democratic Party of Japan - DPJ",
+      "2": "Liberal Democratic Party - LDP",
+      "3": "New Komeito - New Clean Government Party",
+      "4": "Your Party",
+      "5": "Japanese Communist Party - JCP",
+      "6": "Social Democratic Party - SDPJ",
+      "95": "Other Party",
+      "99": "No answer",
+      "990": "NAP, other countries"
+    },
+    "special": {}
+  },
+  {
+    "domain": "KR_PRTY",
+    "meaning": "Korea (South): Party voted for in last election",
+    "question": "Did you vote in the South Korean Legislative Election on April 11 this year [2012]? Which party did you vote in the South Korean Legislative Election on April 11 this year?",
+    "content": {
+      "0": "NAP (Code 0, 2, 7 in VOTE_LE)",
+      "1": "Saenuri Party",
+      "2": "Democratic United Party",
+      "3": "Unified Progressive Party",
+      "4": "Advancement and Unification Party",
+      "5": "Democratic Party",
+      "6": "Labour Party",
+      "7": "People Happiness Party",
+      "8": "Korea Vision Party",
+      "95": "Other party",
+      "98": "Don't know",
+      "990": "NAP, other countries"
+    },
+    "special": {}
+  },
+  {
+    "domain": "LT_PRTY",
+    "meaning": "Lithuania: Party voted for in last election",
+    "question": "Remember the last Seimas Election in October 2008. Which party did you vote for?",
+    "content": {
+      "0": "NAP (Code 0, 2, 7 in VOTE_LE)",
+      "1": "Labour Party - DP",
+      "2": "Christian Party - KP",
+      "3": "Liberal and Centre Union - LiCS",
+      "4": "Electoral Action of Lithuanian Poles - LLRA",
+      "5": "Liberal Movement of Lithuanian Republic - LRLS",
+      "6": "Lithuanian Social Democratic Party - LSDP",
+      "7": "Lithuanian Peasants and Greens Union - LVŽS",
+      "8": "Party 'Order and Justice' - TT",
+      "9": "Political Party 'The Way of Courage' - DK",
+      "10": "Political Party 'Union Yes' - TAIP",
+      "11": "Socialist People's Front - SLF",
+      "12": "Homeland Union – Lithuanian Christian Democrats-TS-LKD",
+      "95": "Other",
+      "96": "Invalid ballot",
+      "97": "Refused",
+      "990": "NAP, other countries"
+    },
+    "special": {}
+  },
+  {
+    "domain": "LV_PRTY",
+    "meaning": "Latvia: Party voted for in last election",
+    "question": "Which party did you vote for?",
+    "content": {
+      "0": "NAP (Code 0, 2, 7 in VOTE_LE)",
+      "1": "Unity - V",
+      "2": "Latvian Social Democratic Workers Party - LSDSP",
+      "3": "Zatlers' Reform Party - ZRP",
+      "4": "Christian Democratic Union - KDS",
+      "5": "Šlesers’ Reform Party - LPP/LC (Latvias First Party, Latvia's Way)",
+      "6": "Alliance of Political Parties 'Harmony Centre' - SC",
+      "7": "For Human Rights in United Latvia - PCTVL",
+      "8": "National Alliance 'All For Latvia!' – 'For Fatherland and Freedom/LNNK' - NA'",
+      "11": "The Union of Greens and Farmers - ZZS",
+      "12": "People's Control - Tautas kontrole",
+      "13": "Freedom, Free from Fear, Hate and Anger",
+      "97": "Refused",
+      "99": "No answer",
+      "990": "NAP, other countries"
+    },
+    "special": {}
+  },
+  {
+    "domain": "MX_PRTY",
+    "meaning": "Mexico: Party voted for in last election",
+    "question": "Did you vote in the federal elections of 2012? Which party do you vote for in the last federal election of 2012?",
+    "content": {
+      "0": "NAP (Code 0, 2, 7 in VOTE_LE)",
+      "1": "National Action Party - PAN",
+      "2": "Institutional Revolutionary Party - PRI",
+      "3": "Democratic Revolution Party - PRD",
+      "4": "Labour Party - PT",
+      "5": "Environmental Green Party - PVEM",
+      "6": "Convergence - CS",
+      "7": "Citizen Movement - MC",
+      "8": "New Alliance Party - PANAL",
+      "95": "Other Party",
+      "96": "Invalid ballot",
+      "97": "Refused",
+      "99": "No answer",
+      "990": "NAP, other countries"
+    },
+    "special": {}
+  },
+  {
+    "domain": "NL_PRTY",
+    "meaning": "Netherlands: Party voted for in last election",
+    "question": "Which party have you voted for in the last parliamentary elections of September 12 2012?",
+    "content": {
+      "0": "NAP (Code 0, 2, 7 in VOTE_LE)",
+      "1": "Liberal' Conservative - VVD",
+      "2": "Social Democrats - PvdA",
+      "3": "Wilders' Party - PVV",
+      "4": "Christen Democrats - CDA",
+      "5": "Socialists - SP",
+      "6": "'Liberal' Democrats - D66",
+      "7": "Green - GroenLinks",
+      "8": "Christian [Protestant] Party - ChristenUnie",
+      "9": "Orthodox Protestant Party - SGP",
+      "10": "Animal Rights Party - Partij voor de Dieren",
+      "11": "Pensioners Party - 50 Plus",
+      "95": "Other party, specify",
+      "99": "No answer",
+      "990": "NAP, other countries"
+    },
+    "special": {}
+  },
+  {
+    "domain": "NO_PRTY",
+    "meaning": "Norway: Party voted for in last election",
+    "question": "Which party did you vote for in the last parliamentary election in 2009?",
+    "content": {
+      "0": "NAP (Code 0, 2, 7 in VOTE_LE)",
+      "1": "Red Electoral Alliance",
+      "2": "Labour Party - DNA",
+      "3": "Progress Party - FRP",
+      "4": "Conservative Party - H",
+      "5": "Christian Democratic Party - KrF",
+      "6": "Centre Party - SP",
+      "7": "Socialist Left - SV",
+      "8": "Liberal Party - V",
+      "95": "Other Party",
+      "98": "Don't remember",
+      "99": "No answer",
+      "990": "NAP, other countries"
+    },
+    "special": {}
+  },
+  {
+    "domain": "PH_PRTY",
+    "meaning": "Philippines: Party voted for in last election",
+    "question": "Which party did you vote for in the last Philippines national election in May 2010?",
+    "content": {
+      "0": "NAP (Code 0, 2, 7 in VOTE_LE)",
+      "1": "Nationalist Peoples Coalition - NPC",
+      "2": "Liberal Party - LP",
+      "5": "LAKAS-NUCD-UMDP Party",
+      "18": "Philippine Democratic Party - PDP-LABAN",
+      "19": "Partido NG Masang Pilipino - PMP",
+      "33": "Nacionalista Party - NP",
+      "48": "Citizens Action Party, Akbayan",
+      "74": "Bayan Muna",
+      "81": "Buhay Hayaan Yumabong - BUHAY",
+      "85": "Gabriela",
+      "89": "Kilusang Bagong Lipunan - KBL",
+      "94": "No particular party, but special leaders (individual-related) of parties",
+      "95": "Other Party",
+      "97": "Refused",
+      "98": "Don't know",
+      "990": "NAP, other countries"
+    },
+    "special": {}
+  },
+  {
+    "domain": "PL_PRTY",
+    "meaning": "Poland: Party voted for in last election",
+    "question": "Which party or organization did you vote to the Seym election on the October 2011?",
+    "content": {
+      "0": "NAP (Code 0, 2, 7 in VOTE_LE)",
+      "1": "Law and Justice Party - PIS",
+      "2": "Poland Comes First - PJN",
+      "3": "Democratic Left Alliance - SLD",
+      "4": "Palikot's Movement - Ruch Palikota",
+      "5": "Polish Peasants Party - PSL",
+      "6": "Polish Labour Party (Sierpien 80) - Polska Partia Pracy",
+      "7": "Civic Platform of Republic of Poland - PO",
+      "8": "Our Home Poland - Andrzej Lepper's Self-defense",
+      "9": "Janusz Korwin - Mikke New Right - Nowa Prawica",
+      "10": "Right Wing - Prawica",
+      "95": "Other Party",
+      "97": "Refused",
+      "99": "No answer",
+      "990": "NAP, other countries"
+    },
+    "special": {}
+  },
+  {
+    "domain": "PT_PRTY",
+    "meaning": "Portugal: Party voted for in last election",
+    "question": "And can you tell me in which party did you vote [in the last elections for the Assemby of the Republic in 05 of June of 2011]?",
+    "content": {
+      "0": "NAP (Code 0, 2, 7 in VOTE_LE)",
+      "1": "Left Bloc - BE, Bloco de Esquerda",
+      "2": "Democratic and Social Centre - Peoples Party - CDS-PP",
+      "3": "Democratic Unity Coalition (Communist party, Ecologist Party) - CDU-PCP",
+      "4": "Reorganizative Movement of the Party of the Proletariat - MRPP",
+      "5": "Social Democratic Party - PPD-PSD",
+      "6": "Socialist Party - PS",
+      "95": "Other Party",
+      "96": "Invalid ballot",
+      "97": "Refused",
+      "99": "No answer",
+      "990": "NAP, other countries"
+    },
+    "special": {}
+  },
+  {
+    "domain": "RU_PRTY",
+    "meaning": "Russia: Party voted for in last election",
+    "question": "",
+    "content": {
+      "990": "Not available; NAP, other countries"
+    },
+    "special": {}
+  },
+  {
+    "domain": "SE_PRTY",
+    "meaning": "Sweden: Party voted for in last election",
+    "question": "Which political party did you vote for in the last general election?",
+    "content": {
+      "0": "NAP (Code 0, 2, 7 in VOTE_LE)",
+      "1": "Centre Party - C",
+      "2": "Liberal Party - FP",
+      "3": "Christian Democrats - KD",
+      "4": "Green Party - MP",
+      "5": "Conservative Party - M",
+      "6": "Social Democratic Party - S",
+      "7": "Sweden Democrats - SD",
+      "8": "Left Party - V",
+      "95": "Other Party",
+      "99": "No answer",
+      "990": "NAP, other countries"
+    },
+    "special": {}
+  },
+  {
+    "domain": "SI_PRTY",
+    "meaning": "Slovenia: Party voted for in last election",
+    "question": "Did you vote in the last election (in December 2011) for the National Assembly? Can you still remember which party or candidate did you vote for?",
+    "content": {
+      "0": "NAP (Code 0, 2, 7 in VOTE_LE)",
+      "1": "Democratic Party of Slovenian Pensioners - DESUS",
+      "2": "Liberal Democrats - LDS",
+      "3": "Slovenian People's Party - SLS",
+      "4": "Slovenian National Party - SNS",
+      "5": "Slovenian Democratic Party - SDS",
+      "6": "New Slovenia - NSI",
+      "7": "Social Democrats - SD",
+      "8": "New Politics - ZARES",
+      "9": "Positive Slovenia - PS",
+      "10": "Gregor Virant's Citizens' List - DLGV",
+      "95": "Other parties or lists (not specified)",
+      "99": "No answer",
+      "990": "NAP, other countries"
+    },
+    "special": {}
+  },
+  {
+    "domain": "SK_PRTY",
+    "meaning": "Slovakia: Party voted for in last election",
+    "question": "Did you vote in the last parliamentary elections which took place in March this year [2012]? Which political party did you vote for?",
+    "content": {
+      "0": "NAP (Code 0, 2, 7 in VOTE_LE)",
+      "1": "Christian Democratic Movement - KDH",
+      "2": "Movement for Democratic Slovakia, Peoples Party - L'S-HZDS",
+      "3": "Peoples party - our Slovakia - LS",
+      "4": "Party of Cooperation - MOST - HÍD",
+      "5": "Ordinary people and independent personalities - OLaNO",
+      "6": "Freedom and Solidarity - SaS",
+      "7": "Slovak Democratic Christian Union - Democratic Party - SDKU-DS",
+      "8": "Slovak National Party - SNS",
+      "9": "Social Democracy - SMER-SD - SMER",
+      "10": "Party of Hungarian Coalition - SMK",
+      "11": "Free word party of Nora Mojsejova",
+      "12": "Change from below - DÚ",
+      "13": "99%",
+      "14": "Other Party - Communist party - KSS",
+      "95": "Other Party",
+      "98": "Don't know",
+      "99": "No answer",
+      "990": "NAP, other countries"
+    },
+    "special": {}
+  },
+  {
+    "domain": "TR_PRTY",
+    "meaning": "Turkey: Party voted for in last election",
+    "question": "Which party did you vote for in the June 2011 elections?",
+    "content": {
+      "0": "NAP (Code 0, 2, 7 in VOTE_LE)",
+      "1": "Justice and development Party - AKP",
+      "3": "Grand Union Party - BBP",
+      "4": "Republican People's Party - CHP",
+      "5": "Democratic Society Party - DTP",
+      "7": "Democratic Party - Truth Party - DP-DYP",
+      "9": "Nationalist Action Party - MHP",
+      "10": "Felicity Party - SP",
+      "13": "Independents",
+      "95": "Other parties",
+      "96": "Invalid ballot",
+      "99": "No answer",
+      "990": "NAP, other countries"
+    },
+    "special": {}
+  },
+  {
+    "domain": "TW_PRTY",
+    "meaning": "Taiwan: Party voted for in last election",
+    "question": "Did you vote in the Presidential election held in January 2012? Which candidate did you vote for?",
+    "content": {
+      "0": "NAP (Code 0, 2, 7 in VOTE_LE)",
+      "1": "Kuo Min Tang - KMT",
+      "2": "Democratic Progressive Party - DPP",
+      "3": "People First Party - PFP",
+      "96": "Invalid ballot",
+      "990": "NAP, other countries"
+    },
+    "special": {}
+  },
+  {
+    "domain": "US_PRTY",
+    "meaning": "United States: Party voted for in last election",
+    "question": "In 2008, you remember that Obama ran for President on the Democratic ticket against McCain for the Republicans? Did you vote for the Democrats or the Republicans?",
+    "content": {
+      "0": "NAP (Code 0, 2, 7 in VOTE_LE)",
+      "2": "Democrat",
+      "6": "Republican",
+      "96": "Invalid ballot",
+      "990": "NAP, other countries"
+    },
+    "special": {}
+  },
+  {
+    "domain": "VE_PRTY",
+    "meaning": "Venezuela: Party voted for in last election",
+    "question": "Which party did you vote at the last presidential election [April, 14 2013]?",
+    "content": {
+      "0": "NAP (Code 0, 2, 7 in VOTE_LE)",
+      "1": "Democratic Action - AD (Social Democrat)",
+      "2": "Social Christian Party - Copei (Conservative)",
+      "3": "Movement Toward Socialism - MAS (Center left)",
+      "4": "Revolutionary Cause - Cause R (Left)",
+      "5": "Homeland for All - PPT (Left)",
+      "6": "A New Time - UNT (Social Democrat)",
+      "7": "First Justice - PJ (Liberal)",
+      "8": "Project Venezuela - PV (Liberal)",
+      "10": "We Can - PODEMOS (Left)",
+      "11": "TUPAMAROS (Left)",
+      "12": "United Socialist Party of Venezuela - PSUV (Left)",
+      "13": "Popular Will - VP (Left)",
+      "95": "Other Party",
+      "96": "Invalid ballot",
+      "97": "Refused",
+      "99": "No answer",
+      "990": "NAP, other countries"
+    },
+    "special": {}
+  },
+  {
+    "domain": "ZA_PRTY",
+    "meaning": "South Africa: Party voted for in last election",
+    "question": "For which party did you vote in the last national election, which was held in 2009?",
+    "content": {
+      "0": "NAP (Code 0, 2, 7 in VOTE_LE)",
+      "1": "African Christian Democratic Party - ACDP",
+      "2": "African National Congress - ANC",
+      "3": "Azanian Peoples organization - AZAPO",
+      "4": "Democratic Party/ Alliance - DA/ DP",
+      "5": "Freedom Front - FF/ VF, Vryheidsfront",
+      "6": "Independent Democrats - ID",
+      "7": "Inkatha Freedom Party - IFP",
+      "8": "Minority Front - MF",
+      "9": "Pan-Africanist Congress - PAC",
+      "10": "United Christian Democratic Party - UCDP",
+      "12": "Congress of the People - COPE",
+      "95": "Other Party",
+      "97": "Refused",
+      "98": "Don't know",
+      "99": "No answer",
+      "990": "NAP, other countries"
+    },
+    "special": {}
+  },
+  {
+    "domain": "PARTY_LR",
+    "meaning": "Party voted for in last general election: left-right (derived from nat_PRTY)",
+    "question": "Based on 'party voted for in last general election' and derived by expert judgment from the country-specific parties (nat_PRTY) into the left-right scheme except: GB: (If R supports a party or is closer to one party than others) Which one?/ (If R is not closer to one party than others)...",
+    "content": {
+      "0": "NAP (Code 0, 2, 7 in VOTE_LE)",
+      "1": "Far left (communist etc.)",
+      "2": "Left, center left",
+      "3": "Center, liberal",
+      "4": "Right, conservative",
+      "5": "Far right (fascist etc.)",
+      "6": "Other",
+      "7": "None",
+      "94": "PH: No particular party, but special leaders (individual-related) of parties",
+      "96": "Invalid ballot",
+      "97": "Refused",
+      "98": "Insufficient information to code into scheme, NO: don't remember",
+      "99": "No answer"
+    },
+    "special": {
+      "GB-GBN": {
+        "0": "NAP (code 0 in GB_PRTY)"
+      },
+      "CL": {
+        "0": "Not available"
+      },
+      "CN": {
+        "0": "Not available"
+      },
+      "IL": {
+        "0": "Not available"
+      },
+      "KR": {
+        "0": "Not available"
+      },
+      "RU": {
+        "0": "Not available"
+      },
+      "TR": {
+        "0": "Not available"
+      },
+      "TW": {
+        "0": "Not available"
+      }
+    }
+  },
+  {
+    "domain": "AR_ETHN",
+    "meaning": "Argentina: Country specific origin country/ ethnic group/ ethnic identity/ family origin",
+    "question": "a) Where were you born; b) Your father; c) Your paternal grandfather; d) Your paternal grandmother; e) Your mother; f) Your maternal grandfather; g) Your maternal grandmother.",
+    "content": {
+      "0": "NAP, other countries",
+      "1": "Argentine family background - migration",
+      "2": "Italo-Spanish and other European family background - migration",
+      "3": "Latinamerican family background - migration",
+      "8": "Other national family background - migration",
+      "99": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "AT_ETHN",
+    "meaning": "Austria: Country specific origin country/ ethnic group/ ethnic identity/ family origin",
+    "question": "",
+    "content": {
+      "0": "Not available; NAP, other countries"
+    },
+    "special": {}
+  },
+  {
+    "domain": "AU_ETHN",
+    "meaning": "Australia: Country specific origin country/ ethnic group/ ethnic identity/ family origin",
+    "question": "What country were you born in? What country was your mother born in? What country was your father born in? Do you identify as Aboriginal or Torres Strait Islander?",
+    "content": {
+      "0": "NAP, other countries",
+      "1": "AU born: + Both parents also AU born",
+      "2": "AU born: 1 or 2 parents born in English-speaking country",
+      "3": "AU born: 1 or 2 parents born in non-English-speaking country",
+      "4": "Born in English-speaking country",
+      "5": "Born in non-English-speaking country",
+      "6": "Aboriginal or Torres Strait Islander",
+      "99": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "BE_ETHN",
+    "meaning": "Belgium: Country specific origin country/ ethnic group/ ethnic identity/ family origin",
+    "question": "Different ethnic groups in our country can be distinguished. Choose one or two groups to which you belong.",
+    "content": {
+      "0": "NAP, other countries",
+      "1": "Belgians",
+      "2": "Flemings",
+      "3": "Walloons",
+      "4": "Brussels",
+      "5": "Other group",
+      "6": "Belgians-Flemings",
+      "7": "Belgians-Walloons",
+      "8": "Belgians-Brussels",
+      "9": "Belgians-Other group",
+      "10": "Flemings-Walloons",
+      "11": "Flemings-Brussels",
+      "12": "Flemings-Other group",
+      "13": "Walloons-Brussels",
+      "14": "Walloons-Other group",
+      "15": "Brussels-Other group",
+      "16": "Other group - Other group",
+      "17": "Three groups or more",
+      "99": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "BG_ETHN",
+    "meaning": "Bulgaria: Country specific origin country/ ethnic group/ ethnic identity/ family origin",
+    "question": "",
+    "content": {
+      "0": "NAP, other countries",
+      "1": "Bulgarian",
+      "2": "Turk",
+      "3": "Roma",
+      "4": "Other"
+    },
+    "special": {}
+  },
+  {
+    "domain": "CA_ETHN",
+    "meaning": "Canada: Country specific origin country/ ethnic group/ ethnic identity/ family origin",
+    "question": "To which ethnic or cultural groups did your ancestors belong?",
+    "content": {
+      "0": "NAP, other countries",
+      "1": "French",
+      "2": "English",
+      "4": "Scottish",
+      "5": "Irish",
+      "6": "Other Western European",
+      "7": "Other Eastern European",
+      "8": "China/ South-East Asia",
+      "9": "Africa",
+      "10": "Carribean",
+      "12": "Indian sub-continent",
+      "13": "Other Middle East",
+      "14": "Jewish",
+      "15": "North American Indian",
+      "16": "Metis",
+      "17": "Inuit/ Eskimo",
+      "18": "Canadian",
+      "19": "French Canadian/ Acadian",
+      "20": "European not specified",
+      "21": "Caucasian not specified",
+      "22": "White",
+      "88": "Other",
+      "98": "Don't know",
+      "99": "No answer, refused"
+    },
+    "special": {}
+  },
+  {
+    "domain": "CH_ETHN",
+    "meaning": "Switzerland: Country specific origin country/ ethnic group/ ethnic identity/ family origin",
+    "question": "What is your nationality? Tell me all countries of which you have the nationality.",
+    "content": {
+      "0": "NAP, other countries",
+      "11": "Country from Northern Europe",
+      "12": "Country from Eastern Europe",
+      "13": "Country from Central Europe",
+      "14": "Country from Western Europe",
+      "15": "Country from Western Southern Europe",
+      "16": "Country from Southern Europe",
+      "17": "Country from Eastern Southern Europe",
+      "21": "Country from Northern Africa",
+      "22": "Country from Eastern Africa",
+      "24": "Country from Western Africa",
+      "25": "Country from Western Southern Africa",
+      "26": "Country from Southern Africa",
+      "27": "Country from Eastern Southern Africa",
+      "31": "Country from Northern America",
+      "32": "Country from Caribs",
+      "33": "Country from Central America",
+      "34": "Country from Western Southern America",
+      "35": "Country from Southern America",
+      "36": "Country from Eastern Southern America",
+      "42": "Country from Eastern Asia",
+      "44": "Country from Western Asia",
+      "46": "Country from Southern Asia",
+      "47": "Country from Eastern Southern Asia",
+      "13276": "Germany",
+      "13756": "Switzerland",
+      "13757": "Switzerland and other nationality",
+      "14250": "France",
+      "16380": "Italy",
+      "99995": "Two nationalities, non swiss",
+      "99996": "Without citizenship"
+    },
+    "special": {}
+  }
+]

@@ -1,0 +1,246 @@
+[
+  {
+    "domain": "SPMAINST",
+    "meaning": "Spouse, partner: main status",
+    "question": "Which of the following best describes your spouse's/partner's current situation? If temporarily not working due to illness/parental leave/etc., refer to their normal work situation.",
+    "content": {
+      "0": "NAP (code 3,7 in PARTLIV)",
+      "1": "In paid work",
+      "2": "Unemployed and looking for a job",
+      "3": "In education",
+      "4": "Apprentice or trainee",
+      "5": "Permanently sick or disabled",
+      "6": "Retired",
+      "7": "Domestic work",
+      "8": "In compulsory military service or community service",
+      "9": "Other",
+      "98": "Don't know",
+      "99": "No answer"
+    },
+    "special": {
+      "AT": {
+        "0": "NAP (code 2,3 in PARTLIV)"
+      },
+      "CN": {
+        "9": "Never engaged in any work on the purpose of making money, loss of ability to work, the contracted land is requisitioned"
+      },
+      "TW": {
+        "0": "NAP (codes 3-6 in MARITAL)"
+      },
+      "US": {
+        "0": "NAP (codes 3-6 in MARITAL)"
+      }
+    }
+  },
+  {
+    "domain": "UNION",
+    "meaning": "Trade union membership",
+    "question": "Are you or have you ever been a member of a trade union or similar organization? If yes: is that currently or only previously?",
+    "content": {
+      "0": "NAP (code 3 in WORK)",
+      "1": "Yes, currently",
+      "2": "Yes, previously, but not currently",
+      "3": "No, never",
+      "7": "Refused",
+      "8": "Don't know",
+      "9": "No answer"
+    },
+    "special": {
+      "GB-GBN": {
+        "0": "Not available"
+      },
+      "KR": {
+        "0": "NAP (code 2,3 in WORK)"
+      },
+      "NL": {
+        "9": "No answer, refused"
+      },
+      "US": {
+        "0": "Not applicable"
+      }
+    }
+  },
+  {
+    "domain": "AR_RELIG",
+    "meaning": "Country specific religious affiliation or denomination: Argentina",
+    "question": "Do you belong to a religion and, if yes, which religion do you belong to?",
+    "content": {
+      "0": "No religion",
+      "1": "Apostolic Roman Catholic",
+      "2": "Protestant",
+      "3": "Orthodox",
+      "4": "Other Christian",
+      "5": "Jewish",
+      "6": "Buddhist",
+      "990": "NAP, other countries",
+      "999": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "AT_RELIG",
+    "meaning": "Country specific religious affiliation or denomination: Austria",
+    "question": "Do you belong to a religion and, if yes, which religion do you belong to?",
+    "content": {
+      "0": "No religion",
+      "1": "Roman Catholic",
+      "2": "Lutheran Church (without Protestant free churches)",
+      "3": "Other Christian denomination",
+      "4": "Muslim denomination",
+      "5": "Other non-Christian denomination",
+      "990": "NAP, other countries"
+    },
+    "special": {}
+  },
+  {
+    "domain": "AU_RELIG",
+    "meaning": "Country specific religious affiliation or denomination: Australia",
+    "question": "Do you belong to a religion and, if yes, which religion do you belong to?",
+    "content": {
+      "0": "No religion",
+      "1": "Catholic",
+      "2": "Protestant",
+      "3": "Anglican/ Church of England",
+      "4": "Uniting Church/ Methodist",
+      "5": "Pentecostal",
+      "6": "Orthodox",
+      "7": "Other Christian",
+      "8": "Jewish",
+      "9": "Islamic",
+      "10": "Buddhist",
+      "11": "Hindu",
+      "12": "Other Asian religions",
+      "13": "Other religions",
+      "990": "NAP, other countries",
+      "999": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "BE_RELIG",
+    "meaning": "Country specific religious affiliation or denomination: Belgium",
+    "question": "To what kind of religion do you count yourself?",
+    "content": {
+      "0": "No religion (No religion/ Not believing/ Free-thinking)",
+      "1": "Roman Catholic",
+      "2": "Protestant",
+      "4": "Other Christian groups (Christian but not Catholic)",
+      "5": "Jewish",
+      "6": "Islamic",
+      "10": "Other Religions",
+      "990": "NAP, other countries",
+      "999": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "BG_RELIG",
+    "meaning": "Country specific religious affiliation or denomination: Bulgaria",
+    "question": "0   No religion",
+    "content": {
+      "0": "No religion",
+      "200": "Protestant",
+      "300": "Orthodox",
+      "690": "Islam",
+      "990": "NAP, other countries",
+      "999": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "CA_RELIG",
+    "meaning": "Country specific religious affiliation or denomination: Canada",
+    "question": "Could you tell us what, if any religious group you belong to?",
+    "content": {
+      "0": "No religion",
+      "1": "Catholic",
+      "2": "Protestant",
+      "3": "Orthodox",
+      "4": "Other Christian",
+      "5": "Jewish",
+      "6": "Islamic",
+      "7": "Buddhist",
+      "8": "Hindu",
+      "9": "Other Asian Religions",
+      "10": "Other Religions",
+      "990": "NAP, other countries",
+      "999": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "CH_RELIG",
+    "meaning": "Country specific religious affiliation or denomination: Switzerland",
+    "question": "Currently, do you consider yourself as belonging to any particular religion or denomination? If yes: which one?",
+    "content": {
+      "0": "No religion",
+      "100": "Roman Catholic",
+      "200": "Protestant",
+      "290": "Other Protestant (no specific religion mentioned)",
+      "300": "Orthodox",
+      "400": "Other Christian Religions",
+      "500": "Jewish",
+      "600": "Islam",
+      "700": "Buddhism",
+      "800": "Hinduism",
+      "970": "Other non-Christian religions",
+      "990": "NAP, other countries",
+      "997": "Refused",
+      "999": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "CL_RELIG",
+    "meaning": "Country specific religious affiliation or denomination: Chile",
+    "question": "To which religion or church do you belong or feel close to?",
+    "content": {
+      "0": "No religion",
+      "1": "Catholic",
+      "2": "Evangelical",
+      "3": "Jehovah's Witnesses",
+      "4": "Jews",
+      "5": "Mormons",
+      "6": "Muslim",
+      "7": "Orthodox",
+      "8": "Other",
+      "990": "NAP, other countries",
+      "999": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "domain": "CN_RELIG",
+    "meaning": "Country specific religious affiliation or denomination: China",
+    "question": "What is your religious belief?",
+    "content": {
+      "0": "No religion",
+      "1": "Catholic",
+      "2": "Protestant",
+      "3": "Orthodox",
+      "6": "Islamic",
+      "7": "Buddhist",
+      "9": "Other Asian religions, including Folk religion (Worship Mazu, Guangong etc.)",
+      "10": "Other religions",
+      "990": "NAP, other countries",
+      "997": "Refused"
+    },
+    "special": {}
+  },
+  {
+    "domain": "CZ_RELIG",
+    "meaning": "Country specific religious affiliation or denomination: Czech Republic",
+    "question": "What religion do you belong to?",
+    "content": {
+      "0": "No religion",
+      "1": "Roman Catholic",
+      "2": "Czech-Brethren Evangelical Church",
+      "3": "Czechoslovak Hussite",
+      "4": "Other Christian",
+      "5": "Other non-Christian",
+      "990": "NAP, other countries",
+      "999": "No answer"
+    },
+    "special": {}
+  }
+]

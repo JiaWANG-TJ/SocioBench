@@ -6062,7 +6062,7 @@
           "special": {}
         },
         {
-          "domain": "GB-GBN_PRTY",
+          "domain": "GB_PRTY",
           "meaning": "Country specific party voted for in last general election: Great Britain (GB-GBN)",
           "question": "Not asked.",
           "content": {
@@ -6858,7 +6858,7 @@
           "special": {}
         },
         {
-          "domain": "GB-GBN_ETHN1",
+          "domain": "GB_ETHN1",
           "meaning": "Country specific ethnic group 1: Great Britain (GB-GBN)",
           "question": "To which of these groups do you consider you belong?",
           "content": {
@@ -6880,7 +6880,7 @@
           "special": {}
         },
         {
-          "domain": "GB-GBN_ETHN2",
+          "domain": "GB_ETHN2",
           "meaning": "Country specific ethnic group 2: Great Britain (GB-GBN)",
           "question": "No second ethnicity was collected.",
           "content": {

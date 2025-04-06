@@ -1,0 +1,304 @@
+[
+  {
+    "domain": "NSUP",
+    "meaning": "Number of other employees supervised",
+    "question": "How many other employees do/ did you supervise?",
+    "content": {
+      "0": "NAP (code 2, 0 in WRKSUP)",
+      "1": "1 employee",
+      "9995": "9995 employees or more",
+      "9998": "Don't know",
+      "9999": "No answer"
+    },
+    "special": {
+      "DK": {
+        "0": "Not available"
+      },
+      "ES": {
+        "100": "100 and more"
+      },
+      "NL": {
+        "4": "2-5 employees",
+        "9": "6-11 employees",
+        "15": "> 11 employees"
+      },
+      "US": {
+        "0": "Not available"
+      }
+    }
+  },
+  {
+    "domain": "TYPORG1",
+    "meaning": "Type of organisation, for-profit/ non-profit",
+    "question": "Do/ did you work for a for-profit organisation or for a non-profit organisation?",
+    "content": {
+      "0": "NAP (Code 3 in WORK)",
+      "1": "For-profit organisation",
+      "2": "Non-profit organisation",
+      "8": "Don't know",
+      "9": "No answer"
+    },
+    "special": {
+      "AT": {
+        "0": "Not available"
+      },
+      "BG": {
+        "0": "Not available"
+      },
+      "CZ": {
+        "1": "Employee in a profit-seeking private business (limited liability company, private joint stock company, cooperative etc.), employee in a profit-seeking state-owned business (state enterprise, national enterprise, state- or municipality-owned joint stock company etc.) and all self-employed respondents",
+        "2": "Employee in public administration, local administration, public institution (including the police, the military, public schools etc.), employee in a non-profit organisation, foundation, public benefit corporation"
+      },
+      "DK": {
+        "0": "Not available"
+      },
+      "FI": {
+        "1": "Private, commercial companies and enterprises (which are for-profit by definition)"
+      },
+      "GB-GBN": {
+        "1": "Private sector or company, including, for example, limited companies and PLCs, self-employed",
+        "2": "Nationalised industry or public corporation, including the Post Office and the BBC, other public sector employer as Central govt/Civil Service/Govt Agency, Local authority/Local Educ Auth, Universities, Health Authority/NHS hospitals/NHS Trusts/GP surgeries, Police/ Armed forces"
+      },
+      "NO": {
+        "1": "Organisation with profit for the owners as objective",
+        "2": "Organisation without such objective"
+      },
+      "PL": {
+        "1": "State enterprises, cooperative (production, trade or service), foreign enterprise or joint-stock company, in which foreign capital share exceeds 50% of the whole capital of the company, enterprise with private domestic capital or joint-stock company in which domestic capital share exceeds 50% of the whole capital of the company, limited liability company (Ltd.) with domestic or mixed capital, civil partnership, individual private farm, individual economic activity",
+        "2": "Budgetary unit, communal enterprise, ownership social organization"
+      },
+      "RU": {
+        "1": "State, municipal enterprise, private enterprise, organization, kolkhoz, private employer",
+        "2": "State, government, municipal organization, public administration, civil noncommercial organization, party, private foundation"
+      },
+      "TW": {
+        "1": "Work for a private school, for a state-owned enterprise, for a private enterprise, self-employed with and without employees, for own family's business",
+        "2": "Work for a government organization, for a public school, for a non-profit organization"
+      },
+      "US": {
+        "0": "Not available"
+      }
+    }
+  },
+  {
+    "domain": "TYPORG2",
+    "meaning": "Type of organisation, public/ private",
+    "question": "Do/ did you work for a public or a private employer?",
+    "content": {
+      "0": "NAP (Code 3 in WORK)",
+      "1": "Public employer",
+      "2": "Private employer",
+      "8": "Don't know",
+      "9": "No answer"
+    },
+    "special": {
+      "CZ": {
+        "1": "Employee in a profit-seeking state-owned business (state enterprise, national enterprise, state- or municipality-owned joint stock company etc.), employee in public administration, local administration, public institution (including the police, the military, public schools etc.)",
+        "2": "Employee in a profit-seeking private business (limited liability company, private joint stock company, cooperative etc.), employee in a non-profit organisation, foundation, public benefit corporation and all self-employed respondents"
+      },
+      "GB-GBN": {
+        "1": "Nationalised industry or public corporation, including the Post Office and the BBC, other public sector employer as Central govt/Civil Service/Govt Agency, Local authority/Local Educ Auth, Universities, Health Authority/NHS hospitals/NHS Trusts/GP surgeries, Police/ Armed forces",
+        "2": "Private sector or company, including, for example, limited companies and PLCs, Charity, Voluntary sector including charitable companies, churches, trade unions"
+      },
+      "NO": {
+        "1": "Local government, central government, other public or semi-public",
+        "2": "A private firm, organisation, trust"
+      },
+      "PL": {
+        "1": "State enterprises, budgetary unit, communal enterprise",
+        "2": "Cooperative (production, trade or service), foreign enterprise or joint-stock company, in which foreign capital share exceeds 50% of the whole capital of the company, enterprise with private domestic capital or joint-stock company in which domestic capital share exceeds 50% of the whole capital of the company, limited liability company (Ltd.) with domestic or mixed capital, civil partnership, individual private farm, individual economic activity, ownership social organization"
+      },
+      "RU": {
+        "1": "State, government, municipal organization, public administration, state, municipal enterprise",
+        "2": "Private enterprise, organization, kolkhoz, private employer, civil, noncommercial organization, party, private foundation"
+      },
+      "TW": {
+        "1": "Work for a government organization, a public school, a state-owned enterprise",
+        "2": "Work for a private school, a private enterprise, a non-profit organization, self-employed with and without employees, own family's business"
+      }
+    }
+  },
+  {
+    "domain": "MAINSTAT",
+    "meaning": "Main status",
+    "question": "Which of the following best describes your current situation?",
+    "content": {
+      "1": "In paid work",
+      "2": "Unemployed and looking for a job",
+      "3": "In education",
+      "4": "Apprentice or trainee",
+      "5": "Permanently sick or disabled",
+      "6": "Retired",
+      "7": "Domestic work",
+      "8": "In compulsory military service or community service",
+      "9": "Other",
+      "99": "No answer"
+    },
+    "special": {
+      "BE": {
+        "1": "Paid work (as employee, self-employed, or working for your own family’s business)"
+      },
+      "CH": {
+        "1": "Paid work (as an employee, self-employed, or working for your own family’s business)",
+        "3": "In education (not paid for by employer), in school/ student / pupil even if on vacation",
+        "7": "Doing housework, looking after the home, children or other persons"
+      },
+      "CL": {
+        "1": "Employed full time, employed half time, employed less than half time, employed helping a family member",
+        "2": "Unemployed, looking for a job, looking for a job for the first time",
+        "7": "Home duties, housewife"
+      },
+      "CN": {
+        "9": "Never engaged in any work on the purpose of making money, loss of ability to work, the contracted land is requisitioned"
+      },
+      "HR": {
+        "1": "Employed",
+        "3": "In formal education system (not paid by employer)",
+        "7": "Domestic work, caring for children or other persons"
+      }
+    }
+  },
+  {
+    "domain": "PARTLIV",
+    "meaning": "Living in steady partnership",
+    "question": "Do you have a spouse or a steady partner and, if yes, do you share the same household?",
+    "content": {
+      "1": "Yes, have partner; live in same household",
+      "2": "Yes, have partner; don't live in same household",
+      "3": "No partner",
+      "7": "Refused",
+      "9": "No answer"
+    },
+    "special": {
+      "DK": {
+        "0": "Not available"
+      },
+      "GB-GBN": {
+        "0": "Not available"
+      },
+      "KR": {
+        "1": "Married or cohabiting"
+      },
+      "PT": {
+        "1": "Married or with partner living in the same house",
+        "2": "Married or with partner but not living in the same house",
+        "3": "I am not married and have no partner"
+      },
+      "TW": {
+        "0": "Not available"
+      },
+      "US": {
+        "1": "Married and living in the same household as my husband or wife, I am living as married and my partner and I together live in the same household"
+      }
+    }
+  },
+  {
+    "domain": "SPWORK",
+    "meaning": "Spouse, partner: currently, formerly or never in paid work",
+    "question": "(If you have a spouse/partner) Is your spouse/partner currently working for pay, did he/she work for pay in the past, or has he/she never been in paid work?",
+    "content": {
+      "0": "NAP (code 0,2 or 3 in SPWORK)",
+      "1": "Currently in paid work",
+      "2": "Currently not in paid work, paid work in the past",
+      "3": "Never had paid work",
+      "8": "Don't know",
+      "9": "No answer"
+    },
+    "special": {
+      "AT": {
+        "0": "NAP (code 2,3 in PARTLIV)"
+      },
+      "GB-GBN": {
+        "1": "In paid work (or away temporarily) for at least 10 hours in week, waiting to take up paid work already accepted"
+      },
+      "NO": {
+        "1": "Yes, she/he is in paid work now, yes, but temporarily away, due to illness, on leave, or similar"
+      }
+    }
+  },
+  {
+    "domain": "SPWRKHRS",
+    "meaning": "Spouse, partner: hours worked weekly",
+    "question": "How many hours, on average, does your spouse/partner usually work for pay in a normal week, including overtime?",
+    "content": {
+      "0": "NAP (code 0,2 or 3 in SPWORK)",
+      "1": "One hour",
+      "96": "96 hours or more",
+      "97": "Refused; TW: time varies",
+      "98": "Don't know",
+      "99": "No answer"
+    },
+    "special": {
+      "AR": {
+        "0": "NAP (code 0,3 in SPWORK)"
+      },
+      "BG": {
+        "0": "Not available"
+      },
+      "GB-GBN": {
+        "0": "Not available"
+      },
+      "VE": {
+        "0": "NAP (code 0,3 in SPWORK)"
+      }
+    }
+  },
+  {
+    "domain": "SPEMPREL",
+    "meaning": "Spouse, partner: employment relationship",
+    "question": "Is/ was your spouse/partner an employee, self-employed, or working for his/her own family's business?",
+    "content": {
+      "0": "NAP (code 0,3 in SPWORK)",
+      "1": "Employee",
+      "2": "Self-employed without employees",
+      "3": "Self-employed with employees",
+      "4": "Working for own family's business",
+      "5": "GB: self-employed with or without employees",
+      "8": "Don't know",
+      "9": "No answer"
+    },
+    "special": {
+      "BG": {
+        "0": "Not available"
+      },
+      "GB-GBN": {
+        "0": "NAP (code 0,2,3 in SPWORK)"
+      },
+      "HU": {
+        "0": "NAP (code 0,2,3 in SPWORK)"
+      },
+      "US": {
+        "2": "Self-employed"
+      }
+    }
+  },
+  {
+    "domain": "SPWRKSUP",
+    "meaning": "Spouse, partner: supervise other employees",
+    "question": "Does/ did your spouse/partner supervise other employees?",
+    "content": {
+      "0": "NAP (code 0,3 in SPWORK)",
+      "1": "Yes",
+      "2": "No",
+      "8": "Don't know",
+      "9": "No answer"
+    },
+    "special": {
+      "AR": {
+        "0": "NAP (code 0,2,3 in SPEMPREL)"
+      },
+      "AT": {
+        "0": "Not available"
+      },
+      "BG": {
+        "0": "Not available"
+      },
+      "CN": {
+        "0": "Not available"
+      },
+      "US": {
+        "0": "Not available"
+      }
+    }
+  }
+]
