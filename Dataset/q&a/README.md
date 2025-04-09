@@ -6,10 +6,106 @@
 
 extract_qa.py脚本可以从社会调查领域的profile文件（`issp_profile_*.json`）中提取问题和答案数据，生成标准格式的JSON文件。
 
-提取的数据包含以下字段：
-- `question_id`：问题ID，使用profile文件中的domain值
-- `question`：问题内容，使用profile文件中的question值
-- `answer`：答案选项，使用profile文件中的content值
+## 数据文件解读
+
+### issp_qa_xxx.json 文件格式
+
+生成的JSON文件（如issp_qa_citizenship.json, issp_qa_environment.json等）包含以下结构：
+
+```json
+[
+  {
+    "question_id": "V5",
+    "question": "Q1\nThere are different opinions as to what it takes to be a good citizen...",
+    "answer": {
+      "1": "1, Not at all important",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7, Very important",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  ...
+]
+```
+
+#### 字段说明：
+
+1. **question_id**: 
+   - 问题ID，通常以"V"开头后跟数字
+   - 用于在issp_answer_xxx.json文件中引用特定问题
+
+2. **question**: 
+   - 问题的完整文本内容
+   - 通常包含问题编号和详细描述
+
+3. **answer**: 
+   - 问题的答案选项
+   - 键为选项编号，值为选项文本
+   - 通常包含1-7或1-5的评分选项，以及特殊选项如"Can't choose"和"No answer"
+
+4. **special**: 
+   - 特定国家或地区的特殊答案选项
+   - 键为国家代码，值为该国家的特殊答案映射
+
+### 数据文件示例
+
+以下是一个issp_qa_citizenship.json文件的示例：
+
+```json
+[
+  {
+    "question_id": "V5",
+    "question": "Q1\nThere are different opinions as to what it takes to be a good citizen. As far as you are concerned personally on a scale of 1 to 7, where 1 is \nnot at all important and 7 is very important, how important is it:\nAlways to vote in elections",
+    "answer": {
+      "1": "1, Not at all important",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7, Very important",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "V41",
+    "question": "Q37\nTo what extent do you agree or disagree with the following statements?\nPeople like me don't have any say about what the government does",
+    "answer": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {
+      "JP": {
+        "1": "I think so",
+        "2": "I rather think so",
+        "3": "Can't say one way or the other",
+        "4": "I rather don't think so",
+        "5": "I don't think so"
+      },
+      "VE": {
+        "1": "I agree",
+        "2": "I somewhat agree",
+        "3": "I neither agree nor disagree",
+        "4": "I somewhat disagree",
+        "5": "I disagree"
+      }
+    }
+  }
+]
+```
 
 ## 使用方法
 

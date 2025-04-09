@@ -112,10 +112,52 @@ def setup_domain_globals(domain_number):
         # 获取当前脚本所在目录作为基准路径
         script_dir = os.path.dirname(os.path.abspath(__file__))
         
-        # 更新文件路径为相对路径
-        DOMAIN_EXCEL_PATH = os.path.join(script_dir, f"A_{DOMAIN_NAME}.xlsx")
-        DOMAIN_PROFILE_PATH = os.path.join(script_dir, f"issp_profile_{DOMAIN_NAME.lower()}.json")
-        OUTPUT_JSON_PATH = os.path.join(script_dir, f"issp_answer_{DOMAIN_NAME.lower()}.json")
+        # 更新文件路径，首先尝试查找不区分大小写的匹配文件
+        excel_basename = f"A_{DOMAIN_NAME}.xlsx"
+        profile_basename = f"issp_profile_{DOMAIN_NAME.lower()}.json"
+        output_basename = f"issp_answer_{DOMAIN_NAME.lower()}.json"
+        
+        # 检查Excel文件是否存在（不区分大小写）
+        excel_path = os.path.join(script_dir, excel_basename)
+        excel_found = False
+        if os.path.exists(excel_path):
+            excel_found = True
+        else:
+            # 如果没找到，尝试大小写不敏感匹配
+            for file in os.listdir(script_dir):
+                if file.lower() == excel_basename.lower():
+                    excel_path = os.path.join(script_dir, file)
+                    excel_found = True
+                    print(f"注意: 使用大小写不敏感匹配找到Excel文件: {file}")
+                    break
+        
+        # 检查配置文件是否存在（不区分大小写）
+        profile_path = os.path.join(script_dir, profile_basename)
+        profile_found = False
+        if os.path.exists(profile_path):
+            profile_found = True
+        else:
+            # 如果没找到，尝试大小写不敏感匹配
+            for file in os.listdir(script_dir):
+                if file.lower() == profile_basename.lower():
+                    profile_path = os.path.join(script_dir, file)
+                    profile_found = True
+                    print(f"注意: 使用大小写不敏感匹配找到配置文件: {file}")
+                    break
+        
+        # 设置输出路径
+        output_path = os.path.join(script_dir, output_basename)
+        
+        # 更新全局变量
+        DOMAIN_EXCEL_PATH = excel_path
+        DOMAIN_PROFILE_PATH = profile_path
+        OUTPUT_JSON_PATH = output_path
+        
+        # 记录匹配情况
+        if not excel_found:
+            print(f"警告: 未找到Excel文件: {excel_basename} (大小写不敏感检查后)")
+        if not profile_found:
+            print(f"警告: 未找到配置文件: {profile_basename} (大小写不敏感检查后)")
         
         return True
     else:
@@ -457,7 +499,7 @@ def process_single_domain(domain_number, records_per_domain, exclude_list):
         print(f"• 配置文件: {os.path.basename(DOMAIN_PROFILE_PATH)}")
         print(f"• 输出文件: {os.path.basename(OUTPUT_JSON_PATH)}")
         
-        # 检查文件是否存在
+        # 检查文件是否存在（使用setup_domain_globals函数后的路径）
         excel_exists = os.path.exists(DOMAIN_EXCEL_PATH)
         profile_exists = os.path.exists(DOMAIN_PROFILE_PATH)
         
