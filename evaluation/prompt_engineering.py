@@ -16,10 +16,10 @@ class PromptEngineering:
 ### Question: {question}
 ### Option: {options}
 
-### You should give your answer in JSON format (you only need to answer the option number and choose only the one that best matches your own personal attributes), as follows:
+### You should give your answer in JSON format (You only need to answer the option_id number, you cannot reply with the option text! And choose only the one that best matches your own personal attributes), as follows:
 ```json
 {{
-    "answer": "option number"
+    "answer": "option_id"
 }}
 ```
 """
@@ -86,32 +86,3 @@ class PromptEngineering:
         )
         
         return prompt
-
-# 测试代码
-if __name__ == "__main__":
-    # 创建提示工程对象
-    prompt_engine = PromptEngineering()
-    
-    # 测试数据
-    attributes = {
-        "SEX": "1",
-        "AGE": 35,
-        "DEGREE": "大学本科",
-        "MARITAL": "1",
-        "PARTY": "民主党",
-        "CLASS": "中产阶级"
-    }
-    
-    question = "您认为在民主社会中，公民参与投票有多重要？"
-    options = {
-        "1": "非常重要",
-        "2": "比较重要",
-        "3": "一般重要",
-        "4": "不太重要",
-        "5": "完全不重要"
-    }
-    
-    # 生成提示
-    prompt = prompt_engine.generate_prompt(attributes, question, options)
-    print("生成的提示:")
-    print(prompt) 

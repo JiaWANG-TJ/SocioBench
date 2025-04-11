@@ -9,6 +9,10 @@ import re
 from typing import Dict, List, Any, Union, Optional
 import time
 from tqdm import tqdm
+from collections import defaultdict
+import pandas as pd
+import matplotlib.pyplot as plt
+from datetime import datetime
 
 # 添加项目根目录到系统路径
 sys.path.append('../..')
@@ -243,12 +247,13 @@ def load_qa_file(domain_name: str) -> List[Dict[str, Any]]:
     file_path = os.path.join(os.path.dirname(__file__), "..", "Dataset_all", "q&a", f"issp_qa_{domain_name.lower()}.json")
     with open(file_path, 'r', encoding='utf-8') as f:
         qa_data = json.load(f)
-    print(f"成功加载问答文件: {file_path}")
+    # print(f"成功加载问答文件: {file_path}")
     
     # 打印第一个问题的数据结构
     if qa_data:
-        print("\n问答数据示例:")
-        print(json.dumps(qa_data[0], ensure_ascii=False, indent=2))
+        print()
+        # print("\n问答数据示例:")
+        # print(json.dumps(qa_data[0], ensure_ascii=False, indent=2))
     
     return qa_data
 
@@ -303,6 +308,25 @@ def is_country_specific_question(question_id: str, country_code: str) -> bool:
     # 忽略大小写比较国家代码
     return question_country.upper() == country_code.upper()
 
+def is_invalid_answer(answer: str) -> bool:
+    """
+    检查答案是否为无效答案（如"No answer"、"Not applicable"等）
+    
+    Args:
+        answer: 答案字符串
+        
+    Returns:
+        如果答案包含无效字符串，返回True；否则返回False
+    """
+    invalid_strings = [
+        "no answer", "other countries", "not available", 
+        "not applicable", "nap", "nav", "refused"
+    ]
+    
+    # 转为小写后检查是否包含无效字符串
+    answer_lower = str(answer).lower()
+    return any(invalid_str in answer_lower for invalid_str in invalid_strings)
+
 def run_evaluation(domain_id: int, interview_count: Union[int, str], 
                    api_type: str = "config") -> None:
     """
@@ -318,7 +342,7 @@ def run_evaluation(domain_id: int, interview_count: Union[int, str],
     if not domain_name:
         print(f"错误: 无效的领域ID {domain_id}")
         return
-        
+    
     # 创建结果保存目录
     results_dir = os.path.join(os.path.dirname(__file__), "results")
     if not os.path.exists(results_dir):
@@ -343,7 +367,10 @@ def run_evaluation(domain_id: int, interview_count: Union[int, str],
             qa_map[str(question_id).lower()] = q
     
     # 初始化工具类
-    llm_client = LLMAPIClient(api_type=api_type)
+    if api_type == "vllm":
+        llm_client = LLMAPIClient(api_type=api_type)
+    else:
+        llm_client = LLMAPIClient(api_type=api_type)
     prompt_engine = PromptEngineering()
     evaluator = Evaluator(domain_name=domain_name, save_dir=results_dir)
     
@@ -365,6 +392,7 @@ def run_evaluation(domain_id: int, interview_count: Union[int, str],
     total_country_specific_questions = 0
     evaluated_country_specific_questions = 0
     excluded_country_specific_questions = 0
+    invalid_answer_questions = 0  # 统计无效答案问题数
     
     # 处理每个受访者
     results = {}
@@ -398,10 +426,19 @@ def run_evaluation(domain_id: int, interview_count: Union[int, str],
         country_specific_questions = 0
         country_specific_evaluated = 0
         country_specific_excluded = 0
-        correct_answers = 0
+        invalid_answers = 0  # 记录当前受访者的无效答案数
+        correct_answers = 0  # 添加正确答案计数器
         
         # 处理每个问题
         for question_id, true_answer in questionsAnswers.items():
+            # 检查答案是否为无效答案
+            if is_invalid_answer(true_answer):
+                excluded_questions += 1
+                invalid_answers += 1
+                invalid_answer_questions += 1
+                print(f"跳过：问题 {question_id} 的答案无效 ({true_answer})")
+                continue
+                
             # 在QA映射中查找问题（不区分大小写）
             question_data = qa_map.get(str(question_id).lower())
                     
@@ -445,11 +482,9 @@ def run_evaluation(domain_id: int, interview_count: Union[int, str],
             
             # 打印提示信息（不包含真实答案）
             print(f"\n问题 {question_id}:" + (" (国家特定问题)" if is_country_specific else ""))
-            print(f"提示信息:")
-            print(prompt)
             
             # 调用LLM API
-            response = llm_client.call([{"role": "user", "content": prompt}])
+            response = llm_client.generate(prompt)
             
             # 评估回答
             is_correct = evaluator.evaluate_answer(question_id, true_answer, response, is_country_specific=is_country_specific)
@@ -480,6 +515,7 @@ def run_evaluation(domain_id: int, interview_count: Union[int, str],
             print(f"  总问题数: {total_questions}")
             print(f"  评测题目数: {evaluated_questions}")
             print(f"  排除题目数: {excluded_questions}")
+            print(f"  无效答案题目数: {invalid_answers}")
             print(f"  国家特定问题总数: {country_specific_questions}")
             print(f"  评测的国家特定问题: {country_specific_evaluated}")
             print(f"  排除的国家特定问题: {country_specific_excluded}")
@@ -502,6 +538,13 @@ def run_evaluation(domain_id: int, interview_count: Union[int, str],
     if evaluated_country_specific_questions > 0:
         print(f"  国家特定问题纳入评测比例: {evaluated_country_specific_questions / total_country_specific_questions:.2%}")
     
+    # 打印无效答案统计信息
+    print("\n无效答案统计:")
+    print(f"  包含无效答案的题目数: {invalid_answer_questions}")
+    total_questions_processed = evaluated_country_specific_questions + excluded_country_specific_questions + invalid_answer_questions
+    if total_questions_processed > 0:
+        print(f"  无效答案题目比例: {invalid_answer_questions / total_questions_processed:.2%}")
+    
     # 打印受访者统计信息
     print("\n受访者统计:")
     print(f"  总受访者数: {total_interviewees}")
@@ -510,9 +553,197 @@ def run_evaluation(domain_id: int, interview_count: Union[int, str],
     
     # 保存结果
     model_name = llm_client.model.split("/")[-1] if "/" in llm_client.model else llm_client.model
-    evaluator.save_results(model_name)
+    evaluator.save_results(model_name, domain_stats={
+        "total_questions": total_questions_processed,
+        "invalid_answer_questions": invalid_answer_questions,
+        "country_specific_total": total_country_specific_questions,
+        "country_specific_evaluated": evaluated_country_specific_questions,
+        "country_specific_excluded": excluded_country_specific_questions
+    })
     
     print("\n评测完成!")
+
+def run_all_domains(api_type: str = "config", interview_count: Union[int, str] = 1) -> None:
+    """
+    运行所有领域的评测并生成汇总报告
+    
+    Args:
+        api_type: API类型，"config"或"vllm"，默认为"config"
+        interview_count: 采访个数，--all表示全部，默认为1
+    """
+    print(f"\n{'='*60}")
+    print(f"开始所有领域的评测 | API类型: {api_type} | 每个领域采访个数: {interview_count}")
+    print(f"{'='*60}")
+    
+    # 存储各领域结果
+    domain_results = {}
+    
+    # 运行每个领域的评测
+    for domain_id in sorted(DOMAIN_MAPPING.values()):
+        domain_name = get_domain_name(domain_id)
+        print(f"\n\n{'#'*80}")
+        print(f"开始评测领域: {domain_name} (ID: {domain_id})")
+        print(f"{'#'*80}")
+        
+        # 运行单个领域评测
+        run_evaluation(domain_id=domain_id, interview_count=interview_count, 
+                      api_type=api_type)
+        
+        # 加载最新的评测结果
+        results_dir = os.path.join(os.path.dirname(__file__), "results")
+        domain_files = [f for f in os.listdir(results_dir) if f.startswith(domain_name) and f.endswith('.json')]
+        if domain_files:
+            # 按修改时间排序，获取最新的结果文件
+            latest_file = max(domain_files, key=lambda x: os.path.getmtime(os.path.join(results_dir, x)))
+            with open(os.path.join(results_dir, latest_file), 'r', encoding='utf-8') as f:
+                domain_result = json.load(f)
+                domain_results[domain_name] = domain_result
+    
+    # 生成汇总报告
+    if domain_results:
+        generate_summary_report(domain_results)
+    else:
+        print("没有找到有效的领域评测结果，无法生成汇总报告。")
+
+def generate_summary_report(domain_results: Dict[str, Dict[str, Any]]) -> None:
+    """
+    生成所有领域的汇总报告
+    
+    Args:
+        domain_results: 各领域的评测结果字典
+    """
+    print(f"\n{'='*60}")
+    print("所有领域评测汇总报告")
+    print(f"{'='*60}")
+    
+    # 创建结果保存目录
+    results_dir = os.path.join(os.path.dirname(__file__), "results")
+    if not os.path.exists(results_dir):
+        os.makedirs(results_dir)
+    
+    # 初始化汇总统计数据
+    total_accuracy = []
+    total_questions = 0
+    total_correct = 0
+    total_invalid_questions = 0
+    total_country_specific = 0
+    total_country_specific_evaluated = 0
+    
+    # 创建数据表格
+    summary_data = []
+    
+    # 汇总各领域数据
+    for domain_name, result in domain_results.items():
+        accuracy = result.get("accuracy", 0)
+        total_accuracy.append(accuracy)
+        
+        questions = result.get("total_count", 0)
+        correct = result.get("correct_count", 0)
+        
+        total_questions += questions
+        total_correct += correct
+        
+        # 获取特定统计信息
+        domain_stats = result.get("domain_stats", {})
+        invalid_questions = domain_stats.get("invalid_answer_questions", 0)
+        country_specific = domain_stats.get("country_specific_total", 0)
+        country_specific_eval = domain_stats.get("country_specific_evaluated", 0)
+        
+        total_invalid_questions += invalid_questions
+        total_country_specific += country_specific
+        total_country_specific_evaluated += country_specific_eval
+        
+        # 添加到数据表格
+        summary_data.append({
+            "领域": domain_name,
+            "总题数": questions,
+            "正确数": correct,
+            "准确率": f"{accuracy:.2%}",
+            "无效答案题数": invalid_questions,
+            "国家特定问题总数": country_specific,
+            "评估的国家特定问题": country_specific_eval
+        })
+    
+    # 计算总体准确率
+    overall_accuracy = total_correct / total_questions if total_questions > 0 else 0
+    
+    # 输出汇总统计
+    print("\n总体统计:")
+    print(f"  评估的领域数: {len(domain_results)}")
+    print(f"  总题数: {total_questions}")
+    print(f"  正确数: {total_correct}")
+    print(f"  总体准确率: {overall_accuracy:.2%}")
+    print(f"  无效答案题数: {total_invalid_questions}")
+    print(f"  国家特定问题总数: {total_country_specific}")
+    print(f"  评估的国家特定问题: {total_country_specific_evaluated}")
+    if total_country_specific > 0:
+        print(f"  国家特定问题评估比例: {total_country_specific_evaluated / total_country_specific:.2%}")
+    
+    # 创建DataFrame并输出表格
+    df = pd.DataFrame(summary_data)
+    print("\n各领域评测结果汇总:")
+    print(df.to_string(index=False))
+    
+    # 保存汇总报告
+    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+    model_name = next(iter(domain_results.values())).get("model", "unknown")
+    
+    # 保存到CSV
+    csv_filename = f"summary_report_{model_name}_{timestamp}.csv"
+    csv_path = os.path.join(results_dir, csv_filename)
+    df.to_csv(csv_path, index=False, encoding='utf-8')
+    print(f"\n汇总报告已保存到: {csv_path}")
+    
+    # 创建并保存准确率柱状图
+    plt.figure(figsize=(12, 8))
+    
+    # 设置中文字体
+    plt.rcParams['font.sans-serif'] = ['SimHei']  # 用来正常显示中文标签
+    plt.rcParams['axes.unicode_minus'] = False  # 用来正常显示负号
+    
+    # 创建柱状图
+    domains = [d["领域"] for d in summary_data]
+    accuracies = [float(d["准确率"].strip('%')) / 100 for d in summary_data]
+    
+    bars = plt.bar(domains, accuracies, color='skyblue')
+    plt.ylim(0, 1)
+    plt.xticks(rotation=45, ha='right')
+    plt.title(f"各领域准确率对比 - {model_name}")
+    plt.ylabel("准确率")
+    plt.tight_layout()
+    
+    # 添加准确率标签
+    for bar in bars:
+        height = bar.get_height()
+        plt.text(bar.get_x() + bar.get_width()/2., height + 0.02,
+                f"{height:.2%}", ha='center', va='bottom')
+    
+    # 保存图表
+    chart_filename = f"summary_chart_{model_name}_{timestamp}.png"
+    chart_path = os.path.join(results_dir, chart_filename)
+    plt.savefig(chart_path, dpi=300, bbox_inches='tight')
+    plt.close()
+    print(f"汇总图表已保存到: {chart_path}")
+    
+    # 保存完整的JSON报告
+    summary_report = {
+        "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+        "model": model_name,
+        "total_domains": len(domain_results),
+        "total_questions": total_questions,
+        "total_correct": total_correct,
+        "overall_accuracy": overall_accuracy,
+        "invalid_answer_questions": total_invalid_questions,
+        "country_specific_total": total_country_specific,
+        "country_specific_evaluated": total_country_specific_evaluated,
+        "domain_details": domain_results
+    }
+    
+    json_filename = f"summary_report_{model_name}_{timestamp}.json"
+    json_path = os.path.join(results_dir, json_filename)
+    with open(json_path, 'w', encoding='utf-8') as f:
+        json.dump(summary_report, f, ensure_ascii=False, indent=2)
+    print(f"详细汇总数据已保存到: {json_path}")
 
 def parse_args():
     """解析命令行参数"""
@@ -522,10 +753,11 @@ def parse_args():
     domain_help = "领域ID (1-11)，对应关系:\n"
     for name, id in DOMAIN_MAPPING.items():
         domain_help += f"{id}: {name}\n"
+    domain_help += "或者使用 --all 处理所有领域"
     
-    parser.add_argument('domain_id', type=int, help=domain_help, nargs='?', default=2)
-    parser.add_argument('interview_count', type=str, 
-                       help='采访个数，--all表示全部', nargs='?', default='2')
+    parser.add_argument('--domain_id', type=str, help=domain_help, nargs='?', default='3')
+    parser.add_argument('--interview_count', type=str, 
+                       help='采访个数，--all表示全部', nargs='?', default='1')
     parser.add_argument('--api_type', type=str, choices=['config', 'vllm'], 
                        default='config', help='API类型，默认使用config中的API')
     
@@ -534,11 +766,19 @@ def parse_args():
 if __name__ == "__main__":
     args = parse_args()
     
-    print(f"使用参数：domain_id={args.domain_id}, interview_count={args.interview_count}, api_type={args.api_type}")
-    
-    # 运行评测
-    run_evaluation(
-        domain_id=args.domain_id,
-        interview_count=args.interview_count,
-        api_type=args.api_type
-    )
+    if args.domain_id == '--all':
+        print(f"评测所有领域：interview_count={args.interview_count}, api_type={args.api_type}")
+        run_all_domains(api_type=args.api_type, interview_count=args.interview_count)
+    else:
+        try:
+            domain_id = int(args.domain_id)
+            print(f"评测单个领域：domain_id={domain_id}, interview_count={args.interview_count}, api_type={args.api_type}")
+            # 运行评测
+            run_evaluation(
+                domain_id=domain_id,
+                interview_count=args.interview_count,
+                api_type=args.api_type
+            )
+        except ValueError:
+            print(f"错误：domain_id必须是整数(1-11)或'--all'")
+            sys.exit(1)
