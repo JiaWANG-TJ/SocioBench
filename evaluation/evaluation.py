@@ -114,12 +114,13 @@ class Evaluator:
             
         return self.results["accuracy"]
     
-    def save_results(self, model_name: str = "unknown") -> str:
+    def save_results(self, model_name: str = "unknown", domain_stats: Dict[str, int] = None) -> str:
         """
         保存评测结果
         
         Args:
             model_name: 使用的模型名称
+            domain_stats: 领域统计信息字典，默认为None
             
         Returns:
             保存的文件路径
@@ -158,6 +159,10 @@ class Evaluator:
             "correct": country_specific_correct,
             "accuracy": country_specific_accuracy
         }
+        
+        # 添加领域统计信息
+        if domain_stats:
+            self.results["domain_stats"] = domain_stats
         
         # 保存结果为JSON
         with open(filepath, "w", encoding="utf-8") as f:
@@ -240,19 +245,3 @@ class Evaluator:
         print("="*50)
         
         return accuracy
-
-# 测试代码
-if __name__ == "__main__":
-    # 创建评测器
-    evaluator = Evaluator("Citizenship", "test_results")
-    
-    # 测试评估
-    evaluator.evaluate_answer("Q1", "1", '{"answer": "1"}')
-    evaluator.evaluate_answer("Q2", "2", '{"answer": "1"}')
-    evaluator.evaluate_answer("Q3", "3", '{"answer": "3"}')
-    
-    # 打印摘要
-    evaluator.print_summary()
-    
-    # 保存结果
-    evaluator.save_results("TestModel") 

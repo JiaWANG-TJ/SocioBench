@@ -1,1 +1,30 @@
- 
+# 忽略数据集目录及其所有内容
+Dataset_all/
+Dataset_all/*
+
+# Python缓存文件
+__pycache__/
+*.py[cod]
+*$py.class
+
+# 分发/打包
+dist/
+build/
+*.egg-info/
+
+# 虚拟环境
+venv/
+env/
+ENV/
+
+# IDE文件
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# 日志文件
+*.log
+
+# 结果目录
+results/ 
