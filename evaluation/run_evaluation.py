@@ -111,6 +111,48 @@ COUNTRY_MAPPING = {
             "TW": "Taiwan", "US": "United States", "ZA": "South Africa"
         }
     },
+    6: {
+        "attr_name": "Country/ Sample Prefix ISO 3166 code - alphanumeric",
+        "mapping": {
+            "BE-BRU": "Belgium–Brussels-Capital Region",
+            "BE-FLA": "Belgium–Flanders",
+            "BE-WAL": "Belgium–Wallonia",
+            "CH": "Switzerland",
+            "CZ": "Czechia",
+            "DE-E": "Germany (East)",
+            "DE-W": "Germany (West)",
+            "DK": "Denmark",
+            "EE": "Estonia",
+            "ES": "Spain",
+            "FI": "Finland",
+            "FR": "France",
+            "GB-GBN": "United Kingdom – Great Britain",
+            "GE": "Georgia",
+            "HR": "Croatia",
+            "HU": "Hungary",
+            "IE": "Ireland",
+            "IL-A": "Israel – Arabs",
+            "IL-J": "Israel – Jews",
+            "IN": "India",
+            "IS": "Iceland",
+            "JP": "Japan",
+            "KR": "South Korea",
+            "LT": "Lithuania",
+            "LV": "Latvia",
+            "MX": "Mexico",
+            "NO": "Norway",
+            "PH": "Philippines",
+            "PT": "Portugal",
+            "RU": "Russia",
+            "SE": "Sweden",
+            "SI": "Slovenia",
+            "SK": "Slovakia",
+            "TR": "Turkey",
+            "TW": "Taiwan",
+            "US": "United States",
+            "ZA": "South Africa"
+        }
+    },
     7: {
         "attr_name": "Country/ Sample Prefix ISO 3166 Code - alphanumeric",
         "mapping": {
