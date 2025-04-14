@@ -5,13 +5,9 @@ import os
 import sys
 import json
 import asyncio
-import backoff
+import uuid
 from typing import Dict, List, Any, Union, Optional
 import time
-from openai import OpenAI
-from openai import AsyncOpenAI
-from openai import APITimeoutError
-from openai import RateLimitError
 
 # 添加项目根目录到系统路径
 sys.path.append('../..')
@@ -23,6 +19,10 @@ except ImportError:
     print("警告: 无法导入配置文件，将使用vLLM API")
     MODEL_CONFIG = {}
     MODELSCOPE_API_KEY = ""
+
+# 设置环境变量以解决MKL线程层冲突
+os.environ["MKL_SERVICE_FORCE_INTEL"] = "1"
+os.environ["MKL_THREADING_LAYER"] = "GNU"
 
 class LLMAPIClient:
     """LLM API客户端类，支持config和vllm两种API调用方式"""
@@ -52,6 +52,8 @@ class LLMAPIClient:
         
         if api_type == "config":
             # 使用配置文件中的API
+            from openai import OpenAI, AsyncOpenAI
+            
             self.model = model or MODEL_CONFIG.get("model")
             self.client = OpenAI(
                 api_key=MODELSCOPE_API_KEY,
@@ -62,16 +64,50 @@ class LLMAPIClient:
                 base_url=MODEL_CONFIG.get("base_url")
             )
         else:  # api_type == "vllm"
-            # 使用vLLM API
-            self.model = model or "/inspire/hdd/ws-f4d69b29-e0a5-44e6-bd92-acf4de9990f0/public-project/wangjia-240108610168/model_input/Qwen2.5-32B-Instruct"
-            self.client = OpenAI(
-                api_key="EMPTY",
-                base_url="http://localhost:8000/v1"
-            )
-            self.async_client = AsyncOpenAI(
-                api_key="EMPTY",
-                base_url="http://localhost:8000/v1"
-            )
+            # 使用vLLM的AsyncLLMEngine 模型路径
+            self.model = "/inspire/hdd/ws-f4d69b29-e0a5-44e6-bd92-acf4de9990f0/public-project/wangjia-240108610168/model_input/Qwen2.5-14B-Instruct"
+            
+            try:
+                # 尝试直接使用AsyncLLMEngine
+                from vllm.engine.arg_utils import AsyncEngineArgs
+                from vllm.engine.async_llm_engine import AsyncLLMEngine
+                from vllm.sampling_params import SamplingParams
+                from vllm.outputs import RequestOutput
+                
+                # 创建AsyncEngineArgs
+                print(f"正在初始化vLLM引擎，模型: {self.model}...")
+                engine_args = AsyncEngineArgs(
+                    model=self.model,
+                    tensor_parallel_size=2,
+                    dtype="half",
+                    enforce_eager=True,  # 使用eager模式避免编译错误
+                    trust_remote_code=True,  # 必须启用以支持Qwen模型
+                    gpu_memory_utilization=0.95,
+                    max_model_len=10240,
+                    enable_chunked_prefill=True
+                )
+                
+                # 创建AsyncLLMEngine
+                self.engine = AsyncLLMEngine.from_engine_args(engine_args)
+                self.use_openai_api = False
+                
+                print(f"初始化vLLM AsyncLLMEngine成功: 模型: {self.model}")
+            except Exception as e:
+                # 如果初始化失败，回退到使用OpenAI API格式的vLLM服务
+                print(f"初始化vLLM引擎失败: {str(e)}")
+                print("将使用OpenAI兼容API作为备用方案")
+                
+                from openai import OpenAI, AsyncOpenAI
+                
+                self.use_openai_api = True
+                self.client = OpenAI(
+                    api_key="EMPTY",
+                    base_url="http://localhost:8000/v1"
+                )
+                self.async_client = AsyncOpenAI(
+                    api_key="EMPTY",
+                    base_url="http://localhost:8000/v1"
+                )
         
         print(f"初始化LLM API客户端: {api_type}, 模型: {self.model}")
     
@@ -86,9 +122,9 @@ class LLMAPIClient:
         Returns:
             LLM返回的内容字符串
         """
-        try:
-            if self.api_type == "vllm":
-                # 对于vLLM API，使用completions接口
+        if self.api_type == "vllm":
+            if hasattr(self, 'use_openai_api') and self.use_openai_api:
+                # 使用OpenAI兼容的API
                 prompt = "\n".join([f"{msg['role']}: {msg['content']}" for msg in messages])
                 response = self.client.completions.create(
                     model=self.model,
@@ -98,49 +134,37 @@ class LLMAPIClient:
                     top_p=self.top_p
                 )
                 return response.choices[0].text
-            else:  # self.api_type == "config"
-                # 使用chat.completions接口
-                if json_mode:
-                    response = self.client.chat.completions.create(
-                        model=self.model,
-                        messages=messages,
-                        temperature=self.temperature,
-                        max_tokens=self.max_tokens,
-                        top_p=self.top_p,
-                        response_format={"type": "json_object"}
-                    )
-                else:
-                    response = self.client.chat.completions.create(
-                        model=self.model,
-                        messages=messages,
-                        temperature=self.temperature,
-                        max_tokens=self.max_tokens,
-                        top_p=self.top_p
-                    )
+            else:
+                # 使用AsyncLLMEngine
+                prompt = "\n".join([f"{msg['role']}: {msg['content']}" for msg in messages])
+                loop = asyncio.get_event_loop()
+                result = loop.run_until_complete(self._async_generate_vllm(prompt))
+                return result
+        else:  # self.api_type == "config"
+            # 使用chat.completions接口
+            if json_mode:
+                response = self.client.chat.completions.create(
+                    model=self.model,
+                    messages=messages,
+                    temperature=self.temperature,
+                    max_tokens=self.max_tokens,
+                    top_p=self.top_p,
+                    response_format={"type": "json_object"}
+                )
+            else:
+                response = self.client.chat.completions.create(
+                    model=self.model,
+                    messages=messages,
+                    temperature=self.temperature,
+                    max_tokens=self.max_tokens,
+                    top_p=self.top_p
+                )
                     
-                return response.choices[0].message.content
-        except Exception as e:
-            print(f"API调用失败: {str(e)}")
-            raise  # 直接抛出错误
+            return response.choices[0].message.content
 
-    # 定义针对vLLM API的重试条件
-    def _should_retry_vllm(self, exception):
-        """检查是否应该针对vLLM API重试请求"""
-        return (
-            self.api_type == "vllm" and 
-            isinstance(exception, (APITimeoutError, RateLimitError, asyncio.TimeoutError))
-        )
-
-    # 使用backoff为vLLM API添加重试机制
-    @backoff.on_exception(
-        wait_gen=backoff.expo,  # 使用指数退避策略
-        exception=(APITimeoutError, RateLimitError, asyncio.TimeoutError),  # 重试这些异常
-        max_time=120,  # 最大重试时间为2分钟
-        giveup=lambda e, self=None: not self._should_retry_vllm(e) if self else True  # 修复参考self
-    )
     async def async_call(self, messages: List[Dict[str, str]], json_mode: bool = True) -> str:
         """
-        异步调用LLM API，如果是vLLM模式则添加自动重试功能
+        异步调用LLM API
         
         Args:
             messages: 消息列表，格式为[{"role": "user", "content": "问题"}]
@@ -149,65 +173,46 @@ class LLMAPIClient:
         Returns:
             LLM返回的内容字符串
         """
-        # 仅为vLLM模式添加重试逻辑
         if self.api_type == "vllm":
-            # 设置重试参数
-            max_retries = 5  # 最大重试次数
-            max_time = 120   # 最大重试时间(秒)
-            start_time = time.time()
-            retries = 0
-            
-            while True:
-                try:
-                    # 对于vLLM API，使用completions接口
-                    prompt = "\n".join([f"{msg['role']}: {msg['content']}" for msg in messages])
-                    response = await self.async_client.completions.create(
-                        model=self.model,
-                        prompt=prompt,
-                        temperature=self.temperature,
-                        max_tokens=self.max_tokens,
-                        top_p=self.top_p
-                    )
-                    return response.choices[0].text
-                except (APITimeoutError, RateLimitError, asyncio.TimeoutError) as e:
-                    # 检查是否应该重试
-                    elapsed_time = time.time() - start_time
-                    retries += 1
-                    
-                    if retries >= max_retries or elapsed_time >= max_time:
-                        print(f"已达到最大重试次数({retries}/{max_retries})或最大重试时间({elapsed_time:.1f}/{max_time}秒)，停止重试")
-                        raise  # 重新抛出异常
-                    
-                    # 计算退避时间 (指数退避策略: 2^retries 秒)
-                    backoff_time = min(2 ** retries, 60)  # 最大退避60秒
-                    print(f"API调用失败: {str(e)}，第{retries}次重试，等待{backoff_time}秒...")
-                    await asyncio.sleep(backoff_time)
+            if hasattr(self, 'use_openai_api') and self.use_openai_api:
+                # 使用OpenAI兼容的API
+                prompt = "\n".join([f"{msg['role']}: {msg['content']}" for msg in messages])
+                params = {
+                    'model': self.model,
+                    'prompt': prompt,
+                    'temperature': self.temperature,
+                    'max_tokens': self.max_tokens,
+                    'top_p': self.top_p
+                }
+                params.update(self.kwargs)
+                
+                response = await self.async_client.completions.create(**params)
+                return response.choices[0].text
+            else:
+                # 使用AsyncLLMEngine
+                prompt = "\n".join([f"{msg['role']}: {msg['content']}" for msg in messages])
+                return await self._async_generate_vllm(prompt)
         else:
-            # 对于非vLLM API，不进行重试
-            try:
-                # 使用chat.completions接口
-                if json_mode:
-                    response = await self.async_client.chat.completions.create(
-                        model=self.model,
-                        messages=messages,
-                        temperature=self.temperature,
-                        max_tokens=self.max_tokens,
-                        top_p=self.top_p,
-                        response_format={"type": "json_object"}
-                    )
-                else:
-                    response = await self.async_client.chat.completions.create(
-                        model=self.model,
-                        messages=messages,
-                        temperature=self.temperature,
-                        max_tokens=self.max_tokens,
-                        top_p=self.top_p
-                    )
+            # 使用chat.completions接口
+            if json_mode:
+                response = await self.async_client.chat.completions.create(
+                    model=self.model,
+                    messages=messages,
+                    temperature=self.temperature,
+                    max_tokens=self.max_tokens,
+                    top_p=self.top_p,
+                    response_format={"type": "json_object"}
+                )
+            else:
+                response = await self.async_client.chat.completions.create(
+                    model=self.model,
+                    messages=messages,
+                    temperature=self.temperature,
+                    max_tokens=self.max_tokens,
+                    top_p=self.top_p
+                )
                     
-                return response.choices[0].message.content
-            except Exception as e:
-                print(f"异步API调用失败: {str(e)}")
-                raise
+            return response.choices[0].message.content
 
     def generate(self, prompt: str) -> str:
         """
@@ -223,7 +228,7 @@ class LLMAPIClient:
 
     async def async_generate(self, prompt: str) -> str:
         """
-        异步生成文本，如果是vLLM模式则添加自动重试功能
+        异步生成文本
         
         Args:
             prompt: 输入提示文本
@@ -231,45 +236,82 @@ class LLMAPIClient:
         Returns:
             LLM生成的文本内容
         """
-        # 仅为vLLM模式添加重试逻辑
         if self.api_type == "vllm":
-            # 设置重试参数
-            max_retries = 5  # 最大重试次数
-            max_time = 40   # 最大重试时间(秒)
-            start_time = time.time()
-            retries = 0
-            
-            while True:
+            if hasattr(self, 'use_openai_api') and self.use_openai_api:
+                # 使用OpenAI兼容的API
+                params = {
+                    'model': self.model,
+                    'prompt': prompt,
+                    'temperature': self.temperature,
+                    'max_tokens': self.max_tokens,
+                    'top_p': self.top_p
+                }
+                params.update(self.kwargs)
+                
                 try:
-                    # 对于vLLM API，直接使用completions接口
-                    params = {
-                        'model': self.model,
-                        'prompt': prompt,
-                        'temperature': self.temperature,
-                        'max_tokens': self.max_tokens,
-                        'top_p': self.top_p
-                    }
-                    params.update(self.kwargs)
-                    
                     response = await self.async_client.completions.create(**params)
-                    
                     return response.choices[0].text
-                    
-                except (APITimeoutError, RateLimitError, asyncio.TimeoutError) as e:
-                    retries += 1
-                    elapsed = time.time() - start_time
-                    
-                    # 检查是否超过最大重试次数或最大重试时间
-                    if retries >= max_retries or elapsed >= max_time:
-                        print(f"达到最大重试限制 (重试次数: {retries}, 耗时: {elapsed:.2f}秒)")
-                        raise e
-                    
-                    # 计算下一次重试的等待时间 (指数退避)
-                    wait_time = min(2 ** retries, 60)  # 最大等待60秒
-                    print(f"发生{e.__class__.__name__}: {str(e)}，将在{wait_time:.2f}秒后重试 (第{retries}次重试)")
-                    await asyncio.sleep(wait_time)
+                except Exception as e:
+                    print(f"异步API调用失败: {str(e)}")
+                    # 尝试同步调用作为备选
+                    print("尝试使用同步调用作为备选...")
+                    return self.generate(prompt)
+            else:
+                # 使用AsyncLLMEngine
+                return await self._async_generate_vllm(prompt)
         else:
-            # 对于配置文件API
+            # 对于配置文件API，使用OpenAI客户端
+            messages = [{"role": "user", "content": prompt}]
+            return await self.async_call(messages)
+    
+    async def _async_generate_vllm(self, prompt: str) -> str:
+        """
+        使用AsyncLLMEngine进行异步生成
+        
+        Args:
+            prompt: 输入提示文本
+            
+        Returns:
+            生成的文本内容
+        """
+        # 创建采样参数
+        from vllm.sampling_params import SamplingParams
+        
+        sampling_params = SamplingParams(
+            temperature=self.temperature,
+            max_tokens=self.max_tokens,
+            top_p=self.top_p
+        )
+        
+        # 生成唯一请求ID
+        request_id = str(uuid.uuid4())
+        
+        try:
+            # 发送请求
+            outputs_generator = self.engine.generate(prompt, sampling_params, request_id)
+            
+            # 获取最终输出
+            final_output = None
+            async for request_output in outputs_generator:
+                final_output = request_output
+                
+            # 提取生成的文本
+            if final_output and final_output.outputs:
+                return final_output.outputs[0].text
+        except Exception as e:
+            print(f"AsyncLLMEngine生成失败: {str(e)}")
+            print("尝试使用OpenAI兼容API作为备选...")
+            
+            # 动态切换到OpenAI兼容API
+            if not hasattr(self, 'async_client'):
+                from openai import AsyncOpenAI
+                self.async_client = AsyncOpenAI(
+                    api_key="EMPTY",
+                    base_url="http://localhost:8000/v1"
+                )
+                self.use_openai_api = True
+            
+            # 使用OpenAI兼容API重试
             params = {
                 'model': self.model,
                 'prompt': prompt,
@@ -277,7 +319,8 @@ class LLMAPIClient:
                 'max_tokens': self.max_tokens,
                 'top_p': self.top_p
             }
-            params.update(self.kwargs)
             
             response = await self.async_client.completions.create(**params)
-            return response.choices[0].text 
+            return response.choices[0].text
+            
+        return "" 
