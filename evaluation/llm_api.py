@@ -65,7 +65,7 @@ class LLMAPIClient:
             )
         else:  # api_type == "vllm"
             # 使用vLLM的AsyncLLMEngine 模型路径
-            self.model = "/inspire/hdd/ws-f4d69b29-e0a5-44e6-bd92-acf4de9990f0/public-project/wangjia-240108610168/model_input/Qwen2.5-14B-Instruct"
+            self.model = "/inspire/hdd/ws-f4d69b29-e0a5-44e6-bd92-acf4de9990f0/public-project/wangjia-240108610168/model_input/Qwen2.5-32B-Instruct"
             
             try:
                 # 尝试直接使用AsyncLLMEngine
@@ -74,17 +74,22 @@ class LLMAPIClient:
                 from vllm.sampling_params import SamplingParams
                 from vllm.outputs import RequestOutput
                 
-                # 创建AsyncEngineArgs
+                # 创建AsyncEngineArgs，使用符合文档的参数
                 print(f"正在初始化vLLM引擎，模型: {self.model}...")
                 engine_args = AsyncEngineArgs(
                     model=self.model,
                     tensor_parallel_size=2,
-                    dtype="half",
+                    dtype="float16",  # 使用标准float16替代bfloat16以提高兼容性
                     enforce_eager=True,  # 使用eager模式避免编译错误
                     trust_remote_code=True,  # 必须启用以支持Qwen模型
                     gpu_memory_utilization=0.95,
                     max_model_len=10240,
-                    enable_chunked_prefill=True
+                    enable_chunked_prefill=True,
+                    max_num_seqs=1024,
+                    max_num_batched_tokens=4096,
+                    enable_prefix_caching=True,
+                    disable_custom_all_reduce=True,  # 禁用自定义all-reduce以避免分布式通信问题
+                    distributed_executor_backend="mp",  # 强制使用多进程后端
                 )
                 
                 # 创建AsyncLLMEngine
@@ -110,6 +115,73 @@ class LLMAPIClient:
                 )
         
         print(f"初始化LLM API客户端: {api_type}, 模型: {self.model}")
+    
+    def close(self):
+        """关闭并清理资源"""
+        if self.api_type == "vllm" and hasattr(self, 'engine') and not hasattr(self, 'use_openai_api'):
+            try:
+                # 关闭vLLM引擎
+                print("正在关闭vLLM引擎...")
+                import asyncio
+                
+                # 尝试优雅地关闭引擎
+                loop = asyncio.get_event_loop()
+                if not loop.is_closed():
+                    try:
+                        if hasattr(self.engine, 'abort_all'):
+                            loop.run_until_complete(self.engine.abort_all())
+                        if hasattr(self.engine, 'terminate'):
+                            loop.run_until_complete(self.engine.terminate())
+                    except Exception as e:
+                        print(f"优雅关闭vLLM引擎时出错: {str(e)}")
+                
+                # 关闭所有子进程
+                if hasattr(self.engine, '_llm_engine') and hasattr(self.engine._llm_engine, '_executor'):
+                    executor = self.engine._llm_engine._executor
+                    if hasattr(executor, 'shutdown'):
+                        print("关闭vLLM执行器...")
+                        executor.shutdown(wait=True)
+                
+                # 强制清理一些引用
+                self.engine = None
+                
+                # 清理PyTorch分布式通信资源
+                try:
+                    import torch.distributed as dist
+                    if dist.is_initialized():
+                        print("关闭PyTorch分布式通信...")
+                        dist.destroy_process_group()
+                except Exception as e:
+                    print(f"清理分布式资源时出错: {str(e)}")
+                
+                # 关闭并重新创建事件循环
+                try:
+                    if loop and not loop.is_closed():
+                        loop.close()
+                    asyncio.set_event_loop(asyncio.new_event_loop())
+                except Exception as e:
+                    print(f"关闭事件循环时出错: {str(e)}")
+                    
+                # 强制触发垃圾回收
+                import gc
+                gc.collect()
+                
+                # 释放CUDA缓存
+                try:
+                    import torch
+                    if torch.cuda.is_available():
+                        torch.cuda.empty_cache()
+                        print("已清空CUDA缓存")
+                except Exception as e:
+                    print(f"清空CUDA缓存时出错: {str(e)}")
+                
+                print("vLLM引擎资源已完全释放")
+            except Exception as e:
+                print(f"关闭vLLM引擎时出错: {str(e)}")
+    
+    def __del__(self):
+        """析构函数，确保资源被释放"""
+        self.close()
     
     def call(self, messages: List[Dict[str, str]], json_mode: bool = True) -> str:
         """
@@ -298,6 +370,10 @@ class LLMAPIClient:
             # 提取生成的文本
             if final_output and final_output.outputs:
                 return final_output.outputs[0].text
+            else:
+                print(f"警告: vLLM生成空输出，请求ID: {request_id}")
+                return "无法生成回答"
+                
         except Exception as e:
             print(f"AsyncLLMEngine生成失败: {str(e)}")
             print("尝试使用OpenAI兼容API作为备选...")
@@ -311,16 +387,18 @@ class LLMAPIClient:
                 )
                 self.use_openai_api = True
             
-            # 使用OpenAI兼容API重试
-            params = {
-                'model': self.model,
-                'prompt': prompt,
-                'temperature': self.temperature,
-                'max_tokens': self.max_tokens,
-                'top_p': self.top_p
-            }
-            
-            response = await self.async_client.completions.create(**params)
-            return response.choices[0].text
-            
-        return "" 
+            try:
+                # 使用OpenAI兼容API重试
+                params = {
+                    'model': self.model,
+                    'prompt': prompt,
+                    'temperature': self.temperature,
+                    'max_tokens': self.max_tokens,
+                    'top_p': self.top_p
+                }
+                
+                response = await self.async_client.completions.create(**params)
+                return response.choices[0].text
+            except Exception as retry_e:
+                print(f"OpenAI兼容API重试也失败: {str(retry_e)}")
+                return "生成失败，无法获取回答" 

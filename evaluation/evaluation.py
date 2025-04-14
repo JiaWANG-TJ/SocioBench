@@ -5,7 +5,6 @@ import json
 import os
 from typing import Dict, List, Any, Union, Optional
 import pandas as pd
-import matplotlib.pyplot as plt
 from datetime import datetime
 import re
 
@@ -131,9 +130,14 @@ class Evaluator:
         # 创建时间戳作为文件名的一部分
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
         
+        # 创建模型子文件夹
+        model_dir = os.path.join(self.save_dir, model_name)
+        if not os.path.exists(model_dir):
+            os.makedirs(model_dir)
+        
         # 创建文件名
         filename = f"{self.domain_name}_{model_name}_{timestamp}.json"
-        filepath = os.path.join(self.save_dir, filename)
+        filepath = os.path.join(model_dir, filename)
         
         # 添加模型信息
         self.results["model"] = model_name
@@ -170,48 +174,7 @@ class Evaluator:
             
         print(f"评测结果已保存到: {filepath}")
         
-        # 绘制准确率图表
-        self.plot_accuracy(model_name, accuracy, timestamp)
-        
         return filepath
-    
-    def plot_accuracy(self, model_name: str, accuracy: float, timestamp: str) -> str:
-        """
-        绘制准确率图表
-        
-        Args:
-            model_name: 模型名称
-            accuracy: 准确率
-            timestamp: 时间戳
-            
-        Returns:
-            保存的图表文件路径
-        """
-        # 设置中文字体
-        plt.rcParams['font.sans-serif'] = ['SimHei']  # 用来正常显示中文标签
-        plt.rcParams['axes.unicode_minus'] = False  # 用来正常显示负号
-        
-        plt.figure(figsize=(10, 6))
-        bars = plt.bar(["正确", "错误"], [accuracy, 1 - accuracy], color=["#4CAF50", "#F44336"])
-        plt.title(f"模型 {model_name} 在 {self.domain_name} 领域的评测结果")
-        plt.ylim(0, 1)
-        plt.ylabel("比例")
-        
-        # 添加数值标签
-        for bar in bars:
-            height = bar.get_height()
-            plt.text(bar.get_x() + bar.get_width()/2., height + 0.02,
-                    f"{height:.2%}", ha='center', va='bottom')
-        
-        # 保存图表
-        chart_filename = f"{self.domain_name}_{model_name}_{timestamp}.png"
-        chart_filepath = os.path.join(self.save_dir, chart_filename)
-        plt.savefig(chart_filepath, dpi=300, bbox_inches='tight')
-        plt.close()
-        
-        print(f"准确率图表已保存到: {chart_filepath}")
-        
-        return chart_filepath
     
     def print_summary(self):
         """打印评测摘要"""
