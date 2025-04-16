@@ -14,14 +14,30 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from datetime import datetime
 import asyncio
+import traceback
+import multiprocessing
 
-# 添加项目根目录到系统路径
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../..')))
+# 设置多进程启动方法为spawn，以解决CUDA初始化问题
+# 这是必须的，因为vLLM使用CUDA，在fork的子进程中无法重新初始化CUDA
+if multiprocessing.get_start_method(allow_none=True) != 'spawn':
+    try:
+        multiprocessing.set_start_method('spawn', force=True)
+    except RuntimeError:
+        # 可能已经设置了启动方法
+        pass
+
+# 设置vLLM多进程方法环境变量
+os.environ["VLLM_WORKER_MULTIPROC_METHOD"] = "spawn"
+
+# 添加项目根目录到Python路径
+current_dir = os.path.dirname(os.path.abspath(__file__))
+project_root = os.path.dirname(os.path.dirname(current_dir))
+sys.path.insert(0, project_root)
 
 # 导入自定义模块
-from llm_api import LLMAPIClient
-from prompt_engineering import PromptEngineering
-from evaluation import Evaluator
+from social_benchmark.evaluation.llm_api import LLMAPIClient
+from social_benchmark.evaluation.evaluation import Evaluator
+from social_benchmark.evaluation.prompt_engineering import PromptEngineering
 
 # 领域名称与领域号映射表
 DOMAIN_MAPPING = {
@@ -345,17 +361,21 @@ async def process_question_async(question_id, true_answer, question_data, countr
         print(f"  LLM答案: {evaluator.extract_answer(response)}")
         print(f"  是否正确: {is_correct}")
     
-    # 返回结果
+    # 返回结果包含prompt和完整回答
     return {
+        "question_id": question_id,
+        "prompt": prompt,
         "true_answer": true_answer,
         "llm_answer": evaluator.extract_answer(response),
+        "llm_response": response,
         "correct": is_correct,
         "is_country_specific": is_country_specific
     }
 
 def run_evaluation(domain_id: int, interview_count: Union[int, str], 
                    api_type: str = "config", use_async: bool = False,
-                   concurrent_requests: int = 5, concurrent_interviewees: int = 1) -> None:
+                   concurrent_requests: int = 5, concurrent_interviewees: int = 1,
+                   model_name: str = "Qwen2.5-32B-Instruct") -> None:
     """运行评测"""
     # 导入需要的模块
     import gc
@@ -433,12 +453,17 @@ def run_evaluation(domain_id: int, interview_count: Union[int, str],
             print(f"预清理资源时出错: {str(e)}")
         
         # 初始化工具类
-        llm_client = LLMAPIClient(api_type=api_type)
+        if api_type == "config":
+            # 使用配置文件中的MODEL_CONFIG，不传入model参数
+            llm_client = LLMAPIClient(api_type=api_type)
+        else:
+            # 对于vllm模式，继续使用传入的model_name参数
+            llm_client = LLMAPIClient(api_type=api_type, model=model_name)
         prompt_engine = PromptEngineering()
         evaluator = Evaluator(domain_name=domain_name, save_dir=results_dir)
         
         # 确定要测试的受访者数量
-        if interview_count == "--all":
+        if interview_count == "all":
             interviewees = ground_truth
             print(f"将测试所有 {len(interviewees)} 个受访者")
         else:
@@ -456,6 +481,9 @@ def run_evaluation(domain_id: int, interview_count: Union[int, str],
         evaluated_country_specific_questions = 0
         excluded_country_specific_questions = 0
         invalid_answer_questions = 0
+        
+        # 初始化完整提示和回答记录（仅在config模式下使用）
+        full_prompts_answers = []
         
         # 处理每个受访者的函数
         async def process_interviewee(interviewee, interviewee_idx, pbar=None):
@@ -502,47 +530,47 @@ def run_evaluation(domain_id: int, interview_count: Union[int, str],
             country_specific_questions = 0
             country_specific_evaluated = 0
             country_specific_excluded = 0
-            invalid_answers = 0
+            invalid_answer_questions = 0
             correct_answers = 0
             
-            # 准备要处理的问题列表
+            # 初始化任务列表和要处理的问题列表
+            tasks = []
             valid_questions = []
             
             # 首先过滤出有效问题
             for question_id, true_answer in questionsAnswers.items():
-                # 检查答案是否为无效答案
+                # 跳过真实答案为空的问题
+                if not true_answer:
+                    if verbose_output:
+                        print(f"跳过问题 {question_id}: 真实答案为空")
+                    continue
+                
+                # 跳过无效答案问题
                 if is_invalid_answer(true_answer):
-                    excluded_questions += 1
-                    invalid_answers += 1
                     invalid_answer_questions += 1
+                    if verbose_output:
+                        print(f"跳过问题 {question_id}: 无效答案 '{true_answer}'")
                     continue
                     
-                # 在QA映射中查找问题（不区分大小写）
-                question_data = qa_map.get(str(question_id).lower())
-                        
-                if not question_data:
-                    excluded_questions += 1
+                # 获取问题数据
+                qa_item = qa_map.get(question_id.lower())
+                if not qa_item:
+                    if verbose_output:
+                        print(f"跳过问题 {question_id}: 未找到问题数据")
                     continue
                 
-                # 判断是否是国家特定问题
-                is_country_specific = get_question_country_code(question_id) is not None
-                if is_country_specific:
+                # 检查是否是国家特定问题
+                is_country_q = is_country_specific_question(question_id, country_code)
+                
+                if is_country_q:
                     country_specific_questions += 1
-                    total_country_specific_questions += 1
-                    
-                # 检查是否是国家特定问题，如果是且国家不匹配则排除
-                if is_country_specific and not is_country_specific_question(question_id, country_code):
-                    excluded_questions += 1
-                    country_specific_excluded += 1
-                    excluded_country_specific_questions += 1
-                    continue
                 
-                # 将有效问题添加到列表
+                # 记录有效问题
                 valid_questions.append({
                     "question_id": question_id,
                     "true_answer": true_answer,
-                    "question_data": question_data,
-                    "is_country_specific": is_country_specific
+                    "qa_item": qa_item,
+                    "is_country_specific": is_country_q
                 })
             
             # 创建问题进度条
@@ -551,130 +579,92 @@ def run_evaluation(domain_id: int, interview_count: Union[int, str],
             else:
                 question_pbar = None
                 
-            # 处理有效问题
-            if use_async and api_type == "vllm":
-                # 异步处理问题
-                # 分批处理问题，每批concurrent_requests个
-                if len(valid_questions) > 0:
-                    batch_count = (len(valid_questions) + concurrent_requests - 1) // concurrent_requests
-                    if verbose_output:
-                        print(f"处理 {len(valid_questions)} 个有效问题，分 {batch_count} 批次，每批次 {concurrent_requests} 个问题")
+            # 处理每个有效问题
+            for question_data in valid_questions:
+                question_id = question_data["question_id"]
+                true_answer = question_data["true_answer"]
+                qa_item = question_data["qa_item"]
+                is_country_q = question_data["is_country_specific"]
+                
+                # 处理问题
+                if use_async:
+                    # 添加到任务列表
+                    tasks.append(process_question_async(
+                        question_id, true_answer, qa_item, country_code, 
+                        attributes, prompt_engine, llm_client, evaluator,
+                        is_country_specific=is_country_q, verbose=verbose_output
+                    ))
                     
-                for i in range(0, len(valid_questions), concurrent_requests):
-                    batch = valid_questions[i:i+concurrent_requests]
-                    batch_num = i // concurrent_requests + 1
-                    
-                    # 在详细模式下显示批次信息
-                    if verbose_output and batch_count > 1:
-                        print(f"  处理问题批次 {batch_num}/{batch_count}，当前批次 {len(batch)} 个问题")
-                    
-                    batch_tasks = []
-                    for question in batch:
-                        task = process_question_async(
-                            question["question_id"], 
-                            question["true_answer"], 
-                            question["question_data"], 
-                            country_code, 
-                            attributes, 
-                            prompt_engine, 
-                            llm_client, 
-                            evaluator, 
-                            question["is_country_specific"],
-                            verbose=verbose_output
-                        )
-                        batch_tasks.append(task)
-                    
-                    # 等待当前批次完成
-                    try:
-                        batch_results = await asyncio.gather(*batch_tasks)
-                    except Exception as e:
-                        print(f"批次 {batch_num} 处理过程中发生错误: {str(e)}")
-                        # 尝试逐个处理以隔离错误
-                        batch_results = []
-                        for idx, task in enumerate(batch_tasks):
-                            try:
-                                result = await task
-                                batch_results.append(result)
-                            except Exception as task_e:
-                                print(f"处理问题 {batch[idx]['question_id']} 时出错: {str(task_e)}")
-                                batch_results.append(None)
-                    
-                    # 处理结果
-                    for idx, result in enumerate(batch_results):
-                        if result is not None:
-                            question_id = batch[idx]["question_id"]
-                            interviewee_results[question_id] = result
-                            
-                            # 更新统计信息
-                            evaluated_questions += 1
-                            if result["correct"]:
-                                correct_answers += 1
-                            if batch[idx]["is_country_specific"]:
-                                country_specific_evaluated += 1
-                                evaluated_country_specific_questions += 1
-                        
-                        # 更新问题进度条
-                        if question_pbar:
-                            question_pbar.update(1)
-            else:
-                # 同步处理问题
-                for question in valid_questions:
-                    question_id = question["question_id"]
-                    true_answer = question["true_answer"]
-                    question_data = question["question_data"]
-                    is_country_specific = question["is_country_specific"]
-                    
-                    # 获取问题和选项
-                    question_text = question_data.get("question", "")
-                    options = get_special_options(question_data, country_code)
-                    
-                    # 如果没有问题或选项，跳过
-                    if not question_text or not options:
-                        excluded_questions += 1
-                        if is_country_specific:
-                            country_specific_excluded += 1
-                            excluded_country_specific_questions += 1
-                        if question_pbar:
-                            question_pbar.update(1)
-                        continue
-                    
-                    # 清理问题文本
-                    question_text = question_text.replace("\n", " ").strip()
-                    
-                    # 生成提示
-                    prompt = prompt_engine.generate_prompt(attributes, question_text, options)
-                    
-                    # 调用LLM API，添加错误处理
-                    try:
-                        response = llm_client.generate(prompt)
-                    except Exception as e:
-                        print(f"处理问题 {question_id} 时API调用出错: {str(e)}")
-                        # 如果API调用失败，跳过此问题
-                        if question_pbar:
-                            question_pbar.update(1)
-                        continue
-                    
-                    # 评估回答
-                    is_correct = evaluator.evaluate_answer(question_id, true_answer, response, is_country_specific=is_country_specific)
-                    evaluated_questions += 1
-                    if is_country_specific:
-                        country_specific_evaluated += 1
+                    if is_country_q:
                         evaluated_country_specific_questions += 1
+                else:
+                    # 同步处理问题
+                    results = await process_question_async(
+                        question_id, true_answer, qa_item, country_code, 
+                        attributes, prompt_engine, llm_client, evaluator,
+                        is_country_specific=is_country_q, verbose=verbose_output
+                    )
                     
-                    if is_correct:
+                    # 保存完整提示和回答（仅在config模式下）
+                    if api_type == "config" and results:
+                        full_prompts_answers.append({
+                            "question_id": question_id,
+                            "prompt": results["prompt"],
+                            "qa": qa_item,
+                            "llm_response": results.get("llm_response", "")
+                        })
+                    
+                    # 更新计数
+                    if results and results.get("correct", False):
                         correct_answers += 1
-                    
-                    # 记录结果
-                    interviewee_results[question_id] = {
-                        "true_answer": true_answer,
-                        "llm_answer": evaluator.extract_answer(response),
-                        "correct": is_correct,
-                        "is_country_specific": is_country_specific
-                    }
+                    evaluated_questions += 1
                     
                     # 更新问题进度条
                     if question_pbar:
                         question_pbar.update(1)
+                    
+                    if is_country_q:
+                        evaluated_country_specific_questions += 1
+            
+            # 执行任务
+            results = []
+            if use_async:
+                for i in range(0, len(tasks), concurrent_requests):
+                    # 获取当前批次的任务
+                    batch_tasks = tasks[i:i+concurrent_requests]
+                    if verbose_output:
+                        print(f"正在执行第 {i//concurrent_requests + 1} 批 ({len(batch_tasks)}) 任务...")
+                    
+                    # 同时执行多个任务
+                    batch_results = await asyncio.gather(*batch_tasks, return_exceptions=True)
+                    
+                    # 处理结果
+                    for res in batch_results:
+                        if isinstance(res, Exception):
+                            if verbose_output:
+                                print(f"任务执行出错: {str(res)}")
+                            continue
+                        if res:
+                            results.append(res)
+                            
+                            # 保存完整提示和回答（仅在config模式下）
+                            if api_type == "config":
+                                qa_item = qa_map.get(res["question_id"].lower(), {})
+                                full_prompts_answers.append({
+                                    "question_id": res["question_id"],
+                                    "prompt": res["prompt"],
+                                    "qa": qa_item,
+                                    "llm_response": res.get("llm_response", "")
+                                })
+                            
+                            # 更新计数和进度条
+                            if res.get("correct", False):
+                                correct_answers += 1
+                            evaluated_questions += 1
+                            
+                            # 更新问题进度条
+                            if question_pbar:
+                                question_pbar.update(1)
             
             # 关闭问题进度条
             if question_pbar:
@@ -737,11 +727,13 @@ def run_evaluation(domain_id: int, interview_count: Union[int, str],
                             print(f"第 {batch_num}/{batch_count} 批次处理完成")
                         except Exception as e:
                             print(f"批次 {batch_num} 处理时发生错误: {str(e)}")
-                            # 尝试单独处理每个受访者以隔离错误
+                            # 单独为每个受访者创建新的协程任务
                             batch_results = []
-                            for idx, task in enumerate(tasks):
+                            for idx, interviewee in enumerate(batch):
+                                batch_idx = i + idx
                                 try:
-                                    result = await task
+                                    # 为每个受访者创建新的协程并立即执行
+                                    result = await process_interviewee(interviewee, batch_idx, pbar)
                                     batch_results.append(result)
                                 except Exception as task_e:
                                     print(f"处理受访者 {idx} 时出错: {str(task_e)}")
@@ -823,13 +815,22 @@ def run_evaluation(domain_id: int, interview_count: Union[int, str],
         
         # 保存结果
         model_name = llm_client.model.split("/")[-1] if "/" in llm_client.model else llm_client.model
-        evaluator.save_results(model_name, domain_stats={
+        # 保存一次结果，获取文件路径
+        result_file_path = evaluator.save_results(model_name, domain_stats={
             "total_questions": evaluated_country_specific_questions + excluded_country_specific_questions + invalid_answer_questions,
             "invalid_answer_questions": invalid_answer_questions,
             "country_specific_total": total_country_specific_questions,
             "country_specific_evaluated": evaluated_country_specific_questions,
             "country_specific_excluded": excluded_country_specific_questions
         })
+        
+        # 如果是config模式，保存完整的提示和回答记录
+        if api_type == "config" and full_prompts_answers:
+            # 使用已保存的结果文件路径构建prompt文件路径
+            prompt_file = os.path.join(os.path.dirname(result_file_path), f"{domain_name}_full_prompts_{model_name}_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json")
+            with open(prompt_file, "w", encoding="utf-8") as f:
+                json.dump(full_prompts_answers, f, ensure_ascii=False, indent=2)
+            print(f"完整提示和回答记录已保存到: {prompt_file}")
         
     except Exception as e:
         print(f"评测过程中发生错误: {str(e)}")
@@ -896,7 +897,8 @@ def run_evaluation(domain_id: int, interview_count: Union[int, str],
 
 def run_all_domains(api_type: str = "config", interview_count: Union[int, str] = 1,
                    use_async: bool = False, concurrent_requests: int = 5,
-                   concurrent_interviewees: int = 1, start_domain_id: int = 1) -> None:
+                   concurrent_interviewees: int = 1, start_domain_id: int = 1,
+                   model_name: str = "Qwen2.5-32B-Instruct") -> None:
     """运行所有领域的评测并生成汇总报告，通过子进程方式运行每个领域评测"""
     print(f"\n{'='*60}")
     print(f"开始所有领域的评测 | API类型: {api_type}")
@@ -918,7 +920,7 @@ def run_all_domains(api_type: str = "config", interview_count: Union[int, str] =
     script_path = os.path.abspath(__file__)
     
     # 运行每个领域的评测
-    for domain_id in sorted(DOMAIN_MAPPING.values()):
+    for domain_id in range(start_domain_id, 12):
         # 如果当前领域ID小于起始领域ID，则跳过
         if domain_id < start_domain_id:
             domain_name = get_domain_name(domain_id)
@@ -979,7 +981,7 @@ def run_all_domains(api_type: str = "config", interview_count: Union[int, str] =
                 sys.executable,  # 当前Python解释器路径
                 script_path,     # 当前脚本路径
                 "--domain_id", str(domain_id),
-                "--interview_count", str(interview_count) if interview_count != "--all" else "--all",
+                "--interview_count", str(interview_count) if interview_count != "all" else "all",
                 "--api_type", api_type
             ]
             
@@ -1077,12 +1079,12 @@ def run_all_domains(api_type: str = "config", interview_count: Union[int, str] =
     
     # 生成汇总报告
     if domain_results:
-        generate_summary_report(domain_results)
+        generate_summary_report(domain_results, model_name=model_name)
     else:
         print("没有找到有效的领域评测结果，无法生成汇总报告。")
 
-def generate_summary_report(domain_results: Dict[str, Dict[str, Any]]) -> None:
-    """生成所有领域的汇总报告"""
+def generate_summary_report(domain_results: Dict[str, Dict[str, Any]], model_name: str = "unknown") -> None:
+    """生成所有领域的汇总报告，包含按领域号排序的指标及所有细节"""
     print(f"\n{'='*80}")
     print(f"{' '*30}所有领域评测汇总报告{' '*30}")
     print(f"{'='*80}")
@@ -1092,6 +1094,24 @@ def generate_summary_report(domain_results: Dict[str, Dict[str, Any]]) -> None:
     if not os.path.exists(results_dir):
         os.makedirs(results_dir)
     
+    # 如果是字符串路径，则加载文件内容
+    loaded_results = {}
+    all_domain_details = []
+    
+    for domain_name, result_path in domain_results.items():
+        if isinstance(result_path, str) and os.path.exists(result_path):
+            try:
+                with open(result_path, "r", encoding="utf-8") as f:
+                    loaded_results[domain_name] = json.load(f)
+            except Exception as e:
+                print(f"加载文件 {result_path} 时出错: {str(e)}")
+                continue
+        else:
+            loaded_results[domain_name] = result_path
+    
+    # 获取领域号和领域名称的映射
+    domain_id_map = {name: id for name, id in DOMAIN_MAPPING.items()}
+    
     # 初始化汇总统计数据
     total_accuracy = []
     total_questions = 0
@@ -1099,14 +1119,26 @@ def generate_summary_report(domain_results: Dict[str, Dict[str, Any]]) -> None:
     total_invalid_questions = 0
     total_country_specific = 0
     total_country_specific_evaluated = 0
+    total_macro_f1 = []
+    total_micro_f1 = []
     
     # 创建数据表格
     summary_data = []
     
-    # 汇总各领域数据
-    for domain_name, result in domain_results.items():
+    # 汇总各领域数据和详情
+    for domain_name, result in loaded_results.items():
+        # 收集详细结果
+        all_domain_details.extend(result.get("details", []))
+        
+        # 统计信息
+        domain_id = result.get("domain_stats", {}).get("domain_id", domain_id_map.get(domain_name, 0))
         accuracy = result.get("accuracy", 0)
+        macro_f1 = result.get("macro_f1", 0)
+        micro_f1 = result.get("micro_f1", 0)
+        
         total_accuracy.append(accuracy)
+        total_macro_f1.append(macro_f1)
+        total_micro_f1.append(micro_f1)
         
         questions = result.get("total_count", 0)
         correct = result.get("correct_count", 0)
@@ -1126,25 +1158,32 @@ def generate_summary_report(domain_results: Dict[str, Dict[str, Any]]) -> None:
         
         # 添加到数据表格
         summary_data.append({
+            "领域号": domain_id,
             "领域": domain_name,
             "总题数": questions,
             "正确数": correct,
             "准确率": accuracy,
             "准确率(%)": f"{accuracy:.2%}",
+            "宏观F1": macro_f1,
+            "微观F1": micro_f1,
             "无效答案题数": invalid_questions,
             "国家特定问题总数": country_specific,
             "评估的国家特定问题": country_specific_eval
         })
     
-    # 计算总体准确率
+    # 计算总体指标
     overall_accuracy = total_correct / total_questions if total_questions > 0 else 0
+    overall_macro_f1 = sum(total_macro_f1) / len(total_macro_f1) if total_macro_f1 else 0
+    overall_micro_f1 = sum(total_micro_f1) / len(total_micro_f1) if total_micro_f1 else 0
     
     # 输出汇总统计
     print(f"\n总体统计:")
-    print(f"  评估的领域数: {len(domain_results)}")
+    print(f"  评估的领域数: {len(loaded_results)}")
     print(f"  总题数: {total_questions}")
     print(f"  正确数: {total_correct}")
     print(f"  总体准确率: {overall_accuracy:.2%}")
+    print(f"  总体宏观F1: {overall_macro_f1:.4f}")
+    print(f"  总体微观F1: {overall_micro_f1:.4f}")
     print(f"  无效答案题数: {total_invalid_questions}")
     print(f"  国家特定问题总数: {total_country_specific}")
     print(f"  评估的国家特定问题: {total_country_specific_evaluated}")
@@ -1153,48 +1192,82 @@ def generate_summary_report(domain_results: Dict[str, Dict[str, Any]]) -> None:
     
     # 创建DataFrame并输出表格
     df = pd.DataFrame(summary_data)
-    print(f"\n各领域评测结果汇总:")
-    # 格式化输出表格，按准确率降序排序
-    df_sorted = df.sort_values(by='准确率', ascending=False)
-    df_display = df_sorted.copy()
+    
+    # 按领域号排序
+    df_domain_sorted = df.sort_values(by='领域号')
+    print(f"\n按领域号排序的评测结果:")
+    df_display = df_domain_sorted.copy()
     df_display['准确率'] = df_display['准确率(%)']
     df_display.drop('准确率(%)', axis=1, inplace=True)
     print(df_display.to_string(index=False))
     
     # 保存汇总报告
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-    model_name = next(iter(domain_results.values())).get("model", "unknown")
     
     # 创建模型子文件夹
     model_dir = os.path.join(results_dir, model_name)
     if not os.path.exists(model_dir):
         os.makedirs(model_dir)
     
-    # 保存到CSV
-    csv_filename = f"summary_report_{model_name}_{timestamp}.csv"
+    # 保存到CSV - 按领域号排序
+    csv_filename = f"domain_results_{model_name}_{timestamp}.csv"
     csv_path = os.path.join(model_dir, csv_filename)
-    df_sorted.to_csv(csv_path, index=False, encoding='utf-8')
-    print(f"\n汇总报告已保存到: {csv_path}")
+    df_domain_sorted.to_csv(csv_path, index=False, encoding='utf-8')
+    print(f"\n领域评测结果已保存到: {csv_path}")
     
-    # 保存完整的JSON报告
+    # 保存完整的JSON报告 - 包含所有领域的评测结果
+    json_filename = f"summary_report_{model_name}_{timestamp}.json"
+    json_path = os.path.join(model_dir, json_filename)
+    
+    # 创建汇总报告字典
     summary_report = {
         "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
         "model": model_name,
-        "total_domains": len(domain_results),
+        "total_domains": len(loaded_results),
         "total_questions": total_questions,
         "total_correct": total_correct,
         "overall_accuracy": overall_accuracy,
+        "overall_macro_f1": overall_macro_f1,
+        "overall_micro_f1": overall_micro_f1,
         "invalid_answer_questions": total_invalid_questions,
         "country_specific_total": total_country_specific,
         "country_specific_evaluated": total_country_specific_evaluated,
-        "domain_details": domain_results
+        "domains": {}
     }
     
-    json_filename = f"summary_report_{model_name}_{timestamp}.json"
-    json_path = os.path.join(model_dir, json_filename)
+    # 添加各领域结果（按领域号排序）
+    for domain_data in sorted(summary_data, key=lambda x: x["领域号"]):
+        domain_name = domain_data["领域"]
+        domain_id = domain_data["领域号"]
+        summary_report["domains"][str(domain_id)] = {
+            "id": str(domain_id),
+            "name": domain_name,
+            "total_questions": domain_data["总题数"],
+            "correct_answers": domain_data["正确数"],
+            "accuracy": domain_data["准确率"],
+            "macro_f1": domain_data["宏观F1"],
+            "micro_f1": domain_data["微观F1"]
+        }
+    
+    # 保存汇总JSON
     with open(json_path, 'w', encoding='utf-8') as f:
         json.dump(summary_report, f, ensure_ascii=False, indent=2)
     print(f"详细汇总数据已保存到: {json_path}")
+    
+    # 保存所有问题的详细结果
+    details_filename = f"all_qa_details_{model_name}_{timestamp}.json"
+    details_path = os.path.join(model_dir, details_filename)
+    
+    all_details_report = {
+        "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+        "model": model_name,
+        "total_questions": len(all_domain_details),
+        "details": all_domain_details
+    }
+    
+    with open(details_path, 'w', encoding='utf-8') as f:
+        json.dump(all_details_report, f, ensure_ascii=False, indent=2)
+    print(f"所有问题的详细结果已保存到: {details_path}")
 
 def parse_args():
     """解析命令行参数"""
@@ -1204,23 +1277,31 @@ def parse_args():
     domain_help = "领域ID (1-11)，对应关系:\n"
     for name, id in DOMAIN_MAPPING.items():
         domain_help += f"{id}: {name}\n"
-    domain_help += "或者使用 --all 处理所有领域"
+    domain_help += "或者使用 all 处理所有领域"
     
-    parser.add_argument('--domain_id', type=str, help=domain_help, nargs='?', default='--all')
-    parser.add_argument('--interview_count', type=str, 
-                       help='采访个数，--all表示全部', nargs='?', default='50')
-    parser.add_argument('--api_type', type=str, choices=['config', 'vllm'], 
-                       default='vllm', help='API类型，默认使用vllm')
-    parser.add_argument('--use_async', action='store_true', default=True,
-                       help='是否使用异步模式（仅在vllm模式下有效）')
-    parser.add_argument('--concurrent_requests', type=int, default=80,
-                       help='同时发起的请求数量（仅在异步模式下有效）')
-    parser.add_argument('--concurrent_interviewees', type=int, default=50,
-                       help='同时处理的受访者数量（仅在异步模式下有效）')
-    parser.add_argument('--start_domain_id', type=int, default=1,
-                       help='起始评测的领域ID（当domain_id为--all时有效）')
+    parser.add_argument('--domain_id', type=str, help=domain_help, nargs='?', default='all')
+    parser.add_argument('--interview_count', type=str, help='采访个数，all表示全部', nargs='?', default='50')
+    parser.add_argument('--api_type', type=str, choices=['config', 'vllm'], default='vllm', help='API类型，默认使用vllm')
+    parser.add_argument('--use_async', action='store_true', default=True, help='是否使用异步模式（仅在vllm模式下有效）')
+    parser.add_argument('--concurrent_requests', type=int, default=80, help='同时发起的请求数量（仅在异步模式下有效）')
+    parser.add_argument('--concurrent_interviewees', type=int, default=50, help='同时处理的受访者数量（仅在异步模式下有效）')
+    parser.add_argument('--start_domain_id', type=int, default=1, help='起始评测的领域ID（当domain_id为all时有效）')
+    parser.add_argument('--model', type=str, default='Qwen2.5-32B-Instruct', help='使用的模型名称或路径（仅在vllm模式下有效）')
     
     return parser.parse_args()
+
+"""
+python /inspire/hdd/ws-f4d69b29-e0a5-44e6-bd92-acf4de9990f0/public-project/wangjia-240108610168/social_benchmark/evaluation/run_evaluation.py \
+  --domain_id all \
+  --interview_count 20 \
+  --api_type vllm \
+  --use_async \
+  --concurrent_requests 100 \
+  --concurrent_interviewees 50 \
+  --start_domain_id 1 \
+  --model Qwen2.5-32B-Instruct
+"""
+
 
 if __name__ == "__main__":
     # 检查是否是子进程，并进行特殊处理
@@ -1270,16 +1351,21 @@ if __name__ == "__main__":
     # 解析命令行参数并执行
     args = parse_args()
     
-    if args.domain_id == '--all':
+    if args.domain_id == 'all':
         print(f"评测所有领域：interview_count={args.interview_count}, api_type={args.api_type}, 起始领域ID={args.start_domain_id}")
         if args.use_async:
             print(f"异步模式已启用，并发请求数: {args.concurrent_requests}")
         if args.concurrent_interviewees > 1:
             print(f"多受访者并行模式已启用，并行受访者数: {args.concurrent_interviewees}")
-        run_all_domains(api_type=args.api_type, interview_count=args.interview_count,
-                       use_async=args.use_async, concurrent_requests=args.concurrent_requests,
-                       concurrent_interviewees=args.concurrent_interviewees,
-                       start_domain_id=args.start_domain_id)
+        run_all_domains(
+            api_type=args.api_type, 
+            interview_count=args.interview_count,
+            use_async=args.use_async, 
+            concurrent_requests=args.concurrent_requests,
+            concurrent_interviewees=args.concurrent_interviewees,
+            start_domain_id=args.start_domain_id,
+            model_name=args.model
+        )
     else:
         try:
             domain_id = int(args.domain_id)
@@ -1295,8 +1381,9 @@ if __name__ == "__main__":
                 api_type=args.api_type,
                 use_async=args.use_async,
                 concurrent_requests=args.concurrent_requests,
-                concurrent_interviewees=args.concurrent_interviewees
+                concurrent_interviewees=args.concurrent_interviewees,
+                model_name=args.model
             )
         except ValueError:
-            print(f"错误：domain_id必须是整数(1-11)或'--all'")
+            print(f"错误：domain_id必须是整数(1-11)或'all'")
             sys.exit(1)

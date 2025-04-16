@@ -8,9 +8,24 @@ import asyncio
 import uuid
 from typing import Dict, List, Any, Union, Optional
 import time
+import multiprocessing
 
-# 添加项目根目录到系统路径
-sys.path.append('../..')
+# 设置多进程启动方法为spawn，以解决CUDA初始化问题
+# 这是必须的，因为vLLM使用CUDA，在fork的子进程中无法重新初始化CUDA
+if multiprocessing.get_start_method(allow_none=True) != 'spawn':
+    try:
+        multiprocessing.set_start_method('spawn', force=True)
+    except RuntimeError:
+        # 可能已经设置了启动方法，设置环境变量影响vLLM内部行为
+        pass
+
+# 设置vLLM多进程方法环境变量
+os.environ["VLLM_WORKER_MULTIPROC_METHOD"] = "spawn"
+
+# 添加项目根目录到系统路径，使用更精确的路径
+current_dir = os.path.dirname(os.path.abspath(__file__))
+project_root = os.path.dirname(os.path.dirname(current_dir))
+sys.path.insert(0, project_root)
 
 # 导入配置
 try:
@@ -78,7 +93,7 @@ class LLMAPIClient:
                 print(f"正在初始化vLLM引擎，模型: {self.model}...")
                 engine_args = AsyncEngineArgs(
                     model=self.model,
-                    tensor_parallel_size=2,
+                    tensor_parallel_size=4,
                     dtype="float16",  # 使用标准float16替代bfloat16以提高兼容性
                     enforce_eager=True,  # 使用eager模式避免编译错误
                     trust_remote_code=True,  # 必须启用以支持Qwen模型
