@@ -1292,7 +1292,7 @@ def parse_args():
 
 """
 python /inspire/hdd/ws-f4d69b29-e0a5-44e6-bd92-acf4de9990f0/public-project/wangjia-240108610168/social_benchmark/evaluation/run_evaluation.py \
-  --domain_id all \
+  --domain_id 1 \
   --interview_count 20 \
   --api_type vllm \
   --use_async \
