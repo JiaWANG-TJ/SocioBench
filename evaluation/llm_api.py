@@ -94,17 +94,19 @@ class LLMAPIClient:
                 engine_args = AsyncEngineArgs(
                     model=self.model,
                     tensor_parallel_size=4,
-                    dtype="float16",  # 使用标准float16替代bfloat16以提高兼容性
-                    enforce_eager=True,  # 使用eager模式避免编译错误
+                    dtype="bfloat16",  # 
+                    enforce_eager=True,  # 关闭 --enforce-eager(设置为 false),显存占用会增大，但推理速度会更快
                     trust_remote_code=True,  # 必须启用以支持Qwen模型
-                    gpu_memory_utilization=0.95,
+                    gpu_memory_utilization=0.98,
                     max_model_len=10240,
                     enable_chunked_prefill=True,
-                    max_num_seqs=1024,
-                    max_num_batched_tokens=4096,
+                    max_num_seqs=2048,
+                    max_num_batched_tokens=8192,
                     enable_prefix_caching=True,
-                    disable_custom_all_reduce=True,  # 禁用自定义all-reduce以避免分布式通信问题
-                    distributed_executor_backend="mp",  # 强制使用多进程后端
+                    disable_custom_all_reduce=True,  # 禁用自定义all-reduce以避免分布式通信问题，没用？
+                    distributed_executor_backend="mp",  # 强制使用多进程后端，没用？
+                    use_v2_block_manager=True,
+                    
                 )
                 
                 # 创建AsyncLLMEngine

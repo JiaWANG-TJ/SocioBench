@@ -17,7 +17,7 @@ class Evaluator:
         初始化评测类
         
         Args:
-            domain_name: 领域名称
+            domain_name: 领域名称 
             save_dir: 结果保存目录，默认为None
         """
         self.domain_name = domain_name
