@@ -7,6 +7,7 @@ from typing import Dict, List, Any, Union, Optional
 import pandas as pd
 from datetime import datetime
 import re
+from sklearn.metrics import f1_score
 
 class Evaluator:
     """评测类，计算LLM回答与真实答案的匹配度"""
@@ -27,6 +28,8 @@ class Evaluator:
             "correct_count": 0,
             "total_count": 0,
             "accuracy": 0.0,
+            "macro_f1": 0.0,
+            "micro_f1": 0.0,
             "details": []
         }
         
@@ -113,6 +116,62 @@ class Evaluator:
             
         return self.results["accuracy"]
     
+    def calculate_f1_scores(self) -> Dict[str, float]:
+        """
+        计算F1分数（Macro-F1和Micro-F1）
+        
+        Returns:
+            包含macro_f1和micro_f1的字典
+        """
+        # 提取真实答案和预测答案
+        y_true = []
+        y_pred = []
+        
+        for detail in self.results["details"]:
+            true_answer = detail["true_answer"]
+            llm_answer = detail["llm_answer"]
+            
+            # 检查是否为无效答案，如果是则跳过
+            from social_benchmark.evaluation.run_evaluation import is_invalid_answer
+            if is_invalid_answer(true_answer):
+                continue
+                
+            # 如果有效答案，添加到列表
+            if true_answer and llm_answer:
+                # 确保将所有答案转换为字符串类型，防止类型不匹配
+                y_true.append(str(true_answer))
+                y_pred.append(str(llm_answer))
+        
+        # 如果没有有效答案对，返回0
+        if not y_true or not y_pred:
+            self.results["macro_f1"] = 0.0
+            self.results["micro_f1"] = 0.0
+            return {"macro_f1": 0.0, "micro_f1": 0.0}
+        
+        # 构建标签映射（将字符串标签转换为数字）
+        # 确保所有标签都是字符串类型，防止排序时的类型比较错误
+        unique_labels = sorted([str(label) for label in set(y_true + y_pred)])
+        label_to_id = {label: idx for idx, label in enumerate(unique_labels)}
+        
+        # 转换标签为数字
+        y_true_ids = [label_to_id[str(label)] for label in y_true]
+        y_pred_ids = [label_to_id[str(label)] for label in y_pred]
+        
+        # 计算F1分数
+        try:
+            macro_f1 = f1_score(y_true_ids, y_pred_ids, average="macro", zero_division=0)
+            micro_f1 = f1_score(y_true_ids, y_pred_ids, average="micro", zero_division=0)
+        except Exception as e:
+            print(f"计算F1分数时出错: {str(e)}")
+            macro_f1 = 0.0
+            micro_f1 = 0.0
+        
+        # 更新结果
+        self.results["macro_f1"] = macro_f1
+        self.results["micro_f1"] = micro_f1
+        
+        return {"macro_f1": macro_f1, "micro_f1": micro_f1}
+    
     def save_results(self, model_name: str = "unknown", domain_stats: Dict[str, int] = None) -> str:
         """
         保存评测结果
@@ -126,6 +185,9 @@ class Evaluator:
         """
         # 计算准确率
         accuracy = self.calculate_accuracy()
+        
+        # 计算F1分数
+        self.calculate_f1_scores()
         
         # 创建时间戳作为文件名的一部分
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
@@ -176,35 +238,62 @@ class Evaluator:
         
         return filepath
     
-    def print_summary(self):
-        """打印评测摘要"""
-        accuracy = self.calculate_accuracy()
+    def print_summary(self, stats: Dict[str, Any] = None):
+        """
+        打印评测摘要
         
-        # 计算国家特定问题的统计
-        country_specific_total = 0
-        country_specific_correct = 0
+        Args:
+            stats: 可选的外部统计信息，默认为None
         
-        for detail in self.results["details"]:
-            if detail.get("is_country_specific", False):
-                country_specific_total += 1
-                if detail["correct"]:
-                    country_specific_correct += 1
-        
-        # 国家特定问题准确率
-        country_specific_accuracy = 0.0
-        if country_specific_total > 0:
-            country_specific_accuracy = country_specific_correct / country_specific_total
-        
-        print("\n" + "="*50)
-        print(f"领域: {self.domain_name}")
-        print(f"总题数: {self.results['total_count']}")
-        print(f"正确数: {self.results['correct_count']}")
-        print(f"准确率: {accuracy:.2%}")
-        
-        print("\n国家特定问题统计:")
-        print(f"总题数: {country_specific_total}")
-        print(f"正确数: {country_specific_correct}")
-        print(f"准确率: {country_specific_accuracy:.2%}")
-        print("="*50)
-        
-        return accuracy
+        Returns:
+            准确率
+        """
+        if stats is None:
+            # 计算准确率
+            accuracy = self.calculate_accuracy()
+            
+            # 计算F1分数
+            f1_scores = self.calculate_f1_scores()
+            
+            # 计算国家特定问题的统计
+            country_specific_total = 0
+            country_specific_correct = 0
+            
+            for detail in self.results["details"]:
+                if detail.get("is_country_specific", False):
+                    country_specific_total += 1
+                    if detail["correct"]:
+                        country_specific_correct += 1
+            
+            # 国家特定问题准确率
+            country_specific_accuracy = 0.0
+            if country_specific_total > 0:
+                country_specific_accuracy = country_specific_correct / country_specific_total
+            
+            print("\n" + "="*50)
+            print(f"领域: {self.domain_name}")
+            print(f"总题数: {self.results['total_count']}")
+            print(f"正确数: {self.results['correct_count']}")
+            print(f"准确率: {accuracy:.2%}")
+            print(f"宏观F1: {f1_scores['macro_f1']:.4f}")
+            print(f"微观F1: {f1_scores['micro_f1']:.4f}")
+            
+            print("\n国家特定问题统计:")
+            print(f"总题数: {country_specific_total}")
+            print(f"正确数: {country_specific_correct}")
+            print(f"准确率: {country_specific_accuracy:.2%}")
+            print("="*50)
+            
+            return accuracy
+        else:
+            # 使用提供的外部统计信息
+            print("\n" + "="*50)
+            print(f"领域: {self.domain_name}")
+            print(f"总题数: {stats.get('total_count', 0)}")
+            print(f"正确数: {stats.get('correct_count', 0)}")
+            print(f"准确率: {stats.get('accuracy', 0):.2%}")
+            print(f"宏观F1: {stats.get('macro_f1', 0):.4f}")
+            print(f"微观F1: {stats.get('micro_f1', 0):.4f}")
+            print("="*50)
+            
+            return stats.get('accuracy', 0)
