@@ -9,6 +9,8 @@ import uuid
 from typing import Dict, List, Any, Union, Optional
 import time
 import multiprocessing
+import logging
+
 
 # 设置多进程启动方法为spawn，以解决CUDA初始化问题
 # 这是必须的，因为vLLM使用CUDA，在fork的子进程中无法重新初始化CUDA
@@ -19,8 +21,15 @@ if multiprocessing.get_start_method(allow_none=True) != 'spawn':
         # 可能已经设置了启动方法，设置环境变量影响vLLM内部行为
         pass
 
+# 设置CUDA架构列表，用于优化编译
+os.environ["TORCH_CUDA_ARCH_LIST"] = "8.9+PTX"
+
 # 设置vLLM多进程方法环境变量
 os.environ["VLLM_WORKER_MULTIPROC_METHOD"] = "spawn"
+
+# 设置线程数环境变量，避免Torch线程争用警告
+os.environ['OMP_NUM_THREADS'] = '8'
+os.environ['MKL_NUM_THREADS'] = '8'
 
 # 添加项目根目录到系统路径，使用更精确的路径
 current_dir = os.path.dirname(os.path.abspath(__file__))
@@ -80,7 +89,11 @@ class LLMAPIClient:
             )
         else:  # api_type == "vllm"
             # 使用vLLM的AsyncLLMEngine 模型路径
-            self.model = "/inspire/hdd/ws-f4d69b29-e0a5-44e6-bd92-acf4de9990f0/public-project/wangjia-240108610168/model_input/Qwen2.5-32B-Instruct"
+            base_model_path = "/inspire/hdd/ws-f4d69b29-e0a5-44e6-bd92-acf4de9990f0/public-project/wangjia-240108610168/model_input"
+            if model:
+                self.model = f"{base_model_path}/{model}"
+            else:
+                self.model = f"{base_model_path}/Qwen2.5-32B-Instruct"
             
             try:
                 # 尝试直接使用AsyncLLMEngine
@@ -92,28 +105,43 @@ class LLMAPIClient:
                 # 创建AsyncEngineArgs，使用符合文档的参数
                 print(f"正在初始化vLLM引擎，模型: {self.model}...")
                 engine_args = AsyncEngineArgs(
-                    model=self.model,
-                    tensor_parallel_size=4,
-                    dtype="bfloat16",  # 
-                    enforce_eager=True,  # 关闭 --enforce-eager(设置为 false),显存占用会增大，但推理速度会更快
-                    trust_remote_code=True,  # 必须启用以支持Qwen模型
-                    gpu_memory_utilization=0.98,
-                    max_model_len=10240,
-                    enable_chunked_prefill=True,
-                    max_num_seqs=2048,
-                    max_num_batched_tokens=8192,
-                    enable_prefix_caching=True,
-                    disable_custom_all_reduce=True,  # 禁用自定义all-reduce以避免分布式通信问题，没用？
-                    distributed_executor_backend="mp",  # 强制使用多进程后端，没用？
-                    use_v2_block_manager=True,
-                    
+                    # ── 模型及代码信任 ─────────────────────────
+                    model=self.model,                           # 模型路径或名称
+                    trust_remote_code=True,                     # 信任模型自定义代码
+                    # ── 并行配置 ───────────────────────────────
+                    tensor_parallel_size=4,                     # 张量并行，修改
+                    pipeline_parallel_size=1,                   # 多节点部署才设置，单节点设置为1
+                    data_parallel_size=1,
+                    # distributed_executor_backend="ray",         # 强制使用 Ray 后端
+                    # ── 精度与 KV‑cache 类型 ────────────────────
+                    # dtype="float16",                            # 
+                    # kv_cache_dtype="fp8",                       # 
+                    # ── 显存与序列长度 ─────────────────────────
+                    gpu_memory_utilization=0.98,                # 
+                    max_model_len=10240,                        #
+                    # ── 预填充与前缀缓存 ────────────────────────
+                    enable_chunked_prefill=True,                #
+                    enable_prefix_caching=True,                 #
+                    # ── 批次与吞吐控制 ─────────────────────────
+                    max_num_seqs=1024,                          #
+                    max_num_batched_tokens=5120,                #
+                    # ── 执行模式控制 ────────────────────────────
+                    enforce_eager=True,                         # 关闭 --enforce-eager(设置为 false),显存占用会增大，但推理速度会更快
+                    disable_custom_all_reduce=True,             # 禁用自定义all-reduce以避免分布式通信问题，没用？
+                    use_v2_block_manager=True,                  #
+                    disable_async_output_proc=False
+                    # ── 分词与加载并发 ──────────────────────────
+                    # tokenizer_pool_size=10,                     #导致ray错误
+                    # max_parallel_loading_workers=4,             #导致ray错误
                 )
+
                 
                 # 创建AsyncLLMEngine
                 self.engine = AsyncLLMEngine.from_engine_args(engine_args)
                 self.use_openai_api = False
                 
                 print(f"初始化vLLM AsyncLLMEngine成功: 模型: {self.model}")
+                
             except Exception as e:
                 # 如果初始化失败，回退到使用OpenAI API格式的vLLM服务
                 print(f"初始化vLLM引擎失败: {str(e)}")
@@ -132,6 +160,12 @@ class LLMAPIClient:
                 )
         
         print(f"初始化LLM API客户端: {api_type}, 模型: {self.model}")
+    
+    def _warm_up_model(self, num_warmup: int = 3):
+        """
+        已删除模型预热方法
+        """
+        pass
     
     def close(self):
         """关闭并清理资源"""

@@ -26,6 +26,9 @@ if multiprocessing.get_start_method(allow_none=True) != 'spawn':
         # 可能已经设置了启动方法
         pass
 
+# 设置CUDA架构列表，用于优化编译
+os.environ["TORCH_CUDA_ARCH_LIST"] = "8.9+PTX"
+
 # 设置vLLM多进程方法环境变量
 os.environ["VLLM_WORKER_MULTIPROC_METHOD"] = "spawn"
 
@@ -290,7 +293,8 @@ def load_qa_file(domain_name: str) -> List[Dict[str, Any]]:
 
 def load_ground_truth(domain_name: str) -> List[Dict[str, Any]]:
     """加载真实答案数据"""
-    file_path = os.path.join(os.path.dirname(__file__), "..", "Dataset_all", "A_GroundTruth", f"issp_answer_{domain_name.lower()}.json")
+    file_path = os.path.join(os.path.dirname(__file__), "..", "Dataset_all", "A_GroundTruth_sampling5000", f"issp_answer_{domain_name.lower()}.json")
+    # file_path = os.path.join(os.path.dirname(__file__), "..", "Dataset_all", "A_GroundTruth", f"issp_answer_{domain_name.lower()}.json")
     with open(file_path, 'r', encoding='utf-8') as f:
         ground_truth = json.load(f)
     print(f"成功加载真实答案文件: {file_path}")
@@ -575,7 +579,8 @@ def run_evaluation(domain_id: int, interview_count: Union[int, str],
             
             # 创建问题进度条
             if verbose_output and len(valid_questions) > 0:
-                question_pbar = tqdm(total=len(valid_questions), desc="处理问题", leave=False)
+                question_pbar = tqdm(total=len(valid_questions), desc="处理问题", leave=False, 
+                                    position=0, dynamic_ncols=True)
             else:
                 question_pbar = None
                 
@@ -704,7 +709,8 @@ def run_evaluation(domain_id: int, interview_count: Union[int, str],
                 print(f"启动多受访者并行处理模式，即将处理 {len(interviewees)} 名受访者...")
                 
                 # 创建总进度条
-                with tqdm(total=len(interviewees), desc="处理受访者", unit="人") as pbar:
+                with tqdm(total=len(interviewees), desc="处理受访者", unit="人", 
+                         position=0, dynamic_ncols=True) as pbar:
                     # 分批处理受访者
                     batch_count = (len(interviewees) + concurrent_interviewees - 1) // concurrent_interviewees
                     print(f"将分 {batch_count} 批次处理，每批次最多 {concurrent_interviewees} 名受访者")
@@ -769,7 +775,8 @@ def run_evaluation(domain_id: int, interview_count: Union[int, str],
                 asyncio.set_event_loop(asyncio.new_event_loop())
         else:
             # 使用传统循环处理
-            with tqdm(total=len(interviewees), desc="处理受访者", unit="人") as pbar:
+            with tqdm(total=len(interviewees), desc="处理受访者", unit="人", 
+                     position=0, dynamic_ncols=True) as pbar:
                 for idx, interviewee in enumerate(interviewees):
                     try:
                         # 如果开启了异步模式，单个受访者内的问题还是会异步处理
@@ -992,6 +999,8 @@ def run_all_domains(api_type: str = "config", interview_count: Union[int, str] =
             command.extend(["--concurrent_requests", str(concurrent_requests)])
             command.extend(["--concurrent_interviewees", str(concurrent_interviewees)])
             
+            # 添加模型参数
+            command.extend(["--model", model_name])
             # 打印将要执行的命令
             print(f"执行子进程: {' '.join(command)}")
             
@@ -1244,9 +1253,9 @@ def generate_summary_report(domain_results: Dict[str, Dict[str, Any]], model_nam
             "name": domain_name,
             "total_questions": domain_data["总题数"],
             "correct_answers": domain_data["正确数"],
-            "accuracy": domain_data["准确率"],
-            "macro_f1": domain_data["宏观F1"],
-            "micro_f1": domain_data["微观F1"]
+            "accuracy": domain_data["accuracy"],
+            "macro_f1": domain_data["macro_f1"],
+            "micro_f1": domain_data["micro_f1"]
         }
     
     # 保存汇总JSON
@@ -1289,19 +1298,47 @@ def parse_args():
     parser.add_argument('--model', type=str, default='Qwen2.5-32B-Instruct', help='使用的模型名称或路径（仅在vllm模式下有效）')
     
     return parser.parse_args()
+"""
+export TORCH_CUDA_ARCH_LIST="9.0+PTX;8.7;8.6;8.0;7.5"
+export MAX_JOBS=8
+# 卸载旧版，防止冲突
+pip uninstall -y flashinfer-python flashinfer
+
+# 删除构建目录和生成文件
+rm -rf build/ flashinfer.egg-info/ flashinfer/csrc/generated/
+
+cd /inspire/hdd/ws-f4d69b29-e0a5-44e6-bd92-acf4de9990f0/public-project/wangjia-240108610168/flashinfer
+pip install -e . -v
+
+python - << 'EOF'
+import torch, flashinfer
+print("FlashInfer 版本:", flashinfer.__version__)
+# 简单的 single_decode_with_kv_cache 测试
+k = torch.randn(2048, 32, 128).half().cuda()
+v = torch.randn(2048, 32, 128).half().cuda()
+q = torch.randn(32, 128).half().cuda()
+out = flashinfer.single_decode_with_kv_cache(q, k, v)
+print("FlashInfer decode OK:", out.shape)
+EOF
+输出 FlashInfer decode OK: torch.Size([32, 128])，即编译成功。
+"""
+
+
 
 """
 python /inspire/hdd/ws-f4d69b29-e0a5-44e6-bd92-acf4de9990f0/public-project/wangjia-240108610168/social_benchmark/evaluation/run_evaluation.py \
   --domain_id 1 \
-  --interview_count 20 \
+  --interview_count 50 \
   --api_type vllm \
   --use_async \
-  --concurrent_requests 100 \
-  --concurrent_interviewees 50 \
+  --concurrent_requests 80 \
+  --concurrent_interviewees 20 \
   --start_domain_id 1 \
-  --model Qwen2.5-32B-Instruct
+  --model Qwen2.5-14B-Instruct
 """
-
+"""
+sudo lsof /dev/nvidia* | awk 'NR>1 {print $2}' | sort -u | xargs sudo kill -9
+"""
 
 if __name__ == "__main__":
     # 检查是否是子进程，并进行特殊处理
