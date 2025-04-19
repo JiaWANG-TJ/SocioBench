@@ -822,6 +822,12 @@ def run_evaluation(domain_id: int, interview_count: Union[int, str],
         
         # 保存结果
         model_name = llm_client.model.split("/")[-1] if "/" in llm_client.model else llm_client.model
+        # 处理国家特定问题统计数据，确保不会发生除以零错误
+        if total_country_specific_questions == 0 and evaluated_country_specific_questions > 0:
+            print(f"警告: 国家特定问题统计不一致 - 总数为0但评测数为{evaluated_country_specific_questions}")
+            # 修正总国家特定问题数，避免除以零错误
+            total_country_specific_questions = evaluated_country_specific_questions
+        
         # 保存一次结果，获取文件路径
         result_file_path = evaluator.save_results(model_name, domain_stats={
             "total_questions": evaluated_country_specific_questions + excluded_country_specific_questions + invalid_answer_questions,
@@ -918,6 +924,9 @@ def run_all_domains(api_type: str = "config", interview_count: Union[int, str] =
     # 存储各领域结果
     domain_results = {}
     
+    # 保存原始model_name，确保不会丢失
+    original_model_name = model_name
+
     # 模型目录结构初始化
     results_dir = os.path.join(os.path.dirname(__file__), "results")
     if not os.path.exists(results_dir):
@@ -999,8 +1008,8 @@ def run_all_domains(api_type: str = "config", interview_count: Union[int, str] =
             command.extend(["--concurrent_requests", str(concurrent_requests)])
             command.extend(["--concurrent_interviewees", str(concurrent_interviewees)])
             
-            # 添加模型参数
-            command.extend(["--model", model_name])
+            # 添加模型参数，始终使用原始模型名称
+            command.extend(["--model", original_model_name])
             # 打印将要执行的命令
             print(f"执行子进程: {' '.join(command)}")
             
@@ -1057,38 +1066,24 @@ def run_all_domains(api_type: str = "config", interview_count: Union[int, str] =
             time.sleep(15)
             
             # 加载最新的评测结果
-            # 查找模型名称（先尝试获取第一个已处理领域的模型名称）
-            model_name = None
-            if domain_results:
-                model_name = next(iter(domain_results.values())).get("model")
-            
-            # 如果没有获取到模型名称，从结果目录结构中查找
-            if not model_name:
-                # 查找results目录下的所有子目录，这些应该是以模型名命名的
-                model_dirs = [d for d in os.listdir(results_dir) if os.path.isdir(os.path.join(results_dir, d))]
-                if model_dirs:
-                    # 取第一个模型目录作为当前模型
-                    model_name = model_dirs[0]
-            
-            # 现在从模型目录中查找当前领域的结果文件
-            if model_name:
-                model_dir = os.path.join(results_dir, model_name)
-                if os.path.exists(model_dir):
-                    domain_files = [f for f in os.listdir(model_dir) 
-                                    if f.startswith(domain_name) and f.endswith('.json')]
-                    if domain_files:
-                        # 按修改时间排序，获取最新的结果文件
-                        latest_file = max(domain_files, key=lambda x: os.path.getmtime(os.path.join(model_dir, x)))
-                        with open(os.path.join(model_dir, latest_file), 'r', encoding='utf-8') as f:
-                            domain_result = json.load(f)
-                            domain_results[domain_name] = domain_result
+            # 使用模型目录中查找当前领域的结果文件
+            model_dir = os.path.join(results_dir, original_model_name)
+            if os.path.exists(model_dir):
+                domain_files = [f for f in os.listdir(model_dir) 
+                                if f.startswith(domain_name) and f.endswith('.json')]
+                if domain_files:
+                    # 按修改时间排序，获取最新的结果文件
+                    latest_file = max(domain_files, key=lambda x: os.path.getmtime(os.path.join(model_dir, x)))
+                    with open(os.path.join(model_dir, latest_file), 'r', encoding='utf-8') as f:
+                        domain_result = json.load(f)
+                        domain_results[domain_name] = domain_result
         except Exception as e:
             print(f"评测领域 {domain_name} (ID: {domain_id}) 时出错: {str(e)}")
             print(f"跳过当前领域，继续评测其他领域。")
     
     # 生成汇总报告
     if domain_results:
-        generate_summary_report(domain_results, model_name=model_name)
+        generate_summary_report(domain_results, model_name=original_model_name)
     else:
         print("没有找到有效的领域评测结果，无法生成汇总报告。")
 
@@ -1173,8 +1168,8 @@ def generate_summary_report(domain_results: Dict[str, Dict[str, Any]], model_nam
             "正确数": correct,
             "准确率": accuracy,
             "准确率(%)": f"{accuracy:.2%}",
-            "宏观F1": macro_f1,
-            "微观F1": micro_f1,
+            "macro_F1": macro_f1,
+            "micro_F1": micro_f1,
             "无效答案题数": invalid_questions,
             "国家特定问题总数": country_specific,
             "评估的国家特定问题": country_specific_eval
@@ -1190,14 +1185,19 @@ def generate_summary_report(domain_results: Dict[str, Dict[str, Any]], model_nam
     print(f"  评估的领域数: {len(loaded_results)}")
     print(f"  总题数: {total_questions}")
     print(f"  正确数: {total_correct}")
-    print(f"  总体准确率: {overall_accuracy:.2%}")
+    print(f"  总体准确率: {overall_accuracy:.4f}")
     print(f"  总体宏观F1: {overall_macro_f1:.4f}")
     print(f"  总体微观F1: {overall_micro_f1:.4f}")
     print(f"  无效答案题数: {total_invalid_questions}")
     print(f"  国家特定问题总数: {total_country_specific}")
     print(f"  评估的国家特定问题: {total_country_specific_evaluated}")
+    # 解决除以零的错误
+    country_specific_evaluation_ratio = 0.0
     if total_country_specific > 0:
-        print(f"  国家特定问题评估比例: {total_country_specific_evaluated / total_country_specific:.2%}")
+        country_specific_evaluation_ratio = total_country_specific_evaluated / total_country_specific
+        print(f"  国家特定问题评估比例: {country_specific_evaluation_ratio:.4f}")
+    else:
+        print(f"  国家特定问题评估比例: 0.0000 (无国家特定问题)")
     
     # 创建DataFrame并输出表格
     df = pd.DataFrame(summary_data)
@@ -1299,6 +1299,10 @@ def parse_args():
     
     return parser.parse_args()
 """
+export TORCH_CUDA_ARCH_LIST="8.9+PTX"  #环境变量 设置没用？os.environ
+
+
+
 export TORCH_CUDA_ARCH_LIST="9.0+PTX;8.7;8.6;8.0;7.5"
 export MAX_JOBS=8
 # 卸载旧版，防止冲突
@@ -1327,19 +1331,18 @@ EOF
 
 """
 python /inspire/hdd/ws-f4d69b29-e0a5-44e6-bd92-acf4de9990f0/public-project/wangjia-240108610168/social_benchmark/evaluation/run_evaluation.py \
-  --domain_id 1 \
-  --interview_count 50 \
+  --domain_id all \
+  --interview_count all \
   --api_type vllm \
   --use_async \
-  --concurrent_requests 80 \
-  --concurrent_interviewees 20 \
-  --start_domain_id 1 \
-  --model Qwen2.5-14B-Instruct
+  --concurrent_requests 1000 \
+  --concurrent_interviewees 200 \
+  --start_domain_id 2 \
+  --model Qwen2.5-32B-Instruct
 """
 """
 sudo lsof /dev/nvidia* | awk 'NR>1 {print $2}' | sort -u | xargs sudo kill -9
 """
-
 if __name__ == "__main__":
     # 检查是否是子进程，并进行特殊处理
     if os.environ.get("VLLM_NEW_PROCESS") == "1":

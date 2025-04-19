@@ -21,15 +21,12 @@ if multiprocessing.get_start_method(allow_none=True) != 'spawn':
         # 可能已经设置了启动方法，设置环境变量影响vLLM内部行为
         pass
 
-# 设置CUDA架构列表，用于优化编译
-os.environ["TORCH_CUDA_ARCH_LIST"] = "8.9+PTX"
-
 # 设置vLLM多进程方法环境变量
 os.environ["VLLM_WORKER_MULTIPROC_METHOD"] = "spawn"
 
 # 设置线程数环境变量，避免Torch线程争用警告
-os.environ['OMP_NUM_THREADS'] = '8'
-os.environ['MKL_NUM_THREADS'] = '8'
+os.environ['OMP_NUM_THREADS'] = '12'
+os.environ['MKL_NUM_THREADS'] = '12'
 
 # 添加项目根目录到系统路径，使用更精确的路径
 current_dir = os.path.dirname(os.path.abspath(__file__))
@@ -118,16 +115,16 @@ class LLMAPIClient:
                     # kv_cache_dtype="fp8",                       # 
                     # ── 显存与序列长度 ─────────────────────────
                     gpu_memory_utilization=0.98,                # 
-                    max_model_len=10240,                        #
+                    max_model_len=20480,                        #
                     # ── 预填充与前缀缓存 ────────────────────────
                     enable_chunked_prefill=True,                #
                     enable_prefix_caching=True,                 #
                     # ── 批次与吞吐控制 ─────────────────────────
-                    max_num_seqs=1024,                          #
-                    max_num_batched_tokens=5120,                #
+                    max_num_seqs=4096,                          #
+                    max_num_batched_tokens=10240,                #
                     # ── 执行模式控制 ────────────────────────────
                     enforce_eager=True,                         # 关闭 --enforce-eager(设置为 false),显存占用会增大，但推理速度会更快
-                    disable_custom_all_reduce=True,             # 禁用自定义all-reduce以避免分布式通信问题，没用？
+                    disable_custom_all_reduce=False,             # 禁用自定义all-reduce以避免分布式通信问题，没用？
                     use_v2_block_manager=True,                  #
                     disable_async_output_proc=False
                     # ── 分词与加载并发 ──────────────────────────
