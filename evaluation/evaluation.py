@@ -274,14 +274,14 @@ class Evaluator:
             print(f"领域: {self.domain_name}")
             print(f"总题数: {self.results['total_count']}")
             print(f"正确数: {self.results['correct_count']}")
-            print(f"准确率: {accuracy:.2%}")
+            print(f"准确率: {accuracy:.4f}")
             print(f"宏观F1: {f1_scores['macro_f1']:.4f}")
             print(f"微观F1: {f1_scores['micro_f1']:.4f}")
             
             print("\n国家特定问题统计:")
             print(f"总题数: {country_specific_total}")
             print(f"正确数: {country_specific_correct}")
-            print(f"准确率: {country_specific_accuracy:.2%}")
+            print(f"准确率: {country_specific_accuracy:.4f}")
             print("="*50)
             
             return accuracy
@@ -291,7 +291,7 @@ class Evaluator:
             print(f"领域: {self.domain_name}")
             print(f"总题数: {stats.get('total_count', 0)}")
             print(f"正确数: {stats.get('correct_count', 0)}")
-            print(f"准确率: {stats.get('accuracy', 0):.2%}")
+            print(f"准确率: {stats.get('accuracy', 0):.4f}")
             print(f"宏观F1: {stats.get('macro_f1', 0):.4f}")
             print(f"微观F1: {stats.get('micro_f1', 0):.4f}")
             print("="*50)
