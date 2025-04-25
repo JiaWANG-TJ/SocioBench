@@ -34,7 +34,7 @@
         "36": "AU-Australia",
         "40": "AT-Austria",
         "156": "CN-China",
-        "158": "TW-Taiwan",
+        "158": "TW-Taiwan, China",
         "191": "HR-Croatia",
         "203": "CZ-Czech Republic",
         "208": "DK-Denmark",
@@ -72,7 +72,7 @@
         "36": "AU-Australia",
         "40": "AT-Austria",
         "156": "CN-China",
-        "158": "TW-Taiwan",
+        "158": "TW-Taiwan, China",
         "191": "HR-Croatia",
         "203": "CZ-Czech Republic",
         "208": "DK-Denmark",
@@ -136,7 +136,7 @@
         "SK": "Slovakia",
         "SR": "Suriname",
         "TH": "Thailand",
-        "TW": "Taiwan",
+        "TW": "Taiwan, China",
         "US": "United Stated",
         "ZA": "South Africa"
       },
@@ -2483,7 +2483,7 @@
   },
   {
     "domain": "TW_DEGR",
-    "meaning": "Taiwan: Country specific highest completed degree of education",
+    "meaning": "Taiwan, China: Country specific highest completed degree of education",
     "question": "What is your education level? Please refer to the level of education that you are currently in or the highest level of education that you have attained, regardless of whether you have graduated or not.",
     "content": {
       "0": "NAP, other countries",
@@ -4852,7 +4852,7 @@
   },
   {
     "domain": "TW_RELIG",
-    "meaning": "Country specific religious affiliation or denomination: Taiwan",
+    "meaning": "Country specific religious affiliation or denomination: Taiwan, China",
     "question": "Do you have any religious belief at present?",
     "content": {
       "0": "No religion",
@@ -5708,14 +5708,14 @@
     },
     {
       "domain": "TW_PRTY",
-      "meaning": "Country specific party voted for in last general election: Taiwan",
+      "meaning": "Country specific party voted for in last general election: Taiwan, China",
       "question": "In this presidential election on January 14th 2016 many people went to vote, while others, for various reasons, did not go to vote. Did you vote?",
       "content": {
         "0": "NAP (Code 0, 2, 7 in VOTE_LE)",
         "1": "Kuo Min Tang - KMT",
         "2": "Democratic Progressive Party - DPP",
         "3": "People First Party - PFP",
-        "4": "Taiwan Solidarity Union - TSU",
+        "4": "Taiwan, China Solidarity Union - TSU",
         "6": "New Party",
         "95": "Other party",
         "96": "Invalid ballot",
@@ -6000,7 +6000,7 @@
         "148": "Chad",
         "152": "Chile",
         "156": "China",
-        "158": "Taiwan, Province of China",
+        "158": "Taiwan, China, Province of China",
         "162": "Christmas Island",
         "166": "Cocos (Keeling) Islands",
         "170": "Colombia",
@@ -6277,7 +6277,7 @@
         "148": "Chad",
         "152": "Chile",
         "156": "China",
-        "158": "Taiwan, Province of China",
+        "158": "Taiwan, China, Province of China",
         "162": "Christmas Island",
         "166": "Cocos (Keeling) Islands",
         "170": "Colombia",
@@ -7238,7 +7238,7 @@
         "148": "People of Chad (TCD)",
         "152": "People of Chile (CHL)",
         "156": "People of China (CHN)",
-        "158": "People of Taiwan (TWN)",
+        "158": "People of Taiwan, China (TWN)",
         "162": "People of Christmas Island (CXR)",
         "166": "People of Cocos (Keeling) Islands (CCK)",
         "170": "People of Colombia (COL)",
@@ -7512,7 +7512,7 @@
         "148": "People of Chad (TCD)",
         "152": "People of Chile (CHL)",
         "156": "People of China (CHN)",
-        "158": "People of Taiwan (TWN)",
+        "158": "People of Taiwan, China (TWN)",
         "162": "People of Christmas Island (CXR)",
         "166": "People of Cocos (Keeling) Islands (CCK)",
         "170": "People of Colombia (COL)",
@@ -7897,12 +7897,12 @@
     },
     {
       "domain": "TW_ETHN1",
-      "meaning": "Country specific ethnic group 1: Taiwan",
-      "question": "What is your ethnic background? Fukienese of Taiwan/ Hakka of Taiwan/ Aborigine/ Mainlander (including Hong Kong, Macao, Kinmen, and Matsu)/ Other (Please specify)",
+      "meaning": "Country specific ethnic group 1: Taiwan, China",
+      "question": "What is your ethnic background? Fukienese of Taiwan, China/ Hakka of Taiwan, China/ Aborigine/ Mainlander (including Hong Kong, Macao, Kinmen, and Matsu)/ Other (Please specify)",
       "content": {
         "0": "NAP, other countries",
         "1": "Fukienese",
-        "2": "Hakka of Taiwan",
+        "2": "Hakka of Taiwan, China",
         "3": "Mainlander",
         "4": "Aborigine",
         "5": "South-East Asia",
@@ -7915,7 +7915,7 @@
     },
     {
       "domain": "TW_ETHN2",
-      "meaning": "Country specific ethnic group 2: Taiwan",
+      "meaning": "Country specific ethnic group 2: Taiwan, China",
       "question": "Not asked.",
       "content": {
         "0": "Not available; NAP, other countries"
@@ -11107,7 +11107,7 @@
   },
   {
     "domain": "TW_RINC",
-    "meaning": "Country specific personal income: Taiwan",
+    "meaning": "Country specific personal income: Taiwan, China",
     "question": "What is your average monthly income before taxes, including all sources of income (e.g., your earnings from work or part-time jobs, rewards, interest, bonuses or dividends, government subsidies, rent and other income, allowance from parents or children, pension, etc.)?",
     "content": {
       "0": "No income",
@@ -14050,7 +14050,7 @@
   },
   {
     "domain": "TW_INC",
-    "meaning": "Country specific household income: Taiwan",
+    "meaning": "Country specific household income: Taiwan, China",
     "question": "What is your average monthly household income before taxes, including all income of your family members who live in your residence (e.g., allowance from parents or children, government subsidies, interest, earnings from work or part-time jobs, etc.)?",
     "content": {
       "0": "No income",
@@ -14224,7 +14224,7 @@
       "148": "Chad",
       "152": "Chile",
       "156": "China",
-      "158": "Taiwan",
+      "158": "Taiwan, China",
       "162": "Christmas Island",
       "166": "Cocos (Keeling) Islands",
       "170": "Colombia",
@@ -14509,7 +14509,7 @@
       "148": "Chad",
       "152": "Chile",
       "156": "China",
-      "158": "Taiwan",
+      "158": "Taiwan, China",
       "162": "Christmas Island",
       "166": "Cocos (Keeling) Islands",
       "170": "Colombia",
@@ -15507,7 +15507,7 @@
   },
   {
     "domain": "TW_REG",
-    "meaning": "Country specific region: Taiwan",
+    "meaning": "Country specific region: Taiwan, China",
     "question": "Where do you live now? Province (Municipality): ____ County (City): ____ Township (Town, City, District): ____",
     "content": {
       "0": "NAP, other countries",

@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 
 import json
+import random
 from typing import Dict, List, Any, Union, Optional
 
 class PromptEngineering:
@@ -42,7 +43,7 @@ class PromptEngineering:
     
     def format_question_options(self, question: str, options: Dict[str, str]) -> tuple:
         """
-        格式化问题和选项
+        格式化问题和选项，并随机打乱选项顺序
         
         Args:
             question: 问题文本
@@ -54,9 +55,13 @@ class PromptEngineering:
         # 格式化问题
         formatted_question = question.strip()
         
-        # 格式化选项
+        # 将选项编号和选项文本组成元组列表，然后随机打乱
+        option_items = list(options.items())
+        random.shuffle(option_items)
+        
+        # 格式化打乱后的选项
         option_lines = []
-        for option_id, option_text in options.items():
+        for option_id, option_text in option_items:
             option_lines.append(f"{option_id}. {option_text}")
         
         formatted_options = "\n".join(option_lines)

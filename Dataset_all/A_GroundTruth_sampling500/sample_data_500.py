@@ -25,7 +25,7 @@ COUNTRY_MAPPING = {
             "IN": "India", "IS": "Iceland", "JP": "Japan", "KR": "Korea (South)",
             "LT": "Lithuania", "NL": "Netherlands", "NO": "Norway", "PH": "Philippines",
             "PL": "Poland", "RU": "Russia", "SE": "Sweden", "SI": "Slovenia",
-            "SK": "Slovakia", "TR": "Turkey", "TW": "Taiwan", "US": "United States of America",
+            "SK": "Slovakia", "TR": "Turkey", "TW": "Taiwan, China", "US": "United States of America",
             "VE": "Venezuela", "ZA": "South Africa"
         }
     },
@@ -38,7 +38,7 @@ COUNTRY_MAPPING = {
             "IS": "Iceland", "IT": "Italy", "JP": "Japan", "KR": "Korea (South)",
             "LT": "Lithuania", "NO": "Norway", "NZ": "New Zealand", "PH": "Philippines",
             "RU": "Russia", "SE": "Sweden", "SI": "Slovenia", "SK": "Slovakia",
-            "TH": "Thailand", "TW": "Taiwan", "US": "United Stated", "ZA": "South Africa"
+            "TH": "Thailand", "TW": "Taiwan, China", "US": "United Stated", "ZA": "South Africa"
         }
     },
     3: {
@@ -53,7 +53,7 @@ COUNTRY_MAPPING = {
             "LT": "Lithuania", "LV": "Latvia", "MX": "Mexico", "NL": "Netherlands",
             "NO": "Norway", "PH": "Philippines", "PL": "Poland", "PT": "Portugal",
             "RU": "Russia", "SE": "Sweden", "SI": "Slovenia", "SK": "Slovakia",
-            "TR": "Turkey", "TW": "Taiwan", "US": "United States of America",
+            "TR": "Turkey", "TW": "Taiwan, China", "US": "United States of America",
             "VE": "Venezuela", "ZA": "South Africa"
         }
     },
@@ -66,7 +66,7 @@ COUNTRY_MAPPING = {
             "IN": "India", "IS": "Iceland", "IT": "Italy", "JP": "Japan",
             "MX": "Mexico", "NL": "Netherlands", "NO": "Norway", "NZ": "New Zealand",
             "PH": "Philippines", "PL": "Poland", "RU": "Russia", "SI": "Slovenia",
-            "SK": "Slovakia", "SR": "Suriname", "TH": "Thailand", "TW": "Taiwan",
+            "SK": "Slovakia", "SR": "Suriname", "TH": "Thailand", "TW": "Taiwan, China",
             "US": "United Stated", "ZA": "South Africa"
         }
     },
@@ -83,7 +83,7 @@ COUNTRY_MAPPING = {
             "KR": "South Korea", "LT": "Lithuania", "LV": "Latvia", "MX": "Mexico",
             "NO": "Norway", "PH": "Philippines", "PT": "Portugal", "RU": "Russia",
             "SE": "Sweden", "SI": "Slovenia", "SK": "Slovakia", "TR": "Turkey",
-            "TW": "Taiwan", "US": "United States", "ZA": "South Africa"
+            "TW": "Taiwan, China", "US": "United States", "ZA": "South Africa"
         }
     },
     6: {
@@ -123,7 +123,7 @@ COUNTRY_MAPPING = {
             "SI": "Slovenia",
             "SK": "Slovakia",
             "TR": "Turkey",
-            "TW": "Taiwan",
+            "TW": "Taiwan, China",
             "US": "United States",
             "ZA": "South Africa"
         }
@@ -138,7 +138,7 @@ COUNTRY_MAPPING = {
             "IT": "Italy", "JP": "Japan", "KR": "Korea (South)", "LT": "Lithuania",
             "NO": "Norway", "NZ": "New Zealand", "PH": "Philippines", "RU": "Russia",
             "SE": "Sweden", "SI": "Slovenia", "SK": "Slovakia", "SR": "Suriname",
-            "TH": "Thailand", "TR": "Turkey", "TW": "Taiwan", "US": "United Stated",
+            "TH": "Thailand", "TR": "Turkey", "TW": "Taiwan, China", "US": "United Stated",
             "ZA": "South Africa"
         }
     },
@@ -152,7 +152,7 @@ COUNTRY_MAPPING = {
             "IS": "Iceland", "JP": "Japan", "KR": "Korea (South)", "LT": "Lithuania",
             "LV": "Latvia", "NO": "Norway", "NZ": "New Zealand", "PH": "Philippines",
             "RU": "Russia", "SE": "Sweden", "SI": "Slovenia", "SK": "Slovakia",
-            "SR": "Suriname", "TH": "Thailand", "TR": "Turkey", "TW": "Taiwan",
+            "SR": "Suriname", "TH": "Thailand", "TR": "Turkey", "TW": "Taiwan, China",
             "US": "United Stated", "VE": "Venezuela", "ZA": "South Africa"
         }
     },
@@ -165,7 +165,7 @@ COUNTRY_MAPPING = {
             "IL": "Israel", "IS": "Iceland", "IT": "Italy", "JP": "Japan",
             "LT": "Lithuania", "NO": "Norway", "NZ": "New Zealand", "PH": "Philippines",
             "RU": "Russia", "SE": "Sweden", "SI": "Slovenia", "SR": "Suriname",
-            "TH": "Thailand", "TW": "Taiwan", "US": "United Stated", "VE": "Venezuela",
+            "TH": "Thailand", "TW": "Taiwan, China", "US": "United Stated", "VE": "Venezuela",
             "ZA": "South Africa"
         }
     },
@@ -178,7 +178,7 @@ COUNTRY_MAPPING = {
             "HU": "Hungary", "IL": "Israel", "IN": "India", "IS": "Iceland",
             "JP": "Japan", "LT": "Lithuania", "MX": "Mexico", "NZ": "New Zealand",
             "PH": "Philippines", "RU": "Russia", "SE": "Sweden", "SI": "Slovenia",
-            "SK": "Slovakia", "SR": "Suriname", "TH": "Thailand", "TW": "Taiwan",
+            "SK": "Slovakia", "SR": "Suriname", "TH": "Thailand", "TW": "Taiwan, China",
             "US": "United Stated", "ZA": "South Africa"
         }
     },
@@ -193,7 +193,7 @@ COUNTRY_MAPPING = {
             "JP": "Japan", "LT": "Lithuania", "LV": "Latvia", "MX": "Mexico",
             "NO": "Norway", "NZ": "New Zealand", "PH": "Philippines", "PL": "Poland",
             "RU": "Russia", "SE": "Sweden", "SI": "Slovenia", "SK": "Slovakia",
-            "SR": "Suriname", "TW": "Taiwan", "US": "United Stated", "VE": "Venezuela",
+            "SR": "Suriname", "TW": "Taiwan, China", "US": "United Stated", "VE": "Venezuela",
             "ZA": "South Africa"
         }
     }

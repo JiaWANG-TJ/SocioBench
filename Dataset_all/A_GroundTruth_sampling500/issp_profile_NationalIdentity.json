@@ -31,7 +31,7 @@
       "meaning": "Country/Sample (see V4 for codes for whole nation states)",
       "question": "Country/ Sample (see V4 for codes for whole nation states).\nTo indicate the subsamples within the ISSP countries a code on the basis of ISO 3166 was constructed. For all countries without subsamples \nthe three digit ISO 3166 Code (as in V4) was used. \nFor those with subsamples a five digit numeric code is used. The first three-digits are based on the original ISO code (see V4) and indicate \nthe country. The following two-digit numeric appendices (01, 02, 03) indicate the subsamples.\nPT: The Portuguese ISSP 2013 module was fielded in two rounds, the main sample including 898 interviews and a complementary sample with \n103 interviews. The ISSP Methodological Committee approved the sample resulting from pooling the two rounds, which can still be separated \nusing V3 as a FLAG variable. (More information see note).",
       "content": {
-        "158": "TW-Taiwan",
+        "158": "TW-Taiwan, China",
         "191": "HR-Croatia",
         "203": "CZ-Czech Republic",
         "208": "DK-Denmark",
@@ -78,7 +78,7 @@
       "question": "ISO Code of the countries (three digit)\nAll countries are coded in accordance with the ISO 3166-1-alpha-2 country code.",
       "content": {
         "56": "BE-Belgium",
-        "158": "TW-Taiwan",
+        "158": "TW-Taiwan, China",
         "191": "HR-Croatia",
         "203": "CZ-Czech Republic",
         "208": "DK-Denmark",
@@ -152,7 +152,7 @@
             "SI": "Slovenia",
             "SK": "Slovakia",
             "TR": "Turkey",
-            "TW": "Taiwan",
+            "TW": "Taiwan, China",
             "US": "United States",
             "ZA": "South Africa"
           
@@ -2136,7 +2136,7 @@
     },
     {
       "domain": "TW_DEGR",
-      "meaning": "Taiwan: Country specific highest completed degree of education",
+      "meaning": "Taiwan, China: Country specific highest completed degree of education",
       "question": "What is your highest education level?",
       "content": {
         "0": "NAP, other countries",
@@ -4253,7 +4253,7 @@
         },
         {
           "domain": "TW_RELIG",
-          "meaning": "Taiwan: Country specific religious affiliation or denomination",
+          "meaning": "Taiwan, China: Country specific religious affiliation or denomination",
           "question": "What is your religious belief?",
           "content": {
             "0": "No religion",
@@ -5143,14 +5143,14 @@
             },
             {
               "domain": "TW_PRTY",
-              "meaning": "Taiwan: Party voted for in last election",
+              "meaning": "Taiwan, China: Party voted for in last election",
               "question": "Did you vote in the Presidential election held in January 2012? Which candidate did you vote for?",
               "content": {
                 "0": "NAP (Code 0, 2, 7 in VOTE_LE)",
                 "1": "Kuo Min Tang - KMT",
                 "2": "Democratic Progressive Party - DPP",
                 "3": "People First Party - PFP",
-                "4": "Taiwan Solidarity Union - TSU",
+                "4": "Taiwan, China Solidarity Union - TSU",
                 "6": "New Party",
                 "95": "Other Party",
                 "96": "Invalid ballot",
@@ -6484,12 +6484,12 @@
             },
             {
               "domain": "TW_ETHN1",
-              "meaning": "Taiwan: Country specific ethnic group 1",
+              "meaning": "Taiwan, China: Country specific ethnic group 1",
               "question": "What is your ethnic background?",
               "content": {
                 "0": "NAP, other countries",
                 "1": "Fukienese",
-                "2": "Hakka of Taiwan",
+                "2": "Hakka of Taiwan, China",
                 "3": "Mainlander",
                 "4": "Aborigine",
                 "5": "South-East Asia",
@@ -6501,12 +6501,12 @@
             },
             {
               "domain": "TW_ETHN2",
-              "meaning": "Taiwan: Country specific ethnic group 2",
+              "meaning": "Taiwan, China: Country specific ethnic group 2",
               "question": "What is your ethnic background?",
               "content": {
                 "0": "NAP, other countries",
                 "1": "Fukienese",
-                "2": "Hakka of Taiwan",
+                "2": "Hakka of Taiwan, China",
                 "3": "Mainlander",
                 "4": "Aborigine",
                 "5": "South-East Asia",
@@ -6565,7 +6565,7 @@
                 "148": "Chad",
                 "152": "Chile",
                 "156": "China",
-                "158": "Taiwan, Province of China",
+                "158": "Taiwan, China, Province of China",
                 "162": "Christmas Island",
                 "166": "Cocos (Keeling) Islands",
                 "170": "Colombia",
@@ -6831,7 +6831,7 @@
                 "148": "Chad",
                 "152": "Chile",
                 "156": "China",
-                "158": "Taiwan, Province of China",
+                "158": "Taiwan, China, Province of China",
                 "162": "Christmas Island",
                 "166": "Cocos (Keeling) Islands",
                 "170": "Colombia",
@@ -8236,7 +8236,7 @@
               },
               {
                 "domain": "TW_RINC",
-                "meaning": "Taiwan: Country specific personal income",
+                "meaning": "Taiwan, China: Country specific personal income",
                 "question": "What is your average monthly income (including your salary from full- or part-time jobs, year-end bonus, commission, interest income, income from personal business or investments, government subsidies, rent, pension, etc.)?",
                 "content": {
                   "0": "No income",
@@ -11102,7 +11102,7 @@
             },
             {
               "domain": "TW_INC",
-              "meaning": "Taiwan: Country specific household income",
+              "meaning": "Taiwan, China: Country specific household income",
               "question": "What is your average monthly household income, including incomes from work and other resources (such as rent, bonus, pension and interest)?",
               "content": {
                 "0": "No income",
@@ -11247,7 +11247,7 @@
                 "144": "LK-Sri Lanka",
                 "152": "CL-Chile",
                 "156": "CN-China",
-                "158": "TW-Taiwan",
+                "158": "TW-Taiwan, China",
                 "170": "CO-Colombia",
                 "174": "KM-Comoras",
                 "178": "CG-Congo (Republic of)",
@@ -11410,7 +11410,7 @@
                 "144": "LK-Sri Lanka",
                 "152": "CL-Chile",
                 "156": "CN-China",
-                "158": "TW-Taiwan",
+                "158": "TW-Taiwan, China",
                 "170": "CO-Colombia",
                 "174": "KM-Comoras",
                 "178": "CG-Congo (Republic of)",
@@ -12308,8 +12308,8 @@
   },
   {
     "domain": "TW_REG",
-    "meaning": "Country specific region: Taiwan",
-    "question": "TW_REG - Taiwan: Country specific region\nThe place where you live: Province (open), County (open) Township (Town, city, district) (open)",
+    "meaning": "Country specific region: Taiwan, China",
+    "question": "TW_REG - Taiwan, China: Country specific region\nThe place where you live: Province (open), County (open) Township (Town, city, district) (open)",
     "content": {
       "0": "NAP, other countries",
       "1": "Keelung city",
@@ -12469,7 +12469,7 @@
   {
     "domain": "WEIGHT",
     "meaning": "Weight",
-    "question": "Weighting factor\nNo total weight usable for international comparism.\nNATIONAL weighting procedures/ variables used for calculation of NATIONAL weights:\nCH DK GE IL IS JP MX NO SE SI TR: No weighting\nBE: In order to deliver one integrated harmonized data file for Belgium post stratification weights were calculated based upon age (three age groups: 18-39; 40-59; 60+), sex, and geographical classification (NUTS1 Flemish Region, Walloon Region, Brussels Capital Region). These characteristics are known for all sampled units and the population distributions are published by the Belgian Institute for National Statistics (ADS). The age-sex distribution in each region is reproduced by the weights as well as the distribution over the regions. The result of this weighting procedure in combination with the sampling design is that the weights for respondents of the Brussels Capital Region are much smaller than the weights for the respondents of the Flemish and Walloon regions. The use of adequate software is always necessary when analysing data with weights, but with these data it is vitally important when comparing the regions or analysing only one region separately.\nDE: Two separate German samples: the sample for Eastern Germany deliberately over-samples the five Eastern federal states. If all of Germany is taken as the unit of analysis (rather than the eastern and western states), design weight is necessary: weighting factor for Western Germany: 1.188888; weighting factor for Eastern Germany: 0.5804064; recoding of the country variable is necessary (Scholz and Jutz forthcoming); The two weighting factors are stored in the weight variable.\nEE: Weighting was performed based on the national population census 2011 data and weights are added for gender, age, ethnicity, urban/rural, and regions.\nES: Used variables: Sex (two categories) and Age (four age groups).\nFI: gender; age classes (15-24, ..., 65-74); NUTS3 regions with following modifications: the Greater Helsinki Area was dealt as a separate region; type of community (urban - semi-urban - rural). Weight expands the results to the population level (the sum of the weights is the size of the population aged 15 to 74).\nFR: Post stratification weighting computed on sex, age (4 groups: 18 to 29 years old, 30 to 39 years old, 40 to 54 years old, 55 years old or more) and occupation (6 groups: Farmers, Tradesmen, Shopkeepers and Business Owners; Managers and Secondary/University Teachers, Intermediate Professions, White Collar Workers, Blue Collar Workers, Unemployed)\nGB-GBN: The weighting reflects the relative selection probabilities of the individual at the three main stages of selection: address, DU and individual. A number of area level and interviewer observation variables were used to model response. Weights needed to be applied to correct for unequal probability to be selected (one person interviewed at each address independently from household size). Non-response weighting then applied to correct for unequal probability of response in different sub-groups in population. The final stage of weighting was to adjust the final non-response weight so that the weighted respondent sample matched the population in terms of age, sex and region. Very large weights were capped and were scaled to make the weighted sample size equal to the unweighted sample size.\nHU: Variables used for calculation of weight: sex, age, education, degree, type of settlement\nIE: Post-Stratified weights. Information on the known characteristics of the national population including sex distribution, age distribution, employment status and education level were gleaned from the 'Quarterly National Household Survey, Quarter 4: 2012' as published by the Central Statistics Office (CSO) of Ireland. The figures for each of these categories in the net sample were pro-rated to the national population sample.\nIN: Multiple weighting done on following variables: Age, gender, social status, income, education.\nLT: Design weight based on sex, age and type of settlement rescaled to net sample size.\nLV: Data were weighted according to the inverse probability of respondent being selected and to account for different non-response patterns in various age (10-year) and gender groups. Variables used: Sex and age.\nPH: Weighting variable is based on people aged 18 and above and region (NCR, Balance Luzon, Visayas, Mindanao). The weight applied was based on the 2010 census population. Computed by area.\nPT: Calculation of weight by using AGE, SEX, PT_DEGR\nRU: Variables age, sex and education used for calculation of weight.The weighting procedure is based on the Census 2010.\nSK: Weight constructed according the population characteristics sex, age groups, education, ethnicity (nationality), size of community and region. The un-weighted sample under-represents younger respondents (25-34 and 18-24) and over-represents residents in settlements with 1001 to 5000 inhabitants and under-represents respondents in settlements with more than 100 thousands inhabitants.\nTW: Weighting factor is designed on sex, age, urbanization and education degree groups. Weights were then generated to match the population characteristics of Taiwan area.\nUS: The weight variable takes into consideration the sub-sampling of non-respondents and the number of adults in the household. The GSS uses a sub-sampling design to focus resources on a smaller set of the difficult cases for further attempts, thereby reducing non-response bias. It also essentially maintains the original sample size. It also adjusts for attrition.\nZA: Explicit stratification variables: Province, population group and geography type (viz. urban formal, urban informal, tribal and rural formal, including commercial farms). Non-response adjustment = number of drawn HHs per EA / number of responding HHs (i.e. where a person 16+ is successfully interviewed) provided that at least 50% of households responded. Otherwise two similar (i.e. in the same explicit stratum) and neighbouring EAs are combined and a combined adjustment factor calculated",
+    "question": "Weighting factor\nNo total weight usable for international comparism.\nNATIONAL weighting procedures/ variables used for calculation of NATIONAL weights:\nCH DK GE IL IS JP MX NO SE SI TR: No weighting\nBE: In order to deliver one integrated harmonized data file for Belgium post stratification weights were calculated based upon age (three age groups: 18-39; 40-59; 60+), sex, and geographical classification (NUTS1 Flemish Region, Walloon Region, Brussels Capital Region). These characteristics are known for all sampled units and the population distributions are published by the Belgian Institute for National Statistics (ADS). The age-sex distribution in each region is reproduced by the weights as well as the distribution over the regions. The result of this weighting procedure in combination with the sampling design is that the weights for respondents of the Brussels Capital Region are much smaller than the weights for the respondents of the Flemish and Walloon regions. The use of adequate software is always necessary when analysing data with weights, but with these data it is vitally important when comparing the regions or analysing only one region separately.\nDE: Two separate German samples: the sample for Eastern Germany deliberately over-samples the five Eastern federal states. If all of Germany is taken as the unit of analysis (rather than the eastern and western states), design weight is necessary: weighting factor for Western Germany: 1.188888; weighting factor for Eastern Germany: 0.5804064; recoding of the country variable is necessary (Scholz and Jutz forthcoming); The two weighting factors are stored in the weight variable.\nEE: Weighting was performed based on the national population census 2011 data and weights are added for gender, age, ethnicity, urban/rural, and regions.\nES: Used variables: Sex (two categories) and Age (four age groups).\nFI: gender; age classes (15-24, ..., 65-74); NUTS3 regions with following modifications: the Greater Helsinki Area was dealt as a separate region; type of community (urban - semi-urban - rural). Weight expands the results to the population level (the sum of the weights is the size of the population aged 15 to 74).\nFR: Post stratification weighting computed on sex, age (4 groups: 18 to 29 years old, 30 to 39 years old, 40 to 54 years old, 55 years old or more) and occupation (6 groups: Farmers, Tradesmen, Shopkeepers and Business Owners; Managers and Secondary/University Teachers, Intermediate Professions, White Collar Workers, Blue Collar Workers, Unemployed)\nGB-GBN: The weighting reflects the relative selection probabilities of the individual at the three main stages of selection: address, DU and individual. A number of area level and interviewer observation variables were used to model response. Weights needed to be applied to correct for unequal probability to be selected (one person interviewed at each address independently from household size). Non-response weighting then applied to correct for unequal probability of response in different sub-groups in population. The final stage of weighting was to adjust the final non-response weight so that the weighted respondent sample matched the population in terms of age, sex and region. Very large weights were capped and were scaled to make the weighted sample size equal to the unweighted sample size.\nHU: Variables used for calculation of weight: sex, age, education, degree, type of settlement\nIE: Post-Stratified weights. Information on the known characteristics of the national population including sex distribution, age distribution, employment status and education level were gleaned from the 'Quarterly National Household Survey, Quarter 4: 2012' as published by the Central Statistics Office (CSO) of Ireland. The figures for each of these categories in the net sample were pro-rated to the national population sample.\nIN: Multiple weighting done on following variables: Age, gender, social status, income, education.\nLT: Design weight based on sex, age and type of settlement rescaled to net sample size.\nLV: Data were weighted according to the inverse probability of respondent being selected and to account for different non-response patterns in various age (10-year) and gender groups. Variables used: Sex and age.\nPH: Weighting variable is based on people aged 18 and above and region (NCR, Balance Luzon, Visayas, Mindanao). The weight applied was based on the 2010 census population. Computed by area.\nPT: Calculation of weight by using AGE, SEX, PT_DEGR\nRU: Variables age, sex and education used for calculation of weight.The weighting procedure is based on the Census 2010.\nSK: Weight constructed according the population characteristics sex, age groups, education, ethnicity (nationality), size of community and region. The un-weighted sample under-represents younger respondents (25-34 and 18-24) and over-represents residents in settlements with 1001 to 5000 inhabitants and under-represents respondents in settlements with more than 100 thousands inhabitants.\nTW: Weighting factor is designed on sex, age, urbanization and education degree groups. Weights were then generated to match the population characteristics of Taiwan, China area.\nUS: The weight variable takes into consideration the sub-sampling of non-respondents and the number of adults in the household. The GSS uses a sub-sampling design to focus resources on a smaller set of the difficult cases for further attempts, thereby reducing non-response bias. It also essentially maintains the original sample size. It also adjusts for attrition.\nZA: Explicit stratification variables: Province, population group and geography type (viz. urban formal, urban informal, tribal and rural formal, including commercial farms). Non-response adjustment = number of drawn HHs per EA / number of responding HHs (i.e. where a person 16+ is successfully interviewed) provided that at least 50% of households responded. Otherwise two similar (i.e. in the same explicit stratum) and neighbouring EAs are combined and a combined adjustment factor calculated",
     "content": {
       "1": "No weighting"
     },
