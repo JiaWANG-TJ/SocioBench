@@ -1,0 +1,3475 @@
+[
+  {
+    "question_id": "v1",
+    "question": "Q1\nIf you were to consider your life in general these days, how happy or unhappy would you say you are, on the whole...",
+    "answer": {
+      "1": "Very happy",
+      "2": "Fairly happy",
+      "3": "Not very happy",
+      "4": "Not at all happy",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {
+      "GE": {
+        "9": "Refused"
+      }
+    }
+  },
+  {
+    "question_id": "v2",
+    "question": "Q2\nAll things considered, how satisfied are you with your relationships with family members?",
+    "answer": {
+      "1": "Completely satisfied",
+      "2": "Very satisfied",
+      "3": "Fairly satisfied",
+      "4": "Neither satisfied nor dissatisfied",
+      "5": "Fairly dissatisfied",
+      "6": "Very dissatisfied",
+      "7": "Completely dissatisfied",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v3",
+    "question": "Q3\nDo you think it is wrong or not wrong if a MARRIED person has sexual relations with someone OTHER than his or her husband or wife, is it...",
+    "answer": {
+      "1": "Always wrong",
+      "2": "Almost always wrong",
+      "3": "Wrong only sometimes",
+      "4": "Not wrong at all",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {
+      "AT": {
+        "0": "Not available"
+      },
+      "GE": {
+        "9": "Refused"
+      }
+    }
+  },
+  {
+    "question_id": "v4",
+    "question": "Q4\nAnd what about sexual relations between two adults of the same sex, is it...",
+    "answer": {
+      "1": "Always wrong",
+      "2": "Almost always wrong",
+      "3": "Wrong only sometimes",
+      "4": "Not wrong at all",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {
+      "GE": {
+        "9": "Refused"
+      }
+    }
+  },
+  {
+    "question_id": "v5",
+    "question": "Q5\nDo you PERSONALLY think it is wrong or not wrong for a woman to have an abortion if the family has a very low income and cannot afford any more\nchildren.",
+    "answer": {
+      "1": "Always wrong",
+      "2": "Almost always wrong",
+      "3": "Wrong only sometimes",
+      "4": "Not wrong at all",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {
+      "GE": {
+        "9": "Refused"
+      }
+    }
+  },
+  {
+    "question_id": "v6",
+    "question": "Q6\nDo you agree or disagree with the following statement?\nA husband's job is to earn money; a wife's job is to look aer the home and family.",
+    "answer": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {
+      "GE": {
+        "9": "Refused"
+      }
+    }
+  },
+  {
+    "question_id": "v7",
+    "question": "Q7\nHow much confidence do you have in...\n(PLEASE CIRCLE A NUMBER)\nQ7a\n[Parliament]\n[use national legislature, e.g. U.S. Congress]",
+    "answer": {
+      "1": "Complete confidence",
+      "2": "A great deal of confidence",
+      "3": "Some confidence",
+      "4": "Very little confidence",
+      "5": "No confidence at all",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {
+      "GE": {
+        "9": "Refused"
+      }
+    }
+  },
+  {
+    "question_id": "v8",
+    "question": "Q7\nHow much confidence do you have in...\n(PLEASE CIRCLE A NUMBER)\nQ7b\nBusiness and industry",
+    "answer": {
+      "1": "Complete confidence",
+      "2": "A great deal of confidence",
+      "3": "Some confidence",
+      "4": "Very little confidence",
+      "5": "No confidence at all",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {
+      "GE": {
+        "9": "Refused"
+      }
+    }
+  },
+  {
+    "question_id": "v9",
+    "question": "Q7\nHow much confidence do you have in...\n(PLEASE CIRCLE A NUMBER)\nQ7c\nChurches and religious organizations",
+    "answer": {
+      "1": "Complete confidence",
+      "2": "A great deal of confidence",
+      "3": "Some confidence",
+      "4": "Very little confidence",
+      "5": "No confidence at all",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {
+      "GE": {
+        "9": "Refused"
+      }
+    }
+  },
+  {
+    "question_id": "v10",
+    "question": "Q7\nHow much confidence do you have in...\n(PLEASE CIRCLE A NUMBER)\nQ7d\nCourts and the legal system",
+    "answer": {
+      "1": "Complete confidence",
+      "2": "A great deal of confidence",
+      "3": "Some confidence",
+      "4": "Very little confidence",
+      "5": "No confidence at all",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {
+      "GE": {
+        "9": "Refused"
+      }
+    }
+  },
+  {
+    "question_id": "v11",
+    "question": "Q7\nHow much confidence do you have in...\n(PLEASE CIRCLE A NUMBER)\nQ7e\nSchools and the educational system",
+    "answer": {
+      "1": "Complete confidence",
+      "2": "A great deal of confidence",
+      "3": "Some confidence",
+      "4": "Very little confidence",
+      "5": "No confidence at all",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {
+      "GE": {
+        "9": "Refused"
+      }
+    }
+  },
+  {
+    "question_id": "v12",
+    "question": "Q8\nHow much do you agree or disagree with the following statement?\nReligious leaders should not try to influence how people vote in elections.",
+    "answer": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {
+      "GE": {
+        "9": "Refused"
+      }
+    }
+  },
+  {
+    "question_id": "v13",
+    "question": "Q9\nPlease consider the following statements and tell me whether you agree or disagree.\nQ9a\nWe trust too much in science and not enough in religious faith.",
+    "answer": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {
+      "GE": {
+        "9": "Refused"
+      }
+    }
+  },
+  {
+    "question_id": "v14",
+    "question": "Q9\nPlease consider the following statements and tell me whether you agree or disagree.\nQ9b\nLooking around the world, religions bring more conflict than peace.",
+    "answer": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {
+      "GE": {
+        "9": "Refused"
+      }
+    }
+  },
+  {
+    "question_id": "v15",
+    "question": "Q9\nPlease consider the following statements and tell me whether you agree or disagree.\nQ9c\nPeople with very strong religious beliefs are oen too intolerant of others.",
+    "answer": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {
+      "GE": {
+        "9": "Refused"
+      }
+    }
+  },
+  {
+    "question_id": "v16",
+    "question": "Q10\nDo you think that churches and religious organizations in this country have too much power or too little power?",
+    "answer": {
+      "1": "Far too much power",
+      "2": "Too much power",
+      "3": "About the right amount of power",
+      "4": "Too little power",
+      "5": "Far too little power",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {
+      "GE": {
+        "9": "Refused"
+      }
+    }
+  },
+  {
+    "question_id": "v17",
+    "question": "Q11\nPeople have different religions and different religious views. Would you accept a person from a different religion or with a very different religious\nview from yours marrying a relative of yours?",
+    "answer": {
+      "1": "Definitely accept",
+      "2": "Probably accept",
+      "3": "Probably not accept",
+      "4": "Definitely not accept",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {
+      "GE": {
+        "9": "Refused"
+      }
+    }
+  },
+  {
+    "question_id": "v18",
+    "question": "Q12\nThere are some people whose views are considered extreme by the majority. Consider religious extremists, that is people who believe that their\nreligion is the only true faith and all other religions should be considered as enemies. Do you think such people should be allowed to...\n(PLEASE TICK ONE BOX ON EACH LINE)\nQ12a\nHold public meetings to express their views?",
+    "answer": {
+      "1": "Definitely",
+      "2": "Probably",
+      "3": "Probably not",
+      "4": "Definitely not",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {
+      "GE": {
+        "9": "Refused"
+      }
+    }
+  },
+  {
+    "question_id": "v19",
+    "question": "Q12\nThere are some people whose views are considered extreme by the majority. Consider religious extremists, that is people who believe that their\nreligion is the only true faith and all other religions should be considered as enemies. Do you think such people should be allowed to...\n(PLEASE TICK ONE BOX ON EACH LINE)\nQ12b\nPublish their views on the Internet or social media?",
+    "answer": {
+      "1": "Definitely",
+      "2": "Probably",
+      "3": "Probably not",
+      "4": "Definitely not",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {
+      "GE": {
+        "9": "Refused"
+      }
+    }
+  },
+  {
+    "question_id": "v20",
+    "question": "Q13\nPlease indicate which statement below comes closest to expressing what you believe about God.",
+    "answer": {
+      "1": "I don't believe in God",
+      "2": "Don't know whether there is a God and no way to find out",
+      "3": "Don't believe in a personal God, but in a Higher Power",
+      "4": "Find myself believing in God sometimes, but not at others",
+      "5": "While I have doubts, I feel that I do believe in God",
+      "6": "I know God really exists and have no doubts about it",
+      "8": "Don't know",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v21",
+    "question": "Q14\nWhich best describes your beliefs about God?",
+    "answer": {
+      "1": "I don't believe in God now and I never have",
+      "2": "I don't believe in God now, but I used to",
+      "3": "I believe in God now, but I didn't use to",
+      "4": "I believe in God now and I always have",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {
+      "GE": {
+        "9": "Refused"
+      }
+    }
+  },
+  {
+    "question_id": "v22",
+    "question": "Q15\nDo you believe in...\nQ15a\nLife aer death?",
+    "answer": {
+      "1": "Yes, definitely",
+      "2": "Yes, probably",
+      "3": "No, probably not",
+      "4": "No, definitely not",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {
+      "GE": {
+        "9": "Refused"
+      }
+    }
+  },
+  {
+    "question_id": "v23",
+    "question": "Q15\nDo you believe in...\nQ15b\nHeaven?",
+    "answer": {
+      "1": "Yes, definitely",
+      "2": "Yes, probably",
+      "3": "No, probably not",
+      "4": "No, definitely not",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {
+      "GE": {
+        "9": "Refused"
+      }
+    }
+  },
+  {
+    "question_id": "v24",
+    "question": "Q15\nDo you believe in...\nQ15c\nHell?",
+    "answer": {
+      "1": "Yes, definitely",
+      "2": "Yes, probably",
+      "3": "No, probably not",
+      "4": "No, definitely not",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {
+      "GE": {
+        "9": "Refused"
+      }
+    }
+  },
+  {
+    "question_id": "v25",
+    "question": "Q15\nDo you believe in...\nQ15d\nReligious miracles?",
+    "answer": {
+      "1": "Yes, definitely",
+      "2": "Yes, probably",
+      "3": "No, probably not",
+      "4": "No, definitely not",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {
+      "GE": {
+        "9": "Refused"
+      }
+    }
+  },
+  {
+    "question_id": "v26",
+    "question": "Q15\nDo you believe in...\nQ15e\nThe supernatural powers of deceased ancestors?",
+    "answer": {
+      "1": "Yes, definitely",
+      "2": "Yes, probably",
+      "3": "No, probably not",
+      "4": "No, definitely not",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {
+      "GE": {
+        "9": "Refused"
+      }
+    }
+  },
+  {
+    "question_id": "v27",
+    "question": "Q16\nDo you agree or disagree with the following?\n(PLEASE CIRCLE A NUMBER)\nQ16a\nThere is a God who concerns Himself with every human being personally.",
+    "answer": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {
+      "GE": {
+        "9": "Refused"
+      }
+    }
+  },
+  {
+    "question_id": "v28",
+    "question": "Q16\nDo you agree or disagree with the following?\n(PLEASE CIRCLE A NUMBER)\nQ16b\nThere is little that people can do to change the course of their lives.",
+    "answer": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {
+      "GE": {
+        "9": "Refused"
+      }
+    }
+  },
+  {
+    "question_id": "v29",
+    "question": "Q16\nDo you agree or disagree with the following?\n(PLEASE CIRCLE A NUMBER)\nQ16c\nTo me, life is meaningful only because God exists.",
+    "answer": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {
+      "GE": {
+        "9": "Refused"
+      }
+    }
+  },
+  {
+    "question_id": "v30",
+    "question": "Q16\nDo you agree or disagree with the following?\n(PLEASE CIRCLE A NUMBER)\nQ16d\nIn my opinion, life does not serve any purpose.",
+    "answer": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {
+      "GE": {
+        "9": "Refused"
+      }
+    }
+  },
+  {
+    "question_id": "v31",
+    "question": "Q16\nDo you agree or disagree with the following?\n(PLEASE CIRCLE A NUMBER)\nQ16e\nLife is only meaningful if you provide the meaning yourself.",
+    "answer": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {
+      "GE": {
+        "9": "Refused"
+      }
+    }
+  },
+  {
+    "question_id": "v32",
+    "question": "Q16\nDo you agree or disagree with the following?\n(PLEASE CIRCLE A NUMBER)\nQ16f\nI have my own way of connecting with God without churches or religious services.",
+    "answer": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {
+      "GE": {
+        "9": "Refused"
+      }
+    }
+  },
+  {
+    "question_id": "v33",
+    "question": "Q17\nIn your opinion, does your religion treat men and women equally, treat men better than women, or treat women better than men?",
+    "answer": {
+      "1": "I don't belong to or follow any religion",
+      "2": "Treats men and women equally",
+      "3": "Treats men better than women",
+      "4": "Treats women better than men",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {
+      "GE": {
+        "9": "Refused"
+      }
+    }
+  },
+  {
+    "question_id": "AT_v34",
+    "question": "Q18a_AT\nWhat was your mother's religious preference when you were a child?\nWas it Protestant, Catholic, Jewish, some other religion, or no religion?\nIf Protestant: What specific denomination was that?",
+    "answer": {
+      "0": "No religion",
+      "1": "Roman Catholic",
+      "2": "Lutheran Church (without Protestant free churches)",
+      "3": "Orthodox",
+      "4": "Other Christian denomination",
+      "5": "Muslim denomination",
+      "6": "Other non-Christian denomination",
+      "990": "NAP, other countries",
+      "996": "No mother, mother not present",
+      "998": "Don't know"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "BG_v34",
+    "question": "Q18a_BG\nWhat was your mother's religious preference when you were a child?\nWas it Protestant, Catholic, Jewish, some other religion, or no religion?\nIf Protestant: What specific denomination was that?",
+    "answer": {
+      "0": "No religion",
+      "1": "Catholic",
+      "2": "Protestant",
+      "3": "Orthodox",
+      "4": "Other Christian",
+      "5": "Jewish",
+      "6": "Islamic",
+      "7": "Buddhist",
+      "8": "Hindu",
+      "9": "Other Asian Religions",
+      "10": "Other Religions",
+      "990": "NAP, other countries",
+      "996": "No mother, mother not present",
+      "998": "Don't know",
+      "999": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "CH_v34",
+    "question": "Q18a_CH\nWhat was your mother's religious preference when you were a child?\nWas it Protestant, Catholic, Jewish, some other religion, or no religion?\nIf Protestant: What specific denomination was that?",
+    "answer": {
+      "0": "No religion",
+      "100": "Roman Catholic",
+      "200": "Protestant",
+      "290": "Other Protestant (no specific religion mentioned)",
+      "300": "Orthodox",
+      "400": "Other Christian religions",
+      "500": "Jewish",
+      "600": "Islam",
+      "700": "Buddhism",
+      "800": "Hinduism",
+      "970": "Other non-Christian religions",
+      "990": "NAP, other countries",
+      "997": "Refused",
+      "998": "Don't know",
+      "999": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "CL_v34",
+    "question": "Q18a_CL\nWhat was your mother's religious preference when you were a child?\nWas it Protestant, Catholic, Jewish, some other religion, or no religion?\nIf Protestant: What specific denomination was that?",
+    "answer": {
+      "0": "None",
+      "10": "Evangelical: No details",
+      "11": "Evangelical: Lutheran",
+      "12": "Evangelical: Presbyterian",
+      "13": "Evangelical: Baptist",
+      "14": "Evangelical: Methodist",
+      "15": "Evangelical: Pentecostal Methodist",
+      "16": "Evangelical: Adventist",
+      "17": "Evangelical: Salvation Army",
+      "18": "Evangelical: Evangelical Pentecostal",
+      "19": "Evangelical: Other",
+      "20": "Catholic",
+      "30": "Jews",
+      "40": "Orthodox",
+      "50": "Mormon",
+      "60": "Jehovah's Witnesses",
+      "70": "Muslim",
+      "80": "Other",
+      "990": "NAP, other countries",
+      "998": "Don't know",
+      "999": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "CZ_v34",
+    "question": "Q18a_CZ\nWhat was your mother's religious preference when you were a child?\nWas it Protestant, Catholic, Jewish, some other religion, or no religion?\nIf Protestant: What specific denomination was that?",
+    "answer": {
+      "0": "No religion",
+      "1": "Roman Catholic",
+      "2": "Czech-Brethren Evangelical Church",
+      "3": "Czechoslovak Hussite",
+      "4": "Other Christian",
+      "5": "Other Non-Christians",
+      "990": "NAP, other countries",
+      "996": "No mother, mother not present",
+      "999": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "DE_v34",
+    "question": "Q18a_DE\nWhat was your mother's religious preference when you were a child?\nWas it Protestant, Catholic, Jewish, some other religion, or no religion?\nIf Protestant: What specific denomination was that?",
+    "answer": {
+      "0": "No religion",
+      "1": "Roman Catholic",
+      "2": "German Protestant Church",
+      "3": "Protestant Free Church",
+      "4": "Orthodox",
+      "5": "Other Christian denomination",
+      "6": "Islamic religion",
+      "7": "Jewish religion",
+      "9": "Hindu religion",
+      "10": "Other non-Christian religion",
+      "990": "NAP, other countries",
+      "996": "No mother, mother not present",
+      "997": "Refused",
+      "999": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "DK_v34",
+    "question": "Q18a_DK\nWhat was your mother's religious preference when you were a child?\nWas it Protestant, Catholic, Jewish, some other religion, or no religion?\nIf Protestant: What specific denomination was that?",
+    "answer": {
+      "0": "No religion",
+      "100": "Roman Catholic",
+      "250": "Lutheran",
+      "500": "Jewish",
+      "600": "Islam",
+      "960": "Other religions",
+      "990": "NAP, other countries",
+      "996": "No mother, mother not present",
+      "999": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "ES_v34",
+    "question": "Q18a_ES\nWhat was your mother's religious preference when you were a child?\nWas it Protestant, Catholic, Jewish, some other religion, or no religion?\nIf Protestant: What specific denomination was that?",
+    "answer": {
+      "0": "No religion",
+      "100": "Roman Catholic",
+      "200": "Protestant",
+      "210": "Anglican, Church of England, Episcopal",
+      "250": "Lutheran Church",
+      "282": "Jehovah's Witnesses",
+      "290": "Evangelist Church",
+      "390": "Orthodox",
+      "400": "Other Christian religion",
+      "600": "Islam",
+      "700": "Buddhist",
+      "800": "Hindu",
+      "960": "Other religion",
+      "990": "NAP, other countries",
+      "999": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "FI_v34",
+    "question": "Q18a_FI\nWhat was your mother's religious preference when you were a child?\nWas it Protestant, Catholic, Jewish, some other religion, or no religion?\nIf Protestant: What specific denomination was that?",
+    "answer": {
+      "0": "No religion",
+      "1": "Lutheran or other Protestant",
+      "2": "Catholic",
+      "3": "Jewish",
+      "4": "Orthodox",
+      "5": "Muslim",
+      "6": "Other",
+      "990": "NAP, other countries",
+      "998": "Don't know",
+      "999": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "FR_v34",
+    "question": "Q18a_FR\nWhat was your mother's religious preference when you were a child?\nWas it Protestant, Catholic, Jewish, some other religion, or no religion?\nIf Protestant: What specific denomination was that?",
+    "answer": {
+      "0": "No religion",
+      "1": "Catholic",
+      "2": "Protestant",
+      "3": "Orthodox",
+      "4": "Other Christian",
+      "5": "Jewish",
+      "6": "Islamic",
+      "7": "Buddhist",
+      "8": "Hindu",
+      "9": "Other Asian Religions",
+      "10": "Other Religions",
+      "990": "NAP, other countries",
+      "998": "Can't say/ Can't remember",
+      "999": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "GB_v34",
+    "question": "Q18a_GB\nWhat was your mother's religious preference when you were a child?\nWas it Protestant, Catholic, Jewish, some other religion, or no religion?\nIf Protestant: What specific denomination was that?",
+    "answer": {
+      "0": "No religion",
+      "2": "Christian - no denomination",
+      "3": "Roman Catholic",
+      "4": "Church of England/ Anglican",
+      "5": "Baptist",
+      "6": "Methodist",
+      "7": "Presbyterian/ Church of Scotland",
+      "8": "Other Christian",
+      "9": "Hindu",
+      "10": "Jewish",
+      "11": "Islam/ Muslim",
+      "12": "Sikh",
+      "13": "Buddhist",
+      "14": "Other non-Christian",
+      "21": "Free Presbyterian",
+      "22": "Brethren",
+      "23": "United Reform Church (URC)/ Congregational",
+      "27": "Other Protestant",
+      "990": "NAP, other countries",
+      "996": "No mother, mother not present",
+      "998": "Can't say/ Can't remember",
+      "999": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "GE_v34",
+    "question": "Q18a_GE\nWhat was your mother's religious preference when you were a child?\nWas it Protestant, Catholic, Jewish, some other religion, or no religion?\nIf Protestant: What specific denomination was that?",
+    "answer": {
+      "0": "No religion",
+      "1": "Orthodox",
+      "2": "Grigorian",
+      "3": "Catholic",
+      "4": "Protestant",
+      "5": "Other Christians",
+      "6": "Judaism",
+      "7": "Muslim",
+      "8": "Buddhist",
+      "9": "Hindu",
+      "10": "Other Asian religions",
+      "11": "Other religions",
+      "990": "NAP, other countries",
+      "997": "Refused",
+      "998": "Don't know"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "HR_v34",
+    "question": "Q18a_HR\nWhat was your mother's religious preference when you were a child?\nWas it Protestant, Catholic, Jewish, some other religion, or no religion?\nIf Protestant: What specific denomination was that?",
+    "answer": {
+      "0": "No religion",
+      "1": "Roman Catholic",
+      "2": "Christian Orthodox",
+      "3": "Islamic",
+      "4": "Jewish",
+      "6": "Other religions",
+      "990": "NAP, other countries",
+      "998": "Don't know"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "HU_v34",
+    "question": "Q18a_HU\nWhat was your mother's religious preference when you were a child?\nWas it Protestant, Catholic, Jewish, some other religion, or no religion?\nIf Protestant: What specific denomination was that?",
+    "answer": {
+      "0": "No religion",
+      "1": "Calvinist",
+      "2": "Lutheralist",
+      "3": "Unitarian",
+      "4": "Baptist",
+      "5": "Methodist",
+      "7": "Other Protestant",
+      "8": "Roman Catholic",
+      "9": "Greek Catholic",
+      "10": "Jewish",
+      "12": "Eastern Orthodox",
+      "14": "Other non-Christian",
+      "15": "Other Christian",
+      "990": "NAP, other countries",
+      "996": "No mother, mother not present",
+      "997": "Refused",
+      "998": "Don't know"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "IL_v34",
+    "question": "Q18a_IL\nWhat was your mother's religious preference when you were a child?\nWas it Protestant, Catholic, Jewish, some other religion, or no religion?\nIf Protestant: What specific denomination was that?",
+    "answer": {
+      "0": "No religion",
+      "1": "Roman Catholic",
+      "2": "Protestant",
+      "3": "Christian Orthodox",
+      "4": "Other Christian",
+      "5": "Jewish",
+      "6": "Islamic",
+      "7": "Jewish Orthodox",
+      "8": "Conservative Judaism",
+      "9": "Reformist Jewish",
+      "10": "Other religions",
+      "11": "Druze",
+      "990": "NAP, other countries",
+      "999": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "IS_v34",
+    "question": "Q18a_IS\nWhat was your mother's religious preference when you were a child?\nWas it Protestant, Catholic, Jewish, some other religion, or no religion?\nIf Protestant: What specific denomination was that?",
+    "answer": {
+      "0": "No religion",
+      "1": "Icelandic National Church - the Evangelical Lutheran Church of Iceland",
+      "2": "Catholic",
+      "3": "Protestant, but does not belong to the Iceland National Church",
+      "4": "Orthodox",
+      "5": "Other Christian",
+      "6": "Jewish",
+      "7": "Islamic",
+      "8": "Buddhist",
+      "9": "Hindu",
+      "10": "Other Asian religions",
+      "11": "Asatru/ Paganism (belief in the old nordic gods)",
+      "12": "Other religions",
+      "990": "NAP, other countries",
+      "999": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "IT_v34",
+    "question": "Q18a_IT\nWhat was your mother's religious preference when you were a child?\nWas it Protestant, Catholic, Jewish, some other religion, or no religion?\nIf Protestant: What specific denomination was that?",
+    "answer": {
+      "0": "No religion",
+      "1": "Catholic",
+      "2": "Protestant",
+      "3": "Orthodox",
+      "4": "Other Christian",
+      "5": "Jewish",
+      "6": "Islamic",
+      "7": "Buddhist",
+      "8": "Hindu",
+      "9": "Other Asian Religions",
+      "10": "Other Religions",
+      "990": "NAP, other countries",
+      "996": "No mother, mother not present",
+      "997": "Refused",
+      "998": "Don't know",
+      "999": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "JP_v34",
+    "question": "Q18a_JP\nWhat was your mother's religious preference when you were a child?\nWas it Protestant, Catholic, Jewish, some other religion, or no religion?\nIf Protestant: What specific denomination was that?",
+    "answer": {
+      "0": "No religion",
+      "4": "Other Christian",
+      "7": "Buddhist",
+      "10": "Other Religions",
+      "11": "Shintoism",
+      "990": "NAP, other countries",
+      "996": "No mother, mother not present",
+      "998": "Don't know",
+      "999": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "KR_v34",
+    "question": "Q18a_KR\nWhat was your mother's religious preference when you were a child?\nWas it Protestant, Catholic, Jewish, some other religion, or no religion?\nIf Protestant: What specific denomination was that?",
+    "answer": {
+      "0": "No religion",
+      "1": "Catholic",
+      "2": "Protestant",
+      "4": "Other Christian",
+      "5": "Jewish",
+      "7": "Buddhist",
+      "9": "Other Asian Religions",
+      "10": "Other Religions",
+      "990": "NAP, other countries"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "LT_v34",
+    "question": "Q18a_LT\nWhat was your mother's religious preference when you were a child?\nWas it Protestant, Catholic, Jewish, some other religion, or no religion?\nIf Protestant: What specific denomination was that?",
+    "answer": {
+      "0": "No religion",
+      "1": "Catholic",
+      "2": "Protestant",
+      "3": "Orthodox",
+      "4": "Other Christian",
+      "5": "Jewish",
+      "6": "Islamic",
+      "7": "Buddhist",
+      "8": "Hindu",
+      "9": "Other Asian Religions",
+      "10": "Other Religions",
+      "990": "NAP, other countries",
+      "996": "No mother, mother not present",
+      "997": "Refused",
+      "998": "Don't know"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "NO_v34",
+    "question": "Q18a_NO\nWhat was your mother's religious preference when you were a child?\nWas it Protestant, Catholic, Jewish, some other religion, or no religion?\nIf Protestant: What specific denomination was that?",
+    "answer": {
+      "0": "No denomination or life stance organisation",
+      "1": "Church of Norway (former State Church)",
+      "2": "Other Protestant Denomination (e.g. Free Churches, the Anglican Church, Pentecostal)",
+      "3": "Catholic",
+      "4": "Orthodox (Greek, Russian, others)",
+      "5": "Other Christian Denomination",
+      "6": "The Mosaic Religious Community (Jewish)",
+      "7": "Islam",
+      "8": "Buddhism",
+      "9": "Hinduism",
+      "10": "Other Eastern religion",
+      "11": "Other non-Christian religion",
+      "12": "Other life stance organisation, for example the Norwegian Humanist Association",
+      "990": "NAP, other countries",
+      "998": "Don't know",
+      "999": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "NZ_v34",
+    "question": "Q18a_NZ\nWhat was your mother's religious preference when you were a child?\nWas it Protestant, Catholic, Jewish, some other religion, or no religion?\nIf Protestant: What specific denomination was that?",
+    "answer": {
+      "0": "No religion",
+      "1": "Anglican",
+      "2": "Catholic",
+      "3": "Presbyterian",
+      "4": "Methodist",
+      "5": "Baptist",
+      "6": "Ratana",
+      "7": "Ringatu",
+      "8": "Other Christian",
+      "9": "Buddhist",
+      "10": "Hindu",
+      "11": "Muslim",
+      "12": "Jewish",
+      "13": "Other religions",
+      "990": "NAP, other countries",
+      "996": "No mother, mother not present",
+      "998": "Don't know",
+      "999": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "PH_v34",
+    "question": "Q18a_PH\nWhat was your mother's religious preference when you were a child?\nWas it Protestant, Catholic, Jewish, some other religion, or no religion?\nIf Protestant: What specific denomination was that?",
+    "answer": {
+      "0": "No religion",
+      "1": "Roman Catholic",
+      "2": "Iglesia ni Cristo",
+      "3": "Aglipayan",
+      "4": "Protestant",
+      "5": "Islam",
+      "7": "Born again",
+      "10": "Baptist",
+      "11": "Church of Jesus Christ and the Latter Day Saints (Mormons)",
+      "12": "Seventh Day Adventist",
+      "13": "Methodist",
+      "16": "Jehovah's Witness",
+      "18": "Dating Daan",
+      "23": "Church of Christ",
+      "29": "One Way Outreach",
+      "31": "Pentecostal",
+      "36": "Alliance",
+      "44": "Filipinista",
+      "46": "Union Espiritista/ Union Espiritista Cristiana de Filipinas",
+      "47": "UCCP - United Church of Christ in the Philippines",
+      "50": "Jewish",
+      "56": "EFB - Equi Frili Brium",
+      "64": "Jesus Reigns Forever International Ministry",
+      "65": "Crusaders of the Divine Church of Christ",
+      "68": "Kingdom of Jesus Christ",
+      "70": "Bishop of the Philippines Divine Missionary Church",
+      "71": "Moncadista",
+      "73": "Iglesia ng Dios kay Cristo Jesus",
+      "990": "NAP, other countries",
+      "999": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "RU_v34",
+    "question": "Q18a_RU\nWhat was your mother's religious preference when you were a child?\nWas it Protestant, Catholic, Jewish, some other religion, or no religion?\nIf Protestant: What specific denomination was that?",
+    "answer": {
+      "0": "No religion, atheist",
+      "1": "Russian Orthodox",
+      "2": "Roman Catholic",
+      "3": "Protestant",
+      "4": "Jewish",
+      "5": "Islam",
+      "6": "Buddhism",
+      "8": "Other religions",
+      "990": "NAP, other countries",
+      "998": "Don't know"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "SE_v34",
+    "question": "Q18a_SE\nWhat was your mother's religious preference when you were a child?\nWas it Protestant, Catholic, Jewish, some other religion, or no religion?\nIf Protestant: What specific denomination was that?",
+    "answer": {
+      "0": "No religion",
+      "1": "Church of Sweden",
+      "2": "Roman Catholic",
+      "3": "Christian Orthodox",
+      "4": "Christian free-church",
+      "5": "Other Christian church/ community",
+      "6": "Jewish",
+      "7": "Islamic",
+      "8": "Buddhist",
+      "9": "Hindu",
+      "10": "Other religion",
+      "990": "NAP, other countries",
+      "998": "Don't know",
+      "999": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "SI_v34",
+    "question": "Q18a_SI\nWhat was your mother's religious preference when you were a child?\nWas it Protestant, Catholic, Jewish, some other religion, or no religion?\nIf Protestant: What specific denomination was that?",
+    "answer": {
+      "0": "No religion",
+      "1": "Roman Catholic",
+      "2": "Protestant",
+      "3": "Christian Orthodox",
+      "4": "Other Christian",
+      "6": "Islamic",
+      "7": "Buddishm",
+      "8": "Hindu",
+      "9": "Other Asian religions",
+      "10": "Other religion",
+      "990": "NAP, other countries",
+      "998": "Don't know",
+      "999": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "SK_v34",
+    "question": "Q18a_SK\nWhat was your mother's religious preference when you were a child?\nWas it Protestant, Catholic, Jewish, some other religion, or no religion?\nIf Protestant: What specific denomination was that?",
+    "answer": {
+      "0": "No religion",
+      "1": "Roman Catholic",
+      "2": "Evangelical Lutheran",
+      "3": "Greek Catholic",
+      "4": "Reformed Calvinist",
+      "5": "Christian Orthodox",
+      "6": "Jehovah's Witnesses",
+      "7": "Other Christian",
+      "8": "Jewish",
+      "9": "Other Non-Christian",
+      "990": "NAP, other countries",
+      "998": "Don't know",
+      "999": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "SR_v34",
+    "question": "Q18a_SR\nWhat was your mother's religious preference when you were a child?\nWas it Protestant, Catholic, Jewish, some other religion, or no religion?\nIf Protestant: What specific denomination was that?",
+    "answer": {
+      "0": "No religion",
+      "1": "Roman Catholic",
+      "2": "Protestant: Moravian",
+      "3": "Protestant: Reformed",
+      "4": "Protestant: Evangelical",
+      "5": "Russian/ Greek Orthodox",
+      "6": "Other Christian",
+      "7": "Judaism",
+      "8": "Islam",
+      "10": "Buddhism",
+      "11": "Hinduism",
+      "13": "Javanism",
+      "14": "Other religion",
+      "990": "NAP, other countries",
+      "999": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "TH_v34",
+    "question": "Q18a_TH\nWhat was your mother's religious preference when you were a child?\nWas it Protestant, Catholic, Jewish, some other religion, or no religion?\nIf Protestant: What specific denomination was that?",
+    "answer": {
+      "0": "No religion",
+      "1": "Catholic",
+      "2": "Protestant",
+      "3": "Orthodox",
+      "4": "Other Christian",
+      "5": "Jewish",
+      "6": "Islamic",
+      "7": "Buddhist",
+      "8": "Hindu",
+      "9": "Other Asian Religions",
+      "10": "Other Religions",
+      "990": "NAP, other countries",
+      "999": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "TR_v34",
+    "question": "Q18a_TR\nWhat was your mother's religious preference when you were a child?\nWas it Protestant, Catholic, Jewish, some other religion, or no religion?\nIf Protestant: What specific denomination was that?",
+    "answer": {
+      "0": "No religion",
+      "100": "Roman catholic",
+      "200": "Protestant",
+      "300": "Orthodox, Eastern Orthodox",
+      "400": "Other Christian Groups",
+      "500": "Jewish",
+      "630": "Sunni",
+      "660": "Other Muslim Religions",
+      "690": "Muslim, Mohammedan, Islam",
+      "950": "Other religions",
+      "990": "NAP, other countries",
+      "998": "Don't know",
+      "999": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "TW_v34",
+    "question": "Q18a_TW\nWhat was your mother's religious preference when you were a child?\nWas it Protestant, Catholic, Jewish, some other religion, or no religion?\nIf Protestant: What specific denomination was that?",
+    "answer": {
+      "0": "No religion",
+      "1": "Buddhism",
+      "2": "Taoism",
+      "3": "Folk religion",
+      "4": "Yiguan Dao",
+      "5": "Moslem/ Islam",
+      "6": "Catholicism",
+      "7": "Protestant Christianity",
+      "8": "Other",
+      "990": "NAP, other countries",
+      "996": "No mother, mother not present",
+      "998": "Don't know",
+      "999": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "US_v34",
+    "question": "Q18a_US\nWhat was your mother's religious preference when you were a child?\nWas it Protestant, Catholic, Jewish, some other religion, or no religion?\nIf Protestant: What specific denomination was that?",
+    "answer": {
+      "0": "No religion",
+      "1": "Protestant",
+      "2": "Catholic",
+      "3": "Jewish",
+      "4": "Orthodox (such as Greek or Russian Orthodox)",
+      "5": "Muslim",
+      "6": "Other (Please specify)",
+      "990": "NAP, other countries",
+      "997": "Refused",
+      "998": "Don't know"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "ZA_v34",
+    "question": "Q18a_ZA\nWhat was your mother's religious preference when you were a child?\nWas it Protestant, Catholic, Jewish, some other religion, or no religion?\nIf Protestant: What specific denomination was that?",
+    "answer": {
+      "0": "No religion",
+      "1": "Protestant",
+      "2": "Catholic",
+      "3": "Jewish",
+      "4": "Orthodox (such as Greek or Russian Orthodox)",
+      "5": "Muslim",
+      "6": "Other (specify)",
+      "990": "NAP, other countries",
+      "998": "Don't know",
+      "999": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v35",
+    "question": "Q18b\nMother's religion: compressed groups of religions",
+    "answer": {
+      "0": "No religion",
+      "1": "Catholic",
+      "2": "Protestant",
+      "3": "Orthodox",
+      "4": "Other Christian",
+      "5": "Jewish",
+      "6": "Islamic",
+      "7": "Buddhist",
+      "8": "Hindu",
+      "9": "Other Asian Religions",
+      "10": "Other Religions",
+      "97": "NAP, no mother, mother not present",
+      "98": "Don't know",
+      "99": "No answer"
+    },
+    "special": {
+      "IT": {
+        "99": "No answer/ Refused"
+      }
+    }
+  },
+  {
+    "question_id": "AT_v36",
+    "question": "Q19a_AT\nWhat was your father's religious preference when you were a child?\nWas it Protestant, Catholic, Jewish, some other religion, or no religion?\nIf Protestant: What specific denomination was that?",
+    "answer": {
+      "0": "No religion",
+      "1": "Roman Catholic",
+      "2": "Lutheran Church (without Protestant free churches)",
+      "3": "Orthodox",
+      "4": "Other Christian denomination",
+      "5": "Muslim denomination",
+      "6": "Other non-Christian denomination",
+      "990": "NAP, other countries",
+      "996": "No father, father not present",
+      "998": "Don't know"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "BG_v36",
+    "question": "Q19a_BG\nWhat was your father's religious preference when you were a child?\nWas it Protestant, Catholic, Jewish, some other religion, or no religion?\nIf Protestant: What specific denomination was that?",
+    "answer": {
+      "0": "No religion",
+      "1": "Catholic",
+      "2": "Protestant",
+      "3": "Orthodox",
+      "4": "Other Christian",
+      "5": "Jewish",
+      "6": "Islamic",
+      "7": "Buddhist",
+      "8": "Hindu",
+      "9": "Other Asian Religions",
+      "10": "Other Religions",
+      "990": "NAP, other countries",
+      "996": "No father, father not present",
+      "998": "Don't know",
+      "999": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "CH_v36",
+    "question": "Q19a_CH\nWhat was your father's religious preference when you were a child?\nWas it Protestant, Catholic, Jewish, some other religion, or no religion?\nIf Protestant: What specific denomination was that?",
+    "answer": {
+      "0": "No religion",
+      "100": "Roman Catholic",
+      "200": "Protestant",
+      "290": "Other Protestant (no specific religion mentioned)",
+      "300": "Orthodox",
+      "400": "Other Christian religions",
+      "500": "Jewish",
+      "600": "Islam",
+      "700": "Buddhism",
+      "800": "Hinduism",
+      "970": "Other non-Christian religions",
+      "990": "NAP, other countries",
+      "998": "Don't know",
+      "999": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "CL_v36",
+    "question": "Q19a_CL\nWhat was your father's religious preference when you were a child?\nWas it Protestant, Catholic, Jewish, some other religion, or no religion?\nIf Protestant: What specific denomination was that?",
+    "answer": {
+      "0": "None",
+      "10": "Evangelical: No details",
+      "11": "Evangelical: Lutheran",
+      "12": "Evangelical: Presbyterian",
+      "13": "Evangelical: Baptist",
+      "14": "Evangelical: Methodist",
+      "15": "Evangelical: Pentecostal Methodist",
+      "16": "Evangelical: Adventist",
+      "17": "Evangelical: Salvation Army",
+      "18": "Evangelical: Evangelical Pentecostal",
+      "19": "Evangelical: Other",
+      "20": "Catholic",
+      "30": "Jews",
+      "40": "Orthodox",
+      "50": "Mormon",
+      "60": "Jehovah's Witnesses",
+      "70": "Muslim",
+      "80": "Other",
+      "990": "NAP, other countries",
+      "998": "Don't know",
+      "999": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "CZ_v36",
+    "question": "Q19a_CZ\nWhat was your father's religious preference when you were a child?\nWas it Protestant, Catholic, Jewish, some other religion, or no religion?\nIf Protestant: What specific denomination was that?",
+    "answer": {
+      "0": "No religion",
+      "1": "Roman Catholic",
+      "2": "Czech-Brethren Evangelical Church",
+      "3": "Czechoslovak Hussite",
+      "4": "Other Christian",
+      "5": "Other Non-Christians",
+      "990": "NAP, other countries",
+      "996": "No father, father not present",
+      "999": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "DE_v36",
+    "question": "Q19a_DE\nWhat was your father's religious preference when you were a child?\nWas it Protestant, Catholic, Jewish, some other religion, or no religion?\nIf Protestant: What specific denomination was that?",
+    "answer": {
+      "0": "No religion",
+      "1": "Roman Catholic",
+      "2": "German Protestant Church",
+      "3": "Protestant Free Church",
+      "4": "Orthodox",
+      "5": "Other Christian denomination",
+      "6": "Islamic religion",
+      "7": "Jewish religion",
+      "8": "Buddhist religion",
+      "9": "Hindu religion",
+      "10": "Other non-Christian religion",
+      "990": "NAP, other countries",
+      "996": "No father, father not present",
+      "997": "Refused",
+      "999": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "DK_v36",
+    "question": "Q19a_DK\nWhat was your father's religious preference when you were a child?\nWas it Protestant, Catholic, Jewish, some other religion, or no religion?\nIf Protestant: What specific denomination was that?",
+    "answer": {
+      "0": "No religion",
+      "100": "Roman Catholic",
+      "250": "Lutheran",
+      "500": "Jewish",
+      "600": "Islam",
+      "960": "Other religions",
+      "990": "NAP, other countries",
+      "996": "No father, father not present",
+      "999": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "ES_v36",
+    "question": "Q19a_ES\nWhat was your father's religious preference when you were a child?\nWas it Protestant, Catholic, Jewish, some other religion, or no religion?\nIf Protestant: What specific denomination was that?",
+    "answer": {
+      "0": "No religion",
+      "100": "Roman Catholic",
+      "200": "Protestant",
+      "210": "Anglican, Church of England, Episcopal",
+      "250": "Lutheran Church",
+      "282": "Jehovah's Witnesses",
+      "290": "Evangelist Church",
+      "390": "Orthodox",
+      "400": "Other Christian religion",
+      "600": "Islam",
+      "700": "Buddhist",
+      "800": "Hindu",
+      "960": "Other religion",
+      "990": "NAP, other countries",
+      "999": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "FI_v36",
+    "question": "Q19a_FI\nWhat was your father's religious preference when you were a child?\nWas it Protestant, Catholic, Jewish, some other religion, or no religion?\nIf Protestant: What specific denomination was that?",
+    "answer": {
+      "0": "No religion",
+      "1": "Lutheran or other Protestant",
+      "2": "Catholic",
+      "3": "Jewish",
+      "4": "Orthodox",
+      "5": "Muslim",
+      "6": "Other",
+      "990": "NAP, other countries",
+      "998": "Don't know",
+      "999": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "FR_v36",
+    "question": "Q19a_FR\nWhat was your father's religious preference when you were a child?\nWas it Protestant, Catholic, Jewish, some other religion, or no religion?\nIf Protestant: What specific denomination was that?",
+    "answer": {
+      "0": "No religion",
+      "1": "Catholic",
+      "2": "Protestant",
+      "3": "Orthodox",
+      "4": "Other Christian",
+      "5": "Jewish",
+      "6": "Islamic",
+      "7": "Buddhist",
+      "8": "Hindu",
+      "9": "Other Asian Religions",
+      "10": "Other Religions",
+      "990": "NAP, other countries",
+      "998": "Can't say/ Can't remember",
+      "999": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "GB_v36",
+    "question": "Q19a_GB\nWhat was your father's religious preference when you were a child?\nWas it Protestant, Catholic, Jewish, some other religion, or no religion?\nIf Protestant: What specific denomination was that?",
+    "answer": {
+      "0": "No religion",
+      "2": "Christian - no denomination",
+      "3": "Roman Catholic",
+      "4": "Church of England/ Anglican",
+      "5": "Baptist",
+      "6": "Methodist",
+      "7": "Presbyterian/ Church of Scotland",
+      "8": "Other Christian",
+      "9": "Hindu",
+      "10": "Jewish",
+      "11": "Islam/ Muslim",
+      "12": "Sikh",
+      "13": "Buddhist",
+      "14": "Other non-Christian",
+      "21": "Free Presbyterian",
+      "22": "Brethren",
+      "23": "United Reform Church (URC)/ Congregational",
+      "27": "Other Protestant",
+      "990": "NAP, other countries",
+      "996": "No father, father not present",
+      "998": "Can't say/ Can't remember",
+      "999": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "GE_v36",
+    "question": "Q19a_GE\nWhat was your father's religious preference when you were a child?\nWas it Protestant, Catholic, Jewish, some other religion, or no religion?\nIf Protestant: What specific denomination was that?",
+    "answer": {
+      "0": "No religion",
+      "1": "Orthodox",
+      "2": "Grigorian",
+      "5": "Other Christians",
+      "7": "Muslim",
+      "10": "Other Asian religions",
+      "990": "NAP, other countries",
+      "997": "Refused",
+      "998": "Don't know"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "HR_v36",
+    "question": "Q19a_HR\nWhat was your father's religious preference when you were a child?\nWas it Protestant, Catholic, Jewish, some other religion, or no religion?\nIf Protestant: What specific denomination was that?",
+    "answer": {
+      "0": "No religion",
+      "1": "Roman Catholic",
+      "2": "Christian Orthodox",
+      "3": "Islamic",
+      "4": "Jewish",
+      "6": "Other religions",
+      "990": "NAP, other countries",
+      "998": "Don't know"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "HU_v36",
+    "question": "Q19a_HU\nWhat was your father's religious preference when you were a child?\nWas it Protestant, Catholic, Jewish, some other religion, or no religion?\nIf Protestant: What specific denomination was that?",
+    "answer": {
+      "0": "No religion",
+      "1": "Calvinist",
+      "2": "Lutheralist",
+      "3": "Unitarian",
+      "4": "Baptist",
+      "5": "Methodist",
+      "7": "Other Protestant",
+      "8": "Roman Catholic",
+      "9": "Greek Catholic",
+      "10": "Jewish",
+      "12": "Eastern Orthodox",
+      "15": "Other Christian",
+      "990": "NAP, other countries",
+      "996": "No father, father not present",
+      "997": "Refused",
+      "998": "Don't know"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "IL_v36",
+    "question": "Q19a_IL\nWhat was your father's religious preference when you were a child?\nWas it Protestant, Catholic, Jewish, some other religion, or no religion?\nIf Protestant: What specific denomination was that?",
+    "answer": {
+      "0": "No religion",
+      "1": "Roman Catholic",
+      "2": "Protestant",
+      "3": "Christian Orthodox",
+      "5": "Jewish",
+      "6": "Islamic",
+      "7": "Jewish Orthodox",
+      "9": "Reformist Jewish",
+      "10": "Other religions",
+      "11": "Druze",
+      "990": "NAP, other countries",
+      "999": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "IS_v36",
+    "question": "Q19a_IS\nWhat was your father's religious preference when you were a child?\nWas it Protestant, Catholic, Jewish, some other religion, or no religion?\nIf Protestant: What specific denomination was that?",
+    "answer": {
+      "0": "No religion",
+      "1": "Icelandic National Church - the Evangelical Lutheran Church of Iceland",
+      "2": "Catholic",
+      "3": "Protestant, but does not belong to the Iceland National Church",
+      "4": "Orthodox",
+      "5": "Other Christian",
+      "6": "Jewish",
+      "7": "Islamic",
+      "8": "Buddhist",
+      "11": "Asatru/ Paganism (belief in the old nordic gods)",
+      "12": "Other religions",
+      "990": "NAP, other countries",
+      "999": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "IT_v36",
+    "question": "Q19a_IT\nWhat was your father's religious preference when you were a child?\nWas it Protestant, Catholic, Jewish, some other religion, or no religion?\nIf Protestant: What specific denomination was that?",
+    "answer": {
+      "0": "No religion",
+      "1": "Catholic",
+      "2": "Protestant",
+      "3": "Orthodox",
+      "5": "Jewish",
+      "6": "Islamic",
+      "10": "Other Religions",
+      "990": "NAP, other countries",
+      "996": "No father, father not present",
+      "997": "Refused",
+      "998": "Don't know",
+      "999": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "JP_v36",
+    "question": "Q19a_JP\nWhat was your father's religious preference when you were a child?\nWas it Protestant, Catholic, Jewish, some other religion, or no religion?\nIf Protestant: What specific denomination was that?",
+    "answer": {
+      "0": "No religion",
+      "4": "Other Christian",
+      "7": "Buddhist",
+      "10": "Other Religions",
+      "11": "Shintoism",
+      "990": "NAP, other countries",
+      "996": "No father, father not present",
+      "998": "Don't know",
+      "999": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "KR_v36",
+    "question": "Q19a_KR\nWhat was your father's religious preference when you were a child?\nWas it Protestant, Catholic, Jewish, some other religion, or no religion?\nIf Protestant: What specific denomination was that?",
+    "answer": {
+      "0": "No religion",
+      "1": "Catholic",
+      "2": "Protestant",
+      "4": "Other Christian",
+      "5": "Jewish",
+      "7": "Buddhist",
+      "10": "Other Religions",
+      "990": "NAP, other countries"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "LT_v36",
+    "question": "Q19a_LT\nWhat was your father's religious preference when you were a child?\nWas it Protestant, Catholic, Jewish, some other religion, or no religion?\nIf Protestant: What specific denomination was that?",
+    "answer": {
+      "0": "No religion",
+      "1": "Catholic",
+      "2": "Protestant",
+      "3": "Orthodox",
+      "4": "Other Christian",
+      "990": "NAP, other countries",
+      "996": "No father, father not present",
+      "997": "Refused",
+      "998": "Don't know"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "NO_v36",
+    "question": "Q19a_NO\nWhat was your father's religious preference when you were a child?\nWas it Protestant, Catholic, Jewish, some other religion, or no religion?\nIf Protestant: What specific denomination was that?",
+    "answer": {
+      "0": "No denomination or life stance organisation",
+      "1": "Church of Norway (former State Church)",
+      "2": "Other Protestant Denomination (e.g. Free Churches, the Anglican Church, Pentecostal)",
+      "3": "Catholic",
+      "4": "Orthodox (Greek, Russian, others)",
+      "5": "Other Christian Denomination",
+      "7": "Islam",
+      "8": "Buddhism",
+      "9": "Hinduism",
+      "10": "Other Eastern religion",
+      "11": "Other non-Christian religion",
+      "12": "Other life stance organisation, for example the Norwegian Humanist Association",
+      "990": "NAP, other countries",
+      "998": "Don't know",
+      "999": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "NZ_v36",
+    "question": "Q19a_NZ\nWhat was your father's religious preference when you were a child?\nWas it Protestant, Catholic, Jewish, some other religion, or no religion?\nIf Protestant: What specific denomination was that?",
+    "answer": {
+      "0": "No religion",
+      "1": "Anglican",
+      "2": "Catholic",
+      "3": "Presbyterian",
+      "4": "Methodist",
+      "5": "Baptist",
+      "6": "Ratana",
+      "7": "Ringatu",
+      "8": "Other Christian",
+      "9": "Buddhist",
+      "10": "Hindu",
+      "11": "Muslim",
+      "12": "Jewish",
+      "13": "Other religions",
+      "990": "NAP, other countries",
+      "996": "No father, father not present",
+      "998": "Don't know",
+      "999": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "PH_v36",
+    "question": "Q19a_PH\nWhat was your father's religious preference when you were a child?\nWas it Protestant, Catholic, Jewish, some other religion, or no religion?\nIf Protestant: What specific denomination was that?",
+    "answer": {
+      "0": "No religion",
+      "1": "Roman Catholic",
+      "2": "Iglesia ni Cristo",
+      "3": "Aglipayan",
+      "4": "Protestant",
+      "5": "Islam",
+      "7": "Born again",
+      "10": "Baptist",
+      "11": "Church of Jesus Christ and the Latter Day Saints (Mormons)",
+      "12": "Seventh Day Adventist",
+      "13": "Methodist",
+      "16": "Jehovah's Witness",
+      "23": "Church of Christ",
+      "29": "One Way Outreach",
+      "31": "Pentecostal",
+      "36": "Alliance",
+      "44": "Filipinista",
+      "47": "UCCP - United Church of Christ in the Philippines",
+      "51": "Buddhist",
+      "56": "EFB - Equi Frili Brium",
+      "57": "Unified Vision Christian Community",
+      "64": "Jesus Reigns Forever International Ministry",
+      "65": "Crusaders of the Divine Church of Christ",
+      "70": "Bishop of the Philippines Divine Missionary Church",
+      "71": "Moncadista",
+      "990": "NAP, other countries",
+      "997": "Refused",
+      "999": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "RU_v36",
+    "question": "Q19a_RU\nWhat was your father's religious preference when you were a child?\nWas it Protestant, Catholic, Jewish, some other religion, or no religion?\nIf Protestant: What specific denomination was that?",
+    "answer": {
+      "0": "No religion, atheist",
+      "1": "Russian Orthodox",
+      "2": "Roman Catholic",
+      "3": "Protestant",
+      "4": "Jewish",
+      "5": "Islam",
+      "6": "Buddhism",
+      "990": "NAP, other countries",
+      "998": "Don't know"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "SE_v36",
+    "question": "Q19a_SE\nWhat was your father's religious preference when you were a child?\nWas it Protestant, Catholic, Jewish, some other religion, or no religion?\nIf Protestant: What specific denomination was that?",
+    "answer": {
+      "0": "No religion",
+      "1": "Church of Sweden",
+      "2": "Roman Catholic",
+      "3": "Christian Orthodox",
+      "4": "Christian free-church",
+      "5": "Other Christian church/ community",
+      "6": "Jewish",
+      "7": "Islamic",
+      "8": "Buddhist",
+      "9": "Hindu",
+      "10": "Other religion",
+      "990": "NAP, other countries",
+      "998": "Don't know",
+      "999": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "SI_v36",
+    "question": "Q19a_SI\nWhat was your father's religious preference when you were a child?\nWas it Protestant, Catholic, Jewish, some other religion, or no religion?\nIf Protestant: What specific denomination was that?",
+    "answer": {
+      "0": "No religion",
+      "1": "Roman Catholic",
+      "2": "Protestant",
+      "3": "Christian Orthodox",
+      "4": "Other Christian",
+      "6": "Islamic",
+      "990": "NAP, other countries",
+      "998": "Don't know",
+      "999": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "SK_v36",
+    "question": "Q19a_SK\nWhat was your father's religious preference when you were a child?\nWas it Protestant, Catholic, Jewish, some other religion, or no religion?\nIf Protestant: What specific denomination was that?",
+    "answer": {
+      "0": "No religion",
+      "1": "Roman Catholic",
+      "2": "Evangelical Lutheran",
+      "3": "Greek Catholic",
+      "4": "Reformed Calvinist",
+      "5": "Christian Orthodox",
+      "6": "Jehovah's Witnesses",
+      "8": "Jewish",
+      "9": "Other Non-Christian",
+      "990": "NAP, other countries",
+      "998": "Don't know",
+      "999": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "SR_v36",
+    "question": "Q19a_SR\nWhat was your father's religious preference when you were a child?\nWas it Protestant, Catholic, Jewish, some other religion, or no religion?\nIf Protestant: What specific denomination was that?",
+    "answer": {
+      "0": "No religion",
+      "1": "Roman Catholic",
+      "2": "Protestant: Moravian",
+      "3": "Protestant: Reformed",
+      "4": "Protestant: Evangelical",
+      "5": "Russian/ Greek Orthodox",
+      "6": "Other Christian",
+      "7": "Judaism",
+      "8": "Islam",
+      "10": "Buddhism",
+      "11": "Hinduism",
+      "13": "Javanism",
+      "14": "Other religion",
+      "990": "NAP, other countries",
+      "999": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "TH_v36",
+    "question": "Q19a_TH\nWhat was your father's religious preference when you were a child?\nWas it Protestant, Catholic, Jewish, some other religion, or no religion?\nIf Protestant: What specific denomination was that?",
+    "answer": {
+      "0": "No religion",
+      "1": "Catholic",
+      "2": "Protestant",
+      "6": "Islamic",
+      "7": "Buddhist",
+      "9": "Other Asian Religions",
+      "990": "NAP, other countries",
+      "999": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "TR_v36",
+    "question": "Q19a_TR\nWhat was your father's religious preference when you were a child?\nWas it Protestant, Catholic, Jewish, some other religion, or no religion?\nIf Protestant: What specific denomination was that?",
+    "answer": {
+      "0": "No religion",
+      "300": "Orthodox, Eastern Orthodox",
+      "500": "Jewish",
+      "690": "Muslim, Mohammedan, Islam",
+      "990": "NAP, other countries",
+      "998": "Don't know",
+      "999": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "TW_v36",
+    "question": "Q19a_TW\nWhat was your father's religious preference when you were a child?\nWas it Protestant, Catholic, Jewish, some other religion, or no religion?\nIf Protestant: What specific denomination was that?",
+    "answer": {
+      "0": "No religion",
+      "1": "Buddhism",
+      "2": "Taoism",
+      "3": "Folk religion",
+      "4": "Yiguan Dao",
+      "6": "Catholicism",
+      "7": "Protestant Christianity",
+      "8": "Other",
+      "990": "NAP, other countries",
+      "996": "No father, father not present",
+      "998": "Don't know",
+      "999": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "US_v36",
+    "question": "Q19a_US\nWhat was your father's religious preference when you were a child?\nWas it Protestant, Catholic, Jewish, some other religion, or no religion?\nIf Protestant: What specific denomination was that?",
+    "answer": {
+      "0": "No religion",
+      "1": "Protestant",
+      "2": "Catholic",
+      "3": "Jewish",
+      "4": "Orthodox (such as Greek or Russian Orthodox)",
+      "5": "Muslim",
+      "6": "Other (Please specify)",
+      "990": "NAP, other countries",
+      "997": "Refused",
+      "998": "Don't know"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "ZA_v36",
+    "question": "Q19a_ZA\nWhat was your father's religious preference when you were a child?\nWas it Protestant, Catholic, Jewish, some other religion, or no religion?\nIf Protestant: What specific denomination was that?",
+    "answer": {
+      "0": "No religion",
+      "1": "Protestant",
+      "2": "Catholic",
+      "3": "Jewish",
+      "4": "Orthodox (such as Greek or Russian Orthodox)",
+      "5": "Muslim",
+      "6": "Other (specify)",
+      "990": "NAP, other countries",
+      "998": "Don't know",
+      "999": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v37",
+    "question": "Q19b\nFather's religion: compressed groups of religions",
+    "answer": {
+      "0": "No religion",
+      "1": "Catholic",
+      "2": "Protestant",
+      "3": "Orthodox",
+      "4": "Other Christian",
+      "5": "Jewish",
+      "6": "Islamic",
+      "7": "Buddhist",
+      "8": "Hindu",
+      "9": "Other Asian Religions",
+      "10": "Other Religions",
+      "97": "NAP, no father, father not present",
+      "98": "Don't know",
+      "99": "No answer"
+    },
+    "special": {
+      "IT": {
+        "99": "No answer/ Refused"
+      }
+    }
+  },
+  {
+    "question_id": "AT_v38",
+    "question": "Q20a_AT\nWhat religion, if any, were you raised in?\nWas it Protestant, Catholic, Jewish, some other religion, or no religion?\nIf Protestant: What specific denomination was that?",
+    "answer": {
+      "0": "No religion",
+      "1": "Roman Catholic",
+      "2": "Lutheran Church (without Protestant free churches)",
+      "3": "Orthodox",
+      "4": "Other Christian denomination",
+      "5": "Muslim denomination",
+      "6": "Other non-Christian denomination",
+      "990": "NAP, other countries",
+      "998": "Don't know"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "BG_v38",
+    "question": "Q20a_BG\nWhat religion, if any, were you raised in?\nWas it Protestant, Catholic, Jewish, some other religion, or no religion?\nIf Protestant: What specific denomination was that?",
+    "answer": {
+      "0": "No religion",
+      "1": "Catholic",
+      "2": "Protestant",
+      "3": "Orthodox",
+      "4": "Other Christian",
+      "5": "Jewish",
+      "6": "Islamic",
+      "7": "Buddhist",
+      "8": "Hindu",
+      "9": "Other Asian Religions",
+      "10": "Other Religions",
+      "990": "NAP, other countries",
+      "998": "Don't know",
+      "999": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "CH_v38",
+    "question": "Q20a_CH\nWhat religion, if any, were you raised in?\nWas it Protestant, Catholic, Jewish, some other religion, or no religion?\nIf Protestant: What specific denomination was that?",
+    "answer": {
+      "0": "No religion",
+      "100": "Roman Catholic",
+      "200": "Protestant",
+      "290": "Other Protestant (no specific religion mentioned)",
+      "300": "Orthodox",
+      "400": "Other Christian religions",
+      "500": "Jewish",
+      "600": "Islam",
+      "700": "Buddhism",
+      "800": "Hinduism",
+      "970": "Other non-Christian religions",
+      "990": "NAP, other countries",
+      "998": "Don't know",
+      "999": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "CL_v38",
+    "question": "Q20a_CL\nWhat religion, if any, were you raised in?\nWas it Protestant, Catholic, Jewish, some other religion, or no religion?\nIf Protestant: What specific denomination was that?",
+    "answer": {
+      "0": "None",
+      "10": "Evangelical: No details",
+      "11": "Evangelical: Lutheran",
+      "13": "Evangelical: Baptist",
+      "14": "Evangelical: Methodist",
+      "15": "Evangelical: Pentecostal Methodist",
+      "16": "Evangelical: Adventist",
+      "17": "Evangelical: Salvation Army",
+      "18": "Evangelical: Evangelical Pentecostal",
+      "19": "Evangelical: Other",
+      "20": "Catholic",
+      "30": "Jews",
+      "50": "Mormon",
+      "60": "Jehovah's Witnesses",
+      "70": "Muslim",
+      "80": "Other",
+      "990": "NAP, other countries",
+      "998": "Don't know",
+      "999": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "CZ_v38",
+    "question": "Q20a_CZ\nWhat religion, if any, were you raised in?\nWas it Protestant, Catholic, Jewish, some other religion, or no religion?\nIf Protestant: What specific denomination was that?",
+    "answer": {
+      "0": "No religion",
+      "1": "Roman Catholic",
+      "2": "Czech-Brethren Evangelical Church",
+      "3": "Czechoslovak Hussite",
+      "4": "Other Christian",
+      "5": "Other Non-Christians",
+      "990": "NAP, other countries",
+      "999": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "DE_v38",
+    "question": "Q20a_DE\nWhat religion, if any, were you raised in?\nWas it Protestant, Catholic, Jewish, some other religion, or no religion?\nIf Protestant: What specific denomination was that?",
+    "answer": {
+      "0": "No religion",
+      "1": "Roman Catholic",
+      "2": "German Protestant Church",
+      "3": "Protestant Free Church",
+      "4": "Orthodox",
+      "5": "Other Christian denomination",
+      "6": "Islamic religion",
+      "7": "Jewish religion",
+      "9": "Hindu religion",
+      "10": "Other non-Christian religion",
+      "990": "NAP, other countries",
+      "997": "Refused",
+      "999": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "DK_v38",
+    "question": "What religion, if any, were you raised in?\nWas it Protestant, Catholic, Jewish, some other religion, or no religion?\nIf Protestant: What specific denomination was that?",
+    "answer": {
+      "0": "No religion",
+      "100": "Roman Catholic",
+      "250": "Lutheran",
+      "500": "Jewish",
+      "600": "Islam",
+      "960": "Other religions",
+      "990": "NAP, other countries",
+      "999": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "ES_v38",
+    "question": "What religion, if any, were you raised in?\nWas it Protestant, Catholic, Jewish, some other religion, or no religion?\nIf Protestant: What specific denomination was that?",
+    "answer": {
+      "0": "No religion",
+      "100": "Roman Catholic",
+      "200": "Protestant",
+      "210": "Anglican, Church of England, Episcopal",
+      "250": "Lutheran Church",
+      "282": "Jehovah's Witnesses",
+      "290": "Evangelist Church",
+      "390": "Orthodox",
+      "400": "Other Christian religion",
+      "600": "Islam",
+      "700": "Buddhist",
+      "800": "Hindu",
+      "960": "Other religion",
+      "990": "NAP, other countries",
+      "999": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "FI_v38",
+    "question": "What religion, if any, were you raised in?\nWas it Protestant, Catholic, Jewish, some other religion, or no religion?\nIf Protestant: What specific denomination was that?",
+    "answer": {
+      "0": "No religion",
+      "1": "Lutheran or other Protestant",
+      "2": "Catholic",
+      "3": "Jewish",
+      "4": "Orthodox",
+      "5": "Muslim",
+      "6": "Other",
+      "990": "NAP, other countries",
+      "998": "Don't know",
+      "999": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "FR_v38",
+    "question": "What religion, if any, were you raised in?\nWas it Protestant, Catholic, Jewish, some other religion, or no religion?\nIf Protestant: What specific denomination was that?",
+    "answer": {
+      "0": "No religion",
+      "1": "Catholic",
+      "2": "Protestant",
+      "3": "Orthodox",
+      "4": "Other Christian religion",
+      "5": "Jewish",
+      "6": "Islamic",
+      "7": "Buddhist",
+      "8": "Hindu",
+      "9": "Other Asian religion",
+      "10": "Other religion",
+      "990": "NAP, other countries",
+      "998": "Can't say, can't remember",
+      "999": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "GB_v38",
+    "question": "What religion, if any, were you raised in?\nWas it Protestant, Catholic, Jewish, some other religion, or no religion?\nIf Protestant: What specific denomination was that?",
+    "answer": {
+      "0": "No religion",
+      "2": "Christian - no denomination",
+      "3": "Roman Catholic",
+      "4": "Church of England/ Anglican",
+      "5": "Baptist",
+      "6": "Methodist",
+      "7": "Presbyterian/ Church of Scotland",
+      "8": "Other Christian",
+      "9": "Hindu",
+      "10": "Jewish",
+      "11": "Islam/ Muslim",
+      "12": "Sikh",
+      "13": "Buddhist",
+      "14": "Other non-Christian",
+      "21": "Free Presbyterian",
+      "22": "Brethren",
+      "23": "United Reform Church (URC)/ Congregational",
+      "27": "Other Protestant",
+      "990": "NAP, other countries",
+      "998": "Can't say/ Can't remember",
+      "999": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "GE_v38",
+    "question": "What religion, if any, were you raised in?\nWas it Protestant, Catholic, Jewish, some other religion, or no religion?\nIf Protestant: What specific denomination was that?",
+    "answer": {
+      "0": "No religion",
+      "1": "Orthodox",
+      "2": "Grigorian",
+      "3": "Catholic",
+      "4": "Protestant",
+      "5": "Other Christians",
+      "6": "Judaism",
+      "7": "Muslim",
+      "8": "Buddhist",
+      "9": "Hindu",
+      "10": "Other Asian religions",
+      "11": "Other religions",
+      "990": "NAP, other countries",
+      "998": "Don't know"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "HR_v38",
+    "question": "What religion, if any, were you raised in?\nWas it Protestant, Catholic, Jewish, some other religion, or no religion?\nIf Protestant: What specific denomination was that?",
+    "answer": {
+      "0": "No religion",
+      "1": "Roman Catholic",
+      "2": "Christian Orthodox",
+      "3": "Islamic",
+      "4": "Jewish",
+      "6": "Other religions",
+      "990": "NAP, other countries",
+      "998": "Don't know"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "HU_v38",
+    "question": "What religion, if any, were you raised in?\nWas it Protestant, Catholic, Jewish, some other religion, or no religion?\nIf Protestant: What specific denomination was that?",
+    "answer": {
+      "0": "No religion",
+      "1": "Calvinist",
+      "2": "Lutheralist",
+      "3": "Unitarian",
+      "4": "Baptist",
+      "5": "Methodist",
+      "7": "Other Protestant",
+      "8": "Roman Catholic",
+      "9": "Greek Catholic",
+      "10": "Jewish",
+      "12": "Eastern Orthodox",
+      "14": "Other non-Christian",
+      "15": "Other Christian",
+      "990": "NAP, other countries",
+      "997": "Refused",
+      "998": "Don't know",
+      "999": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "IL_v38",
+    "question": "What religion, if any, were you raised in?\nWas it Protestant, Catholic, Jewish, some other religion, or no religion?\nIf Protestant: What specific denomination was that?",
+    "answer": {
+      "0": "No religion",
+      "1": "Roman Catholic",
+      "2": "Protestant",
+      "3": "Christian Orthodox",
+      "4": "Other Christian",
+      "5": "Jewish",
+      "6": "Islamic",
+      "7": "Jewish Orthodox",
+      "8": "Conservative Judaism",
+      "9": "Reformist Jewish",
+      "10": "Other religions",
+      "11": "Druze",
+      "990": "NAP, other countries",
+      "999": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "IS_v38",
+    "question": "What religion, if any, were you raised in?\nWas it Protestant, Catholic, Jewish, some other religion, or no religion?\nIf Protestant: What specific denomination was that?",
+    "answer": {
+      "0": "No religion",
+      "1": "Icelandic National Church - the Evangelical Lutheran Church of Iceland",
+      "2": "Catholic",
+      "3": "Protestant, but does not belong to the Iceland National Church",
+      "4": "Orthodox",
+      "5": "Other Christian",
+      "6": "Jewish",
+      "7": "Islamic",
+      "8": "Buddhist",
+      "9": "Hindu",
+      "10": "Other Asian religions",
+      "11": "Asatru/Paganism (belief in the old nordic gods)",
+      "12": "Other religions",
+      "990": "NAP, other countries",
+      "999": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "IT_v38",
+    "question": "What religion, if any, were you raised in?\nWas it Protestant, Catholic, Jewish, some other religion, or no religion?\nIf Protestant: What specific denomination was that?",
+    "answer": {
+      "0": "No religion",
+      "1": "Catholic",
+      "2": "Protestant",
+      "3": "Orthodox",
+      "4": "Other Christian",
+      "5": "Jewish",
+      "6": "Islamic",
+      "7": "Buddhist",
+      "8": "Hindu",
+      "9": "Other Asian Religions",
+      "10": "Other Religions",
+      "990": "NAP, other countries",
+      "997": "Refused",
+      "998": "Don't know",
+      "999": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "JP_v38",
+    "question": "What religion, if any, were you raised in?\nWas it Protestant, Catholic, Jewish, some other religion, or no religion?\nIf Protestant: What specific denomination was that?",
+    "answer": {
+      "0": "No religion",
+      "4": "Other Christian",
+      "7": "Buddhist",
+      "10": "Other Religions",
+      "11": "Shintoism",
+      "990": "NAP, other countries",
+      "998": "Don't know",
+      "999": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "KR_v38",
+    "question": "What religion, if any, were you raised in?\nWas it Protestant, Catholic, Jewish, some other religion, or no religion?\nIf Protestant: What specific denomination was that?",
+    "answer": {
+      "0": "No religion",
+      "1": "Catholic",
+      "2": "Protestant",
+      "4": "Other Christian",
+      "5": "Jewish",
+      "7": "Buddhist",
+      "9": "Other Asian Religions",
+      "10": "Other Religions",
+      "990": "NAP, other countries"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "LT_v38",
+    "question": "What religion, if any, were you raised in?\nWas it Protestant, Catholic, Jewish, some other religion, or no religion?\nIf Protestant: What specific denomination was that?",
+    "answer": {
+      "0": "No religion",
+      "1": "Catholic",
+      "2": "Protestant",
+      "3": "Orthodox",
+      "4": "Other Christian",
+      "5": "Jewish",
+      "6": "Islamic",
+      "7": "Buddhist",
+      "8": "Hindu",
+      "9": "Other Asian Religions",
+      "10": "Other Religions",
+      "990": "NAP, other countries",
+      "997": "Refused",
+      "998": "Don't know"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "NO_v38",
+    "question": "What religion, if any, were you raised in?\nWas it Protestant, Catholic, Jewish, some other religion, or no religion?\nIf Protestant: What specific denomination was that?",
+    "answer": {
+      "0": "No denomination or life stance organisation",
+      "1": "Church of Norway (former State Church)",
+      "2": "Other Protestant Denomination (e.g. Free Churches, the Anglican Church, Pentecostal)",
+      "3": "Catholic",
+      "4": "Orthodox (Greek, Russian, others)",
+      "5": "Other Christian Denomination",
+      "6": "The Mosaic Religious Community (Jewish)",
+      "7": "Islam",
+      "8": "Buddhism",
+      "9": "Hinduism",
+      "10": "Other Eastern religion",
+      "11": "Other non-Christian religion",
+      "12": "Other life stance organisation, for example the Norwegian Humanist Association",
+      "990": "NAP, other countries",
+      "998": "Don't know",
+      "999": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "NZ_v38",
+    "question": "What religion, if any, were you raised in?\nWas it Protestant, Catholic, Jewish, some other religion, or no religion?\nIf Protestant: What specific denomination was that?",
+    "answer": {
+      "0": "No religion",
+      "1": "Anglican",
+      "2": "Catholic",
+      "3": "Presbyterian",
+      "4": "Methodist",
+      "5": "Baptist",
+      "6": "Ratana",
+      "7": "Ringatu",
+      "8": "Other Christian",
+      "9": "Buddhist",
+      "10": "Hindu",
+      "11": "Muslim",
+      "12": "Jewish",
+      "13": "Other religions",
+      "990": "NAP, other countries",
+      "998": "Don't know",
+      "999": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "PH_v38",
+    "question": "What religion, if any, were you raised in?\nWas it Protestant, Catholic, Jewish, some other religion, or no religion?\nIf Protestant: What specific denomination was that?",
+    "answer": {
+      "0": "No religion",
+      "1": "Roman Catholic",
+      "2": "Iglesia ni Cristo",
+      "3": "Aglipayan",
+      "4": "Protestant",
+      "5": "Islam",
+      "6": "Jesus is Lord",
+      "7": "Born again",
+      "10": "Baptist",
+      "11": "Church of Jesus Christ and the Latter Day Saints (Mormons)",
+      "12": "Seventh Day Adventist",
+      "13": "Methodist",
+      "16": "Jehovah's Witness",
+      "18": "Dating Daan",
+      "23": "Church of Christ",
+      "27": "Assembly of God",
+      "28": "Four Square",
+      "29": "One Way Outreach",
+      "31": "Pentecostal",
+      "32": "Church of God",
+      "36": "Alliance",
+      "44": "Filipinista",
+      "46": "Union Espiritista/ Union Espiritista Cristiana de Filipinas",
+      "47": "UCCP - United Church of Christ in the Philippines",
+      "49": "Orthodox",
+      "50": "Jewish",
+      "51": "Buddhist",
+      "52": "Scientology",
+      "53": "Jesus Miracle Crusade",
+      "54": "Apostle Paul Ministry of Christ",
+      "55": "BAICF - Bagong Ilog Christian Fellowship",
+      "56": "EFB - Equi Frili Brium",
+      "57": "Unified Vision Christian Community",
+      "58": "Evangelical Christian",
+      "60": "Christian Bible Church",
+      "61": "Church of God World Mission Society",
+      "62": "Kingdom of Lord",
+      "63": "Christ Gospel Fellowship Ministry",
+      "64": "Jesus Reigns Forever International Ministry",
+      "65": "Crusaders of the Divine Church of Christ",
+      "66": "Union Espiritista Cristiana de Filipinas",
+      "67": "Victory Christian Fellowship of the Philippines",
+      "68": "Kingdom of Jesus Christ",
+      "69": "CFI - Christian Fellowship International Ministries and Community",
+      "70": "Bishop of the Philippines Divine Missionary Church",
+      "71": "Moncadista",
+      "72": "Maranatha International Baptist Church",
+      "73": "Iglesia ng Dios kay Cristo Jesus",
+      "990": "NAP, other countries"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "RU_v38",
+    "question": "What religion, if any, were you raised in?\nWas it Protestant, Catholic, Jewish, some other religion, or no religion?\nIf Protestant: What specific denomination was that?",
+    "answer": {
+      "0": "No religion, atheist",
+      "1": "Russian Orthodox",
+      "2": "Roman Catholic",
+      "3": "Protestant",
+      "4": "Jewish",
+      "5": "Islam",
+      "6": "Buddhism",
+      "7": "Hinduism",
+      "8": "Other religions",
+      "990": "NAP, other countries",
+      "998": "Don't know"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "SE_v38",
+    "question": "What religion, if any, were you raised in?\nWas it Protestant, Catholic, Jewish, some other religion, or no religion?\nIf Protestant: What specific denomination was that?",
+    "answer": {
+      "0": "No religion",
+      "1": "Church of Sweden",
+      "2": "Roman Catholic",
+      "3": "Christian Orthodox",
+      "4": "Christian free-church",
+      "5": "Other Christian church/ community",
+      "6": "Jewish",
+      "7": "Islamic",
+      "8": "Buddhist",
+      "9": "Hindu",
+      "10": "Other religion",
+      "990": "NAP, other countries",
+      "998": "Don't know",
+      "999": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "SI_v38",
+    "question": "What religion, if any, were you raised in?\nWas it Protestant, Catholic, Jewish, some other religion, or no religion?\nIf Protestant: What specific denomination was that?",
+    "answer": {
+      "0": "No religion",
+      "1": "Roman Catholic",
+      "2": "Protestant",
+      "3": "Christian Orthodox",
+      "4": "Other Christian",
+      "6": "Islamic",
+      "7": "Buddishm",
+      "8": "Hindu",
+      "9": "Other Asian religions",
+      "10": "Other religion",
+      "990": "NAP, other countries",
+      "998": "Don't know",
+      "999": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "SK_v38",
+    "question": "What religion, if any, were you raised in?\nWas it Protestant, Catholic, Jewish, some other religion, or no religion?\nIf Protestant: What specific denomination was that?",
+    "answer": {
+      "0": "No religion",
+      "1": "Roman Catholic",
+      "2": "Evangelical Lutheran",
+      "3": "Greek Catholic",
+      "4": "Reformed Calvinist",
+      "5": "Christian Orthodox",
+      "6": "Jehovah's Witnesses",
+      "7": "Other Christian",
+      "8": "Jewish",
+      "9": "Other Non-Christian",
+      "990": "NAP, other countries",
+      "998": "Don't know",
+      "999": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "SR_v38",
+    "question": "What religion, if any, were you raised in?\nWas it Protestant, Catholic, Jewish, some other religion, or no religion?\nIf Protestant: What specific denomination was that?",
+    "answer": {
+      "0": "No religion",
+      "1": "Roman Catholic",
+      "2": "Protestant: Moravian",
+      "3": "Protestant: Reformed",
+      "4": "Protestant: Evangelical",
+      "5": "Russian/ Greek Orthodox",
+      "6": "Other Christian",
+      "7": "Judaism",
+      "8": "Islam",
+      "10": "Buddhism",
+      "11": "Hinduism",
+      "13": "Javanism",
+      "14": "Other religion",
+      "990": "NAP, other countries",
+      "999": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "TH_v38",
+    "question": "What religion, if any, were you raised in?\nWas it Protestant, Catholic, Jewish, some other religion, or no religion?\nIf Protestant: What specific denomination was that?",
+    "answer": {
+      "0": "No religion",
+      "1": "Catholic",
+      "2": "Protestant",
+      "3": "Orthodox",
+      "4": "Other Christian",
+      "5": "Jewish",
+      "6": "Islamic",
+      "7": "Buddhist",
+      "8": "Hindu",
+      "9": "Other Asian Religions",
+      "10": "Other Religions",
+      "990": "NAP, other countries",
+      "999": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "TR_v38",
+    "question": "What religion, if any, were you raised in?\nWas it Protestant, Catholic, Jewish, some other religion, or no religion?\nIf Protestant: What specific denomination was that?",
+    "answer": {
+      "0": "No religion",
+      "100": "Roman catholic",
+      "200": "Protestant",
+      "300": "Orthodox, Eastern Orthodox",
+      "400": "Other Christian Groups",
+      "500": "Jewish",
+      "630": "Sunni",
+      "660": "Other Muslim Religions",
+      "690": "Muslim, Mohammedan, Islam",
+      "950": "Other religions",
+      "990": "NAP, other countries",
+      "998": "Don't know",
+      "999": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "TW_v38",
+    "question": "What religion, if any, were you raised in?\nWas it Protestant, Catholic, Jewish, some other religion, or no religion?\nIf Protestant: What specific denomination was that?",
+    "answer": {
+      "0": "No religion",
+      "1": "Buddhism",
+      "2": "Taoism",
+      "3": "Folk religion",
+      "4": "Yiguan Dao",
+      "5": "Moslem/ Islam",
+      "6": "Catholicism",
+      "7": "Protestant Christianity",
+      "8": "Other",
+      "990": "NAP, other countries",
+      "998": "Don't know",
+      "999": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "US_v38",
+    "question": "What religion, if any, were you raised in?\nWas it Protestant, Catholic, Jewish, some other religion, or no religion?\nIf Protestant: What specific denomination was that?",
+    "answer": {
+      "0": "No religion",
+      "1": "Protestant",
+      "2": "Catholic",
+      "3": "Jewish",
+      "4": "Orthodox (such as Greek or Russian Orthodox)",
+      "5": "Muslim",
+      "6": "Other (Please specify)",
+      "990": "NAP, other countries",
+      "997": "Refused",
+      "998": "Don't know"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "ZA_v38",
+    "question": "What religion, if any, were you raised in?\nWas it Protestant, Catholic, Jewish, some other religion, or no religion?\nIf Protestant: What specific denomination was that?",
+    "answer": {
+      "0": "No religion",
+      "1": "Protestant",
+      "2": "Catholic",
+      "3": "Jewish",
+      "4": "Orthodox (such as Greek or Russian Orthodox)",
+      "5": "Muslim",
+      "6": "Other (specify)",
+      "990": "NAP, other countries",
+      "998": "Don't know",
+      "999": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v39",
+    "question": "Religion respondent raised in: compressed groups of religions.\nDerivation:\nThis variable is derived from Q.20a (detailed religious denominations).",
+    "answer": {
+      "0": "No religion",
+      "1": "Catholic",
+      "2": "Protestant",
+      "3": "Orthodox",
+      "4": "Other Christian",
+      "5": "Jewish",
+      "6": "Islamic",
+      "7": "Buddhist",
+      "8": "Hindu",
+      "9": "Other Asian Religions",
+      "10": "Other Religions",
+      "98": "Don't know",
+      "99": "No answer"
+    },
+    "special": {
+      "IT": {
+        "99": "No answer/ Refused"
+      },
+      "NZ": {
+        "4": "Christian"
+      }
+    }
+  },
+  {
+    "question_id": "v40",
+    "question": "When you were a child, how often did your mother attend religious services?",
+    "answer": {
+      "1": "Never",
+      "2": "Less than once a year",
+      "3": "About once or twice a year",
+      "4": "Several times a year",
+      "5": "About once a month",
+      "6": "2-3 times a month",
+      "7": "Nearly every week",
+      "8": "Every week",
+      "9": "Several times a week",
+      "10": "No mother/ mother not present",
+      "98": "Can't say/ Can't remember",
+      "99": "No answer"
+    },
+    "special": {
+      "KR": {
+        "3": "About once a year"
+      },
+      "IL": {
+        "question": "When you were a child, how often did (your mother/ your father/ you when you were 11 or 12) go to the synagogue, mosque etc.?"
+      }
+    }
+  },
+  {
+    "question_id": "v41",
+    "question": "When you were a child, how often did your father attend religious services?",
+    "answer": {
+      "1": "Never",
+      "2": "Less than once a year",
+      "3": "About once or twice a year",
+      "4": "Several times a year",
+      "5": "About once a month",
+      "6": "2-3 times a month",
+      "7": "Nearly every week",
+      "8": "Every week",
+      "9": "Several times a week",
+      "10": "No father/ father not present",
+      "98": "Can't say/ Can't remember",
+      "99": "No answer"
+    },
+    "special": {
+      "KR": {
+        "3": "About once a year"
+      },
+      "IL": {
+        "question": "When you were a child, how often did (your mother/ your father/ you when you were 11 or 12) go to the synagogue, mosque etc.?"
+      }
+    }
+  },
+  {
+    "question_id": "v42",
+    "question": "And what about when you were around 11 or 12, how often did you attend religious services then?",
+    "answer": {
+      "1": "Never",
+      "2": "Less than once a year",
+      "3": "About once or twice a year",
+      "4": "Several times a year",
+      "5": "About once a month",
+      "6": "2-3 times a month",
+      "7": "Nearly every week",
+      "8": "Every week",
+      "9": "Several times a week",
+      "98": "Can't say/ Can't remember",
+      "99": "No answer"
+    },
+    "special": {
+      "KR": {
+        "3": "About once a year"
+      },
+      "IL": {
+        "question": "When you were a child, how often did (your mother/ your father/ you when you were 11 or 12) go to the synagogue, mosque etc.?"
+      }
+    }
+  },
+  {
+    "question_id": "v43",
+    "question": "Now thinking about the present...\nQ24a\nAbout how often do you pray?",
+    "answer": {
+      "1": "Never",
+      "2": "Less than once a year",
+      "3": "About once or twice a year",
+      "4": "Several times a year",
+      "5": "About once a month",
+      "6": "2-3 times a month",
+      "7": "Nearly every week",
+      "8": "Every week",
+      "9": "Several times a week",
+      "10": "Once a day",
+      "11": "Several times a day",
+      "98": "Don't know",
+      "99": "No answer"
+    },
+    "special": {
+      "KR": {
+        "3": "About once a year",
+        "10": "Not used",
+        "11": "Not used"
+      },
+      "US": {
+        "10": "Not used",
+        "11": "Not used"
+      }
+    }
+  },
+  {
+    "question_id": "v44",
+    "question": "How often do you take part in the activities or organizations of a church or place of worship other than attending services?",
+    "answer": {
+      "1": "Never",
+      "2": "Less than once a year",
+      "3": "About once or twice a year",
+      "4": "Several times a year",
+      "5": "About once a month",
+      "6": "2-3 times a month",
+      "7": "Nearly every week",
+      "8": "Every week",
+      "9": "Several times a week",
+      "98": "Don't know",
+      "99": "No answer"
+    },
+    "special": {
+      "KR": {
+        "0": "No religion",
+        "3": "About once a year"
+      },
+      "US": {
+        "9": "Several times a week/ Once a day/ Several times a day"
+      },
+      "IL": {
+        "question": "How often do you participate in activities in the synagogue, mosque, church other than attending prayers in place of worship?"
+      }
+    }
+  },
+  {
+    "question_id": "v45",
+    "question": "During the last 12 months, have you read or listened to the reading of any holy scripture such as the Bible, Buddhist sutra, Koran, Sruti, Torah, or other religious scripture, not counting any reading that happened during a worship service?",
+    "answer": {
+      "1": "Yes",
+      "2": "No",
+      "8": "Don't know",
+      "9": "No answer"
+    },
+    "special": {
+      "GE": {
+        "9": "Refused"
+      },
+      "IS": {
+        "question": "During the last months, ... (and not 'During the last 12 months, ...')."
+      }
+    }
+  },
+  {
+    "question_id": "v46",
+    "question": "For religious reasons do you have in your home a shrine, altar, or a religious object on display such as a [COUNTRY-SPECIFIC LIST icon, retablo, mezuzah, menorah, or crucifix]?",
+    "answer": {
+      "1": "Yes",
+      "2": "No",
+      "8": "Don't know",
+      "9": "No answer"
+    },
+    "special": {
+      "GE": {
+        "9": "Refused"
+      }
+    }
+  },
+  {
+    "question_id": "v47",
+    "question": "How often do you visit a holy place for religious reasons such as going to [COUNTRY-SPECIFIC shrine/ temple/ church/ mosque]?\nPlease do NOT count attending regular religious services at your usual place of worship, if you have one.",
+    "answer": {
+      "1": "Never",
+      "2": "Less than once a year",
+      "3": "About once or twice a year",
+      "4": "Several times a year",
+      "5": "About once a month or more",
+      "8": "Don't know",
+      "9": "No answer"
+    },
+    "special": {
+      "GE": {
+        "9": "Refused"
+      },
+      "HU": {
+        "0": "Not religious"
+      }
+    }
+  },
+  {
+    "question_id": "v48",
+    "question": "Would you describe yourself as...",
+    "answer": {
+      "1": "Extremely religious",
+      "2": "Very religious",
+      "3": "Somewhat religious",
+      "4": "Neither religious nor non-religious",
+      "5": "Somewhat non-religious",
+      "6": "Very non-religious",
+      "7": "Extremely non-religious",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {
+      "CZ": {
+        "question": "There is a major problem while translating the word 'religious' into Czech as there is no direct equivalent in Czech language. Therefore, the word 'duchovní' was used, which is close to the word 'spiritual' in English."
+      },
+      "IT": {
+        "3": "Quite religious",
+        "5": "Little religious",
+        "6": "Very little religious",
+        "7": "Definitely non-religious"
+      }
+    }
+  },
+  {
+    "question_id": "v49",
+    "question": "What best describes you:",
+    "answer": {
+      "1": "I follow a religion, I am a spiritual person",
+      "2": "I follow a religion, I am not a spiritual person",
+      "3": "I don't follow a religion, I am a spiritual person",
+      "4": "I don't follow a religion, I am not a spiritual person",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {
+      "GE": {
+        "9": "Refused"
+      }
+    }
+  },
+  {
+    "question_id": "v50",
+    "question": "Do you agree or disagree that practicing a religion helps people to…\nQ31a\nMake friends?",
+    "answer": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {
+      "GE": {
+        "9": "Refused"
+      }
+    }
+  },
+  {
+    "question_id": "v51",
+    "question": "Do you agree or disagree that practicing a religion helps people to…\nQ31b\nGain comfort in times of trouble or sorrow?",
+    "answer": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {
+      "GE": {
+        "9": "Refused"
+      }
+    }
+  },
+  {
+    "question_id": "v52",
+    "question": "Do you agree or disagree with the following statement?\nReligions are usually a barrier to equality between women and men.",
+    "answer": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {
+      "GE": {
+        "9": "Refused"
+      }
+    }
+  },
+  {
+    "question_id": "v53",
+    "question": "Do you agree or disagree with the following statements?\nQ33a\nGovernments should not interfere with the attempts of any religion to spread its faith.",
+    "answer": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {
+      "GE": {
+        "9": "Refused"
+      }
+    }
+  },
+  {
+    "question_id": "v54",
+    "question": "Do you agree or disagree with the following statements?\nQ33b\nAll things considered, people belonging to different religions cannot get along with each other when living close together.",
+    "answer": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {
+      "GE": {
+        "9": "Refused"
+      }
+    }
+  },
+  {
+    "question_id": "v55",
+    "question": "Do you agree or disagree with each of the following?\nQ34a\nIn [COUNTRY], religion represents the past and not the future.",
+    "answer": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {
+      "GE": {
+        "9": "Refused"
+      }
+    }
+  },
+  {
+    "question_id": "v56",
+    "question": "Do you agree or disagree with each of the following?\nQ34b\nIn [COUNTRY], religion is just as relevant to life today as it was in the past.",
+    "answer": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {
+      "GE": {
+        "9": "Refused"
+      }
+    }
+  },
+  {
+    "question_id": "v57",
+    "question": "What is your personal attitude towards members of the following religious groups?\nQ35a\nChristians",
+    "answer": {
+      "1": "Very positive",
+      "2": "Somewhat positive",
+      "3": "Neither positive nor negative",
+      "4": "Somewhat negative",
+      "5": "Very negative",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {
+      "GE": {
+        "9": "Refused"
+      },
+      "FI": {
+        "question": "Since the Evangelical-Lutheran Church of Finland is the main Christian religion and church in Finland, the subquestion about the personal attitudes towards 'Christians' was replaced by the question for the personal attitudes towards the 'Evangelical-Lutheran Church of Finland'."
+      }
+    }
+  },
+  {
+    "question_id": "v58",
+    "question": "What is your personal attitude towards members of the following religious groups?\nQ35b\nMuslims",
+    "answer": {
+      "1": "Very positive",
+      "2": "Somewhat positive",
+      "3": "Neither positive nor negative",
+      "4": "Somewhat negative",
+      "5": "Very negative",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {
+      "GE": {
+        "9": "Refused"
+      }
+    }
+  },
+  {
+    "question_id": "v59",
+    "question": "What is your personal attitude towards members of the following religious groups?\nQ35c\nHindus",
+    "answer": {
+      "1": "Very positive",
+      "2": "Somewhat positive",
+      "3": "Neither positive nor negative",
+      "4": "Somewhat negative",
+      "5": "Very negative",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {
+      "GE": {
+        "9": "Refused"
+      }
+    }
+  },
+  {
+    "question_id": "v60",
+    "question": "What is your personal attitude towards members of the following religious groups?\nQ35d\nBuddhists",
+    "answer": {
+      "1": "Very positive",
+      "2": "Somewhat positive",
+      "3": "Neither positive nor negative",
+      "4": "Somewhat negative",
+      "5": "Very negative",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {
+      "GE": {
+        "9": "Refused"
+      }
+    }
+  },
+  {
+    "question_id": "v61",
+    "question": "What is your personal attitude towards members of the following religious groups?\nQ35e\nJews",
+    "answer": {
+      "1": "Very positive",
+      "2": "Somewhat positive",
+      "3": "Neither positive nor negative",
+      "4": "Somewhat negative",
+      "5": "Very negative",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {
+      "GE": {
+        "9": "Refused"
+      }
+    }
+  },
+  {
+    "question_id": "v62",
+    "question": "What is your personal attitude towards members of the following religious groups?\nQ35f\nAtheists or non-believers",
+    "answer": {
+      "1": "Very positive",
+      "2": "Somewhat positive",
+      "3": "Neither positive nor negative",
+      "4": "Somewhat negative",
+      "5": "Very negative",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {
+      "GE": {
+        "9": "Refused"
+      }
+    }
+  },
+  {
+    "question_id": "v63",
+    "question": "In general, would you say your health is…",
+    "answer": {
+      "1": "Excellent",
+      "2": "Very good",
+      "3": "Good",
+      "4": "Fair",
+      "5": "Poor",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {
+      "BG": {
+        "0": "Not available"
+      },
+      "NZ": {
+        "0": "Not available"
+      }
+    }
+  },
+  {
+    "question_id": "v64",
+    "question": "Would you say that you have been 'born again' or have had a 'born again' experience - that is, a turning point in your life when you committed yourself to Christ?",
+    "answer": {
+      "0": "Not available (AT, BG, CL, CZ, DE, DK, ES, FR, GB, HR, HU, IL, IS, IT, JP, KR, LT, NO, PH, RU, SE, SI, SK, SR, TR, TH, TW, ZA)",
+      "1": "Yes",
+      "2": "No",
+      "8": "Don't know",
+      "9": "No answer"
+    },
+    "special": {
+      "GE": {
+        "9": "Refused"
+      }
+    }
+  },
+  {
+    "question_id": "v65",
+    "question": "Which of these statements comes closest to describing your feelings about the Bible?",
+    "answer": {
+      "0": "Not available (AT, BG, CL, DE, DK, ES, GB, GE, HR, HU, IL, IS, IT, JP, KR, LT, NO, RU, SE, SI, SR, TR, TH, TW, ZA)",
+      "1": "The Bible is the actual word of God, to be taken literally",
+      "2": "Bible is the inspired word of God, not to be taken literally",
+      "3": "Bible is ancient book of legends, moral precepts recorded by man",
+      "4": "This does not apply to me",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {
+      "CZ": {
+        "4": "Not used"
+      }
+    }
+  },
+  {
+    "question_id": "v66",
+    "question": "Has there ever been a turning point in your life when you made a new and personal commitment to religion?",
+    "answer": {
+      "0": "Not available (AT, BG, CL, DK, ES, GB, GE, HR, HU, IL, IS, IT, JP, KR, NO, PH, SE, SI, SR, TR, TH, TW, US, ZA)",
+      "1": "Yes",
+      "2": "No",
+      "8": "Don't know",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v67",
+    "question": "Now please think about something different. Please check one box on each line below to show whether you think each statement is true or false.\nO4a\nGood luck charms sometimes do bring good luck.",
+    "answer": {
+      "0": "Not available (BG, CL, DK, ES, GB, HR, HU, IL, IS, IT, JP, KR, NO, PH, SI, SR, TH, TW, US, ZA)",
+      "1": "Definitely true",
+      "2": "Probably true",
+      "3": "Probably false",
+      "4": "Definitely false",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {
+      "GE": {
+        "9": "Refused"
+      }
+    }
+  },
+  {
+    "question_id": "v68",
+    "question": "Now please think about something different. Please check one box on each line below to show whether you think each statement is true or false.\nO4b\nSome fortune tellers really can foresee the future.",
+    "answer": {
+      "0": "Not available (BG, CL, DK, ES, GB, HR, HU, IL, IS, IT, JP, NO, PH, SI, SR, TH, TW, US, ZA)",
+      "1": "Definitely true",
+      "2": "Probably true",
+      "3": "Probably false",
+      "4": "Definitely false",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {
+      "GE": {
+        "9": "Refused"
+      }
+    }
+  },
+  {
+    "question_id": "KR_v68",
+    "question": "Now please think about something different. Please check one box on each line below to show whether you think each statement is true or false.\nO4b\nSome fortune tellers really can foresee the future.",
+    "answer": {
+      "0": "NAP, other countries",
+      "1": "Definitely true",
+      "2": "Probably true",
+      "3": "Neither true nor false",
+      "4": "Probably false",
+      "5": "Definitely false",
+      "8": "Can't choose"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v69",
+    "question": "Now please think about something different. Please check one box on each line below to show whether you think each statement is true or false.\nO4c\nSome faith healers do have God-given healing powers.",
+    "answer": {
+      "0": "Not available (BG, CL, DK, ES, GB, HR, HU, IL, IS, IT, JP, KR, NO, PH, SI, SR, TH, TW, US, ZA)",
+      "1": "Definitely true",
+      "2": "Probably true",
+      "3": "Probably false",
+      "4": "Definitely false",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {
+      "GE": {
+        "9": "Refused"
+      }
+    }
+  },
+  {
+    "question_id": "v70",
+    "question": "Now please think about something different. Please check one box on each line below to show whether you think each statement is true or false. A person's star sign at birth, or horoscope, can affect the course of their future.",
+    "answer": {
+      "0": "Not available (BG, CL, DK, ES, GB, HR, HU, IL, IS, IT, JP, KR, NO, PH, SI, SR, TH, TW, US, ZA)",
+      "1": "Definitely true",
+      "2": "Probably true",
+      "3": "Probably false",
+      "4": "Definitely false",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {
+      "GE": {
+        "9": "Refused"
+      }
+    }
+  },
+  {
+    "question_id": "v71",
+    "question": "Suppose a law was passed which conflicted with your religious principles and teachings. Would you...",
+    "answer": {
+      "0": "Not available (AT, BG, CL, CZ, DE, ES, GB, HR, HU, IL, IS, IT, JP, KR, NO, RU, SE, SI, SR, TW, US, ZA)",
+      "1": "Definitely follow the law",
+      "2": "Probably follow the law",
+      "3": "Probably follow your religious principles",
+      "4": "Definitely follow your religious principles",
+      "5": "I have no religious principles",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {
+      "GE": {
+        "9": "Refused"
+      }
+    }
+  },
+  {
+    "question_id": "v72",
+    "question": "Do you consider those belonging to the following groups as threatening or not threatening? Christians",
+    "answer": {
+      "0": "Not available (AT, BG, CL, DE, ES, FR, GB, GE, HR, HU, IL, IS, IT, JP, KR, NO, PH, RU, SE, SI, SR, TR, TW, US)",
+      "1": "Very threatening",
+      "2": "Somewhat threatening",
+      "3": "Not very threatening",
+      "4": "Not at all threatening",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v73",
+    "question": "Do you consider those belonging to the following groups as threatening or not threatening? Muslims",
+    "answer": {
+      "0": "Not available (AT, BG, CL, DE, ES, FR, GB, GE, HR, HU, IL, IS, IT, JP, KR, NO, PH, RU, SE, SI, SR, TR, TW, US)",
+      "1": "Very threatening",
+      "2": "Somewhat threatening",
+      "3": "Not very threatening",
+      "4": "Not at all threatening",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v74",
+    "question": "Do you consider those belonging to the following groups as threatening or not threatening? Hindus",
+    "answer": {
+      "0": "Not available (AT, BG, CL, DE, ES, FR, GB, GE, HR, HU, IL, IS, IT, JP, KR, NO, PH, RU, SE, SI, SK, SR, TR, TW, US)",
+      "1": "Very threatening",
+      "2": "Somewhat threatening",
+      "3": "Not very threatening",
+      "4": "Not at all threatening",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v75",
+    "question": "Do you consider those belonging to the following groups as threatening or not threatening? Buddhists",
+    "answer": {
+      "0": "Not available (AT, BG, CL, DE, ES, FR, GB, GE, HR, HU, IL, IS, IT, JP, KR, NO, PH, RU, SE, SI, SK, SR, TR, TW, US)",
+      "1": "Very threatening",
+      "2": "Somewhat threatening",
+      "3": "Not very threatening",
+      "4": "Not at all threatening",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v76",
+    "question": "Do you consider those belonging to the following groups as threatening or not threatening? Jews",
+    "answer": {
+      "0": "Not available (AT, BG, CL, DE, ES, FR, GB, GE, HR, HU, IL, IS, IT, JP, KR, NO, PH, RU, SE, SI, SR, TR, TW, US)",
+      "1": "Very threatening",
+      "2": "Somewhat threatening",
+      "3": "Not very threatening",
+      "4": "Not at all threatening",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v77",
+    "question": "Do you consider those belonging to the following groups as threatening or not threatening? Non-believers",
+    "answer": {
+      "0": "Not available (AT, BG, CL, DE, ES, FR, GB, GE, HR, HU, IL, IS, IT, JP, KR, NO, PH, RU, SE, SI, SR, TR, TW, US)",
+      "1": "Very threatening",
+      "2": "Somewhat threatening",
+      "3": "Not very threatening",
+      "4": "Not at all threatening",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v78",
+    "question": "Generally speaking, would you say that people can be trusted or that you can't be too careful in dealing with people?",
+    "answer": {
+      "0": "Not available (BG, ES, GB, GE, HR, HU, IL, IS, IT, JP, NO, PH, SE, SI, US)",
+      "1": "People can almost always be trusted",
+      "2": "People can usually be trusted",
+      "3": "You usually can't be too careful in dealing with people",
+      "4": "You almost always can't be too careful in dealing with people",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v79",
+    "question": "Do you believe in... Reincarnation - being reborn in this world again and again?",
+    "answer": {
+      "0": "Not available (AT, BG, CZ, DE, DK, ES, GE, HR, HU, IL, IS, IT, JP, KR, PH, RU, SE, SI, SK, SR, TR, TH, US, ZA)",
+      "1": "Yes, definitely",
+      "2": "Yes, probably",
+      "3": "No, probably not",
+      "4": "No, definitely not",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v80",
+    "question": "Do you believe in... Nirvana?",
+    "answer": {
+      "0": "Not available (AT, BG, CL, CZ, DE, DK, ES, GE, HR, HU, IL, IS, IT, JP, KR, NO, PH, RU, SE, SI, SK, SR, TR, TH, TW, US, ZA)",
+      "1": "Yes, definitely",
+      "2": "Yes, probably",
+      "3": "No, probably not",
+      "4": "No, definitely not",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v81",
+    "question": "Do you agree or disagree with the following statement? A country's laws should not be based on any religion.",
+    "answer": {
+      "0": "Not available (AT, BG, CL, CZ, ES, GB, GE, HR, HU, IL, IS, IT, JP, KR, NO, SE, SI, SR, TR, TH, TW, US, ZA)",
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {}
+  }
+]

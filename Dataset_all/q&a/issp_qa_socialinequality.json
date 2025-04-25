@@ -1,0 +1,1162 @@
+[
+  {
+    "question_id": "v1",
+    "question": "Q1 To begin we have some questions about opportunities for getting ahead ... Please tick one box for each of these to show how important you think it is for getting ahead in life... (Please tick one box on each line.) Q1a How important is coming from a wealthy family?",
+    "answer": {
+      "-9": "No answer",
+      "-8": "Can't choose",
+      "1": "Essential",
+      "2": "Very important",
+      "3": "Fairly important",
+      "4": "Not very important",
+      "5": "Not important at all"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v2",
+    "question": "Q1 To begin we have some questions about opportunities for getting ahead ... Please tick one box for each of these to show how important you think it is for getting ahead in life... (Please tick one box on each line.) Q1b How important is having well-educated parents?",
+    "answer": {
+      "-9": "No answer",
+      "-8": "Can't choose",
+      "1": "Essential",
+      "2": "Very important",
+      "3": "Fairly important",
+      "4": "Not very important",
+      "5": "Not important at all"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v3",
+    "question": "Q1 To begin we have some questions about opportunities for getting ahead ... Please tick one box for each of these to show how important you think it is for getting ahead in life... (Please tick one box on each line.) Q1c How important is having a good education yourself?",
+    "answer": {
+      "-9": "No answer",
+      "-8": "Can't choose",
+      "1": "Essential",
+      "2": "Very important",
+      "3": "Fairly important",
+      "4": "Not very important",
+      "5": "Not important at all"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v4",
+    "question": "Q1 To begin we have some questions about opportunities for getting ahead ... Please tick one box for each of these to show how important you think it is for getting ahead in life... (Please tick one box on each line.) Q1d How important is hard work?",
+    "answer": {
+      "-9": "No answer",
+      "-8": "Can't choose",
+      "1": "Essential",
+      "2": "Very important",
+      "3": "Fairly important",
+      "4": "Not very important",
+      "5": "Not important at all"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v5",
+    "question": "Q1 To begin we have some questions about opportunities for getting ahead ... Please tick one box for each of these to show how important you think it is for getting ahead in life... (Please tick one box on each line.) Q1e How important is knowing the right people?",
+    "answer": {
+      "-9": "No answer",
+      "-8": "Can't choose",
+      "1": "Essential",
+      "2": "Very important",
+      "3": "Fairly important",
+      "4": "Not very important",
+      "5": "Not important at all"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v6",
+    "question": "Q1 To begin we have some questions about opportunities for getting ahead ... Please tick one box for each of these to show how important you think it is for getting ahead in life... (Please tick one box on each line.) Q1f How important is having political connections?",
+    "answer": {
+      "-9": "No answer",
+      "-8": "Can't choose",
+      "1": "Essential",
+      "2": "Very important",
+      "3": "Fairly important",
+      "4": "Not very important",
+      "5": "Not important at all"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v7",
+    "question": "Q1 To begin we have some questions about opportunities for getting ahead ... Please tick one box for each of these to show how important you think it is for getting ahead in life... (Please tick one box on each line.) Q1g How important is giving bribes?",
+    "answer": {
+      "-9": "No answer",
+      "-8": "Can't choose",
+      "1": "Essential",
+      "2": "Very important",
+      "3": "Fairly important",
+      "4": "Not very important",
+      "5": "Not important at all"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v8",
+    "question": "Q1 To begin we have some questions about opportunities for getting ahead ... Please tick one box for each of these to show how important you think it is for getting ahead in life... (Please tick one box on each line.) Q1h How important is a person's race?",
+    "answer": {
+      "-9": "No answer",
+      "-8": "Can't choose",
+      "1": "Essential",
+      "2": "Very important",
+      "3": "Fairly important",
+      "4": "Not very important",
+      "5": "Not important at all"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v9",
+    "question": "Q1 To begin we have some questions about opportunities for getting ahead ... Please tick one box for each of these to show how important you think it is for getting ahead in life... (Please tick one box on each line.) Q1i How important is a person's religion?",
+    "answer": {
+      "-9": "No answer",
+      "-8": "Can't choose",
+      "1": "Essential",
+      "2": "Very important",
+      "3": "Fairly important",
+      "4": "Not very important",
+      "5": "Not important at all"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v10",
+    "question": "Q1 To begin we have some questions about opportunities for getting ahead ... Please tick one box for each of these to show how important you think it is for getting ahead in life... (Please tick one box on each line.) Q1j How important is being born a man or a woman?",
+    "answer": {
+      "-9": "No answer",
+      "-8": "Can't choose",
+      "1": "Essential",
+      "2": "Very important",
+      "3": "Fairly important",
+      "4": "Not very important",
+      "5": "Not important at all"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v21",
+    "question": "Q4 To what extent do you agree or disagree with the following statements? (Please tick one box on each line.) Q4a Differences in income in [COUNTRY] are too large.",
+    "answer": {
+      "-9": "No answer",
+      "-8": "Can't choose",
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v22",
+    "question": "Q4 To what extent do you agree or disagree with the following statements? (Please tick one box on each line.) Q4b It is the responsibility of the government to reduce the differences in income between people with high incomes and those with low incomes.",
+    "answer": {
+      "-9": "No answer",
+      "-8": "Can't choose",
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v23",
+    "question": "Q4 To what extent do you agree or disagree with the following statements? (Please tick one box on each line.) Q4c The government should provide a decent standard of living for the unemployed.",
+    "answer": {
+      "-9": "No answer",
+      "-8": "Cant choose",
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v24",
+    "question": "Q4 To what extent do you agree or disagree with the following statements? (Please tick one box on each line.) Q4d It is the responsibility of private companies to reduce the differences in pay between their employees with high pay and those with low pay.",
+    "answer": {
+      "-9": "No answer",
+      "-8": "Can't choose",
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v25",
+    "question": "Q5 Looking at the list below, who do you think should have the greatest responsibility for reducing differences in income between people with high incomes and people with low incomes? (Please tick one box only.)",
+    "answer": {
+      "-9": "No answer",
+      "-8": "Cant choose",
+      "-1": "Not available: NO (answer scale differs from ISSP standard)",
+      "1": "Private companies",
+      "2": "Government",
+      "3": "Trade unions",
+      "4": "High-income individuals themselves",
+      "5": "Low-income individuals themselves",
+      "6": "Income differences do not need to be reduced"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "NO_v25",
+    "question": "Q5 Looking at the list below, who do you think should have the greatest responsibility for reducing differences in income between people with high incomes and people with low incomes? (Please tick one box only.)",
+    "answer": {
+      "-9": "No answer",
+      "-8": "Cant choose",
+      "-1": "NAV: Other countries",
+      "1": "Private companies",
+      "2": "Government",
+      "3": "Trade unions",
+      "4": "High-income individuals themselves",
+      "6": "Income differences do not need to be reduced"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v26",
+    "question": "Q6 To what extent do you agree or disagree with the following statement: Most politicians in [COUNTRY] do not care about reducing the differences in income between people with high incomes and people with low incomes. (Please tick one box only.)",
+    "answer": {
+      "-9": "No answer",
+      "-8": "Can't choose",
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v27",
+    "question": "Q7 How successful do you think the government in [COUNTRY] is nowadays in reducing the differences in income between people with high incomes and people with low incomes? (Please tick one box only.)",
+    "answer": {
+      "-9": "No answer",
+      "-8": "Can't choose",
+      "1": "Very successful",
+      "2": "Quite successful",
+      "3": "Neither successful nor unsuccessful",
+      "4": "Quite unsuccessful",
+      "5": "Very unsuccessful"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v28",
+    "question": "Q8a Do you think people with high incomes should pay a larger share of their income in taxes than those with low incomes, the same share, or a smaller share? (Please tick one box only.)",
+    "answer": {
+      "-9": "No answer",
+      "-8": "Can't choose",
+      "1": "Much larger share",
+      "2": "Larger",
+      "3": "The same share",
+      "4": "Smaller",
+      "5": "Much smaller share"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v29",
+    "question": "Q8b Generally, how would you describe taxes in [COUNTRY] today for those with high incomes? Taxes are... (Please tick one box only.)",
+    "answer": {
+      "-9": "No answer",
+      "-8": "Can't choose: BG: incl. refused",
+      "1": "Much too high",
+      "2": "Too high",
+      "3": "About right",
+      "4": "Too low",
+      "5": "Much too low"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v30",
+    "question": "Q9a Is it just or unjust - right or wrong - that people with higher incomes can buy better health care than people with lower incomes? (Please tick one box only.)",
+    "answer": {
+      "-9": "No answer",
+      "-8": "Can't choose: BG: incl. refused",
+      "1": "Very just, definitely right",
+      "2": "Somewhat just, right",
+      "3": "Neither just nor unjust, mixed feelings",
+      "4": "Somewhat unjust, wrong",
+      "5": "Very unjust, definitely wrong"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v31",
+    "question": "Q9b Is it just or unjust - right or wrong - that people with higher incomes can buy better education for their children than people with lower incomes? (Please tick one box only.)",
+    "answer": {
+      "-9": "No answer",
+      "-8": "Can't choose: BG: incl. refused",
+      "1": "Very just, definitely right",
+      "2": "Somewhat just, right",
+      "3": "Neither just nor unjust, mixed feelings",
+      "4": "Somewhat unjust, wrong",
+      "5": "Very unjust, definitely wrong"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v32",
+    "question": "Q10 Some people feel angry about differences in wealth between the rich and the poor, while others do not. How do you feel when you think about differences in wealth between the rich and the poor in [COUNTRY]? Please place yourself on a scale of 0 to 10, where 0 means not angry at all and 10 means extremely angry. (Please tick one box only.)",
+    "answer": {
+      "-9": "No answer",
+      "-8": "Can't choose",
+      "0": "Not angry at all",
+      "1": "01",
+      "2": "02",
+      "3": "03",
+      "4": "04",
+      "5": "05",
+      "6": "06",
+      "7": "07",
+      "8": "08",
+      "9": "09",
+      "10": "Extremely angry"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v33",
+    "question": "Q11 Turning to international differences. To what extend do you agree with the following statements? (Please tick one box on each line.) Q11a Present economic differences between rich and poor countries are too large.",
+    "answer": {
+      "-9": "No answer",
+      "-8": "Can't choose",
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v34",
+    "question": "Q11 Turning to international differences. To what extend do you agree with the following statements? (Please tick one box on each line.) Q11b People in wealthy countries should make an additional tax contribution to help people in poor countries.",
+    "answer": {
+      "-9": "No answer",
+      "-8": "Can't choose",
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v35",
+    "question": "Q11 Turning to international differences. To what extend do you agree with the following statements? (Please tick one box on each line.) Q11c People from poor countries should be allowed to work in wealthy countries.",
+    "answer": {
+      "-9": "No answer",
+      "-8": "Can't choose",
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v36",
+    "question": "Q12 In all countries, there are differences or even conflicts between different social groups. In your opinion, in [COUNTRY] how much conflict is there between... (Please tick one box on each line.) Q12a Poor people and rich people?",
+    "answer": {
+      "-9": "No answer",
+      "-8": "Can't choose",
+      "1": "Very strong conflicts",
+      "2": "Strong conflicts",
+      "3": "Not very strong conflicts",
+      "4": "There are no conflicts"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v37",
+    "question": "Q12 In all countries, there are differences or even conflicts between different social groups. In your opinion, in [COUNTRY] how much conflict is there between... (Please tick one box on each line.) Q12b The working class and the middle class?",
+    "answer": {
+      "-9": "No answer",
+      "-8": "Can't choose",
+      "-1": "Not available (JP)",
+      "1": "Very strong conflicts",
+      "2": "Strong conflicts",
+      "3": "Not very strong conflicts",
+      "4": "There are no conflicts"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v38",
+    "question": "Q12 In all countries, there are differences or even conflicts between different social groups. In your opinion, in [COUNTRY] how much conflict is there between... (Please tick one box on each line.) Q12c Management and workers?",
+    "answer": {
+      "-9": "No answer",
+      "-8": "Can't choose",
+      "1": "Very strong conflicts",
+      "2": "Strong conflicts",
+      "3": "Not very strong conflicts",
+      "4": "There are no conflicts"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v39",
+    "question": "Q12 In all countries, there are differences or even conflicts between different social groups. In your opinion, in [COUNTRY] how much conflict is there between... (Please tick one box on each line.) Q12d Young people and older people?",
+    "answer": {
+      "-9": "No answer",
+      "-8": "Can't choose",
+      "1": "Very strong conflicts",
+      "2": "Strong conflicts",
+      "3": "Not very strong conflicts",
+      "4": "There are no conflicts"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v40",
+    "question": "Q12 In all countries, there are differences or even conflicts between different social groups. In your opinion, in [COUNTRY] how much conflict is there between... (Please tick one box on each line.) Q12e People born in [COUNTRY] and people from other countries who have come to live in [COUNTRY]?",
+    "answer": {
+      "-9": "No answer",
+      "-8": "Can't choose",
+      "1": "Very strong conflicts",
+      "2": "Strong conflicts",
+      "3": "Not very strong conflicts",
+      "4": "There are no conflicts"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v41",
+    "question": "Q13a In our society there are groups which tend to be towards the top and groups which tend to be towards the bottom. Below is a scale which runs from top to bottom. Where would you put yourself now on this scale? (Please tick one box only.) <This variable is a standard background variable and should replace the standard background variable TOPBOT.>",
+    "answer": {
+      "-9": "No answer; BG: Can't choose; CH, FR, VE, ZA: Can't choose, No answer",
+      "1": "Bottom, Lowest, 01",
+      "2": "02",
+      "3": "03",
+      "4": "04",
+      "5": "05",
+      "6": "06",
+      "7": "07",
+      "8": "08",
+      "9": "09",
+      "10": "Top, Highest, 10"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v42",
+    "question": "[Q13a In our society there are groups which tend to be towards the top and groups which tend to be towards the bottom. Below is a scale which runs from top to bottom. Where would you put yourself now on this scale?] Q13b And if you think about the family that you grew up in, where did they fit in then? (Please tick one box only.)",
+    "answer": {
+      "-9": "No answer; BG: Can't choose; CH, FR, VE, ZA: Can't choose, No answer",
+      "1": "Bottom, Lowest, 01",
+      "2": "02",
+      "3": "03",
+      "4": "04",
+      "5": "05",
+      "6": "06",
+      "7": "07",
+      "8": "08",
+      "9": "09",
+      "10": "Top, Highest, 10"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v43",
+    "question": "[Q13a In our society there are groups which tend to be towards the top and groups which tend to be towards the bottom. Below is a scale which runs from top to bottom. Where would you put yourself now on this scale?] Q13c And thinking ahead 10 years from now, where do you think you will be on a scale of 1 to 10, where 10 is the top and 1 the bottom? (Please tick one box only.)",
+    "answer": {
+      "-9": "No answer",
+      "-8": "Can't choose",
+      "1": "Bottom, Lowest, 01",
+      "2": "02",
+      "3": "03",
+      "4": "04",
+      "5": "05",
+      "6": "06",
+      "7": "07",
+      "8": "08",
+      "9": "09",
+      "10": "Top, Highest, 10"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v44",
+    "question": "Q14 In deciding how much people ought to earn, how important should each of these things be, in your opinion... (Please tick one box on each line.) Q14a How much responsibility goes with the job - how important do you think that ought to be in deciding pay?",
+    "answer": {
+      "-9": "No answer",
+      "-8": "Can't choose",
+      "-1": "Not available: DK (answer scale differs from ISSP standard)",
+      "1": "Essential",
+      "2": "Very important",
+      "3": "Fairly important",
+      "4": "Not very important",
+      "5": "Not important at all"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "DK_v44",
+    "question": "Q14 In deciding how much people ought to earn, how important should each of these things be, in your opinion... (Please tick one box on each line.) Q14a How much responsibility goes with the job - how important do you think that ought to be in deciding pay?",
+    "answer": {
+      "-9": "No answer",
+      "-8": "Can't choose",
+      "-1": "NAV: Other countries",
+      "1": "Essential",
+      "2": "Very important",
+      "3": "Fairly important",
+      "4": "Not very important"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v45",
+    "question": "Q14 In deciding how much people ought to earn, how important should each of these things be, in your opinion... (Please tick one box on each line.) Q14b The number of years spent in education and training?",
+    "answer": {
+      "-9": "No answer",
+      "-8": "Can't choose",
+      "-1": "Not available: DK (answer scale differs from ISSP standard)",
+      "1": "Essential",
+      "2": "Very important",
+      "3": "Fairly important",
+      "4": "Not very important",
+      "5": "Not important at all"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "DK_v45",
+    "question": "Q14 In deciding how much people ought to earn, how important should each of these things be, in your opinion... (Please tick one box on each line.) Q14b The number of years spent in education and training?",
+    "answer": {
+      "-9": "No answer",
+      "-8": "Can't choose",
+      "-1": "NAV: Other countries",
+      "1": "Essential",
+      "2": "Very important",
+      "3": "Fairly important",
+      "4": "Not very important"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v46",
+    "question": "Q14 In deciding how much people ought to earn, how important should each of these things be, in your opinion... (Please tick one box on each line.) Q14c Whether the person has children to support - how important should that be in deciding pay?",
+    "answer": {
+      "-9": "No answer",
+      "-8": "Can't choose",
+      "-1": "Not available: DK (answer scale differs from ISSP standard)",
+      "1": "Essential",
+      "2": "Very important",
+      "3": "Fairly important",
+      "4": "Not very important",
+      "5": "Not important at all"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "DK_v46",
+    "question": "Q14 In deciding how much people ought to earn, how important should each of these things be, in your opinion... (Please tick one box on each line.) Q14c Whether the person has children to support - how important should that be in deciding pay?",
+    "answer": {
+      "-9": "No answer",
+      "-8": "Can't choose",
+      "-1": "NAV: Other countries",
+      "1": "Essential",
+      "2": "Very important",
+      "3": "Fairly important",
+      "4": "Not very important"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v47",
+    "question": "Q14 In deciding how much people ought to earn, how important should each of these things be, in your opinion... (Please tick one box on each line.) Q14d How well he or she does the job - how important should that be in deciding pay?",
+    "answer": {
+      "-9": "No answer",
+      "-8": "Can't choose",
+      "-1": "Not available: DK (answer scale differs from ISSP standard)",
+      "1": "Essential",
+      "2": "Very important",
+      "3": "Fairly important",
+      "4": "Not very important",
+      "5": "Not important at all"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "DK_v47",
+    "question": "Q14 In deciding how much people ought to earn, how important should each of these things be, in your opinion... (Please tick one box on each line.) Q14d How well he or she does the job - how important should that be in deciding pay?",
+    "answer": {
+      "-9": "No answer",
+      "-8": "Can't choose",
+      "-1": "NAV: Other countries",
+      "1": "Essential",
+      "2": "Very important",
+      "3": "Fairly important",
+      "4": "Not very important"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v48",
+    "question": "Q15 These five diagrams show different types of society. Please read the descriptions and look at the diagrams and decide which you think best describes [COUNTRY] ... Q15a First, what type of society is [COUNTRY] today - which diagram comes closest? (Please tick one box only.)",
+    "answer": {
+      "-9": "No answer",
+      "-8": "Can't choose; BG: incl. refused",
+      "-4": "IS: Not applicable, not asked in telephone interviews",
+      "1": "A: Small elite at top, few people in middle, great mass at bottom.",
+      "2": "B: Pyramid with small elite at top, more people in middle, most at bottom.",
+      "3": "C: Pyramid except that just a few people are at the bottom.",
+      "4": "D: Society with most people in the middle.",
+      "5": "E: Many people near the top, and only a few near the bottom."
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v49",
+    "question": "Q15 These five diagrams show different types of society. Please read the descriptions and look at the diagrams and decide which you think best describes [COUNTRY]: Q15b What do you think [COUNTRY] ought to be like - which would you prefer? (Please tick one box only.)",
+    "answer": {
+      "-9": "No answer",
+      "-8": "Can't choose; BG: incl. refused",
+      "-4": "IS: Not applicable, not asked in telephone interviews",
+      "1": "A: Small elite at top, few people in middle, great mass at bottom.",
+      "2": "B: Pyramid with small elite at top, more people in middle, most at bottom.",
+      "3": "C: Pyramid except that just a few people are at the bottom.",
+      "4": "D: Society with most people in the middle.",
+      "5": "E: Many people near the top, and only a few near the bottom."
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v50",
+    "question": "Q16 How fair or unfair do you think the income distribution is in [COUNTRY]? (Please tick one box only.)",
+    "answer": {
+      "-9": "No answer",
+      "-8": "Can't choose",
+      "1": "Very fair",
+      "2": "Fair",
+      "3": "Unfair",
+      "4": "Very unfair"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v51",
+    "question": "Q17a How oen do you have any contact with people who are A LOT POORER THAN YOU when you are out and about? This might be in the street, on public transport, in shops, in your neighbourhood, or at your workplace. (Please tick one box only.)",
+    "answer": {
+      "-9": "No answer",
+      "-8": "Can't choose",
+      "1": "Never",
+      "2": "Less than once a month",
+      "3": "Once a month",
+      "4": "Several times a month",
+      "5": "Once a week",
+      "6": "Several times a week",
+      "7": "Every day"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v52",
+    "question": "Q17b How oen do you have any contact with people who are A LOT RICHER THAN YOU when you are out and about? This might be in the street, on public transport, in shops, in your neighbourhood, or at your workplace. (Please tick one box only.)",
+    "answer": {
+      "-9": "No answer",
+      "-8": "Can't choose",
+      "1": "Never",
+      "2": "Less than once a month",
+      "3": "Once a month",
+      "4": "Several times a month",
+      "5": "Once a week",
+      "6": "Several times a week",
+      "7": "Every day"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v53",
+    "question": "The next questions are about your household's financial situation. Q18a Thinking of your household's total income, including all the sources of income of all the members who contribute to it, how difficult or easy is it currently for your household to make ends meet? (Please tick one box only.)",
+    "answer": {
+      "-9": "No answer",
+      "-8": "Can't choose",
+      "1": "Very difficult",
+      "2": "Fairly difficult",
+      "3": "Neither easy nor difficult",
+      "4": "Fairly easy",
+      "5": "Very easy"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v54",
+    "question": "The next questions are about your household's financial situation. Q18b And during the next 12 months, how difficult or easy do you think will it be for your household to make ends meet? (Please tick one box only.)",
+    "answer": {
+      "-9": "No answer",
+      "-8": "Can't choose",
+      "1": "Very difficult",
+      "2": "Fairly difficult",
+      "3": "Neither easy nor difficult",
+      "4": "Fairly easy",
+      "5": "Very easy"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v55",
+    "question": "The next questions are about your household's financial situation. Q18c How oen do you or other members of your household skip a meal because there is not enough money for food? (Please tick one box only.)",
+    "answer": {
+      "-9": "No answer",
+      "-8": "Can't choose",
+      "1": "Never",
+      "2": "Less than once a month",
+      "3": "Once a month",
+      "4": "Several times a month",
+      "5": "Once a week",
+      "6": "Several times a week",
+      "7": "Every day"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v56",
+    "question": "Q19 Generally speaking, would you say that people can be trusted or that you can't be too careful in dealing with people? (Please tick one box only.)",
+    "answer": {
+      "-9": "No answer",
+      "-8": "Can't choose",
+      "1": "People can almost always be trusted",
+      "2": "People can usually be trusted",
+      "3": "You usually can’t be too careful in dealing with people",
+      "4": "You almost always can’t be too careful in dealing with people"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v57",
+    "question": "Q20a When you were [14-15-16] years old, was your father an employee, self-employed, or working for his own family's business? If your father did not have a paid job at the time, please give information about his last job before that time. (Please tick one box only.)",
+    "answer": {
+      "-9": "No answer; BG: Refused; ZA: incl. refused",
+      "-8": "Can't choose",
+      "1": "Employee",
+      "2": "Self-employed without employees",
+      "3": "Self-employed with employees",
+      "4": "Working for own family's business",
+      "5": "Father never had a paid job",
+      "6": "Father unknown; IL, VE: + father already passed away; SE: Don't know/ Don't remember",
+      "7": "SI: Other; TH: Help for own family's farm"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v58",
+    "question": "Q20b When you were [14-15-16] years old, was your mother an employee, self-employed, or working for her own family's business? If your mother did not have a paid job at the time, please give information about her last job before that time. (Please tick one box only.)",
+    "answer": {
+      "-9": "No answer; BG: Refused; ZA: incl. refused",
+      "-8": "Can't choose",
+      "1": "Employee",
+      "2": "Self-employed without employees",
+      "3": "Self-employed with employees",
+      "4": "Working for own family's business",
+      "5": "Mother never had a paid job",
+      "6": "Mother unknown; IL, VE: + mother already passed away; SE: Don't know/ Don't remember",
+      "7": "SI: Other; TH: Help for own family's farm"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v61",
+    "question": "Q22 Most people see themselves as belonging to a particular class. Please tell me which social class you would say you belong to? (Please tick one box only.)",
+    "answer": {
+      "-9": "No answer; CL, ZA: Don't know + No answer; GB-GBN: Can't choose/ Don't know; NO, VE: Can't choose/ No answer",
+      "-1": "Not available (SI)",
+      "1": "Lower class",
+      "2": "Working class",
+      "3": "Lower middle class",
+      "4": "Middle class",
+      "5": "Upper middle class",
+      "6": "Upper class"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v62",
+    "question": "OPTIONAL QUESTION Q23 To what extent do you agree or disagree with the following statements? (Please tick one box on each line.) Q23a Workers would not bother to get skills and qualifications unless they were paid extra for having them.",
+    "answer": {
+      "-9": "No answer",
+      "-8": "Can't choose",
+      "-1": "Not available (AT, CL, CZ, DE, DK, FI, FR, GB-GBN, HR, IL, IT, JP, LT, NO, NZ, RU, SE, SI, TW, US, VE)",
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v63",
+    "question": "OPTIONAL QUESTION Q23 To what extent do you agree or disagree with the following statements? (Please tick one box on each line.) Q23b Large differences in income are necessary for [COUNTRY's] prosperity.",
+    "answer": {
+      "-9": "No answer",
+      "-8": "Can't choose",
+      "-1": "Not available (AT, CL, CZ, DE, DK, FI, FR, GB-GBN, HR, IL, IT, JP, LT, NO, NZ, SE, SI, TW, US, VE)",
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v64",
+    "question": "OPTIONAL QUESTION Q23 To what extent do you agree or disagree with the following statements? (Please tick one box on each line.) Q23c Inequality continues because it benefits the rich and powerful.",
+    "answer": {
+      "-9": "No answer",
+      "-8": "Can't choose",
+      "-1": "Not available (AT, CL, CZ, DE, DK, FI, FR, GB-GBN, HR, IL, IT, JP, LT, NO, NZ, SE, SI, TW, US, VE)",
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v65",
+    "question": "OPTIONAL QUESTION Q23 To what extent do you agree or disagree with the following statements? (Please tick one box on each line.) Q23d Inequality continues to exist because ordinary people don't join together to get rid of it.",
+    "answer": {
+      "-9": "No answer",
+      "-8": "Can't choose",
+      "-1": "Not available (AT, CL, CZ, DE, DK, FI, FR, GB-GBN, HR, IL, IT, JP, LT, NO, NZ, SE, SI, TW, US, VE)",
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v66",
+    "question": "OPTIONAL QUESTION Q24 To what extent do you think that differences in wealth between rich and poor countries are fair or unfair? (Please tick one box only.)",
+    "answer": {
+      "-9": "No answer",
+      "-8": "Can't choose",
+      "-1": "Not available (AT, CL, CZ, DE, DK, FR, GB-GBN, HR, IL, IT, JP, LT, NO, NZ, RU, SE, SI, TW, US, VE)",
+      "1": "Very fair",
+      "2": "Fair",
+      "3": "Unfair",
+      "4": "Very unfair"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v67",
+    "question": "OPTIONAL QUESTION Q25a Here is a list of different types of jobs. Which type of job did your FATHER/ mother have when you were [14-15-16] years. If your FATHER/ mother did not have a paid job at the time, please give information about HIS/ her last job before that time. (Please tick one box for your father and one for your mother.)",
+    "answer": {
+      "-9": "No answer; CH: Don't know, No answer; GB-GBN: Can't say/ No answer",
+      "-1": "Not available (AT, AU, CL, CZ, DE, DK, FI, FR, HR, IL, IT, JP, LT, NO, NZ, SE, SI, TW, US, VE, ZA)",
+      "1": "Professional and technical",
+      "2": "Higher administrative",
+      "3": "Clerical",
+      "4": "Sales",
+      "5": "Service",
+      "6": "Skilled worker",
+      "7": "Semi-skilled worker",
+      "8": "Unskilled worker",
+      "9": "Farm worker",
+      "10": "Farm proprietor, farm manager",
+      "95": "Father never had a paid job",
+      "96": "Father unknown"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v68",
+    "question": "Here is a list of different types of jobs. Which type of job did your father/ MOTHER have when you were [14-15-16] years. If your father/ MOTHER did not have a paid job at the time, please give information about his/ HER last job before that time. (Please tick one box for your father and one for your mother.)",
+    "answer": {
+      "-9": "No answer",
+      "-1": "Not available",
+      "1": "Professional and technical",
+      "2": "Higher administrative",
+      "3": "Clerical",
+      "4": "Sales",
+      "5": "Service",
+      "6": "Skilled worker",
+      "7": "Semi-skilled worker",
+      "8": "Unskilled worker",
+      "9": "Farm worker",
+      "10": "Farm proprietor, farm manager",
+      "95": "Mother never had a paid job",
+      "96": "Mother unknown"
+    },
+    "special": {
+      "CH": {
+        "-9": "Don't know, No answer"
+      },
+      "GB-GBN": {
+        "-9": "Can't say/ No answer"
+      },
+      "AT": {
+        "-1": "Not available"
+      },
+      "AU": {
+        "-1": "Not available"
+      },
+      "CL": {
+        "-1": "Not available"
+      },
+      "CZ": {
+        "-1": "Not available"
+      },
+      "DE": {
+        "-1": "Not available"
+      },
+      "DK": {
+        "-1": "Not available"
+      },
+      "FI": {
+        "-1": "Not available"
+      },
+      "FR": {
+        "-1": "Not available"
+      },
+      "HR": {
+        "-1": "Not available"
+      },
+      "IL": {
+        "-1": "Not available"
+      },
+      "IT": {
+        "-1": "Not available"
+      },
+      "JP": {
+        "-1": "Not available"
+      },
+      "LT": {
+        "-1": "Not available"
+      },
+      "NO": {
+        "-1": "Not available"
+      },
+      "NZ": {
+        "-1": "Not available"
+      },
+      "SE": {
+        "-1": "Not available"
+      },
+      "SI": {
+        "-1": "Not available"
+      },
+      "TW": {
+        "-1": "Not available"
+      },
+      "US": {
+        "-1": "Not available"
+      },
+      "VE": {
+        "-1": "Not available"
+      },
+      "ZA": {
+        "-1": "Not available"
+      },
+      "SR": {
+        "96": "Answer option 'Mother unknown' (code 96) was not asked."
+      }
+    }
+  },
+  {
+    "question_id": "v69",
+    "question": "Here is a list of different types of jobs. Which type of job do you have now in your current job? If you are not working now, please tell us about your last job. (Please tick one box for your current/ last job.)",
+    "answer": {
+      "-9": "No answer",
+      "-1": "Not available",
+      "1": "Professional and technical",
+      "2": "Higher administrative",
+      "3": "Clerical",
+      "4": "Sales",
+      "5": "Service",
+      "6": "Skilled worker",
+      "7": "Semi-skilled worker",
+      "8": "Unskilled worker",
+      "9": "Farm worker",
+      "10": "Farm proprietor, farm manager",
+      "95": "I never had a paid job"
+    },
+    "special": {
+      "CH": {
+        "-9": "Don't know, No answer",
+        "-1": "Not available (error in French online questionnaire)"
+      },
+      "GB-GBN": {
+        "-9": "Can't say/ No answer"
+      },
+      "AT": {
+        "-1": "Not available"
+      },
+      "AU": {
+        "-1": "Not available"
+      },
+      "CL": {
+        "-1": "Not available"
+      },
+      "CZ": {
+        "-1": "Not available"
+      },
+      "DE": {
+        "-1": "Not available"
+      },
+      "DK": {
+        "-1": "Not available"
+      },
+      "FI": {
+        "-1": "Not available"
+      },
+      "FR": {
+        "-1": "Not available"
+      },
+      "HR": {
+        "-1": "Not available"
+      },
+      "IL": {
+        "-1": "Not available"
+      },
+      "IT": {
+        "-1": "Not available"
+      },
+      "JP": {
+        "-1": "Not available"
+      },
+      "LT": {
+        "-1": "Not available"
+      },
+      "NO": {
+        "-1": "Not available"
+      },
+      "NZ": {
+        "-1": "Not available"
+      },
+      "SE": {
+        "-1": "Not available"
+      },
+      "SI": {
+        "-1": "Not available"
+      },
+      "TW": {
+        "-1": "Not available"
+      },
+      "US": {
+        "-1": "Not available"
+      },
+      "VE": {
+        "-1": "Not available"
+      },
+      "ZA": {
+        "-1": "Not available"
+      }
+    }
+  },
+  {
+    "question_id": "v70",
+    "question": "And which type of job does your spouse/ partner have now in her/ his current job? If she/ he is not working now, please tell us about her/ his last job. (Please tick one box for your partner's current/ last job.)",
+    "answer": {
+      "-9": "No answer",
+      "-1": "Not available",
+      "1": "Professional and technical",
+      "2": "Higher administrative",
+      "3": "Clerical",
+      "4": "Sales",
+      "5": "Service",
+      "6": "Skilled worker",
+      "7": "Semi-skilled worker",
+      "8": "Unskilled worker",
+      "9": "Farm worker",
+      "10": "Farm proprietor, farm manager",
+      "95": "My spouse/partner never had a paid job",
+      "96": "No spouse/partner"
+    },
+    "special": {
+      "CH": {
+        "-9": "Don't know, No answer"
+      },
+      "GB-GBN": {
+        "-9": "Can't say/ No answer"
+      },
+      "AT": {
+        "-1": "Not available"
+      },
+      "AU": {
+        "-1": "Not available"
+      },
+      "CL": {
+        "-1": "Not available"
+      },
+      "CZ": {
+        "-1": "Not available"
+      },
+      "DE": {
+        "-1": "Not available"
+      },
+      "DK": {
+        "-1": "Not available"
+      },
+      "FI": {
+        "-1": "Not available"
+      },
+      "FR": {
+        "-1": "Not available"
+      },
+      "HR": {
+        "-1": "Not available"
+      },
+      "IL": {
+        "-1": "Not available"
+      },
+      "IT": {
+        "-1": "Not available"
+      },
+      "JP": {
+        "-1": "Not available"
+      },
+      "LT": {
+        "-1": "Not available"
+      },
+      "NO": {
+        "-1": "Not available"
+      },
+      "NZ": {
+        "-1": "Not available"
+      },
+      "SE": {
+        "-1": "Not available"
+      },
+      "SI": {
+        "-1": "Not available"
+      },
+      "TW": {
+        "-1": "Not available"
+      },
+      "US": {
+        "-1": "Not available"
+      },
+      "VE": {
+        "-1": "Not available"
+      },
+      "ZA": {
+        "-1": "Not available"
+      }
+    }
+  }
+]

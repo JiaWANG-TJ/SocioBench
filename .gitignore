@@ -1,7 +1,3 @@
-# 忽略数据集目录及其所有内容
-Dataset_all/
-Dataset_all/*
-
 # 特定忽略的数据集目录
 Dataset_all/A_GroundTruth/
 Dataset_all/A_GroundTruth_sampling5000/
