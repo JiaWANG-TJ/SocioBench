@@ -60,7 +60,7 @@
   },
   {
     "domain": "TW_REG",
-    "meaning": "Taiwan: Country specific region",
+    "meaning": "Taiwan, China: Country specific region",
     "question": "The place where you live: Province (open), County (open) Township (Town, city, district) (open)",
     "content": {
       "0": "NAP, other countries",

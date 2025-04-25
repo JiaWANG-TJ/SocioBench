@@ -1,7 +1,7 @@
 [
   {
     "domain": "TW_REG",
-    "meaning": "Country specific region: Taiwan",
+    "meaning": "Country specific region: Taiwan, China",
     "question": "Derived from the sampling area (zip code).",
     "content": {
       "1": "Keelung city",

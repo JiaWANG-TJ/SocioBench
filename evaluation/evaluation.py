@@ -466,18 +466,65 @@ class Evaluator:
         detailed_filename = f"{self.domain_name}_{model_name}_detailed_results_{timestamp}.csv"
         detailed_filepath = os.path.join(model_dir, detailed_filename)
         
+        # 从运行评估模块加载问题选项数据
+        from social_benchmark.evaluation.run_evaluation import load_qa_file, get_special_options
+        
+        # 加载问答数据和创建问题ID映射
+        qa_map = {}
+        try:
+            # 加载问答数据
+            qa_data = load_qa_file(self.domain_name)
+            
+            # 创建问题ID映射字典（不区分大小写）
+            if qa_data:
+                for q in qa_data:
+                    # 尝试不同的可能的问题ID字段
+                    question_id = q.get("question_id") or q.get("id") or q.get("qid")
+                    if question_id:
+                        qa_map[str(question_id).lower()] = q
+        except Exception as e:
+            print(f"加载问答数据时出错: {str(e)}，将不显示选项内容")
+        
         # 提取详细评测结果
         details_data = []
         for detail in self.results["details"]:
+            question_id = detail["question_id"]
+            true_answer = detail["true_answer"]
+            llm_answer = detail["llm_answer"]
+            
+            # 获取问题数据和选项
+            true_answer_text = ""
+            llm_answer_text = ""
+            
+            # 尝试查找问题选项
+            try:
+                question_data = qa_map.get(question_id.lower())
+                if question_data:
+                    # 获取选项 - 使用国家特定选项
+                    options = get_special_options(question_data, detail["country_code"])
+                    
+                    # 获取真实答案文本
+                    if true_answer in options:
+                        true_answer_text = options[true_answer]
+                    
+                    # 获取LLM答案文本
+                    if llm_answer in options:
+                        llm_answer_text = options[llm_answer]
+            except Exception as e:
+                # 出现异常时，保留空字符串作为选项内容
+                print(f"获取问题 {question_id} 的选项内容时出错: {str(e)}")
+            
             details_data.append({
-                "问题ID": detail["question_id"],
+                "问题ID": question_id,
                 "国家代码": detail["country_code"],
                 "国家全称": detail["country_name"],
-                "真实答案": detail["true_answer"],
-                "LLM答案": detail["llm_answer"],
+                "真实答案": true_answer,
+                "真实答案选项内容": true_answer_text,
+                "LLM答案": llm_answer,
+                "LLM答案选项内容": llm_answer_text,
                 "是否正确": detail["correct"],
-                "是否国家特定问题": detail["is_country_specific"],
-                "LLM完整回答": detail["llm_response"]
+                "是否国家特定问题": detail["is_country_specific"]
+                # 删除了"LLM完整回答"列
             })
         
         # 保存为CSV

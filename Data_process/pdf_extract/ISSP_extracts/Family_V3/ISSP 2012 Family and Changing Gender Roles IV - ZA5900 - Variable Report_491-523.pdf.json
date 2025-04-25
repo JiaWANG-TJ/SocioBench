@@ -118,12 +118,12 @@
   },
   {
     "domain": "TW_ETHN",
-    "meaning": "Taiwan: Country specific origin country/ ethnic group / ethnic identity/ family origin",
+    "meaning": "Taiwan, China: Country specific origin country/ ethnic group / ethnic identity/ family origin",
     "question": "What is your father's ethnic background?",
     "content": {
       "0": "NAP, other countries",
-      "1": "Fukienese of Taiwan",
-      "2": "Hakka of Taiwan",
+      "1": "Fukienese of Taiwan, China",
+      "2": "Hakka of Taiwan, China",
       "3": "Mainlander",
       "4": "Aborigine",
       "24": "Thai, Khmer, Vietnam, South-East Asia",

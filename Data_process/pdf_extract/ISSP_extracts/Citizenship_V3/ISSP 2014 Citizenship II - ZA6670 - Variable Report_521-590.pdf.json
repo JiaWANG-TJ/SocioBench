@@ -325,7 +325,7 @@
   },
   {
     "domain": "TW_RINC",
-    "meaning": "Country specific personal income: Taiwan",
+    "meaning": "Country specific personal income: Taiwan, China",
     "question": "What is your average monthly income before taxes, including all sources of income (e.g., your earnings from work or part-time jobs, rewards, interest, bonuses or dividends, government subsidies, rent and other income, allowance from parents or children, pension, etc.)?",
     "content": {
       "0": "No income (for example: working for the family business, but not salaried)",

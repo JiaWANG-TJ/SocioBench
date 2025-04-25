@@ -256,7 +256,7 @@
   },
   {
     "domain": "TW_RINC",
-    "meaning": "Country specific personal income: Taiwan",
+    "meaning": "Country specific personal income: Taiwan, China",
     "question": "What is your average monthly income before taxes, including all sources of income?",
     "content": {
       "-8": "Don't know",

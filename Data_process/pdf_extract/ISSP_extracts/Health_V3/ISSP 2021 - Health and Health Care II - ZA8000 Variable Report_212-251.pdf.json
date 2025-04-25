@@ -431,7 +431,7 @@
   },
   {
     "domain": "TW_ISCD",
-    "meaning": "Country specific highest completed degree of education: Taiwan",
+    "meaning": "Country specific highest completed degree of education: Taiwan, China",
     "question": "What is your education level?  Please refer to the level of education that you are currently in or the highest level of education that you have attained, regardless of whether you have graduated or not.",
     "content": {
       "10": "None/ Illiterate",

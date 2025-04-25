@@ -52,7 +52,7 @@
       "148": "TCD People of Chad",
       "152": "CHL People of Chile",
       "156": "CHN People of China",
-      "158": "TWN People of Taiwan",
+      "158": "TWN People of Taiwan, China",
       "162": "CXR People of Christmas Island",
       "166": "CCK People of Cocos (Keeling) Island",
       "170": "COL People of Colombia",
@@ -442,7 +442,7 @@
   },
   {
     "domain": "TW_ETHN1",
-    "meaning": "Country specific ethnic group 1: Taiwan",
+    "meaning": "Country specific ethnic group 1: Taiwan, China",
     "question": "What is your ethnic background?",
     "content": {
       "-9": "No answer",
@@ -450,7 +450,7 @@
       "-7": "Refused",
       "-2": "NAP, other countries",
       "1": "Fukienese",
-      "2": "Hakka of Taiwan",
+      "2": "Hakka of Taiwan, China",
       "3": "Mainlander",
       "4": "Aborigine",
       "5": "Chinese (PRC)",
@@ -461,7 +461,7 @@
   },
   {
     "domain": "TW_ETHN2",
-    "meaning": "Country specific ethnic group 2: Taiwan",
+    "meaning": "Country specific ethnic group 2: Taiwan, China",
     "question": "What is your ethnic background?",
     "content": {
       "-9": "No answer incl. no second ethnic group mentioned",

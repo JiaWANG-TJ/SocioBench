@@ -43,7 +43,7 @@
 | Australia | 14 |
 | Austria | 14 |
 | Chile | 14 |
-| Taiwan | 14 |
+| Taiwan, China | 14 |
 | Croatia | 14 |
 | Czech Republic | 14 |
 | Denmark | 14 |
@@ -104,7 +104,7 @@
 | Slovenia | 17 |
 | Slovakia | 17 |
 | Thailand | 17 |
-| Taiwan | 17 |
+| Taiwan, China | 17 |
 | United Stated | 17 |
 | South Africa | 17 |
 
@@ -119,7 +119,7 @@
 | Canada | 12 |
 | Chile | 12 |
 | China | 12 |
-| Taiwan | 12 |
+| Taiwan, China | 12 |
 | Croatia | 12 |
 | Czech Republic | 12 |
 | Denmark | 12 |
@@ -185,7 +185,7 @@
 | Slovakia | 16 |
 | Suriname | 16 |
 | Thailand | 16 |
-| Taiwan | 16 |
+| Taiwan, China | 16 |
 | United Stated | 16 |
 | South Africa | 16 |
 
@@ -193,7 +193,7 @@
 
 | 国家代码 | 采样数量 |
 |----------|----------|
-| Taiwan | 13 |
+| Taiwan, China | 13 |
 | Croatia | 13 |
 | Czechia | 13 |
 | Denmark | 13 |
@@ -265,7 +265,7 @@
 | Suriname | 15 |
 | Thailand | 15 |
 | Turkey | 15 |
-| Taiwan | 15 |
+| Taiwan, China | 15 |
 | United Stated | 15 |
 | South Africa | 15 |
 
@@ -304,7 +304,7 @@
 | Suriname | 14 |
 | Thailand | 14 |
 | Turkey | 14 |
-| Taiwan | 14 |
+| Taiwan, China | 14 |
 | United Stated | 14 |
 | Venezuela | 14 |
 | South Africa | 14 |
@@ -338,7 +338,7 @@
 | Slovenia | 17 |
 | Suriname | 17 |
 | Thailand | 17 |
-| Taiwan | 17 |
+| Taiwan, China | 17 |
 | United Stated | 17 |
 | Venezuela | 17 |
 | South Africa | 17 |
@@ -374,7 +374,7 @@
 | Slovakia | 16 |
 | Suriname | 16 |
 | Thailand | 16 |
-| Taiwan | 16 |
+| Taiwan, China | 16 |
 | United Stated | 16 |
 | South Africa | 16 |
 
@@ -415,7 +415,7 @@
 | Slovenia | 13 |
 | Slovakia | 13 |
 | Suriname | 13 |
-| Taiwan | 13 |
+| Taiwan, China | 13 |
 | United Stated | 13 |
 | Venezuela | 13 |
 | South Africa | 13 |

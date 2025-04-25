@@ -480,7 +480,7 @@
   },
   {
     "domain": "TW_REG",
-    "meaning": "TAIWAN: Country specific region",
+    "meaning": "TAIWAN, CHINA: Country specific region",
     "question": "Derived from the sampling area (zip code).",
     "content": {
       "-2": "NAP, other countries",

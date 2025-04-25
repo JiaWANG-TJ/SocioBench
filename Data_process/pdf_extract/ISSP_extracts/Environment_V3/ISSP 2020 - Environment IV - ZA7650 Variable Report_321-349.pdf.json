@@ -276,7 +276,7 @@
   },
   {
     "domain": "TW_RELIG",
-    "meaning": "Taiwan: Country specific religious aﬀiliation or denomination",
+    "meaning": "Taiwan, China: Country specific religious aﬀiliation or denomination",
     "question": "Do you have any religious belief at present?",
     "content": {
       "-7": "Refused",

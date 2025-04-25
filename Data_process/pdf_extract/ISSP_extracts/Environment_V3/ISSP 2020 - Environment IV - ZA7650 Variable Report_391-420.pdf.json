@@ -83,7 +83,7 @@
   },
   {
     "domain": "TW_PRTY",
-    "meaning": "Country specific party voted for in last general election: Taiwan",
+    "meaning": "Country specific party voted for in last general election: Taiwan, China",
     "question": "Which political party candidate did you vote for in the January 109 [January 11th 2020] presidential election?",
     "content": {
       "-7": "Refused",

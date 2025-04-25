@@ -34,7 +34,7 @@
       "36": "AU-Australia",
       "40": "AT-Austria",
       "156": "CN-China",
-      "158": "TW-Taiwan",
+      "158": "TW-Taiwan, China",
       "191": "HR-Croatia",
       "203": "CZ-Czech Republic",
       "208": "DK-Denmark",
@@ -72,7 +72,7 @@
       "36": "AU-Australia",
       "40": "AT-Austria",
       "156": "CN-China",
-      "158": "TW-Taiwan",
+      "158": "TW-Taiwan, China",
       "191": "HR-Croatia",
       "203": "CZ-Czech Republic",
       "208": "DK-Denmark",
@@ -136,7 +136,7 @@
       "SK": "Slovakia",
       "SR": "Suriname",
       "TH": "Thailand",
-      "TW": "Taiwan",
+      "TW": "Taiwan, China",
       "US": "United States",
       "ZA": "South Africa"
     },
@@ -1540,7 +1540,7 @@
   },
   {
     "domain": "TW_v68a",
-    "meaning": "Q33_OPT Taiwan: Frequency of meeting family members (not living in same hh) in person before Covid-19 pandemic and now",
+    "meaning": "Q33_OPT Taiwan, China: Frequency of meeting family members (not living in same hh) in person before Covid-19 pandemic and now",
     "question": "Thinking about how oȇen you met with your extended FAMILY in person before the Covid-19 pandemic, would you say you now meet them in person more oȇen, less oȇen, or about the same? (Please tick one box only.)",
     "content": {
       "1": "Much less oȇen",
@@ -1560,7 +1560,7 @@
   },
   {
     "domain": "TW_v68b",
-    "meaning": "Q33_OPT Taiwan: Frequency of meeting friends, colleagues or classmates in person before Covid-19 pandemic and now",
+    "meaning": "Q33_OPT Taiwan, China: Frequency of meeting friends, colleagues or classmates in person before Covid-19 pandemic and now",
     "question": "Thinking about how oȇen you met with your FRIENDS, COLLEAGUES or CLASSMATES in person before the Covid-19 pandemic, would you say you now meet them in person more oȇen, less oȇen, or about the same? (Please tick one box only.)",
     "content": {
       "1": "Much less oȇen",
@@ -2275,7 +2275,7 @@
   },
   {
     "domain": "TW_ISCD",
-    "meaning": "Country specific highest completed degree of education: Taiwan",
+    "meaning": "Country specific highest completed degree of education: Taiwan, China",
     "question": "What is your education level?  Please refer to the level of education that you are currently in or the highest level of education that you have attained, regardless of whether you have graduated or not.",
     "content": {
       "10": "None/ Illiterate",
@@ -3319,7 +3319,7 @@
   },
   {
     "domain": "TW_RELIG",
-    "meaning": "Taiwan: Country specific religious affiliation or denomination",
+    "meaning": "Taiwan, China: Country specific religious affiliation or denomination",
     "question": "Do you have any religious belief at present?",
     "content": {
       "0": "None",
@@ -4164,7 +4164,7 @@
   },
   {
     "domain": "TW_PRTY",
-    "meaning": "Taiwan: Party voted for in last election",
+    "meaning": "Taiwan, China: Party voted for in last election",
     "question": "For the presidential election in January of 2020, did you go to vote? Who did you vote for?",
     "content": {
       "1": "People First Party (PFP)",
@@ -5262,11 +5262,11 @@
   },
   {
     "domain": "TW_ETHN1",
-    "meaning": "Taiwan: Country specific ethnic group 1",
+    "meaning": "Taiwan, China: Country specific ethnic group 1",
     "question": "What is your ethnic background?",
     "content": {
-      "1": "Fukienese of Taiwan",
-      "2": "Hakka of Taiwan",
+      "1": "Fukienese of Taiwan, China",
+      "2": "Hakka of Taiwan, China",
       "3": "Mainlander",
       "4": "Aborigine",
       "5": "Citizen of the PRC",
@@ -5279,7 +5279,7 @@
   },
   {
     "domain": "TW_ETHN2",
-    "meaning": "Taiwan: Country specific ethnic group 2",
+    "meaning": "Taiwan, China: Country specific ethnic group 2",
     "question": "Not used.",
     "content": {
       "-1": "Not available",
@@ -6150,7 +6150,7 @@
   },
   {
     "domain": "TW_RINC",
-    "meaning": "Taiwan: Country specific personal income",
+    "meaning": "Taiwan, China: Country specific personal income",
     "question": "What is your average monthly income before taxes, including all sources of income (e.g., your earnings from work or part-time jobs, rewards, interest, bonuses or dividends, government subsidies, rent and other income, allowance from parents or children, pension, etc.)?",
     "content": {
       "0": "No income (e.g. working for a family business, but not receiving a salary)",
@@ -6794,7 +6794,7 @@
   },
   {
     "domain": "TW_INC",
-    "meaning": "Country specific household income: Taiwan",
+    "meaning": "Country specific household income: Taiwan, China",
     "question": "What is your average monthly household income before taxes, including all income of your family members who live in your residence (e.g., allowance from parents or children, government subsidies, interest, earnings from work or part-time jobs, etc.)?",
     "content": {
       "0": "No income",
@@ -7059,7 +7059,7 @@
       "154": "Northern Europe (M49)",
       "155": "Western Europe (M49)",
       "156": "China",
-      "158": "Taiwan",
+      "158": "Taiwan, China",
       "162": "Christmas Island",
       "166": "Cocos (Keeling) Islands",
       "170": "Colombia",
@@ -7982,7 +7982,7 @@
   },
   {
     "domain": "TW_REG",
-    "meaning": "Country specific region: Taiwan",
+    "meaning": "Country specific region: Taiwan, China",
     "question": "Derived from the sampling area (zip code).",
     "content": {
       "1": "Keelung city",

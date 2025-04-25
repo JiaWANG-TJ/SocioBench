@@ -518,7 +518,7 @@
   },
   {
     "domain": "TW_v68a",
-    "meaning": "Q33_OPT Taiwan: Frequency of meeting family members (not living in same hh) in person before Covid-19 pandemic and now",
+    "meaning": "Q33_OPT Taiwan, China: Frequency of meeting family members (not living in same hh) in person before Covid-19 pandemic and now",
     "question": "Thinking about how oȇen you met with your extended FAMILY in person before the Covid-19 pandemic, would you say you now meet them in person more oȇen, less oȇen, or about the same? (Please tick one box only.)",
     "content": {
       "1": "Much less oȇen",
@@ -538,7 +538,7 @@
   },
   {
     "domain": "TW_v68b",
-    "meaning": "Q33_OPT Taiwan: Frequency of meeting friends, colleagues or classmates in person before Covid-19 pandemic and now",
+    "meaning": "Q33_OPT Taiwan, China: Frequency of meeting friends, colleagues or classmates in person before Covid-19 pandemic and now",
     "question": "Thinking about how oȇen you met with your FRIENDS, COLLEAGUES or CLASSMATES in person before the Covid-19 pandemic, would you say you now meet them in person more oȇen, less oȇen, or about the same? (Please tick one box only.)",
     "content": {
       "1": "Much less oȇen",

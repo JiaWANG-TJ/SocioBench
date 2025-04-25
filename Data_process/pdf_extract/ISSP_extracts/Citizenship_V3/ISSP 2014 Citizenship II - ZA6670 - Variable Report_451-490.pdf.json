@@ -427,12 +427,12 @@
   },
   {
     "domain": "TW_ETHN1",
-    "meaning": "Taiwan: Country specific ethnic group 1",
+    "meaning": "Taiwan, China: Country specific ethnic group 1",
     "question": "What is your ethnic background?",
     "content": {
       "0": "NAP, other countries",
       "1": "Fukienese",
-      "2": "Hakka of Taiwan",
+      "2": "Hakka of Taiwan, China",
       "3": "Mainlander",
       "4": "Aborigine",
       "5": "South-East Asia",
@@ -442,12 +442,12 @@
   },
   {
     "domain": "TW_ETHN2",
-    "meaning": "Taiwan: Country specific ethnic group 2",
+    "meaning": "Taiwan, China: Country specific ethnic group 2",
     "question": "What is your ethnic background?",
     "content": {
       "0": "NAP, other countries",
       "1": "Fukienese",
-      "2": "Hakka of Taiwan",
+      "2": "Hakka of Taiwan, China",
       "3": "Mainlander",
       "4": "Aborigine",
       "5": "South-East Asia",

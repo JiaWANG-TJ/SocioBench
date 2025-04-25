@@ -189,7 +189,7 @@
   },
   {
     "domain": "TW_INC",
-    "meaning": "Taiwan: Country specific household income",
+    "meaning": "Taiwan, China: Country specific household income",
     "question": "What is your average monthly household income, including incomes from work and other resources (such as rent, bonus, pension and interest)?",
     "content": {
       "0": "No income",

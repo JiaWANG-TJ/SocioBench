@@ -504,7 +504,7 @@
   },
   {
     "domain": "TW_INC",
-    "meaning": "Country specific household income: Taiwan",
+    "meaning": "Country specific household income: Taiwan, China",
     "question": "What is your average monthly household income before taxes, including all income of your family members who live in your residence?",
     "content": {
       "-8": "Don't know",

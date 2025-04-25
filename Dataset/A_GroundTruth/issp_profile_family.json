@@ -38,7 +38,7 @@
       "124": "CA-Canada",
       "152": "CL-Chile",
       "156": "CN-China",
-      "158": "TW-Taiwan",
+      "158": "TW-Taiwan, China",
       "191": "HR-Croatia",
       "203": "CZ-Czech Republic",
       "208": "DK-Denmark",
@@ -92,7 +92,7 @@
       "124": "CA-Canada",
       "152": "CL-Chile",
       "156": "CN-China",
-      "158": "TW-Taiwan",
+      "158": "TW-Taiwan, China",
       "191": "HR-Croatia",
       "203": "CZ-Czech Republic",
       "208": "DK-Denmark",
@@ -170,7 +170,7 @@
       "SI": "Slovenia",
       "SK": "Slovakia",
       "TR": "Turkey",
-      "TW": "Taiwan",
+      "TW": "Taiwan, China",
       "US": "United States of America",
       "VE": "Venezuela",
       "ZA": "South Africa"
@@ -3565,7 +3565,7 @@
   },
   {
     "domain": "TW_DEGR",
-    "meaning": "Country specific highest completed degree of education: Taiwan",
+    "meaning": "Country specific highest completed degree of education: Taiwan, China",
     "question": "What is your highest education level?",
     "content": {
       "0": "NAP, other countries",
@@ -6117,7 +6117,7 @@
   },
   {
     "domain": "TW_RELIG",
-    "meaning": "Country specific religious affiliation or denomination: Taiwan",
+    "meaning": "Country specific religious affiliation or denomination: Taiwan, China",
     "question": "What is your religious belief?",
     "content": {
       "0": "No religion",
@@ -7116,7 +7116,7 @@
   },
   {
     "domain": "TW_PRTY",
-    "meaning": "Country specific party voted for in last general election: Taiwan",
+    "meaning": "Country specific party voted for in last general election: Taiwan, China",
     "question": "Did you vote in the Presidential election held in January 2012? Which candidate did you vote for?",
     "content": {
       "0": "NAP (Code 0, 2, 7 in VOTE_LE)",
@@ -8116,12 +8116,12 @@
   },
   {
     "domain": "TW_ETHN",
-    "meaning": "Country specific: origin country/ ethnic group/ ethnic identity/ family origin: Taiwan",
+    "meaning": "Country specific: origin country/ ethnic group/ ethnic identity/ family origin: Taiwan, China",
     "question": "What is your father's ethnic background?",
     "content": {
       "0": "NAP, other countries",
-      "1": "Fukienese of Taiwan",
-      "2": "Hakka of Taiwan",
+      "1": "Fukienese of Taiwan, China",
+      "2": "Hakka of Taiwan, China",
       "3": "Mainlander",
       "4": "Aborigine",
       "24": "Thai, Khmer, Vietnam, South-East Asia",
@@ -8986,7 +8986,7 @@
   },
   {
     "domain": "TW_RINC",
-    "meaning": "Country specific personal income: Taiwan",
+    "meaning": "Country specific personal income: Taiwan, China",
     "question": "What is your average monthly income (including your salary from full- or part-time jobs, year-end bonus, commission, interest income, income from personal business or investments, government subsidies, rent, pension, etc.)?",
     "content": {
       "0": "No own income",
@@ -10116,7 +10116,7 @@
   },
   {
     "domain": "TW_INC",
-    "meaning": "Taiwan: Country specific household income",
+    "meaning": "Taiwan, China: Country specific household income",
     "question": "What is your average monthly household income, including incomes from work and other resources (such as rent, bonus, pension and interest)?",
     "content": {
       "0": "No income",
@@ -11164,7 +11164,7 @@
   },
   {
     "domain": "TW_REG",
-    "meaning": "Taiwan: Country specific region",
+    "meaning": "Taiwan, China: Country specific region",
     "question": "The place where you live: Province (open), County (open) Township (Town, city, district) (open)",
     "content": {
       "0": "NAP, other countries",

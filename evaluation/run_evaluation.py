@@ -77,7 +77,7 @@ COUNTRY_MAPPING = {
             "IN": "India", "IS": "Iceland", "JP": "Japan", "KR": "Korea (South)",
             "LT": "Lithuania", "NL": "Netherlands", "NO": "Norway", "PH": "Philippines",
             "PL": "Poland", "RU": "Russia", "SE": "Sweden", "SI": "Slovenia",
-            "SK": "Slovakia", "TR": "Turkey", "TW": "Taiwan", "US": "United States of America",
+            "SK": "Slovakia", "TR": "Turkey", "TW": "Taiwan, China", "US": "United States of America",
             "VE": "Venezuela", "ZA": "South Africa"
         }
     },
@@ -90,7 +90,7 @@ COUNTRY_MAPPING = {
             "IS": "Iceland", "IT": "Italy", "JP": "Japan", "KR": "Korea (South)",
             "LT": "Lithuania", "NO": "Norway", "NZ": "New Zealand", "PH": "Philippines",
             "RU": "Russia", "SE": "Sweden", "SI": "Slovenia", "SK": "Slovakia",
-            "TH": "Thailand", "TW": "Taiwan", "US": "United Stated", "ZA": "South Africa"
+            "TH": "Thailand", "TW": "Taiwan, China", "US": "United Stated", "ZA": "South Africa"
         }
     },
     3: {
@@ -105,7 +105,7 @@ COUNTRY_MAPPING = {
             "LT": "Lithuania", "LV": "Latvia", "MX": "Mexico", "NL": "Netherlands",
             "NO": "Norway", "PH": "Philippines", "PL": "Poland", "PT": "Portugal",
             "RU": "Russia", "SE": "Sweden", "SI": "Slovenia", "SK": "Slovakia",
-            "TR": "Turkey", "TW": "Taiwan", "US": "United States of America",
+            "TR": "Turkey", "TW": "Taiwan, China", "US": "United States of America",
             "VE": "Venezuela", "ZA": "South Africa"
         }
     },
@@ -118,7 +118,7 @@ COUNTRY_MAPPING = {
             "IN": "India", "IS": "Iceland", "IT": "Italy", "JP": "Japan",
             "MX": "Mexico", "NL": "Netherlands", "NO": "Norway", "NZ": "New Zealand",
             "PH": "Philippines", "PL": "Poland", "RU": "Russia", "SI": "Slovenia",
-            "SK": "Slovakia", "SR": "Suriname", "TH": "Thailand", "TW": "Taiwan",
+            "SK": "Slovakia", "SR": "Suriname", "TH": "Thailand", "TW": "Taiwan, China",
             "US": "United Stated", "ZA": "South Africa"
         }
     },
@@ -135,7 +135,7 @@ COUNTRY_MAPPING = {
             "KR": "South Korea", "LT": "Lithuania", "LV": "Latvia", "MX": "Mexico",
             "NO": "Norway", "PH": "Philippines", "PT": "Portugal", "RU": "Russia",
             "SE": "Sweden", "SI": "Slovenia", "SK": "Slovakia", "TR": "Turkey",
-            "TW": "Taiwan", "US": "United States", "ZA": "South Africa"
+            "TW": "Taiwan, China", "US": "United States", "ZA": "South Africa"
         }
     },
     6: {
@@ -175,7 +175,7 @@ COUNTRY_MAPPING = {
             "SI": "Slovenia",
             "SK": "Slovakia",
             "TR": "Turkey",
-            "TW": "Taiwan",
+            "TW": "Taiwan, China",
             "US": "United States",
             "ZA": "South Africa"
         }
@@ -190,7 +190,7 @@ COUNTRY_MAPPING = {
             "IT": "Italy", "JP": "Japan", "KR": "Korea (South)", "LT": "Lithuania",
             "NO": "Norway", "NZ": "New Zealand", "PH": "Philippines", "RU": "Russia",
             "SE": "Sweden", "SI": "Slovenia", "SK": "Slovakia", "SR": "Suriname",
-            "TH": "Thailand", "TR": "Turkey", "TW": "Taiwan", "US": "United Stated",
+            "TH": "Thailand", "TR": "Turkey", "TW": "Taiwan, China", "US": "United Stated",
             "ZA": "South Africa"
         }
     },
@@ -204,7 +204,7 @@ COUNTRY_MAPPING = {
             "IS": "Iceland", "JP": "Japan", "KR": "Korea (South)", "LT": "Lithuania",
             "LV": "Latvia", "NO": "Norway", "NZ": "New Zealand", "PH": "Philippines",
             "RU": "Russia", "SE": "Sweden", "SI": "Slovenia", "SK": "Slovakia",
-            "SR": "Suriname", "TH": "Thailand", "TR": "Turkey", "TW": "Taiwan",
+            "SR": "Suriname", "TH": "Thailand", "TR": "Turkey", "TW": "Taiwan, China",
             "US": "United Stated", "VE": "Venezuela", "ZA": "South Africa"
         }
     },
@@ -217,7 +217,7 @@ COUNTRY_MAPPING = {
             "IL": "Israel", "IS": "Iceland", "IT": "Italy", "JP": "Japan",
             "LT": "Lithuania", "NO": "Norway", "NZ": "New Zealand", "PH": "Philippines",
             "RU": "Russia", "SE": "Sweden", "SI": "Slovenia", "SR": "Suriname",
-            "TH": "Thailand", "TW": "Taiwan", "US": "United Stated", "VE": "Venezuela",
+            "TH": "Thailand", "TW": "Taiwan, China", "US": "United Stated", "VE": "Venezuela",
             "ZA": "South Africa"
         }
     },
@@ -230,7 +230,7 @@ COUNTRY_MAPPING = {
             "HU": "Hungary", "IL": "Israel", "IN": "India", "IS": "Iceland",
             "JP": "Japan", "LT": "Lithuania", "MX": "Mexico", "NZ": "New Zealand",
             "PH": "Philippines", "RU": "Russia", "SE": "Sweden", "SI": "Slovenia",
-            "SK": "Slovakia", "SR": "Suriname", "TH": "Thailand", "TW": "Taiwan",
+            "SK": "Slovakia", "SR": "Suriname", "TH": "Thailand", "TW": "Taiwan, China",
             "US": "United Stated", "ZA": "South Africa"
         }
     },
@@ -245,7 +245,7 @@ COUNTRY_MAPPING = {
             "JP": "Japan", "LT": "Lithuania", "LV": "Latvia", "MX": "Mexico",
             "NO": "Norway", "NZ": "New Zealand", "PH": "Philippines", "PL": "Poland",
             "RU": "Russia", "SE": "Sweden", "SI": "Slovenia", "SK": "Slovakia",
-            "SR": "Suriname", "TW": "Taiwan", "US": "United Stated", "VE": "Venezuela",
+            "SR": "Suriname", "TW": "Taiwan, China", "US": "United Stated", "VE": "Venezuela",
             "ZA": "South Africa"
         }
     }
@@ -403,7 +403,7 @@ async def process_question_async(question_id, true_answer, question_data, countr
 def run_evaluation(domain_id: int, interview_count: Union[int, str], 
                    api_type: str = "config", use_async: bool = False,
                    concurrent_requests: int = 5, concurrent_interviewees: int = 1,
-                   model_name: str = "Qwen2.5-32B-Instruct") -> Dict[str, Any]:
+                   model_name: str = "Qwen2.5-32B-Instruct", print_prompt: bool = False) -> Dict[str, Any]:
     """运行评测"""
     # 导入需要的模块
     import gc
@@ -848,8 +848,8 @@ def run_evaluation(domain_id: int, interview_count: Union[int, str],
             "processed_interviewees": processed_interviewees
         })
         
-        # 如果是config模式，保存完整的提示和回答记录
-        if api_type == "config" and full_prompts_answers:
+        # 如果开启了保存prompt信息，则保存完整的提示和回答记录
+        if print_prompt and full_prompts_answers:
             # 使用已保存的结果文件路径构建prompt文件路径
             prompt_file = os.path.join(os.path.dirname(result_file_path), f"{domain_name}_full_prompts_{model_name}_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json")
             with open(prompt_file, "w", encoding="utf-8") as f:
@@ -969,7 +969,7 @@ def _run_evaluation_in_process(domain_id, interview_count, api_type, use_async,
 def run_all_domains(api_type: str = "config", interview_count: Union[int, str] = 1,
                    use_async: bool = False, concurrent_requests: int = 5,
                    concurrent_interviewees: int = 1, start_domain_id: int = 1,
-                   model_name: str = "Qwen2.5-32B-Instruct") -> None:
+                   model_name: str = "Qwen2.5-32B-Instruct", print_prompt: bool = False) -> None:
     """运行所有领域的评测"""
     # 导入需要的模块
     import gc
@@ -1045,6 +1045,10 @@ def run_all_domains(api_type: str = "config", interview_count: Union[int, str] =
             cmd.extend(["--concurrent_requests", str(concurrent_requests)])
             cmd.extend(["--concurrent_interviewees", str(concurrent_interviewees)])
             cmd.extend(["--model", model_name])
+            
+            # 添加print_prompt参数
+            if print_prompt:
+                cmd.append("--print_prompt")
             
             # 设置环境变量
             env = os.environ.copy()
@@ -1274,6 +1278,8 @@ def generate_summary_report(domain_results: Dict[str, Dict[str, Any]], model_nam
     for domain_name, result in loaded_results.items():
         # 统计信息
         domain_id = result.get("domain_stats", {}).get("domain_id", domain_id_map.get(domain_name, 0))
+        
+        # 获取指标，添加默认值防止KeyError
         accuracy = result.get("accuracy", 0)
         macro_f1 = result.get("macro_f1", 0)
         micro_f1 = result.get("micro_f1", 0)
@@ -1335,11 +1341,11 @@ def generate_summary_report(domain_results: Dict[str, Dict[str, Any]], model_nam
         domains_report["domains"][str(domain_id)] = {
             "id": str(domain_id),
             "name": domain_name,
-            "total_questions": domain_data["总题数"],
-            "correct_answers": domain_data["正确数"],
-            "accuracy": domain_data["accuracy"],
-            "macro_f1": domain_data["macro_F1"],
-            "micro_f1": domain_data["micro_F1"]
+            "total_questions": domain_data.get("总题数", 0),
+            "correct_answers": domain_data.get("正确数", 0),
+            "accuracy": domain_data.get("准确率", 0),
+            "macro_f1": domain_data.get("macro_F1", 0),
+            "micro_f1": domain_data.get("micro_F1", 0)
         }
     
     # 保存汇总JSON
@@ -1360,8 +1366,8 @@ def parse_args():
     parser.add_argument('--start_domain_id', type=int, default=1, help='起始评测的领域ID（当domain_id为all时有效）')
     parser.add_argument('--model', type=str, default='Qwen2.5-32B-Instruct', help='使用的模型名称或路径（仅在vllm模式下有效）')
     
-    parser.add_argument('--no_log', action='store_true',
-                        help='禁用日志记录到文件')
+    parser.add_argument('--no_log', action='store_true', default=False, help='禁用日志记录到文件')
+    parser.add_argument('--print_prompt', action='store_true', default=False, help='打印完整的prompt、问答和LLM回答到json文件中')
     
     return parser.parse_args()
 
@@ -1402,9 +1408,9 @@ python /inspire/hdd/ws-f4d69b29-e0a5-44e6-bd92-acf4de9990f0/public-project/wangj
   --interview_count all \
   --api_type vllm \
   --use_async \
-  --concurrent_requests 2000 \
-  --concurrent_interviewees 500 \
-  --start_domain_id 1 \
+  --concurrent_requests 150000 \
+  --concurrent_interviewees 100 \
+  --start_domain_id 6 \
   --model Qwen2.5-7B-Instruct
 """
 """
@@ -1480,7 +1486,8 @@ if __name__ == "__main__":
                 concurrent_requests=args.concurrent_requests,
                 concurrent_interviewees=args.concurrent_interviewees,
                 start_domain_id=args.start_domain_id,
-                model_name=args.model
+                model_name=args.model,
+                print_prompt=args.print_prompt
             )
         else:
             try:
@@ -1498,7 +1505,8 @@ if __name__ == "__main__":
                     use_async=args.use_async,
                     concurrent_requests=args.concurrent_requests,
                     concurrent_interviewees=args.concurrent_interviewees,
-                    model_name=args.model
+                    model_name=args.model,
+                    print_prompt=args.print_prompt
                 )
             except ValueError:
                 print(f"错误：domain_id必须是整数(1-11)或'all'")

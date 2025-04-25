@@ -41,7 +41,7 @@
   },
   {
     "domain": "TW_INC",
-    "meaning": "Country specific household income: Taiwan",
+    "meaning": "Country specific household income: Taiwan, China",
     "question": "What is your average monthly household income before taxes, including all income of your family members who live in your residence (e.g., allowance from parents or children, government subsidies, interest, earnings from work or part-time jobs, etc.)?",
     "content": {
       "0": "No income",
@@ -306,7 +306,7 @@
       "154": "Northern Europe (M49)",
       "155": "Western Europe (M49)",
       "156": "China",
-      "158": "Taiwan",
+      "158": "Taiwan, China",
       "162": "Christmas Island",
       "166": "Cocos (Keeling) Islands",
       "170": "Colombia",

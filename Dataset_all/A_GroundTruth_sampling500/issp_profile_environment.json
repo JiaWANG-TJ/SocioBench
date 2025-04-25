@@ -34,7 +34,7 @@
       "36": "AU-Australia",
       "40": "AT-Austria",
       "156": "CN-China",
-      "158": "TW-Taiwan",
+      "158": "TW-Taiwan, China",
       "191": "HR-Croatia",
       "208": "DK-Denmark",
       "246": "FI-Finland",
@@ -70,7 +70,7 @@
       "36": "AU-Australia",
       "40": "AT-Austria",
       "156": "CN-China",
-      "158": "TW-Taiwan",
+      "158": "TW-Taiwan, China",
       "191": "HR-Croatia",
       "208": "DK-Denmark",
       "246": "FI-Finland",
@@ -129,7 +129,7 @@
       "SI": "Slovenia",
       "SK": "Slovakia",
       "TH": "Thailand",
-      "TW": "Taiwan",
+      "TW": "Taiwan, China",
       "US": "United Stated",
       "ZA": "South Africa"
     },
@@ -1880,7 +1880,7 @@
   },
   {
     "domain": "TW_ISCD",
-    "meaning": "Country specific highest completed degree of education: Taiwan",
+    "meaning": "Country specific highest completed degree of education: Taiwan, China",
     "question": "What is your education level? Please refer to the level of education that you are currently in or the highest level of education that you have attained, regardless of whether you have graduated or not.\nHave you completed your studies?",
     "content": {
       "-9": "No answer",
@@ -4015,7 +4015,7 @@
   },
   {
     "domain": "TW_RELIG",
-    "meaning": "Country specific religious affiliation or denomination: Taiwan",
+    "meaning": "Country specific religious affiliation or denomination: Taiwan, China",
     "question": "Do you have any religious belief at present? Buddhism, converted/ Buddhism, not converted/ Taoism/ Folk religion/ Yiguan Dao/ Islam/ Catholicism/ Protestant Christianity/ None/ Others (please specify)",
     "content": {
       "-7": "Refused",
@@ -4759,7 +4759,7 @@
   },
   {
     "domain": "TW_PRTY",
-    "meaning": "Country specific party voted for in last general election: Taiwan",
+    "meaning": "Country specific party voted for in last general election: Taiwan, China",
     "question": "Which political party candidate did you vote for in the January 109 [January 11th 2020] presidential election? Yes, Soong, Chu-yu/ Yes, Han, Kuo-Yu/ Yes, Tsai, Ing-wen/ Others (please specify)/ Yes, but can't remember or don't want to answer/ No/ Not eligible to vote (at the time 20 years old but did not have the right to vote for the president)/ Not eligible to vote (at the time under 20 years old) / Yes, cast an invalid ballot",
     "content": {
       "-7": "Refused",
@@ -5769,7 +5769,7 @@
       "148": "TCD People of Chad",
       "152": "CHL People of Chile",
       "156": "CHN People of China",
-      "158": "TWN People of Taiwan",
+      "158": "TWN People of Taiwan, China",
       "162": "CXR People of Christmas Island",
       "166": "CCK People of Cocos (Keeling) Island",
       "170": "COL People of Colombia",
@@ -6069,7 +6069,7 @@
       "148": "TCD People of Chad",
       "152": "CHL People of Chile",
       "156": "CHN People of China",
-      "158": "TWN People of Taiwan",
+      "158": "TWN People of Taiwan, China",
       "162": "CXR People of Christmas Island",
       "166": "CCK People of Cocos (Keeling) Island",
       "170": "COL People of Colombia",
@@ -6442,15 +6442,15 @@
   },
   {
     "domain": "TW_ETHN1",
-    "meaning": "Country specific ethnic group 1: Taiwan",
-    "question": "What is your ethnic background? Fukienese of Taiwan/ Hakka of Taiwan/ Mainlander/ Aborigine/ Citizen of the PRC/ South-East Asian/ Other (Please specify)",
+    "meaning": "Country specific ethnic group 1: Taiwan, China",
+    "question": "What is your ethnic background? Fukienese of Taiwan, China/ Hakka of Taiwan, China/ Mainlander/ Aborigine/ Citizen of the PRC/ South-East Asian/ Other (Please specify)",
     "content": {
       "-9": "No answer",
       "-8": "Don't know",
       "-7": "Refused",
       "-2": "NAP, other countries",
       "1": "Fukienese",
-      "2": "Hakka of Taiwan",
+      "2": "Hakka of Taiwan, China",
       "3": "Mainlander",
       "4": "Aborigine",
       "5": "Chinese (PRC)",
@@ -6461,13 +6461,13 @@
   },
   {
     "domain": "TW_ETHN2",
-    "meaning": "Country specific ethnic group 2: Taiwan",
-    "question": "What is your ethnic background? Fukienese of Taiwan/ Hakka of Taiwan/ Mainlander/ Aborigine/ Citizen of the PRC/ South-East Asian/ Other (Please specify)",
+    "meaning": "Country specific ethnic group 2: Taiwan, China",
+    "question": "What is your ethnic background? Fukienese of Taiwan, China/ Hakka of Taiwan, China/ Mainlander/ Aborigine/ Citizen of the PRC/ South-East Asian/ Other (Please specify)",
     "content": {
       "-9": "No answer incl. no second ethnic group mentioned",
       "-2": "NAP, other countries",
       "1": "Fukienese",
-      "2": "Hakka of Taiwan",
+      "2": "Hakka of Taiwan, China",
       "3": "Mainlander",
       "4": "Aborigine",
       "5": "Chinese (PRC)",
@@ -7508,7 +7508,7 @@
   },
   {
     "domain": "TW_RINC",
-    "meaning": "Country specific personal income: Taiwan",
+    "meaning": "Country specific personal income: Taiwan, China",
     "question": "What is your average monthly income before taxes, including all sources of income (e.g., your earnings from work or part-time jobs, rewards, interest, bonuses or dividends, government subsidies, rent and other income, allowance from parents or children, pension, etc.)?",
     "content": {
       "-8": "Don't know",
@@ -8425,7 +8425,7 @@
   },
   {
     "domain": "TW_INC",
-    "meaning": "Country specific household income: Taiwan",
+    "meaning": "Country specific household income: Taiwan, China",
     "question": "What is your average monthly household income before taxes, including all income of your family members who live in your residence (e.g., allowance from parents or children, government subsidies, interest, earnings from work or part-time jobs, etc.)?",
     "content": {
       "-8": "Don't know",
@@ -8555,7 +8555,7 @@
   {
     "domain": "F_BORN",
     "meaning": "Father's country of birth",
-    "question": "In which country was your father born? (Please write in.) \nAT: Will you tell me where your father was born? Austria/ Germany/ Turkey/ Slovenia/ Serbia/ Croatia/ Bosnia Herzegowina/ Macedonia/ In a different country\nAU: And what country was your father born in? Australia/ Overseas - Please specify country:\nCH: In which country was your father born? Switzerland/ Italy/France/ Germany/ Austria/ Portugal/ Spain/ Other country, specify:\nCN: Not asked, imputed.\nDE: In which country was your father resp. your mother born? Within the current borders of Germany/ Former Eastern German territories (e.g., Silesia, East Prussia)/ Greece/ Italy/Former Yugoslavia/ Poland/ Romania/ Former Soviet Union (USSR)/ Former Czechoslovakia/ Turkey/ Other country, please specify\nDK: Where were you and your parents born? b) Your father: Denmark/ Foreign country (write which)\nES: Where was your father born? In Spain/ In another country (If 'In another country') In which country?\nFI: In which country was your father born?\nFR: In which country was your father born?\nHR: In which country was your father born? (If the country no longer exists under the name it had at the time of your father's birth, enter the current name of the country where he was born.) My father was born in\nHU: In which country was your father born? Hungary, Ukraine, Romania, Slovakia, Czech Republic, Serbia, Croatia, Slovenia, Austria, Germany, Russia, Poland, Other European country, Other country not in Europe\nIN: In which country was your father born? My father was born in\nIS: In which country was your father born? Iceland/ Other country, which?\nIT: In which country was your father born?\nJP: In which country was your father born? Japan/ Other country (please specify)/ I don't know.\nKR: In what country were your parents born? Father:\nLT: In which country was your father born? My father was born in: (Respondent should indicate only countries and not sub-national regions or areas. If respondent indicates the country of birth which does not exist anymore under the former name, please write in the current country where the birthplace is located.)\nNO: In which country was your father born? Norway/ Another country, please write which country:\nNZ: In what country was your father born? New Zealand/ Australia/ United Kingdom/ China (People's Republic)/ India/ South Africa/ Samoa/ Cook Islands/ Fiji/ Korea (Republic)/ Philippines/ Netherlands/ Other, please enter the country here: / Don't know\nPH: In which country was your father born? Verbatim response:\nRU: In which country was your father born?\nSE: In which country was your father born? 1) Sweden 2) Other country, which?\nSI: In which country was your father born? Slovenia/ Croatia/ Bosnia and Hercegovina/ Serbia/ Montenegro/ Former Yugoslav Republic of Macedonia/ Kosovo/ Albania/ Austria/ Italy/Germany/ Hungary/Other\nSK: In which country was your father born? 1. My father was born in Slovakia, 2. My father was born in Czechia, 3. My father was born elsewhere (please specify).\nTH: In which country was your father born? Please specify country\nTW: In which country was your father born? Taiwan/China/ Other country, please specify.\nUS: Was your father/ stepfather/ the male relative you were living with at 16 born in this country?\nZA: In which country was your father born?",
+    "question": "In which country was your father born? (Please write in.) \nAT: Will you tell me where your father was born? Austria/ Germany/ Turkey/ Slovenia/ Serbia/ Croatia/ Bosnia Herzegowina/ Macedonia/ In a different country\nAU: And what country was your father born in? Australia/ Overseas - Please specify country:\nCH: In which country was your father born? Switzerland/ Italy/France/ Germany/ Austria/ Portugal/ Spain/ Other country, specify:\nCN: Not asked, imputed.\nDE: In which country was your father resp. your mother born? Within the current borders of Germany/ Former Eastern German territories (e.g., Silesia, East Prussia)/ Greece/ Italy/Former Yugoslavia/ Poland/ Romania/ Former Soviet Union (USSR)/ Former Czechoslovakia/ Turkey/ Other country, please specify\nDK: Where were you and your parents born? b) Your father: Denmark/ Foreign country (write which)\nES: Where was your father born? In Spain/ In another country (If 'In another country') In which country?\nFI: In which country was your father born?\nFR: In which country was your father born?\nHR: In which country was your father born? (If the country no longer exists under the name it had at the time of your father's birth, enter the current name of the country where he was born.) My father was born in\nHU: In which country was your father born? Hungary, Ukraine, Romania, Slovakia, Czech Republic, Serbia, Croatia, Slovenia, Austria, Germany, Russia, Poland, Other European country, Other country not in Europe\nIN: In which country was your father born? My father was born in\nIS: In which country was your father born? Iceland/ Other country, which?\nIT: In which country was your father born?\nJP: In which country was your father born? Japan/ Other country (please specify)/ I don't know.\nKR: In what country were your parents born? Father:\nLT: In which country was your father born? My father was born in: (Respondent should indicate only countries and not sub-national regions or areas. If respondent indicates the country of birth which does not exist anymore under the former name, please write in the current country where the birthplace is located.)\nNO: In which country was your father born? Norway/ Another country, please write which country:\nNZ: In what country was your father born? New Zealand/ Australia/ United Kingdom/ China (People's Republic)/ India/ South Africa/ Samoa/ Cook Islands/ Fiji/ Korea (Republic)/ Philippines/ Netherlands/ Other, please enter the country here: / Don't know\nPH: In which country was your father born? Verbatim response:\nRU: In which country was your father born?\nSE: In which country was your father born? 1) Sweden 2) Other country, which?\nSI: In which country was your father born? Slovenia/ Croatia/ Bosnia and Hercegovina/ Serbia/ Montenegro/ Former Yugoslav Republic of Macedonia/ Kosovo/ Albania/ Austria/ Italy/Germany/ Hungary/Other\nSK: In which country was your father born? 1. My father was born in Slovakia, 2. My father was born in Czechia, 3. My father was born elsewhere (please specify).\nTH: In which country was your father born? Please specify country\nTW: In which country was your father born? Taiwan, China/China/ Other country, please specify.\nUS: Was your father/ stepfather/ the male relative you were living with at 16 born in this country?\nZA: In which country was your father born?",
     "content": {
       "-9": "No answer",
       "-8": "Don't know",
@@ -8628,7 +8628,7 @@
       "154": "Northern Europe (M49)",
       "155": "Western Europe (M49)",
       "156": "China",
-      "158": "Taiwan",
+      "158": "Taiwan, China",
       "162": "Christmas Island",
       "166": "Cocos (Keeling) Islands",
       "170": "Colombia",
@@ -8849,7 +8849,7 @@
   {
     "domain": "M_BORN",
     "meaning": "Mother's country of birth",
-    "question": "In which country was your mother born? (Please write in.)\nAT: And where was your mother born? Austria/ Germany/ Turkey/ Slovenia/ Serbia/ Croatia/ Bosnia Herzegowina/ Macedonia/ In a different country\nAU: What country was your mother born in? Australia/ Overseas - Please specify country:\nCH: In which country was your mother born? Switzerland/Italy/France/ Germany/ Austria/ Portugal/ Spain/ Other country, specify:\nCN: Not asked, imputed.\nDE: In which country was your father resp. your mother born? Within the current borders of Germany/ Former Eastern German territories (e.g., Silesia, East Prussia)/ Greece/ Italy/Former Yugoslavia/ Poland/ Romania/ Former Soviet Union (USSR)/ Former Czechoslovakia/ Turkey/ Other country, please specify\nDK: Where were you and your parents born? c) Your mother: Denmark/ Foreign country (write which)\nES: Where was your mother born? In Spain/ In another country (If 'In another country') In which country?\nFI: In which country was your mother born?\nFR: In which country was your mother born?\nHR: In which country was your mother born? (If the country no longer exists under the name it had at the time of your mother's birth, enter the current name of the country where she was born.) My mother was born in\nHU: In which country has your mother born? Hungary, Ukraine, Romania, Slovakia, Czech Republic, Serbia, Croatia, Slovenia, Austria, Germany, Russia, Poland, Other European country, Other country not in Europe\nIN: In which country was your mother born? My mother was born in\nIS: In which country was your mother born? Iceland/ Other country, which?\nIT: In which country was your mother born?\nJP: In which country was your mother born? Japan/ Other country (please specify)/ I don't know.\nKR: In what country were your parents born? Mother:\nLT: In which country was your mother born? My mother was born in: (Respondent should indicate only countries and not sub-national regions or areas. If respondent indicates the country of birth which does not exist anymore under the former name, please write in the current country where the birthplace is located.)\nNO: In which country was your mother born? Norway/ Another country, please write which country:\nNZ: In what country was your mother born? New Zealand/ Australia/ United Kingdom/ China (People's Republic)/ India/ South Africa/ Samoa/ Cook Islands/ Fiji/ Korea (Republic)/ Philippines/ Netherlands/ Other, please enter the country here: / Don't know\nPH: In which country was your mother born? Verbatim response:\nRU: In which country was your mother born?\nSE: In which country was your mother born? 1) Sweden 2) Other country, which?\nSI: In which country was your mother born? Slovenia/ Croatia/ Bosnia and Hercegovina/ Serbia/ Montenegro/ Former Yugoslav Republic of Macedonia/ Kosovo/ Albania/ Austria/ Italy/Germany/Hungary/Other\nSK: In which country was your mother born? 1. My mother was born in Slovakia, 2. My mother was born in Czechia, 3. My mother was born elsewhere (please specify).\nTH: In which country was your mother born?\nTW: In which country was your mother born? Taiwan/China/ Other country, please specify.\nUS: Was your mother/ stepmother/ the female relative you were living with at 16 born in this country?\nZA: In which country was your mother born?",
+    "question": "In which country was your mother born? (Please write in.)\nAT: And where was your mother born? Austria/ Germany/ Turkey/ Slovenia/ Serbia/ Croatia/ Bosnia Herzegowina/ Macedonia/ In a different country\nAU: What country was your mother born in? Australia/ Overseas - Please specify country:\nCH: In which country was your mother born? Switzerland/Italy/France/ Germany/ Austria/ Portugal/ Spain/ Other country, specify:\nCN: Not asked, imputed.\nDE: In which country was your father resp. your mother born? Within the current borders of Germany/ Former Eastern German territories (e.g., Silesia, East Prussia)/ Greece/ Italy/Former Yugoslavia/ Poland/ Romania/ Former Soviet Union (USSR)/ Former Czechoslovakia/ Turkey/ Other country, please specify\nDK: Where were you and your parents born? c) Your mother: Denmark/ Foreign country (write which)\nES: Where was your mother born? In Spain/ In another country (If 'In another country') In which country?\nFI: In which country was your mother born?\nFR: In which country was your mother born?\nHR: In which country was your mother born? (If the country no longer exists under the name it had at the time of your mother's birth, enter the current name of the country where she was born.) My mother was born in\nHU: In which country has your mother born? Hungary, Ukraine, Romania, Slovakia, Czech Republic, Serbia, Croatia, Slovenia, Austria, Germany, Russia, Poland, Other European country, Other country not in Europe\nIN: In which country was your mother born? My mother was born in\nIS: In which country was your mother born? Iceland/ Other country, which?\nIT: In which country was your mother born?\nJP: In which country was your mother born? Japan/ Other country (please specify)/ I don't know.\nKR: In what country were your parents born? Mother:\nLT: In which country was your mother born? My mother was born in: (Respondent should indicate only countries and not sub-national regions or areas. If respondent indicates the country of birth which does not exist anymore under the former name, please write in the current country where the birthplace is located.)\nNO: In which country was your mother born? Norway/ Another country, please write which country:\nNZ: In what country was your mother born? New Zealand/ Australia/ United Kingdom/ China (People's Republic)/ India/ South Africa/ Samoa/ Cook Islands/ Fiji/ Korea (Republic)/ Philippines/ Netherlands/ Other, please enter the country here: / Don't know\nPH: In which country was your mother born? Verbatim response:\nRU: In which country was your mother born?\nSE: In which country was your mother born? 1) Sweden 2) Other country, which?\nSI: In which country was your mother born? Slovenia/ Croatia/ Bosnia and Hercegovina/ Serbia/ Montenegro/ Former Yugoslav Republic of Macedonia/ Kosovo/ Albania/ Austria/ Italy/Germany/Hungary/Other\nSK: In which country was your mother born? 1. My mother was born in Slovakia, 2. My mother was born in Czechia, 3. My mother was born elsewhere (please specify).\nTH: In which country was your mother born?\nTW: In which country was your mother born? Taiwan, China/China/ Other country, please specify.\nUS: Was your mother/ stepmother/ the female relative you were living with at 16 born in this country?\nZA: In which country was your mother born?",
     "content": {
       "-9": "No answer",
       "-8": "Don't know",
@@ -8922,7 +8922,7 @@
       "154": "Northern Europe (M49)",
       "155": "Western Europe (M49)",
       "156": "China",
-      "158": "Taiwan",
+      "158": "Taiwan, China",
       "162": "Christmas Island",
       "166": "Cocos (Keeling) Islands",
       "170": "Colombia",
@@ -9767,7 +9767,7 @@
   },
   {
     "domain": "TW_REG",
-    "meaning": "Country specific region: Taiwan",
+    "meaning": "Country specific region: Taiwan, China",
     "question": "Derived from the sampling area (zip code).",
     "content": {
       "-2": "NAP, other countries",

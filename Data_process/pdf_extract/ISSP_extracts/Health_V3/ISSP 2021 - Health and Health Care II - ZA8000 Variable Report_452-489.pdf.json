@@ -134,7 +134,7 @@
   },
   {
     "domain": "TW_PRTY",
-    "meaning": "Taiwan: Party voted for in last election",
+    "meaning": "Taiwan, China: Party voted for in last election",
     "question": "For the presidential election in January of 2020, did you go to vote? Who did you vote for?",
     "content": {
       "1": "People First Party (PFP)",

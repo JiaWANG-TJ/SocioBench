@@ -203,7 +203,7 @@
   },
   {
     "domain": "TW_RINC",
-    "meaning": "Country specific personal income: Taiwan",
+    "meaning": "Country specific personal income: Taiwan, China",
     "question": "What is your average monthly income (including your salary from full- or part-time jobs, year-end bonus, commission, interest income, income from personal business or investments, government subsidies, rent, pension, etc.)?",
     "content": {
       "0": "No own income",

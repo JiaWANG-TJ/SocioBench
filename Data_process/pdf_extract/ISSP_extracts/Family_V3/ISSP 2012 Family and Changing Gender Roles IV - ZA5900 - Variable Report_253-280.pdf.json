@@ -126,7 +126,7 @@
   },
   {
     "domain": "TW_DEGR",
-    "meaning": "Taiwan: Country specific highest completed degree of education",
+    "meaning": "Taiwan, China: Country specific highest completed degree of education",
     "question": "What is your highest education level?",
     "content": {
       "0": "NAP, other countries",

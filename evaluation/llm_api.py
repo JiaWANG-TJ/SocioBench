@@ -120,9 +120,9 @@ class LLMAPIClient:
                     enable_chunked_prefill=True,                #
                     enable_prefix_caching=True,                 #
                     # ── 批次与吞吐控制 ─────────────────────────
-                    max_num_seqs=2048,                          #
+                    max_num_seqs=1024,                          #
                     max_num_batched_tokens=20480,                #
-                    num_scheduler_steps=8,
+                    # num_scheduler_steps=8,
                     # block_size=32,
                     # ── 执行模式控制 ────────────────────────────
                     enforce_eager=True,                         # 关闭 --enforce-eager(设置为 false),显存占用会增大，但推理速度会更快
