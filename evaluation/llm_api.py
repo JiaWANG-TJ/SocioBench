@@ -2,6 +2,9 @@
 # -*- coding: utf-8 -*-
 
 import os
+# 设置CUDA架构列表，用于优化编译
+os.environ["TORCH_CUDA_ARCH_LIST"] = "8.9+PTX"
+
 import sys
 import json
 import asyncio
@@ -87,10 +90,7 @@ class LLMAPIClient:
         else:  # api_type == "vllm"
             # 使用vLLM的AsyncLLMEngine 模型路径
             base_model_path = "/inspire/hdd/ws-f4d69b29-e0a5-44e6-bd92-acf4de9990f0/public-project/wangjia-240108610168/model_input"
-            if model:
-                self.model = f"{base_model_path}/{model}"
-            else:
-                self.model = f"{base_model_path}/Qwen2.5-32B-Instruct"
+            self.model = f"{base_model_path}/{model}"
             
             try:
                 # 尝试直接使用AsyncLLMEngine
@@ -120,13 +120,16 @@ class LLMAPIClient:
                     enable_chunked_prefill=True,                #
                     enable_prefix_caching=True,                 #
                     # ── 批次与吞吐控制 ─────────────────────────
-                    max_num_seqs=4096,                          #
-                    max_num_batched_tokens=10240,                #
+                    max_num_seqs=2048,                          #
+                    max_num_batched_tokens=20480,                #
+                    num_scheduler_steps=8,
+                    # block_size=32,
                     # ── 执行模式控制 ────────────────────────────
                     enforce_eager=True,                         # 关闭 --enforce-eager(设置为 false),显存占用会增大，但推理速度会更快
                     disable_custom_all_reduce=False,             # 禁用自定义all-reduce以避免分布式通信问题，没用？
                     use_v2_block_manager=True,                  #
-                    disable_async_output_proc=False
+                    disable_async_output_proc=False,
+                    
                     # ── 分词与加载并发 ──────────────────────────
                     # tokenizer_pool_size=10,                     #导致ray错误
                     # max_parallel_loading_workers=4,             #导致ray错误
@@ -420,10 +423,11 @@ class LLMAPIClient:
                 return final_output.outputs[0].text
             else:
                 print(f"警告: vLLM生成空输出，请求ID: {request_id}")
-                return "无法生成回答"
+                return "无法生成回答：生成结果为空"
                 
         except Exception as e:
-            print(f"AsyncLLMEngine生成失败: {str(e)}")
+            error_msg = f"AsyncLLMEngine生成失败: {type(e).__name__}: {str(e)}"
+            print(error_msg)
             print("尝试使用OpenAI兼容API作为备选...")
             
             # 动态切换到OpenAI兼容API
@@ -448,5 +452,6 @@ class LLMAPIClient:
                 response = await self.async_client.completions.create(**params)
                 return response.choices[0].text
             except Exception as retry_e:
-                print(f"OpenAI兼容API重试也失败: {str(retry_e)}")
-                return "生成失败，无法获取回答" 
+                retry_error = f"OpenAI兼容API重试也失败: {type(retry_e).__name__}: {str(retry_e)}"
+                print(retry_error)
+                return f"生成失败，无法获取回答: {error_msg}" 

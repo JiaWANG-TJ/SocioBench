@@ -1,6 +1,10 @@
-# 忽略数据集目录及其所有内容
+# 忽略数据集目录及其所有内容，但保留特定文件/目录
 Dataset_all/
 Dataset_all/*
+!Dataset_all/A_GroundTruth_sampling500
+!Dataset_all/A_GroundTruth_sampling500/**
+!Dataset_all/q&a
+!Dataset_all/q&a/**
 
 # Python缓存文件
 __pycache__/

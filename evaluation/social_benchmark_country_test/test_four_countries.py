@@ -263,13 +263,12 @@ async def test_four_countries():
     print(f"\n{'='*60}")
     print(f"四国抽样测试完成 | 领域: {domain_name} (ID: {domain_id})")
     print(f"共测试了 {len(valid_interviewees)} 个受访者，涉及国家: {', '.join([interviewee.get('country_code', '') for interviewee in evaluation_details])}")
-    print(f"总国家特定问题数: {total_country_specific_questions}")
-    print(f"评测的国家特定问题数: {evaluated_country_specific_questions}")
     
     # 保存评测结果
     result_file = evaluator.save_results(model_name, domain_stats={
-        "total_country_specific_questions": total_country_specific_questions,
-        "evaluated_country_specific_questions": evaluated_country_specific_questions
+        "domain_id": domain_id,
+        "total_questions": evaluator.results["total_count"],
+        "processed_interviewees": len(valid_interviewees)
     })
     
     print(f"总评测结果已保存到: {result_file}")

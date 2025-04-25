@@ -2,6 +2,15 @@
 # -*- coding: utf-8 -*-
 
 import os
+# 设置CUDA架构列表，用于优化编译
+os.environ["TORCH_CUDA_ARCH_LIST"] = "8.9+PTX"
+# 设置vLLM使用Flash Attention后端
+# os.environ["VLLM_ATTENTION_BACKEND"] = "FLASHINFER"
+# # os.environ["VLLM_ATTENTION_BACKEND"] = "FLASH_ATTN"
+
+# os.environ["VLLM_FLASHINFER_FORCE_TENSOR_CORES"] = "1"
+
+
 import sys
 import json
 import argparse
@@ -16,6 +25,7 @@ from datetime import datetime
 import asyncio
 import traceback
 import multiprocessing
+import concurrent.futures
 
 # 设置多进程启动方法为spawn，以解决CUDA初始化问题
 # 这是必须的，因为vLLM使用CUDA，在fork的子进程中无法重新初始化CUDA
@@ -25,9 +35,6 @@ if multiprocessing.get_start_method(allow_none=True) != 'spawn':
     except RuntimeError:
         # 可能已经设置了启动方法
         pass
-
-# 设置CUDA架构列表，用于优化编译
-os.environ["TORCH_CUDA_ARCH_LIST"] = "8.9+PTX"
 
 # 设置vLLM多进程方法环境变量
 os.environ["VLLM_WORKER_MULTIPROC_METHOD"] = "spawn"
@@ -41,6 +48,7 @@ sys.path.insert(0, project_root)
 from social_benchmark.evaluation.llm_api import LLMAPIClient
 from social_benchmark.evaluation.evaluation import Evaluator
 from social_benchmark.evaluation.prompt_engineering import PromptEngineering
+from social_benchmark.evaluation.logger_setup import setup_logging, teardown_logging
 
 # 领域名称与领域号映射表
 DOMAIN_MAPPING = {
@@ -293,7 +301,7 @@ def load_qa_file(domain_name: str) -> List[Dict[str, Any]]:
 
 def load_ground_truth(domain_name: str) -> List[Dict[str, Any]]:
     """加载真实答案数据"""
-    file_path = os.path.join(os.path.dirname(__file__), "..", "Dataset_all", "A_GroundTruth_sampling5000", f"issp_answer_{domain_name.lower()}.json")
+    file_path = os.path.join(os.path.dirname(__file__), "..", "Dataset_all", "A_GroundTruth_sampling500", f"issp_answer_{domain_name.lower()}.json")
     # file_path = os.path.join(os.path.dirname(__file__), "..", "Dataset_all", "A_GroundTruth", f"issp_answer_{domain_name.lower()}.json")
     with open(file_path, 'r', encoding='utf-8') as f:
         ground_truth = json.load(f)
@@ -337,6 +345,15 @@ async def process_question_async(question_id, true_answer, question_data, countr
     question = question_data.get("question", "")
     options = get_special_options(question_data, country_code)
     
+    # 获取国家全称
+    domain_id = DOMAIN_MAPPING.get(evaluator.domain_name)
+    country_name = ""
+    if domain_id in COUNTRY_MAPPING and country_code:
+        for code, name in COUNTRY_MAPPING[domain_id]["mapping"].items():
+            if code == country_code:
+                country_name = name
+                break
+    
     # 如果没有问题或选项，返回None
     if not question or not options:
         if verbose:
@@ -357,7 +374,12 @@ async def process_question_async(question_id, true_answer, question_data, countr
     response = await llm_client.async_generate(prompt)
     
     # 评估回答
-    is_correct = evaluator.evaluate_answer(question_id, true_answer, response, is_country_specific=is_country_specific)
+    is_correct = evaluator.evaluate_answer(
+        question_id, true_answer, response, 
+        is_country_specific=is_country_specific,
+        country_code=country_code,
+        country_name=country_name
+    )
     
     # 打印结果
     if verbose:
@@ -373,13 +395,15 @@ async def process_question_async(question_id, true_answer, question_data, countr
         "llm_answer": evaluator.extract_answer(response),
         "llm_response": response,
         "correct": is_correct,
-        "is_country_specific": is_country_specific
+        "is_country_specific": is_country_specific,
+        "country_code": country_code,
+        "country_name": country_name
     }
 
 def run_evaluation(domain_id: int, interview_count: Union[int, str], 
                    api_type: str = "config", use_async: bool = False,
                    concurrent_requests: int = 5, concurrent_interviewees: int = 1,
-                   model_name: str = "Qwen2.5-32B-Instruct") -> None:
+                   model_name: str = "Qwen2.5-32B-Instruct") -> Dict[str, Any]:
     """运行评测"""
     # 导入需要的模块
     import gc
@@ -485,6 +509,7 @@ def run_evaluation(domain_id: int, interview_count: Union[int, str],
         evaluated_country_specific_questions = 0
         excluded_country_specific_questions = 0
         invalid_answer_questions = 0
+        total_questions = 0  # 初始化总问题数
         
         # 初始化完整提示和回答记录（仅在config模式下使用）
         full_prompts_answers = []
@@ -802,14 +827,6 @@ def run_evaluation(domain_id: int, interview_count: Union[int, str],
         # 打印评测摘要
         accuracy = evaluator.print_summary()
         
-        # 打印国家特定问题的统计信息
-        print("\n国家特定问题统计:")
-        print(f"  总国家特定问题数: {total_country_specific_questions}")
-        print(f"  评测的国家特定问题: {evaluated_country_specific_questions}")
-        print(f"  排除的国家特定问题: {excluded_country_specific_questions}")
-        if evaluated_country_specific_questions > 0:
-            print(f"  国家特定问题纳入评测比例: {evaluated_country_specific_questions / total_country_specific_questions:.2%}")
-        
         # 打印无效答案统计信息
         print("\n无效答案统计:")
         print(f"  包含无效答案的题目数: {invalid_answer_questions}")
@@ -822,19 +839,13 @@ def run_evaluation(domain_id: int, interview_count: Union[int, str],
         
         # 保存结果
         model_name = llm_client.model.split("/")[-1] if "/" in llm_client.model else llm_client.model
-        # 处理国家特定问题统计数据，确保不会发生除以零错误
-        if total_country_specific_questions == 0 and evaluated_country_specific_questions > 0:
-            print(f"警告: 国家特定问题统计不一致 - 总数为0但评测数为{evaluated_country_specific_questions}")
-            # 修正总国家特定问题数，避免除以零错误
-            total_country_specific_questions = evaluated_country_specific_questions
         
         # 保存一次结果，获取文件路径
         result_file_path = evaluator.save_results(model_name, domain_stats={
-            "total_questions": evaluated_country_specific_questions + excluded_country_specific_questions + invalid_answer_questions,
+            "domain_id": domain_id,
+            "total_questions": evaluator.results["total_count"],  # 使用evaluator中的总问题数
             "invalid_answer_questions": invalid_answer_questions,
-            "country_specific_total": total_country_specific_questions,
-            "country_specific_evaluated": evaluated_country_specific_questions,
-            "country_specific_excluded": excluded_country_specific_questions
+            "processed_interviewees": processed_interviewees
         })
         
         # 如果是config模式，保存完整的提示和回答记录
@@ -907,190 +918,331 @@ def run_evaluation(domain_id: int, interview_count: Union[int, str],
             print(f"资源清理过程中出错: {str(e)}")
     
     print("\n评测完成!")
+    
+    # 返回评测结果（如果有）
+    if evaluator:
+        return {
+            "domain_id": domain_id,
+            "domain_name": domain_name,
+            "correct_count": evaluator.results["correct_count"],
+            "total_count": evaluator.results["total_count"],
+            "accuracy": evaluator.results["accuracy"],
+            "macro_f1": evaluator.results["macro_f1"],
+            "micro_f1": evaluator.results["micro_f1"],
+            "country_metrics": evaluator.results["country_metrics"]
+        }
+    else:
+        return {
+            "domain_id": domain_id,
+            "domain_name": domain_name,
+            "correct_count": 0,
+            "total_count": 0,
+            "accuracy": 0,
+            "macro_f1": 0,
+            "micro_f1": 0,
+            "country_metrics": {}
+        }
+
+# 将嵌套函数移到模块级别作为全局函数
+def _run_evaluation_in_process(domain_id, interview_count, api_type, use_async, 
+                           concurrent_requests, concurrent_interviewees, model_name):
+    """在子进程中运行评测，防止内存泄漏"""
+    # 设置环境变量，标记这是一个新的子进程
+    os.environ["VLLM_NEW_PROCESS"] = "1"
+    
+    try:
+        # 运行评测
+        return run_evaluation(
+            domain_id=domain_id,
+            interview_count=interview_count,
+            api_type=api_type,
+            use_async=use_async,
+            concurrent_requests=concurrent_requests,
+            concurrent_interviewees=concurrent_interviewees,
+            model_name=model_name
+        )
+    except Exception as e:
+        print(f"子进程中运行评测时出错: {str(e)}")
+        traceback.print_exc()
+        return None
 
 def run_all_domains(api_type: str = "config", interview_count: Union[int, str] = 1,
                    use_async: bool = False, concurrent_requests: int = 5,
                    concurrent_interviewees: int = 1, start_domain_id: int = 1,
                    model_name: str = "Qwen2.5-32B-Instruct") -> None:
-    """运行所有领域的评测并生成汇总报告，通过子进程方式运行每个领域评测"""
-    print(f"\n{'='*60}")
-    print(f"开始所有领域的评测 | API类型: {api_type}")
-    if use_async and api_type == "vllm":
-        print(f"异步模式已启用 | 并发请求数: {concurrent_requests}")
-    if concurrent_interviewees > 1:
-        print(f"多受访者并行模式已启用 | 并行受访者数: {concurrent_interviewees}")
-    print(f"{'='*60}")
+    """运行所有领域的评测"""
+    # 导入需要的模块
+    import gc
+    import torch
+    import subprocess
+    import traceback
+    import sys
+    import time
+    from datetime import datetime
+    import pandas as pd
     
-    # 存储各领域结果
-    domain_results = {}
+    # 如果不是vllm模式，关闭异步
+    if api_type != "vllm" and use_async:
+        print("警告: 异步模式仅在vllm API类型下可用，已自动关闭异步模式")
+        use_async = False
     
-    # 保存原始model_name，确保不会丢失
-    original_model_name = model_name
-
-    # 模型目录结构初始化
+    # 创建结果保存目录
     results_dir = os.path.join(os.path.dirname(__file__), "results")
     if not os.path.exists(results_dir):
         os.makedirs(results_dir)
     
+    # 打印开始信息
+    print(f"\n{'='*60}")
+    print(f"开始评测所有领域 | API类型: {api_type}")
+    if use_async:
+        print(f"异步模式已启用 | 并发请求数: {concurrent_requests}")
+    if concurrent_interviewees > 1:
+        print(f"多受访者并行模式已启用 | 并行受访者数: {concurrent_interviewees}")
+    print(f"结果将保存到: {results_dir}")
+    print(f"{'='*60}")
+    
+    # 获取要评测的所有领域ID
+    domain_ids = []
+    for domain_name, domain_id in DOMAIN_MAPPING.items():
+        domain_ids.append(domain_id)
+    
+    # 评测结果汇总
+    all_domain_results = {}
+    all_country_metrics = {}
+    
     # 获取当前脚本的绝对路径
     script_path = os.path.abspath(__file__)
     
-    # 运行每个领域的评测
-    for domain_id in range(start_domain_id, 12):
-        # 如果当前领域ID小于起始领域ID，则跳过
+    # 加载并评测每个领域
+    for domain_id in sorted(domain_ids):
         if domain_id < start_domain_id:
-            domain_name = get_domain_name(domain_id)
-            print(f"\n跳过领域: {domain_name} (ID: {domain_id})，起始领域ID: {start_domain_id}")
             continue
             
         domain_name = get_domain_name(domain_id)
-        print(f"\n\n{'#'*80}")
-        print(f"开始评测领域: {domain_name} (ID: {domain_id})")
-        print(f"{'#'*80}")
+        if not domain_name:
+            print(f"错误: 无效的领域ID {domain_id}")
+            continue
         
+        # 运行评测
         try:
-            # 在启动新的评测前，尝试清理系统资源
-            print("清理系统资源...")
+            # 运行当前领域的评测
+            print(f"\n正在评测领域 {domain_name} (ID: {domain_id})...")
             
-            # 尝试手动触发垃圾回收
-            import gc
-            gc.collect()
-            
-            # 如果是vLLM模式，清理CUDA缓存
-            try:
-                import torch
-                if torch.cuda.is_available():
-                    torch.cuda.empty_cache()
-                    print("已清空CUDA缓存")
-                
-                # 清理PyTorch分布式通信资源
-                import torch.distributed as dist
-                if dist.is_initialized():
-                    print("关闭PyTorch分布式通信...")
-                    dist.destroy_process_group()
-            except Exception as e:
-                print(f"清理PyTorch资源时出错: {str(e)}")
-            
-            # 重置事件循环
-            try:
-                import asyncio
-                # 关闭当前事件循环
-                try:
-                    loop = asyncio.get_event_loop()
-                    if not loop.is_closed():
-                        # 关闭所有挂起的任务
-                        for task in asyncio.all_tasks(loop):
-                            task.cancel()
-                        # 关闭循环
-                        loop.close()
-                except Exception as e:
-                    print(f"关闭当前事件循环时出错: {str(e)}")
-                
-                # 创建新的事件循环
-                asyncio.set_event_loop(asyncio.new_event_loop())
-                print("已重置事件循环")
-            except Exception as e:
-                print(f"重置事件循环时出错: {str(e)}")
-            
-            # 构建子进程命令
-            command = [
-                sys.executable,  # 当前Python解释器路径
+            # 使用子进程方式运行单独的Python进程进行评测，完全隔离每个评测任务
+            # 构建命令
+            cmd = [
+                sys.executable,  # 当前Python解释器
                 script_path,     # 当前脚本路径
                 "--domain_id", str(domain_id),
-                "--interview_count", str(interview_count) if interview_count != "all" else "all",
+                "--interview_count", str(interview_count) if isinstance(interview_count, int) else interview_count,
                 "--api_type", api_type
             ]
             
             # 添加可选参数
             if use_async:
-                command.append("--use_async")
+                cmd.append("--use_async")
             
-            command.extend(["--concurrent_requests", str(concurrent_requests)])
-            command.extend(["--concurrent_interviewees", str(concurrent_interviewees)])
+            cmd.extend(["--concurrent_requests", str(concurrent_requests)])
+            cmd.extend(["--concurrent_interviewees", str(concurrent_interviewees)])
+            cmd.extend(["--model", model_name])
             
-            # 添加模型参数，始终使用原始模型名称
-            command.extend(["--model", original_model_name])
-            # 打印将要执行的命令
-            print(f"执行子进程: {' '.join(command)}")
-            
-            # 设置环境变量，确保子进程使用干净的环境
+            # 设置环境变量
             env = os.environ.copy()
-            # 添加特殊环境变量标记这是一个新的子进程
             env["VLLM_NEW_PROCESS"] = "1"
-            # 确保分布式通信使用新的端口
-            env["MASTER_PORT"] = str(12355 + domain_id)  # 使用基于领域ID的端口号
+            env["MASTER_PORT"] = str(12355 + domain_id)  # 为每个领域使用不同的端口
             
-            # 运行外部进程进行单个领域评测，使用更严格的资源隔离
-            import subprocess
+            # 运行子进程
+            print(f"运行命令: {' '.join(cmd)}")
             process = subprocess.Popen(
-                command,
+                cmd,
                 stdout=subprocess.PIPE,
                 stderr=subprocess.STDOUT,
                 text=True,
-                bufsize=1,  # 行缓冲，实时输出
-                env=env,    # 使用修改后的环境变量
-                start_new_session=True  # 在新会话中启动子进程，进一步隔离
+                env=env,
+                start_new_session=True  # 在新会话中启动，确保完全隔离
             )
             
-            # 实时输出子进程的标准输出
+            # 实时打印输出
+            domain_result = None
             for line in process.stdout:
                 print(line, end='')
+                # 尝试从输出中提取评测结果
+                if line.startswith("评测结果已保存到:"):
+                    # 尝试从评测结果文件中加载数据
+                    try:
+                        result_file = line.strip().split("评测结果已保存到:")[1].strip()
+                        if os.path.exists(result_file):
+                            with open(result_file, 'r', encoding='utf-8') as f:
+                                result_data = json.load(f)
+                                # 创建一个简化的结果对象
+                                domain_result = {
+                                    "domain_id": domain_id,
+                                    "domain_name": domain_name,
+                                    "correct_count": result_data.get("correct_count", 0),
+                                    "total_count": result_data.get("total_count", 0),
+                                    "accuracy": result_data.get("accuracy", 0.0),
+                                    "macro_f1": result_data.get("macro_f1", 0.0),
+                                    "micro_f1": result_data.get("micro_f1", 0.0),
+                                    "country_metrics": result_data.get("country_metrics", {})
+                                }
+                    except Exception as e:
+                        print(f"从文件加载评测结果时出错: {str(e)}")
             
-            # 等待进程完成并获取返回码
+            # 等待进程完成
             return_code = process.wait()
-            
             if return_code != 0:
-                print(f"警告: 评测领域 {domain_name} 的子进程返回非零状态码: {return_code}")
+                print(f"警告: 评测进程返回非零状态码: {return_code}")
             
-            # 增强的资源清理和等待时间
-            print(f"子进程已完成，执行额外清理步骤...")
+            process.stdout.close()
+            process = None
             
-            # 清理子进程相关资源
-            try:
-                if process.stdout:
-                    process.stdout.close()
-                process = None  # 释放进程引用
-            except Exception as e:
-                print(f"关闭子进程资源时出错: {str(e)}")
-            
-            # 再次触发垃圾回收和清理CUDA缓存
+            # 确保资源被释放
+            print("强制清理资源...")
             gc.collect()
             try:
+                import torch
                 if torch.cuda.is_available():
                     torch.cuda.empty_cache()
-            except Exception:
-                pass
+                    print("已清空CUDA缓存")
+            except Exception as e:
+                print(f"清理CUDA资源时出错: {str(e)}")
             
-            # 更长的暂停时间，确保资源完全释放
-            print(f"等待15秒，确保系统资源完全释放...")
-            time.sleep(15)
+            # 等待一段时间让系统完全释放资源
+            print("等待5秒以确保资源完全释放...")
+            time.sleep(5)
             
-            # 加载最新的评测结果
-            # 使用模型目录中查找当前领域的结果文件
-            model_dir = os.path.join(results_dir, original_model_name)
-            if os.path.exists(model_dir):
-                domain_files = [f for f in os.listdir(model_dir) 
-                                if f.startswith(domain_name) and f.endswith('.json')]
-                if domain_files:
-                    # 按修改时间排序，获取最新的结果文件
-                    latest_file = max(domain_files, key=lambda x: os.path.getmtime(os.path.join(model_dir, x)))
-                    with open(os.path.join(model_dir, latest_file), 'r', encoding='utf-8') as f:
-                        domain_result = json.load(f)
-                        domain_results[domain_name] = domain_result
+            # 如果成功提取了结果，保存到结果汇总
+            if domain_result:
+                all_domain_results[domain_id] = domain_result
+                
+                # 合并国家指标
+                for country_code, metrics in domain_result.get("country_metrics", {}).items():
+                    if country_code not in all_country_metrics:
+                        all_country_metrics[country_code] = {
+                            "country_name": metrics["country_name"],
+                            "total_count": 0,
+                            "correct_count": 0,
+                            "domains": {},
+                            "y_true": [],
+                            "y_pred": []
+                        }
+                    
+                    # 更新计数
+                    all_country_metrics[country_code]["total_count"] += metrics["total_count"]
+                    all_country_metrics[country_code]["correct_count"] += metrics["correct_count"]
+                    
+                    # 保存领域特定指标
+                    all_country_metrics[country_code]["domains"][domain_name] = {
+                        "total_count": metrics["total_count"],
+                        "correct_count": metrics["correct_count"],
+                        "accuracy": metrics["accuracy"],
+                        "macro_f1": metrics["macro_f1"],
+                        "micro_f1": metrics["micro_f1"]
+                    }
+            else:
+                print(f"警告: 无法从评测中提取结果数据")
+                
         except Exception as e:
-            print(f"评测领域 {domain_name} (ID: {domain_id}) 时出错: {str(e)}")
-            print(f"跳过当前领域，继续评测其他领域。")
+            print(f"评测领域 {domain_name} 时出错: {str(e)}")
+            traceback.print_exc()
+            continue
     
-    # 生成汇总报告
-    if domain_results:
-        generate_summary_report(domain_results, model_name=original_model_name)
-    else:
-        print("没有找到有效的领域评测结果，无法生成汇总报告。")
+    # 计算并保存总体评测指标
+    if all_domain_results:
+        print("\n计算并保存所有领域的总体评测指标...")
+        
+        # 计算总体评测指标
+        total_correct = sum(result["correct_count"] for result in all_domain_results.values())
+        total_count = sum(result["total_count"] for result in all_domain_results.values())
+        total_accuracy = total_correct / total_count if total_count > 0 else 0
+        
+        # 计算所有国家的指标
+        for country_code, metrics in all_country_metrics.items():
+            metrics["accuracy"] = metrics["correct_count"] / metrics["total_count"] if metrics["total_count"] > 0 else 0
+        
+        # 保存总体评测指标
+        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+        
+        # 创建模型目录
+        results_dir = os.path.join(os.path.dirname(__file__), "results")
+        model_dir = os.path.join(results_dir, model_name)
+        if not os.path.exists(model_dir):
+            os.makedirs(model_dir)
+        
+        # 保存总体评测指标JSON
+        overall_metrics = {
+            "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+            "model": model_name,
+            "total_questions": total_count,
+            "correct_answers": total_correct,
+            "accuracy": total_accuracy,
+            "domains": {str(domain_id): results for domain_id, results in all_domain_results.items()},
+            "country_metrics": {
+                country_code: {
+                    "country_name": metrics["country_name"],
+                    "total_count": metrics["total_count"],
+                    "correct_count": metrics["correct_count"],
+                    "accuracy": metrics["accuracy"],
+                    "domains": metrics["domains"]
+                } for country_code, metrics in all_country_metrics.items()
+            }
+        }
+        
+        # 保存总体指标JSON
+        overall_json_path = os.path.join(model_dir, f"all_domains_{model_name}_overall_{timestamp}.json")
+        with open(overall_json_path, "w", encoding="utf-8") as f:
+            json.dump(overall_metrics, f, ensure_ascii=False, indent=2)
+        print(f"所有领域的总体评测指标已保存到: {overall_json_path}")
+        
+        # 创建并保存国家评测指标Excel
+        country_metrics_path = os.path.join(model_dir, f"all_domains_{model_name}_country_metrics_{timestamp}.xlsx")
+        
+        # 准备国家指标数据
+        country_code_data = [(code, metrics["country_name"]) for code, metrics in all_country_metrics.items()]
+        country_code_df = pd.DataFrame(country_code_data, columns=["国家代码", "国家全称"])
+        
+        metrics_data = []
+        for code, metrics in all_country_metrics.items():
+            metrics_data.append({
+                "国家代码": code,
+                "国家全称": metrics["country_name"],
+                "总题数": metrics["total_count"],
+                "正确数": metrics["correct_count"],
+                "准确率": metrics["accuracy"]
+            })
+        metrics_df = pd.DataFrame(metrics_data)
+        
+        # 保存到Excel
+        with pd.ExcelWriter(country_metrics_path) as writer:
+            country_code_df.to_excel(writer, sheet_name="国家代码表", index=False)
+            metrics_df.to_excel(writer, sheet_name="国家评测指标", index=False)
+            
+            # 合并表格
+            merged_df = pd.merge(country_code_df, metrics_df.drop("国家全称", axis=1), on="国家代码")
+            merged_df.to_excel(writer, sheet_name="合并指标", index=False)
+        
+        print(f"所有领域的国家评测指标已保存到: {country_metrics_path}")
+        
+        # 生成并保存总体评测报告
+        generate_summary_report(all_domain_results, model_name)
+    
+    print(f"\n所有领域评测完成！总共评测了 {len(all_domain_results)} 个领域。")
+    
+    # 最终清理资源
+    print("\n最终清理资源...")
+    gc.collect()
+    try:
+        import torch
+        if torch.cuda.is_available():
+            torch.cuda.empty_cache()
+            print("已清空CUDA缓存")
+    except Exception as e:
+        print(f"清理CUDA资源时出错: {str(e)}")
 
 def generate_summary_report(domain_results: Dict[str, Dict[str, Any]], model_name: str = "unknown") -> None:
-    """生成所有领域的汇总报告，包含按领域号排序的指标及所有细节"""
+    """生成所有领域的汇总报告，包含按领域号排序的指标"""
     print(f"\n{'='*80}")
-    print(f"{' '*30}所有领域评测汇总报告{' '*30}")
+    print(f"{' '*30}各领域评测结果报告{' '*30}")
     print(f"{'='*80}")
     
     # 创建结果保存目录
@@ -1100,7 +1252,6 @@ def generate_summary_report(domain_results: Dict[str, Dict[str, Any]], model_nam
     
     # 如果是字符串路径，则加载文件内容
     loaded_results = {}
-    all_domain_details = []
     
     for domain_name, result_path in domain_results.items():
         if isinstance(result_path, str) and os.path.exists(result_path):
@@ -1116,49 +1267,18 @@ def generate_summary_report(domain_results: Dict[str, Dict[str, Any]], model_nam
     # 获取领域号和领域名称的映射
     domain_id_map = {name: id for name, id in DOMAIN_MAPPING.items()}
     
-    # 初始化汇总统计数据
-    total_accuracy = []
-    total_questions = 0
-    total_correct = 0
-    total_invalid_questions = 0
-    total_country_specific = 0
-    total_country_specific_evaluated = 0
-    total_macro_f1 = []
-    total_micro_f1 = []
-    
     # 创建数据表格
     summary_data = []
     
-    # 汇总各领域数据和详情
+    # 汇总各领域数据
     for domain_name, result in loaded_results.items():
-        # 收集详细结果
-        all_domain_details.extend(result.get("details", []))
-        
         # 统计信息
         domain_id = result.get("domain_stats", {}).get("domain_id", domain_id_map.get(domain_name, 0))
         accuracy = result.get("accuracy", 0)
         macro_f1 = result.get("macro_f1", 0)
         micro_f1 = result.get("micro_f1", 0)
-        
-        total_accuracy.append(accuracy)
-        total_macro_f1.append(macro_f1)
-        total_micro_f1.append(micro_f1)
-        
         questions = result.get("total_count", 0)
         correct = result.get("correct_count", 0)
-        
-        total_questions += questions
-        total_correct += correct
-        
-        # 获取特定统计信息
-        domain_stats = result.get("domain_stats", {})
-        invalid_questions = domain_stats.get("invalid_answer_questions", 0)
-        country_specific = domain_stats.get("country_specific_total", 0)
-        country_specific_eval = domain_stats.get("country_specific_evaluated", 0)
-        
-        total_invalid_questions += invalid_questions
-        total_country_specific += country_specific
-        total_country_specific_evaluated += country_specific_eval
         
         # 添加到数据表格
         summary_data.append({
@@ -1169,35 +1289,8 @@ def generate_summary_report(domain_results: Dict[str, Dict[str, Any]], model_nam
             "准确率": accuracy,
             "准确率(%)": f"{accuracy:.2%}",
             "macro_F1": macro_f1,
-            "micro_F1": micro_f1,
-            "无效答案题数": invalid_questions,
-            "国家特定问题总数": country_specific,
-            "评估的国家特定问题": country_specific_eval
+            "micro_F1": micro_f1
         })
-    
-    # 计算总体指标
-    overall_accuracy = total_correct / total_questions if total_questions > 0 else 0
-    overall_macro_f1 = sum(total_macro_f1) / len(total_macro_f1) if total_macro_f1 else 0
-    overall_micro_f1 = sum(total_micro_f1) / len(total_micro_f1) if total_micro_f1 else 0
-    
-    # 输出汇总统计
-    print(f"\n总体统计:")
-    print(f"  评估的领域数: {len(loaded_results)}")
-    print(f"  总题数: {total_questions}")
-    print(f"  正确数: {total_correct}")
-    print(f"  总体准确率: {overall_accuracy:.4f}")
-    print(f"  总体宏观F1: {overall_macro_f1:.4f}")
-    print(f"  总体微观F1: {overall_micro_f1:.4f}")
-    print(f"  无效答案题数: {total_invalid_questions}")
-    print(f"  国家特定问题总数: {total_country_specific}")
-    print(f"  评估的国家特定问题: {total_country_specific_evaluated}")
-    # 解决除以零的错误
-    country_specific_evaluation_ratio = 0.0
-    if total_country_specific > 0:
-        country_specific_evaluation_ratio = total_country_specific_evaluated / total_country_specific
-        print(f"  国家特定问题评估比例: {country_specific_evaluation_ratio:.4f}")
-    else:
-        print(f"  国家特定问题评估比例: 0.0000 (无国家特定问题)")
     
     # 创建DataFrame并输出表格
     df = pd.DataFrame(summary_data)
@@ -1225,22 +1318,13 @@ def generate_summary_report(domain_results: Dict[str, Dict[str, Any]], model_nam
     print(f"\n领域评测结果已保存到: {csv_path}")
     
     # 保存完整的JSON报告 - 包含所有领域的评测结果
-    json_filename = f"summary_report_{model_name}_{timestamp}.json"
+    json_filename = f"domain_results_{model_name}_{timestamp}.json"
     json_path = os.path.join(model_dir, json_filename)
     
-    # 创建汇总报告字典
-    summary_report = {
+    # 创建领域报告字典
+    domains_report = {
         "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
         "model": model_name,
-        "total_domains": len(loaded_results),
-        "total_questions": total_questions,
-        "total_correct": total_correct,
-        "overall_accuracy": overall_accuracy,
-        "overall_macro_f1": overall_macro_f1,
-        "overall_micro_f1": overall_micro_f1,
-        "invalid_answer_questions": total_invalid_questions,
-        "country_specific_total": total_country_specific,
-        "country_specific_evaluated": total_country_specific_evaluated,
         "domains": {}
     }
     
@@ -1248,47 +1332,26 @@ def generate_summary_report(domain_results: Dict[str, Dict[str, Any]], model_nam
     for domain_data in sorted(summary_data, key=lambda x: x["领域号"]):
         domain_name = domain_data["领域"]
         domain_id = domain_data["领域号"]
-        summary_report["domains"][str(domain_id)] = {
+        domains_report["domains"][str(domain_id)] = {
             "id": str(domain_id),
             "name": domain_name,
             "total_questions": domain_data["总题数"],
             "correct_answers": domain_data["正确数"],
             "accuracy": domain_data["accuracy"],
-            "macro_f1": domain_data["macro_f1"],
-            "micro_f1": domain_data["micro_f1"]
+            "macro_f1": domain_data["macro_F1"],
+            "micro_f1": domain_data["micro_F1"]
         }
     
     # 保存汇总JSON
     with open(json_path, 'w', encoding='utf-8') as f:
-        json.dump(summary_report, f, ensure_ascii=False, indent=2)
-    print(f"详细汇总数据已保存到: {json_path}")
-    
-    # 保存所有问题的详细结果
-    details_filename = f"all_qa_details_{model_name}_{timestamp}.json"
-    details_path = os.path.join(model_dir, details_filename)
-    
-    all_details_report = {
-        "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
-        "model": model_name,
-        "total_questions": len(all_domain_details),
-        "details": all_domain_details
-    }
-    
-    with open(details_path, 'w', encoding='utf-8') as f:
-        json.dump(all_details_report, f, ensure_ascii=False, indent=2)
-    print(f"所有问题的详细结果已保存到: {details_path}")
+        json.dump(domains_report, f, ensure_ascii=False, indent=2)
+    print(f"领域评测结果JSON已保存到: {json_path}")
 
 def parse_args():
     """解析命令行参数"""
-    parser = argparse.ArgumentParser(description='LLM社会调查评测')
+    parser = argparse.ArgumentParser(description='社会认知基准评测系统')
     
-    # 显示领域ID和名称对应关系
-    domain_help = "领域ID (1-11)，对应关系:\n"
-    for name, id in DOMAIN_MAPPING.items():
-        domain_help += f"{id}: {name}\n"
-    domain_help += "或者使用 all 处理所有领域"
-    
-    parser.add_argument('--domain_id', type=str, help=domain_help, nargs='?', default='all')
+    parser.add_argument('--domain_id', type=str, nargs='?', default='all')
     parser.add_argument('--interview_count', type=str, help='采访个数，all表示全部', nargs='?', default='50')
     parser.add_argument('--api_type', type=str, choices=['config', 'vllm'], default='vllm', help='API类型，默认使用vllm')
     parser.add_argument('--use_async', action='store_true', default=True, help='是否使用异步模式（仅在vllm模式下有效）')
@@ -1297,7 +1360,11 @@ def parse_args():
     parser.add_argument('--start_domain_id', type=int, default=1, help='起始评测的领域ID（当domain_id为all时有效）')
     parser.add_argument('--model', type=str, default='Qwen2.5-32B-Instruct', help='使用的模型名称或路径（仅在vllm模式下有效）')
     
+    parser.add_argument('--no_log', action='store_true',
+                        help='禁用日志记录到文件')
+    
     return parser.parse_args()
+
 """
 export TORCH_CUDA_ARCH_LIST="8.9+PTX"  #环境变量 设置没用？os.environ
 
@@ -1335,95 +1402,109 @@ python /inspire/hdd/ws-f4d69b29-e0a5-44e6-bd92-acf4de9990f0/public-project/wangj
   --interview_count all \
   --api_type vllm \
   --use_async \
-  --concurrent_requests 1000 \
-  --concurrent_interviewees 200 \
-  --start_domain_id 2 \
-  --model Qwen2.5-32B-Instruct
+  --concurrent_requests 2000 \
+  --concurrent_interviewees 500 \
+  --start_domain_id 1 \
+  --model Qwen2.5-7B-Instruct
 """
 """
 sudo lsof /dev/nvidia* | awk 'NR>1 {print $2}' | sort -u | xargs sudo kill -9
 """
+
+
 if __name__ == "__main__":
-    # 检查是否是子进程，并进行特殊处理
-    if os.environ.get("VLLM_NEW_PROCESS") == "1":
-        # 这是一个新的子进程，确保不会继承父进程的某些状态
-        print("检测到这是一个新的子进程环境，进行初始化设置...")
-        
-        # 重置PyTorch分布式环境变量
-        if "MASTER_ADDR" not in os.environ:
-            os.environ["MASTER_ADDR"] = "127.0.0.1"
-        
-        # 确保没有活跃的NCCL通信组
-        try:
-            import torch.distributed as dist
-            if dist.is_initialized():
-                print("发现已初始化的分布式环境，尝试销毁...")
-                dist.destroy_process_group()
-        except Exception as e:
-            print(f"尝试重置分布式环境时出错: {str(e)}")
-        
-        # 重置CUDA设备
-        try:
-            import torch
-            if torch.cuda.is_available():
-                torch.cuda.empty_cache()
-                # 重置当前设备
-                torch.cuda.set_device(0)
-                print(f"已重置CUDA设备到设备0")
-        except Exception as e:
-            print(f"重置CUDA设备时出错: {str(e)}")
-        
-        # 重置随机种子
-        try:
-            import random
-            import numpy as np
-            import torch
-            seed = 42
-            random.seed(seed)
-            np.random.seed(seed)
-            torch.manual_seed(seed)
-            if torch.cuda.is_available():
-                torch.cuda.manual_seed_all(seed)
-            print(f"已重置随机种子为: {seed}")
-        except Exception as e:
-            print(f"重置随机种子时出错: {str(e)}")
-    
-    # 解析命令行参数并执行
+    # 解析命令行参数
     args = parse_args()
     
-    if args.domain_id == 'all':
-        print(f"评测所有领域：interview_count={args.interview_count}, api_type={args.api_type}, 起始领域ID={args.start_domain_id}")
-        if args.use_async:
-            print(f"异步模式已启用，并发请求数: {args.concurrent_requests}")
-        if args.concurrent_interviewees > 1:
-            print(f"多受访者并行模式已启用，并行受访者数: {args.concurrent_interviewees}")
-        run_all_domains(
-            api_type=args.api_type, 
-            interview_count=args.interview_count,
-            use_async=args.use_async, 
-            concurrent_requests=args.concurrent_requests,
-            concurrent_interviewees=args.concurrent_interviewees,
-            start_domain_id=args.start_domain_id,
-            model_name=args.model
-        )
-    else:
-        try:
-            domain_id = int(args.domain_id)
-            print(f"评测单个领域：domain_id={domain_id}, interview_count={args.interview_count}, api_type={args.api_type}")
+    # 启用日志记录（除非明确禁用）
+    log_file_path = None
+    if not args.no_log:
+        log_file_path = setup_logging()
+    
+    try:
+        # 检查是否是子进程，并进行特殊处理
+        if os.environ.get("VLLM_NEW_PROCESS") == "1":
+            # 这是一个新的子进程，确保不会继承父进程的某些状态
+            print("检测到这是一个新的子进程环境，进行初始化设置...")
+            
+            # 重置PyTorch分布式环境变量
+            if "MASTER_ADDR" not in os.environ:
+                os.environ["MASTER_ADDR"] = "127.0.0.1"
+            
+            # 确保没有活跃的NCCL通信组
+            try:
+                import torch.distributed as dist
+                if dist.is_initialized():
+                    print("发现已初始化的分布式环境，尝试销毁...")
+                    dist.destroy_process_group()
+            except Exception as e:
+                print(f"尝试重置分布式环境时出错: {str(e)}")
+            
+            # 重置CUDA设备
+            try:
+                import torch
+                if torch.cuda.is_available():
+                    torch.cuda.empty_cache()
+                    # 重置当前设备
+                    torch.cuda.set_device(0)
+                    print(f"已重置CUDA设备到设备0")
+            except Exception as e:
+                print(f"重置CUDA设备时出错: {str(e)}")
+            
+            # 重置随机种子
+            try:
+                import random
+                import numpy as np
+                import torch
+                seed = 42
+                random.seed(seed)
+                np.random.seed(seed)
+                torch.manual_seed(seed)
+                if torch.cuda.is_available():
+                    torch.cuda.manual_seed_all(seed)
+                print(f"已重置随机种子为: {seed}")
+            except Exception as e:
+                print(f"重置随机种子时出错: {str(e)}")
+        
+        # 执行评测
+        if args.domain_id == 'all':
+            print(f"评测所有领域：interview_count={args.interview_count}, api_type={args.api_type}, 起始领域ID={args.start_domain_id}")
             if args.use_async:
                 print(f"异步模式已启用，并发请求数: {args.concurrent_requests}")
             if args.concurrent_interviewees > 1:
                 print(f"多受访者并行模式已启用，并行受访者数: {args.concurrent_interviewees}")
-            # 运行评测
-            run_evaluation(
-                domain_id=domain_id,
+            run_all_domains(
+                api_type=args.api_type, 
                 interview_count=args.interview_count,
-                api_type=args.api_type,
-                use_async=args.use_async,
+                use_async=args.use_async, 
                 concurrent_requests=args.concurrent_requests,
                 concurrent_interviewees=args.concurrent_interviewees,
+                start_domain_id=args.start_domain_id,
                 model_name=args.model
             )
-        except ValueError:
-            print(f"错误：domain_id必须是整数(1-11)或'all'")
-            sys.exit(1)
+        else:
+            try:
+                domain_id = int(args.domain_id)
+                print(f"评测单个领域：domain_id={domain_id}, interview_count={args.interview_count}, api_type={args.api_type}")
+                if args.use_async:
+                    print(f"异步模式已启用，并发请求数: {args.concurrent_requests}")
+                if args.concurrent_interviewees > 1:
+                    print(f"多受访者并行模式已启用，并行受访者数: {args.concurrent_interviewees}")
+                # 运行评测
+                run_evaluation(
+                    domain_id=domain_id,
+                    interview_count=args.interview_count,
+                    api_type=args.api_type,
+                    use_async=args.use_async,
+                    concurrent_requests=args.concurrent_requests,
+                    concurrent_interviewees=args.concurrent_interviewees,
+                    model_name=args.model
+                )
+            except ValueError:
+                print(f"错误：domain_id必须是整数(1-11)或'all'")
+                sys.exit(1)
+    finally:
+        # 关闭日志记录
+        if log_file_path:
+            print(f"\n评测已完成，日志已保存到: {log_file_path}")
+            teardown_logging()
