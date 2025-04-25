@@ -1,0 +1,1329 @@
+[
+  {
+    "question_id": "v1",
+    "question": "Q1 If you were to consider your life in general these days, how happy or unhappy would you say you are, on the whole? (Please tick one box only.)",
+    "answer": {
+      "1": "Completely happy",
+      "2": "Very happy",
+      "3": "Fairly happy",
+      "4": "Neither happy nor unhappy",
+      "5": "Fairly unhappy",
+      "6": "Very unhappy",
+      "7": "Completely unhappy",
+      "-8": "Can't choose",
+      "-9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v2",
+    "question": "Q2 In general, how much confidence do you have in the health care system in [country]? (Please tick one box only.)",
+    "answer": {
+      "1": "Complete confidence",
+      "2": "A great deal of confidence",
+      "3": "Some confidence",
+      "4": "Very little confidence",
+      "5": "No confidence at all",
+      "-8": "Can't choose",
+      "-9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v3",
+    "question": "Q3 Is it fair or unfair that people with higher incomes can afford better health care than people with lower incomes? (Please tick one box only.)",
+    "answer": {
+      "1": "Very fair",
+      "2": "Somewhat fair",
+      "3": "Neither fair nor unfair",
+      "4": "Somewhat unfair",
+      "5": "Very unfair",
+      "-1": "ZA: Not available for Afrikaans and Zulu questionaire versions",
+      "-8": "Can't choose",
+      "-9": "No answer"
+    },
+    "special": {
+      "ZA": {
+        "-1": "Not available for Afrikaans and Zulu questionaire versions"
+      }
+    }
+  },
+  {
+    "question_id": "v4",
+    "question": "Q4 How much do you agree or disagree with the following statements? (Please tick one box on each line.) Q4a People use health care services more than necessary.",
+    "answer": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree",
+      "-8": "Can't choose",
+      "-9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v5",
+    "question": "Q4 How much do you agree or disagree with the following statements? (Please tick one box on each line.) Q4b The government should provide only limited health care services.",
+    "answer": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree",
+      "-8": "Can't choose",
+      "-9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v6",
+    "question": "Q4 How much do you agree or disagree with the following statements? (Please tick one box on each line.) Q4c In general, the health care system in [country] is inefficient.",
+    "answer": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree",
+      "-8": "Can't choose",
+      "-9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v7",
+    "question": "Q5 How willing would you be to pay higher taxes to improve the level of health care for all people in [country]? (Please tick one box only.)",
+    "answer": {
+      "1": "Very willing",
+      "2": "Fairly willing",
+      "3": "Neither willing nor unwilling",
+      "4": "Fairly unwilling",
+      "5": "Very unwilling",
+      "-8": "Can't choose",
+      "-9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v8",
+    "question": "Q6 How much do you agree or disagree with the following statements? (Please tick one box on each line.) Q6a People should have access to publicly funded health care even if they do not hold citizenship of [country].",
+    "answer": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree",
+      "-8": "Can't choose",
+      "-9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v9",
+    "question": "Q6 How much do you agree or disagree with the following statements? (Please tick one box on each line.) Q6b People should have access to publicly funded health care even if they behave in ways that damage their health.",
+    "answer": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree",
+      "-8": "Can't choose",
+      "-9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v10",
+    "question": "Q7 In [country], do you think it is easier or harder to get access to health care … (Please tick one box on each line.) Q7a ... for rich people than for poor people?",
+    "answer": {
+      "1": "Much easier",
+      "2": "Somewhat easier",
+      "3": "About the same",
+      "4": "Somewhat harder",
+      "5": "Much harder",
+      "-8": "Can't choose",
+      "-9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v11",
+    "question": "Q7 In [country], do you think it is easier or harder to get access to health care … (Please tick one box on each line.) Q7b ... for old people than for young people?",
+    "answer": {
+      "1": "Much easier",
+      "2": "Somewhat easier",
+      "3": "About the same",
+      "4": "Somewhat harder",
+      "5": "Much harder",
+      "-8": "Can't choose",
+      "-9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v12",
+    "question": "Q7 In [country], do you think it is easier or harder to get access to health care … (Please tick one box on each line.) Q7c ... for women than for men?",
+    "answer": {
+      "1": "Much easier",
+      "2": "Somewhat easier",
+      "3": "About the same",
+      "4": "Somewhat harder",
+      "5": "Much harder",
+      "-8": "Can't choose",
+      "-9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v13",
+    "question": "Q7 In [country], do you think it is easier or harder to get access to health care … (Please tick one box on each line.) Q7d ... for citizens of [country] than for people who do not hold [country's] citizenship?",
+    "answer": {
+      "1": "Much easier",
+      "2": "Somewhat easier",
+      "3": "About the same",
+      "4": "Somewhat harder",
+      "5": "Much harder",
+      "-8": "Can't choose",
+      "-9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v14",
+    "question": "Q8 Severe health problems may have many causes. How much do you agree or disagree with the following statements? (Please tick one box on each line.) Q8a People suffer from severe health problems because they behaved in ways that damaged their health.",
+    "answer": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree",
+      "-8": "Can't choose",
+      "-9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v15",
+    "question": "Q8 Severe health problems may have many causes. How much do you agree or disagree with the following statements? (Please tick one box on each line.) Q8b People suffer from severe health problems because of the environment they are exposed to at work or where they live.",
+    "answer": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree",
+      "-8": "Can't choose",
+      "-9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v16",
+    "question": "Q8 Severe health problems may have many causes. How much do you agree or disagree with the following statements? (Please tick one box on each line.) Q8c People suffer from severe health problems because of their genes.",
+    "answer": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree",
+      "-8": "Can't choose",
+      "-9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v17",
+    "question": "Q8 Severe health problems may have many causes. How much do you agree or disagree with the following statements? (Please tick one box on each line.) Q8d People suffer from severe health problems because they are poor.",
+    "answer": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree",
+      "-8": "Can't choose",
+      "-9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v18",
+    "question": "Q9 To what extent do you agree or disagree with the following statement: [Alternative/traditional/folk] medicine provides better solutions for health problems than [mainstream/Western conventional] medicine? (Please tick one box only.)",
+    "answer": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree",
+      "-8": "Can't choose",
+      "-9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v19",
+    "question": "Q10 How much do you agree or disagree with the following statements about doctors in general in [country]? (Please tick one box on each line.) Q10a All things considered, doctors can be trusted.",
+    "answer": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree",
+      "-8": "Can't choose",
+      "-9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v20",
+    "question": "Q10 How much do you agree or disagree with the following statements about doctors in general in [country]? (Please tick one box on each line.) Q10b The medical skills of doctors are not as good as they should be.",
+    "answer": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree",
+      "-8": "Can't choose",
+      "-9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v21",
+    "question": "Q10 How much do you agree or disagree with the following statements about doctors in general in [country]? (Please tick one box on each line.) Q10c Doctors care more about their earnings than about their patients.",
+    "answer": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree",
+      "-8": "Can't choose",
+      "-9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v22",
+    "question": "Q11 During the past 12 months, how often, if at all, did you use the internet on any device (such as computers, tablets and smartphones) to look for health or medical information for yourself or someone else? (Please tick one box only.) (IF CODE 1-6,-8: GO TO Q12) (IF CODE -4: GO TO Q14)",
+    "answer": {
+      "1": "Several times a day",
+      "2": "Once a day",
+      "3": "Several times a week",
+      "4": "Several times a month",
+      "5": "Several times a year",
+      "6": "Never or almost never; PL: 1-2 times a year + Never",
+      "-4": "I do not have access to the internet",
+      "-8": "Can't choose",
+      "-9": "No answer"
+    },
+    "special": {
+      "PL": {
+        "6": "Never or almost never; PL: 1-2 times a year + Never"
+      }
+    }
+  },
+  {
+    "question_id": "v23",
+    "question": "Q12 IF NOT CODE -4 IN Q11 'I DO NOT HAVE ACCESS TO THE INTERNET' During the past 12 months, how often, if at all, have you used the internet to look for information on the following topics? (Please tick one box on each line.) Q12a Information on healthy lifestyle?",
+    "answer": {
+      "1": "Never",
+      "2": "Seldom",
+      "3": "Sometimes",
+      "4": "Often",
+      "5": "Very often",
+      "-4": "NAP (code -4 in v22; PL: code -4 in v22 + never looked for health or medical information in v22)",
+      "-8": "Can't choose",
+      "-9": "No answer"
+    },
+    "special": {
+      "PL": {
+        "-4": "NAP (code -4 in v22; PL: code -4 in v22 + never looked for health or medical information in v22)"
+      }
+    }
+  },
+  {
+    "question_id": "v24",
+    "question": "Q12 IF NOT CODE -4 IN Q11 'I DO NOT HAVE ACCESS TO THE INTERNET' During the past 12 months, how often, if at all, have you used the internet to look for information on the following topics? (Please tick one box on each line.) Q12b Information related to anxiety, stress, or similar problems?",
+    "answer": {
+      "1": "Never",
+      "2": "Seldom",
+      "3": "Sometimes",
+      "4": "Often",
+      "5": "Very often",
+      "-4": "NAP (code -4 in v22; PL: code -4 in v22 + never looked for health or medical information in v22)",
+      "-8": "Can't choose",
+      "-9": "No answer"
+    },
+    "special": {
+      "PL": {
+        "-4": "NAP (code -4 in v22; PL: code -4 in v22 + never looked for health or medical information in v22)"
+      }
+    }
+  },
+  {
+    "question_id": "v25",
+    "question": "Q12 IF NOT CODE -4 IN Q11 'I DO NOT HAVE ACCESS TO THE INTERNET' During the past 12 months, how often, if at all, have you used the internet to look for information on the following topics? (Please tick one box on each line.) Q12c Information on vaccinations?",
+    "answer": {
+      "1": "Never",
+      "2": "Seldom",
+      "3": "Sometimes",
+      "4": "Often",
+      "5": "Very often",
+      "-4": "NAP (code -4 in v22; PL: code -4 in v22 + never looked for health or medical information in v22)",
+      "-8": "Can't choose",
+      "-9": "No answer"
+    },
+    "special": {
+      "PL": {
+        "-4": "NAP (code -4 in v22; PL: code -4 in v22 + never looked for health or medical information in v22)"
+      }
+    }
+  },
+  {
+    "question_id": "v26",
+    "question": "Q13 IF NOT CODE -4 IN Q11 'I DO NOT HAVE ACCESS TO THE INTERNET' To what extent do you agree or disagree with the following statements? During the past 12 months, information on the internet… (Please tick one box on each line.) Q13a ...affected my health behaviour in a positive way.",
+    "answer": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree",
+      "-4": "NAP (code -4 in v22; PL: code -4 in v22 + never looked for health or medical information in v22)",
+      "-8": "Can't choose",
+      "-9": "No answer"
+    },
+    "special": {
+      "PL": {
+        "-4": "NAP (code -4 in v22; PL: code -4 in v22 + never looked for health or medical information in v22)"
+      }
+    }
+  },
+  {
+    "question_id": "v27",
+    "question": "Q13 IF NOT CODE -4 IN Q11 'I DO NOT HAVE ACCESS TO THE INTERNET' To what extent do you agree or disagree with the following statements? During the past 12 months, information on the internet… (Please tick one box on each line.) Q13b ...helped me understand what a doctor tried to explain to me.",
+    "answer": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree",
+      "-4": "NAP (code -4 in v22; PL: code -4 in v22 + never looked for health or medical information in v22)",
+      "-8": "Can't choose",
+      "-9": "No answer"
+    },
+    "special": {
+      "PL": {
+        "-4": "NAP (code -4 in v22; PL: code -4 in v22 + never looked for health or medical information in v22)"
+      }
+    }
+  },
+  {
+    "question_id": "v28",
+    "question": "Q14 To what extent do you agree or disagree with the following statements? (Please tick one box on each line.) Q14a The internet is useful to help people decide if their symptoms are serious enough to go to the doctor.",
+    "answer": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree",
+      "-8": "Can't choose; PL: Don't use the internet + Don't know",
+      "-9": "No answer"
+    },
+    "special": {
+      "PL": {
+        "-8": "Can't choose; PL: Don't use the internet + Don't know"
+      }
+    }
+  },
+  {
+    "question_id": "v29",
+    "question": "Q14 To what extent do you agree or disagree with the following statements? (Please tick one box on each line.) Q14b The internet is useful to check that the doctor is giving people appropriate advice.",
+    "answer": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree",
+      "-8": "Can't choose; PL: Don't use the internet + Don't know",
+      "-9": "No answer"
+    },
+    "special": {
+      "PL": {
+        "-8": "Can't choose; PL: Don't use the internet + Don't know"
+      }
+    }
+  },
+  {
+    "question_id": "v30",
+    "question": "Q14 To what extent do you agree or disagree with the following statements? (Please tick one box on each line.) Q14c It is not easy to distinguish between reliable and unreliable health information on the internet.",
+    "answer": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree",
+      "-8": "Can't choose; PL: Don't use the internet + Don't know",
+      "-9": "No answer"
+    },
+    "special": {
+      "PL": {
+        "-8": "Can't choose; PL: Don't use the internet + Don't know"
+      }
+    }
+  },
+  {
+    "question_id": "v31",
+    "question": "Q15 How much do you agree or disagree with the following statements about vaccinations? (Please tick one box on each line.) Q15a Overall, vaccinations do more harm than good.",
+    "answer": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree",
+      "-8": "Can't choose",
+      "-9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v32",
+    "question": "Q15 How much do you agree or disagree with the following statements about vaccinations? (Please tick one box on each line.) Q15b It is better to develop immunity by getting ill than having a vaccination.",
+    "answer": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree",
+      "-8": "Can't choose",
+      "-9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v33",
+    "question": "Q16 During the past 4 weeks how often… (Please tick one box on each line.) Q16a ...have you had difficulties with work or household activities because of health problems?",
+    "answer": {
+      "1": "Never",
+      "2": "Seldom",
+      "3": "Sometimes",
+      "4": "Often",
+      "5": "Very often",
+      "-8": "Can't choose",
+      "-9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v34",
+    "question": "Q16 During the past 4 weeks how often… (Please tick one box on each line.) Q16b ...have you had bodily aches or pains?",
+    "answer": {
+      "1": "Never",
+      "2": "Seldom",
+      "3": "Sometimes",
+      "4": "Often",
+      "5": "Very often",
+      "-8": "Can't choose",
+      "-9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v35",
+    "question": "Q16 During the past 4 weeks how often… (Please tick one box on each line.) Q16c ...have you felt unhappy and depressed?",
+    "answer": {
+      "1": "Never",
+      "2": "Seldom",
+      "3": "Sometimes",
+      "4": "Often",
+      "5": "Very often",
+      "-8": "Can't choose",
+      "-9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v36",
+    "question": "Q16 During the past 4 weeks how often… (Please tick one box on each line.) Q16d ...have you lost confidence in yourself?",
+    "answer": {
+      "1": "Never",
+      "2": "Seldom",
+      "3": "Sometimes",
+      "4": "Often",
+      "5": "Very often",
+      "-8": "Can't choose",
+      "-9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v37",
+    "question": "Q16 During the past 4 weeks how often… (Please tick one box on each line.) Q16e ...have you felt you could not overcome your problems?",
+    "answer": {
+      "1": "Never",
+      "2": "Seldom",
+      "3": "Sometimes",
+      "4": "Often",
+      "5": "Very often",
+      "-8": "Can't choose",
+      "-9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v38",
+    "question": "Q17 During the past 12 months, how often did you visit or were visited by... (Please tick one box on each line.) Q17a ...a doctor?",
+    "answer": {
+      "1": "Never",
+      "2": "Seldom",
+      "3": "Sometimes",
+      "4": "Often",
+      "5": "Very often",
+      "-8": "Can't choose",
+      "-9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v39",
+    "question": "Q17 During the past 12 months, how often did you visit or were visited by... (Please tick one box on each line.) Q17b ...an [alternative/ traditional/ folk] health care practitioner?",
+    "answer": {
+      "1": "Never",
+      "2": "Seldom",
+      "3": "Sometimes",
+      "4": "Often",
+      "5": "Very often",
+      "-8": "Can't choose",
+      "-9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v40",
+    "question": "Q18 During the past 12 months did it ever happen that you did not get the medical treatment you needed because… (Please tick one box on each line.) Q18a ...you could not pay for it?",
+    "answer": {
+      "1": "Yes",
+      "2": "No",
+      "-4": "Did not need medical treatment",
+      "-9": "No answer; PH: Can't choose/ No answer"
+    },
+    "special": {
+      "PH": {
+        "-9": "No answer; PH: Can't choose/ No answer"
+      }
+    }
+  },
+  {
+    "question_id": "v41",
+    "question": "Q18 During the past 12 months did it ever happen that you did not get the medical treatment you needed because… (Please tick one box on each line.) Q18b ...you could not take the time off work or had other commitments?",
+    "answer": {
+      "1": "Yes",
+      "2": "No",
+      "-4": "Did not need medical treatment",
+      "-9": "No answer; PH: Can't choose/ No answer"
+    },
+    "special": {
+      "PH": {
+        "-9": "No answer; PH: Can't choose/ No answer"
+      }
+    }
+  },
+  {
+    "question_id": "v42",
+    "question": "Q18 During the past 12 months did it ever happen that you did not get the medical treatment you needed because… (Please tick one box on each line.) Q18c ...the waiting list was too long?",
+    "answer": {
+      "1": "Yes",
+      "2": "No",
+      "-1": "SR: Not available (see SR_v42)",
+      "-4": "Did not need medical treatment",
+      "-9": "No answer; PH: Can't choose/ No answer"
+    },
+    "special": {
+      "SR": {
+        "-1": "Not available (see SR_v42)"
+      },
+      "PH": {
+        "-9": "No answer; PH: Can't choose/ No answer"
+      }
+    }
+  },
+  {
+    "question_id": "SR_v42",
+    "question": "Q18 During the past 12 months did it ever happen that you did not get the medical treatment you needed because… (Please tick one box on each line.) Q18c ...the treatment you needed was not available in your place of residence or area?",
+    "answer": {
+      "1": "Yes",
+      "2": "No",
+      "-1": "Not available: Other countries (see v42)",
+      "-4": "Did not need medical treatment",
+      "-9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v43",
+    "question": "Q19 How likely is it that if you become seriously ill, you would get or not get the best treatment available in [country] (Please tick one box only.)",
+    "answer": {
+      "1": "It's certain I would get",
+      "2": "It's likely I would get",
+      "3": "Equal chance of getting or not getting",
+      "4": "It's likely I would not get",
+      "5": "It's certain I would not get",
+      "-8": "Can't choose",
+      "-9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v44",
+    "question": "Q20 In general, how satisfied or dissatisfied are you with the health care system in [country]? (Please tick one box only.)",
+    "answer": {
+      "1": "Completely satisfied",
+      "2": "Very satisfied",
+      "3": "Fairly satisfied",
+      "4": "Neither satisfied nor dissatisfied",
+      "5": "Fairly dissatisfied",
+      "6": "Very dissatisfied",
+      "7": "Completely dissatisfied",
+      "-8": "Can't choose",
+      "-9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v45",
+    "question": "Q21 How satisfied or dissatisfied were you with the treatment you received… (Please tick one box on each line.) Q21a ...when you last visited a doctor?",
+    "answer": {
+      "1": "Completely satisfied",
+      "2": "Very satisfied",
+      "3": "Fairly satisfied",
+      "4": "Neither satisfied nor dissatisfied",
+      "5": "Fairly dissatisfied",
+      "6": "Very dissatisfied",
+      "7": "Completely dissatisfied",
+      "-4": "Does not apply",
+      "-8": "Can't choose",
+      "-9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v46",
+    "question": "Q21 How satisfied or dissatisfied were you with the treatment you received… (Please tick one box on each line.) Q21b ...when you last visited an [alternative/traditional/ folk] health care practitioner?",
+    "answer": {
+      "1": "Completely satisfied",
+      "2": "Very satisfied",
+      "3": "Fairly satisfied",
+      "4": "Neither satisfied nor dissatisfied",
+      "5": "Fairly dissatisfied",
+      "6": "Very dissatisfied",
+      "7": "Completely dissatisfied",
+      "-4": "Does not apply",
+      "-8": "Can't choose",
+      "-9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v47",
+    "question": "Q22 Do you smoke cigarettes, and if so about how many cigarettes a day? (Please tick one box only.)",
+    "answer": {
+      "1": "Do not smoke and never did",
+      "2": "Do not smoke now but smoked in the past",
+      "3": "Smoke 1-5 cigarettes per day",
+      "4": "Smoke 6-10 cigarettes per day",
+      "5": "Smoke 11-20 cigarettes per day",
+      "6": "Smoke 21-40 cigarettes per day",
+      "7": "Smoke more than 40 cigarettes per day",
+      "-8": "Can't choose",
+      "-9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v48",
+    "question": "Q23 How often do you… (Please tick one box on each line.) Q23a ...drink 4 or more alcoholic drinks on the same day?",
+    "answer": {
+      "1": "Never",
+      "2": "Once a month or less often",
+      "3": "Several times a month",
+      "4": "Several times a week",
+      "5": "Daily",
+      "-8": "Can't choose",
+      "-9": "No answer; TW: I don't drink like this now, but I used to"
+    },
+    "special": {
+      "TW": {
+        "-9": "No answer; TW: I don't drink like this now, but I used to"
+      }
+    }
+  },
+  {
+    "question_id": "v49",
+    "question": "Q23 How often do you… (Please tick one box on each line.) Q23b ...do physical activity for at least 20 minutes that makes you sweat or breathe more heavily than usual?",
+    "answer": {
+      "1": "Never",
+      "2": "Once a month or less often",
+      "3": "Several times a month",
+      "4": "Several times a week",
+      "5": "Daily",
+      "-8": "Can't choose",
+      "-9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v50",
+    "question": "Q23 How often do you… (Please tick one box on each line.) Q23c ...eat fresh fruit or vegetables?",
+    "answer": {
+      "1": "Never",
+      "2": "Once a month or less often",
+      "3": "Several times a month",
+      "4": "Several times a week",
+      "5": "Daily",
+      "-8": "Can't choose",
+      "-9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v51",
+    "question": "Q24 In general, would you say your health is … (Please tick one box only.)",
+    "answer": {
+      "1": "Excellent",
+      "2": "Very good",
+      "3": "Good",
+      "4": "Fair",
+      "5": "Poor",
+      "-8": "Can't choose",
+      "-9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v52",
+    "question": "Q25 Do you have a long-standing illness, a chronic condition, or a disability? (Please tick one box only.)",
+    "answer": {
+      "1": "Yes",
+      "2": "No",
+      "-8": "IS: Can't choose",
+      "-9": "No answer"
+    },
+    "special": {
+      "IS": {
+        "-8": "Can't choose"
+      }
+    }
+  },
+  {
+    "question_id": "v55",
+    "question": "Q27 Do you think the [country] government should or should not have the right to do the following at times of severe epidemics? (Please tick one box on each line.) Q27a Shut down businesses and places of employment.",
+    "answer": {
+      "1": "Definitely should have the right",
+      "2": "Probably should have the right",
+      "3": "Probably should not have the right",
+      "4": "Definitely should not have the right",
+      "-8": "Can't choose",
+      "-9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v56",
+    "question": "Q27 Do you think the [country] government should or should not have the right to do the following at times of severe epidemics? (Please tick one box on each line.) Q27b Demand that people stay at home.",
+    "answer": {
+      "1": "Definitely should have the right",
+      "2": "Probably should have the right",
+      "3": "Probably should not have the right",
+      "4": "Definitely should not have the right",
+      "-1": "NL, SR: Not available",
+      "-8": "Can't choose",
+      "-9": "No answer"
+    },
+    "special": {
+      "NL": {
+        "-1": "Not available"
+      },
+      "SR": {
+        "-1": "Not available"
+      }
+    }
+  },
+  {
+    "question_id": "v57",
+    "question": "Q27 Do you think the [country] government should or should not have the right to do the following at times of severe epidemics? (Please tick one box on each line.) Q27c Use digital (mobile phone) surveillance to track infected people.",
+    "answer": {
+      "1": "Definitely should have the right",
+      "2": "Probably should have the right",
+      "3": "Probably should not have the right",
+      "4": "Definitely should not have the right",
+      "-8": "Can't choose",
+      "-9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v58",
+    "question": "Q27 Do you think the [country] government should or should not have the right to do the following at times of severe epidemics? (Please tick one box on each line.) Q27d Require people to wear face masks.",
+    "answer": {
+      "1": "Definitely should have the right",
+      "2": "Probably should have the right",
+      "3": "Probably should not have the right",
+      "4": "Definitely should not have the right",
+      "-8": "Can't choose",
+      "-9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v59",
+    "question": "Q27 Do you think the [country] government should or should not have the right to do the following at times of severe epidemics? (Please tick one box on each line.) Q27e Ban public gatherings.",
+    "answer": {
+      "1": "Definitely should have the right",
+      "2": "Probably should have the right",
+      "3": "Probably should not have the right",
+      "4": "Definitely should not have the right",
+      "-8": "Can't choose",
+      "-9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v60",
+    "question": "Q28 What kind of health insurance do you have?",
+    "answer": {
+      "1": "Have no health insurance",
+      "2": "National/public health insurance (incl. coverage by public welfare) (A)",
+      "3": "Private insurance (B)",
+      "4": "Employer/union based insurance (C)",
+      "5": "National/public + private/complementary (A+B)",
+      "6": "Public/national health + employer/union (A+C)",
+      "7": "Employer/union + private/complementary (B+C)",
+      "8": "Employer/union + private/complem. + national/public (A+B+C)",
+      "9": "Other (specify)",
+      "-1": "CZ: Not available",
+      "-8": "IS: Don't know",
+      "-9": "No answer"
+    },
+    "special": {
+      "CZ": {
+        "-1": "Not available"
+      },
+      "IS": {
+        "-8": "Don't know"
+      }
+    }
+  },
+  {
+    "question_id": "v61",
+    "question": "OPTIONAL QUESTION Q29_OPT Do you think the [country] government should or should not have the right to do the following at times of severe epidemics? (Please tick one box on each line.) Q29a_OPT Place people known to carry the disease in isolation.",
+    "answer": {
+      "1": "Definitely should have the right",
+      "2": "Probably should have the right",
+      "3": "Probably should not have the right",
+      "4": "Definitely should not have the right",
+      "-1": "AT, FR, IL, JP, MX, RU, SI, SK, US, ZA: Not available",
+      "-8": "Can't choose",
+      "-9": "No answer"
+    },
+    "special": {
+      "AT": {
+        "-1": "Not available"
+      },
+      "FR": {
+        "-1": "Not available"
+      },
+      "IL": {
+        "-1": "Not available"
+      },
+      "JP": {
+        "-1": "Not available"
+      },
+      "MX": {
+        "-1": "Not available"
+      },
+      "RU": {
+        "-1": "Not available"
+      },
+      "SI": {
+        "-1": "Not available"
+      },
+      "SK": {
+        "-1": "Not available"
+      },
+      "US": {
+        "-1": "Not available"
+      },
+      "ZA": {
+        "-1": "Not available"
+      }
+    }
+  },
+  {
+    "question_id": "v62",
+    "question": "OPTIONAL QUESTION Q29_OPT Do you think the [country] government should or should not have the right to do the following at times of severe epidemics? (Please tick one box on each line.) Q29b_OPT Suspend compulsory education and close schools and kindergartens.",
+    "answer": {
+      "1": "Definitely should have the right",
+      "2": "Probably should have the right",
+      "3": "Probably should not have the right",
+      "4": "Definitely should not have the right",
+      "-1": "AT, FR, IL, JP, MX, RU, SI, US, ZA: Not available",
+      "-8": "Can't choose",
+      "-9": "No answer"
+    },
+    "special": {
+      "AT": {
+        "-1": "Not available"
+      },
+      "FR": {
+        "-1": "Not available"
+      },
+      "IL": {
+        "-1": "Not available"
+      },
+      "JP": {
+        "-1": "Not available"
+      },
+      "MX": {
+        "-1": "Not available"
+      },
+      "RU": {
+        "-1": "Not available"
+      },
+      "SI": {
+        "-1": "Not available"
+      },
+      "US": {
+        "-1": "Not available"
+      },
+      "ZA": {
+        "-1": "Not available"
+      }
+    }
+  },
+  {
+    "question_id": "v63",
+    "question": "OPTIONAL QUESTION Q29_OPT Do you think the [country] government should or should not have the right to do the following at times of severe epidemics? (Please tick one box on each line.) Q29c_OPT Close borders to other countries.",
+    "answer": {
+      "1": "Definitely should have the right",
+      "2": "Probably should have the right",
+      "3": "Probably should not have the right",
+      "4": "Definitely should not have the right",
+      "-1": "AT, FR, IL, JP, MX, RU, SI, US: Not available",
+      "-8": "Can't choose",
+      "-9": "No answer"
+    },
+    "special": {
+      "AT": {
+        "-1": "Not available"
+      },
+      "FR": {
+        "-1": "Not available"
+      },
+      "IL": {
+        "-1": "Not available"
+      },
+      "JP": {
+        "-1": "Not available"
+      },
+      "MX": {
+        "-1": "Not available"
+      },
+      "RU": {
+        "-1": "Not available"
+      },
+      "SI": {
+        "-1": "Not available"
+      },
+      "US": {
+        "-1": "Not available"
+      }
+    }
+  },
+  {
+    "question_id": "v64",
+    "question": "OPTIONAL QUESTION Q30_OPT Did the way the Covid-19 pandemic was handled in [country] increase or decrease your confidence in… (Please tick one box on each line.) Q30a_OPT ...the health care system?",
+    "answer": {
+      "1": "Increased it a lot",
+      "2": "Increased it a little",
+      "3": "Neither increased it nor decreased it",
+      "4": "Decreased it a little",
+      "5": "Decreased it a lot",
+      "-1": "AT, CZ, FR, IL, MX, SI, US: Not available",
+      "-8": "Can't choose",
+      "-9": "No answer"
+    },
+    "special": {
+      "AT": {
+        "-1": "Not available"
+      },
+      "CZ": {
+        "-1": "Not available"
+      },
+      "FR": {
+        "-1": "Not available"
+      },
+      "IL": {
+        "-1": "Not available"
+      },
+      "MX": {
+        "-1": "Not available"
+      },
+      "SI": {
+        "-1": "Not available"
+      },
+      "US": {
+        "-1": "Not available"
+      }
+    }
+  },
+  {
+    "question_id": "v65",
+    "question": "OPTIONAL QUESTION Q30_OPT Did the way the Covid-19 pandemic was handled in [country] increase or decrease your confidence in… (Please tick one box on each line.) Q30b_OPT ...the government?",
+    "answer": {
+      "1": "Increased it a lot",
+      "2": "Increased it a little",
+      "3": "Neither increased it nor decreased it",
+      "4": "Decreased it a little",
+      "5": "Decreased it a lot",
+      "-1": "AT, CZ, FR, IL, MX, SI, US: Not available",
+      "-8": "Can't choose",
+      "-9": "No answer"
+    },
+    "special": {
+      "AT": {
+        "-1": "Not available"
+      },
+      "CZ": {
+        "-1": "Not available"
+      },
+      "FR": {
+        "-1": "Not available"
+      },
+      "IL": {
+        "-1": "Not available"
+      },
+      "MX": {
+        "-1": "Not available"
+      },
+      "SI": {
+        "-1": "Not available"
+      },
+      "US": {
+        "-1": "Not available"
+      }
+    }
+  },
+  {
+    "question_id": "v66",
+    "question": "OPTIONAL QUESTION Q31_OPT Considering your work activity before the Covid-19 pandemic and at present, which of the following statements best describes your employment situation… (Please tick one box only.)",
+    "answer": {
+      "1": "I did not have a job before the pandemic and I do not have a job now",
+      "2": "I have the same job as before the pandemic",
+      "3": "I lost my job due to the pandemic and now have a new job",
+      "4": "I lost my job due to the pandemic and could not find a new job",
+      "5": "I did not have a job before the pandemic and I do have a job now",
+      "6": "I changed or left my job for reasons unrelated to the pandemic",
+      "-1": "AT, CZ, FR, HR, IL, MX, RU, SI, SK, US: Not available",
+      "-8": "Can't choose",
+      "-9": "No answer"
+    },
+    "special": {
+      "AT": {
+        "-1": "Not available"
+      },
+      "CZ": {
+        "-1": "Not available"
+      },
+      "FR": {
+        "-1": "Not available"
+      },
+      "HR": {
+        "-1": "Not available"
+      },
+      "IL": {
+        "-1": "Not available"
+      },
+      "MX": {
+        "-1": "Not available"
+      },
+      "RU": {
+        "-1": "Not available"
+      },
+      "SI": {
+        "-1": "Not available"
+      },
+      "SK": {
+        "-1": "Not available"
+      },
+      "US": {
+        "-1": "Not available"
+      }
+    }
+  },
+  {
+    "question_id": "v67",
+    "question": "OPTIONAL QUESTION Q32_OPT Thinking about the income of your household before the Covid-19 pandemic compared with now, would you say it has increased, decreased or stayed about the same? (Please tick one box only.)",
+    "answer": {
+      "1": "Increased a lot",
+      "2": "Increased a little",
+      "3": "Stayed about the same",
+      "4": "Decreased a little",
+      "5": "Decreased a lot",
+      "-1": "AT, CZ, FR, HR, IL, MX, RU, SI, US: Not available",
+      "-8": "Can't choose",
+      "-9": "No answer"
+    },
+    "special": {
+      "AT": {
+        "-1": "Not available"
+      },
+      "CZ": {
+        "-1": "Not available"
+      },
+      "FR": {
+        "-1": "Not available"
+      },
+      "HR": {
+        "-1": "Not available"
+      },
+      "IL": {
+        "-1": "Not available"
+      },
+      "MX": {
+        "-1": "Not available"
+      },
+      "RU": {
+        "-1": "Not available"
+      },
+      "SI": {
+        "-1": "Not available"
+      },
+      "US": {
+        "-1": "Not available"
+      }
+    }
+  },
+  {
+    "question_id": "v68",
+    "question": "OPTIONAL QUESTION Q33_OPT Thinking about how often you met with your extended family and friends in person before the Covid-19 pandemic, would you say you now meet them in person more often, less often, or about the same? (Please tick one box only.)",
+    "answer": {
+      "1": "Much less often",
+      "2": "A little less often",
+      "3": "About the same",
+      "4": "A little more often",
+      "5": "Much more often",
+      "-1": "AT, CZ, FR, IL, MX, RU, SI, US, ZA: NAV; TW: NAV, question split (see TW_v68a+b)",
+      "-8": "Can't choose",
+      "-9": "No answer"
+    },
+    "special": {
+      "AT": {
+        "-1": "NAV"
+      },
+      "CZ": {
+        "-1": "NAV"
+      },
+      "FR": {
+        "-1": "NAV"
+      },
+      "IL": {
+        "-1": "NAV"
+      },
+      "MX": {
+        "-1": "NAV"
+      },
+      "RU": {
+        "-1": "NAV"
+      },
+      "SI": {
+        "-1": "NAV"
+      },
+      "US": {
+        "-1": "NAV"
+      },
+      "ZA": {
+        "-1": "NAV"
+      },
+      "TW": {
+        "-1": "NAV, question split (see TW_v68a+b)"
+      }
+    }
+  },
+  {
+    "question_id": "v69",
+    "question": "OPTIONAL QUESTION Q34_OPT There are different opinions about people that have certain health conditions. How much do you agree or disagree with the following statements? (Please tick one box on each line.) Q34a_OPT Most people become very overweight because they are lazy.",
+    "answer": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree",
+      "-1": "AT, FR, IL, MX, RU, SI, SK, US: Not available",
+      "-8": "Can't choose",
+      "-9": "No answer"
+    },
+    "special": {
+      "AT": {
+        "-1": "Not available"
+      },
+      "FR": {
+        "-1": "Not available"
+      },
+      "IL": {
+        "-1": "Not available"
+      },
+      "MX": {
+        "-1": "Not available"
+      },
+      "RU": {
+        "-1": "Not available"
+      },
+      "SI": {
+        "-1": "Not available"
+      },
+      "SK": {
+        "-1": "Not available"
+      },
+      "US": {
+        "-1": "Not available"
+      }
+    }
+  },
+  {
+    "question_id": "v70",
+    "question": "OPTIONAL QUESTION Q34_OPT There are different opinions about people that have certain health conditions. How much do you agree or disagree with the following statements? (Please tick one box on each line.) Q34b_OPT Most people who tested positive for Covid-19 contracted the virus because they were careless.",
+    "answer": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree",
+      "-1": "AT, FR, IL, MX, RU, SI, SK, US: Not available",
+      "-8": "Can't choose",
+      "-9": "No answer"
+    },
+    "special": {
+      "AT": {
+        "-1": "Not available"
+      },
+      "FR": {
+        "-1": "Not available"
+      },
+      "IL": {
+        "-1": "Not available"
+      },
+      "MX": {
+        "-1": "Not available"
+      },
+      "RU": {
+        "-1": "Not available"
+      },
+      "SI": {
+        "-1": "Not available"
+      },
+      "SK": {
+        "-1": "Not available"
+      },
+      "US": {
+        "-1": "Not available"
+      }
+    }
+  }
+]

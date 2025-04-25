@@ -1,0 +1,847 @@
+[
+  {
+    "question_id": "v1",
+    "question": "Q1a\nWhich of these issues is the most important for [COUNTRY] today?\n(Please tick one box only.)",
+    "answer": {
+      "-9": "No answer",
+      "-8": "Can't choose",
+      "1": "Health care",
+      "2": "Education",
+      "3": "Crime",
+      "4": "The environment",
+      "5": "Immigration",
+      "6": "The economy",
+      "7": "Terrorism",
+      "8": "Poverty",
+      "9": "None of these"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v2",
+    "question": "[Q1a\nWhich of these issues is the most important for [COUNTRY] today?]\nQ1b\nWhich is the next most important?\n(Please tick one box only.)",
+    "answer": {
+      "-9": "No answer",
+      "-8": "Can't choose",
+      "-7": "Wrong answer behaviour",
+      "1": "Health care",
+      "2": "Education",
+      "3": "Crime",
+      "4": "The environment",
+      "5": "Immigration",
+      "6": "The economy",
+      "7": "Terrorism",
+      "8": "Poverty",
+      "9": "None of these"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v3",
+    "question": "Q2\nHow much do you agree or disagree with each of these statements?\n(Please tick one box on each line.)\nQ2a\nPrivate enterprise is the best way to solve [COUNTRY'S] economic problems.",
+    "answer": {
+      "-9": "No answer",
+      "-8": "Can't choose",
+      "1": "Agree strongly",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Disagree strongly"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v4",
+    "question": "Q2\nHow much do you agree or disagree with each of these statements?\n(Please tick one box on each line.)\nQ2b\nIt is the responsibility of the government to reduce the differences in income between people with high incomes and those with low incomes.",
+    "answer": {
+      "-9": "No answer",
+      "-8": "Can't choose",
+      "1": "Agree strongly",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Disagree strongly"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v5",
+    "question": "Q2\nHow much do you agree or disagree with each of these statements?\n(Please tick one box on each line.)\nQ2c\n[COUNTRY] should limit the import of foreign products in order to protect its national economy.",
+    "answer": {
+      "-9": "No answer",
+      "-8": "Can't choose",
+      "1": "Agree strongly",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Disagree strongly"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v6",
+    "question": "Q2\nHow much do you agree or disagree with each of these statements?\n(Please tick one box on each line.)\nQ2d\n[COUNTRY] should limit immigration in order to protect our national way of life.",
+    "answer": {
+      "-9": "No answer",
+      "-8": "Can't choose",
+      "1": "Agree strongly",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Disagree strongly"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v7",
+    "question": "Q2\nHow much do you agree or disagree with each of these statements?\n(Please tick one box on each line.)\nQ2e\nInternational organizations are taking away too much power from the [COUNTRY NATIONALITY] government.",
+    "answer": {
+      "-9": "No answer",
+      "-8": "Can't choose",
+      "1": "Agree strongly",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Disagree strongly"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v8",
+    "question": "Q3a\nLooking at the list below, please tick a box next to the one thing you think should be [COUNTRY'S] highest priority, the MOST important thing it should do.\n(Please tick one box only.)\n[COUNTRY] should …",
+    "answer": {
+      "-9": "No answer",
+      "-8": "Can't choose",
+      "1": "Maintain order in the nation",
+      "2": "Give people more say in government decisions",
+      "3": "Fight rising prices",
+      "4": "Protect freedom of speech"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v9",
+    "question": "[Q3a\nLooking at the list below, please tick a box next to the one thing you think should be [COUNTRY'S] highest priority, the most important thing it should do.]\nQ3b\nAnd which one do you think should be [COUNTRY'S] next highest priority, the SECOND most important thing it should do?\n(Please tick one box only.)\n[COUNTRY] should…",
+    "answer": {
+      "-9": "No answer",
+      "-8": "Can't choose",
+      "-7": "Wrong answer behaviour",
+      "1": "Maintain order in the nation",
+      "2": "Give people more say in government decisions",
+      "3": "Fight rising prices",
+      "4": "Protect freedom of speech"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v10",
+    "question": "Q4\nGenerally speaking, would you say that most people can be trusted, or that you can't be too careful in dealing with people?\nPlease tick one box to show what you think, where 1 means you can't be too careful and 5 means most people can be trusted.\n(Please tick one box only.)",
+    "answer": {
+      "-9": "No answer",
+      "-8": "Can't choose",
+      "-1": "Not available: CN (Answer scale and direction of scale differ from ISSP standard)",
+      "1": "1 You can't be too careful",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5 Most people can be trusted"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "CN_v10",
+    "question": "Q4\nGenerally speaking, would you say that most people can be trusted, or that you can't be too careful in dealing with people?\nPlease tick one box to show what you think, where 1 means you can't be too careful and 5 means most people can be trusted.\n(Please tick one box only.)",
+    "answer": {
+      "-9": "No answer",
+      "-8": "Can't choose",
+      "-1": "Not available: all other countries",
+      "1": "People can almost always be trusted",
+      "2": "People can oen be trusted",
+      "3": "You oen have to treat people with caution",
+      "4": "You almost always have to treat people with caution"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v11",
+    "question": "Q5\nOn a scale of 0 to 10, how much do you personally trust each of the following institutions?\n0 means you do not trust an institution at all, and 10 means you trust it completely.\n(Please tick one box only.)\nQ5a\nUniversity research centres",
+    "answer": {
+      "-9": "No answer",
+      "-8": "Can't choose",
+      "0": "0 No trust at all",
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7",
+      "8": "8",
+      "9": "9",
+      "10": "10 Complete trust"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v12",
+    "question": "Q5\nOn a scale of 0 to 10, how much do you personally trust each of the following institutions?\n0 means you do not trust an institution at all, and 10 means you trust it completely.\n(Please tick one box only.)\nQ5b\nThe news media",
+    "answer": {
+      "-9": "No answer",
+      "-8": "Can't choose",
+      "0": "0 No trust at all",
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7",
+      "8": "8",
+      "9": "9",
+      "10": "10 Complete trust"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v13",
+    "question": "Q5\nOn a scale of 0 to 10, how much do you personally trust each of the following institutions?\n0 means you do not trust an institution at all, and 10 means you trust it completely.\n(Please tick one box only.)\nQ5c\nBusiness and industry",
+    "answer": {
+      "-9": "No answer",
+      "-8": "Can't choose",
+      "0": "0 No trust at all",
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7",
+      "8": "8",
+      "9": "9",
+      "10": "10 Complete trust"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v14",
+    "question": "Q5\nOn a scale of 0 to 10, how much do you personally trust each of the following institutions?\n0 means you do not trust an institution at all, and 10 means you trust it completely.\n(Please tick one box only.)\nQ5d\nThe [COUNTRY NATIONALITY PARLIAMENT]",
+    "answer": {
+      "-9": "No answer",
+      "-8": "Can't choose",
+      "0": "0 No trust at all",
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7",
+      "8": "8",
+      "9": "9",
+      "10": "10 Complete trust"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v15",
+    "question": "Q6\nGenerally speaking, how concerned are you about environmental issues?\nPlease tick one box below to indicate what you think, where 1 means you are not at all concerned and 5 means you are very concerned.\n(Please tick one box only.)",
+    "answer": {
+      "-9": "No answer",
+      "-8": "Can't choose",
+      "1": "1 Not at all concerned",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5 Very concerned"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v16",
+    "question": "Q7\nHere is a list of some different environmental problems.\nWhich problem, if any, do you think is the most important for [COUNTRY] as a whole?\n(Please tick one box only.)",
+    "answer": {
+      "-9": "No answer",
+      "-8": "Can't choose",
+      "1": "Air pollution",
+      "2": "Chemicals and pesticides",
+      "3": "Water shortage",
+      "4": "Water pollution",
+      "5": "Nuclear waste",
+      "6": "Domestic waste disposal",
+      "7": "Climate change",
+      "8": "Genetically modified foods",
+      "9": "Using up our natural resources",
+      "10": "None of these"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v17",
+    "question": "Q8\nThere has been a lot of discussion about the world’s climate and the idea it has been changing in recent decades. Which of the following statements comes closest to your opinion?\n(Please tick one box only.)\n(IF CODE 1: GO TO Q10)\n(IF CODE 2-4,-8: GO TO Q9a)",
+    "answer": {
+      "-9": "No answer",
+      "-8": "Can't choose",
+      "1": "The world's climate has not been changing",
+      "2": "The world's climate has been changing mostly due to natural processes",
+      "3": "The world's climate has been changing about equally due to natural processes and human activity",
+      "4": "The world's climate has been changing mostly due to human activity"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v18",
+    "question": "Q9a\nIF NOT CODE 1 IN Q8 'THE WORLD'S CLIMATE HAS NOT BEEN CHANGING'\nOn a scale from 0 to 10, how bad or good do you think the impacts of climate change will be for the WORLD as a whole?\n0 means extremely bad, 10 means extremely good.\n(Please tick one box only.)",
+    "answer": {
+      "-9": "No answer",
+      "-8": "Can't choose",
+      "-4": "NAP (Code 1 in v17)",
+      "0": "0 Extremely bad",
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7",
+      "8": "8",
+      "9": "9",
+      "10": "10 Extremely good"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v19",
+    "question": "Q9b\nIF NOT CODE 1 IN Q8 'THE WORLD'S CLIMATE HAS NOT BEEN CHANGING'\nOn a scale from 0 to 10, how bad or good do you think the impacts of climate change will be for [COUNTRY]?\n0 means extremely bad, 10 means extremely good.\n(Please tick one box only.)",
+    "answer": {
+      "-9": "No answer",
+      "-8": "Can't choose",
+      "-4": "NAP (Code 1 in v17)",
+      "0": "0 Extremely bad",
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7",
+      "8": "8",
+      "9": "9",
+      "10": "10 Extremely good"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v20",
+    "question": "Q10\nHow much do you agree or disagree with each of these statements?\n(Please tick one box on each line.)\nQ10a\nModern science will solve our environmental problems with little change to our way of life.",
+    "answer": {
+      "-9": "No answer",
+      "-8": "Can't choose",
+      "1": "Agree strongly",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Disagree strongly"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v21",
+    "question": "Q10\nHow much do you agree or disagree with each of these statements?\n(Please tick one box on each line.)\nQ10b\nWe worry too much about the future of the environment and not enough about prices and jobs today.",
+    "answer": {
+      "-9": "No answer",
+      "-8": "Can't choose",
+      "1": "Agree strongly",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Disagree strongly"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v22",
+    "question": "Q10\nHow much do you agree or disagree with each of these statements?\n(Please tick one box on each line.)\nQ10c\nAlmost everything we do in modern life harms the environment.",
+    "answer": {
+      "-9": "No answer",
+      "-8": "Can't choose",
+      "1": "Agree strongly",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Disagree strongly"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v23",
+    "question": "Q10\nHow much do you agree or disagree with each of these statements?\n(Please tick one box on each line.)\nQ10d\nPeople worry too much about human progress harming the environment.",
+    "answer": {
+      "-9": "No answer",
+      "-8": "Can't choose",
+      "1": "Agree strongly",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Disagree strongly"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v24",
+    "question": "Q10\nHow much do you agree or disagree with each of these statements?\n(Please tick one box on each line.)\nQ10e\nIn order to protect the environment [COUNTRY] needs economic growth.",
+    "answer": {
+      "-9": "No answer",
+      "-8": "Can't choose",
+      "1": "Agree strongly",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Disagree strongly"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v25",
+    "question": "Q10\nHow much do you agree or disagree with each of these statements?\n(Please tick one box on each line.)\nQ10f\nEconomic growth always harms the environment.",
+    "answer": {
+      "-9": "No answer",
+      "-8": "Can't choose",
+      "1": "Agree strongly",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Disagree strongly"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v26",
+    "question": "Q11a\nHow willing would you be to pay much higher prices in order to protect the environment?\n(Please tick one box only.)",
+    "answer": {
+      "-9": "No answer",
+      "-8": "Can't choose",
+      "1": "Very willing",
+      "2": "Fairly willing",
+      "3": "Neither willing nor unwilling",
+      "4": "Fairly unwilling",
+      "5": "Very unwilling"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v27",
+    "question": "Q11b\nAnd how willing would you be to pay much higher taxes in order to protect the environment?\n(Please tick one box only.)",
+    "answer": {
+      "-9": "No answer",
+      "-8": "Can't choose",
+      "1": "Very willing",
+      "2": "Fairly willing",
+      "3": "Neither willing nor unwilling",
+      "4": "Fairly unwilling",
+      "5": "Very unwilling"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v28",
+    "question": "Q11c\nAnd how willing would you be to accept cuts in your standard of living in order to protect the environment?\n(Please tick one box only.)",
+    "answer": {
+      "-9": "No answer",
+      "-8": "Can't choose",
+      "1": "Very willing",
+      "2": "Fairly willing",
+      "3": "Neither willing nor unwilling",
+      "4": "Fairly unwilling",
+      "5": "Very unwilling"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v29",
+    "question": "Q11d\nHow willing would you be to accept a reduction in the size of [COUNTRY's] protected nature areas, in order to open them up for economic development?\n(Please tick one box only.)",
+    "answer": {
+      "-9": "No answer",
+      "-8": "Can't choose",
+      "1": "Very willing",
+      "2": "Fairly willing",
+      "3": "Neither willing nor unwilling",
+      "4": "Fairly unwilling",
+      "5": "Very unwilling"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v30",
+    "question": "Q12\nHow much do you agree or disagree with each of these statements?\n(Please tick one box only.)\nQ12a\nIt is just too difficult for someone like me to do much about the environment.",
+    "answer": {
+      "-9": "No answer",
+      "-8": "Can't choose",
+      "1": "Agree strongly",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Disagree strongly"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v31",
+    "question": "Q12\nHow much do you agree or disagree with each of these statements?\n(Please tick one box on each line.)\nQ12b\nI do what is right for the environment, even when it costs more money or takes more time.",
+    "answer": {
+      "-9": "No answer",
+      "-8": "Can't choose",
+      "1": "Agree strongly",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Disagree strongly"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v32",
+    "question": "Q12\nHow much do you agree or disagree with each of these statements?\n(Please tick one box on each line.)\nQ12c\nThere are more important things to do in life than protect the environment.",
+    "answer": {
+      "-9": "No answer",
+      "-8": "Can't choose",
+      "1": "Agree strongly",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Disagree strongly"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v33",
+    "question": "Q12\nHow much do you agree or disagree with each of these statements?\n(Please tick one box on each line.)\nQ12d\nThere is no point in doing what I can for the environment unless others do the same.",
+    "answer": {
+      "-9": "No answer",
+      "-8": "Can't choose",
+      "1": "Agree strongly",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Disagree strongly"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v34",
+    "question": "Q12\nHow much do you agree or disagree with each of these statements?\n(Please tick one box on each line.)\nQ12e\nMany of the claims about environmental threats are exaggerated.",
+    "answer": {
+      "-9": "No answer",
+      "-8": "Can't choose",
+      "1": "Agree strongly",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Disagree strongly"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v35",
+    "question": "Q12\nHow much do you agree or disagree with each of these statements?\n(Please tick one box on each line.)\nQ12f\nI find it hard to know whether the way I live is helpful or harmful to the environment.",
+    "answer": {
+      "-9": "No answer",
+      "-8": "Can't choose",
+      "1": "Agree strongly",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Disagree strongly"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v36",
+    "question": "Q12\nHow much do you agree or disagree with each of these statements?\n(Please tick one box on each line.)\nQ12g\nEnvironmental problems have a direct effect on my everyday life.",
+    "answer": {
+      "-9": "No answer",
+      "-8": "Can't choose",
+      "1": "Agree strongly",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Disagree strongly"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v37",
+    "question": "Q13a\nIn general, do you think that air pollution caused by cars is …\n(Please tick one box only.)",
+    "answer": {
+      "-9": "No answer",
+      "-8": "Can't choose",
+      "1": "Extremely dangerous for the environment",
+      "2": "Very dangerous",
+      "3": "Somewhat dangerous",
+      "4": "Not very dangerous",
+      "5": "Not dangerous at all for the environment"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v38",
+    "question": "Q13b\nIn general, do you think that air pollution caused by industry is …\n(Please tick one box only.)",
+    "answer": {
+      "-9": "No answer",
+      "-8": "Can't choose",
+      "1": "Extremely dangerous for the environment",
+      "2": "Very dangerous",
+      "3": "Somewhat dangerous",
+      "4": "Not very dangerous",
+      "5": "Not dangerous at all for the environment"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v39",
+    "question": "Q13c\nAnd do you think that pesticides and chemicals used in farming are …\n(Please tick one box only.)",
+    "answer": {
+      "-9": "No answer",
+      "-8": "Can't choose",
+      "1": "Extremely dangerous for the environment",
+      "2": "Very dangerous",
+      "3": "Somewhat dangerous",
+      "4": "Not very dangerous",
+      "5": "Not dangerous at all for the environment"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v40",
+    "question": "Q13d\nAnd do you think that pollution of COUNTRY'S rivers, lakes and streams is …\n(Please tick one box only.)",
+    "answer": {
+      "-9": "No answer",
+      "-8": "Can't choose",
+      "1": "Extremely dangerous for the environment",
+      "2": "Very dangerous",
+      "3": "Somewhat dangerous",
+      "4": "Not very dangerous",
+      "5": "Not dangerous at all for the environment"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v41",
+    "question": "Q13e\nIn general, do you think that a rise in the world's temperature caused by climate change is …\n(Please tick one box only.)",
+    "answer": {
+      "-9": "No answer",
+      "-8": "Can't choose",
+      "1": "Extremely dangerous for the environment",
+      "2": "Very dangerous",
+      "3": "Somewhat dangerous",
+      "4": "Not very dangerous",
+      "5": "Not dangerous at all for the environment"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v42",
+    "question": "Q13f\nAnd do you think that modifying the genes of certain crops is …\n(Please tick one box only.)",
+    "answer": {
+      "-9": "No answer",
+      "-8": "Can't choose",
+      "1": "Extremely dangerous for the environment",
+      "2": "Very dangerous",
+      "3": "Somewhat dangerous",
+      "4": "Not very dangerous",
+      "5": "Not dangerous at all for the environment"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v43",
+    "question": "Q13g\nAnd do you think that nuclear power stations are …\n(Please tick one box only.)",
+    "answer": {
+      "-9": "No answer",
+      "-8": "Can't choose",
+      "1": "Extremely dangerous for the environment",
+      "2": "Very dangerous",
+      "3": "Somewhat dangerous",
+      "4": "Not very dangerous",
+      "5": "Not dangerous at all for the environment"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v44",
+    "question": "Q14a\nWhich of these approaches do you think would be the best way of getting business and industry in [COUNTRY] to protect the environment?\n(Please tick one box only.)",
+    "answer": {
+      "-9": "No answer",
+      "-8": "Can't choose",
+      "1": "Heavy fines for businesses that damage the environment",
+      "2": "Use the tax system to reward businesses that protect the environment",
+      "3": "More information and education for businesses about the advantages of protecting the environment"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v45",
+    "question": "Q14b\nWhich of these approaches do you think would be the best way of getting people and their families in [COUNTRY] to protect the environment?\n(Please tick one box only.)",
+    "answer": {
+      "-9": "No answer",
+      "-8": "Can't choose",
+      "1": "Heavy fines for people who damage the environment",
+      "2": "Use the tax system to reward people who protect the environment",
+      "3": "More information and education for people about the advantages of protecting the environment"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v46",
+    "question": "Q15\nHow much, if at all, do you enjoy being outside in nature?\n(Please tick one box only.)",
+    "answer": {
+      "-9": "No answer",
+      "-8": "Can't choose",
+      "1": "Not at all",
+      "2": "To a small extent",
+      "3": "To some extent",
+      "4": "To a great extent",
+      "5": "To a very great extent"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v47",
+    "question": "Q16\nIn the last twelve months how often, if at all, have you engaged in any leisure activities outside in nature, such as hiking, bird watching, swimming, \nskiing, other outdoor activities or just relaxing?\n(Please tick one box only.)",
+    "answer": {
+      "-9": "No answer",
+      "-8": "Can't choose",
+      "1": "Daily",
+      "2": "Several times a week",
+      "3": "Several times a month",
+      "4": "Several times a year",
+      "5": "Never"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v50",
+    "question": "Q17c\nIn a typical week, on how many days do you eat beef, lamb, or products that contain them?",
+    "answer": {
+      "-9": "No answer",
+      "-8": "Can't choose",
+      "-4": "IN: NAP (vegetarian)",
+      "-1": "Not available (DK)",
+      "0": "0",
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v52",
+    "question": "Q19a\nHow often do you make a special effort to sort glass or tins or plastic or newspapers and so on for recycling?\n(Please tick one box only.)",
+    "answer": {
+      "-9": "No answer; AT: Can't choose",
+      "-4": "Recycling not available where I live",
+      "1": "Always",
+      "2": "Often",
+      "3": "Sometimes",
+      "4": "Never"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v53",
+    "question": "Q19b\nAnd how often do you avoid buying certain products for environmental reasons? \n(Please tick one box only.)",
+    "answer": {
+      "-9": "No answer; AT, IN: Can't choose",
+      "1": "Always",
+      "2": "Often",
+      "3": "Sometimes",
+      "4": "Never"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v54",
+    "question": "Q20\nAre you a member of any group whose main aim is to preserve or protect the environment?\n(Please tick one box only.)",
+    "answer": {
+      "-9": "No answer; AT, IN: Can't choose",
+      "1": "Yes",
+      "2": "No"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v55",
+    "question": "Q21\nIn the last five years, have you ...\n(Please tick one box on each line.)\nQ21a\nSigned a petition about an environmental issue?",
+    "answer": {
+      "-9": "No answer; AT, IN, PH: Can't choose",
+      "1": "Yes, I have",
+      "2": "No, I have not"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v56",
+    "question": "Q21\nIn the last five years, have you ...\n(Please tick one box on each line.)\nQ21b\nGiven money to an environmental group?",
+    "answer": {
+      "-9": "No answer; AT, IN, PH: Can't choose",
+      "1": "Yes, I have",
+      "2": "No, I have not"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v57",
+    "question": "Q21\nIn the last five years, have you ...\n(Please tick one box on each line.)\nQ21c\nTaken part in a protest or demonstration about an environmental issue?",
+    "answer": {
+      "-9": "No answer; AT, IN, KR, PH: Can't choose",
+      "1": "Yes, I have",
+      "2": "No, I have not"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v58",
+    "question": "Q22\nThinking about your neighbourhood, to what extent, if at all, was it affected by the following things over the last twelve months?\n(Please tick one box only.)\nQ22a\nAir Pollution",
+    "answer": {
+      "-9": "No answer",
+      "-8": "Can't choose",
+      "1": "Not at all",
+      "2": "To a small extent",
+      "3": "To some extent",
+      "4": "To a great extent",
+      "5": "To a very great extent"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v59",
+    "question": "Q22\nThinking about your neighbourhood, to what extent, if at all, was it affected by the following things over the last twelve months?\n(Please tick one box only.)\nQ22b\nWater Pollution",
+    "answer": {
+      "-9": "No answer",
+      "-8": "Can't choose",
+      "1": "Not at all",
+      "2": "To a small extent",
+      "3": "To some extent",
+      "4": "To a great extent",
+      "5": "To a very great extent"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v60",
+    "question": "Q22\nThinking about your neighbourhood, to what extent, if at all, was it affected by the following things over the last twelve months?\n(Please tick one box only.)\nQ22c\nExtreme weather events (such as severe storms, droughts, floods, heat waves, cold snaps, etc.)",
+    "answer": {
+      "-9": "No answer",
+      "-8": "Can't choose",
+      "1": "Not at all",
+      "2": "To a small extent",
+      "3": "To some extent",
+      "4": "To a great extent",
+      "5": "To a very great extent"
+    },
+    "special": {}
+  }
+]

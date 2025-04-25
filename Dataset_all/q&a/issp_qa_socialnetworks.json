@@ -1,0 +1,1491 @@
+[
+  {
+    "question_id": "v1",
+    "question": "Q1 Here is a list of jobs that people you know may have. These people could be family or relatives, close friends or someone else you know. By 'knowing' a person, we mean that you know him/ her by name and well enough to contact him/ her. If you know several people who have a job from the list below, please only tick the box for the person who you feel closest to. Each of these jobs could be held by a woman or a man. Do you know a woman or a man who is…? (PLEASE TICK ONE BOX ON EACH LINE) Q1a A bus/ lorry driver",
+    "answer": {
+      "1": "Family or relative",
+      "2": "Close friend",
+      "3": "Someone else I know",
+      "4": "No one",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v2",
+    "question": "Q1 Here is a list of jobs that people you know may have. These people could be family or relatives, close friends or someone else you know. By 'knowing' a person, we mean that you know him/ her by name and well enough to contact him/ her. If you know several people who have a job from the list below, please only tick the box for the person who you feel closest to. Each of these jobs could be held by a woman or a man. Do you know a woman or a man who is…? (PLEASE TICK ONE BOX ON EACH LINE) Q1b A senior executive of a large company",
+    "answer": {
+      "1": "Family or relative",
+      "2": "Close friend",
+      "3": "Someone else I know",
+      "4": "No one",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v3",
+    "question": "Q1 Here is a list of jobs that people you know may have. These people could be family or relatives, close friends or someone else you know. By 'knowing' a person, we mean that you know him/ her by name and well enough to contact him/ her. If you know several people who have a job from the list below, please only tick the box for the person who you feel closest to. Each of these jobs could be held by a woman or a man. Do you know a woman or a man who is…? (PLEASE TICK ONE BOX ON EACH LINE) Q1c A home or office cleaner",
+    "answer": {
+      "1": "Family or relative",
+      "2": "Close friend",
+      "3": "Someone else I know",
+      "4": "No one",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v4",
+    "question": "Q1 Here is a list of jobs that people you know may have. These people could be family or relatives, close friends or someone else you know. By 'knowing' a person, we mean that you know him/ her by name and well enough to contact him/ her. If you know several people who have a job from the list below, please only tick the box for the person who you feel closest to. Each of these jobs could be held by a woman or a man. Do you know a woman or a man who is…? (PLEASE TICK ONE BOX ON EACH LINE) Q1d A hairdresser/ barber",
+    "answer": {
+      "1": "Family or relative",
+      "2": "Close friend",
+      "3": "Someone else I know",
+      "4": "No one",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v5",
+    "question": "Q1 Here is a list of jobs that people you know may have. These people could be family or relatives, close friends or someone else you know. By 'knowing' a person, we mean that you know him/ her by name and well enough to contact him/ her. If you know several people who have a job from the list below, please only tick the box for the person who you feel closest to. Each of these jobs could be held by a woman or a man. Do you know a woman or a man who is…? (PLEASE TICK ONE BOX ON EACH LINE) Q1e A human resource manager/ personnel manager",
+    "answer": {
+      "1": "Family or relative",
+      "2": "Close friend",
+      "3": "Someone else I know",
+      "4": "No one",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v6",
+    "question": "Q1 Here is a list of jobs that people you know may have. These people could be family or relatives, close friends or someone else you know. By 'knowing' a person, we mean that you know him/ her by name and well enough to contact him/ her. If you know several people who have a job from the list below, please only tick the box for the person who you feel closest to. Each of these jobs could be held by a woman or a man. Do you know a woman or a man who is…? (PLEASE TICK ONE BOX ON EACH LINE) Q1f A lawyer",
+    "answer": {
+      "1": "Family or relative",
+      "2": "Close friend",
+      "3": "Someone else I know",
+      "4": "No one",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v7",
+    "question": "Q1 Here is a list of jobs that people you know may have. These people could be family or relatives, close friends or someone else you know. By 'knowing' a person, we mean that you know him/ her by name and well enough to contact him/ her. If you know several people who have a job from the list below, please only tick the box for the person who you feel closest to. Each of these jobs could be held by a woman or a man. Do you know a woman or a man who is…? (PLEASE TICK ONE BOX ON EACH LINE) Q1g A car mechanic",
+    "answer": {
+      "1": "Family or relative",
+      "2": "Close friend",
+      "3": "Someone else I know",
+      "4": "No one",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v8",
+    "question": "Q1 Here is a list of jobs that people you know may have. These people could be family or relatives, close friends or someone else you know. By 'knowing' a person, we mean that you know him/ her by name and well enough to contact him/ her. If you know several people who have a job from the list below, please only tick the box for the person who you feel closest to. Each of these jobs could be held by a woman or a man. Do you know a woman or a man who is…? (PLEASE TICK ONE BOX ON EACH LINE) Q1h A nurse",
+    "answer": {
+      "1": "Family or relative",
+      "2": "Close friend",
+      "3": "Someone else I know",
+      "4": "No one",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v9",
+    "question": "Q1 Here is a list of jobs that people you know may have. These people could be family or relatives, close friends or someone else you know. By 'knowing' a person, we mean that you know him/ her by name and well enough to contact him/ her. If you know several people who have a job from the list below, please only tick the box for the person who you feel closest to. Each of these jobs could be held by a woman or a man. Do you know a woman or a man who is…? (PLEASE TICK ONE BOX ON EACH LINE) Q1i A police officer",
+    "answer": {
+      "1": "Family or relative",
+      "2": "Close friend",
+      "3": "Someone else I know",
+      "4": "No one",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v10",
+    "question": "Q1 Here is a list of jobs that people you know may have. These people could be family or relatives, close friends or someone else you know. By 'knowing' a person, we mean that you know him/ her by name and well enough to contact him/ her. If you know several people who have a job from the list below, please only tick the box for the person who you feel closest to. Each of these jobs could be held by a woman or a man. Do you know a woman or a man who is…? (PLEASE TICK ONE BOX ON EACH LINE) Q1j A school teacher",
+    "answer": {
+      "1": "Family or relative",
+      "2": "Close friend",
+      "3": "Someone else I know",
+      "4": "No one",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v11",
+    "question": "Q2 To what extent do you agree or disagree with the following statements? (PLEASE TICK ONE BOX ON EACH LINE) Q2a Differences in income in [COUNTRY] are too large.",
+    "answer": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {
+      "JP": {
+        "1": "I think so",
+        "2": "I rather think so",
+        "3": "Can't say one way or the other",
+        "4": "I rather don't think so",
+        "5": "I don't think so"
+      }
+    }
+  },
+  {
+    "question_id": "v12",
+    "question": "Q2 To what extent do you agree or disagree with the following statements? (PLEASE TICK ONE BOX ON EACH LINE) Q2b For a society to be fair, differences in people's standard of living should be small.",
+    "answer": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {
+      "JP": {
+        "1": "I think so",
+        "2": "I rather think so",
+        "3": "Can't say one way or the other",
+        "4": "I rather don't think so",
+        "5": "I don't think so"
+      }
+    }
+  },
+  {
+    "question_id": "v13",
+    "question": "Q2 To what extent do you agree or disagree with the following statements? (PLEASE TICK ONE BOX ON EACH LINE) Q2c It is the responsibility of the government to reduce the differences in income between people with high incomes and those with low incomes.",
+    "answer": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {
+      "SI": {
+        "0": "Not available"
+      },
+      "JP": {
+        "1": "I think so",
+        "2": "I rather think so",
+        "3": "Can't say one way or the other",
+        "4": "I rather don't think so",
+        "5": "I don't think so"
+      }
+    }
+  },
+  {
+    "question_id": "v14",
+    "question": "Q2 To what extent do you agree or disagree with the following statements? (PLEASE TICK ONE BOX ON EACH LINE) Q2d The social benefits in [COUNTRY] make people lazy.",
+    "answer": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {
+      "JP": {
+        "1": "I think so",
+        "2": "I rather think so",
+        "3": "Can't say one way or the other",
+        "4": "I rather don't think so",
+        "5": "I don't think so"
+      }
+    }
+  },
+  {
+    "question_id": "v15",
+    "question": "Q3 People have different opinions on who should provide services in [COUNTRY]. Who do you think should primarily provide health care for the sick? (PLEASE TICK ONE BOX ONLY)",
+    "answer": {
+      "1": "Government",
+      "2": "Private companies/ for-profit organisations",
+      "3": "Non-profit organisations/ charities/ cooperatives",
+      "4": "Religious organisations",
+      "5": "Family, relatives or friends",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v16",
+    "question": "Q4 And, who do you think should primarily provide care for older people? (PLEASE TICK ONE BOX ONLY)",
+    "answer": {
+      "1": "Government",
+      "2": "Private companies/ for-profit organisations",
+      "3": "Non-profit organisations/ charities/ cooperatives",
+      "4": "Religious organisations",
+      "5": "Family, relatives or friends",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v17",
+    "question": "Q5 Some activities are done with others in organised groups, clubs or associations. The next questions are about your participation, if any, in such activities. In the past 12 months, how often, if at all, have you taken part in activities…? (PLEASE TICK ONE BOX ON EACH LINE) Q5a … of groups or associations for leisure, sports or culture?",
+    "answer": {
+      "1": "Once a week or more",
+      "2": "One to three times a month",
+      "3": "Several times in the past year",
+      "4": "Once in the past year",
+      "5": "Never",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v18",
+    "question": "Q5 Some activities are done with others in organised groups, clubs or associations. The next questions are about your participation, if any, in such activities. In the past 12 months, how often, if at all, have you taken part in activities…? (PLEASE TICK ONE BOX ON EACH LINE) Q5b … of political parties, political groups or political associations?",
+    "answer": {
+      "1": "Once a week or more",
+      "2": "One to three times a month",
+      "3": "Several times in the past year",
+      "4": "Once in the past year",
+      "5": "Never",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v19",
+    "question": "Q5 Some activities are done with others in organised groups, clubs or associations. The next questions are about your participation, if any, in such activities. In the past 12 months, how often, if at all, have you taken part in activities…? (PLEASE TICK ONE BOX ON EACH LINE) Q5c … of charitable or religious organisations that do voluntary work?",
+    "answer": {
+      "1": "Once a week or more",
+      "2": "One to three times a month",
+      "3": "Several times in the past year",
+      "4": "Once in the past year",
+      "5": "Never",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v20",
+    "question": "Q6 To what extent do you agree or disagree with the following statement? People like me don't have any say about what the government does. (PLEASE TICK ONE BOX ONLY)",
+    "answer": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {
+      "JP": {
+        "1": "I think so",
+        "2": "I rather think so",
+        "3": "Can't say one way or the other",
+        "4": "I rather don't think so",
+        "5": "I don't think so"
+      }
+    }
+  },
+  {
+    "question_id": "v21",
+    "question": "Q7 This section is about who you would turn to for help in different situations, if you needed it. For each of the following situations, please tick one box to say who you would turn to first. If there are several people you are equally likely to turn to, please tick the box for the one you feel closest to. Who would you turn to first to ... (PLEASE TICK ONE BOX ON EACH LINE) Q7a … help you with a household or a garden job that you can't do yourself?",
+    "answer": {
+      "1": "Close family member",
+      "2": "More distant family member",
+      "3": "Close friend",
+      "4": "Neighbour",
+      "5": "Someone I work with",
+      "6": "Someone else",
+      "7": "No one",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v22",
+    "question": "Q7 This section is about who you would turn to for help in different situations, if you needed it. For each of the following situations, please tick one box to say who you would turn to first. If there are several people you are equally likely to turn to, please tick the box for the one you feel closest to. Who would you turn to first to ... (PLEASE TICK ONE BOX ON EACH LINE) Q7b … help you around your home if you were sick and had to stay in bed for a few days?",
+    "answer": {
+      "1": "Close family member",
+      "2": "More distant family member",
+      "3": "Close friend",
+      "4": "Neighbour",
+      "5": "Someone I work with",
+      "6": "Someone else",
+      "7": "No one",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v23",
+    "question": "Q7 This section is about who you would turn to for help in different situations, if you needed it. For each of the following situations, please tick one box to say who you would turn to first. If there are several people you are equally likely to turn to, please tick the box for the one you feel closest to. Who would you turn to first to ... (PLEASE TICK ONE BOX ON EACH LINE) Q7c … be there for you if you felt a bit down or depressed and wanted to talk about it?",
+    "answer": {
+      "1": "Close family member",
+      "2": "More distant family member",
+      "3": "Close friend",
+      "4": "Neighbour",
+      "5": "Someone I work with",
+      "6": "Someone else",
+      "7": "No one",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v24",
+    "question": "Q7 This section is about who you would turn to for help in different situations, if you needed it. For each of the following situations, please tick one box to say who you would turn to first. If there are several people you are equally likely to turn to, please tick the box for the one you feel closest to. Who would you turn to first to ... (PLEASE TICK ONE BOX ON EACH LINE) Q7d … give you advice about family problems?",
+    "answer": {
+      "1": "Close family member",
+      "2": "More distant family member",
+      "3": "Close friend",
+      "4": "Neighbour",
+      "5": "Someone I work with",
+      "6": "Someone else",
+      "7": "No one",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v25",
+    "question": "Q7 This section is about who you would turn to for help in different situations, if you needed it. For each of the following situations, please tick one box to say who you would turn to first. If there are several people you are equally likely to turn to, please tick the box for the one you feel closest to. Who would you turn to first to ... (PLEASE TICK ONE BOX ON EACH LINE) Q7e … enjoy a pleasant social occasion with?",
+    "answer": {
+      "1": "Close family member",
+      "2": "More distant family member",
+      "3": "Close friend",
+      "4": "Neighbour",
+      "5": "Someone I work with",
+      "6": "Someone else",
+      "7": "No one",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v26",
+    "question": "Q8 For each of the following situations, please tick one box to say who or where you would turn to first for help. If there are several choices you are equally likely to make, please tick the box for the one you would try first. Who or where would you turn to first to … (PLEASE TICK ONE BOX ON EACH LINE) Q8a … help you if you needed to borrow a large sum of money?",
+    "answer": {
+      "1": "Family members or close friends",
+      "2": "Other persons",
+      "3": "Private companies",
+      "4": "Public services",
+      "5": "Non-profit or religious organisations",
+      "6": "Other organisations",
+      "7": "No person or organisation",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v27",
+    "question": "Q8 For each of the following situations, please tick one box to say who or where you would turn to first for help. If there are several choices you are equally likely to make, please tick the box for the one you would try first. Who or where would you turn to first to … (PLEASE TICK ONE BOX ON EACH LINE) Q8b … help you if you needed to find a job?",
+    "answer": {
+      "1": "Family members or close friends",
+      "2": "Other persons",
+      "3": "Private companies",
+      "4": "Public services",
+      "5": "Non-profit or religious organisations",
+      "6": "Other organisations",
+      "7": "No person or organisation",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v28",
+    "question": "Q8 For each of the following situations, please tick one box to say who or where you would turn to first for help. If there are several choices you are equally likely to make, please tick the box for the one you would try first. Who or where would you turn to first to … (PLEASE TICK ONE BOX ON EACH LINE) Q8c … help you with administrative problems or official paperwork?",
+    "answer": {
+      "1": "Family members or close friends",
+      "2": "Other persons",
+      "3": "Private companies",
+      "4": "Public services",
+      "5": "Non-profit or religious organisations",
+      "6": "Other organisations",
+      "7": "No person or organisation",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v29",
+    "question": "Q8 For each of the following situations, please tick one box to say who or where you would turn to first for help. If there are several choices you are equally likely to make, please tick the box for the one you would try first. Who or where would you turn to first to … (PLEASE TICK ONE BOX ON EACH LINE) Q8d … help you if you needed to find a place to live?",
+    "answer": {
+      "1": "Family members or close friends",
+      "2": "Other persons",
+      "3": "Private companies",
+      "4": "Public services",
+      "5": "Non-profit or religious organisations",
+      "6": "Other organisations",
+      "7": "No person or organisation",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v30",
+    "question": "Q8 For each of the following situations, please tick one box to say who or where you would turn to first for help. If there are several choices you are equally likely to make, please tick the box for the one you would try first. Who or where would you turn to first to … (PLEASE TICK ONE BOX ON EACH LINE) Q8e … look after you if you were seriously ill?",
+    "answer": {
+      "1": "Family members or close friends",
+      "2": "Other persons",
+      "3": "Private companies",
+      "4": "Public services",
+      "5": "Non-profit or religious organisations",
+      "6": "Other organisations",
+      "7": "No person or organisation",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v31",
+    "question": "Q9 The next questions are about how you feel about different aspects of your life. For each one, please indicate how often during the past 4 weeks you have felt that way. How often in the past 4 weeks have you felt that … (PLEASE TICK ONE BOX ON EACH LINE) Q9a … you lack companionship?",
+    "answer": {
+      "1": "Never",
+      "2": "Rarely",
+      "3": "Sometimes",
+      "4": "Often",
+      "5": "Very often",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {
+      "RU": {
+        "5": "Very often, always"
+      }
+    }
+  },
+  {
+    "question_id": "v32",
+    "question": "Q9 The next questions are about how you feel about different aspects of your life. For each one, please indicate how often during the past 4 weeks you have felt that way. How often in the past 4 weeks have you felt that … (PLEASE TICK ONE BOX ON EACH LINE) Q9b … you are isolated from others?",
+    "answer": {
+      "1": "Never",
+      "2": "Rarely",
+      "3": "Sometimes",
+      "4": "Often",
+      "5": "Very often",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {
+      "RU": {
+        "5": "Very often, always"
+      }
+    }
+  },
+  {
+    "question_id": "v33",
+    "question": "Q9 The next questions are about how you feel about different aspects of your life. For each one, please indicate how often during the past 4 weeks you have felt that way. How often in the past 4 weeks have you felt that … (PLEASE TICK ONE BOX ON EACH LINE) Q9c … you are left out?",
+    "answer": {
+      "1": "Never",
+      "2": "Rarely",
+      "3": "Sometimes",
+      "4": "Often",
+      "5": "Very often",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {
+      "RU": {
+        "5": "Very often, always"
+      }
+    }
+  },
+  {
+    "question_id": "v34",
+    "question": "Q10 How often do you think that people would try to take advantage of you if they got the chance, and how often would they try to be fair? (PLEASE TICK ONE BOX ONLY)",
+    "answer": {
+      "1": "Try to take advantage almost all of the time",
+      "2": "Try to take advantage most of the time",
+      "3": "Try to be fair most of the time",
+      "4": "Try to be fair almost all of the time",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v35",
+    "question": "Q11 Generally speaking, would you say that people can be trusted or that you can't be too careful in dealing with people? (PLEASE TICK ONE BOX ONLY)",
+    "answer": {
+      "1": "People can almost always be trusted",
+      "2": "People can usually be trusted",
+      "3": "You usually can't be too careful in dealing with people",
+      "4": "You almost always can't be too careful in dealing with people",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v36",
+    "question": "Q12 Using the following scale ranging from 0 to 10, where 0 means 'No trust at all' and 10 means 'Complete trust', please indicate how much trust you personally have in…? How much trust do you personally have in … (PLEASE TICK ONE BOX ON EACH LINE) Q12a ... [COUNTRY]'s courts?",
+    "answer": {
+      "0": "00 - No trust at all",
+      "1": "01",
+      "2": "02",
+      "3": "03",
+      "4": "04",
+      "5": "05",
+      "6": "06",
+      "7": "07",
+      "8": "08",
+      "9": "09",
+      "10": "10 - Complete trust",
+      "98": "Can't choose",
+      "99": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v37",
+    "question": "Q12 Using the following scale ranging from 0 to 10, where 0 means 'No trust at all' and 10 means 'Complete trust', please indicate how much trust you personally have in…? How much trust do you personally have in … (PLEASE TICK ONE BOX ON EACH LINE) Q12b … major private companies in [COUNTRY]?",
+    "answer": {
+      "0": "00 - No trust at all",
+      "1": "01",
+      "2": "02",
+      "3": "03",
+      "4": "04",
+      "5": "05",
+      "6": "06",
+      "7": "07",
+      "8": "08",
+      "9": "09",
+      "10": "10 - Complete trust",
+      "98": "Can't choose",
+      "99": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v38",
+    "question": "Q13 To what extent do you agree or disagree with the following statements? (PLEASE TICK ONE BOX ON EACH LINE) Q13a Adult children have a duty to look after their elderly parents.",
+    "answer": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {
+      "JP": {
+        "1": "I think so",
+        "2": "I rather think so",
+        "3": "Can't say one way or the other",
+        "4": "I rather don't think so",
+        "5": "I don't think so"
+      }
+    }
+  },
+  {
+    "question_id": "v39",
+    "question": "Q13 To what extent do you agree or disagree with the following statements? (PLEASE TICK ONE BOX ON EACH LINE) Q13b You should take care of yourself and your family first, before helping other people.",
+    "answer": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {
+      "JP": {
+        "1": "I think so",
+        "2": "I rather think so",
+        "3": "Can't say one way or the other",
+        "4": "I rather don't think so",
+        "5": "I don't think so"
+      }
+    }
+  },
+  {
+    "question_id": "v40",
+    "question": "Q13 To what extent do you agree or disagree with the following statements? (PLEASE TICK ONE BOX ON EACH LINE) Q13c People who are better off should help friends who are less well off.",
+    "answer": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {
+      "JP": {
+        "1": "I think so",
+        "2": "I rather think so",
+        "3": "Can't say one way or the other",
+        "4": "I rather don't think so",
+        "5": "I don't think so"
+      }
+    }
+  },
+  {
+    "question_id": "v41",
+    "question": "Q14 In general, do your family members put pressure on you about the way you live or organise your personal life? (PLEASE TICK ONE BOX ONLY)",
+    "answer": {
+      "1": "No, never",
+      "2": "Yes, but rarely",
+      "3": "Yes, sometimes",
+      "4": "Yes, often",
+      "5": "Yes, very often",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v42",
+    "question": "Q15 Do you feel that your family, relatives and/ or friends make too many demands on you? (PLEASE TICK ONE BOX ONLY)",
+    "answer": {
+      "1": "No, never",
+      "2": "Yes, but rarely",
+      "3": "Yes, sometimes",
+      "4": "Yes, often",
+      "5": "Yes, very often",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v43",
+    "question": "Q16 Thinking about the important people in your life, such as your spouse or partner, your family members, or close friends, how often in the past 4 weeks did any of these people act angry or upset with you? (PLEASE TICK ONE BOX ONLY)",
+    "answer": {
+      "1": "Never",
+      "2": "Rarely",
+      "3": "Sometimes",
+      "4": "Often",
+      "5": "Very often",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v44",
+    "question": "Q17 How often do you go out to eat or drink with three or more friends or acquaintances who are not family members? (PLEASE TICK ONE BOX ONLY)",
+    "answer": {
+      "1": "Daily",
+      "2": "Several times a week",
+      "3": "Once a week",
+      "4": "Two or three times a month",
+      "5": "Once a month",
+      "6": "Several times a year",
+      "7": "Less often",
+      "8": "Never",
+      "98": "Can't choose",
+      "99": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v45",
+    "question": "Q18 IF NOT CODE 8 'NEVER' IN Q17 At these occasions, how often do you make new friends or acquaintances? (PLEASE TICK ONE BOX ONLY)",
+    "answer": {
+      "0": "Not applicable (code 8 in v44)",
+      "1": "Never",
+      "2": "Rarely",
+      "3": "Sometimes",
+      "4": "Often",
+      "5": "Very often",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v46",
+    "question": "Q19 Please indicate about how many people do you have contact with on a typical weekday irrespective of whether you know them or not. Include anyone you chat with, talk to, or text, either face-to-face, by phone, internet or any other communication device. (PLEASE TICK ONE BOX ONLY)",
+    "answer": {
+      "1": "0-4 people",
+      "2": "5-9",
+      "3": "10-19",
+      "4": "20-49",
+      "5": "50-99",
+      "6": "100 or more",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {
+      "ES": {
+        "1": "No one/ 1-4"
+      },
+      "HU": {
+        "1": "No one/ 1-4"
+      },
+      "TW": {
+        "1": "No one/ 1-4"
+      }
+    }
+  },
+  {
+    "question_id": "v47",
+    "question": "Q20 About how many of these people do you see face-to-face on a typical weekday? (PLEASE TICK ONE BOX ONLY)",
+    "answer": {
+      "1": "All or almost all of them",
+      "2": "Most of them",
+      "3": "About half of them",
+      "4": "Some of them",
+      "5": "None or almost none of them",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {
+      "ES": {
+        "0": "Not applicable (No one in v46)"
+      },
+      "HU": {
+        "0": "Not applicable (No one in v46)"
+      },
+      "TW": {
+        "0": "Not applicable (No one in v46)"
+      }
+    }
+  },
+  {
+    "question_id": "v48",
+    "question": "Q21 Please think about the parent you have contact with most frequently: How often do you have contact with that parent, either face-to-face, by phone, internet or any other communication device? (PLEASE TICK ONE BOX ONLY)",
+    "answer": {
+      "1": "Daily",
+      "2": "Several times a week",
+      "3": "Once a week",
+      "4": "Two to three times a month",
+      "5": "Once a month",
+      "6": "Several times a year",
+      "7": "Less often",
+      "8": "Never",
+      "95": "My parents are no longer alive",
+      "96": "The parent I have contact with the most frequently lives with me",
+      "99": "No answer"
+    },
+    "special": {
+      "GB-GBN": {
+        "99": "Can't choose, No answer"
+      }
+    }
+  },
+  {
+    "question_id": "v49",
+    "question": "Q22 Think about the brother or sister you have contact with most frequently: How often do you have contact with that brother or sister, either face-to-face, by phone, internet or any other communication device? (PLEASE TICK ONE BOX ONLY)",
+    "answer": {
+      "1": "Daily",
+      "2": "Several times a week",
+      "3": "Once a week",
+      "4": "Two to three times a month",
+      "5": "Once a month",
+      "6": "Several times a year",
+      "7": "Less often",
+      "8": "Never",
+      "95": "I do not have any brothers or sisters",
+      "96": "The brother or sister I have contact with the most frequently lives with me",
+      "99": "No answer"
+    },
+    "special": {
+      "GB-GBN": {
+        "99": "Can't choose, No answer"
+      },
+      "HU": {
+        "99": "Refused, No answer"
+      }
+    }
+  },
+  {
+    "question_id": "v50",
+    "question": "Q23 Think about your adult child you have contact with most frequently: How often do you have contact with this child aged at least 18, either face-to-face, by phone, internet or any other communication device? (PLEASE TICK ONE BOX ONLY)",
+    "answer": {
+      "1": "Daily",
+      "2": "Several times a week",
+      "3": "Once a week",
+      "4": "Two to three times a month",
+      "5": "Once a month",
+      "6": "Several times a year",
+      "7": "Less often",
+      "8": "Never",
+      "95": "I do not have any adult children",
+      "96": "The adult child I have contact with the most frequently lives with me",
+      "99": "No answer"
+    },
+    "special": {
+      "GB-GBN": {
+        "99": "Can't choose, No answer"
+      }
+    }
+  },
+  {
+    "question_id": "v51",
+    "question": "Q24 Now, think about the other family member you have contact with most frequently, aside of your spouse or partner, parents, siblings or adult children. How often do you have contact with that family member, either face-to-face, by phone, internet or any other communication device? (PLEASE TICK ONE BOX ONLY)",
+    "answer": {
+      "1": "Daily",
+      "2": "Several times a week",
+      "3": "Once a week",
+      "4": "Two to three times a month",
+      "5": "Once a month",
+      "6": "Several times a year",
+      "7": "Less often",
+      "8": "Never",
+      "95": "I do not have other family members",
+      "96": "The other family member I have contact with the most frequently lives with me",
+      "99": "No answer"
+    },
+    "special": {
+      "GB-GBN": {
+        "99": "Can't choose, No answer"
+      }
+    }
+  },
+  {
+    "question_id": "v52",
+    "question": "Q25 And, think about the close friend you have contact with most frequently: How often do you have contact with that close friend, either face-to-face, by phone, internet or any other communication device? (PLEASE TICK ONE BOX ONLY)",
+    "answer": {
+      "1": "Daily",
+      "2": "Several times a week",
+      "3": "Once a week",
+      "4": "Two to three times a month",
+      "5": "Once a month",
+      "6": "Several times a year",
+      "7": "Less often",
+      "8": "Never",
+      "95": "I do not have any close friends",
+      "96": "The close friend I have contact with the most frequently lives with me",
+      "99": "No answer"
+    },
+    "special": {
+      "GB-GBN": {
+        "99": "Can't choose, No answer"
+      },
+      "HU": {
+        "99": "Refused"
+      }
+    }
+  },
+  {
+    "question_id": "v53",
+    "question": "Q26 Think about the occasions when you talk, get in touch with your family members and your close friends. How many times does this happen in the form of a text message/ a cell phone conversation or another internet communication tool? (PLEASE TICK ONE BOX ONLY)",
+    "answer": {
+      "1": "All or almost all of it",
+      "2": "Most of it",
+      "3": "About half of it",
+      "4": "Some of it",
+      "5": "None or almost none of it",
+      "7": "I do not use any of these devices",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {
+      "HU": {
+        "5": "None",
+        "6": "Almost none"
+      }
+    }
+  },
+  {
+    "question_id": "v54",
+    "question": "Q27 In general, would you say your health is…? (PLEASE TICK ONE BOX ONLY)",
+    "answer": {
+      "1": "Excellent",
+      "2": "Very good",
+      "3": "Good",
+      "4": "Fair",
+      "5": "Poor",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {
+      "HU": {
+        "1": "Very good",
+        "2": "Good",
+        "3": "Satisfactory",
+        "4": "Bad",
+        "5": "Very bad"
+      }
+    }
+  },
+  {
+    "question_id": "v55",
+    "question": "Q28 During the past 4 weeks how often… (PLEASE TICK ONE BOX ON EACH LINE) Q28a … have you felt unhappy and depressed?",
+    "answer": {
+      "1": "Never",
+      "2": "Rarely",
+      "3": "Sometimes",
+      "4": "Often",
+      "5": "Very often",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v56",
+    "question": "Q28 During the past 4 weeks how often… (PLEASE TICK ONE BOX ON EACH LINE) Q28b … have you felt difficulties were piling up so high that you could not overcome them?",
+    "answer": {
+      "1": "Never",
+      "2": "Rarely",
+      "3": "Sometimes",
+      "4": "Often",
+      "5": "Very often",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v57",
+    "question": "Q29 To what extent is the following statement true or untrue for you? It is easy for me to accomplish my goals. (PLEASE TICK ONE BOX ONLY)",
+    "answer": {
+      "1": "Completely true",
+      "2": "Mostly true",
+      "3": "Somewhat true",
+      "4": "Neither true nor untrue",
+      "5": "Somewhat untrue",
+      "6": "Mostly untrue",
+      "7": "Completely untrue",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v58",
+    "question": "Q30 All things considered, how satisfied are you with your life as a whole nowadays? (PLEASE TICK ONE BOX ONLY)",
+    "answer": {
+      "1": "Completely satisfied",
+      "2": "Very satisfied",
+      "3": "Fairly satisfied",
+      "4": "Neither satisfied nor unsatisfied",
+      "5": "Fairly dissatisfied",
+      "6": "Very dissatisfied",
+      "7": "Completely dissatisfied",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v59",
+    "question": "Q31 Thinking of your household's total income, including all the sources of income of all the members who contribute to it, how difficult or easy is it currently for your household to make ends meet? (PLEASE TICK ONE BOX ONLY)",
+    "answer": {
+      "1": "Very difficult",
+      "2": "Fairly difficult",
+      "3": "Neither easy nor difficult",
+      "4": "Fairly easy",
+      "5": "Very easy",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {
+      "DK": {
+        "0": "Not available"
+      }
+    }
+  },
+  {
+    "question_id": "v60",
+    "question": "Q32 How many languages do you speak well enough to hold a conversation in, including the language(s) you speak at home? (PLEASE TICK ONE BOX ONLY)",
+    "answer": {
+      "1": "One language",
+      "2": "Two languages",
+      "3": "Three languages",
+      "4": "Four languages or more",
+      "9": "No answer"
+    },
+    "special": {
+      "DK": {
+        "0": "Not available"
+      },
+      "GB-GBN": {
+        "9": "Can't choose, No answer"
+      }
+    }
+  },
+  {
+    "question_id": "v61",
+    "question": "Q33 To what extent do you agree or disagree with the following statements? (PLEASE TICK ONE BOX ON EACH LINE) Q33a It is all right to develop friendships with people just because they can be of use to you.",
+    "answer": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {
+      "AT": {
+        "0": "Not available"
+      },
+      "DK": {
+        "0": "Not available"
+      },
+      "ES": {
+        "0": "Not available"
+      },
+      "FI": {
+        "0": "Not available"
+      },
+      "HR": {
+        "0": "Not available"
+      },
+      "IL": {
+        "0": "Not available"
+      },
+      "NZ": {
+        "0": "Not available"
+      },
+      "RU": {
+        "0": "Not available"
+      },
+      "SE": {
+        "0": "Not available"
+      },
+      "SI": {
+        "0": "Not available"
+      },
+      "SR": {
+        "0": "Not available"
+      },
+      "TW": {
+        "0": "Not available"
+      },
+      "US": {
+        "0": "Not available"
+      },
+      "ZA": {
+        "0": "Not available"
+      },
+      "JP": {
+        "1": "I think so",
+        "2": "I rather think so",
+        "3": "Can't say one way or the other",
+        "4": "I rather don't think so",
+        "5": "I don't think so"
+      }
+    }
+  },
+  {
+    "question_id": "v62",
+    "question": "Q33 To what extent do you agree or disagree with the following statements? (PLEASE TICK ONE BOX ON EACH LINE) Q33b When another person does a favour for you, you should feel obligated to pay that person back.",
+    "answer": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {
+      "AT": {
+        "0": "Not available"
+      },
+      "DK": {
+        "0": "Not available"
+      },
+      "ES": {
+        "0": "Not available"
+      },
+      "FI": {
+        "0": "Not available"
+      },
+      "HR": {
+        "0": "Not available"
+      },
+      "IL": {
+        "0": "Not available"
+      },
+      "NZ": {
+        "0": "Not available"
+      },
+      "RU": {
+        "0": "Not available"
+      },
+      "SE": {
+        "0": "Not available"
+      },
+      "SI": {
+        "0": "Not available"
+      },
+      "SR": {
+        "0": "Not available"
+      },
+      "TW": {
+        "0": "Not available"
+      },
+      "US": {
+        "0": "Not available"
+      },
+      "ZA": {
+        "0": "Not available"
+      },
+      "JP": {
+        "1": "I think so",
+        "2": "I rather think so",
+        "3": "Can't say one way or the other",
+        "4": "I rather don't think so",
+        "5": "I don't think so"
+      }
+    }
+  },
+  {
+    "question_id": "v63",
+    "question": "Q34 When you go out to eat or drink with three or more friends or acquaintances who are not family members, how often do you experience the following situations? How often ...? (PLEASE TICK ONE BOX ON EACH LINE) Q34a … does one person dominate the conversation at these occasions?",
+    "answer": {
+      "1": "Never",
+      "2": "Rarely",
+      "3": "Sometimes",
+      "4": "Often",
+      "5": "Very often",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {
+      "CN": {
+        "0": "NAP (Code 8 in v44)"
+      },
+      "AT": {
+        "0": "Does not apply/ Not available"
+      },
+      "CZ": {
+        "0": "Does not apply/ Not available"
+      },
+      "DE": {
+        "0": "Does not apply/ Not available"
+      },
+      "DK": {
+        "0": "Does not apply/ Not available"
+      },
+      "ES": {
+        "0": "Does not apply/ Not available"
+      },
+      "FI": {
+        "0": "Does not apply/ Not available"
+      },
+      "HR": {
+        "0": "Does not apply/ Not available"
+      },
+      "IL": {
+        "0": "Does not apply/ Not available"
+      },
+      "JP": {
+        "0": "Does not apply/ Not available"
+      },
+      "NZ": {
+        "0": "Does not apply/ Not available"
+      },
+      "RU": {
+        "0": "Does not apply/ Not available"
+      },
+      "SE": {
+        "0": "Does not apply/ Not available"
+      },
+      "SI": {
+        "0": "Does not apply/ Not available"
+      },
+      "SK": {
+        "0": "Does not apply/ Not available"
+      },
+      "SR": {
+        "0": "Does not apply/ Not available"
+      },
+      "US": {
+        "0": "Does not apply/ Not available"
+      },
+      "ZA": {
+        "0": "Does not apply/ Not available"
+      }
+    }
+  },
+  {
+    "question_id": "v64",
+    "question": "Q34 When you go out to eat or drink with three or more friends or acquaintances who are not family members, how often do you experience the following situations? How often ...? (PLEASE TICK ONE BOX ON EACH LINE) Q34b … is consideration given to who sits near whom?",
+    "answer": {
+      "1": "Never",
+      "2": "Rarely",
+      "3": "Sometimes",
+      "4": "Often",
+      "5": "Very often",
+      "8": "Can't choose",
+      "9": "No answer"
+    },
+    "special": {
+      "CN": {
+        "0": "NAP (Code 8 in v44)"
+      },
+      "AT": {
+        "0": "Does not apply/ Not available"
+      },
+      "CZ": {
+        "0": "Does not apply/ Not available"
+      },
+      "DE": {
+        "0": "Does not apply/ Not available"
+      },
+      "DK": {
+        "0": "Does not apply/ Not available"
+      },
+      "ES": {
+        "0": "Does not apply/ Not available"
+      },
+      "FI": {
+        "0": "Does not apply/ Not available"
+      },
+      "HR": {
+        "0": "Does not apply/ Not available"
+      },
+      "IL": {
+        "0": "Does not apply/ Not available"
+      },
+      "JP": {
+        "0": "Does not apply/ Not available"
+      },
+      "NZ": {
+        "0": "Does not apply/ Not available"
+      },
+      "RU": {
+        "0": "Does not apply/ Not available"
+      },
+      "SE": {
+        "0": "Does not apply/ Not available"
+      },
+      "SI": {
+        "0": "Does not apply/ Not available"
+      },
+      "SK": {
+        "0": "Does not apply/ Not available"
+      },
+      "SR": {
+        "0": "Does not apply/ Not available"
+      },
+      "US": {
+        "0": "Does not apply/ Not available"
+      },
+      "ZA": {
+        "0": "Does not apply/ Not available"
+      }
+    }
+  },
+  {
+    "question_id": "v65",
+    "question": "Q35 Please think about the person from your home town or region of origin, other than your family members, you have contact with most frequently. How often do you have contact with that person, either face-to-face, by phone, internet or any other communication device? (PLEASE TICK ONE BOX ONLY)",
+    "answer": {
+      "1": "Daily",
+      "2": "Several times a week",
+      "3": "Once a week",
+      "4": "Two or three times a month",
+      "5": "Once a month",
+      "6": "Several times a year",
+      "7": "Less often",
+      "8": "Never",
+      "98": "Don't know",
+      "99": "No answer"
+    },
+    "special": {
+      "HU": {
+        "0": "Does not apply"
+      },
+      "LT": {
+        "0": "Does not apply"
+      },
+      "AT": {
+        "0": "Not available"
+      },
+      "CZ": {
+        "0": "Not available"
+      },
+      "DE": {
+        "0": "Not available"
+      },
+      "DK": {
+        "0": "Not available"
+      },
+      "ES": {
+        "0": "Not available"
+      },
+      "FI": {
+        "0": "Not available"
+      },
+      "FR": {
+        "0": "Not available"
+      },
+      "HR": {
+        "0": "Not available"
+      },
+      "IL": {
+        "0": "Not available"
+      },
+      "IS": {
+        "0": "Not available"
+      },
+      "JP": {
+        "0": "Not available"
+      },
+      "NZ": {
+        "0": "Not available"
+      },
+      "RU": {
+        "0": "Not available"
+      },
+      "SE": {
+        "0": "Not available"
+      },
+      "SI": {
+        "0": "Not available"
+      },
+      "SK": {
+        "0": "Not available"
+      },
+      "SR": {
+        "0": "Not available"
+      },
+      "TW": {
+        "0": "Not available"
+      },
+      "US": {
+        "0": "Not available"
+      },
+      "ZA": {
+        "0": "Not available"
+      }
+    }
+  },
+  {
+    "question_id": "v66",
+    "question": "Q36 Now think about the person from your religious community, other than your family members, you have contact with most frequently. How often do you have contact with that person, either face-to-face, by phone, internet or any other communication device? (PLEASE TICK ONE BOX ONLY)",
+    "answer": {
+      "1": "Daily",
+      "2": "Several times a week",
+      "3": "Once a week",
+      "4": "Two or three times a month",
+      "5": "Once a month",
+      "6": "Several times a year",
+      "7": "Less often",
+      "8": "Never",
+      "95": "I do not belong to any religious community",
+      "99": "No answer"
+    },
+    "special": {
+      "GB-GBN": {
+        "99": "Can't choose, No answer"
+      },
+      "AT": {
+        "0": "Not available"
+      },
+      "CZ": {
+        "0": "Not available"
+      },
+      "DE": {
+        "0": "Not available"
+      },
+      "DK": {
+        "0": "Not available"
+      },
+      "ES": {
+        "0": "Not available"
+      },
+      "FI": {
+        "0": "Not available"
+      },
+      "FR": {
+        "0": "Not available"
+      },
+      "HR": {
+        "0": "Not available"
+      },
+      "IL": {
+        "0": "Not available"
+      },
+      "IS": {
+        "0": "Not available"
+      },
+      "JP": {
+        "0": "Not available"
+      },
+      "NZ": {
+        "0": "Not available"
+      },
+      "RU": {
+        "0": "Not available"
+      },
+      "SE": {
+        "0": "Not available"
+      },
+      "SI": {
+        "0": "Not available"
+      },
+      "SK": {
+        "0": "Not available"
+      },
+      "SR": {
+        "0": "Not available"
+      },
+      "TW": {
+        "0": "Not available"
+      },
+      "US": {
+        "0": "Not available"
+      },
+      "ZA": {
+        "0": "Not available"
+      }
+    }
+  },
+  {
+    "question_id": "v67",
+    "question": "Derived from: 'WHAT IS THE HIGHEST LEVEL OF EDUCATION THAT YOUR SPOUSE OR PARTNER ATTAINED'",
+    "answer": {
+      "0": "No formal education",
+      "1": "Primary school (elementary education)",
+      "2": "Lower secondary (secondary completed that does not allow entry to university: end of obligatory school)",
+      "3": "Upper secondary (programs that allows entry to university)",
+      "4": "Post secondary, non-tertiary (other upper secondary programs toward the labour market or technical formation)",
+      "5": "Lower level tertiary, first stage (also technical schools at a tertiary level)",
+      "6": "Upper level tertiary (Master, Doctor)",
+      "8": "Can't choose",
+      "9": "No answer",
+      "99": "NAP (Code 3, 7 in PARTLIV), Not available (AT, DK, ES, FI, GB, HR, IS, JP, NZ, RU, SE, SK, SR, US, ZA)"
+    },
+    "special": {
+      "LT": {
+        "9": "Does not know or no answer"
+      }
+    }
+  }
+]
