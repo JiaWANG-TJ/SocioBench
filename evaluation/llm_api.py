@@ -114,19 +114,23 @@ class LLMAPIClient:
                     # dtype="float16",                            # 
                     # kv_cache_dtype="fp8",                       # 
                     # ── 显存与序列长度 ─────────────────────────
-                    gpu_memory_utilization=0.98,                # 
+                    gpu_memory_utilization=0.8,                # 
                     max_model_len=20480,                        #
                     # ── 预填充与前缀缓存 ────────────────────────
                     enable_chunked_prefill=True,                #
                     enable_prefix_caching=True,                 #
                     # ── 批次与吞吐控制 ─────────────────────────
-                    max_num_seqs=1024,                          #
-                    max_num_batched_tokens=20480,                #
+                    max_num_seqs=10240,                           # 增加最大并行序列数
+                    max_num_batched_tokens=102400,               # 大幅增加批处理token数
+                    # num_scheduler_steps=4,  
+                    
+                    # max_num_seqs=768,                          #
+                    # max_num_batched_tokens=20480,                #
                     # num_scheduler_steps=8,
                     # block_size=32,
                     # ── 执行模式控制 ────────────────────────────
-                    enforce_eager=True,                         # 关闭 --enforce-eager(设置为 false),显存占用会增大，但推理速度会更快
-                    disable_custom_all_reduce=False,             # 禁用自定义all-reduce以避免分布式通信问题，没用？
+                    enforce_eager=False,                         # 关闭 --enforce-eager(设置为 false),显存占用会增大，但推理速度会更快
+                    # disable_custom_all_reduce=False,             # 禁用自定义all-reduce以避免分布式通信问题，没用？
                     use_v2_block_manager=True,                  #
                     disable_async_output_proc=False,
                     

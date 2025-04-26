@@ -403,7 +403,8 @@ async def process_question_async(question_id, true_answer, question_data, countr
 def run_evaluation(domain_id: int, interview_count: Union[int, str], 
                    api_type: str = "config", use_async: bool = False,
                    concurrent_requests: int = 5, concurrent_interviewees: int = 1,
-                   model_name: str = "Qwen2.5-32B-Instruct", print_prompt: bool = False) -> Dict[str, Any]:
+                   model_name: str = "Qwen2.5-32B-Instruct", print_prompt: bool = False,
+                   reuse_llm_client = None, shuffle_options: bool = False) -> Dict[str, Any]:
     """运行评测"""
     # 导入需要的模块
     import gc
@@ -433,6 +434,7 @@ def run_evaluation(domain_id: int, interview_count: Union[int, str],
         print(f"异步模式已启用 | 并发请求数: {concurrent_requests}")
     if concurrent_interviewees > 1:
         print(f"多受访者并行模式已启用 | 并行受访者数: {concurrent_interviewees}")
+    print(f"选项打乱: {'已启用' if shuffle_options else '已禁用'}")
     print(f"结果将保存到: {results_dir}")
     print(f"{'='*60}")
     
@@ -463,31 +465,41 @@ def run_evaluation(domain_id: int, interview_count: Union[int, str],
     prompt_engine = None
     evaluator = None
     
+    # 标记是否使用了复用的客户端
+    using_reused_client = reuse_llm_client is not None
+    
     try:
-        # 在初始化模型前清理资源
-        try:
-            gc.collect()
-            
-            if torch.cuda.is_available():
-                torch.cuda.empty_cache()
-                print("已清空CUDA缓存，准备初始化模型")
+        # 如果未提供复用的客户端，才进行资源清理和重新初始化
+        if not using_reused_client:
+            # 在初始化模型前清理资源
+            try:
+                gc.collect()
                 
-            # 确保没有活跃的分布式进程组
-            import torch.distributed as dist
-            if dist.is_initialized():
-                print("发现已初始化的分布式环境，尝试销毁...")
-                dist.destroy_process_group()
-        except Exception as e:
-            print(f"预清理资源时出错: {str(e)}")
+                if torch.cuda.is_available():
+                    torch.cuda.empty_cache()
+                    print("已清空CUDA缓存，准备初始化模型")
+                    
+                # 确保没有活跃的分布式进程组
+                import torch.distributed as dist
+                if dist.is_initialized():
+                    print("发现已初始化的分布式环境，尝试销毁...")
+                    dist.destroy_process_group()
+            except Exception as e:
+                print(f"预清理资源时出错: {str(e)}")
         
         # 初始化工具类
-        if api_type == "config":
+        if using_reused_client:
+            # 使用传入的客户端
+            llm_client = reuse_llm_client
+            print("使用已初始化的LLM客户端")
+        elif api_type == "config":
             # 使用配置文件中的MODEL_CONFIG，不传入model参数
             llm_client = LLMAPIClient(api_type=api_type)
         else:
             # 对于vllm模式，继续使用传入的model_name参数
             llm_client = LLMAPIClient(api_type=api_type, model=model_name)
-        prompt_engine = PromptEngineering()
+        
+        prompt_engine = PromptEngineering(shuffle_options=shuffle_options)
         evaluator = Evaluator(domain_name=domain_name, save_dir=results_dir)
         
         # 确定要测试的受访者数量
@@ -621,7 +633,7 @@ def run_evaluation(domain_id: int, interview_count: Union[int, str],
                     # 添加到任务列表
                     tasks.append(process_question_async(
                         question_id, true_answer, qa_item, country_code, 
-                        attributes, prompt_engine, llm_client, evaluator,
+                        prompt_engine, llm_client, evaluator,
                         is_country_specific=is_country_q, verbose=verbose_output
                     ))
                     
@@ -859,63 +871,71 @@ def run_evaluation(domain_id: int, interview_count: Union[int, str],
     except Exception as e:
         print(f"评测过程中发生错误: {str(e)}")
     finally:
-        # 确保资源被释放
-        print("\n开始清理资源...")
-        
-        # 关闭LLM客户端，释放资源
-        if llm_client and hasattr(llm_client, 'close'):
+        # 只在没有使用复用客户端时清理资源
+        if not using_reused_client:
+            # 确保资源被释放
+            print("\n开始清理资源...")
+            
+            # 关闭LLM客户端，释放资源
+            if llm_client and hasattr(llm_client, 'close'):
+                try:
+                    llm_client.close()
+                    print("已关闭LLM客户端")
+                except Exception as e:
+                    print(f"关闭LLM客户端时出错: {str(e)}")
+            
+            # 释放其他资源
             try:
-                llm_client.close()
-                print("已关闭LLM客户端")
+                evaluator = None
+                prompt_engine = None
+                
+                # 手动触发垃圾回收
+                gc.collect()
+                
+                # 清理CUDA缓存
+                try:
+                    if torch.cuda.is_available():
+                        torch.cuda.empty_cache()
+                        print("已清空CUDA缓存")
+                except Exception as e:
+                    print(f"清空CUDA缓存时出错: {str(e)}")
+                
+                # 清理分布式环境
+                try:
+                    import torch.distributed as dist
+                    if dist.is_initialized():
+                        dist.destroy_process_group()
+                        print("已销毁分布式进程组")
+                except Exception as e:
+                    print(f"清理分布式环境时出错: {str(e)}")
+                    
+                # 清理事件循环
+                try:
+                    try:
+                        loop = asyncio.get_event_loop()
+                        if not loop.is_closed():
+                            # 取消所有挂起的任务
+                            for task in asyncio.all_tasks(loop):
+                                task.cancel()
+                            # 关闭循环
+                            loop.close()
+                    except Exception:
+                        pass
+                    # 创建新的循环
+                    asyncio.set_event_loop(asyncio.new_event_loop())
+                    print("已重置事件循环")
+                except Exception as e:
+                    print(f"重置事件循环时出错: {str(e)}")
+                
+                print("资源清理完成")
             except Exception as e:
-                print(f"关闭LLM客户端时出错: {str(e)}")
-        
-        # 释放其他资源
-        try:
+                print(f"资源清理过程中出错: {str(e)}")
+        else:
+            # 对于复用客户端，只释放不必要的资源
+            print("\n保留LLM客户端，只释放其他资源...")
             evaluator = None
             prompt_engine = None
-            
-            # 手动触发垃圾回收
             gc.collect()
-            
-            # 清理CUDA缓存
-            try:
-                if torch.cuda.is_available():
-                    torch.cuda.empty_cache()
-                    print("已清空CUDA缓存")
-            except Exception as e:
-                print(f"清空CUDA缓存时出错: {str(e)}")
-            
-            # 清理分布式环境
-            try:
-                import torch.distributed as dist
-                if dist.is_initialized():
-                    dist.destroy_process_group()
-                    print("已销毁分布式进程组")
-            except Exception as e:
-                print(f"清理分布式环境时出错: {str(e)}")
-                
-            # 清理事件循环
-            try:
-                try:
-                    loop = asyncio.get_event_loop()
-                    if not loop.is_closed():
-                        # 取消所有挂起的任务
-                        for task in asyncio.all_tasks(loop):
-                            task.cancel()
-                        # 关闭循环
-                        loop.close()
-                except Exception:
-                    pass
-                # 创建新的循环
-                asyncio.set_event_loop(asyncio.new_event_loop())
-                print("已重置事件循环")
-            except Exception as e:
-                print(f"重置事件循环时出错: {str(e)}")
-            
-            print("资源清理完成")
-        except Exception as e:
-            print(f"资源清理过程中出错: {str(e)}")
     
     print("\n评测完成!")
     
@@ -945,7 +965,8 @@ def run_evaluation(domain_id: int, interview_count: Union[int, str],
 
 # 将嵌套函数移到模块级别作为全局函数
 def _run_evaluation_in_process(domain_id, interview_count, api_type, use_async, 
-                           concurrent_requests, concurrent_interviewees, model_name):
+                           concurrent_requests, concurrent_interviewees, model_name,
+                           shuffle_options=False):
     """在子进程中运行评测，防止内存泄漏"""
     # 设置环境变量，标记这是一个新的子进程
     os.environ["VLLM_NEW_PROCESS"] = "1"
@@ -959,7 +980,8 @@ def _run_evaluation_in_process(domain_id, interview_count, api_type, use_async,
             use_async=use_async,
             concurrent_requests=concurrent_requests,
             concurrent_interviewees=concurrent_interviewees,
-            model_name=model_name
+            model_name=model_name,
+            shuffle_options=shuffle_options
         )
     except Exception as e:
         print(f"子进程中运行评测时出错: {str(e)}")
@@ -969,12 +991,12 @@ def _run_evaluation_in_process(domain_id, interview_count, api_type, use_async,
 def run_all_domains(api_type: str = "config", interview_count: Union[int, str] = 1,
                    use_async: bool = False, concurrent_requests: int = 5,
                    concurrent_interviewees: int = 1, start_domain_id: int = 1,
-                   model_name: str = "Qwen2.5-32B-Instruct", print_prompt: bool = False) -> None:
+                   model_name: str = "Qwen2.5-32B-Instruct", print_prompt: bool = False,
+                   shuffle_options: bool = False) -> None:
     """运行所有领域的评测"""
     # 导入需要的模块
     import gc
     import torch
-    import subprocess
     import traceback
     import sys
     import time
@@ -998,6 +1020,7 @@ def run_all_domains(api_type: str = "config", interview_count: Union[int, str] =
         print(f"异步模式已启用 | 并发请求数: {concurrent_requests}")
     if concurrent_interviewees > 1:
         print(f"多受访者并行模式已启用 | 并行受访者数: {concurrent_interviewees}")
+    print(f"选项打乱: {'已启用' if shuffle_options else '已禁用'}")
     print(f"结果将保存到: {results_dir}")
     print(f"{'='*60}")
     
@@ -1010,8 +1033,17 @@ def run_all_domains(api_type: str = "config", interview_count: Union[int, str] =
     all_domain_results = {}
     all_country_metrics = {}
     
-    # 获取当前脚本的绝对路径
-    script_path = os.path.abspath(__file__)
+    # 初始化vLLM客户端 - 所有领域共用一个客户端
+    llm_client = None
+    if api_type == "vllm":
+        try:
+            print(f"初始化vLLM客户端，模型: {model_name}")
+            from social_benchmark.evaluation.llm_api import LLMAPIClient
+            llm_client = LLMAPIClient(api_type=api_type, model=model_name)
+        except Exception as e:
+            print(f"初始化vLLM客户端时出错: {str(e)}")
+            traceback.print_exc()
+            return
     
     # 加载并评测每个领域
     for domain_id in sorted(domain_ids):
@@ -1028,94 +1060,21 @@ def run_all_domains(api_type: str = "config", interview_count: Union[int, str] =
             # 运行当前领域的评测
             print(f"\n正在评测领域 {domain_name} (ID: {domain_id})...")
             
-            # 使用子进程方式运行单独的Python进程进行评测，完全隔离每个评测任务
-            # 构建命令
-            cmd = [
-                sys.executable,  # 当前Python解释器
-                script_path,     # 当前脚本路径
-                "--domain_id", str(domain_id),
-                "--interview_count", str(interview_count) if isinstance(interview_count, int) else interview_count,
-                "--api_type", api_type
-            ]
-            
-            # 添加可选参数
-            if use_async:
-                cmd.append("--use_async")
-            
-            cmd.extend(["--concurrent_requests", str(concurrent_requests)])
-            cmd.extend(["--concurrent_interviewees", str(concurrent_interviewees)])
-            cmd.extend(["--model", model_name])
-            
-            # 添加print_prompt参数
-            if print_prompt:
-                cmd.append("--print_prompt")
-            
-            # 设置环境变量
-            env = os.environ.copy()
-            env["VLLM_NEW_PROCESS"] = "1"
-            env["MASTER_PORT"] = str(12355 + domain_id)  # 为每个领域使用不同的端口
-            
-            # 运行子进程
-            print(f"运行命令: {' '.join(cmd)}")
-            process = subprocess.Popen(
-                cmd,
-                stdout=subprocess.PIPE,
-                stderr=subprocess.STDOUT,
-                text=True,
-                env=env,
-                start_new_session=True  # 在新会话中启动，确保完全隔离
+            # 直接在当前进程中运行评测
+            domain_result = run_evaluation(
+                domain_id=domain_id,
+                interview_count=interview_count,
+                api_type=api_type,
+                use_async=use_async,
+                concurrent_requests=concurrent_requests,
+                concurrent_interviewees=concurrent_interviewees,
+                model_name=model_name,
+                print_prompt=print_prompt,
+                reuse_llm_client=llm_client,  # 传递已初始化的客户端
+                shuffle_options=shuffle_options
             )
             
-            # 实时打印输出
-            domain_result = None
-            for line in process.stdout:
-                print(line, end='')
-                # 尝试从输出中提取评测结果
-                if line.startswith("评测结果已保存到:"):
-                    # 尝试从评测结果文件中加载数据
-                    try:
-                        result_file = line.strip().split("评测结果已保存到:")[1].strip()
-                        if os.path.exists(result_file):
-                            with open(result_file, 'r', encoding='utf-8') as f:
-                                result_data = json.load(f)
-                                # 创建一个简化的结果对象
-                                domain_result = {
-                                    "domain_id": domain_id,
-                                    "domain_name": domain_name,
-                                    "correct_count": result_data.get("correct_count", 0),
-                                    "total_count": result_data.get("total_count", 0),
-                                    "accuracy": result_data.get("accuracy", 0.0),
-                                    "macro_f1": result_data.get("macro_f1", 0.0),
-                                    "micro_f1": result_data.get("micro_f1", 0.0),
-                                    "country_metrics": result_data.get("country_metrics", {})
-                                }
-                    except Exception as e:
-                        print(f"从文件加载评测结果时出错: {str(e)}")
-            
-            # 等待进程完成
-            return_code = process.wait()
-            if return_code != 0:
-                print(f"警告: 评测进程返回非零状态码: {return_code}")
-            
-            process.stdout.close()
-            process = None
-            
-            # 确保资源被释放
-            print("强制清理资源...")
-            gc.collect()
-            try:
-                import torch
-                if torch.cuda.is_available():
-                    torch.cuda.empty_cache()
-                    print("已清空CUDA缓存")
-            except Exception as e:
-                print(f"清理CUDA资源时出错: {str(e)}")
-            
-            # 等待一段时间让系统完全释放资源
-            print("等待5秒以确保资源完全释放...")
-            time.sleep(5)
-            
-            # 如果成功提取了结果，保存到结果汇总
+            # 如果成功获取结果，保存到结果汇总
             if domain_result:
                 all_domain_results[domain_id] = domain_result
                 
@@ -1144,12 +1103,20 @@ def run_all_domains(api_type: str = "config", interview_count: Union[int, str] =
                         "micro_f1": metrics["micro_f1"]
                     }
             else:
-                print(f"警告: 无法从评测中提取结果数据")
+                print(f"警告: 无法从评测中获取结果数据")
                 
         except Exception as e:
             print(f"评测领域 {domain_name} 时出错: {str(e)}")
             traceback.print_exc()
             continue
+    
+    # 最终关闭vLLM客户端
+    if llm_client and hasattr(llm_client, 'close'):
+        try:
+            llm_client.close()
+            print("已关闭vLLM客户端")
+        except Exception as e:
+            print(f"关闭vLLM客户端时出错: {str(e)}")
     
     # 计算并保存总体评测指标
     if all_domain_results:
@@ -1368,6 +1335,7 @@ def parse_args():
     
     parser.add_argument('--no_log', action='store_true', default=False, help='禁用日志记录到文件')
     parser.add_argument('--print_prompt', action='store_true', default=False, help='打印完整的prompt、问答和LLM回答到json文件中')
+    parser.add_argument('--shuffle_options', action='store_true', default=False, help='是否随机打乱问题选项的顺序')
     
     return parser.parse_args()
 
@@ -1408,10 +1376,10 @@ python /inspire/hdd/ws-f4d69b29-e0a5-44e6-bd92-acf4de9990f0/public-project/wangj
   --interview_count all \
   --api_type vllm \
   --use_async \
-  --concurrent_requests 150000 \
+  --concurrent_requests 100000 \
   --concurrent_interviewees 100 \
-  --start_domain_id 6 \
-  --model Qwen2.5-7B-Instruct
+  --start_domain_id 1 \
+  --model gemma-3-12b-it
 """
 """
 sudo lsof /dev/nvidia* | awk 'NR>1 {print $2}' | sort -u | xargs sudo kill -9
@@ -1487,7 +1455,8 @@ if __name__ == "__main__":
                 concurrent_interviewees=args.concurrent_interviewees,
                 start_domain_id=args.start_domain_id,
                 model_name=args.model,
-                print_prompt=args.print_prompt
+                print_prompt=args.print_prompt,
+                shuffle_options=args.shuffle_options
             )
         else:
             try:
@@ -1506,7 +1475,8 @@ if __name__ == "__main__":
                     concurrent_requests=args.concurrent_requests,
                     concurrent_interviewees=args.concurrent_interviewees,
                     model_name=args.model,
-                    print_prompt=args.print_prompt
+                    print_prompt=args.print_prompt,
+                    shuffle_options=args.shuffle_options
                 )
             except ValueError:
                 print(f"错误：domain_id必须是整数(1-11)或'all'")
