@@ -8,8 +8,13 @@ from typing import Dict, List, Any, Union, Optional
 class PromptEngineering:
     """提示工程类，用于生成让LLM扮演受访者的提示"""
     
-    def __init__(self):
-        """初始化提示工程类"""
+    def __init__(self, shuffle_options=False):
+        """
+        初始化提示工程类
+        
+        Args:
+            shuffle_options: 是否随机打乱问题选项，默认为False
+        """
         # 基础提示模板
         self.prompt_template = """
 ### Instruction: You are undergoing the ISSP (International Social Survey Programme). You are a real person with the following personal information. Please fully immerse yourself in this role and answer the questions faithfully based on the full range of personal attributes provided.
@@ -24,6 +29,7 @@ class PromptEngineering:
 }}
 ```
 """
+        self.shuffle_options = shuffle_options
     
     def format_personal_info(self, attributes: Dict[str, Any]) -> str:
         """
@@ -43,7 +49,7 @@ class PromptEngineering:
     
     def format_question_options(self, question: str, options: Dict[str, str]) -> tuple:
         """
-        格式化问题和选项，并随机打乱选项顺序
+        格式化问题和选项，根据设置决定是否随机打乱选项顺序
         
         Args:
             question: 问题文本
@@ -55,11 +61,14 @@ class PromptEngineering:
         # 格式化问题
         formatted_question = question.strip()
         
-        # 将选项编号和选项文本组成元组列表，然后随机打乱
+        # 将选项编号和选项文本组成元组列表
         option_items = list(options.items())
-        random.shuffle(option_items)
         
-        # 格式化打乱后的选项
+        # 如果需要打乱选项，则随机打乱
+        if self.shuffle_options:
+            random.shuffle(option_items)
+        
+        # 格式化选项
         option_lines = []
         for option_id, option_text in option_items:
             option_lines.append(f"{option_id}. {option_text}")
