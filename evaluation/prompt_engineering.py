@@ -8,12 +8,12 @@ from typing import Dict, List, Any, Union, Optional
 class PromptEngineering:
     """提示工程类，用于生成让LLM扮演受访者的提示"""
     
-    def __init__(self, shuffle_options=False):
+    def __init__(self, shuffle_options: bool = False):
         """
         初始化提示工程类
         
         Args:
-            shuffle_options: 是否随机打乱问题选项，默认为False
+            shuffle_options: 是否随机打乱选项顺序，默认为False
         """
         # 基础提示模板
         self.prompt_template = """
@@ -29,6 +29,7 @@ class PromptEngineering:
 }}
 ```
 """
+        # 是否随机打乱选项顺序
         self.shuffle_options = shuffle_options
     
     def format_personal_info(self, attributes: Dict[str, Any]) -> str:
@@ -49,7 +50,7 @@ class PromptEngineering:
     
     def format_question_options(self, question: str, options: Dict[str, str]) -> tuple:
         """
-        格式化问题和选项，根据设置决定是否随机打乱选项顺序
+        格式化问题和选项，根据配置决定是否随机打乱选项顺序
         
         Args:
             question: 问题文本
@@ -64,7 +65,7 @@ class PromptEngineering:
         # 将选项编号和选项文本组成元组列表
         option_items = list(options.items())
         
-        # 如果需要打乱选项，则随机打乱
+        # 根据配置决定是否随机打乱选项顺序
         if self.shuffle_options:
             random.shuffle(option_items)
         
