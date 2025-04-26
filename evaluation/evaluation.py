@@ -498,20 +498,19 @@ class Evaluator:
             
             # 尝试查找问题选项
             try:
-                question_data = qa_map.get(question_id.lower())
+                question_data = qa_map.get(str(question_id).lower())
                 if question_data:
                     # 获取选项 - 使用国家特定选项
                     options = get_special_options(question_data, detail["country_code"])
                     
                     # 获取真实答案文本
-                    if true_answer in options:
-                        true_answer_text = options[true_answer]
+                    if str(true_answer) in options:
+                        true_answer_text = options[str(true_answer)]
                     
                     # 获取LLM答案文本
-                    if llm_answer in options:
-                        llm_answer_text = options[llm_answer]
+                    if str(llm_answer) in options:
+                        llm_answer_text = options[str(llm_answer)]
             except Exception as e:
-                # 出现异常时，保留空字符串作为选项内容
                 print(f"获取问题 {question_id} 的选项内容时出错: {str(e)}")
             
             details_data.append({
@@ -524,7 +523,6 @@ class Evaluator:
                 "LLM答案选项内容": llm_answer_text,
                 "是否正确": detail["correct"],
                 "是否国家特定问题": detail["is_country_specific"]
-                # 删除了"LLM完整回答"列
             })
         
         # 保存为CSV

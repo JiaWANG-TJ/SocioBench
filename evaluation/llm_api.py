@@ -120,7 +120,7 @@ class LLMAPIClient:
                     enable_chunked_prefill=True,                #
                     enable_prefix_caching=True,                 #
                     # ── 批次与吞吐控制 ─────────────────────────
-                    max_num_seqs=10240,                           # 增加最大并行序列数
+                    max_num_seqs=8192,                           # 增加最大并行序列数
                     max_num_batched_tokens=102400,               # 大幅增加批处理token数
                     # num_scheduler_steps=4,  
                     
