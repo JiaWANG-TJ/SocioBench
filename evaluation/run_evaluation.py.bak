@@ -252,18 +252,6 @@ COUNTRY_MAPPING = {
     }
 }
 
-# 添加辅助函数来检查数据是否是有效的字典
-def is_valid_dict(data: Any) -> bool:
-    """检查数据是否是有效的字典
-    
-    Args:
-        data: 待检查的数据
-        
-    Returns:
-        如果数据是非空字典，返回True；否则返回False
-    """
-    return isinstance(data, dict) and bool(data)
-
 def get_domain_name(domain_id: int) -> Optional[str]:
     """根据领域ID获取领域名称"""
     reverse_mapping = {v: k for k, v in DOMAIN_MAPPING.items()}
@@ -453,25 +441,19 @@ def is_invalid_answer(answer: Any) -> bool:
     if answer is None:
         return True
     
-    # 处理数值类型
-    if isinstance(answer, (float, int)):
-        # 检查是否为NaN值或无限值
-        try:
-            if isinstance(answer, float) and (answer != answer or answer == float("inf") or answer == float("-inf")):
-                return True
-        except Exception:
-            pass
-        # 将数值类型转换为字符串继续判断
-        try:
-            answer_str = str(answer)
-        except Exception:
+    # 检查数值类型
+    if isinstance(answer, (int, float)):
+        # 检查NaN或无穷大
+        if isinstance(answer, float) and (answer != answer or answer == float("inf") or answer == float("-inf")):
             return True
-    else:
-        # 非数值类型，直接转为字符串
-        try:
-            answer_str = str(answer).lower()
-        except Exception:
-            return True
+        # 数值类型直接返回False，视为有效答案
+        return False
+    
+    # 尝试转换为字符串
+    try:
+        answer_str = str(answer).lower()
+    except Exception:
+        return True
     
     # 如果答案为空，视为无效
     if not answer_str:
@@ -483,133 +465,110 @@ def is_invalid_answer(answer: Any) -> bool:
         "not applicable", "nap", "nav", "refused"
     ]
     
-    return any(invalid_str in answer_str.lower() for invalid_str in invalid_strings)
+    return any(invalid_str in answer_str for invalid_str in invalid_strings)
 
 async def process_question_async(question_id, true_answer, question_data, country_code, 
                                attributes, prompt_engine, llm_client, evaluator, 
                                is_country_specific=False, verbose=False, person_id=None, option_contents=None):
     """异步处理单个问题"""
-    try:
-        # 获取问题和选项
-        question = question_data.get("question", "")
-        options = get_special_options(question_data, country_code)
-        
-        # 获取国家全称
-        domain_id = DOMAIN_MAPPING.get(evaluator.domain_name)
-        country_name = ""
-        if domain_id in COUNTRY_MAPPING and country_code:
-            for code, name in COUNTRY_MAPPING[domain_id]["mapping"].items():
-                if code == country_code:
-                    country_name = name
-                    break
-        
-        # 如果没有问题或选项，返回None
-        if not question or not options:
-            if verbose:
-                print(f"跳过：问题或选项为空 {question_id}")
-            return None
-        
-        # 清理问题文本
-        question = question.replace("\n", " ").strip()
-        
-        # 生成提示
-        prompt = prompt_engine.generate_prompt(attributes, question, options)
-        
-        # 打印提示信息（不包含真实答案）
+    # 获取问题和选项
+    question = question_data.get("question", "")
+    options = get_special_options(question_data, country_code)
+    
+    # 获取国家全称
+    domain_id = DOMAIN_MAPPING.get(evaluator.domain_name)
+    country_name = ""
+    if domain_id in COUNTRY_MAPPING and country_code:
+        for code, name in COUNTRY_MAPPING[domain_id]["mapping"].items():
+            if code == country_code:
+                country_name = name
+                break
+    
+    # 如果没有问题或选项，返回None
+    if not question or not options:
         if verbose:
-            print(f"\n问题 {question_id}:" + (" (国家特定问题)" if is_country_specific else ""))
-        
-        # 异步调用LLM API
-        try:
-            response = await llm_client.async_generate(prompt)
-        except Exception as e:
-            if verbose:
-                print(f"  LLM API调用出错: {str(e)}")
-            # 设置一个默认响应，以便继续处理
-            response = ""
-        
-        # 提取LLM回答的选项ID
-        try:
-            llm_answer = evaluator.extract_answer(response)
-        except Exception as e:
-            if verbose:
-                print(f"  提取答案出错: {str(e)}")
-            llm_answer = ""
-        
-        # 获取选项含义
-        true_answer_meaning = ""
-        llm_answer_meaning = ""
-        
-        # 从options中获取含义
-        if str(true_answer) in options:
-            true_answer_meaning = options[str(true_answer)]
-        if str(llm_answer) in options:
-            llm_answer_meaning = options[str(llm_answer)]
-        
-        # 如果提供了option_contents，优先使用它
-        if option_contents and isinstance(option_contents, dict) and question_id in option_contents:
-            question_options = option_contents.get(question_id, {})
-            # 确保question_options是字典类型
-            if isinstance(question_options, dict):
-                # 安全地检查选项含义
-                if str(true_answer) in question_options:
-                    true_answer_meaning = question_options[str(true_answer)]
-                if str(llm_answer) in question_options:
-                    llm_answer_meaning = question_options[str(llm_answer)]
-        
-        # 评估回答
-        try:
-            is_correct = evaluator.evaluate_answer(
-                question_id, true_answer, response, 
-                is_country_specific=is_country_specific,
-                country_code=country_code,
-                country_name=country_name,
-                true_answer_meaning=true_answer_meaning,
-                llm_answer_meaning=llm_answer_meaning,
-                person_id=person_id
-            )
-        except Exception as e:
-            if verbose:
-                print(f"  评估答案出错: {str(e)}")
-            is_correct = False
-        
-        # 打印结果
-        if verbose:
-            print(f"  真实答案: {true_answer} ({true_answer_meaning})")
-            print(f"  LLM答案: {llm_answer} ({llm_answer_meaning})")
-            print(f"  是否正确: {is_correct}")
-        
-        # 创建结果字典，调整字段顺序
-        result = {}
-        
-        # 首先放入person_id（如果存在）
-        if person_id:
-            result["person_id"] = person_id
-            
-        # 然后添加其他字段
-        result.update({
-            "question_id": question_id,
-            "prompt": prompt,
-            "true_answer": true_answer,
-            "true_answer_meaning": true_answer_meaning,
-            "llm_answer": llm_answer,
-            "llm_answer_meaning": llm_answer_meaning,
-            "result_correctness": is_correct,  # 使用result_correctness代替correct
-            "is_country_specific": is_country_specific,
-            "country_code": country_code,
-            "country_name": country_name,
-            "question": question,
-            "options": options,
-            "qa": question_data  # 添加qa信息
-        })
-        
-        return result
-    except Exception as e:
-        if verbose:
-            print(f"处理问题 {question_id} 时出错: {str(e)}")
-            import traceback
-            traceback.print_exc()
+            print(f"跳过：问题或选项为空 {question_id}")
         return None
+    
+    # 清理问题文本
+    question = question.replace("\n", " ").strip()
+    
+    # 生成提示
+    prompt = prompt_engine.generate_prompt(attributes, question, options)
+    
+    # 打印提示信息（不包含真实答案）
+    if verbose:
+        print(f"\n问题 {question_id}:" + (" (国家特定问题)" if is_country_specific else ""))
+    
+    # 异步调用LLM API
+    response = await llm_client.async_generate(prompt)
+    
+    # 提取LLM回答的选项ID
+    llm_answer = evaluator.extract_answer(response)
+    
+    # 获取选项含义
+    true_answer_meaning = ""
+    llm_answer_meaning = ""
+    
+    # 从options中获取含义
+    if str(true_answer) in options:
+        true_answer_meaning = options[str(true_answer)]
+    if str(llm_answer) in options:
+        llm_answer_meaning = options[str(llm_answer)]
+    
+    # 如果提供了option_contents，优先使用它
+    if option_contents and isinstance(option_contents, dict) and question_id in option_contents:
+        question_options = option_contents.get(question_id, {})
+        # 确保question_options是字典类型
+        if isinstance(question_options, dict):
+            # 安全地检查选项含义
+            if str(true_answer) in question_options:
+                true_answer_meaning = question_options[str(true_answer)]
+            if str(llm_answer) in question_options:
+                llm_answer_meaning = question_options[str(llm_answer)]
+    
+    # 评估回答
+    is_correct = evaluator.evaluate_answer(
+        question_id, true_answer, response, 
+        is_country_specific=is_country_specific,
+        country_code=country_code,
+        country_name=country_name,
+        true_answer_meaning=true_answer_meaning,
+        llm_answer_meaning=llm_answer_meaning,
+        person_id=person_id
+    )
+    
+    # 打印结果
+    if verbose:
+        print(f"  真实答案: {true_answer} ({true_answer_meaning})")
+        print(f"  LLM答案: {llm_answer} ({llm_answer_meaning})")
+        print(f"  是否正确: {is_correct}")
+    
+    # 创建结果字典，调整字段顺序
+    result = {}
+    
+    # 首先放入person_id（如果存在）
+    if person_id:
+        result["person_id"] = person_id
+        
+    # 然后添加其他字段
+    result.update({
+        "question_id": question_id,
+        "prompt": prompt,
+        "true_answer": true_answer,
+        "true_answer_meaning": true_answer_meaning,
+        "llm_answer": llm_answer,
+        "llm_answer_meaning": llm_answer_meaning,
+        "result_correctness": is_correct,  # 使用result_correctness代替correct
+        "is_country_specific": is_country_specific,
+        "country_code": country_code,
+        "country_name": country_name,
+        "question": question,
+        "options": options,
+        "qa": question_data  # 添加qa信息
+    })
+    
+    return result
 
 def run_evaluation(domain_id: int, interview_count: Union[int, str], 
                    api_type: str = "config", use_async: bool = False,
@@ -738,261 +697,221 @@ def run_evaluation(domain_id: int, interview_count: Union[int, str],
             nonlocal total_country_specific_questions, evaluated_country_specific_questions
             nonlocal excluded_country_specific_questions, invalid_answer_questions
             
+            interviewee_id = interviewee.get("person_id", "") or interviewee.get("id", "")
+            attributes = interviewee.get("attributes", {})
+            questionsAnswers = interviewee.get("questions_answer", {})
+            
+            # 限制打印输出，只在并行模式中显示关键信息
+            verbose_output = concurrent_interviewees <= 1
+            
+            # 获取国家代码
             try:
-                # 获取受访者ID，确保是字符串类型
-                interviewee_id = interviewee.get("person_id", "") or interviewee.get("id", "")
-                if isinstance(interviewee_id, (float, int)):
-                    interviewee_id = str(interviewee_id)
-                
-                # 获取属性，确保是字典类型
-                attributes = interviewee.get("attributes", {})
-                if not isinstance(attributes, dict):
-                    # 如果属性不是字典类型，设为空字典并记录警告
-                    if verbose_output:
-                        print(f"警告: 受访者 {interviewee_id} 的属性不是字典类型，而是 {type(attributes)}，已设为空字典")
-                    attributes = {}
-                
-                # 获取问题回答，确保是字典类型
-                questionsAnswers = interviewee.get("questions_answer", {})
-                if not isinstance(questionsAnswers, dict):
-                    # 如果问题回答不是字典类型，设为空字典并记录警告
-                    if verbose_output:
-                        print(f"警告: 受访者 {interviewee_id} 的问题回答不是字典类型，而是 {type(questionsAnswers)}，已设为空字典")
-                    questionsAnswers = {}
-                
-                # 限制打印输出，只在并行模式中显示关键信息
-                verbose_output = concurrent_interviewees <= 1
+                country_code = ""
+                # 确保attributes是字典类型
+                if isinstance(attributes, dict) and attributes:
+                    country_code = get_country_code(attributes, domain_id)
+                else:
+                    raise ValueError("属性数据为空或格式不正确")
                     
-                # 获取国家代码
-                try:
-                    country_code = ""
-                    # 确保attributes是字典类型
-                    if isinstance(attributes, dict) and attributes:
-                        country_code = get_country_code(attributes, domain_id)
-                    else:
-                        raise ValueError("属性数据为空或格式不正确")
-                        
-                    if verbose_output:
-                        print(f"\n处理受访者 {interviewee_id} ({interviewee_idx+1}/{total_interviewees}, 国家: {country_code}):")
-                except ValueError as e:
-                    if verbose_output:
-                        print(f"\n处理受访者 {interviewee_id} ({interviewee_idx+1}/{total_interviewees}) 时出错: {str(e)}")
-                    skipped_interviewees += 1
-                    if pbar:
-                        pbar.update(1)
-                    return None
-                except Exception as e:
-                    if verbose_output:
-                        print(f"\n处理受访者 {interviewee_id} ({interviewee_idx+1}/{total_interviewees}) 时出错: {str(e)}")
-                    skipped_interviewees += 1
-                    if pbar:
-                        pbar.update(1)
-                    return None
-                        
-                # 跳过没有回答的受访者
-                if not questionsAnswers:
-                    if verbose_output:
-                        print("跳过：没有回答")
-                    skipped_interviewees += 1
-                    if pbar:
-                        pbar.update(1)
-                    return None
-                        
-                interviewee_results = {}
-                processed_interviewees += 1
+                if verbose_output:
+                    print(f"\n处理受访者 {interviewee_id} ({interviewee_idx+1}/{total_interviewees}, 国家: {country_code}):")
+            except ValueError as e:
+                if verbose_output:
+                    print(f"\n处理受访者 {interviewee_id} ({interviewee_idx+1}/{total_interviewees}) 时出错: {str(e)}")
+                skipped_interviewees += 1
+                if pbar:
+                    pbar.update(1)
+                return None
+            except Exception as e:
+                if verbose_output:
+                    print(f"\n处理受访者 {interviewee_id} ({interviewee_idx+1}/{total_interviewees}) 时出错: {str(e)}")
+                skipped_interviewees += 1
+                if pbar:
+                    pbar.update(1)
+                return None
                 
-                # 记录统计信息
-                total_questions = len(questionsAnswers)
-                evaluated_questions = 0
-                excluded_questions = 0
-                country_specific_questions = 0
-                country_specific_evaluated = 0
-                country_specific_excluded = 0
-                invalid_answer_questions = 0
-                correct_answers = 0
+            # 跳过没有回答的受访者
+            if not questionsAnswers:
+                if verbose_output:
+                    print("跳过：没有回答")
+                skipped_interviewees += 1
+                if pbar:
+                    pbar.update(1)
+                return None
                 
-                # 初始化任务列表和要处理的问题列表
-                tasks = []
-                valid_questions = []
+            interviewee_results = {}
+            processed_interviewees += 1
+            
+            # 记录统计信息
+            total_questions = len(questionsAnswers)
+            evaluated_questions = 0
+            excluded_questions = 0
+            country_specific_questions = 0
+            country_specific_evaluated = 0
+            country_specific_excluded = 0
+            invalid_answer_questions = 0
+            correct_answers = 0
+            
+            # 初始化任务列表和要处理的问题列表
+            tasks = []
+            valid_questions = []
+            
+            # 首先过滤出有效问题
+            for question_id, true_answer in questionsAnswers.items():
+                # 跳过真实答案为空的问题
+                if not true_answer:
+                    if verbose_output:
+                        print(f"跳过问题 {question_id}: 真实答案为空")
+                    continue
                 
-                # 首先过滤出有效问题
-                for question_id, true_answer in questionsAnswers.items():
-                    # 确保question_id是字符串类型
-                    if not isinstance(question_id, str):
-                        question_id = str(question_id)
-                        
-                    # 确保true_answer不是None
-                    if true_answer is None:
-                        if verbose_output:
-                            print(f"跳过问题 {question_id}: 真实答案为None")
-                        continue
-                        
-                    # 如果true_answer是浮点数或整数，转为字符串
-                    if isinstance(true_answer, (float, int)):
-                        true_answer = str(true_answer)
+                # 跳过无效答案问题
+                if is_invalid_answer(true_answer):
+                    invalid_answer_questions += 1
+                    if verbose_output:
+                        print(f"跳过问题 {question_id}: 无效答案 '{true_answer}'")
+                    continue
                     
-                    # 跳过真实答案为空的问题
-                    if not true_answer:
-                        if verbose_output:
-                            print(f"跳过问题 {question_id}: 真实答案为空")
-                        continue
-                    
-                    # 跳过无效答案问题
-                    if is_invalid_answer(true_answer):
-                        invalid_answer_questions += 1
-                        if verbose_output:
-                            print(f"跳过问题 {question_id}: 无效答案 '{true_answer}'")
-                        continue
-                        
-                    # 获取问题数据
-                    qa_item = qa_map.get(question_id.lower())
-                    if not qa_item:
-                        if verbose_output:
-                            print(f"跳过问题 {question_id}: 未找到问题数据")
-                        continue
-                    
-                    # 检查是否是国家特定问题
-                    is_country_q = is_country_specific_question(question_id, country_code)
+                # 获取问题数据
+                qa_item = qa_map.get(question_id.lower())
+                if not qa_item:
+                    if verbose_output:
+                        print(f"跳过问题 {question_id}: 未找到问题数据")
+                    continue
+                
+                # 检查是否是国家特定问题
+                is_country_q = is_country_specific_question(question_id, country_code)
+                
+                if is_country_q:
+                    country_specific_questions += 1
+                
+                # 记录有效问题
+                valid_questions.append({
+                    "question_id": question_id,
+                    "true_answer": true_answer,
+                    "qa_item": qa_item,
+                    "is_country_specific": is_country_q
+                })
+            
+            # 创建问题进度条
+            if verbose_output and len(valid_questions) > 0:
+                question_pbar = tqdm(total=len(valid_questions), desc="处理问题", leave=False, 
+                                    position=0, dynamic_ncols=True)
+            else:
+                question_pbar = None
+                
+            # 处理每个有效问题
+            for question_data in valid_questions:
+                question_id = question_data["question_id"]
+                true_answer = question_data["true_answer"]
+                qa_item = question_data["qa_item"]
+                is_country_q = question_data["is_country_specific"]
+                
+                # 处理问题
+                if use_async:
+                    # 添加到任务列表
+                    tasks.append(process_question_async(
+                        question_id, true_answer, qa_item, country_code, 
+                        attributes, prompt_engine, llm_client, evaluator,
+                        is_country_specific=is_country_q, verbose=verbose_output,
+                        person_id=interviewee_id, option_contents=option_contents
+                    ))
                     
                     if is_country_q:
-                        country_specific_questions += 1
-                    
-                    # 记录有效问题
-                    valid_questions.append({
-                        "question_id": question_id,
-                        "true_answer": true_answer,
-                        "qa_item": qa_item,
-                        "is_country_specific": is_country_q
-                    })
-                
-                # 创建问题进度条
-                if verbose_output and len(valid_questions) > 0:
-                    question_pbar = tqdm(total=len(valid_questions), desc="处理问题", leave=False, 
-                                        position=0, dynamic_ncols=True)
+                        evaluated_country_specific_questions += 1
                 else:
-                    question_pbar = None
-                        
-                # 处理每个有效问题
-                for question_data in valid_questions:
-                    question_id = question_data["question_id"]
-                    true_answer = question_data["true_answer"]
-                    qa_item = question_data["qa_item"]
-                    is_country_q = question_data["is_country_specific"]
+                    # 同步处理问题
+                    results = await process_question_async(
+                        question_id, true_answer, qa_item, country_code, 
+                        attributes, prompt_engine, llm_client, evaluator,
+                        is_country_specific=is_country_q, verbose=verbose_output,
+                        person_id=interviewee_id, option_contents=option_contents
+                    )
                     
-                    # 处理问题
-                    if use_async:
-                        # 添加到任务列表
-                        tasks.append(process_question_async(
-                            question_id, true_answer, qa_item, country_code, 
-                            attributes, prompt_engine, llm_client, evaluator,
-                            is_country_specific=is_country_q, verbose=verbose_output,
-                            person_id=interviewee_id, option_contents=option_contents
-                        ))
+                    # 保存完整提示和回答（仅在config模式下）
+                    if api_type == "config" and results:
+                        full_prompts_answers.append({
+                            "question_id": question_id,
+                            "prompt": results["prompt"],
+                            "qa": qa_item,
+                            "person_id": interviewee_id
+                        })
+                    
+                    # 更新计数
+                    if results and results.get("result_correctness", False):
+                        correct_answers += 1
+                    evaluated_questions += 1
+                    
+                    # 更新问题进度条
+                    if question_pbar:
+                        question_pbar.update(1)
+                    
+                    if is_country_q:
+                        evaluated_country_specific_questions += 1
+            
+            # 执行任务
+            results = []
+            if use_async:
+                for i in range(0, len(tasks), concurrent_requests):
+                    # 获取当前批次的任务
+                    batch_tasks = tasks[i:i+concurrent_requests]
+                    if verbose_output:
+                        print(f"正在执行第 {i//concurrent_requests + 1} 批 ({len(batch_tasks)}) 任务...")
+                    
+                    # 同时执行多个任务
+                    batch_results = await asyncio.gather(*batch_tasks, return_exceptions=True)
+                    
+                    # 处理结果
+                    for res in batch_results:
+                        if isinstance(res, Exception):
+                            if verbose_output:
+                                print(f"任务执行出错: {str(res)}")
+                            continue
+                        if res:
+                            results.append(res)
                             
-                        if is_country_q:
-                            evaluated_country_specific_questions += 1
-                    else:
-                        # 同步处理问题
-                        results = await process_question_async(
-                            question_id, true_answer, qa_item, country_code, 
-                            attributes, prompt_engine, llm_client, evaluator,
-                            is_country_specific=is_country_q, verbose=verbose_output,
-                            person_id=interviewee_id, option_contents=option_contents
-                        )
-                        
-                        # 保存完整提示和回答（仅在config模式下）
-                        if api_type == "config" and results:
-                            full_prompts_answers.append({
-                                "question_id": question_id,
-                                "prompt": results["prompt"],
-                                "qa": qa_item,
-                                "person_id": interviewee_id
-                            })
-                        
-                        # 更新计数
-                        if results and results.get("result_correctness", False):
-                            correct_answers += 1
-                        evaluated_questions += 1
-                        
-                        # 更新问题进度条
-                        if question_pbar:
-                            question_pbar.update(1)
-                        
-                        if is_country_q:
-                            evaluated_country_specific_questions += 1
+                            # 保存完整提示和回答（仅在config模式下）
+                            if api_type == "config":
+                                qa_item = qa_map.get(res["question_id"].lower(), {})
+                                full_prompts_answers.append({
+                                    "question_id": res["question_id"],
+                                    "prompt": res["prompt"],
+                                    "qa": qa_item,
+                                    "person_id": interviewee_id
+                                })
+                            
+                            # 更新计数和进度条
+                            if res.get("result_correctness", False):
+                                correct_answers += 1
+                            evaluated_questions += 1
+                            
+                            # 更新问题进度条
+                            if question_pbar:
+                                question_pbar.update(1)
+            
+            # 关闭问题进度条
+            if question_pbar:
+                question_pbar.close()
                 
-                # 执行任务
-                results = []
-                if use_async:
-                    for i in range(0, len(tasks), concurrent_requests):
-                        # 获取当前批次的任务
-                        batch_tasks = tasks[i:i+concurrent_requests]
-                        if verbose_output:
-                            print(f"正在执行第 {i//concurrent_requests + 1} 批 ({len(batch_tasks)}) 任务...")
-                        
-                        # 同时执行多个任务
-                        batch_results = await asyncio.gather(*batch_tasks, return_exceptions=True)
-                        
-                        # 处理结果
-                        for res in batch_results:
-                            if isinstance(res, Exception):
-                                if verbose_output:
-                                    print(f"任务执行出错: {str(res)}")
-                                continue
-                            if res:
-                                results.append(res)
-                                
-                                # 保存完整提示和回答（仅在config模式下）
-                                if api_type == "config":
-                                    qa_item = qa_map.get(res["question_id"].lower(), {})
-                                    full_prompts_answers.append({
-                                        "question_id": res["question_id"],
-                                        "prompt": res["prompt"],
-                                        "qa": qa_item,
-                                        "person_id": interviewee_id
-                                    })
-                                
-                                # 更新计数和进度条
-                                if res.get("result_correctness", False):
-                                    correct_answers += 1
-                                evaluated_questions += 1
-                                
-                                # 更新问题进度条
-                                if question_pbar:
-                                    question_pbar.update(1)
+            # 更新受访者进度条
+            if pbar:
+                pbar.update(1)
                 
-                # 关闭问题进度条
-                if question_pbar:
-                    question_pbar.close()
-                    
-                # 更新受访者进度条
-                if pbar:
-                    pbar.update(1)
-                    
-                # 计算受访者准确率
-                individual_accuracy = correct_answers / evaluated_questions if evaluated_questions > 0 else 0
-                
-                # 返回结果
-                return {
-                    "interviewee_id": interviewee_id,
-                    "results": interviewee_results,
-                    "stats": {
-                        "total_questions": total_questions,
-                        "evaluated_questions": evaluated_questions,
-                        "correct_answers": correct_answers,
-                        "accuracy": individual_accuracy,
-                        "country_specific_questions": country_specific_questions,
-                        "country_specific_evaluated": country_specific_evaluated
-                    }
+            # 计算受访者准确率
+            individual_accuracy = correct_answers / evaluated_questions if evaluated_questions > 0 else 0
+            
+            # 返回结果
+            return {
+                "interviewee_id": interviewee_id,
+                "results": interviewee_results,
+                "stats": {
+                    "total_questions": total_questions,
+                    "evaluated_questions": evaluated_questions,
+                    "correct_answers": correct_answers,
+                    "accuracy": individual_accuracy,
+                    "country_specific_questions": country_specific_questions,
+                    "country_specific_evaluated": country_specific_evaluated
                 }
-            except Exception as e:
-                # 捕获处理过程中的所有异常
-                if pbar:
-                    pbar.update(1)
-                print(f"处理受访者 {interviewee_idx+1}/{total_interviewees} 时出错: {str(e)}")
-                traceback.print_exc()
-                skipped_interviewees += 1
-                return None
+            }
         
         # 处理受访者
         results = {}
