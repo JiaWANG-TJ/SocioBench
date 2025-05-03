@@ -49,13 +49,36 @@ class Evaluator:
         Returns:
             提取出的选项编号
         """
+        # 检查response是否为None或非字符串类型
+        if llm_response is None:
+            return ""
+            
+        # 处理浮点数或整数类型
+        if isinstance(llm_response, (float, int)):
+            return str(llm_response)
+            
+        # 确保llm_response是字符串类型
+        if not isinstance(llm_response, str):
+            try:
+                llm_response = str(llm_response)
+            except Exception:
+                return ""
+        
         try:
             # 尝试解析JSON
             response_json = json.loads(llm_response)
+            
+            # 检查response_json是否为字典类型
+            if not isinstance(response_json, dict):
+                return str(response_json)
+                
             if "answer" in response_json:
                 return str(response_json["answer"]).strip()
         except json.JSONDecodeError:
             pass
+        except Exception as e:
+            # 捕获所有其他异常
+            print(f"提取答案时出错: {str(e)}")
             
         # 如果JSON解析失败，使用正则表达式提取
         pattern = r'"answer"\s*:\s*"?([^",}\s]+)"?'
@@ -66,7 +89,7 @@ class Evaluator:
         # 如果仍然无法提取，返回空字符串
         return ""
     
-    def evaluate_answer(self, question_id: str, true_answer: str, llm_response: str, is_country_specific: bool = False, country_code: str = None, country_name: str = None) -> bool:
+    def evaluate_answer(self, question_id: str, true_answer: str, llm_response: str, is_country_specific: bool = False, country_code: str = None, country_name: str = None, true_answer_meaning: str = None, llm_answer_meaning: str = None, person_id: str = None) -> bool:
         """
         评估单个答案是否正确
         
@@ -77,6 +100,9 @@ class Evaluator:
             is_country_specific: 是否是国家特定问题，默认为False
             country_code: 国家代码，默认为None
             country_name: 国家全称，默认为None
+            true_answer_meaning: 真实答案的含义，默认为None
+            llm_answer_meaning: LLM答案的含义，默认为None
+            person_id: 受访者ID，默认为None
             
         Returns:
             答案是否正确
@@ -90,17 +116,28 @@ class Evaluator:
             # 比较答案是否匹配
             result = str(llm_answer) == str(true_answer)
             
-        # 记录评估结果
-        self.results["details"].append({
+        # 创建结果详情对象，按指定顺序排列字段
+        detail = {}
+        
+        # 将person_id放在最前面（如果存在）
+        if person_id:
+            detail["person_id"] = person_id
+            
+        # 然后添加其他字段
+        detail.update({
+            "country_code": country_code,
+            "country_name": country_name,
+            "is_country_specific": is_country_specific,
             "question_id": question_id,
             "true_answer": true_answer,
+            "true_answer_meaning": true_answer_meaning or "",
             "llm_answer": llm_answer,
-            "llm_response": llm_response,  # 存储完整回答
-            "correct": result,
-            "is_country_specific": is_country_specific,
-            "country_code": country_code,
-            "country_name": country_name
+            "llm_answer_meaning": llm_answer_meaning or "",
+            "result_correctness": result  # 使用result_correctness代替correct
         })
+        
+        # 记录评估结果
+        self.results["details"].append(detail)
         
         # 更新统计信息
         self.results["total_count"] += 1
@@ -132,7 +169,7 @@ class Evaluator:
             # 如果有效答案，计入统计
             if true_answer and llm_answer:
                 valid_count += 1
-                if detail["correct"]:
+                if detail["result_correctness"]:
                     correct_count += 1
         
         # 计算准确率
@@ -224,7 +261,7 @@ class Evaluator:
             
             # 更新总计数
             country_data[country_code]["total_count"] += 1
-            if detail["correct"]:
+            if detail["result_correctness"]:
                 country_data[country_code]["correct_count"] += 1
                 
             # 检查是否为无效答案
@@ -235,7 +272,7 @@ class Evaluator:
             if not is_invalid_answer(true_answer) and true_answer and llm_answer:
                 # 更新有效计数
                 country_data[country_code]["valid_count"] += 1
-                if detail["correct"]:
+                if detail["result_correctness"]:
                     country_data[country_code]["valid_correct_count"] += 1
                     
                 # 为F1计算添加样本
@@ -518,10 +555,12 @@ class Evaluator:
                 "国家代码": detail["country_code"],
                 "国家全称": detail["country_name"],
                 "真实答案": true_answer,
-                "真实答案选项内容": true_answer_text,
+                "真实答案含义": detail["true_answer_meaning"],
+                # "真实答案选项内容": true_answer_text,
                 "LLM答案": llm_answer,
-                "LLM答案选项内容": llm_answer_text,
-                "是否正确": detail["correct"],
+                "LLM答案含义": detail["llm_answer_meaning"],
+                # "LLM答案选项内容": llm_answer_text,
+                "是否正确": detail["result_correctness"],
                 "是否国家特定问题": detail["is_country_specific"]
             })
         
