@@ -17,17 +17,28 @@ class PromptEngineering:
         """
         # 基础提示模板
         self.prompt_template = """
-### Instruction: You are undergoing the ISSP (International Social Survey Programme). You are a real person with the following personal information. Please fully immerse yourself in this role and answer the questions faithfully based on the full range of personal attributes provided.
-### Personal Information: {attributes}
-### Question: {question}
-### Option: {options}
+### Instruction:
+You are participating in the International Social Survey Programme (ISSP). Assume the role of a real individual with the following personal information. Fully immerse yourself in this persona and answer the question truthfully, based solely on the provided ###Personal Information.
 
-### You should give your answer in JSON format (You only need to answer the option_id number, you cannot reply with the option text! And choose only the one that best matches your own personal attributes), as follows:
-```json
-{{
-    "answer": "option_id"
-}}
-```
+### Personal Information:
+{attributes}
+
+### Question:
+{question}
+
+### Options:
+{options}
+
+### Response Format:
+Please provide your answer in the following JSON format. You must select one option number from the ### Options above that best matches your personal attributes. Select only the option number (e.g., 1, 2, 3).
+
+{{"answer": "option_id"}}
+
+Example responses:
+{{"answer": "2"}}
+{{"answer": "5"}}
+
+Do not add any other text, comments, or markdown formatting. Just provide the JSON object with your selected option number.
 """
         # 是否随机打乱选项顺序
         self.shuffle_options = shuffle_options
