@@ -49,11 +49,11 @@ class Evaluator:
         Returns:
             提取出的选项编号
         """
-        # 检查response是否为None或非字符串类型
+        # 处理None情况
         if llm_response is None:
             return ""
             
-        # 处理浮点数或整数类型
+        # 处理数值类型 (int, float)
         if isinstance(llm_response, (float, int)):
             return str(llm_response)
             
@@ -64,29 +64,123 @@ class Evaluator:
             except Exception:
                 return ""
         
+        # 如果回答为空，直接返回空字符串
+        if not llm_response.strip():
+            return ""
+            
+        # 预处理步骤：清理常见的格式问题
+        preprocessed_response = llm_response
+        
+        # 1. 移除重复的```json标记
+        preprocessed_response = re.sub(r'(`{3,}json){2,}', '```json', preprocessed_response)
+        
+        # 2. 如果响应开始或结束时有```json标记，移除它们
+        preprocessed_response = re.sub(r'^[\s"`]*```json', '', preprocessed_response)
+        preprocessed_response = re.sub(r'```[\s"`]*$', '', preprocessed_response)
+        
+        # 3. 移除响应中的所有反斜杠转义
+        preprocessed_response = preprocessed_response.replace('\\', '')
+        
+        # 4. 移除多余的引号，例如 ""{"answer":"1"}"" -> {"answer":"1"}
+        preprocessed_response = re.sub(r'^"+|"+$', '', preprocessed_response.strip())
+        
+        # 5. 尝试修复不完整的JSON对象
+        # 如果找到 {"answer": 但没有结束括号，添加结束括号
+        if re.search(r'{"answer":\s*"?\d+"?', preprocessed_response) and not re.search(r'{"answer":\s*"?\d+"?\s*}', preprocessed_response):
+            preprocessed_response = re.sub(r'({"answer":\s*"?\d+"?)', r'\1"}', preprocessed_response)
+        
+        # 步骤1: 尝试解析JSON
         try:
             # 尝试解析JSON
-            response_json = json.loads(llm_response)
+            response_json = json.loads(preprocessed_response)
             
-            # 检查response_json是否为字典类型
-            if not isinstance(response_json, dict):
+            # 如果是字典，尝试查找'answer'字段
+            if isinstance(response_json, dict):
+                # 直接查找answer字段
+                if "answer" in response_json:
+                    answer = response_json["answer"]
+                    return str(answer)
+                
+                # 查找嵌套的answer字段
+                for key, value in response_json.items():
+                    if isinstance(value, dict) and "answer" in value:
+                        answer = value["answer"]
+                        return str(answer)
+                        
+                # 也许JSON中包含了其他可能的答案字段
+                for potential_key in ["choice", "option", "selection", "response"]:
+                    if potential_key in response_json:
+                        return str(response_json[potential_key])
+                        
+                # 如果是空对象 {}，返回空字符串
+                if not response_json:
+                    return ""
+            
+            # 如果是列表，检查列表中的元素
+            if isinstance(response_json, list) and len(response_json) > 0:
+                first_item = response_json[0]
+                
+                # 如果第一个元素是字典，检查answer字段
+                if isinstance(first_item, dict) and "answer" in first_item:
+                    return str(first_item["answer"])
+                    
+                # 如果是简单类型，直接返回
+                if isinstance(first_item, (int, float, str)):
+                    return str(first_item)
+                
+                # 对于其他情况，返回整个列表的字符串表示
+                return str(response_json[0])
+                
+            # 如果是数字或字符串，直接返回
+            if isinstance(response_json, (int, float, str)):
                 return str(response_json)
                 
-            if "answer" in response_json:
-                return str(response_json["answer"]).strip()
         except json.JSONDecodeError:
+            # 不是有效的JSON，继续下一步
             pass
-        except Exception as e:
-            # 捕获所有其他异常
-            print(f"提取答案时出错: {str(e)}")
             
-        # 如果JSON解析失败，使用正则表达式提取
-        pattern = r'"answer"\s*:\s*"?([^",}\s]+)"?'
-        match = re.search(pattern, llm_response)
-        if match:
-            return match.group(1).strip()
+        # 尝试使用正则表达式直接从预处理后的响应中提取JSON
+        json_pattern = r'{\s*"answer"\s*:\s*"?([1-9a-eA-E])"?\s*}'
+        json_matches = re.search(json_pattern, preprocessed_response)
+        if json_matches:
+            return json_matches.group(1)
             
-        # 如果仍然无法提取，返回空字符串
+        # 步骤2: 尝试直接提取单个数字/字母选项
+        # 寻找常见的答案格式：如"答案是：1"，"我选择B"，"3"等
+        
+        # 单个数字或字母的模式
+        single_answer_pattern = r'(?:^|[^\w])([1-9a-eA-E])(?:$|[^\w])'
+        matches = re.findall(single_answer_pattern, preprocessed_response)
+        if matches:
+            # 返回第一个匹配项
+            return matches[0]
+        
+        # 检查是否包含"答案是"，"选择"等关键词
+        answer_keywords_pattern = r'(?:答案是|选择|选项|answer is|choice is|select|choose|choose option)\s*[:：]?\s*([1-9a-eA-E])'
+        keyword_matches = re.findall(answer_keywords_pattern, preprocessed_response, re.IGNORECASE)
+        if keyword_matches:
+            return keyword_matches[0]
+            
+        # 检查是否有类似"The answer is A."的句子
+        simple_answer_pattern = r'\b(?:the answer is|i choose|my answer is)\s+([1-9a-eA-E])[\.\,]?'
+        simple_matches = re.findall(simple_answer_pattern, preprocessed_response.lower())
+        if simple_matches:
+            return simple_matches[0]
+        
+        # 尝试最后的手段：查找原始响应中的任何数字
+        number_pattern = r'\b([1-9])\b'
+        number_matches = re.findall(number_pattern, preprocessed_response)
+        if number_matches:
+            return number_matches[0]
+            
+        # 步骤3: 如果找不到明确的答案，尝试在原始响应中查找
+        if preprocessed_response != llm_response:
+            # 尝试在原始响应中查找单个数字
+            original_number_matches = re.findall(r'\b([1-9])\b', llm_response)
+            if original_number_matches:
+                return original_number_matches[0]
+            
+        # 如果所有尝试都失败，返回空字符串
         return ""
     
     def evaluate_answer(self, question_id: str, true_answer: str, llm_response: str, is_country_specific: bool = False, country_code: str = None, country_name: str = None, true_answer_meaning: str = None, llm_answer_meaning: str = None, person_id: str = None) -> bool:
@@ -107,15 +201,16 @@ class Evaluator:
         Returns:
             答案是否正确
         """
+        # 简化后的提取答案方法
         llm_answer = self.extract_answer(llm_response)
         
-        # 如果真实答案或LLM答案为空，视为不正确
-        if not true_answer or not llm_answer:
-            result = False
-        else:
-            # 比较答案是否匹配
-            result = str(llm_answer) == str(true_answer)
+        # 如果真实答案为空，无法评估，默认为错误
+        if not true_answer:
+            return False
             
+        # 直接比较答案（不区分大小写）
+        is_correct = str(llm_answer).lower() == str(true_answer).lower()
+        
         # 创建结果详情对象，按指定顺序排列字段
         detail = {}
         
@@ -133,7 +228,7 @@ class Evaluator:
             "true_answer_meaning": true_answer_meaning or "",
             "llm_answer": llm_answer,
             "llm_answer_meaning": llm_answer_meaning or "",
-            "result_correctness": result  # 使用result_correctness代替correct
+            "result_correctness": is_correct
         })
         
         # 记录评估结果
@@ -141,10 +236,10 @@ class Evaluator:
         
         # 更新统计信息
         self.results["total_count"] += 1
-        if result:
+        if is_correct:
             self.results["correct_count"] += 1
-            
-        return result
+        
+        return is_correct
     
     def calculate_accuracy(self) -> float:
         """
@@ -157,17 +252,32 @@ class Evaluator:
         valid_count = 0
         correct_count = 0
         
+        # 从运行评估模块导入函数
+        from social_benchmark.evaluation.run_evaluation import (
+            is_invalid_answer, is_invalid_answer_meaning, should_include_in_evaluation
+        )
+        
         for detail in self.results["details"]:
             true_answer = detail["true_answer"]
+            true_answer_meaning = detail["true_answer_meaning"]
             llm_answer = detail["llm_answer"]
             
-            # 检查是否为无效答案，如果是则跳过
-            from social_benchmark.evaluation.run_evaluation import is_invalid_answer
-            if is_invalid_answer(true_answer):
-                continue
-                
-            # 如果有效答案，计入统计
-            if true_answer and llm_answer:
+            # 获取问题国家代码
+            from social_benchmark.evaluation.run_evaluation import get_question_country_code
+            question_id = detail["question_id"]
+            country_code = detail["country_code"]
+            question_country = get_question_country_code(question_id) if question_id else None
+            is_country_match = (not question_country) or (question_country.upper() == country_code.upper())
+            
+            # 使用新函数判断是否应纳入评测
+            should_include = should_include_in_evaluation(
+                true_answer=true_answer,
+                true_answer_meaning=true_answer_meaning,
+                llm_answer=llm_answer,
+                is_country_match=is_country_match
+            )
+            
+            if should_include:
                 valid_count += 1
                 if detail["result_correctness"]:
                     correct_count += 1
@@ -196,20 +306,35 @@ class Evaluator:
         y_true = []
         y_pred = []
         
+        # 从运行评估模块导入函数
+        from social_benchmark.evaluation.run_evaluation import (
+            is_invalid_answer, is_invalid_answer_meaning, should_include_in_evaluation, 
+            get_question_country_code
+        )
+        
         for detail in self.results["details"]:
             true_answer = detail["true_answer"]
+            true_answer_meaning = detail["true_answer_meaning"]
             llm_answer = detail["llm_answer"]
             
-            # 检查是否为无效答案，如果是则跳过
-            from social_benchmark.evaluation.run_evaluation import is_invalid_answer
-            if is_invalid_answer(true_answer):
-                continue
-                
-            # 如果有效答案，添加到列表
-            if true_answer and llm_answer:
+            # 获取问题国家代码
+            question_id = detail["question_id"]
+            country_code = detail["country_code"]
+            question_country = get_question_country_code(question_id) if question_id else None
+            is_country_match = (not question_country) or (question_country.upper() == country_code.upper())
+            
+            # 使用新函数判断是否应纳入评测
+            should_include = should_include_in_evaluation(
+                true_answer=true_answer,
+                true_answer_meaning=true_answer_meaning,
+                llm_answer=llm_answer,
+                is_country_match=is_country_match
+            )
+            
+            if should_include:
                 # 确保将所有答案转换为字符串类型，防止类型不匹配
                 y_true.append(str(true_answer))
-                y_pred.append(str(llm_answer))
+                y_pred.append(str(llm_answer) if llm_answer else "")  # 空答案也计入
         
         # 如果没有有效答案对，返回0
         if not y_true or not y_pred:
@@ -251,6 +376,12 @@ class Evaluator:
         # 按国家分组，计算每个国家的评测指标
         country_data = defaultdict(lambda: {"correct_count": 0, "total_count": 0, "valid_count": 0, "valid_correct_count": 0, "y_true": [], "y_pred": [], "country_name": ""})
         
+        # 从运行评估模块导入函数
+        from social_benchmark.evaluation.run_evaluation import (
+            is_invalid_answer, is_invalid_answer_meaning, should_include_in_evaluation, 
+            get_question_country_code
+        )
+        
         for detail in self.results["details"]:
             country_code = detail["country_code"]
             if not country_code:
@@ -264,12 +395,25 @@ class Evaluator:
             if detail["result_correctness"]:
                 country_data[country_code]["correct_count"] += 1
                 
-            # 检查是否为无效答案
+            # 检查是否应纳入评测
             true_answer = detail["true_answer"]
+            true_answer_meaning = detail["true_answer_meaning"]
             llm_answer = detail["llm_answer"]
             
-            from social_benchmark.evaluation.run_evaluation import is_invalid_answer
-            if not is_invalid_answer(true_answer) and true_answer and llm_answer:
+            # 获取问题国家代码
+            question_id = detail["question_id"]
+            question_country = get_question_country_code(question_id) if question_id else None
+            is_country_match = (not question_country) or (question_country.upper() == country_code.upper())
+            
+            # 使用新函数判断是否应纳入评测
+            should_include = should_include_in_evaluation(
+                true_answer=true_answer,
+                true_answer_meaning=true_answer_meaning,
+                llm_answer=llm_answer,
+                is_country_match=is_country_match
+            )
+            
+            if should_include:
                 # 更新有效计数
                 country_data[country_code]["valid_count"] += 1
                 if detail["result_correctness"]:
@@ -277,7 +421,7 @@ class Evaluator:
                     
                 # 为F1计算添加样本
                 country_data[country_code]["y_true"].append(str(true_answer))
-                country_data[country_code]["y_pred"].append(str(llm_answer))
+                country_data[country_code]["y_pred"].append(str(llm_answer) if llm_answer else "")  # 空答案也计入
         
         # 计算每个国家的指标
         country_metrics = {}
@@ -504,7 +648,11 @@ class Evaluator:
         detailed_filepath = os.path.join(model_dir, detailed_filename)
         
         # 从运行评估模块加载问题选项数据
-        from social_benchmark.evaluation.run_evaluation import load_qa_file, get_special_options
+        from social_benchmark.evaluation.run_evaluation import (
+            load_qa_file, get_special_options, is_invalid_answer, 
+            is_invalid_answer_meaning, get_question_country_code, 
+            should_include_in_evaluation
+        )
         
         # 加载问答数据和创建问题ID映射
         qa_map = {}
@@ -528,17 +676,31 @@ class Evaluator:
             question_id = detail["question_id"]
             true_answer = detail["true_answer"]
             llm_answer = detail["llm_answer"]
+            country_code = detail["country_code"]
+            true_answer_meaning = detail["true_answer_meaning"]
             
             # 获取问题数据和选项
             true_answer_text = ""
             llm_answer_text = ""
+            
+            # 检查问题是否为特定国家问题，以及是否与受访者国家匹配
+            question_country = get_question_country_code(question_id) if question_id else None
+            is_country_match = (not question_country) or (question_country.upper() == country_code.upper())
+            
+            # 使用新的判断函数确定是否纳入评测
+            included_in_evaluation = should_include_in_evaluation(
+                true_answer=true_answer,
+                true_answer_meaning=true_answer_meaning,
+                llm_answer=llm_answer,
+                is_country_match=is_country_match
+            )
             
             # 尝试查找问题选项
             try:
                 question_data = qa_map.get(str(question_id).lower())
                 if question_data:
                     # 获取选项 - 使用国家特定选项
-                    options = get_special_options(question_data, detail["country_code"])
+                    options = get_special_options(question_data, country_code)
                     
                     # 获取真实答案文本
                     if str(true_answer) in options:
@@ -561,7 +723,8 @@ class Evaluator:
                 "LLM答案含义": detail["llm_answer_meaning"],
                 # "LLM答案选项内容": llm_answer_text,
                 "是否正确": detail["result_correctness"],
-                "是否国家特定问题": detail["is_country_specific"]
+                "是否国家特定问题": detail["is_country_specific"],
+                "是否纳入评测": included_in_evaluation
             })
         
         # 保存为CSV

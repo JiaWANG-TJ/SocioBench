@@ -27,6 +27,7 @@ import asyncio
 import traceback
 import multiprocessing
 import concurrent.futures
+from sklearn.metrics import f1_score
 
 # 设置多进程启动方法为spawn，以解决CUDA初始化问题
 # 这是必须的，因为vLLM使用CUDA，在fork的子进程中无法重新初始化CUDA
@@ -291,6 +292,7 @@ def load_option_contents(domain_id: int) -> Dict[str, Dict[str, str]]:
         
         # 构建文件路径 - 首先尝试Dataset_all/profile
         file_paths = [
+            os.path.join(os.path.dirname(__file__), "..", "Dataset_all", "A_GroundTruth_sampling500", f"issp_profile_{formatted_domain_name}.json"),
             os.path.join(os.path.dirname(__file__), "..", "Dataset_all", "A_GroundTruth_sampling5000", f"issp_profile_{formatted_domain_name}.json"),
             os.path.join(os.path.dirname(__file__), "..", "Dataset_all", "profile", f"issp_profile_{formatted_domain_name}.json"),
             os.path.join(os.path.dirname(__file__), "..", "Dataset", "A_GroundTruth", f"issp_profile_{formatted_domain_name}.json"),
@@ -325,24 +327,32 @@ def load_option_contents(domain_id: int) -> Dict[str, Dict[str, str]]:
                 for item in profile_data:
                     if not isinstance(item, dict):
                         continue
-                        
-                    q_id = item.get("id") or item.get("question_id") or ""
+                    
+                    # 尝试获取domain字段作为问题ID
+                    q_id = item.get("domain") or item.get("id") or item.get("question_id") or ""
                     if not q_id:
                         continue
-                        
+                    
                     # 创建问题的选项内容映射
                     option_contents[q_id] = {}
                     
-                    # 获取选项内容
-                    options = item.get("answers", {})
-                    if isinstance(options, dict):
+                    # 尝试不同的字段获取选项内容
+                    # 1. 首先尝试answers字段
+                    if "answers" in item and isinstance(item["answers"], dict):
+                        options = item["answers"]
                         for option_id, option_data in options.items():
-                            if isinstance(option_data, dict):
+                            if isinstance(option_data, dict) and "content" in option_data:
                                 content = option_data.get("content", "")
                                 if content:
                                     option_contents[q_id][option_id] = content
                             elif isinstance(option_data, str):
-                                # 如果选项数据直接是字符串
+                                option_contents[q_id][option_id] = option_data
+                    
+                    # 2. 然后尝试content字段
+                    elif "content" in item and isinstance(item["content"], dict):
+                        options = item["content"]
+                        for option_id, option_data in options.items():
+                            if isinstance(option_data, str):
                                 option_contents[q_id][option_id] = option_data
                 
                 print(f"成功加载选项内容数据: {file_path}")
@@ -473,9 +483,10 @@ def is_invalid_answer(answer: Any) -> bool:
         except Exception:
             return True
     
-    # 如果答案为空，视为无效
-    if not answer_str:
-        return True
+    # 注意：空答案现在视为有效，不再判断为无效
+    # 删除以下代码块：
+    # if not answer_str:
+    #     return True
     
     # 检查是否包含无效字符串
     invalid_strings = [
@@ -484,6 +495,58 @@ def is_invalid_answer(answer: Any) -> bool:
     ]
     
     return any(invalid_str in answer_str.lower() for invalid_str in invalid_strings)
+
+def is_invalid_answer_meaning(answer_meaning: Any) -> bool:
+    """检查答案含义是否包含无效内容（如"No answer"、"Not applicable"等）"""
+    if answer_meaning is None:
+        return False
+    
+    # 尝试转换为字符串
+    try:
+        meaning_str = str(answer_meaning).lower()
+    except Exception:
+        return False
+    
+    # 如果含义为空，视为有效
+    if not meaning_str:
+        return False
+    
+    # 检查是否包含无效字符串
+    invalid_strings = [
+        "no answer", "other countries", "not available", 
+        "not applicable", "nap", "nav", "refused"
+    ]
+    
+    return any(invalid_str in meaning_str for invalid_str in invalid_strings)
+
+def should_include_in_evaluation(true_answer: Any, true_answer_meaning: Any, 
+                              llm_answer: Any, is_country_match: bool) -> bool:
+    """
+    判断问题是否应该纳入评测
+    
+    Args:
+        true_answer: 真实答案
+        true_answer_meaning: 真实答案含义
+        llm_answer: LLM的回答
+        is_country_match: 问题国家与受访者国家是否匹配
+        
+    Returns:
+        是否应该纳入评测
+    """
+    # 条件1：真实答案不能为无效答案
+    if is_invalid_answer(true_answer):
+        return False
+    
+    # 条件2：问题国家必须与受访者国家匹配
+    if not is_country_match:
+        return False
+    
+    # 条件3：真实答案含义不能包含无效内容
+    if is_invalid_answer_meaning(true_answer_meaning):
+        return False
+    
+    # 只有满足所有条件，才纳入评测
+    return True
 
 async def process_question_async(question_id, true_answer, question_data, country_code, 
                                attributes, prompt_engine, llm_client, evaluator, 
@@ -525,7 +588,7 @@ async def process_question_async(question_id, true_answer, question_data, countr
         except Exception as e:
             if verbose:
                 print(f"  LLM API调用出错: {str(e)}")
-            # 设置一个默认响应，以便继续处理
+            # 设置一个空响应，但继续处理
             response = ""
         
         # 提取LLM回答的选项ID
@@ -586,10 +649,16 @@ async def process_question_async(question_id, true_answer, question_data, countr
         if person_id:
             result["person_id"] = person_id
             
+        # 计算是否应该纳入评测
+        # 简化处理：国家特定问题的国家必须匹配
+        is_country_match = not is_country_specific or (is_country_specific and country_code and is_country_specific_question(question_id, country_code))
+        include_in_evaluation = should_include_in_evaluation(true_answer, true_answer_meaning, llm_answer, is_country_match)
+            
         # 然后添加其他字段
         result.update({
             "question_id": question_id,
             "prompt": prompt,
+            "llm_response": response,  # 添加原始LLM响应
             "true_answer": true_answer,
             "true_answer_meaning": true_answer_meaning,
             "llm_answer": llm_answer,
@@ -600,6 +669,7 @@ async def process_question_async(question_id, true_answer, question_data, countr
             "country_name": country_name,
             "question": question,
             "options": options,
+            "include_in_evaluation": include_in_evaluation,  # 添加是否纳入评测的标志
             "qa": question_data  # 添加qa信息
         })
         
@@ -851,11 +921,21 @@ def run_evaluation(domain_id: int, interview_count: Union[int, str],
                             print(f"跳过问题 {question_id}: 未找到问题数据")
                         continue
                     
-                    # 检查是否是国家特定问题
-                    is_country_q = is_country_specific_question(question_id, country_code)
-                    
-                    if is_country_q:
+                    # 检查问题的国家代码是否与当前受访者国家代码匹配
+                    question_country = get_question_country_code(question_id)
+                    if question_country:
+                        # 如果存在问题国家代码，则必须与受访者国家代码匹配
+                        if question_country.upper() != country_code.upper():
+                            if verbose_output:
+                                print(f"跳过问题 {question_id}: 受访者国家({country_code})与问题国家({question_country})不匹配")
+                            excluded_country_specific_questions += 1
+                            continue
+                        # 是特定国家问题且匹配当前受访者国家
                         country_specific_questions += 1
+                        is_country_q = True
+                    else:
+                        # 不是特定国家问题
+                        is_country_q = False
                     
                     # 记录有效问题
                     valid_questions.append({
@@ -905,8 +985,10 @@ def run_evaluation(domain_id: int, interview_count: Union[int, str],
                             full_prompts_answers.append({
                                 "question_id": question_id,
                                 "prompt": results["prompt"],
+                                "llm_response": results["llm_response"],  # 添加LLM响应
                                 "qa": qa_item,
-                                "person_id": interviewee_id
+                                "person_id": interviewee_id,
+                                "country_code": country_code  # 添加国家代码
                             })
                         
                         # 更新计数
@@ -948,8 +1030,10 @@ def run_evaluation(domain_id: int, interview_count: Union[int, str],
                                     full_prompts_answers.append({
                                         "question_id": res["question_id"],
                                         "prompt": res["prompt"],
+                                        "llm_response": res["llm_response"],  # 添加LLM响应
                                         "qa": qa_item,
-                                        "person_id": interviewee_id
+                                        "person_id": interviewee_id,
+                                        "country_code": country_code  # 添加国家代码
                                     })
                                 
                                 # 更新计数和进度条
@@ -1137,15 +1221,33 @@ def run_evaluation(domain_id: int, interview_count: Union[int, str],
                 question = ""
                 options = {}
                 qa_item = item.get("qa", {})
+                country_code = ""
+                
+                # 获取国家代码
+                if person_id:
+                    # 从person_id推断国家代码，例如70000xxx为AT国家
+                    if person_id.startswith("700"):
+                        country_code = "AT"
+                    # 其他国家代码也可以根据规则推断...
+                
                 if qa_item:
                     question = qa_item.get("question", "")
-                    options = qa_item.get("answer", {})
+                    
+                    # 获取原始选项并应用国家特定选项
+                    raw_options = qa_item.get("answer", {})
+                    if country_code and "special" in qa_item and country_code in qa_item["special"]:
+                        # 直接使用get_special_options函数确保特殊选项被正确添加
+                        options = get_special_options(qa_item, country_code)
+                    else:
+                        options = raw_options.copy()
                 
                 # 创建基础格式化项
                 formatted_item = {
                     "question_id": q_id,
                     "prompt": item["prompt"],
-                    "person_id": person_id
+                    "llm_response": item.get("llm_response", ""),  # 添加LLM响应
+                    "person_id": person_id,
+                    "country_code": country_code  # 添加国家代码到结果中
                 }
                 
                 # 只添加非空字段
@@ -1720,34 +1822,7 @@ def parse_args():
     
     return parser.parse_args()
 
-"""
-export TORCH_CUDA_ARCH_LIST="8.9+PTX"  #环境变量 设置没用？os.environ
 
-
-
-export TORCH_CUDA_ARCH_LIST="9.0+PTX;8.7;8.6;8.0;7.5"
-export MAX_JOBS=8
-# 卸载旧版，防止冲突
-pip uninstall -y flashinfer-python flashinfer
-
-# 删除构建目录和生成文件
-rm -rf build/ flashinfer.egg-info/ flashinfer/csrc/generated/
-
-cd /inspire/hdd/ws-f4d69b29-e0a5-44e6-bd92-acf4de9990f0/public-project/wangjia-240108610168/flashinfer
-pip install -e . -v
-
-python - << 'EOF'
-import torch, flashinfer
-print("FlashInfer 版本:", flashinfer.__version__)
-# 简单的 single_decode_with_kv_cache 测试
-k = torch.randn(2048, 32, 128).half().cuda()
-v = torch.randn(2048, 32, 128).half().cuda()
-q = torch.randn(32, 128).half().cuda()
-out = flashinfer.single_decode_with_kv_cache(q, k, v)
-print("FlashInfer decode OK:", out.shape)
-EOF
-输出 FlashInfer decode OK: torch.Size([32, 128])，即编译成功。
-"""
 """
 # Linux示例命令
 python /path/to/social_benchmark/evaluation/run_evaluation.py \\
@@ -1764,12 +1839,14 @@ python /path/to/social_benchmark/evaluation/run_evaluation.py \\
 
 # Windows示例命令
 python C:/Users/26449/PycharmProjects/pythonProject/interview_scenario/social_benchmark/evaluation/run_evaluation.py `
-  --domain_id 2 `
+  --domain_id 7 `
   --interview_count 1 `
   --api_type config `
   --use_async=False `
   --print_prompt=True `
-  --shuffle_options=False
+  --shuffle_options=False `
+  --start_domain_id 1
+
   
 
 python C:/Users/26449/PycharmProjects/pythonProject/interview_scenario/social_benchmark/evaluation/run_evaluation.py `
