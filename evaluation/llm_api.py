@@ -231,13 +231,13 @@ class LLMAPIClient:
         """析构函数，确保资源被释放"""
         self.close()
     
-    def call(self, messages: List[Dict[str, str]], json_mode: bool = True) -> str:
+    def call(self, messages: List[Dict[str, str]], json_mode: bool = False) -> str:
         """
         调用LLM API
         
         Args:
             messages: 消息列表，格式为[{"role": "user", "content": "问题"}]
-            json_mode: 是否启用JSON模式
+            json_mode: 是否启用JSON模式，默认为False
             
         Returns:
             LLM返回的内容字符串
@@ -282,13 +282,13 @@ class LLMAPIClient:
                     
             return response.choices[0].message.content
 
-    async def async_call(self, messages: List[Dict[str, str]], json_mode: bool = True) -> str:
+    async def async_call(self, messages: List[Dict[str, str]], json_mode: bool = False) -> str:
         """
         异步调用LLM API
         
         Args:
             messages: 消息列表，格式为[{"role": "user", "content": "问题"}]
-            json_mode: 是否启用JSON模式
+            json_mode: 是否启用JSON模式，默认为False
             
         Returns:
             LLM返回的内容字符串
@@ -344,7 +344,8 @@ class LLMAPIClient:
         Returns:
             生成的回复文本
         """
-        return self.call([{"role": "user", "content": prompt}])
+        # 调用API时不启用JSON模式
+        return self.call([{"role": "user", "content": prompt}], json_mode=False)
 
     async def async_generate(self, prompt: str) -> str:
         """
@@ -380,9 +381,9 @@ class LLMAPIClient:
                 # 使用AsyncLLMEngine
                 return await self._async_generate_vllm(prompt)
         else:
-            # 对于配置文件API，使用OpenAI客户端
+            # 对于配置文件API，使用OpenAI客户端，不启用JSON模式
             messages = [{"role": "user", "content": prompt}]
-            return await self.async_call(messages)
+            return await self.async_call(messages, json_mode=False)
     
     async def _async_generate_vllm(self, prompt: str) -> str:
         """

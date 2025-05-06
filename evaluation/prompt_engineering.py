@@ -15,10 +15,10 @@ class PromptEngineering:
         Args:
             shuffle_options: 是否随机打乱选项顺序，默认为False
         """
-        # 基础提示模板
+        # 基础提示模板，强化输出格式，确保只输出解释和JSON答案
         self.prompt_template = """
 ### Instruction:
-You are participating in the International Social Survey Programme (ISSP). Assume the role of a real individual with the following personal information. Fully immerse yourself in this persona and answer the question truthfully, based solely on the provided ###Personal Information.
+You are participating in the International Social Survey Programme. Assume the role of a real individual with the following personal information. Fully immerse yourself in this persona and answer the question truthfully, based solely on the provided personal information.
 
 ### Personal Information:
 {attributes}
@@ -30,15 +30,17 @@ You are participating in the International Social Survey Programme (ISSP). Assum
 {options}
 
 ### Response Format:
-Please provide your answer in the following JSON format. You must select one option number from the ### Options above that best matches your personal attributes. Select only the option number (e.g., 1, 2, 3).
+IMPORTANT: Your response must ONLY contain TWO parts:
 
+1. A short paragraph explaining your reasoning for selecting an option (max 3-4 sentences)
+2. Your answer in JSON format exactly as shown below:
+```json
 {{"answer": "option_id"}}
+```
 
-Example responses:
-{{"answer": "2"}}
-{{"answer": "5"}}
+DO NOT include any other content in your response. DO NOT include any headers, preambles, repetitions of instructions, or conclusions. DO NOT reference the question or options in your response. DO NOT mention your personal information again. DO NOT include any text like "Based on my personal information" or similar phrases.
 
-Do not add any other text, comments, or markdown formatting. Just provide the JSON object with your selected option number.
+Simply write your reasoning directly followed by the JSON format answer.
 """
         # 是否随机打乱选项顺序
         self.shuffle_options = shuffle_options
@@ -59,13 +61,13 @@ Do not add any other text, comments, or markdown formatting. Just provide the JS
         # 直接返回原始属性信息
         return json.dumps(attributes, ensure_ascii=False, indent=2)
     
-    def format_question_options(self, question: str, options: Dict[str, str]) -> tuple:
+    def format_question_options(self, question: str, options: Union[Dict[str, str], str]) -> tuple:
         """
         格式化问题和选项，根据配置决定是否随机打乱选项顺序
         
         Args:
             question: 问题文本
-            options: 选项字典，格式为{选项编号: 选项文本}
+            options: 选项字典{选项编号: 选项文本}或选项字符串(每行一个选项，格式为"选项ID. 选项文本")
             
         Returns:
             (格式化后的问题字符串, 格式化后的选项字符串)
@@ -73,6 +75,13 @@ Do not add any other text, comments, or markdown formatting. Just provide the JS
         # 格式化问题
         formatted_question = question.strip()
         
+        # 处理选项字符串的情况
+        if isinstance(options, str):
+            # 如果选项已经是字符串格式，则直接返回
+            formatted_options = options.strip()
+            return formatted_question, formatted_options
+        
+        # 处理选项字典的情况
         # 将选项编号和选项文本组成元组列表
         option_items = list(options.items())
         
@@ -89,14 +98,14 @@ Do not add any other text, comments, or markdown formatting. Just provide the JS
         
         return formatted_question, formatted_options
     
-    def generate_prompt(self, attributes: Dict[str, Any], question: str, options: Dict[str, str]) -> str:
+    def generate_prompt(self, attributes: Union[Dict[str, Any], str], question: str, options: Union[Dict[str, str], str]) -> str:
         """
         生成完整的提示
         
         Args:
-            attributes: 个人属性字典
+            attributes: 个人属性字典或已格式化的属性字符串
             question: 问题文本
-            options: 选项字典，格式为{选项编号: 选项文本}
+            options: 选项字典{选项编号: 选项文本}或选项字符串(每行一个选项，格式为"选项ID. 选项文本")
             
         Returns:
             生成的完整提示字符串
@@ -104,9 +113,15 @@ Do not add any other text, comments, or markdown formatting. Just provide the JS
         # 格式化问题和选项
         formatted_question, formatted_options = self.format_question_options(question, options)
         
+        # 处理attributes为字符串的情况
+        if isinstance(attributes, str):
+            formatted_attributes = attributes
+        else:
+            formatted_attributes = self.format_personal_info(attributes)
+        
         # 生成完整提示
         prompt = self.prompt_template.format(
-            attributes=self.format_personal_info(attributes),
+            attributes=formatted_attributes,
             question=formatted_question,
             options=formatted_options
         )
