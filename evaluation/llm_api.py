@@ -53,7 +53,8 @@ class LLMAPIClient:
     
     def __init__(self, api_type: str = "config", model: Optional[str] = None, 
                  temperature: float = 0.7, max_tokens: int = 2048,
-                 top_p: float = 0.95, **kwargs):
+                 top_p: float = 0.95, repetition_penalty: float = 1.1, 
+                 frequency_penalty: float = 0.0, presence_penalty: float = 0.0, **kwargs):
         """
         初始化LLM API客户端
         
@@ -63,6 +64,9 @@ class LLMAPIClient:
             temperature: 温度参数，控制输出的随机性
             max_tokens: 最大生成token数
             top_p: 核采样参数，默认为0.95
+            repetition_penalty: 重复惩罚参数，值越大对重复内容惩罚越严格，默认为1.1
+            frequency_penalty: 频率惩罚参数，惩罚频繁出现的token，默认为0.0
+            presence_penalty: 存在惩罚参数，惩罚已出现过的token，默认为0.0
             **kwargs: 其他参数
         """
         if api_type not in ["config", "vllm"]:
@@ -72,6 +76,9 @@ class LLMAPIClient:
         self.temperature = temperature
         self.max_tokens = max_tokens
         self.top_p = top_p
+        self.repetition_penalty = repetition_penalty
+        self.frequency_penalty = frequency_penalty
+        self.presence_penalty = presence_penalty
         self.kwargs = kwargs
         
         if api_type == "config":
@@ -90,7 +97,19 @@ class LLMAPIClient:
         else:  # api_type == "vllm"
             # 使用vLLM的AsyncLLMEngine 模型路径
             base_model_path = "/inspire/hdd/ws-f4d69b29-e0a5-44e6-bd92-acf4de9990f0/public-project/wangjia-240108610168/model_input"
-            self.model = f"{base_model_path}/{model}"
+            
+            # 确保model参数不为空，如果为空则使用默认配置或抛出错误
+            if not model:
+                if MODEL_CONFIG.get("model"):
+                    model = MODEL_CONFIG.get("model")
+                else:
+                    raise ValueError("model参数不能为空，且配置文件中没有默认模型")
+                    
+            # 检查model是否是完整路径，如果不是则拼接基础路径
+            if '/' in model and os.path.exists(model):
+                self.model = model
+            else:
+                self.model = f"{base_model_path}/{model}"
             
             try:
                 # 尝试直接使用AsyncLLMEngine
@@ -231,64 +250,14 @@ class LLMAPIClient:
         """析构函数，确保资源被释放"""
         self.close()
     
-    def call(self, messages: List[Dict[str, str]], json_mode: bool = False) -> str:
+    def call(self, messages: List[Dict[str, str]], json_mode: bool = False, json_schema: Optional[Dict] = None) -> str:
         """
         调用LLM API
         
         Args:
             messages: 消息列表，格式为[{"role": "user", "content": "问题"}]
             json_mode: 是否启用JSON模式，默认为False
-            
-        Returns:
-            LLM返回的内容字符串
-        """
-        if self.api_type == "vllm":
-            if hasattr(self, 'use_openai_api') and self.use_openai_api:
-                # 使用OpenAI兼容的API
-                prompt = "\n".join([f"{msg['role']}: {msg['content']}" for msg in messages])
-                response = self.client.completions.create(
-                    model=self.model,
-                    prompt=prompt,
-                    temperature=self.temperature,
-                    max_tokens=self.max_tokens,
-                    top_p=self.top_p
-                )
-                return response.choices[0].text
-            else:
-                # 使用AsyncLLMEngine
-                prompt = "\n".join([f"{msg['role']}: {msg['content']}" for msg in messages])
-                loop = asyncio.get_event_loop()
-                result = loop.run_until_complete(self._async_generate_vllm(prompt))
-                return result
-        else:  # self.api_type == "config"
-            # 使用chat.completions接口
-            if json_mode:
-                response = self.client.chat.completions.create(
-                    model=self.model,
-                    messages=messages,
-                    temperature=self.temperature,
-                    max_tokens=self.max_tokens,
-                    top_p=self.top_p,
-                    response_format={"type": "json_object"}
-                )
-            else:
-                response = self.client.chat.completions.create(
-                    model=self.model,
-                    messages=messages,
-                    temperature=self.temperature,
-                    max_tokens=self.max_tokens,
-                    top_p=self.top_p
-                )
-                    
-            return response.choices[0].message.content
-
-    async def async_call(self, messages: List[Dict[str, str]], json_mode: bool = False) -> str:
-        """
-        异步调用LLM API
-        
-        Args:
-            messages: 消息列表，格式为[{"role": "user", "content": "问题"}]
-            json_mode: 是否启用JSON模式，默认为False
+            json_schema: JSON模式定义，用于结构化输出，默认为None
             
         Returns:
             LLM返回的内容字符串
@@ -302,8 +271,71 @@ class LLMAPIClient:
                     'prompt': prompt,
                     'temperature': self.temperature,
                     'max_tokens': self.max_tokens,
-                    'top_p': self.top_p
+                    'top_p': self.top_p,
+                    'frequency_penalty': self.frequency_penalty,
+                    'presence_penalty': self.presence_penalty
                 }
+                
+                # 如果提供了JSON模式，添加到extra_body参数中
+                if json_schema:
+                    params['extra_body'] = {'guided_json': json_schema}
+                
+                response = self.client.completions.create(**params)
+                return response.choices[0].text
+            else:
+                # 使用AsyncLLMEngine
+                prompt = "\n".join([f"{msg['role']}: {msg['content']}" for msg in messages])
+                loop = asyncio.get_event_loop()
+                result = loop.run_until_complete(self._async_generate_vllm(prompt, json_schema=json_schema))
+                return result
+        else:  # self.api_type == "config"
+            # 使用chat.completions接口
+            params = {
+                "model": self.model,
+                "messages": messages,
+                "temperature": self.temperature,
+                "max_tokens": self.max_tokens,
+                "top_p": self.top_p,
+                "frequency_penalty": self.frequency_penalty,
+                "presence_penalty": self.presence_penalty
+            }
+            
+            if json_mode:
+                params["response_format"] = {"type": "json_object"}
+                
+            response = self.client.chat.completions.create(**params)
+            return response.choices[0].message.content
+
+    async def async_call(self, messages: List[Dict[str, str]], json_mode: bool = False, json_schema: Optional[Dict] = None) -> str:
+        """
+        异步调用LLM API
+        
+        Args:
+            messages: 消息列表，格式为[{"role": "user", "content": "问题"}]
+            json_mode: 是否启用JSON模式，默认为False
+            json_schema: JSON模式定义，用于结构化输出，默认为None
+            
+        Returns:
+            LLM返回的内容字符串
+        """
+        if self.api_type == "vllm":
+            if hasattr(self, 'use_openai_api') and self.use_openai_api:
+                # 使用OpenAI兼容的API
+                prompt = "\n".join([f"{msg['role']}: {msg['content']}" for msg in messages])
+                params = {
+                    'model': self.model,
+                    'prompt': prompt,
+                    'temperature': self.temperature,
+                    'max_tokens': self.max_tokens,
+                    'top_p': self.top_p,
+                    'frequency_penalty': self.frequency_penalty,
+                    'presence_penalty': self.presence_penalty
+                }
+                
+                # 如果提供了JSON模式，添加到extra_body参数中
+                if json_schema:
+                    params['extra_body'] = {'guided_json': json_schema}
+                    
                 params.update(self.kwargs)
                 
                 response = await self.async_client.completions.create(**params)
@@ -311,48 +343,46 @@ class LLMAPIClient:
             else:
                 # 使用AsyncLLMEngine
                 prompt = "\n".join([f"{msg['role']}: {msg['content']}" for msg in messages])
-                return await self._async_generate_vllm(prompt)
+                return await self._async_generate_vllm(prompt, json_schema=json_schema)
         else:
             # 使用chat.completions接口
+            params = {
+                "model": self.model,
+                "messages": messages,
+                "temperature": self.temperature,
+                "max_tokens": self.max_tokens,
+                "top_p": self.top_p,
+                "frequency_penalty": self.frequency_penalty,
+                "presence_penalty": self.presence_penalty
+            }
+            
             if json_mode:
-                response = await self.async_client.chat.completions.create(
-                    model=self.model,
-                    messages=messages,
-                    temperature=self.temperature,
-                    max_tokens=self.max_tokens,
-                    top_p=self.top_p,
-                    response_format={"type": "json_object"}
-                )
-            else:
-                response = await self.async_client.chat.completions.create(
-                    model=self.model,
-                    messages=messages,
-                    temperature=self.temperature,
-                    max_tokens=self.max_tokens,
-                    top_p=self.top_p
-                )
-                    
+                params["response_format"] = {"type": "json_object"}
+                
+            response = await self.async_client.chat.completions.create(**params)
             return response.choices[0].message.content
 
-    def generate(self, prompt: str) -> str:
+    def generate(self, prompt: str, json_schema: Optional[Dict] = None) -> str:
         """
         生成回复
         
         Args:
             prompt: 提示文本
+            json_schema: JSON模式定义，用于结构化输出，默认为None
             
         Returns:
             生成的回复文本
         """
         # 调用API时不启用JSON模式
-        return self.call([{"role": "user", "content": prompt}], json_mode=False)
+        return self.call([{"role": "user", "content": prompt}], json_mode=False, json_schema=json_schema)
 
-    async def async_generate(self, prompt: str) -> str:
+    async def async_generate(self, prompt: str, json_schema: Optional[Dict] = None) -> str:
         """
         异步生成文本
         
         Args:
             prompt: 输入提示文本
+            json_schema: JSON模式定义，用于结构化输出，默认为None
             
         Returns:
             LLM生成的文本内容
@@ -365,8 +395,15 @@ class LLMAPIClient:
                     'prompt': prompt,
                     'temperature': self.temperature,
                     'max_tokens': self.max_tokens,
-                    'top_p': self.top_p
+                    'top_p': self.top_p,
+                    'frequency_penalty': self.frequency_penalty,
+                    'presence_penalty': self.presence_penalty
                 }
+                
+                # 如果提供了JSON模式，添加到extra_body参数中
+                if json_schema:
+                    params['extra_body'] = {'guided_json': json_schema}
+                    
                 params.update(self.kwargs)
                 
                 try:
@@ -376,32 +413,42 @@ class LLMAPIClient:
                     print(f"异步API调用失败: {str(e)}")
                     # 尝试同步调用作为备选
                     print("尝试使用同步调用作为备选...")
-                    return self.generate(prompt)
+                    return self.generate(prompt, json_schema=json_schema)
             else:
                 # 使用AsyncLLMEngine
-                return await self._async_generate_vllm(prompt)
+                return await self._async_generate_vllm(prompt, json_schema=json_schema)
         else:
             # 对于配置文件API，使用OpenAI客户端，不启用JSON模式
             messages = [{"role": "user", "content": prompt}]
-            return await self.async_call(messages, json_mode=False)
+            return await self.async_call(messages, json_mode=False, json_schema=json_schema)
     
-    async def _async_generate_vllm(self, prompt: str) -> str:
+    async def _async_generate_vllm(self, prompt: str, json_schema: Optional[Dict] = None) -> str:
         """
         使用AsyncLLMEngine进行异步生成
         
         Args:
             prompt: 输入提示文本
+            json_schema: JSON模式定义，用于结构化输出，默认为None
             
         Returns:
             生成的文本内容
         """
         # 创建采样参数
-        from vllm.sampling_params import SamplingParams
+        from vllm.sampling_params import SamplingParams, GuidedDecodingParams
+        
+        # 准备引导解码参数
+        guided_decoding_params = None
+        if json_schema:
+            guided_decoding_params = GuidedDecodingParams(json=json_schema)
         
         sampling_params = SamplingParams(
             temperature=self.temperature,
             max_tokens=self.max_tokens,
-            top_p=self.top_p
+            top_p=self.top_p,
+            repetition_penalty=self.repetition_penalty,  # 添加重复惩罚参数
+            frequency_penalty=self.frequency_penalty,    # 添加频率惩罚参数
+            presence_penalty=self.presence_penalty,      # 添加存在惩罚参数
+            guided_decoding=guided_decoding_params       # 添加引导解码参数
         )
         
         # 生成唯一请求ID
@@ -444,8 +491,14 @@ class LLMAPIClient:
                     'prompt': prompt,
                     'temperature': self.temperature,
                     'max_tokens': self.max_tokens,
-                    'top_p': self.top_p
+                    'top_p': self.top_p,
+                    'frequency_penalty': self.frequency_penalty,
+                    'presence_penalty': self.presence_penalty
                 }
+                
+                # 如果提供了JSON模式，添加到extra_body参数中
+                if json_schema:
+                    params['extra_body'] = {'guided_json': json_schema}
                 
                 response = await self.async_client.completions.create(**params)
                 return response.choices[0].text

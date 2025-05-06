@@ -610,7 +610,18 @@ async def process_question_async(question_id, true_answer, question_data, countr
         # 异步调用LLM API
         try:
             # 确保不使用json_mode，以获取完整的文本响应
-            response = await llm_client.async_generate(prompt)
+            # 传递JSON模式实现结构化输出
+            json_schema = prompt_engine.get_json_schema()
+            
+            # 添加系统提示，确保模型不返回空模板
+            system_message = "You must provide substantive, thoughtful answers based on the persona. Never return empty templates or placeholders."
+            messages = [
+                {"role": "system", "content": system_message},
+                {"role": "user", "content": prompt}
+            ]
+            
+            # 使用messages参数调用API，而不是直接传递prompt
+            response = await llm_client.async_call(messages, json_schema=json_schema)
             
             # 直接使用原始响应，不进行清理
             # 注释掉原来的清理代码：response = evaluator.clean_llm_response(response)

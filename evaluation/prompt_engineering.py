@@ -30,20 +30,51 @@ You are participating in the International Social Survey Programme. Assume the r
 {options}
 
 ### Response Format:
-IMPORTANT: Your response must ONLY contain TWO parts:
+IMPORTANT: Your response must ONLY contain TWO parts in a specific JSON format:
+1. A "reason" field with your actual reasoning (not a placeholder)
+2. An "option" object containing an "answer" field with your selected option_id
 
-1. A short paragraph explaining your reasoning for selecting an option (max 3-4 sentences)
-2. Your answer in JSON format exactly as shown below:
+Your response should be in this exact JSON format:
 ```json
-{{"answer": "option_id"}}
+{{
+  "reason": "Your actual reasoning here based on the personal information (not this placeholder text)",
+  "option": {{
+    "answer": "The actual option_id you selected"
+  }}
+}}
 ```
 
-DO NOT include any other content in your response. DO NOT include any headers, preambles, repetitions of instructions, or conclusions. DO NOT reference the question or options in your response. DO NOT mention your personal information again. DO NOT include any text like "Based on my personal information" or similar phrases.
+### Requirements:
+1. The "option_id" must be EXACTLY one of the option keys (numbers/values before the colon) from the options list.
+2. The "reason" must contain your actual reasoning (3-6 sentences) explaining why you chose that option based on the personal information.
+3. DO NOT use placeholders in your response - provide your actual reasoning and selected option.
+4. DO NOT include any text outside this JSON structure.
 
-Simply write your reasoning directly followed by the JSON format answer.
 """
         # 是否随机打乱选项顺序
         self.shuffle_options = shuffle_options
+        
+        # 定义JSON模式，用于结构化输出
+        self.answer_json_schema = {
+            "type": "object",
+            "properties": {
+                "reason": {
+                    "type": "string",
+                    "description": "Your actual reasoning for selecting this option based on the persona's information"
+                },
+                "option": {
+                    "type": "object",
+                    "properties": {
+                        "answer": {
+                            "type": "string",
+                            "description": "The specific option_id (number/key) you selected from the provided options"
+                        }
+                    },
+                    "required": ["answer"]
+                }
+            },
+            "required": ["reason", "option"]
+        }
     
     def format_personal_info(self, attributes: Dict[str, Any]) -> str:
         """
@@ -92,7 +123,7 @@ Simply write your reasoning directly followed by the JSON format answer.
         # 格式化选项
         option_lines = []
         for option_id, option_text in option_items:
-            option_lines.append(f"{option_id}. {option_text}")
+            option_lines.append(f"{option_id}: {option_text}")
         
         formatted_options = "\n".join(option_lines)
         
@@ -127,3 +158,12 @@ Simply write your reasoning directly followed by the JSON format answer.
         )
         
         return prompt
+    
+    def get_json_schema(self) -> dict:
+        """
+        获取JSON模式定义，用于结构化输出
+        
+        Returns:
+            JSON模式定义字典
+        """
+        return self.answer_json_schema
