@@ -16,7 +16,7 @@ import json
 import argparse
 import re
 import glob
-from typing import Dict, List, Any, Union, Optional
+from typing import Dict, List, Any, Union, Optional, Tuple
 import time
 from tqdm import tqdm
 from collections import defaultdict
@@ -405,15 +405,38 @@ def get_country_code(attributes: Dict[str, Any], domain_id: int) -> str:
     raise ValueError(f"未找到对应的国家代码: {country_name}")
 
 def get_special_options(question_data: Dict[str, Any], country_code: str) -> Dict[str, str]:
-    """获取特定国家的选项"""
-    options = question_data.get("answer", {}).copy()
-    special = question_data.get("special", {})
+    """
+    获取特定国家的选项
     
-    if country_code in special:
-        # 更新特定国家的选项
-        for key, value in special[country_code].items():
-            options[key] = value
-            
+    Args:
+        question_data: 问题数据，包含answer和special字段
+        country_code: 国家代码
+        
+    Returns:
+        包含特定国家选项的字典
+    """
+    # 确保question_data是字典类型
+    if not isinstance(question_data, dict):
+        return {}
+    
+    # 复制原始选项
+    options = question_data.get("answer", {}).copy()
+    if not isinstance(options, dict):
+        options = {}
+    
+    # 获取special字段
+    special = question_data.get("special", {})
+    if not isinstance(special, dict):
+        return options
+    
+    # 如果国家代码有效且在special中存在
+    if country_code and country_code in special:
+        country_specific = special[country_code]
+        if isinstance(country_specific, dict):
+            # 更新特定国家的选项
+            for key, value in country_specific.items():
+                options[key] = value
+    
     return options
 
 def load_qa_file(domain_name: str) -> List[Dict[str, Any]]:
@@ -555,6 +578,7 @@ async def process_question_async(question_id, true_answer, question_data, countr
     try:
         # 获取问题和选项
         question = question_data.get("question", "")
+        # 使用修改后的get_special_options函数获取选项，确保正确应用国家特定选项
         options = get_special_options(question_data, country_code)
         
         # 获取国家全称
@@ -581,10 +605,15 @@ async def process_question_async(question_id, true_answer, question_data, countr
         # 打印提示信息（不包含真实答案）
         if verbose:
             print(f"\n问题 {question_id}:" + (" (国家特定问题)" if is_country_specific else ""))
+            print(f"  国家: {country_code} ({country_name})")
         
         # 异步调用LLM API
         try:
+            # 确保不使用json_mode，以获取完整的文本响应
             response = await llm_client.async_generate(prompt)
+            
+            # 直接使用原始响应，不进行清理
+            # 注释掉原来的清理代码：response = evaluator.clean_llm_response(response)
         except Exception as e:
             if verbose:
                 print(f"  LLM API调用出错: {str(e)}")
@@ -598,6 +627,10 @@ async def process_question_async(question_id, true_answer, question_data, countr
             if verbose:
                 print(f"  提取答案出错: {str(e)}")
             llm_answer = ""
+        
+        # 如果提供了verbose，则打印更多日志
+        if verbose:
+            print(f"  LLM回答: {llm_answer}")
         
         # 获取选项含义
         true_answer_meaning = ""
@@ -840,7 +873,9 @@ def run_evaluation(domain_id: int, interview_count: Union[int, str],
                     if isinstance(attributes, dict) and attributes:
                         country_code = get_country_code(attributes, domain_id)
                     else:
-                        raise ValueError("属性数据为空或格式不正确")
+                        # 如果attributes为空或不是字典类型，记录警告但继续处理
+                        if verbose_output:
+                            print(f"警告: 受访者 {interviewee_id} 的属性为空或格式不正确，无法获取国家代码")
                         
                     if verbose_output:
                         print(f"\n处理受访者 {interviewee_id} ({interviewee_idx+1}/{total_interviewees}, 国家: {country_code}):")
@@ -980,15 +1015,16 @@ def run_evaluation(domain_id: int, interview_count: Union[int, str],
                             person_id=interviewee_id, option_contents=option_contents
                         )
                         
-                        # 保存完整提示和回答（仅在config模式下）
-                        if api_type == "config" and results:
+                        # 保存完整提示和回答（无论是vllm还是config模式）
+                        if results:
                             full_prompts_answers.append({
                                 "question_id": question_id,
                                 "prompt": results["prompt"],
                                 "llm_response": results["llm_response"],  # 添加LLM响应
                                 "qa": qa_item,
                                 "person_id": interviewee_id,
-                                "country_code": country_code  # 添加国家代码
+                                "country_code": country_code,  # 添加国家代码
+                                "country_name": results.get("country_name", "")  # 添加国家名称
                             })
                         
                         # 更新计数
@@ -1024,17 +1060,17 @@ def run_evaluation(domain_id: int, interview_count: Union[int, str],
                             if res:
                                 results.append(res)
                                 
-                                # 保存完整提示和回答（仅在config模式下）
-                                if api_type == "config":
-                                    qa_item = qa_map.get(res["question_id"].lower(), {})
-                                    full_prompts_answers.append({
-                                        "question_id": res["question_id"],
-                                        "prompt": res["prompt"],
-                                        "llm_response": res["llm_response"],  # 添加LLM响应
-                                        "qa": qa_item,
-                                        "person_id": interviewee_id,
-                                        "country_code": country_code  # 添加国家代码
-                                    })
+                                # 保存完整提示和回答（无论是vllm还是config模式）
+                                qa_item = qa_map.get(res["question_id"].lower(), {})
+                                full_prompts_answers.append({
+                                    "question_id": res["question_id"],
+                                    "prompt": res["prompt"],
+                                    "llm_response": res["llm_response"],  # 添加LLM响应
+                                    "qa": qa_item,
+                                    "person_id": interviewee_id,
+                                    "country_code": country_code,  # 添加国家代码
+                                    "country_name": res.get("country_name", "")  # 添加国家名称
+                                })
                                 
                                 # 更新计数和进度条
                                 if res.get("result_correctness", False):
@@ -1221,54 +1257,63 @@ def run_evaluation(domain_id: int, interview_count: Union[int, str],
                 question = ""
                 options = {}
                 qa_item = item.get("qa", {})
-                country_code = ""
                 
-                # 获取国家代码
-                if person_id:
-                    # 从person_id推断国家代码，例如70000xxx为AT国家
-                    if person_id.startswith("700"):
-                        country_code = "AT"
-                    # 其他国家代码也可以根据规则推断...
+                # 从item中获取country_code和country_name
+                country_code = item.get("country_code", "")
+                country_name = item.get("country_name", "")
+                
+                # 如果country_code为空，从真实答案文件中提取
+                if (not country_code or not country_name) and person_id:
+                    extracted_code, extracted_name = extract_country_from_issp_answer(person_id, ground_truth, domain_id)
+                    if extracted_code:
+                        country_code = extracted_code
+                    if extracted_name:
+                        country_name = extracted_name
+                
+                # 确保使用COUNTRY_MAPPING获取完整的国家名称
+                if country_code and not country_name and domain_id in COUNTRY_MAPPING:
+                    for code, name in COUNTRY_MAPPING[domain_id]["mapping"].items():
+                        if code == country_code:
+                            country_name = name
+                            break
                 
                 if qa_item:
                     question = qa_item.get("question", "")
                     
                     # 获取原始选项并应用国家特定选项
                     raw_options = qa_item.get("answer", {})
-                    if country_code and "special" in qa_item and country_code in qa_item["special"]:
-                        # 直接使用get_special_options函数确保特殊选项被正确添加
+                    # 只有当country_code非空时才应用特殊选项
+                    if country_code:
                         options = get_special_options(qa_item, country_code)
                     else:
                         options = raw_options.copy()
-                
-                # 创建基础格式化项
-                formatted_item = {
-                    "question_id": q_id,
-                    "prompt": item["prompt"],
-                    "llm_response": item.get("llm_response", ""),  # 添加LLM响应
-                    "person_id": person_id,
-                    "country_code": country_code  # 添加国家代码到结果中
-                }
-                
-                # 只添加非空字段
-                if question:
-                    formatted_item["question"] = question
-                
-                # 添加选项信息，只在不为空时
-                if options:
-                    formatted_item["options"] = options
-                
-                formatted_prompts.append(formatted_item)
+                    
+                    # 创建基础格式化项
+                    formatted_item = {
+                        "question_id": q_id,
+                        "prompt": item["prompt"],
+                        "llm_response": item.get("llm_response", ""),  # 确保完整保存LLM响应
+                        "person_id": person_id,
+                        "country_code": country_code,  # 添加国家代码到结果中
+                        "country_name": country_name   # 添加国家名称到结果中
+                    }
+                    
+                    # 只添加非空字段
+                    if question:
+                        formatted_item["question"] = question
+                    
+                    if options:
+                        formatted_item["options"] = options
+                    
+                    formatted_prompts.append(formatted_item)
             
-            # 保存格式化后的prompt数据
+            # 将保存文件的代码移动到循环外部，只执行一次
+            # 保存格式化后的提示数据
             with open(prompt_file, "w", encoding="utf-8") as f:
-                json.dump({
-                    "domain": domain_name,
-                    "model": model_name,
-                    "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
-                    "prompts": formatted_prompts
-                }, f, ensure_ascii=False, indent=2)
-            print(f"完整提示和回答记录已保存到: {prompt_file}")
+                json.dump(formatted_prompts, f, ensure_ascii=False, indent=2)
+            
+            # 打印信息也只执行一次
+            print(f"完整提示和回答保存到: {prompt_file}")
         
     except Exception as e:
         print(f"评测过程中发生错误: {str(e)}")
@@ -1311,21 +1356,39 @@ def run_evaluation(domain_id: int, interview_count: Union[int, str],
                 
             # 清理事件循环
             try:
-                try:
-                    loop = asyncio.get_event_loop()
-                    if not loop.is_closed():
-                        # 取消所有挂起的任务
-                        for task in asyncio.all_tasks(loop):
+                # 更安全地关闭事件循环，确保所有任务都被正确取消
+                loop = asyncio.get_event_loop()
+                if not loop.is_closed():
+                    # 获取所有挂起的任务
+                    pending = asyncio.all_tasks(loop)
+                    if pending:
+                        # 先取消所有任务
+                        for task in pending:
                             task.cancel()
-                        # 关闭循环
-                        loop.close()
-                except Exception:
-                    pass
-                # 创建新的循环
+                        
+                        # 等待所有任务完成取消操作（设置超时防止无限等待）
+                        try:
+                            loop.run_until_complete(asyncio.gather(*pending, return_exceptions=True))
+                        except asyncio.CancelledError:
+                            pass  # 忽略取消异常
+                        except Exception as e:
+                            print(f"取消任务时出错: {str(e)}")
+                    
+                    # 关闭事件循环
+                    loop.run_until_complete(loop.shutdown_asyncgens())
+                    loop.run_until_complete(loop.shutdown_default_executor())
+                    loop.close()
+                
+                # 创建新的事件循环
                 asyncio.set_event_loop(asyncio.new_event_loop())
-                print("已重置事件循环")
+                print("已成功重置事件循环")
             except Exception as e:
                 print(f"重置事件循环时出错: {str(e)}")
+                # 确保即使出错也设置一个新的事件循环
+                try:
+                    asyncio.set_event_loop(asyncio.new_event_loop())
+                except:
+                    pass
             
             print("资源清理完成")
         except Exception as e:
@@ -1808,16 +1871,15 @@ def parse_args():
     parser = argparse.ArgumentParser(description='社会认知基准评测系统')
     
     parser.add_argument('--domain_id', type=str, nargs='?', default='all')
-    parser.add_argument('--interview_count', type=str, help='采访个数，all表示全部', nargs='?', default='50')
+    parser.add_argument('--interview_count', type=str, help='采访个数，all表示全部', nargs='?', default='all')
     parser.add_argument('--api_type', type=str, choices=['config', 'vllm'], default='vllm', help='API类型，默认使用vllm')
     parser.add_argument('--use_async', type=str2bool, default=True, help='是否使用异步模式（仅在vllm模式下有效）')
-    parser.add_argument('--concurrent_requests', type=int, default=80, help='同时发起的请求数量（仅在异步模式下有效）')
-    parser.add_argument('--concurrent_interviewees', type=int, default=50, help='同时处理的受访者数量（仅在异步模式下有效）')
+    parser.add_argument('--concurrent_requests', type=int, default=50000, help='同时发起的请求数量（仅在异步模式下有效）')
+    parser.add_argument('--concurrent_interviewees', type=int, default=100, help='同时处理的受访者数量（仅在异步模式下有效）')
     parser.add_argument('--start_domain_id', type=int, default=1, help='起始评测的领域ID（当domain_id为all时有效）')
     parser.add_argument('--model', type=str, default='Qwen2.5-32B-Instruct', help='使用的模型名称或路径（仅在vllm模式下有效）')
-    
     parser.add_argument('--no_log', type=str2bool, default=False, help='禁用日志记录到文件')
-    parser.add_argument('--print_prompt', type=str2bool, default=False, help='打印完整的prompt、问答和LLM回答到json文件中')
+    parser.add_argument('--print_prompt', type=str2bool, default=True, help='打印完整的prompt、问答和LLM回答到json文件中')
     parser.add_argument('--shuffle_options', type=str2bool, default=False, help='随机打乱问题选项顺序，默认按原始顺序显示')
     
     return parser.parse_args()
@@ -1825,21 +1887,34 @@ def parse_args():
 
 """
 # Linux示例命令
-python /path/to/social_benchmark/evaluation/run_evaluation.py \\
-  --domain_id all \\
-  --interview_count all \\
-  --api_type vllm \\
-  --use_async=True \\
-  --concurrent_requests 100000 \\
-  --concurrent_interviewees 100 \\
-  --start_domain_id 1 \\
-  --model gemma-3-27b-it \\
-  --print_prompt=True \\
-  --shuffle_options=False
+python /inspire/hdd/ws-f4d69b29-e0a5-44e6-bd92-acf4de9990f0/public-project/wangjia-240108610168/social_benchmark/evaluation/run_evaluation.py \
+  --domain_id all \
+  --interview_count all \
+  --api_type vllm \
+  --use_async=True \
+  --concurrent_requests 100000 \
+  --concurrent_interviewees 100 \
+  --start_domain_id 1 \
+  --print_prompt=True \
+  --shuffle_options=True \
+  --model=gemma-3-4b-it
 
-# Windows示例命令
+
+python /inspire/hdd/ws-f4d69b29-e0a5-44e6-bd92-acf4de9990f0/public-project/wangjia-240108610168/social_benchmark/evaluation/run_evaluation.py \
+  --domain_id all \
+  --interview_count all \
+  --api_type vllm \
+  --use_async=True \
+  --concurrent_requests 100000 \
+  --concurrent_interviewees 100 \
+  --start_domain_id 1 \
+  --print_prompt=True \
+  --shuffle_options=True \
+  --model_list Qwen2.5-7B-Instruct Qwen2.5-14B-Instruct Qwen2.5-32B-Instruct Qwen3-0.6B Qwen3-1.7B Qwen3-4B Qwen3-8B Qwen3-14B Qwen3-30B-A3B Qwen3-32B
+  
+  # Windows示例命令
 python C:/Users/26449/PycharmProjects/pythonProject/interview_scenario/social_benchmark/evaluation/run_evaluation.py `
-  --domain_id 7 `
+  --domain_id 1 `
   --interview_count 1 `
   --api_type config `
   --use_async=False `
@@ -1864,6 +1939,72 @@ python C:/Users/26449/PycharmProjects/pythonProject/interview_scenario/social_be
 sudo lsof /dev/nvidia* | awk 'NR>1 {print $2}' | sort -u | xargs sudo kill -9
 """
 
+
+def extract_country_from_issp_answer(person_id: str, ground_truth: list, domain_id: int) -> tuple:
+    """
+    从issp_answer文件中提取受访者的国家代码和国家名称
+    
+    Args:
+        person_id: 受访者ID
+        ground_truth: 真实答案数据列表
+        domain_id: 领域ID
+        
+    Returns:
+        tuple: (country_code, country_name) 国家代码和国家名称
+    """
+    if not person_id or not ground_truth or not isinstance(ground_truth, list):
+        return "", ""
+    
+    try:
+        # 从真实答案文件中查找对应的受访者
+        for interviewee in ground_truth:
+            if not isinstance(interviewee, dict):
+                continue
+                
+            interviewee_id = interviewee.get("person_id", "") or interviewee.get("id", "")
+            # 确保ID比较时转为字符串
+            if str(interviewee_id) == str(person_id):
+                attributes = interviewee.get("attributes", {})
+                if not isinstance(attributes, dict) or not attributes:
+                    continue
+                    
+                try:
+                    # 检查domain_id是否有效
+                    if domain_id not in COUNTRY_MAPPING:
+                        continue
+                        
+                    # 获取属性名称
+                    attr_name = COUNTRY_MAPPING[domain_id]["attr_name"]
+                    if not attr_name or attr_name not in attributes:
+                        continue
+                        
+                    # 获取国家名称
+                    country_name = attributes.get(attr_name, "")
+                    if not country_name:
+                        continue
+                        
+                    # 查找对应的国家代码
+                    country_code = ""
+                    for code, name in COUNTRY_MAPPING[domain_id]["mapping"].items():
+                        if name == country_name:
+                            country_code = code
+                            break
+                    
+                    # 如果没有精确匹配，尝试不区分大小写匹配
+                    if not country_code:
+                        for code, name in COUNTRY_MAPPING[domain_id]["mapping"].items():
+                            if name.lower() == country_name.lower():
+                                country_code = code
+                                country_name = name  # 使用映射中的标准名称
+                                break
+                    
+                    return country_code, country_name
+                except Exception:
+                    continue
+    except Exception:
+        pass
+    
+    return "", ""
 
 if __name__ == "__main__":
     # 解析命令行参数

@@ -1,4 +1,75 @@
-# 问题统计工具
+# 问题统计与可视化工具
+
+本目录包含用于分析社会基准测试问题数据的统计和可视化工具。
+
+## 功能概述
+
+1. `question_statistics.py` - 统计各领域问题的选项数量分布
+2. `academic_visualization.py` - 生成符合NeurIPS学术标准的高质量可视化图表
+
+## 使用方法
+
+### 基本统计分析
+
+运行以下命令进行基本统计分析：
+
+```bash
+python question_statistics.py
+```
+
+该脚本将：
+- 统计每个领域的问题数量
+- 统计每个领域的答案选项总数
+- 分析各领域中不同选项数量的问题分布
+- 生成Excel文件(`question_statistics.xlsx`)和可视化图表
+
+### 学术标准可视化
+
+运行以下命令生成符合NeurIPS标准的高质量学术图像：
+
+```bash
+python academic_visualization.py [options]
+```
+
+#### 命令行选项
+
+- `--output`, `-o`: 输出PDF文件名 (默认: `neurips_standard_figures.pdf`)
+- `--width`, `-w`: 图表宽度(英寸) (默认: 8.0)
+- `--height`, `-H`: 图表高度(英寸) (默认: 6.0)
+
+#### 示例
+
+```bash
+# 使用默认设置
+python academic_visualization.py
+
+# 自定义输出文件和图表尺寸
+python academic_visualization.py --output my_figures.pdf --width 7.5 --height 5.5
+```
+
+## 输出文件
+
+- `question_statistics.xlsx`: 包含基本统计信息和选项数量分布的Excel文件
+- `question_statistics_chart.png`: 基本统计图表
+- `question_category_chart.png`: 选项数量分布热图
+- `option_count_distribution.png`: 选项数量总体分布图表
+- 根据参数指定的PDF文件: 包含符合NeurIPS标准的高质量学术图表
+
+## 图表说明
+
+1. **选项数量分布热图** - 展示各领域中不同选项数量问题的百分比分布
+2. **选项数量总和柱状图** - 显示每种选项数量的问题总数量
+3. **领域问题数量比较** - 比较各领域的问题总数量
+4. **最常见选项数量分布** - 展示前5种最常见选项数量在各领域中的分布情况
+5. **选项数量统计分布** - 使用箱线图展示各领域选项数量的统计分布
+
+## 技术说明
+
+- 脚本使用相对路径，可在项目的任何位置运行
+- 所有图表均使用指定的颜色方案，确保视觉一致性
+- 生成的PDF文件符合学术出版标准，包含矢量图形和嵌入字体
+
+## 问题统计工具
 
 这个工具用于统计社会调查数据集中各个领域（domain）的问题数量和答案选项数量。工具会自动处理特定模式的问题ID，确保正确计数。
 
@@ -19,22 +90,6 @@
    - 创建两个柱状图，分别展示问题数量和答案选项数量
    - 突出显示有显著差异的领域（如religion）
    - 保存为PNG格式图片
-
-## 使用方法
-
-1. 确保已安装必要的Python库：
-   ```
-   pip install pandas matplotlib
-   ```
-
-2. 运行统计脚本：
-   ```
-   python question_statistics.py
-   ```
-
-3. 脚本将处理`social_benchmark/Dataset_all/q&a`文件夹中的所有`issp_qa_xxx.json`文件，并将结果保存到：
-   - `question_statistics.xlsx` - Excel格式的统计数据
-   - `question_statistics_chart.png` - 可视化图表
 
 ## 最新运行结果概述
 

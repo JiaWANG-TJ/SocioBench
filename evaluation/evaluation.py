@@ -56,131 +56,50 @@ class Evaluator:
         # 处理数值类型 (int, float)
         if isinstance(llm_response, (float, int)):
             return str(llm_response)
+        
+        llm_response = str(llm_response)
+        
+        # 尝试直接从JSON代码块中提取 (优先级最高)
+        json_patterns = [
+            r'```json\s*(\{.*?"answer"\s*:\s*"([^"]+)".*?\})',
+            r'<json>\s*(\{.*?"answer"\s*:\s*"([^"]+)".*?\})',
+            r'(\{.*?"answer"\s*:\s*"([^"]+)".*?\})'
+        ]
+        
+        for pattern in json_patterns:
+            matches = re.finditer(pattern, llm_response, re.DOTALL)
+            last_match = None
+            for match in matches:
+                last_match = match
             
-        # 确保llm_response是字符串类型
-        if not isinstance(llm_response, str):
-            try:
-                llm_response = str(llm_response)
-            except Exception:
-                return ""
+            if last_match:
+                # 提取匹配组中的答案值
+                return last_match.group(2)
         
-        # 如果回答为空，直接返回空字符串
-        if not llm_response.strip():
-            return ""
+        # 如果未找到JSON格式，尝试从文本中提取数字
+        # 提取文本中的选项信息
+        option_patterns = [
+            r'(?:answer|option|选项|回答|选择)\s*(?:是|为|:)?\s*["""]?([0-9]+)["""]?',
+            r'(?:选择了|选择|回答|选).{0,10}?([0-9]+).{0,10}?(?:作为|的|为)?(?:答案|回答|选项)?',
+            r'答案.{0,10}?(?:是|为|选择)?.{0,10}?(?:选项)?([0-9]+)',
+            r'选项\s*([0-9]+)'
+        ]
+        
+        for pattern in option_patterns:
+            matches = re.finditer(pattern, llm_response, re.IGNORECASE)
+            last_match = None
+            for match in matches:
+                last_match = match
             
-        # 预处理步骤：清理常见的格式问题
-        preprocessed_response = llm_response
+            if last_match:
+                return last_match.group(1)
         
-        # 1. 移除重复的```json标记
-        preprocessed_response = re.sub(r'(`{3,}json){2,}', '```json', preprocessed_response)
-        
-        # 2. 如果响应开始或结束时有```json标记，移除它们
-        preprocessed_response = re.sub(r'^[\s"`]*```json', '', preprocessed_response)
-        preprocessed_response = re.sub(r'```[\s"`]*$', '', preprocessed_response)
-        
-        # 3. 移除响应中的所有反斜杠转义
-        preprocessed_response = preprocessed_response.replace('\\', '')
-        
-        # 4. 移除多余的引号，例如 ""{"answer":"1"}"" -> {"answer":"1"}
-        preprocessed_response = re.sub(r'^"+|"+$', '', preprocessed_response.strip())
-        
-        # 5. 尝试修复不完整的JSON对象
-        # 如果找到 {"answer": 但没有结束括号，添加结束括号
-        if re.search(r'{"answer":\s*"?\d+"?', preprocessed_response) and not re.search(r'{"answer":\s*"?\d+"?\s*}', preprocessed_response):
-            preprocessed_response = re.sub(r'({"answer":\s*"?\d+"?)', r'\1"}', preprocessed_response)
-        
-        # 步骤1: 尝试解析JSON
-        try:
-            # 尝试解析JSON
-            response_json = json.loads(preprocessed_response)
+        # 如果以上方法都未提取到，则尝试直接提取文本中的数字
+        # 注意：这是最后的尝试，优先级最低
+        numbers = re.findall(r'\b([0-9]+)\b', llm_response)
+        if numbers:
+            return numbers[-1]  # 返回最后一个数字
             
-            # 如果是字典，尝试查找'answer'字段
-            if isinstance(response_json, dict):
-                # 直接查找answer字段
-                if "answer" in response_json:
-                    answer = response_json["answer"]
-                    return str(answer)
-                
-                # 查找嵌套的answer字段
-                for key, value in response_json.items():
-                    if isinstance(value, dict) and "answer" in value:
-                        answer = value["answer"]
-                        return str(answer)
-                        
-                # 也许JSON中包含了其他可能的答案字段
-                for potential_key in ["choice", "option", "selection", "response"]:
-                    if potential_key in response_json:
-                        return str(response_json[potential_key])
-                        
-                # 如果是空对象 {}，返回空字符串
-                if not response_json:
-                    return ""
-            
-            # 如果是列表，检查列表中的元素
-            if isinstance(response_json, list) and len(response_json) > 0:
-                first_item = response_json[0]
-                
-                # 如果第一个元素是字典，检查answer字段
-                if isinstance(first_item, dict) and "answer" in first_item:
-                    return str(first_item["answer"])
-                    
-                # 如果是简单类型，直接返回
-                if isinstance(first_item, (int, float, str)):
-                    return str(first_item)
-                
-                # 对于其他情况，返回整个列表的字符串表示
-                return str(response_json[0])
-                
-            # 如果是数字或字符串，直接返回
-            if isinstance(response_json, (int, float, str)):
-                return str(response_json)
-                
-        except json.JSONDecodeError:
-            # 不是有效的JSON，继续下一步
-            pass
-            
-        # 尝试使用正则表达式直接从预处理后的响应中提取JSON
-        json_pattern = r'{\s*"answer"\s*:\s*"?([1-9a-eA-E])"?\s*}'
-        json_matches = re.search(json_pattern, preprocessed_response)
-        if json_matches:
-            return json_matches.group(1)
-            
-        # 步骤2: 尝试直接提取单个数字/字母选项
-        # 寻找常见的答案格式：如"答案是：1"，"我选择B"，"3"等
-        
-        # 单个数字或字母的模式
-        single_answer_pattern = r'(?:^|[^\w])([1-9a-eA-E])(?:$|[^\w])'
-        matches = re.findall(single_answer_pattern, preprocessed_response)
-        if matches:
-            # 返回第一个匹配项
-            return matches[0]
-        
-        # 检查是否包含"答案是"，"选择"等关键词
-        answer_keywords_pattern = r'(?:答案是|选择|选项|answer is|choice is|select|choose|choose option)\s*[:：]?\s*([1-9a-eA-E])'
-        keyword_matches = re.findall(answer_keywords_pattern, preprocessed_response, re.IGNORECASE)
-        if keyword_matches:
-            return keyword_matches[0]
-            
-        # 检查是否有类似"The answer is A."的句子
-        simple_answer_pattern = r'\b(?:the answer is|i choose|my answer is)\s+([1-9a-eA-E])[\.\,]?'
-        simple_matches = re.findall(simple_answer_pattern, preprocessed_response.lower())
-        if simple_matches:
-            return simple_matches[0]
-        
-        # 尝试最后的手段：查找原始响应中的任何数字
-        number_pattern = r'\b([1-9])\b'
-        number_matches = re.findall(number_pattern, preprocessed_response)
-        if number_matches:
-            return number_matches[0]
-            
-        # 步骤3: 如果找不到明确的答案，尝试在原始响应中查找
-        if preprocessed_response != llm_response:
-            # 尝试在原始响应中查找单个数字
-            original_number_matches = re.findall(r'\b([1-9])\b', llm_response)
-            if original_number_matches:
-                return original_number_matches[0]
-            
-        # 如果所有尝试都失败，返回空字符串
         return ""
     
     def evaluate_answer(self, question_id: str, true_answer: str, llm_response: str, is_country_specific: bool = False, country_code: str = None, country_name: str = None, true_answer_meaning: str = None, llm_answer_meaning: str = None, person_id: str = None) -> bool:
