@@ -39,12 +39,13 @@ class Evaluator:
         if not os.path.exists(self.save_dir):
             os.makedirs(self.save_dir)
     
-    def extract_answer(self, llm_response: str) -> str:
+    def extract_answer(self, llm_response: str, options: Optional[Dict[str, str]] = None) -> str:
         """
         从LLM回答中提取选项编号
         
         Args:
             llm_response: LLM的回答字符串
+            options: 可选的选项字典，用于修正错误的选项格式
             
         Returns:
             提取出的选项编号
@@ -58,6 +59,17 @@ class Evaluator:
             return str(llm_response)
         
         llm_response = str(llm_response)
+        
+        # 移除模板占位符（如果存在）
+        placeholder_patterns = [
+            r'Your actual reasoning here\.\.\.',
+            r'Your actual reasoning here based on the personal information \(not this placeholder text\)',
+            r'your actual reasoning here\.\.\.',
+            r'The actual option_id you selected',
+            r'\.\.\.'
+        ]
+        for pattern in placeholder_patterns:
+            llm_response = re.sub(pattern, '', llm_response)
         
         # 尝试直接从JSON代码块中提取 (优先级最高)
         json_patterns = [
@@ -100,9 +112,79 @@ class Evaluator:
         if numbers:
             return numbers[-1]  # 返回最后一个数字
             
+        # 如果提供了选项且前面的方法都没提取到答案，尝试通过选项内容匹配
+        if options:
+            return self._match_answer_by_options(llm_response, options)
+            
         return ""
     
-    def evaluate_answer(self, question_id: str, true_answer: str, llm_response: str, is_country_specific: bool = False, country_code: str = None, country_name: str = None, true_answer_meaning: str = None, llm_answer_meaning: str = None, person_id: str = None) -> bool:
+    def _match_answer_by_options(self, llm_response: str, options: Dict[str, str]) -> str:
+        """
+        通过选项内容匹配答案编号
+        
+        Args:
+            llm_response: LLM的回答字符串
+            options: 选项字典{选项编号: 选项文本}
+            
+        Returns:
+            匹配到的选项编号
+        """
+        # 特殊情况处理：如果LLM返回了选项的文本内容而非选项编号
+        if not options:
+            return ""
+            
+        # 创建选项文本到选项编号的映射
+        option_text_to_id = {}
+        for option_id, option_text in options.items():
+            # 同时处理原始文本和规范化后的文本
+            normalized_text = option_text.lower().strip()
+            option_text_to_id[normalized_text] = option_id
+            
+            # 处理特殊格式如"06"变成"6"的情况
+            if option_text.startswith("0") and len(option_text) > 1:
+                option_text_to_id[option_text[1:].lower().strip()] = option_id
+                
+            # 处理包含逗号的情况，如"10, Very well" -> "10"或"Very well"
+            if "," in option_text:
+                parts = option_text.split(",", 1)
+                for part in parts:
+                    option_text_to_id[part.lower().strip()] = option_id
+        
+        # 添加特殊格式处理，例如"06"和"6"对应同一选项
+        for option_id in options.keys():
+            # 处理数字前有零的情况
+            if option_id.isdigit():
+                # 添加前导零的形式
+                option_text_to_id[f"0{option_id}"] = option_id
+                # 移除前导零的形式
+                if option_id.startswith("0") and len(option_id) > 1:
+                    option_text_to_id[option_id[1:]] = option_id
+        
+        # 在LLM响应中搜索可能的选项文本
+        llm_response_lower = llm_response.lower()
+        
+        # 1. 尝试完全匹配选项文本
+        for text, option_id in option_text_to_id.items():
+            if text and text in llm_response_lower:
+                return option_id
+        
+        # 2. 尝试模糊匹配选项文本
+        best_match = None
+        best_match_score = 0
+        for text, option_id in option_text_to_id.items():
+            if text and text.strip():
+                # 计算简单的匹配分数
+                match_score = sum(1 for word in text.split() if word in llm_response_lower)
+                if match_score > best_match_score:
+                    best_match_score = match_score
+                    best_match = option_id
+        
+        if best_match and best_match_score > 0:
+            return best_match
+            
+        return ""
+    
+    def evaluate_answer(self, question_id: str, true_answer: str, llm_response: str, is_country_specific: bool = False, country_code: str = None, country_name: str = None, true_answer_meaning: str = None, llm_answer_meaning: str = None, person_id: str = None, options: Dict[str, str] = None) -> bool:
         """
         评估单个答案是否正确
         
@@ -116,12 +198,13 @@ class Evaluator:
             true_answer_meaning: 真实答案的含义，默认为None
             llm_answer_meaning: LLM答案的含义，默认为None
             person_id: 受访者ID，默认为None
+            options: 选项字典，用于修正错误的选项格式，默认为None
             
         Returns:
             答案是否正确
         """
-        # 简化后的提取答案方法
-        llm_answer = self.extract_answer(llm_response)
+        # 使用修改后的提取答案方法，传入选项信息
+        llm_answer = self.extract_answer(llm_response, options)
         
         # 如果真实答案为空，无法评估，默认为错误
         if not true_answer:
