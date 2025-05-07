@@ -1919,12 +1919,12 @@ def parse_args():
 """
 # Linux示例命令
 python /inspire/hdd/ws-f4d69b29-e0a5-44e6-bd92-acf4de9990f0/public-project/wangjia-240108610168/social_benchmark/evaluation/run_evaluation.py \
-  --domain_id 1 \
-  --interview_count 1 \
+  --domain_id all \
+  --interview_count all \
   --api_type vllm \
   --use_async=True \
-  --concurrent_requests 100000 \
-  --concurrent_interviewees 100 \
+  --concurrent_requests 500 \
+  --concurrent_interviewees 60 \
   --start_domain_id 1 \
   --print_prompt=True \
   --shuffle_options=True \
