@@ -133,19 +133,19 @@ class LLMAPIClient:
                     # dtype="float16",                            # 
                     # kv_cache_dtype="fp8",                       # 
                     # ── 显存与序列长度 ─────────────────────────
-                    gpu_memory_utilization=0.85,                # 
-                    max_model_len=20480,                        #
+                    gpu_memory_utilization=0.98,                # 
+                    max_model_len=10240,                        #
                     # ── 预填充与前缀缓存 ────────────────────────
                     enable_chunked_prefill=True,                #
                     enable_prefix_caching=True,                 #
                     # ── 批次与吞吐控制 ─────────────────────────
-                    max_num_seqs=10240,                           # gemma参数
-                    max_num_batched_tokens=102400,               # gemma参数 
+                    max_num_seqs=128,                           # gemma参数
+                    max_num_batched_tokens=2048,               # gemma参数 
                     # num_scheduler_steps=4,                    # llama参数，glm不设置
                     # max_num_seqs=2048,                              # qwen参数
                     # max_num_batched_tokens=20480,                  # qwen参数
                     # ── 执行模式控制 ────────────────────────────
-                    enforce_eager=False,                         # gemma false开启快；qwen 14b关闭快
+                    enforce_eager=True,                         # gemma false开启快；qwen 14b关闭快
                     # disable_custom_all_reduce=False,             # 禁用自定义all-reduce以避免分布式通信问题，没用？
                     use_v2_block_manager=True,                  #
                     disable_async_output_proc=False,
