@@ -125,7 +125,7 @@ class LLMAPIClient:
                     model=self.model,                           # 模型路径或名称
                     trust_remote_code=True,                     # 信任模型自定义代码
                     # ── 并行配置 ───────────────────────────────
-                    tensor_parallel_size=4,                     # 张量并行，修改
+                    tensor_parallel_size=1,                     # 张量并行，修改
                     pipeline_parallel_size=1,                   # 多节点部署才设置，单节点设置为1
                     data_parallel_size=1,
                     # distributed_executor_backend="ray",         # 强制使用 Ray 后端
@@ -134,13 +134,13 @@ class LLMAPIClient:
                     # kv_cache_dtype="fp8",                       # 
                     # ── 显存与序列长度 ─────────────────────────
                     gpu_memory_utilization=0.98,                # 
-                    max_model_len=10240,                        #
+                    max_model_len=20480,                        #
                     # ── 预填充与前缀缓存 ────────────────────────
                     enable_chunked_prefill=True,                #
                     enable_prefix_caching=True,                 #
                     # ── 批次与吞吐控制 ─────────────────────────
-                    max_num_seqs=128,                           # gemma参数
-                    max_num_batched_tokens=2048,               # gemma参数 
+                    max_num_seqs=200,                           # gemma参数  128
+                    max_num_batched_tokens=10240,               # gemma参数 
                     # num_scheduler_steps=4,                    # llama参数，glm不设置
                     # max_num_seqs=2048,                              # qwen参数
                     # max_num_batched_tokens=20480,                  # qwen参数

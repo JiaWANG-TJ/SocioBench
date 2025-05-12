@@ -614,24 +614,7 @@ async def process_question_async(question_id, true_answer, question_data, countr
             json_schema = prompt_engine.get_json_schema()
             
             # 添加系统提示，确保模型不返回空模板
-            system_message = """You must provide substantive, thoughtful answers based on the persona. 
-Never return empty templates or placeholders.
-
-CRITICAL: When selecting an option, you MUST choose the EXACT NUMBER/KEY that appears BEFORE the colon in the options list, NOT the text content that follows the colon.
-
-Example for options like:
-"1": "Should definitely be allowed"
-"2": "Should probably be allowed"
-
-Your answer should be "1" or "2", NOT "Should definitely be allowed" or "Should probably be allowed".
-
-For numbered options like:
-"6": "06"
-"10": "10, Very well"
-
-Your answer must be "6" or "10", NOT "06" or "10, Very well".
-
-Always select the KEY (number/identifier BEFORE the colon)."""
+            system_message = "Your answer must be based solely on your #### Personal Information.Prohibit outputting {\"reason\": \"\", \"option\": {\"answer\": \"\"}} directly in your replies.”"
             messages = [
                 {"role": "system", "content": system_message},
                 {"role": "user", "content": prompt}
@@ -1919,17 +1902,16 @@ def parse_args():
 """
 # Linux示例命令
 python /inspire/hdd/ws-f4d69b29-e0a5-44e6-bd92-acf4de9990f0/public-project/wangjia-240108610168/social_benchmark/evaluation/run_evaluation.py \
-  --domain_id all \
-  --interview_count all \
+  --domain_id 1 \
+  --interview_count 10 \
   --api_type vllm \
   --use_async=True \
-  --concurrent_requests 500 \
-  --concurrent_interviewees 60 \
+  --concurrent_requests 10000 \
+  --concurrent_interviewees 100 \
   --start_domain_id 1 \
   --print_prompt=True \
   --shuffle_options=True \
-  --model=Qwen2.5-7B-Instruct
-
+  --model=Qwen2.5-32B-Instruct
 
 python /inspire/hdd/ws-f4d69b29-e0a5-44e6-bd92-acf4de9990f0/public-project/wangjia-240108610168/social_benchmark/evaluation/run_evaluation.py \
   --domain_id all \
