@@ -29,62 +29,25 @@ You are participating in the International Social Survey Programme. Assume the r
 ### Options:
 {options}
 
-### Response Format:
-IMPORTANT: Your response must ONLY contain TWO parts in a specific JSON format:
-1. A "reason" field with your detailed reasoning (not a placeholder)
-2. An "option" object containing an "answer" field with your selected option_id
+### Critical Response Requirements:
+You MUST respond with a JSON object containing TWO parts:
+1. Detailed reasoning in response to questions based solely on the above personal information, answer 6-10 sentences.
+2. Your chosen option number (ONLY the number, Do not include option text or other textual content).You must choose one of the #### Options that best suits you personally,No blank replies, no placeholders for invalid messages, etc.
 
-Your response should be in this exact JSON format:
+### JSON Output Format:
 ```json
 {{
-  "reason": "I believe this option is most appropriate because... [YOUR FULL REASONING HERE]",
+  "reason": "",
   "option": {{
-    "answer": "[OPTION_NUMBER]"
+    "answer": ""
   }}
 }}
 ```
+### Requirements：
+1. You cannot use ellipses in output (...) etc. in the output, you need to present all the information in full.
+2. You can't just use the template in the output format as the final output without specific reason and option information.
 
-### Requirements:
-1. The "option_id" MUST BE EXACTLY the KEY (the number/identifier before the colon) from the options list, NOT the text content after the colon.
-2. The "reason" must contain your actual reasoning (8-10 sentences) explaining why you chose that option based on the personal information.
-3. DO NOT use placeholders in your response - provide your actual reasoning and selected option.
-4. DO NOT include any text outside this JSON structure.
 
-### WARNING ABOUT OPTION SELECTION:
-- You MUST select the number/key that appears BEFORE the colon in the options list.
-- For example, if the options are:
-  "1": "Strongly agree"
-  "2": "Agree"
-  "3": "Neither agree nor disagree"
-  "4": "Disagree"
-  
-  Then your answer must be "1", "2", "3", or "4" - NOT the text like "Strongly agree".
-
-- If the options include numbered formats like:
-  "6": "06"
-  "7": "07"
-  "10": "10, Very well"
-  
-  Then your answer must be "6", "7", or "10" - NOT "06", "07", or "10, Very well".
-
-The answer MUST ALWAYS be the KEY (the number/identifier before the colon) from the options list.
-
-### EXAMPLES:
-For options like:
-"1": "Should definitely be allowed"
-"2": "Should probably be allowed"
-
-CORRECT: "answer": "1"
-INCORRECT: "answer": "Should definitely be allowed"
-
-For options like:
-"6": "06"
-"10": "10, Very well"
-
-CORRECT: "answer": "6"
-INCORRECT: "answer": "06"
-
-REMEMBER: Never use placeholder text. Provide your actual reasoning and select the correct option number.
 """
         # 是否随机打乱选项顺序
         self.shuffle_options = shuffle_options
@@ -95,14 +58,14 @@ REMEMBER: Never use placeholder text. Provide your actual reasoning and select t
             "properties": {
                 "reason": {
                     "type": "string",
-                    "description": "Your actual reasoning for selecting this option based on the persona's information"
+                    "description": "Your detailed reasoning (8-10 sentences) explaining why you chose this option based on your personal attributes and experiences"
                 },
                 "option": {
                     "type": "object",
                     "properties": {
                         "answer": {
                             "type": "string",
-                            "description": "The specific option_id (number/key) you selected from the provided options"
+                            "description": "The specific option number/key you selected from the provided options (ONLY the number before the colon)"
                         }
                     },
                     "required": ["answer"]

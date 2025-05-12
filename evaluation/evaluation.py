@@ -71,11 +71,24 @@ class Evaluator:
         for pattern in placeholder_patterns:
             llm_response = re.sub(pattern, '', llm_response)
         
-        # 尝试直接从JSON代码块中提取 (优先级最高)
+        # 1. 首先尝试从 "option": {"answer": ""} 结构中提取，优先级最高
+        option_answer_pattern = r'"option"\s*:\s*\{\s*"answer"\s*:\s*"([^"]*)"\s*\}'
+        match = re.search(option_answer_pattern, llm_response)
+        if match:
+            # 返回提取到的answer值，即使它是空字符串
+            return match.group(1)
+                
+        # 2. 尝试提取数字形式的answer (不带引号)
+        number_pattern = r'"option"\s*:\s*\{\s*"answer"\s*:\s*(\d+)\s*\}'
+        match = re.search(number_pattern, llm_response)
+        if match:
+            return match.group(1)
+        
+        # 3. 尝试其他JSON格式的提取方式
         json_patterns = [
-            r'```json\s*(\{.*?"answer"\s*:\s*"([^"]+)".*?\})',
-            r'<json>\s*(\{.*?"answer"\s*:\s*"([^"]+)".*?\})',
-            r'(\{.*?"answer"\s*:\s*"([^"]+)".*?\})'
+            r'```json\s*(\{.*?"answer"\s*:\s*"([^"]*)".*?\})',
+            r'<json>\s*(\{.*?"answer"\s*:\s*"([^"]*)".*?\})',
+            r'(\{.*?"answer"\s*:\s*"([^"]*)".*?\})'
         ]
         
         for pattern in json_patterns:
@@ -88,8 +101,7 @@ class Evaluator:
                 # 提取匹配组中的答案值
                 return last_match.group(2)
         
-        # 如果未找到JSON格式，尝试从文本中提取数字
-        # 提取文本中的选项信息
+        # 4. 如果未找到JSON格式，尝试从文本中提取数字
         option_patterns = [
             r'(?:answer|option|选项|回答|选择)\s*(?:是|为|:)?\s*["""]?([0-9]+)["""]?',
             r'(?:选择了|选择|回答|选).{0,10}?([0-9]+).{0,10}?(?:作为|的|为)?(?:答案|回答|选项)?',
@@ -106,13 +118,13 @@ class Evaluator:
             if last_match:
                 return last_match.group(1)
         
-        # 如果以上方法都未提取到，则尝试直接提取文本中的数字
+        # 5. 如果以上方法都未提取到，则尝试直接提取文本中的数字
         # 注意：这是最后的尝试，优先级最低
         numbers = re.findall(r'\b([0-9]+)\b', llm_response)
         if numbers:
             return numbers[-1]  # 返回最后一个数字
             
-        # 如果提供了选项且前面的方法都没提取到答案，尝试通过选项内容匹配
+        # 6. 如果提供了选项且前面的方法都没提取到答案，尝试通过选项内容匹配
         if options:
             return self._match_answer_by_options(llm_response, options)
             
@@ -714,7 +726,9 @@ class Evaluator:
             except Exception as e:
                 print(f"获取问题 {question_id} 的选项内容时出错: {str(e)}")
             
-            details_data.append({
+            # 创建详细数据字典，并将person_id放在第一列
+            data_dict = {
+                "受访者ID": detail.get("person_id", ""),  # 添加受访者ID作为第一列
                 "问题ID": question_id,
                 "国家代码": detail["country_code"],
                 "国家全称": detail["country_name"],
@@ -727,7 +741,8 @@ class Evaluator:
                 "是否正确": detail["result_correctness"],
                 "是否国家特定问题": detail["is_country_specific"],
                 "是否纳入评测": included_in_evaluation
-            })
+            }
+            details_data.append(data_dict)
         
         # 保存为CSV
         if details_data:
