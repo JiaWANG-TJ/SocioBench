@@ -1,12 +1,8 @@
-# 社会认知基准评测系统
-
-本系统基于国际社会调查项目（ISSP）设计，用于评估大语言模型在社会认知领域的能力。系统模拟不同国家和背景的受访者回答社会调查问题，通过比较模型回答与真实受访者答案的一致性来评估模型的社会认知能力。
 
 ## 环境配置
 
 ### 安装依赖
 
-项目依赖可以通过以下命令安装：
 
 ```bash
 # 切换到项目根目录
@@ -16,17 +12,9 @@ cd 项目根目录
 pip install -r social_benchmark/evaluation/requirements.txt
 ```
 
-主要依赖包括：
-- 基础依赖：numpy, pandas, scikit-learn, tqdm等
-- PyTorch与transformer相关依赖：torch, transformers, accelerate等
-- API与服务相关依赖：openai, fastapi, uvicorn等
-- vLLM相关依赖：vllm
-
 ### 模型准备
 
 #### 模型存放
-
-系统支持对HuggingFace格式的模型进行评测。请将模型放置在适当位置，推荐以下两种方式：
 
 1. **相对路径**：在项目根目录下创建`models`或`model_input`文件夹存放模型
 2. **绝对路径**：将模型存放在任意位置，运行时通过`--model`参数指定完整路径
@@ -50,49 +38,9 @@ python -m social_benchmark.evaluation.run_evaluation --model models/llama-7b-cha
 python -m social_benchmark.evaluation.run_evaluation --model /path/to/your/models/qwen-7b-chat
 ```
 
-#### 模型要求
 
-- 模型必须为HuggingFace格式，支持vLLM加速推理
-- 大模型（32B以上）建议使用`tensor_parallel_size`参数进行多GPU并行推理
+### 用法
 
-### 环境变量设置（可选，用于提高性能）
-
-```bash
-# Linux/Mac环境
-export TORCH_CUDA_ARCH_LIST="8.9+PTX"
-export VLLM_WORKER_MULTIPROC_METHOD="spawn"
-export OMP_NUM_THREADS=12
-export MKL_NUM_THREADS=12
-export MKL_SERVICE_FORCE_INTEL=1
-export MKL_THREADING_LAYER=GNU
-
-# Windows环境
-set TORCH_CUDA_ARCH_LIST=8.9+PTX
-set VLLM_WORKER_MULTIPROC_METHOD=spawn
-set OMP_NUM_THREADS=12
-set MKL_NUM_THREADS=12
-set MKL_SERVICE_FORCE_INTEL=1
-set MKL_THREADING_LAYER=GNU
-```
-
-## 运行评测
-
-### 基本用法
-
-**评测单个领域：**
-
-```bash
-# 在项目根目录下运行
-python -m social_benchmark.evaluation.run_evaluation --domain_id 1 --interview_count 50 --api_type vllm --model models/llama-7b-chat
-```
-
-**评测所有领域：**
-
-```bash
-python -m social_benchmark.evaluation.run_evaluation --domain_id all --interview_count 50 --api_type vllm --model models/llama-7b-chat
-```
-
-### 高性能评测示例
 
 以下是一个高性能评测配置示例：
 
@@ -109,7 +57,7 @@ python -m social_benchmark.evaluation.run_evaluation \
   --shuffle_options=True \
   --model=models/llama-70b-chat \
   --dataset_size 500 \
-  --tensor_parallel_size 2
+  --tensor_parallel_size 1
 ```
 
 ### 主要参数说明
@@ -133,14 +81,6 @@ python -m social_benchmark.evaluation.run_evaluation \
 
 ```bash
 python -m social_benchmark.evaluation.run_all_models --model_list "models/llama-7b-chat,models/qwen-7b-chat" --domain_id 1
-```
-
-### 运行四国抽样测试
-
-从四个国家各选一个受访者进行测试：
-
-```bash
-python -m social_benchmark.evaluation.social_benchmark_country_test.test_four_countries
 ```
 
 ## 结果查看
