@@ -46,7 +46,8 @@ You MUST respond with a JSON object containing TWO parts:
 ### Requirements：
 1. You cannot use ellipses in output (...) etc. in the output, you need to present all the information in full.
 2. You can't just use the template in the output format as the final output without specific reason and option information.
-
+3. IMPORTANT: The "reason" field MUST contain detailed reasoning (6-10 sentences). The "answer" field MUST contain a specific option number. DO NOT leave either field empty.
+4. If you return empty fields or use the template without completing it, your response will be considered invalid.
 
 """
         # 是否随机打乱选项顺序

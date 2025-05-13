@@ -54,7 +54,9 @@ def run_evaluation_for_model(model_name, evaluation_script_path, **kwargs):
         "--start_domain_id", str(kwargs.get("start_domain_id", 1)),
         "--print_prompt", str(kwargs.get("print_prompt", True)),
         "--shuffle_options", str(kwargs.get("shuffle_options", True)),
-        "--model", model_name
+        "--model", model_name,
+        "--dataset_size", str(kwargs.get("dataset_size", 500)),
+        "--tensor_parallel_size", str(kwargs.get("tensor_parallel_size", 1))
     ]
     
     # 记录完整命令
@@ -188,6 +190,8 @@ def parse_args():
     parser.add_argument('--start_domain_id', type=int, default=1, help='起始评测的领域ID')
     parser.add_argument('--print_prompt', type=str, default='True', help='是否打印提示')
     parser.add_argument('--shuffle_options', type=str, default='True', help='是否打乱选项顺序')
+    parser.add_argument('--dataset_size', type=int, default=500, choices=[500, 5000, 50000], help='数据集大小，500(采样1%)、5000(采样10%)、50000(原始数据集)，默认为500')
+    parser.add_argument('--tensor_parallel_size', type=int, default=1, help='张量并行大小，默认为1')
     
     return parser.parse_args()
 
@@ -249,5 +253,7 @@ if __name__ == "__main__":
         concurrent_interviewees=args.concurrent_interviewees,
         start_domain_id=args.start_domain_id,
         print_prompt=args.print_prompt,
-        shuffle_options=args.shuffle_options
+        shuffle_options=args.shuffle_options,
+        dataset_size=args.dataset_size,
+        tensor_parallel_size=args.tensor_parallel_size
     ) 
