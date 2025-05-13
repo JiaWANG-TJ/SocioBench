@@ -52,9 +52,10 @@ class LLMAPIClient:
     """LLM API客户端类，支持config和vllm两种API调用方式"""
     
     def __init__(self, api_type: str = "config", model: Optional[str] = None, 
-                 temperature: float = 0.7, max_tokens: int = 2048,
+                 temperature: float = 0.5, max_tokens: int = 2048,
                  top_p: float = 0.95, repetition_penalty: float = 1.1, 
-                 frequency_penalty: float = 0.0, presence_penalty: float = 0.0, **kwargs):
+                 frequency_penalty: float = 0.0, presence_penalty: float = 0.0,
+                 tensor_parallel_size: int = 1, **kwargs):
         """
         初始化LLM API客户端
         
@@ -67,6 +68,7 @@ class LLMAPIClient:
             repetition_penalty: 重复惩罚参数，值越大对重复内容惩罚越严格，默认为1.1
             frequency_penalty: 频率惩罚参数，惩罚频繁出现的token，默认为0.0
             presence_penalty: 存在惩罚参数，惩罚已出现过的token，默认为0.0
+            tensor_parallel_size: 张量并行大小，默认为1
             **kwargs: 其他参数
         """
         if api_type not in ["config", "vllm"]:
@@ -79,6 +81,7 @@ class LLMAPIClient:
         self.repetition_penalty = repetition_penalty
         self.frequency_penalty = frequency_penalty
         self.presence_penalty = presence_penalty
+        self.tensor_parallel_size = tensor_parallel_size
         self.kwargs = kwargs
         
         if api_type == "config":
@@ -125,7 +128,7 @@ class LLMAPIClient:
                     model=self.model,                           # 模型路径或名称
                     trust_remote_code=True,                     # 信任模型自定义代码
                     # ── 并行配置 ───────────────────────────────
-                    tensor_parallel_size=1,                     # 张量并行，修改
+                    tensor_parallel_size=self.tensor_parallel_size,
                     pipeline_parallel_size=1,                   # 多节点部署才设置，单节点设置为1
                     data_parallel_size=1,
                     # distributed_executor_backend="ray",         # 强制使用 Ray 后端
@@ -448,7 +451,7 @@ class LLMAPIClient:
             repetition_penalty=self.repetition_penalty,  # 添加重复惩罚参数
             frequency_penalty=self.frequency_penalty,    # 添加频率惩罚参数
             presence_penalty=self.presence_penalty,      # 添加存在惩罚参数
-            guided_decoding=guided_decoding_params       # 添加引导解码参数
+            guided_decoding=guided_decoding_params,      # 添加引导解码参数
         )
         
         # 生成唯一请求ID

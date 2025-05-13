@@ -453,14 +453,47 @@ def load_qa_file(domain_name: str) -> List[Dict[str, Any]]:
         print(f"警告: 无法找到问答文件: {file_path}")
         return None
 
-def load_ground_truth(domain_name: str) -> List[Dict[str, Any]]:
-    """加载真实答案数据"""
-    file_path = os.path.join(os.path.dirname(__file__), "..", "Dataset_all", "A_GroundTruth_sampling500", f"issp_answer_{domain_name.lower()}.json")
-    # file_path = os.path.join(os.path.dirname(__file__), "..", "Dataset_all", "A_GroundTruth", f"issp_answer_{domain_name.lower()}.json")
-    with open(file_path, 'r', encoding='utf-8') as f:
-        ground_truth = json.load(f)
-    print(f"成功加载真实答案文件: {file_path}")
-    return ground_truth
+def load_ground_truth(domain_name: str, dataset_size: int = 500) -> List[Dict[str, Any]]:
+    """加载真实答案数据
+    
+    Args:
+        domain_name: 领域名称
+        dataset_size: 数据集大小，可选值为500(采样1%)、5000(采样10%)、50000(原始数据集)
+        
+    Returns:
+        真实答案数据列表
+    """
+    # 根据dataset_size参数选择对应的数据集路径
+    if dataset_size == 500:
+        dir_path = "A_GroundTruth_sampling500"
+    elif dataset_size == 5000:
+        dir_path = "A_GroundTruth_sampling5000"
+    elif dataset_size == 50000:
+        dir_path = "A_GroundTruth"
+    else:
+        # 默认使用500大小的数据集
+        dir_path = "A_GroundTruth_sampling500"
+        print(f"警告: 无效的数据集大小 {dataset_size}，使用默认值 500")
+    
+    file_path = os.path.join(os.path.dirname(__file__), "..", "Dataset_all", dir_path, f"issp_answer_{domain_name.lower()}.json")
+    try:
+        with open(file_path, 'r', encoding='utf-8') as f:
+            ground_truth = json.load(f)
+        print(f"成功加载真实答案文件: {file_path}")
+        return ground_truth
+    except FileNotFoundError:
+        # 如果文件不存在，尝试其他可能的路径
+        print(f"警告: 无法找到文件: {file_path}，尝试其他路径...")
+        
+        # 尝试在Dataset目录下查找
+        alt_file_path = os.path.join(os.path.dirname(__file__), "..", "Dataset", dir_path, f"issp_answer_{domain_name.lower()}.json")
+        try:
+            with open(alt_file_path, 'r', encoding='utf-8') as f:
+                ground_truth = json.load(f)
+            print(f"成功加载真实答案文件: {alt_file_path}")
+            return ground_truth
+        except FileNotFoundError:
+            raise FileNotFoundError(f"无法找到领域 {domain_name} 的真实答案数据")
 
 def get_question_country_code(question_id: str) -> Optional[str]:
     """从问题ID中提取国家代码"""
@@ -614,7 +647,7 @@ async def process_question_async(question_id, true_answer, question_data, countr
             json_schema = prompt_engine.get_json_schema()
             
             # 添加系统提示，确保模型不返回空模板
-            system_message = "Your answer must be based solely on your #### Personal Information.Prohibit outputting {\"reason\": \"\", \"option\": {\"answer\": \"\"}} directly in your replies.”"
+            system_message = "Your answer must be based solely on your #### Personal Information. YOU MUST provide specific content for both reason and answer fields in your response. Empty JSON templates like {\"reason\": \"\", \"option\": {\"answer\": \"\"}} are PROHIBITED. Provide detailed reasoning and a clear option selection."
             messages = [
                 {"role": "system", "content": system_message},
                 {"role": "user", "content": prompt}
@@ -732,7 +765,8 @@ def run_evaluation(domain_id: int, interview_count: Union[int, str],
                    api_type: str = "config", use_async: bool = False,
                    concurrent_requests: int = 5, concurrent_interviewees: int = 1,
                    model_name: str = "Qwen2.5-32B-Instruct", print_prompt: bool = False,
-                   shuffle_options: bool = False) -> Dict[str, Any]:
+                   shuffle_options: bool = False, dataset_size: int = 500,
+                   tensor_parallel_size: int = 1) -> Dict[str, Any]:
     """运行评测"""
     # 导入需要的模块
     import gc
@@ -768,6 +802,7 @@ def run_evaluation(domain_id: int, interview_count: Union[int, str],
         print(f"多受访者并行模式已启用 | 并行受访者数: {concurrent_interviewees}")
     if shuffle_options:
         print(f"选项随机打乱已启用 | 将随机打乱问题选项顺序")
+    print(f"数据集大小: {dataset_size} | 张量并行大小: {tensor_parallel_size}")
     print(f"结果将保存到: {results_dir}")
     print(f"{'='*60}")
     
@@ -778,7 +813,7 @@ def run_evaluation(domain_id: int, interview_count: Union[int, str],
         return
         
     try:
-        ground_truth = load_ground_truth(domain_name)
+        ground_truth = load_ground_truth(domain_name, dataset_size)
     except Exception as e:
         print(f"错误: 无法加载领域 {domain_name} 的真实答案数据: {str(e)}")
         print(f"跳过该领域评测。")
@@ -820,8 +855,8 @@ def run_evaluation(domain_id: int, interview_count: Union[int, str],
             # 使用配置文件中的MODEL_CONFIG，不传入model参数
             llm_client = LLMAPIClient(api_type=api_type)
         else:
-            # 对于vllm模式，继续使用传入的model_name参数
-            llm_client = LLMAPIClient(api_type=api_type, model=model_name)
+            # 对于vllm模式，继续使用传入的model_name参数和tensor_parallel_size参数
+            llm_client = LLMAPIClient(api_type=api_type, model=model_name, tensor_parallel_size=tensor_parallel_size)
         prompt_engine = PromptEngineering(shuffle_options=shuffle_options)
         evaluator = Evaluator(domain_name=domain_name, save_dir=results_dir)
         
@@ -1464,7 +1499,8 @@ def run_all_domains(api_type: str = "config", interview_count: Union[int, str] =
                    use_async: bool = False, concurrent_requests: int = 5,
                    concurrent_interviewees: int = 1, start_domain_id: int = 1,
                    model_name: str = "Qwen2.5-32B-Instruct", print_prompt: bool = False,
-                   shuffle_options: bool = False) -> None:
+                   shuffle_options: bool = False, dataset_size: int = 500,
+                   tensor_parallel_size: int = 1) -> None:
     """运行所有领域的评测"""
     # 导入需要的模块
     import gc
@@ -1556,6 +1592,12 @@ def run_all_domains(api_type: str = "config", interview_count: Union[int, str] =
                 cmd.extend(["--shuffle_options", "True"])
             else:
                 cmd.extend(["--shuffle_options", "False"])
+            
+            # 添加dataset_size参数
+            cmd.extend(["--dataset_size", str(dataset_size)])
+            
+            # 添加tensor_parallel_size参数
+            cmd.extend(["--tensor_parallel_size", str(tensor_parallel_size)])
             
             # 设置环境变量
             env = os.environ.copy()
@@ -1895,6 +1937,8 @@ def parse_args():
     parser.add_argument('--no_log', type=str2bool, default=False, help='禁用日志记录到文件')
     parser.add_argument('--print_prompt', type=str2bool, default=True, help='打印完整的prompt、问答和LLM回答到json文件中')
     parser.add_argument('--shuffle_options', type=str2bool, default=False, help='随机打乱问题选项顺序，默认按原始顺序显示')
+    parser.add_argument('--dataset_size', type=int, default=500, choices=[500, 5000, 50000], help='数据集大小，500(采样1%)、5000(采样10%)、50000(原始数据集)，默认为500')
+    parser.add_argument('--tensor_parallel_size', type=int, default=1, help='张量并行大小，默认为1')
     
     return parser.parse_args()
 
@@ -1902,8 +1946,8 @@ def parse_args():
 """
 # Linux示例命令
 python /inspire/hdd/ws-f4d69b29-e0a5-44e6-bd92-acf4de9990f0/public-project/wangjia-240108610168/social_benchmark/evaluation/run_evaluation.py \
-  --domain_id 1 \
-  --interview_count 10 \
+  --domain_id all \
+  --interview_count all \
   --api_type vllm \
   --use_async=True \
   --concurrent_requests 10000 \
@@ -1911,7 +1955,9 @@ python /inspire/hdd/ws-f4d69b29-e0a5-44e6-bd92-acf4de9990f0/public-project/wangj
   --start_domain_id 1 \
   --print_prompt=True \
   --shuffle_options=True \
-  --model=Qwen2.5-32B-Instruct
+  --model=Qwen2.5-72B-Instruct \
+  --dataset_size 500 \
+  --tensor_parallel_size 2
 
 python /inspire/hdd/ws-f4d69b29-e0a5-44e6-bd92-acf4de9990f0/public-project/wangjia-240108610168/social_benchmark/evaluation/run_evaluation.py \
   --domain_id all \
@@ -2089,7 +2135,9 @@ if __name__ == "__main__":
                 start_domain_id=args.start_domain_id,
                 model_name=args.model,
                 print_prompt=args.print_prompt,
-                shuffle_options=args.shuffle_options
+                shuffle_options=args.shuffle_options,
+                dataset_size=args.dataset_size,
+                tensor_parallel_size=args.tensor_parallel_size
             )
         else:
             try:
@@ -2109,7 +2157,9 @@ if __name__ == "__main__":
                     concurrent_interviewees=args.concurrent_interviewees,
                     model_name=args.model,
                     print_prompt=args.print_prompt,
-                    shuffle_options=args.shuffle_options
+                    shuffle_options=args.shuffle_options,
+                    dataset_size=args.dataset_size,
+                    tensor_parallel_size=args.tensor_parallel_size
                 )
             except ValueError:
                 print(f"错误：domain_id必须是整数(1-11)或'all'")
