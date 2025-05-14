@@ -1,3 +1,130 @@
+# 社会认知基准大规模并发评测系统
+
+这个系统允许使用vLLM API大规模并发评测社会认知能力。相比原始的评测系统，它提供了更高的吞吐量和更快的评测速度。
+
+## 主要特性
+
+- 高并发API请求：同时处理多达数百个API请求
+- 批处理支持：自动将请求分批处理，提高整体效率
+- 完整的错误处理和重试机制：确保评测的稳定性
+- 详细的统计信息：追踪API调用性能和成功率
+- 与原始评测系统完全兼容：无需修改评测逻辑
+- 支持大规模数据集评测：能够评测包含数万个问题的大型数据集
+
+## 安装要求
+
+- Python 3.8+
+- vLLM 0.8.0+
+- aiohttp
+- asyncio
+- tqdm
+
+## 使用方法
+
+### 1. 启动vLLM服务器
+
+首先，使用以下命令启动vLLM服务器：
+
+```bash
+vllm serve /path/to/your/model \
+  --trust-remote-code \
+  --tensor-parallel-size 1 \
+  --pipeline-parallel-size 1 \
+  --data-parallel-size 1 \
+  --gpu-memory-utilization 0.98 \
+  --max-model-len 20480 \
+  --enable-chunked-prefill \
+  --enable-prefix-caching \
+  --max-num-seqs 200 \
+  --max-num-batched-tokens 10240 \
+  --enforce-eager \
+  --use-v2-block-manager \
+  --disable-async-output-proc
+```
+
+### 2. 运行大规模并发评测
+
+使用以下命令运行评测：
+
+```bash
+# 评测单个领域
+python social_benchmark/evaluation/massive_evaluation.py \
+  --domain_id 1 \
+  --interview_count 100 \
+  --api_base "http://localhost:8000/v1/chat/completions" \
+  --model "Meta-Llama-3.1-8B-Instruct" \
+  --max_concurrent_requests 200 \
+  --batch_size 50
+
+# 评测所有领域
+python social_benchmark/evaluation/massive_evaluation.py \
+  --domain_id all \
+  --interview_count all \
+  --api_base "http://localhost:8000/v1/chat/completions" \
+  --model "Meta-Llama-3.1-8B-Instruct" \
+  --max_concurrent_requests 200 \
+  --batch_size 50
+```
+
+### 参数说明
+
+- `--domain_id`：评测领域ID (1-11)或"all"表示所有领域
+- `--interview_count`：评测受访者数量,"all"表示所有受访者
+- `--api_base`：vLLM API基础URL
+- `--model`：使用的模型名称
+- `--max_concurrent_requests`：最大并发请求数（根据服务器性能调整）
+- `--batch_size`：批处理大小（建议设置为50-100）
+- `--concurrent_interviewees`：并行处理的受访者数量
+- `--temperature`：采样温度（默认为0.1）
+- `--max_tokens`：最大生成token数（默认为2048）
+- `--request_timeout`：单个请求的超时时间（秒，默认为60）
+- `--start_domain_id`：起始评测的领域ID（当domain_id为all时有效）
+- `--print_prompt`：是否保存完整提示和响应（默认为True）
+- `--shuffle_options`：是否随机打乱选项顺序（默认为False）
+- `--dataset_size`：数据集大小，可选值为500(采样1%)、5000(采样10%)和50000(全量)
+- `--verbose`：是否输出详细日志
+
+## 性能考虑
+
+为获得最佳性能，请根据您的硬件配置调整以下参数：
+
+- `--max_concurrent_requests`：此值应根据您的GPU和CPU能力进行调整。对于单GPU设置，建议值为100-300；多GPU设置可以设置更高。
+- `--batch_size`：控制每批处理的请求数。较大的批处理大小可以提高整体吞吐量，但也会增加内存使用量。建议值为50-100。
+- `--request_timeout`：根据模型大小和提示长度调整超时时间。对于大型模型或长提示，可能需要更长的超时时间。
+
+## 与原始系统的对比
+
+| 特性 | 原始评测系统 | 大规模并发评测系统 |
+|------|------------|-----------------|
+| 并发能力 | 有限（约5-10个请求） | 高（可达数百个请求） |
+| 批处理支持 | 有限 | 完全支持 |
+| 错误处理 | 基本 | 高级（包括重试机制） |
+| 统计信息 | 基本 | 详细（包括API性能指标） |
+| 内存效率 | 一般 | 高（通过分批处理减少内存使用） |
+| 评测速度 | 适中 | 高（可提高5-10倍） |
+
+## 结果输出
+
+评测结果会保存在`social_benchmark/evaluation/results/`目录下，包括：
+
+- 每个领域的详细评测结果（JSON格式）
+- 提示和模型响应记录（如果启用了`--print_prompt`）
+- 所有领域的汇总结果
+
+## 故障排除
+
+如果遇到问题，请检查：
+
+1. vLLM服务器是否正常运行
+2. API基础URL是否正确
+3. 是否有足够的GPU内存
+4. 是否有足够的并发连接（对于大量并发请求）
+
+如果API请求超时，请尝试：
+
+1. 减少`--max_concurrent_requests`值
+2. 增加`--request_timeout`值
+3. 减少`--batch_size`值
 
 ## 环境配置
 

@@ -4,6 +4,7 @@
 import json
 import random
 from typing import Dict, List, Any, Union, Optional
+import logging
 
 class PromptEngineering:
     """提示工程类，用于生成让LLM扮演受访者的提示"""
@@ -16,7 +17,7 @@ class PromptEngineering:
             shuffle_options: 是否随机打乱选项顺序，默认为False
         """
         # 基础提示模板，强化输出格式，确保只输出解释和JSON答案
-        self.prompt_template = """
+        self.template = """
 ### Instruction:
 You are participating in the International Social Survey Programme. Assume the role of a real individual with the following personal information. Fully immerse yourself in this persona and answer the question truthfully, based solely on the provided personal information.
 
@@ -29,26 +30,17 @@ You are participating in the International Social Survey Programme. Assume the r
 ### Options:
 {options}
 
-### Critical Response Requirements:
-You MUST respond with a JSON object containing TWO parts:
-1. Detailed reasoning in response to questions based solely on the above personal information, answer 6-10 sentences.
-2. Your chosen option number (ONLY the number, Do not include option text or other textual content).You must choose one of the #### Options that best suits you personally,No blank replies, no placeholders for invalid messages, etc.
-
-### JSON Output Format:
+### Please strictly follow the following json format output:
 ```json
-{{
+{{{{
   "reason": "",
-  "option": {{
-    "answer": ""
-  }}
-}}
-```
-### Requirements：
-1. You cannot use ellipses in output (...) etc. in the output, you need to present all the information in full.
-2. You can't just use the template in the output format as the final output without specific reason and option information.
-3. IMPORTANT: The "reason" field MUST contain detailed reasoning (6-10 sentences). The "answer" field MUST contain a specific option number. DO NOT leave either field empty.
-4. If you return empty fields or use the template without completing it, your response will be considered invalid.
+  "option": ""
+}}}}
 
+```
+### Requirements:
+1. Please answer the questions based on your personal information only and give a detailed and complete justification, which requires a 6-10 sentence response.
+2. 2. Please choose the option that best suits you from the ### Options given, and respond with the number only. For example: #### Options contains: {{"1": "1, Not at all important", "2": "02"}}, you can choose "1" or "2", but do not choose "1, Not at all important" or "02".
 """
         # 是否随机打乱选项顺序
         self.shuffle_options = shuffle_options
@@ -59,14 +51,14 @@ You MUST respond with a JSON object containing TWO parts:
             "properties": {
                 "reason": {
                     "type": "string",
-                    "description": "Your detailed reasoning (8-10 sentences) explaining why you chose this option based on your personal attributes and experiences"
+                    "description": "Your detailed reasoning explaining why you chose this option based on your personal information"
                 },
                 "option": {
                     "type": "object",
                     "properties": {
                         "answer": {
                             "type": "string",
-                            "description": "The specific option number/key you selected from the provided options (ONLY the number before the colon)"
+                            "description": "The specific option number you selected from the provided options"
                         }
                     },
                     "required": ["answer"]
@@ -88,8 +80,61 @@ You MUST respond with a JSON object containing TWO parts:
         if not attributes:
             return "无个人信息"
         
-        # 直接返回原始属性信息
-        return json.dumps(attributes, ensure_ascii=False, indent=2)
+        # 定义需要忽略的特定键名列表
+        ignored_keys = [
+            "ID Number of Respondent",
+            "Date of interview: year of interview; YYYY (four digits)",
+            "Date of interview: month of interview: MM (two digits)",
+            "Date of interview: day of interview: DD (two digits)",
+            "Case substitution flag",
+            "Weighting factor",
+            "Administrative mode of data-collection",
+            "Methods of data-collection in mixed modes experiment",
+            
+            "ID Number of Respondent / Respondent Identification Number",
+            "ID Number of respondent",
+            "Respondent Identification Number",
+            "Year of interview: YYYY (four digits)",
+            "Month of interview: MM (two digits)",
+            "Day of interview: DD (two digits)",
+            "Date of interview: year of interview: YYYY (four digits)",
+            "Language of the interview",
+            "Weight",
+            "Flag variable indicating partially completed interviews",
+            "Design weight - household samples",
+            "Design weight - target stratification", 
+            "HH + TS combination of all design aspects",
+            "Post-stratification weight",
+            "Combination of all weights"
+        ]
+        
+        # 定义需要过滤的关键词
+        filter_keywords = [
+            "other countries", 
+            "not available", 
+            "not applicable", 
+            "nap", 
+            "nav"
+        ]
+        
+        # 过滤属性
+        filtered_attributes = {}
+        for key, value in attributes.items():
+            # 过滤特定键名
+            if key in ignored_keys:
+                continue
+            
+            # 过滤包含关键词的值
+            if isinstance(value, str):
+                value_lower = value.lower()
+                if any(keyword in value_lower for keyword in filter_keywords):
+                    continue
+            
+            # 保留符合条件的属性
+            filtered_attributes[key] = value
+        
+        # 返回过滤后的属性信息JSON
+        return json.dumps(filtered_attributes, ensure_ascii=False, indent=2)
     
     def format_question_options(self, question: str, options: Union[Dict[str, str], str]) -> tuple:
         """
@@ -113,7 +158,13 @@ You MUST respond with a JSON object containing TWO parts:
         
         # 处理选项字典的情况
         # 将选项编号和选项文本组成元组列表
-        option_items = list(options.items())
+        option_items = []
+        for option_id, option_text in options.items():
+            # 移除选项ID中的引号
+            clean_id = option_id
+            if isinstance(clean_id, str):
+                clean_id = clean_id.replace('"', '').replace("'", "").strip()
+            option_items.append((clean_id, option_text))
         
         # 根据配置决定是否随机打乱选项顺序
         if self.shuffle_options:
@@ -128,32 +179,55 @@ You MUST respond with a JSON object containing TWO parts:
         
         return formatted_question, formatted_options
     
-    def generate_prompt(self, attributes: Union[Dict[str, Any], str], question: str, options: Union[Dict[str, str], str]) -> str:
+    def generate_prompt(self, attributes: Dict[str, Any], question: str, options: Dict[str, str]) -> str:
         """
-        生成完整的提示
+        生成提示，包括个人信息、问题和选项
         
         Args:
-            attributes: 个人属性字典或已格式化的属性字符串
+            attributes: 个人属性
             question: 问题文本
-            options: 选项字典{选项编号: 选项文本}或选项字符串(每行一个选项，格式为"选项ID. 选项文本")
+            options: 选项字典，格式为 {选项ID: 选项文本}
             
         Returns:
-            生成的完整提示字符串
+            str: 完整的提示文本
         """
-        # 格式化问题和选项
-        formatted_question, formatted_options = self.format_question_options(question, options)
+        # 打印日志，便于调试
+        logging.debug(f"生成提示，属性: {attributes}, 问题: {question}, 选项数量: {len(options)}")
         
-        # 处理attributes为字符串的情况
-        if isinstance(attributes, str):
-            formatted_attributes = attributes
-        else:
-            formatted_attributes = self.format_personal_info(attributes)
+        # 确保attributes是字典类型
+        if attributes is None:
+            attributes = {}
+            logging.warning("传入的属性为None，已自动创建空字典")
         
-        # 生成完整提示
-        prompt = self.prompt_template.format(
-            attributes=formatted_attributes,
-            question=formatted_question,
-            options=formatted_options
+        # 如果attributes为空，添加一个默认标记
+        if not attributes:
+            logging.warning("属性字典为空，这可能导致模型无法基于个人信息回答问题")
+            attributes["_note"] = "此处应该包含个人信息，但当前为空"
+        
+        # 处理选项键中可能存在的引号
+        clean_options = {}
+        for option_id, option_text in options.items():
+            # 移除选项ID中的引号，strip会移除两侧的引号，但不会移除中间的引号
+            clean_id = option_id
+            if isinstance(clean_id, str):
+                # 显式移除引号
+                clean_id = clean_id.replace('"', '').replace("'", "").strip()
+            clean_options[clean_id] = option_text
+        
+        # 构建选项部分
+        options_text = "\n".join([f"{option_id}. {option_text}" for option_id, option_text in clean_options.items()])
+        
+        # 构建个人属性部分
+        attributes_text = ""
+        if attributes:
+            # 格式化属性，每行一个属性
+            attributes_text = "\n".join([f"{key}: {value}" for key, value in attributes.items()])
+        
+        # 构建完整提示
+        prompt = self.template.format(
+            attributes=attributes_text,
+            question=question,
+            options=options_text
         )
         
         return prompt
