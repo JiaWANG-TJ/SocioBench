@@ -28,6 +28,12 @@ import traceback
 import multiprocessing
 import concurrent.futures
 from sklearn.metrics import f1_score
+import hashlib
+import logging
+from pathlib import Path
+
+# 从utils模块导入gc_and_cuda_cleanup函数
+from social_benchmark.evaluation.utils import gc_and_cuda_cleanup
 
 # 设置多进程启动方法为spawn，以解决CUDA初始化问题
 # 这是必须的，因为vLLM使用CUDA，在fork的子进程中无法重新初始化CUDA
@@ -605,9 +611,29 @@ def should_include_in_evaluation(true_answer: Any, true_answer_meaning: Any,
     return True
 
 async def process_question_async(question_id, true_answer, question_data, country_code, 
-                               attributes, prompt_engine, llm_client, evaluator, 
-                               is_country_specific=False, verbose=False, person_id=None, option_contents=None):
-    """异步处理单个问题"""
+                               prompt_engine, llm_client, evaluator, 
+                               is_country_specific=False, verbose=False, person_id=None, 
+                               option_contents=None, attributes=None):
+    """
+    异步处理单个问题
+    
+    Args:
+        question_id: 问题ID
+        true_answer: 真实答案
+        question_data: 问题数据
+        country_code: 国家代码
+        prompt_engine: 提示工程对象
+        llm_client: LLM API客户端
+        evaluator: 评估器对象
+        is_country_specific: 是否是国家特定问题，默认为False
+        verbose: 是否输出详细信息，默认为False
+        person_id: 受访者ID，默认为None
+        option_contents: 选项内容字典，默认为None
+        attributes: 受访者完整属性字典，默认为None
+        
+    Returns:
+        Dict或None: 处理结果或None（如果出错）
+    """
     try:
         # 获取问题和选项
         question = question_data.get("question", "")
@@ -632,6 +658,13 @@ async def process_question_async(question_id, true_answer, question_data, countr
         # 清理问题文本
         question = question.replace("\n", " ").strip()
         
+        # 获取个人属性用于生成提示
+        # 确保这里传递的是属性字典，而不是选项字典
+        if attributes is None:
+            attributes = {}
+        if person_id and "person_id" not in attributes:
+            attributes["person_id"] = person_id
+            
         # 生成提示
         prompt = prompt_engine.generate_prompt(attributes, question, options)
         
@@ -639,42 +672,60 @@ async def process_question_async(question_id, true_answer, question_data, countr
         if verbose:
             print(f"\n问题 {question_id}:" + (" (国家特定问题)" if is_country_specific else ""))
             print(f"  国家: {country_code} ({country_name})")
+            print(f"  问题: {question}")
+            print(f"  选项数量: {len(options)}")
+            print(f"  提示前500字符:\n{prompt[:500]}..." if len(prompt) > 500 else f"  完整提示:\n{prompt}")
         
         # 异步调用LLM API
+        response = ""
+        api_error = None
         try:
             # 确保不使用json_mode，以获取完整的文本响应
             # 传递JSON模式实现结构化输出
             json_schema = prompt_engine.get_json_schema()
             
             # 添加系统提示，确保模型不返回空模板
-            system_message = "Your answer must be based solely on your #### Personal Information. YOU MUST provide specific content for both reason and answer fields in your response. Empty JSON templates like {\"reason\": \"\", \"option\": {\"answer\": \"\"}} are PROHIBITED. Provide detailed reasoning and a clear option selection."
-            messages = [
-                {"role": "system", "content": system_message},
-                {"role": "user", "content": prompt}
-            ]
+            system_prompt = "Your answer must be based solely on your #### Personal Information. YOU MUST provide specific content for both reason and answer option number in your response."
             
-            # 使用messages参数调用API，而不是直接传递prompt
-            response = await llm_client.async_call(messages, json_schema=json_schema)
-            
-            # 直接使用原始响应，不进行清理
-            # 注释掉原来的清理代码：response = evaluator.clean_llm_response(response)
-        except Exception as e:
+            # 使用async_generate方法调用API，传入系统提示
             if verbose:
-                print(f"  LLM API调用出错: {str(e)}")
+                print(f"  正在调用API...")
+                
+            # 记录API调用开始时间
+            import time
+            start_time = time.time()
+            
+            response = await llm_client.async_generate(
+                prompt=prompt,
+                system_prompt=system_prompt
+            )
+            
+            # 记录API调用结束时间
+            end_time = time.time()
+            
+            if verbose:
+                print(f"  API调用耗时: {end_time - start_time:.2f}秒")
+                print(f"  API原始响应: {response[:100]}..." if len(response) > 100 else f"  API原始响应: {response}")
+            
+        except Exception as e:
+            api_error = str(e)
+            if verbose:
+                print(f"  LLM API调用出错: {api_error}")
             # 设置一个空响应，但继续处理
             response = ""
         
         # 提取LLM回答的选项ID
+        llm_answer = ""
+        extract_error = None
         try:
-            llm_answer = evaluator.extract_answer(response)
-        except Exception as e:
+            llm_answer = evaluator.extract_answer(response, options)
             if verbose:
-                print(f"  提取答案出错: {str(e)}")
+                print(f"  提取出的答案: {llm_answer}")
+        except Exception as e:
+            extract_error = str(e)
+            if verbose:
+                print(f"  提取答案出错: {extract_error}")
             llm_answer = ""
-        
-        # 如果提供了verbose，则打印更多日志
-        if verbose:
-            print(f"  LLM回答: {llm_answer}")
         
         # 获取选项含义
         true_answer_meaning = ""
@@ -698,22 +749,32 @@ async def process_question_async(question_id, true_answer, question_data, countr
                     llm_answer_meaning = question_options[str(llm_answer)]
         
         # 评估回答
+        is_correct = False
+        eval_error = None
         try:
-            is_correct = evaluator.evaluate_answer(
-                question_id=question_id,
-                true_answer=true_answer,
-                llm_response=response,
-                is_country_specific=is_country_specific,
-                country_code=country_code,
-                country_name=country_name,
-                true_answer_meaning=true_answer_meaning,
-                llm_answer_meaning=llm_answer_meaning,
-                person_id=person_id,
-                options=options  # 传递选项字典，用于修正错误的选项格式
-            )
+            # 确保true_answer不为空且是有效答案，否则跳过评估
+            if true_answer and not is_invalid_answer(true_answer):
+                is_correct = evaluator.evaluate_answer(
+                    question_id=question_id,
+                    true_answer=true_answer,
+                    llm_response=response,
+                    is_country_specific=is_country_specific,
+                    country_code=country_code,
+                    country_name=country_name,
+                    true_answer_meaning=true_answer_meaning,
+                    llm_answer_meaning=llm_answer_meaning,
+                    person_id=person_id,
+                    options=options,  # 传递选项字典，用于修正错误的选项格式
+                    attributes=attributes,  # 传递属性信息
+                )
+            else:
+                is_correct = False
+                if verbose:
+                    print(f"  跳过评估: 真实答案为空或无效: {true_answer}")
         except Exception as e:
+            eval_error = str(e)
             if verbose:
-                print(f"  评估答案出错: {str(e)}")
+                print(f"  评估答案出错: {eval_error}")
             is_correct = False
         
         # 打印结果
@@ -731,13 +792,14 @@ async def process_question_async(question_id, true_answer, question_data, countr
             
         # 计算是否应该纳入评测
         # 简化处理：国家特定问题的国家必须匹配
-        is_country_match = not is_country_specific or (is_country_specific and country_code and is_country_specific_question(question_id, country_code))
+        question_country = get_question_country_code(question_id) if question_id else None
+        is_country_match = (not question_country) or (question_country.upper() == country_code.upper())
         include_in_evaluation = should_include_in_evaluation(true_answer, true_answer_meaning, llm_answer, is_country_match)
             
         # 然后添加其他字段
         result.update({
             "question_id": question_id,
-            "prompt": prompt,
+            "prompt": prompt,  # 确保保存完整的prompt
             "llm_response": response,  # 添加原始LLM响应
             "true_answer": true_answer,
             "true_answer_meaning": true_answer_meaning,
@@ -747,18 +809,20 @@ async def process_question_async(question_id, true_answer, question_data, countr
             "is_country_specific": is_country_specific,
             "country_code": country_code,
             "country_name": country_name,
-            "question": question,
-            "options": options,
-            "include_in_evaluation": include_in_evaluation,  # 添加是否纳入评测的标志
-            "qa": question_data  # 添加qa信息
+            "include_in_evaluation": include_in_evaluation,  # 添加是否纳入评测的标记
+            "error_info": {  # 添加错误信息
+                "api_error": api_error,
+                "extract_error": extract_error,
+                "eval_error": eval_error
+            }
         })
         
         return result
+    
     except Exception as e:
+        # 处理所有其他异常
         if verbose:
-            print(f"处理问题 {question_id} 时出错: {str(e)}")
-            import traceback
-            traceback.print_exc()
+            print(f"处理问题 {question_id} 时发生错误: {str(e)}")
         return None
 
 def run_evaluation(domain_id: int, interview_count: Union[int, str], 
@@ -768,99 +832,83 @@ def run_evaluation(domain_id: int, interview_count: Union[int, str],
                    shuffle_options: bool = False, dataset_size: int = 500,
                    tensor_parallel_size: int = 1) -> Dict[str, Any]:
     """运行评测"""
-    # 导入需要的模块
-    import gc
-    import asyncio
-    import torch
+    # 清空CUDA缓存并强制垃圾回收
+    gc_and_cuda_cleanup()
     
-    # 如果不是vllm模式，关闭异步
-    if api_type != "vllm" and use_async:
-        print("警告: 异步模式仅在vllm API类型下可用，已自动关闭异步模式")
-        use_async = False
-        
+    # 导入必要的模块
+    import gc
+    import torch
+    import asyncio
+    import numpy as np
+    import time
+    from datetime import datetime
+    
     # 获取领域名称
     domain_name = get_domain_name(domain_id)
     if not domain_name:
         print(f"错误: 无效的领域ID {domain_id}")
-        return
+        return {}
     
-    # 加载选项内容数据
-    option_contents = load_option_contents(domain_id)
-    print(f"已加载选项内容数据，共 {len(option_contents)} 个问题")
-    
-    # 创建结果保存目录
-    results_dir = os.path.join(os.path.dirname(__file__), "results")
-    if not os.path.exists(results_dir):
-        os.makedirs(results_dir)
-        
-    # 打印开始信息
-    print(f"\n{'='*60}")
-    print(f"开始评测 | 领域: {domain_name} (ID: {domain_id}) | API类型: {api_type}")
+    # 打印评测信息
+    print(f"\n{'-'*60}")
+    print(f"开始评测 | 领域: {domain_name} (ID: {domain_id}) | API类型: {api_type} | 模型: {model_name}")
     if use_async:
         print(f"异步模式已启用 | 并发请求数: {concurrent_requests}")
     if concurrent_interviewees > 1:
         print(f"多受访者并行模式已启用 | 并行受访者数: {concurrent_interviewees}")
     if shuffle_options:
         print(f"选项随机打乱已启用 | 将随机打乱问题选项顺序")
-    print(f"数据集大小: {dataset_size} | 张量并行大小: {tensor_parallel_size}")
-    print(f"结果将保存到: {results_dir}")
-    print(f"{'='*60}")
+    print(f"{'-'*60}")
     
-    # 加载问答和真实答案数据
-    qa_data = load_qa_file(domain_name)
-    if not qa_data:
-        print(f"错误: 无法加载领域 {domain_name} 的问答数据，跳过该领域评测。")
-        return
-        
-    try:
-        ground_truth = load_ground_truth(domain_name, dataset_size)
-    except Exception as e:
-        print(f"错误: 无法加载领域 {domain_name} 的真实答案数据: {str(e)}")
-        print(f"跳过该领域评测。")
-        return
+    # 创建评测目录
+    results_dir = os.path.join(os.path.dirname(__file__), "results")
+    os.makedirs(results_dir, exist_ok=True)
     
-    # 创建问题ID映射字典（不区分大小写）
-    qa_map = {}
-    for q in qa_data:
-        # 尝试不同的可能的问题ID字段
-        question_id = q.get("question_id") or q.get("id") or q.get("qid")
-        if question_id:
-            qa_map[str(question_id).lower()] = q
+    # 创建模型专属目录
+    model_dir = os.path.join(results_dir, model_name)
+    os.makedirs(model_dir, exist_ok=True)
     
-    # 初始化工具类
-    print("正在初始化模型和加载数据...")
-    llm_client = None
-    prompt_engine = None
     evaluator = None
-    
+    llm_client = None
+    gc_count = 0
     try:
-        # 在初始化模型前清理资源
-        try:
-            gc.collect()
-            
-            if torch.cuda.is_available():
-                torch.cuda.empty_cache()
-                print("已清空CUDA缓存，准备初始化模型")
-                
-            # 确保没有活跃的分布式进程组
-            import torch.distributed as dist
-            if dist.is_initialized():
-                print("发现已初始化的分布式环境，尝试销毁...")
-                dist.destroy_process_group()
-        except Exception as e:
-            print(f"预清理资源时出错: {str(e)}")
+        # 加载选项内容
+        option_contents = load_option_contents(domain_id)
+        if not option_contents:
+            print("警告: 无法加载选项内容，可能影响评测准确度")
         
-        # 初始化工具类
-        if api_type == "config":
-            # 使用配置文件中的MODEL_CONFIG，不传入model参数
-            llm_client = LLMAPIClient(api_type=api_type)
-        else:
-            # 对于vllm模式，继续使用传入的model_name参数和tensor_parallel_size参数
-            llm_client = LLMAPIClient(api_type=api_type, model=model_name, tensor_parallel_size=tensor_parallel_size)
+        # 创建评估器
+        evaluator = Evaluator(domain_name, save_dir=model_dir)
+        
+        # 创建LLM API客户端
+        llm_client = LLMAPIClient(api_type=api_type, model_name=model_name, tensor_parallel_size=tensor_parallel_size)
+        
+        # 创建提示工程对象
         prompt_engine = PromptEngineering(shuffle_options=shuffle_options)
-        evaluator = Evaluator(domain_name=domain_name, save_dir=results_dir)
         
-        # 确定要测试的受访者数量
+        # 加载问答数据
+        qa_data = load_qa_file(domain_name)
+        if not qa_data:
+            print("错误: 无法加载问答数据")
+            return {}
+        
+        # 创建问题ID到问题数据的映射
+        qa_map = {}
+        for item in qa_data:
+            # 问题ID可能是大写或小写，统一转为小写
+            question_id = item.get("question_id", "").lower()
+            if question_id:
+                qa_map[question_id] = item
+        
+        # 加载真实答案数据
+        ground_truth = load_ground_truth(domain_name, dataset_size)
+        if not ground_truth:
+            print("错误: 无法加载真实答案数据")
+            return {}
+        
+        print(f"成功加载数据 | 问题数: {len(qa_data)} | 受访者数: {len(ground_truth)}")
+        
+        # 选择要评测的受访者
         if interview_count == "all":
             interviewees = ground_truth
             print(f"将测试所有 {len(interviewees)} 个受访者")
@@ -880,6 +928,7 @@ def run_evaluation(domain_id: int, interview_count: Union[int, str],
         excluded_country_specific_questions = 0
         invalid_answer_questions = 0
         total_questions = 0  # 初始化总问题数
+        processed_questions = 0  # 初始化处理的问题数量
         
         # 初始化完整提示和回答记录
         full_prompts_answers = []
@@ -904,6 +953,24 @@ def run_evaluation(domain_id: int, interview_count: Union[int, str],
                         print(f"警告: 受访者 {interviewee_id} 的属性不是字典类型，而是 {type(attributes)}，已设为空字典")
                     attributes = {}
                 
+                # 特殊处理：如果是第一个受访者，打印属性信息以便调试
+                if interviewee_idx == 0:
+                    print(f"受访者 {interviewee_id} 的属性键: {list(attributes.keys())}")
+                    # 打印前5个属性值
+                    for i, (key, value) in enumerate(attributes.items()):
+                        if i >= 5:
+                            break
+                        print(f"  {key}: {value}")
+                
+                # 如果性别、年龄、职业等属性直接在interviewee中，而不是在attributes子对象中，将它们提取出来
+                # 添加到attributes字典中
+                important_fields = ["Sex of Respondent", "Age of respondent", "Occupation ISCO/ ILO 2008"]
+                for field in important_fields:
+                    if field not in attributes and field in interviewee:
+                        attributes[field] = interviewee[field]
+                        if interviewee_idx == 0:
+                            print(f"从interviewee中直接提取: {field}={interviewee[field]}")
+                
                 # 获取问题回答，确保是字典类型
                 questionsAnswers = interviewee.get("questions_answer", {})
                 if not isinstance(questionsAnswers, dict):
@@ -915,19 +982,27 @@ def run_evaluation(domain_id: int, interview_count: Union[int, str],
                 # 限制打印输出，只在并行模式中显示关键信息
                 verbose_output = concurrent_interviewees <= 1
                     
-                # 获取国家代码
+                # 获取国家代码和国家名称
                 try:
                     country_code = ""
-                    # 确保attributes是字典类型
-                    if isinstance(attributes, dict) and attributes:
+                    country_name = ""
+                    
+                    # 优先从extract_country_from_issp_answer获取
+                    country_code, country_name = extract_country_from_issp_answer(interviewee_id, ground_truth, domain_id)
+                    
+                    # 如果没有获取到，尝试从attributes获取
+                    if not country_code and isinstance(attributes, dict) and attributes:
                         country_code = get_country_code(attributes, domain_id)
-                    else:
-                        # 如果attributes为空或不是字典类型，记录警告但继续处理
-                        if verbose_output:
-                            print(f"警告: 受访者 {interviewee_id} 的属性为空或格式不正确，无法获取国家代码")
                         
+                        # 从country mapping获取国家名称
+                        if country_code and domain_id in COUNTRY_MAPPING:
+                            for code, name in COUNTRY_MAPPING[domain_id]["mapping"].items():
+                                if code == country_code:
+                                    country_name = name
+                                    break
+                    
                     if verbose_output:
-                        print(f"\n处理受访者 {interviewee_id} ({interviewee_idx+1}/{total_interviewees}, 国家: {country_code}):")
+                        print(f"\n处理受访者 {interviewee_id} ({interviewee_idx+1}/{total_interviewees}, 国家: {country_code} - {country_name}):")
                 except ValueError as e:
                     if verbose_output:
                         print(f"\n处理受访者 {interviewee_id} ({interviewee_idx+1}/{total_interviewees}) 时出错: {str(e)}")
@@ -1045,405 +1120,354 @@ def run_evaluation(domain_id: int, interview_count: Union[int, str],
                     
                     # 处理问题
                     if use_async:
-                        # 添加到任务列表
-                        tasks.append(process_question_async(
-                            question_id, true_answer, qa_item, country_code, 
-                            attributes, prompt_engine, llm_client, evaluator,
-                            is_country_specific=is_country_q, verbose=verbose_output,
-                            person_id=interviewee_id, option_contents=option_contents
+                        # 异步处理
+                        task = asyncio.create_task(process_question_async(
+                            question_id=question_id,
+                            true_answer=true_answer,
+                            question_data=qa_item,
+                            country_code=country_code,
+                            prompt_engine=prompt_engine,
+                            llm_client=llm_client,
+                            evaluator=evaluator,
+                            is_country_specific=is_country_q,
+                            verbose=verbose_output,
+                            person_id=interviewee_id,
+                            option_contents=option_contents,
+                            attributes=attributes  # 传递完整的属性字典
                         ))
-                            
-                        if is_country_q:
-                            evaluated_country_specific_questions += 1
+                        tasks.append(task)
                     else:
-                        # 同步处理问题
-                        results = await process_question_async(
-                            question_id, true_answer, qa_item, country_code, 
-                            attributes, prompt_engine, llm_client, evaluator,
-                            is_country_specific=is_country_q, verbose=verbose_output,
-                            person_id=interviewee_id, option_contents=option_contents
-                        )
+                        # 创建异步循环
+                        loop = asyncio.new_event_loop()
+                        asyncio.set_event_loop(loop)
                         
-                        # 保存完整提示和回答（无论是vllm还是config模式）
-                        if results:
-                            full_prompts_answers.append({
-                                "question_id": question_id,
-                                "prompt": results["prompt"],
-                                "llm_response": results["llm_response"],  # 添加LLM响应
-                                "qa": qa_item,
-                                "person_id": interviewee_id,
-                                "country_code": country_code,  # 添加国家代码
-                                "country_name": results.get("country_name", "")  # 添加国家名称
-                            })
+                        # 在循环中运行异步处理函数
+                        try:
+                            result = loop.run_until_complete(process_question_async(
+                                question_id=question_id,
+                                true_answer=true_answer,
+                                question_data=qa_item,
+                                country_code=country_code,
+                                prompt_engine=prompt_engine,
+                                llm_client=llm_client,
+                                evaluator=evaluator,
+                                is_country_specific=is_country_q,
+                                verbose=verbose_output,
+                                person_id=interviewee_id,
+                                option_contents=option_contents,
+                                attributes=attributes  # 传递完整的属性字典
+                            ))
+                            
+                            # 保存结果
+                            if result:
+                                interviewee_results[question_id] = result
+                                if result.get("result_correctness", False):
+                                    correct_answers += 1
+                                processed_questions += 1
+                                
+                                # 如果需要打印提示信息，保存到列表中
+                                if print_prompt:
+                                    # 确保包含所有必要字段
+                                    full_item = {
+                                        "person_id": interviewee_id,
+                                        "question_id": question_id,
+                                        "prompt": result["prompt"] if "prompt" in result else "",  # 更健壮的方式获取prompt
+                                        "llm_response": result.get("llm_response", ""),
+                                        "true_answer": question_data["true_answer"],  # 异步模式下，使用question_data中的true_answer
+                                        "true_answer_meaning": result.get("true_answer_meaning", ""),
+                                        "llm_answer": result.get("llm_answer", ""),
+                                        "llm_answer_meaning": result.get("llm_answer_meaning", ""),
+                                        "result_correctness": result.get("result_correctness", False),
+                                        "is_country_specific": is_country_q,
+                                        "country_code": country_code,
+                                        "country_name": country_name,
+                                        "include_in_evaluation": result.get("include_in_evaluation", True)
+                                    }
+                                    
+                                    # 添加其他属性字段
+                                    if attributes and isinstance(attributes, dict):
+                                        for key, value in attributes.items():
+                                            if key not in full_item:
+                                                full_item[key] = value
+                                    
+                                    full_prompts_answers.append(full_item)
+                                
+                                if is_country_q:
+                                    country_specific_evaluated += 1
+                                evaluated_questions += 1
+                            else:
+                                excluded_questions += 1
+                                if is_country_q:
+                                    country_specific_excluded += 1
+                        except Exception as e:
+                            print(f"处理问题 {question_id} 时出错: {str(e)}")
+                            excluded_questions += 1
+                            if is_country_q:
+                                country_specific_excluded += 1
+                        finally:
+                            # 关闭循环
+                            loop.close()
                         
-                        # 更新计数
-                        if results and results.get("result_correctness", False):
-                            correct_answers += 1
-                        evaluated_questions += 1
-                        
-                        # 更新问题进度条
+                        # 更新进度条
                         if question_pbar:
                             question_pbar.update(1)
+                
+                # 处理异步任务的结果
+                if use_async and tasks:
+                    # 等待所有任务完成
+                    results = []
+                    if concurrent_requests > 0 and len(tasks) > concurrent_requests:
+                        # 分批处理任务，避免创建过多并发请求
+                        for i in range(0, len(tasks), concurrent_requests):
+                            batch = tasks[i:i+concurrent_requests]
+                            if verbose_output:
+                                print(f"处理任务批次 {i//concurrent_requests + 1}/{(len(tasks)+concurrent_requests-1)//concurrent_requests}，共 {len(batch)} 个任务")
+                            batch_results = await asyncio.gather(*batch, return_exceptions=True)
+                            results.extend(batch_results)
+                    else:
+                        # 如果任务数小于并发限制，一次性处理所有任务
+                        results = await asyncio.gather(*tasks, return_exceptions=True)
+                    
+                    # 处理结果
+                    for i, result in enumerate(results):
+                        if question_pbar:
+                            question_pbar.update(1)
+                            
+                        if isinstance(result, Exception):
+                            print(f"处理问题时出错: {str(result)}")
+                            excluded_questions += 1
+                            continue
+                            
+                        if not result:
+                            excluded_questions += 1
+                            continue
+                            
+                        # 从任务列表获取问题信息
+                        question_data = valid_questions[i]
+                        question_id = question_data["question_id"]
+                        is_country_q = question_data["is_country_specific"]
+                        
+                        # 保存结果
+                        interviewee_results[question_id] = result
+                        if result.get("result_correctness", False):
+                            correct_answers += 1
+                        processed_questions += 1
+                        
+                        # 如果需要打印提示信息，保存到列表中
+                        if print_prompt:
+                            # 确保包含所有必要字段
+                            full_item = {
+                                "person_id": interviewee_id,
+                                "question_id": question_id,
+                                "prompt": result["prompt"] if "prompt" in result else "",  # 更健壮的方式获取prompt
+                                "llm_response": result.get("llm_response", ""),
+                                "true_answer": question_data["true_answer"],  # 异步模式下，使用question_data中的true_answer
+                                "true_answer_meaning": result.get("true_answer_meaning", ""),
+                                "llm_answer": result.get("llm_answer", ""),
+                                "llm_answer_meaning": result.get("llm_answer_meaning", ""),
+                                "result_correctness": result.get("result_correctness", False),
+                                "is_country_specific": is_country_q,
+                                "country_code": country_code,
+                                "country_name": country_name,
+                                "include_in_evaluation": result.get("include_in_evaluation", True)
+                            }
+                            
+                            # 添加其他属性字段
+                            if attributes and isinstance(attributes, dict):
+                                for key, value in attributes.items():
+                                    if key not in full_item:
+                                        full_item[key] = value
+                            
+                            full_prompts_answers.append(full_item)
                         
                         if is_country_q:
-                            evaluated_country_specific_questions += 1
-                
-                # 执行任务
-                results = []
-                if use_async:
-                    for i in range(0, len(tasks), concurrent_requests):
-                        # 获取当前批次的任务
-                        batch_tasks = tasks[i:i+concurrent_requests]
-                        if verbose_output:
-                            print(f"正在执行第 {i//concurrent_requests + 1} 批 ({len(batch_tasks)}) 任务...")
-                        
-                        # 同时执行多个任务
-                        batch_results = await asyncio.gather(*batch_tasks, return_exceptions=True)
-                        
-                        # 处理结果
-                        for res in batch_results:
-                            if isinstance(res, Exception):
-                                if verbose_output:
-                                    print(f"任务执行出错: {str(res)}")
-                                continue
-                            if res:
-                                results.append(res)
-                                
-                                # 保存完整提示和回答（无论是vllm还是config模式）
-                                qa_item = qa_map.get(res["question_id"].lower(), {})
-                                full_prompts_answers.append({
-                                    "question_id": res["question_id"],
-                                    "prompt": res["prompt"],
-                                    "llm_response": res["llm_response"],  # 添加LLM响应
-                                    "qa": qa_item,
-                                    "person_id": interviewee_id,
-                                    "country_code": country_code,  # 添加国家代码
-                                    "country_name": res.get("country_name", "")  # 添加国家名称
-                                })
-                                
-                                # 更新计数和进度条
-                                if res.get("result_correctness", False):
-                                    correct_answers += 1
-                                evaluated_questions += 1
-                                
-                                # 更新问题进度条
-                                if question_pbar:
-                                    question_pbar.update(1)
+                            country_specific_evaluated += 1
+                        evaluated_questions += 1
                 
                 # 关闭问题进度条
                 if question_pbar:
                     question_pbar.close()
-                    
+                
                 # 更新受访者进度条
                 if pbar:
                     pbar.update(1)
-                    
-                # 计算受访者准确率
-                individual_accuracy = correct_answers / evaluated_questions if evaluated_questions > 0 else 0
                 
-                # 返回结果
+                # 统计信息
+                if verbose_output:
+                    print(f"  评测结果: 正确率 {correct_answers}/{evaluated_questions} = {correct_answers/evaluated_questions:.2%}")
+                    
+                # 周期性执行垃圾回收，避免内存泄漏
+                nonlocal gc_count
+                gc_count += 1
+                if gc_count % 10 == 0:
+                    gc_and_cuda_cleanup()
+                    
                 return {
                     "interviewee_id": interviewee_id,
-                    "results": interviewee_results,
-                    "stats": {
-                        "total_questions": total_questions,
-                        "evaluated_questions": evaluated_questions,
-                        "correct_answers": correct_answers,
-                        "accuracy": individual_accuracy,
-                        "country_specific_questions": country_specific_questions,
-                        "country_specific_evaluated": country_specific_evaluated
-                    }
+                    "total_questions": total_questions,
+                    "evaluated_questions": evaluated_questions,
+                    "excluded_questions": excluded_questions,
+                    "country_specific_questions": country_specific_questions,
+                    "country_specific_evaluated": country_specific_evaluated,
+                    "country_specific_excluded": country_specific_excluded,
+                    "correct_answers": correct_answers,
+                    "accuracy": correct_answers / evaluated_questions if evaluated_questions > 0 else 0.0
                 }
             except Exception as e:
-                # 捕获处理过程中的所有异常
+                print(f"处理受访者 {interviewee_idx+1} 时出错: {str(e)}")
                 if pbar:
                     pbar.update(1)
-                print(f"处理受访者 {interviewee_idx+1}/{total_interviewees} 时出错: {str(e)}")
-                traceback.print_exc()
+                
+                # 记录为跳过的受访者
                 skipped_interviewees += 1
+                
                 return None
-        
-        # 处理受访者
-        results = {}
-        
-        # 根据是否使用多受访者并行模式，选择处理方式
-        if concurrent_interviewees > 1 and use_async and api_type == "vllm":
-            # 使用并行处理多个受访者
-            async def process_all_interviewees():
-                nonlocal results
-                all_results = {}
                 
-                print(f"启动多受访者并行处理模式，即将处理 {len(interviewees)} 名受访者...")
-                
-                # 创建总进度条
-                with tqdm(total=len(interviewees), desc="处理受访者", unit="人", 
-                         position=0, dynamic_ncols=True) as pbar:
-                    # 分批处理受访者
-                    batch_count = (len(interviewees) + concurrent_interviewees - 1) // concurrent_interviewees
-                    print(f"将分 {batch_count} 批次处理，每批次最多 {concurrent_interviewees} 名受访者")
-                    
-                    for i in range(0, len(interviewees), concurrent_interviewees):
-                        batch = interviewees[i:min(i+concurrent_interviewees, len(interviewees))]
-                        batch_num = i // concurrent_interviewees + 1
-                        print(f"开始处理第 {batch_num}/{batch_count} 批次，当前批次包含 {len(batch)} 名受访者")
-                        
+        # 异步处理所有受访者
+        async def process_all_interviewees():
+            # 创建进度条
+            with tqdm(total=len(interviewees), desc="处理受访者", leave=True) as pbar:
+                # 处理所有受访者
+                if concurrent_interviewees > 1:
+                    # 并行处理受访者
+                    tasks = []
+                    for i, interviewee in enumerate(interviewees):
                         # 创建任务
-                        tasks = []
-                        for idx, interviewee in enumerate(batch):
-                            batch_idx = i + idx
-                            tasks.append(process_interviewee(interviewee, batch_idx, pbar))
-                        
-                        # 等待批次完成
-                        print(f"已提交第 {batch_num} 批次的所有任务，正在等待完成...")
-                        try:
-                            batch_results = await asyncio.gather(*tasks)
-                            print(f"第 {batch_num}/{batch_count} 批次处理完成")
-                        except Exception as e:
-                            print(f"批次 {batch_num} 处理时发生错误: {str(e)}")
-                            # 单独为每个受访者创建新的协程任务
-                            batch_results = []
-                            for idx, interviewee in enumerate(batch):
-                                batch_idx = i + idx
-                                try:
-                                    # 为每个受访者创建新的协程并立即执行
-                                    result = await process_interviewee(interviewee, batch_idx, pbar)
-                                    batch_results.append(result)
-                                except Exception as task_e:
-                                    print(f"处理受访者 {idx} 时出错: {str(task_e)}")
-                                    batch_results.append(None)
-                        
-                        # 处理结果
-                        valid_results = 0
-                        for result in batch_results:
-                            if result:
-                                all_results[result["interviewee_id"]] = result["results"]
-                                valid_results += 1
-                        
-                        print(f"当前批次有效结果: {valid_results}/{len(batch)}，累计处理: {len(all_results)}/{len(interviewees)}")
+                        task = asyncio.create_task(process_interviewee(interviewee, i, pbar))
+                        tasks.append(task)
+                    
+                    # 分批处理任务
+                    interviewee_results_batch = []
+                    for i in range(0, len(tasks), concurrent_interviewees):
+                        batch = tasks[i:i+concurrent_interviewees]
+                        if len(batch) > 0:
+                            print(f"处理受访者批次 {i//concurrent_interviewees + 1}/{(len(tasks)+concurrent_interviewees-1)//concurrent_interviewees}，共 {len(batch)} 个受访者")
+                            batch_results = await asyncio.gather(*batch, return_exceptions=True)
+                            interviewee_results_batch.extend([r for r in batch_results if r is not None and not isinstance(r, Exception)])
+                else:
+                    # 顺序处理受访者
+                    interviewee_results_batch = []
+                    for i, interviewee in enumerate(interviewees):
+                        result = await process_interviewee(interviewee, i, pbar)
+                        if result is not None:
+                            interviewee_results_batch.append(result)
                 
-                results = all_results
-            
-            # 运行主异步函数
+                return interviewee_results_batch
+        
+        # 创建和运行事件循环
+        try:
+            # 获取或创建事件循环
             try:
-                # 创建新的事件循环以确保干净的环境
+                loop = asyncio.get_running_loop()
+            except RuntimeError:
+                # 如果没有正在运行的循环，创建一个新的
                 loop = asyncio.new_event_loop()
                 asyncio.set_event_loop(loop)
-                loop.run_until_complete(process_all_interviewees())
-                loop.close()
-            except Exception as e:
-                print(f"处理所有受访者时出错: {str(e)}")
-                # 尝试关闭事件循环
-                try:
-                    if 'loop' in locals() and not loop.is_closed():
-                        loop.close()
-                except Exception:
-                    pass
-                # 创建新的事件循环为后续操作做准备
-                asyncio.set_event_loop(asyncio.new_event_loop())
-        else:
-            # 使用传统循环处理
-            with tqdm(total=len(interviewees), desc="处理受访者", unit="人", 
-                     position=0, dynamic_ncols=True) as pbar:
-                for idx, interviewee in enumerate(interviewees):
-                    try:
-                        # 如果开启了异步模式，单个受访者内的问题还是会异步处理
-                        if use_async and api_type == "vllm":
-                            # 创建新的事件循环以确保干净的环境
-                            loop = asyncio.new_event_loop()
-                            asyncio.set_event_loop(loop)
-                            result = loop.run_until_complete(process_interviewee(interviewee, idx, pbar))
-                            if result:
-                                results[result["interviewee_id"]] = result["results"]
-                            # 关闭当前循环
-                            loop.close()
-                        else:
-                            # 完全同步处理
-                            result = asyncio.run(process_interviewee(interviewee, idx, pbar))
-                            if result:
-                                results[result["interviewee_id"]] = result["results"]
-                    except Exception as e:
-                        print(f"处理受访者 {idx+1}/{len(interviewees)} 时出错: {str(e)}")
-                        # 继续处理下一个受访者
-                        continue
+                
+            # 在循环中运行所有处理
+            interviewee_results = loop.run_until_complete(process_all_interviewees())
+            
+        except Exception as e:
+            traceback.print_exc()
+            print(f"处理受访者时出错: {str(e)}")
+            interviewee_results = []
         
-        # 打印评测摘要
-        accuracy = evaluator.print_summary()
+        # 计算全局指标
+        evaluator.calculate_accuracy()
+        evaluator.calculate_f1_scores()
+        evaluator.calculate_option_distance()
+        evaluator.calculate_country_metrics()
+        evaluator.calculate_gender_metrics()  
+        evaluator.calculate_age_metrics()
+        evaluator.calculate_occupation_metrics()
         
-        # 打印无效答案统计信息
-        print("\n无效答案统计:")
-        print(f"  包含无效答案的题目数: {invalid_answer_questions}")
+        # 打印统计信息
+        print(f"\n{'-'*60}")
+        print(f"模型: {model_name}")
+        print(f"领域: {domain_name} (ID: {domain_id})")
+        print(f"受访者总数: {len(interviewees)}")
+        print(f"已处理的受访者: {processed_interviewees}")
+        print(f"跳过的受访者: {skipped_interviewees}")
+        print(f"准确率: {evaluator.results['accuracy']:.2%}")
+        print(f"Macro F1: {evaluator.results['macro_f1']:.4f}")
+        print(f"Micro F1: {evaluator.results['micro_f1']:.4f}")
+        print(f"选项距离: {evaluator.results['option_distance']:.4f}")
+        print(f"{'-'*60}")
         
-        # 打印受访者统计信息
-        print("\n受访者统计:")
-        print(f"  总受访者数: {total_interviewees}")
-        print(f"  处理的受访者: {processed_interviewees}")
-        print(f"  跳过的受访者: {skipped_interviewees}")
+        # 保存完整的提示和回答
+        if print_prompt and full_prompts_answers:
+            # 获取日期时间字符串，精确到秒
+            timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+            # 创建保存文件路径
+            prompt_file = os.path.join(model_dir, f"{domain_name}_full_prompts__{timestamp}.json")
+            
+            print(f"\n保存完整提示和回答到: {prompt_file}")
+            
+            # 确保full_prompts_answers按问题ID和受访者ID排序，便于查看
+            full_prompts_answers.sort(key=lambda x: (x.get("person_id", ""), x.get("question_id", "")))
+            
+            # 保存到JSON文件
+            with open(prompt_file, "w", encoding="utf-8") as f:
+                json.dump(full_prompts_answers, f, ensure_ascii=False, indent=2)
         
         # 保存结果
-        model_name = llm_client.model.split("/")[-1] if "/" in llm_client.model else llm_client.model
+        domain_stats = {
+            "受访者总数": len(interviewees),
+            "处理的受访者": processed_interviewees,
+            "跳过的受访者": skipped_interviewees,
+            "总题数": evaluator.results["total_count"],
+            "正确数": evaluator.results["correct_count"],
+            "准确率": evaluator.results["accuracy"],
+            "macro_F1": evaluator.results["macro_f1"],
+            "micro_F1": evaluator.results["micro_f1"],
+            "选项距离": evaluator.results["option_distance"],
+            "模型": model_name
+        }
         
-        # 保存一次结果，获取文件路径
-        result_file_path = evaluator.save_results(model_name, domain_stats={
-            "domain_id": domain_id,
-            "total_questions": evaluator.results["total_count"],  # 使用evaluator中的总问题数
-            "invalid_answer_questions": invalid_answer_questions,
-            "processed_interviewees": processed_interviewees
-        })
-        
-        # 如果开启了保存prompt信息，则保存完整的提示和回答记录
-        if print_prompt and full_prompts_answers:
-            # 使用已保存的结果文件路径构建prompt文件路径
-            prompt_file = os.path.join(os.path.dirname(result_file_path), f"{domain_name}_full_prompts_{model_name}_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json")
-            
-            # 格式化prompt数据，添加更多信息
-            formatted_prompts = []
-            for item in full_prompts_answers:
-                # 获取问题ID和person_id
-                q_id = item["question_id"]
-                person_id = item.get("person_id", "")
-                
-                # 获取问题和选项
-                question = ""
-                options = {}
-                qa_item = item.get("qa", {})
-                
-                # 从item中获取country_code和country_name
-                country_code = item.get("country_code", "")
-                country_name = item.get("country_name", "")
-                
-                # 如果country_code为空，从真实答案文件中提取
-                if (not country_code or not country_name) and person_id:
-                    extracted_code, extracted_name = extract_country_from_issp_answer(person_id, ground_truth, domain_id)
-                    if extracted_code:
-                        country_code = extracted_code
-                    if extracted_name:
-                        country_name = extracted_name
-                
-                # 确保使用COUNTRY_MAPPING获取完整的国家名称
-                if country_code and not country_name and domain_id in COUNTRY_MAPPING:
-                    for code, name in COUNTRY_MAPPING[domain_id]["mapping"].items():
-                        if code == country_code:
-                            country_name = name
-                            break
-                
-                if qa_item:
-                    question = qa_item.get("question", "")
-                    
-                    # 获取原始选项并应用国家特定选项
-                    raw_options = qa_item.get("answer", {})
-                    # 只有当country_code非空时才应用特殊选项
-                    if country_code:
-                        options = get_special_options(qa_item, country_code)
-                    else:
-                        options = raw_options.copy()
-                    
-                    # 创建基础格式化项
-                    formatted_item = {
-                        "question_id": q_id,
-                        "prompt": item["prompt"],
-                        "llm_response": item.get("llm_response", ""),  # 确保完整保存LLM响应
-                        "person_id": person_id,
-                        "country_code": country_code,  # 添加国家代码到结果中
-                        "country_name": country_name   # 添加国家名称到结果中
-                    }
-                    
-                    # 只添加非空字段
-                    if question:
-                        formatted_item["question"] = question
-                    
-                    if options:
-                        formatted_item["options"] = options
-                    
-                    formatted_prompts.append(formatted_item)
-            
-            # 将保存文件的代码移动到循环外部，只执行一次
-            # 保存格式化后的提示数据
-            with open(prompt_file, "w", encoding="utf-8") as f:
-                json.dump(formatted_prompts, f, ensure_ascii=False, indent=2)
-            
-            # 打印信息也只执行一次
-            print(f"完整提示和回答保存到: {prompt_file}")
+        # 保存评估结果
+        evaluator.save_results(model_name=model_name, domain_stats=domain_stats)
         
     except Exception as e:
         print(f"评测过程中发生错误: {str(e)}")
     finally:
-        # 确保资源被释放
+        # 开始清理资源
         print("\n开始清理资源...")
         
         # 关闭LLM客户端，释放资源
         if llm_client and hasattr(llm_client, 'close'):
             try:
-                llm_client.close()
+                # 处理异步close方法
+                if hasattr(llm_client, '_session') and llm_client._session:
+                    # 创建新的事件循环来正确关闭会话
+                    loop = asyncio.new_event_loop()
+                    asyncio.set_event_loop(loop)
+                    loop.run_until_complete(llm_client.close())
+                    loop.close()
                 print("已关闭LLM客户端")
             except Exception as e:
                 print(f"关闭LLM客户端时出错: {str(e)}")
         
-        # 释放其他资源
+        # 清空CUDA缓存
+        if 'torch' in sys.modules:
+            try:
+                torch.cuda.empty_cache()
+                print("已清空CUDA缓存")
+            except:
+                pass
+        
+        # 执行垃圾回收
+        gc.collect()
+        
+        # 重置事件循环
         try:
-            evaluator = None
-            prompt_engine = None
-            
-            # 手动触发垃圾回收
-            gc.collect()
-            
-            # 清理CUDA缓存
-            try:
-                if torch.cuda.is_available():
-                    torch.cuda.empty_cache()
-                    print("已清空CUDA缓存")
-            except Exception as e:
-                print(f"清空CUDA缓存时出错: {str(e)}")
-            
-            # 清理分布式环境
-            try:
-                import torch.distributed as dist
-                if dist.is_initialized():
-                    dist.destroy_process_group()
-                    print("已销毁分布式进程组")
-            except Exception as e:
-                print(f"清理分布式环境时出错: {str(e)}")
-                
-            # 清理事件循环
-            try:
-                # 更安全地关闭事件循环，确保所有任务都被正确取消
-                loop = asyncio.get_event_loop()
-                if not loop.is_closed():
-                    # 获取所有挂起的任务
-                    pending = asyncio.all_tasks(loop)
-                    if pending:
-                        # 先取消所有任务
-                        for task in pending:
-                            task.cancel()
-                        
-                        # 等待所有任务完成取消操作（设置超时防止无限等待）
-                        try:
-                            loop.run_until_complete(asyncio.gather(*pending, return_exceptions=True))
-                        except asyncio.CancelledError:
-                            pass  # 忽略取消异常
-                        except Exception as e:
-                            print(f"取消任务时出错: {str(e)}")
-                    
-                    # 关闭事件循环
-                    loop.run_until_complete(loop.shutdown_asyncgens())
-                    loop.run_until_complete(loop.shutdown_default_executor())
-                    loop.close()
-                
-                # 创建新的事件循环
-                asyncio.set_event_loop(asyncio.new_event_loop())
-                print("已成功重置事件循环")
-            except Exception as e:
-                print(f"重置事件循环时出错: {str(e)}")
-                # 确保即使出错也设置一个新的事件循环
-                try:
-                    asyncio.set_event_loop(asyncio.new_event_loop())
-                except:
-                    pass
-            
-            print("资源清理完成")
+            # 重置事件循环
+            asyncio.set_event_loop(asyncio.new_event_loop())
+            print("已成功重置事件循环")
         except Exception as e:
-            print(f"资源清理过程中出错: {str(e)}")
-    
-    print("\n评测完成!")
+            print(f"重置事件循环时出错: {str(e)}")
+        
+        print("资源清理完成")
+        print("\n评测完成!")
     
     # 返回评测结果（如果有）
     if evaluator:
@@ -1455,7 +1479,10 @@ def run_evaluation(domain_id: int, interview_count: Union[int, str],
             "accuracy": evaluator.results["accuracy"],
             "macro_f1": evaluator.results["macro_f1"],
             "micro_f1": evaluator.results["micro_f1"],
-            "country_metrics": evaluator.results["country_metrics"]
+            "country_metrics": evaluator.results["country_metrics"],
+            "gender_metrics": evaluator.results["gender_metrics"],
+            "age_metrics": evaluator.results["age_metrics"],
+            "occupation_metrics": evaluator.results["occupation_metrics"]
         }
     else:
         return {
@@ -1466,7 +1493,10 @@ def run_evaluation(domain_id: int, interview_count: Union[int, str],
             "accuracy": 0,
             "macro_f1": 0,
             "micro_f1": 0,
-            "country_metrics": {}
+            "country_metrics": {},
+            "gender_metrics": {},
+            "age_metrics": {},
+            "occupation_metrics": {}
         }
 
 # 将嵌套函数移到模块级别作为全局函数
@@ -1522,16 +1552,20 @@ def run_all_domains(api_type: str = "config", interview_count: Union[int, str] =
     if not os.path.exists(results_dir):
         os.makedirs(results_dir)
     
+    # 创建模型专属目录
+    model_dir = os.path.join(results_dir, model_name)
+    os.makedirs(model_dir, exist_ok=True)
+    
     # 打印开始信息
     print(f"\n{'='*60}")
-    print(f"开始评测所有领域 | API类型: {api_type}")
+    print(f"开始评测所有领域 | API类型: {api_type} | 模型: {model_name}")
     if use_async:
         print(f"异步模式已启用 | 并发请求数: {concurrent_requests}")
     if concurrent_interviewees > 1:
         print(f"多受访者并行模式已启用 | 并行受访者数: {concurrent_interviewees}")
     if shuffle_options:
         print(f"选项随机打乱已启用 | 将随机打乱问题选项顺序")
-    print(f"结果将保存到: {results_dir}")
+    print(f"结果将保存到: {model_dir}")
     print(f"{'='*60}")
     
     # 获取要评测的所有领域ID
@@ -1960,16 +1994,18 @@ python /inspire/hdd/ws-f4d69b29-e0a5-44e6-bd92-acf4de9990f0/public-project/wangj
   --tensor_parallel_size 2
 
 python /inspire/hdd/ws-f4d69b29-e0a5-44e6-bd92-acf4de9990f0/public-project/wangjia-240108610168/social_benchmark/evaluation/run_evaluation.py \
-  --domain_id all \
-  --interview_count all \
+  --domain_id 1 \
+  --interview_count 5 \
   --api_type vllm \
   --use_async=True \
-  --concurrent_requests 100000 \
+  --concurrent_requests 10000 \
   --concurrent_interviewees 100 \
   --start_domain_id 1 \
   --print_prompt=True \
   --shuffle_options=True \
-  --model_list Qwen2.5-7B-Instruct Qwen2.5-14B-Instruct Qwen2.5-32B-Instruct Qwen3-0.6B Qwen3-1.7B Qwen3-4B Qwen3-8B Qwen3-14B Qwen3-30B-A3B Qwen3-32B
+  --model=Qwen2.5-7B-Instruct \
+  --dataset_size 500 \
+  --tensor_parallel_size 1
   
   # Windows示例命令
 python C:/Users/26449/PycharmProjects/pythonProject/interview_scenario/social_benchmark/evaluation/run_evaluation.py `

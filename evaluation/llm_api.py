@@ -9,11 +9,25 @@ import sys
 import json
 import asyncio
 import uuid
-from typing import Dict, List, Any, Union, Optional
+import subprocess
+import aiohttp
 import time
+import signal
+import psutil
 import multiprocessing
-import logging
+from pathlib import Path
+from typing import Dict, List, Any, Union, Optional, Tuple
+from openai import AsyncOpenAI, OpenAI
 
+import logging
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+logger = logging.getLogger(__name__)
+
+# 定义请求超时时间（秒）
+API_TIMEOUT = 120  # 更合理的超时时间
+POLL_INTERVAL = 2.0  # 轮询间隔（秒）
+MAX_RETRIES = 3  # 最大重试次数
+DEFAULT_BATCH_SIZE = 10  # 默认批处理大小
 
 # 设置多进程启动方法为spawn，以解决CUDA初始化问题
 # 这是必须的，因为vLLM使用CUDA，在fork的子进程中无法重新初始化CUDA
@@ -48,464 +62,403 @@ except ImportError:
 os.environ["MKL_SERVICE_FORCE_INTEL"] = "1"
 os.environ["MKL_THREADING_LAYER"] = "GNU"
 
-class LLMAPIClient:
-    """LLM API客户端类，支持config和vllm两种API调用方式"""
+def start_vllm_server(model_path: str, 
+                     port: int = 8000, 
+                     tensor_parallel_size: int = 1,
+                     dtype: str = "auto",
+                     max_model_len: int = 4096,
+                     gpu_memory_utilization: float = 0.9,
+                     trust_remote_code: bool = True) -> Optional[int]:
+    """
+    启动vLLM服务器
     
-    def __init__(self, api_type: str = "config", model: Optional[str] = None, 
-                 temperature: float = 0.5, max_tokens: int = 2048,
-                 top_p: float = 0.95, repetition_penalty: float = 1.1, 
-                 frequency_penalty: float = 0.0, presence_penalty: float = 0.0,
-                 tensor_parallel_size: int = 1, **kwargs):
+    Args:
+        model_path: 模型路径或Hugging Face模型ID
+        port: 服务器端口
+        tensor_parallel_size: 张量并行大小
+        dtype: 数据类型
+        max_model_len: 最大模型序列长度
+        gpu_memory_utilization: GPU内存利用率
+        trust_remote_code: 是否信任远程代码
+        
+    Returns:
+        int: 服务器进程PID，如果启动失败则返回None
+    """
+    # 检查vLLM是否已安装
+    try:
+        import importlib.util
+        if importlib.util.find_spec("vllm") is None:
+            logger.error("vLLM未安装，请先安装vLLM: pip install vllm")
+            return None
+    except ImportError:
+        logger.error("无法检查vLLM是否已安装")
+        return None
+    
+    # 检查服务器是否已在运行
+    if is_vllm_server_running(port):
+        logger.info(f"vLLM服务器已在端口 {port} 上运行")
+        return None
+    
+    # 构建启动命令
+    cmd = [
+        sys.executable, "-m", "vllm.entrypoints.openai.api_server",
+        "--model", model_path,
+        "--port", str(port),
+        "--tensor-parallel-size", str(tensor_parallel_size),
+        "--dtype", dtype,
+        "--max-model-len", str(max_model_len),
+        "--gpu-memory-utilization", str(gpu_memory_utilization),
+    ]
+    
+    if trust_remote_code:
+        cmd.append("--trust-remote-code")
+    
+    # 使用subprocess启动服务器
+    import subprocess
+    try:
+        logger.info(f"启动vLLM服务器: {' '.join(cmd)}")
+        process = subprocess.Popen(
+            cmd,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.STDOUT,
+            text=True
+        )
+        
+        # 等待服务器启动
+        for _ in range(30):  # 最多等待30秒
+            if is_vllm_server_running(port):
+                logger.info(f"vLLM服务器已在端口 {port} 上成功启动，PID: {process.pid}")
+                return process.pid
+            time.sleep(1)
+        
+        logger.warning("vLLM服务器启动超时")
+        process.terminate()
+        return None
+    except Exception as e:
+        logger.error(f"启动vLLM服务器失败: {e}")
+        return None
+
+def is_vllm_server_running(port: int = 8000) -> bool:
+    """
+    检查vLLM服务器是否正在运行
+    
+    Args:
+        port: 服务器端口
+        
+    Returns:
+        bool: 如果服务器正在运行则返回True，否则返回False
+    """
+    try:
+        import socket
+        with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
+            return s.connect_ex(('localhost', port)) == 0
+    except Exception:
+        return False
+
+def find_vllm_process(port: int = 8000) -> Optional[int]:
+    """
+    查找运行在指定端口的vLLM进程
+    
+    Args:
+        port: 服务器端口
+        
+    Returns:
+        Optional[int]: 如果找到则返回进程ID，否则返回None
+    """
+    try:
+        for proc in psutil.process_iter(['pid', 'name', 'cmdline']):
+            try:
+                cmdline = proc.info['cmdline']
+                if cmdline and 'vllm' in str(cmdline) and 'api_server' in str(cmdline) and f'--port {port}' in str(cmdline):
+                    return proc.info['pid']
+            except (psutil.NoSuchProcess, psutil.AccessDenied, psutil.ZombieProcess):
+                pass
+    except Exception:
+        pass
+    return None
+
+def stop_vllm_server(port: int = 8000) -> bool:
+    """
+    停止vLLM服务器
+    
+    Args:
+        port: 服务器端口
+        
+    Returns:
+        bool: 如果成功停止服务器则返回True，否则返回False
+    """
+    try:
+        pid = find_vllm_process(port)
+        if pid:
+            try:
+                proc = psutil.Process(pid)
+                proc.terminate()
+                proc.wait(timeout=10)
+                return True
+            except psutil.TimeoutExpired:
+                proc.kill()
+                return True
+            except (psutil.NoSuchProcess, psutil.AccessDenied):
+                return False
+        return False
+    except Exception:
+        return False
+
+class LLMAPIClient:
+    """LLM API客户端类，使用OpenAI客户端接口与vLLM服务器交互"""
+    
+    def __init__(
+        self,
+        model: str,
+        api_key: Optional[str] = None,
+        api_base: Optional[str] = None,
+        organization: Optional[str] = None,
+        api_type: str = "openai",
+        max_retries: int = MAX_RETRIES,
+        timeout: int = API_TIMEOUT,
+        concurrent_requests: int = 10,
+        batch_size: int = DEFAULT_BATCH_SIZE,
+        **kwargs
+    ):
         """
-        初始化LLM API客户端
+        初始化API客户端
         
         Args:
-            api_type: API类型，可选值为"config"(使用配置文件中的API)或"vllm"(使用vLLM API)
-            model: 模型名称，如果为None则使用配置文件中的模型
-            temperature: 温度参数，控制输出的随机性
-            max_tokens: 最大生成token数
-            top_p: 核采样参数，默认为0.95
-            repetition_penalty: 重复惩罚参数，值越大对重复内容惩罚越严格，默认为1.1
-            frequency_penalty: 频率惩罚参数，惩罚频繁出现的token，默认为0.0
-            presence_penalty: 存在惩罚参数，惩罚已出现过的token，默认为0.0
-            tensor_parallel_size: 张量并行大小，默认为1
+            model: 模型名称
+            api_key: OpenAI API密钥（可选）
+            api_base: API基础URL，如果使用vLLM，通常是"http://localhost:8000/v1"
+            organization: OpenAI组织ID（可选）
+            api_type: API类型，支持"openai"、"azure"、"vllm"
+            max_retries: 最大重试次数
+            timeout: 请求超时时间（秒）
+            concurrent_requests: 并发请求数
+            batch_size: 批处理大小，vLLM中有效
             **kwargs: 其他参数
         """
-        if api_type not in ["config", "vllm"]:
-            raise ValueError(f"不支持的API类型: {api_type}，只支持'config'或'vllm'")
-            
+        self.model = model
+        self.api_key = api_key
+        self.api_base = api_base
+        self.organization = organization
         self.api_type = api_type
-        self.temperature = temperature
-        self.max_tokens = max_tokens
-        self.top_p = top_p
-        self.repetition_penalty = repetition_penalty
-        self.frequency_penalty = frequency_penalty
-        self.presence_penalty = presence_penalty
-        self.tensor_parallel_size = tensor_parallel_size
+        self.max_retries = max_retries
+        self.timeout = timeout
+        self.concurrent_requests = concurrent_requests
+        self.batch_size = batch_size
         self.kwargs = kwargs
         
-        if api_type == "config":
-            # 使用配置文件中的API
-            from openai import OpenAI, AsyncOpenAI
-            
-            self.model = model or MODEL_CONFIG.get("model")
-            self.client = OpenAI(
-                api_key=MODELSCOPE_API_KEY,
-                base_url=MODEL_CONFIG.get("base_url")
-            )
-            self.async_client = AsyncOpenAI(
-                api_key=MODELSCOPE_API_KEY,
-                base_url=MODEL_CONFIG.get("base_url")
-            )
-        else:  # api_type == "vllm"
-            # 使用vLLM的AsyncLLMEngine 模型路径
-            base_model_path = "/inspire/hdd/ws-f4d69b29-e0a5-44e6-bd92-acf4de9990f0/public-project/wangjia-240108610168/model_input"
-            
-            # 确保model参数不为空，如果为空则使用默认配置或抛出错误
-            if not model:
-                if MODEL_CONFIG.get("model"):
-                    model = MODEL_CONFIG.get("model")
-                else:
-                    raise ValueError("model参数不能为空，且配置文件中没有默认模型")
-                    
-            # 检查model是否是完整路径，如果不是则拼接基础路径
-            if '/' in model and os.path.exists(model):
-                self.model = model
-            else:
-                self.model = f"{base_model_path}/{model}"
-            
-            try:
-                # 尝试直接使用AsyncLLMEngine
-                from vllm.engine.arg_utils import AsyncEngineArgs
-                from vllm.engine.async_llm_engine import AsyncLLMEngine
-                from vllm.sampling_params import SamplingParams
-                from vllm.outputs import RequestOutput
-                
-                # 创建AsyncEngineArgs，使用符合文档的参数
-                print(f"正在初始化vLLM引擎，模型: {self.model}...")
-                engine_args = AsyncEngineArgs(
-                    # ── 模型及代码信任 ─────────────────────────
-                    model=self.model,                           # 模型路径或名称
-                    trust_remote_code=True,                     # 信任模型自定义代码
-                    # ── 并行配置 ───────────────────────────────
-                    tensor_parallel_size=self.tensor_parallel_size,
-                    pipeline_parallel_size=1,                   # 多节点部署才设置，单节点设置为1
-                    data_parallel_size=1,
-                    # distributed_executor_backend="ray",         # 强制使用 Ray 后端
-                    # ── 精度与 KV‑cache 类型 ────────────────────
-                    # dtype="float16",                            # 
-                    # kv_cache_dtype="fp8",                       # 
-                    # ── 显存与序列长度 ─────────────────────────
-                    gpu_memory_utilization=0.98,                # 
-                    max_model_len=20480,                        #
-                    # ── 预填充与前缀缓存 ────────────────────────
-                    enable_chunked_prefill=True,                #
-                    enable_prefix_caching=True,                 #
-                    # ── 批次与吞吐控制 ─────────────────────────
-                    max_num_seqs=200,                           # gemma参数  128
-                    max_num_batched_tokens=10240,               # gemma参数 
-                    # num_scheduler_steps=4,                    # llama参数，glm不设置
-                    # max_num_seqs=2048,                              # qwen参数
-                    # max_num_batched_tokens=20480,                  # qwen参数
-                    # ── 执行模式控制 ────────────────────────────
-                    enforce_eager=True,                         # gemma false开启快；qwen 14b关闭快
-                    # disable_custom_all_reduce=False,             # 禁用自定义all-reduce以避免分布式通信问题，没用？
-                    use_v2_block_manager=True,                  #
-                    disable_async_output_proc=False,
-                    )
-
-                
-                # 创建AsyncLLMEngine
-                self.engine = AsyncLLMEngine.from_engine_args(engine_args)
-                self.use_openai_api = False
-                
-                print(f"初始化vLLM AsyncLLMEngine成功: 模型: {self.model}")
-                
-            except Exception as e:
-                # 如果初始化失败，回退到使用OpenAI API格式的vLLM服务
-                print(f"初始化vLLM引擎失败: {str(e)}")
-                print("将使用OpenAI兼容API作为备用方案")
-                
-                from openai import OpenAI, AsyncOpenAI
-                
-                self.use_openai_api = True
-                self.client = OpenAI(
-                    api_key="EMPTY",
-                    base_url="http://localhost:8000/v1"
-                )
-                self.async_client = AsyncOpenAI(
-                    api_key="EMPTY",
-                    base_url="http://localhost:8000/v1"
-                )
-        
-        print(f"初始化LLM API客户端: {api_type}, 模型: {self.model}")
-    
-    def _warm_up_model(self, num_warmup: int = 3):
-        """
-        已删除模型预热方法
-        """
-        pass
-    
-    def close(self):
-        """关闭并清理资源"""
-        if self.api_type == "vllm" and hasattr(self, 'engine') and not hasattr(self, 'use_openai_api'):
-            try:
-                # 关闭vLLM引擎
-                print("正在关闭vLLM引擎...")
-                import asyncio
-                
-                # 尝试优雅地关闭引擎
-                loop = asyncio.get_event_loop()
-                if not loop.is_closed():
-                    try:
-                        if hasattr(self.engine, 'abort_all'):
-                            loop.run_until_complete(self.engine.abort_all())
-                        if hasattr(self.engine, 'terminate'):
-                            loop.run_until_complete(self.engine.terminate())
-                    except Exception as e:
-                        print(f"优雅关闭vLLM引擎时出错: {str(e)}")
-                
-                # 关闭所有子进程
-                if hasattr(self.engine, '_llm_engine') and hasattr(self.engine._llm_engine, '_executor'):
-                    executor = self.engine._llm_engine._executor
-                    if hasattr(executor, 'shutdown'):
-                        print("关闭vLLM执行器...")
-                        executor.shutdown(wait=True)
-                
-                # 强制清理一些引用
-                self.engine = None
-                
-                # 清理PyTorch分布式通信资源
-                try:
-                    import torch.distributed as dist
-                    if dist.is_initialized():
-                        print("关闭PyTorch分布式通信...")
-                        dist.destroy_process_group()
-                except Exception as e:
-                    print(f"清理分布式资源时出错: {str(e)}")
-                
-                # 关闭并重新创建事件循环
-                try:
-                    if loop and not loop.is_closed():
-                        loop.close()
-                    asyncio.set_event_loop(asyncio.new_event_loop())
-                except Exception as e:
-                    print(f"关闭事件循环时出错: {str(e)}")
-                    
-                # 强制触发垃圾回收
-                import gc
-                gc.collect()
-                
-                # 释放CUDA缓存
-                try:
-                    import torch
-                    if torch.cuda.is_available():
-                        torch.cuda.empty_cache()
-                        print("已清空CUDA缓存")
-                except Exception as e:
-                    print(f"清空CUDA缓存时出错: {str(e)}")
-                
-                print("vLLM引擎资源已完全释放")
-            except Exception as e:
-                print(f"关闭vLLM引擎时出错: {str(e)}")
-    
-    def __del__(self):
-        """析构函数，确保资源被释放"""
-        self.close()
-    
-    def call(self, messages: List[Dict[str, str]], json_mode: bool = False, json_schema: Optional[Dict] = None) -> str:
-        """
-        调用LLM API
-        
-        Args:
-            messages: 消息列表，格式为[{"role": "user", "content": "问题"}]
-            json_mode: 是否启用JSON模式，默认为False
-            json_schema: JSON模式定义，用于结构化输出，默认为None
-            
-        Returns:
-            LLM返回的内容字符串
-        """
-        if self.api_type == "vllm":
-            if hasattr(self, 'use_openai_api') and self.use_openai_api:
-                # 使用OpenAI兼容的API
-                prompt = "\n".join([f"{msg['role']}: {msg['content']}" for msg in messages])
-                params = {
-                    'model': self.model,
-                    'prompt': prompt,
-                    'temperature': self.temperature,
-                    'max_tokens': self.max_tokens,
-                    'top_p': self.top_p,
-                    'frequency_penalty': self.frequency_penalty,
-                    'presence_penalty': self.presence_penalty
-                }
-                
-                # 如果提供了JSON模式，添加到extra_body参数中
-                if json_schema:
-                    params['extra_body'] = {'guided_json': json_schema}
-                
-                response = self.client.completions.create(**params)
-                return response.choices[0].text
-            else:
-                # 使用AsyncLLMEngine
-                prompt = "\n".join([f"{msg['role']}: {msg['content']}" for msg in messages])
-                loop = asyncio.get_event_loop()
-                result = loop.run_until_complete(self._async_generate_vllm(prompt, json_schema=json_schema))
-                return result
-        else:  # self.api_type == "config"
-            # 使用chat.completions接口
-            params = {
-                "model": self.model,
-                "messages": messages,
-                "temperature": self.temperature,
-                "max_tokens": self.max_tokens,
-                "top_p": self.top_p,
-                "frequency_penalty": self.frequency_penalty,
-                "presence_penalty": self.presence_penalty
+        # 检查API类型并设置客户端
+        if api_type in ["openai", "vllm"]:
+            # 创建同步和异步客户端
+            client_kwargs = {
+                "timeout": aiohttp.ClientTimeout(total=timeout),
+                "max_retries": max_retries
             }
             
-            if json_mode:
-                params["response_format"] = {"type": "json_object"}
-                
-            response = self.client.chat.completions.create(**params)
-            return response.choices[0].message.content
-
-    async def async_call(self, messages: List[Dict[str, str]], json_mode: bool = False, json_schema: Optional[Dict] = None) -> str:
-        """
-        异步调用LLM API
-        
-        Args:
-            messages: 消息列表，格式为[{"role": "user", "content": "问题"}]
-            json_mode: 是否启用JSON模式，默认为False
-            json_schema: JSON模式定义，用于结构化输出，默认为None
+            # 如果提供了API密钥，添加到参数中
+            if api_key:
+                client_kwargs["api_key"] = api_key
             
-        Returns:
-            LLM返回的内容字符串
-        """
-        if self.api_type == "vllm":
-            if hasattr(self, 'use_openai_api') and self.use_openai_api:
-                # 使用OpenAI兼容的API
-                prompt = "\n".join([f"{msg['role']}: {msg['content']}" for msg in messages])
-                params = {
-                    'model': self.model,
-                    'prompt': prompt,
-                    'temperature': self.temperature,
-                    'max_tokens': self.max_tokens,
-                    'top_p': self.top_p,
-                    'frequency_penalty': self.frequency_penalty,
-                    'presence_penalty': self.presence_penalty
-                }
+            # 如果提供了API基础URL，添加到参数中
+            if api_base:
+                client_kwargs["base_url"] = api_base
+            
+            # 如果提供了组织ID，添加到参数中
+            if organization:
+                client_kwargs["organization"] = organization
+            
+            # 创建同步客户端
+            self.client = OpenAI(**client_kwargs)
+            
+            # 创建异步客户端
+            self.async_client = AsyncOpenAI(**client_kwargs)
+            
+        elif api_type == "azure":
+            # 处理Azure OpenAI API
+            if not api_key or not api_base:
+                raise ValueError("Azure OpenAI API需要提供api_key和api_base")
                 
-                # 如果提供了JSON模式，添加到extra_body参数中
-                if json_schema:
-                    params['extra_body'] = {'guided_json': json_schema}
-                    
-                params.update(self.kwargs)
+            # 创建同步和异步客户端
+            client_kwargs = {
+                "api_key": api_key,
+                "azure_endpoint": api_base,
+                "api_version": kwargs.get("api_version", "2023-05-15"),
+                "timeout": aiohttp.ClientTimeout(total=timeout),
+                "max_retries": max_retries
+            }
+            
+            if organization:
+                client_kwargs["organization"] = organization
                 
-                response = await self.async_client.completions.create(**params)
-                return response.choices[0].text
-            else:
-                # 使用AsyncLLMEngine
-                prompt = "\n".join([f"{msg['role']}: {msg['content']}" for msg in messages])
-                return await self._async_generate_vllm(prompt, json_schema=json_schema)
+            # 创建同步客户端
+            self.client = OpenAI(**client_kwargs)
+            
+            # 创建异步客户端
+            self.async_client = AsyncOpenAI(**client_kwargs)
         else:
-            # 使用chat.completions接口
-            params = {
-                "model": self.model,
-                "messages": messages,
-                "temperature": self.temperature,
-                "max_tokens": self.max_tokens,
-                "top_p": self.top_p,
-                "frequency_penalty": self.frequency_penalty,
-                "presence_penalty": self.presence_penalty
-            }
-            
-            if json_mode:
-                params["response_format"] = {"type": "json_object"}
-                
-            response = await self.async_client.chat.completions.create(**params)
-            return response.choices[0].message.content
-
-    def generate(self, prompt: str, json_schema: Optional[Dict] = None) -> str:
+            raise ValueError(f"不支持的API类型: {api_type}，目前支持'openai'、'azure'和'vllm'")
+        
+        # 信号量用于限制并发请求数
+        self._semaphore = asyncio.Semaphore(concurrent_requests)
+        
+        logger.info(f"已初始化LLMAPIClient: 模型={model}, 类型={api_type}")
+    
+    def generate(self, prompt: str, **kwargs) -> str:
         """
-        生成回复
+        同步生成文本
         
         Args:
-            prompt: 提示文本
-            json_schema: JSON模式定义，用于结构化输出，默认为None
+            prompt: 输入提示文本
+            **kwargs: 其他参数，可覆盖初始化时设置的参数
             
         Returns:
-            生成的回复文本
+            str: 生成的文本
         """
-        # 调用API时不启用JSON模式
-        return self.call([{"role": "user", "content": prompt}], json_mode=False, json_schema=json_schema)
-
-    async def async_generate(self, prompt: str, json_schema: Optional[Dict] = None) -> str:
+        # 构造消息格式
+        messages = [{"role": "user", "content": prompt}]
+        
+        # 如果提供了system_prompt，添加system消息
+        system_prompt = kwargs.get("system_prompt")
+        if system_prompt:
+            messages.insert(0, {"role": "system", "content": system_prompt})
+        
+        # 合并参数
+        model = kwargs.get("model", self.model)
+        temperature = kwargs.get("temperature", self.temperature)
+        max_tokens = kwargs.get("max_tokens", self.max_tokens)
+        top_p = kwargs.get("top_p", self.top_p)
+        
+        try:
+            # 调用OpenAI客户端
+            response = self.client.chat.completions.create(
+                model=model,
+                messages=messages,
+                temperature=temperature,
+                max_tokens=max_tokens,
+                top_p=top_p,
+                presence_penalty=0,
+                frequency_penalty=0
+            )
+            
+            # 记录返回内容日志
+            logger.info(f"API原始响应: {response}")
+            
+            # 提取生成的文本
+            return response.choices[0].message.content
+            
+        except Exception as e:
+            logger.error(f"生成文本时出错: {e}")
+            raise
+    
+    async def async_generate(
+        self, 
+        prompt: str, 
+        system_prompt: Optional[str] = None,
+        temperature: Optional[float] = None, 
+        max_tokens: Optional[int] = None, 
+        **kwargs
+    ) -> str:
         """
         异步生成文本
         
         Args:
-            prompt: 输入提示文本
-            json_schema: JSON模式定义，用于结构化输出，默认为None
-            
+            prompt: 提示词
+            system_prompt: 系统提示词（可选）
+            temperature: 温度参数（可选）
+            max_tokens: 最大生成token数（可选）
+            **kwargs: 其他参数，传递给底层API
+        
         Returns:
-            LLM生成的文本内容
+            生成的文本
         """
-        if self.api_type == "vllm":
-            if hasattr(self, 'use_openai_api') and self.use_openai_api:
-                # 使用OpenAI兼容的API
+        # 确保温度和最大token数是合理的
+        temperature = temperature or kwargs.get('temperature', 0.5)
+        max_tokens = max_tokens or kwargs.get('max_tokens', 2048)
+        
+        # 组装消息
+        messages = []
+        
+        # 如果提供了系统提示，添加到消息中
+        if system_prompt:
+            messages.append({"role": "system", "content": system_prompt})
+        
+        # 添加用户消息
+        messages.append({"role": "user", "content": prompt})
+        
+        async with self._semaphore:
+            try:
+                # 设置请求参数
                 params = {
-                    'model': self.model,
-                    'prompt': prompt,
-                    'temperature': self.temperature,
-                    'max_tokens': self.max_tokens,
-                    'top_p': self.top_p,
-                    'frequency_penalty': self.frequency_penalty,
-                    'presence_penalty': self.presence_penalty
+                    "model": self.model,
+                    "messages": messages,
+                    "temperature": temperature,
+                    "max_tokens": max_tokens,
+                    **kwargs
                 }
                 
-                # 如果提供了JSON模式，添加到extra_body参数中
-                if json_schema:
-                    params['extra_body'] = {'guided_json': json_schema}
-                    
-                params.update(self.kwargs)
+                # 发送请求
+                completion = await self.async_client.chat.completions.create(**params)
                 
-                try:
-                    response = await self.async_client.completions.create(**params)
-                    return response.choices[0].text
-                except Exception as e:
-                    print(f"异步API调用失败: {str(e)}")
-                    # 尝试同步调用作为备选
-                    print("尝试使用同步调用作为备选...")
-                    return self.generate(prompt, json_schema=json_schema)
-            else:
-                # 使用AsyncLLMEngine
-                return await self._async_generate_vllm(prompt, json_schema=json_schema)
-        else:
-            # 对于配置文件API，使用OpenAI客户端，不启用JSON模式
-            messages = [{"role": "user", "content": prompt}]
-            return await self.async_call(messages, json_mode=False, json_schema=json_schema)
-    
-    async def _async_generate_vllm(self, prompt: str, json_schema: Optional[Dict] = None) -> str:
+                # 提取并返回生成的文本
+                return completion.choices[0].message.content
+            
+            except Exception as e:
+                logger.error(f"API调用失败: {e}")
+                # 在重试耗尽后，抛出异常
+                raise
+
+    async def async_generate_batch(
+        self, 
+        prompts: List[str], 
+        system_prompt: Optional[str] = None,
+        temperature: Optional[float] = None,
+        max_tokens: Optional[int] = None,
+        **kwargs
+    ) -> List[str]:
         """
-        使用AsyncLLMEngine进行异步生成
+        批量异步生成文本
         
         Args:
-            prompt: 输入提示文本
-            json_schema: JSON模式定义，用于结构化输出，默认为None
-            
+            prompts: 提示词列表
+            system_prompt: 系统提示词（可选，应用于所有提示）
+            temperature: 温度参数（可选）
+            max_tokens: 最大生成token数（可选）
+            **kwargs: 其他参数，传递给底层API
+        
         Returns:
-            生成的文本内容
+            生成的文本列表
         """
-        # 创建采样参数
-        from vllm.sampling_params import SamplingParams, GuidedDecodingParams
+        if not prompts:
+            return []
         
-        # 准备引导解码参数
-        guided_decoding_params = None
-        if json_schema:
-            guided_decoding_params = GuidedDecodingParams(json=json_schema)
+        # 准备任务
+        async def process_batch(batch_prompts):
+            tasks = [
+                self.async_generate(
+                    prompt, 
+                    system_prompt, 
+                    temperature, 
+                    max_tokens, 
+                    **kwargs
+                ) for prompt in batch_prompts
+            ]
+            return await asyncio.gather(*tasks, return_exceptions=True)
         
-        sampling_params = SamplingParams(
-            temperature=self.temperature,
-            max_tokens=self.max_tokens,
-            top_p=self.top_p,
-            repetition_penalty=self.repetition_penalty,  # 添加重复惩罚参数
-            frequency_penalty=self.frequency_penalty,    # 添加频率惩罚参数
-            presence_penalty=self.presence_penalty,      # 添加存在惩罚参数
-            guided_decoding=guided_decoding_params,      # 添加引导解码参数
-        )
+        # 将提示分成批次
+        batches = [prompts[i:i + self.batch_size] for i in range(0, len(prompts), self.batch_size)]
         
-        # 生成唯一请求ID
-        request_id = str(uuid.uuid4())
+        # 处理所有批次
+        all_results = []
+        for batch in batches:
+            batch_results = await process_batch(batch)
+            all_results.extend(batch_results)
         
-        try:
-            # 发送请求
-            outputs_generator = self.engine.generate(prompt, sampling_params, request_id)
-            
-            # 获取最终输出
-            final_output = None
-            async for request_output in outputs_generator:
-                final_output = request_output
-                
-            # 提取生成的文本
-            if final_output and final_output.outputs:
-                return final_output.outputs[0].text
+        # 处理可能的异常
+        final_results = []
+        for result in all_results:
+            if isinstance(result, Exception):
+                logger.error(f"批处理中的API调用失败: {result}")
+                final_results.append("")
             else:
-                print(f"警告: vLLM生成空输出，请求ID: {request_id}")
-                return "无法生成回答：生成结果为空"
-                
-        except Exception as e:
-            error_msg = f"AsyncLLMEngine生成失败: {type(e).__name__}: {str(e)}"
-            print(error_msg)
-            print("尝试使用OpenAI兼容API作为备选...")
-            
-            # 动态切换到OpenAI兼容API
-            if not hasattr(self, 'async_client'):
-                from openai import AsyncOpenAI
-                self.async_client = AsyncOpenAI(
-                    api_key="EMPTY",
-                    base_url="http://localhost:8000/v1"
-                )
-                self.use_openai_api = True
-            
-            try:
-                # 使用OpenAI兼容API重试
-                params = {
-                    'model': self.model,
-                    'prompt': prompt,
-                    'temperature': self.temperature,
-                    'max_tokens': self.max_tokens,
-                    'top_p': self.top_p,
-                    'frequency_penalty': self.frequency_penalty,
-                    'presence_penalty': self.presence_penalty
-                }
-                
-                # 如果提供了JSON模式，添加到extra_body参数中
-                if json_schema:
-                    params['extra_body'] = {'guided_json': json_schema}
-                
-                response = await self.async_client.completions.create(**params)
-                return response.choices[0].text
-            except Exception as retry_e:
-                retry_error = f"OpenAI兼容API重试也失败: {type(retry_e).__name__}: {str(retry_e)}"
-                print(retry_error)
-                return f"生成失败，无法获取回答: {error_msg}" 
+                final_results.append(result)
+        
+        return final_results 
