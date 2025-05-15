@@ -12,6 +12,7 @@ import argparse
 import json
 import asyncio
 import time
+import re
 from datetime import datetime
 from typing import Dict, List, Any, Union, Optional, Tuple
 from tqdm import tqdm
@@ -27,6 +28,7 @@ sys.path.insert(0, project_root)
 from social_benchmark.evaluation.prompt_engineering import PromptEngineering
 from social_benchmark.evaluation.evaluation import Evaluator
 from social_benchmark.evaluation.vllm_massive_api import MassiveAPIClientAdapter, VLLMMassiveAPIClient
+from social_benchmark.evaluation.utils import get_model_name_async, get_model_name_in_subprocess
 from social_benchmark.evaluation.run_evaluation import (
     DOMAIN_MAPPING, COUNTRY_MAPPING, 
     get_domain_name, load_option_contents, load_qa_file, load_ground_truth,
@@ -55,7 +57,7 @@ def parse_args():
                        help='并行处理的受访者数量')
     parser.add_argument('--temperature', type=float, default=0.1,
                        help='采样温度')
-    parser.add_argument('--max_tokens', type=int, default=2048,
+    parser.add_argument('--max_tokens', type=int, default=1024,
                        help='最大生成token数')
     parser.add_argument('--request_timeout', type=int, default=60,
                        help='单个请求的超时时间（秒）')
@@ -463,21 +465,16 @@ async def run_domain_evaluation(
     results_dir = os.path.join(os.path.dirname(__file__), "results")
     os.makedirs(results_dir, exist_ok=True)
     
-    # 创建模型专属目录
-    model_dir = os.path.join(results_dir, args.model)
-    os.makedirs(model_dir, exist_ok=True)
-    
     # 打印开始信息
     print(f"\n{'='*60}")
     print(f"开始大规模并发评测 | 领域: {domain_name} (ID: {domain_id})")
     print(f"API基础URL: {args.api_base}")
-    print(f"模型: {args.model}")
+    print(f"模型参数: {args.model}")
     print(f"最大并发请求数: {args.max_concurrent_requests}")
     print(f"批处理大小: {args.batch_size}")
     print(f"最大重试次数: {args.max_retries}")
     print(f"重试间隔时间: {args.retry_interval}秒")
     print(f"数据集大小: {args.dataset_size}")
-    print(f"结果将保存到: {model_dir}")
     print(f"{'='*60}")
     
     # 加载问答和真实答案数据
@@ -508,10 +505,10 @@ async def run_domain_evaluation(
     print("正在初始化模型和加载数据...")
     
     try:
-        # 创建大规模API客户端
+        # 创建大规模API客户端 - 使用命令行传入的模型参数
         api_client = VLLMMassiveAPIClient(
             api_base=args.api_base,
-            model=args.model,
+            model=args.model,  # 使用传入的模型参数进行API调用
             max_concurrent_requests=args.max_concurrent_requests,
             batch_size=args.batch_size,
             temperature=args.temperature,
@@ -524,6 +521,52 @@ async def run_domain_evaluation(
         
         # 创建提示工程和评估器
         prompt_engine = PromptEngineering(shuffle_options=args.shuffle_options)
+        
+        # 获取实际运行的模型名称 - 仅用于结果保存
+        actual_model_name = args.model  # 默认使用传入的模型名称
+        try:
+            # 通过异步函数获取模型名称
+            print(f"正在从API获取实际运行的模型名称（仅用于结果保存）...")
+            # 检查是否有模型路径环境变量 - 优先使用环境变量
+            model_path = os.environ.get("MODEL_PATH", "")
+            if model_path:
+                # 提取路径中的最后一个目录名作为模型名称
+                model_name_from_path = os.path.basename(model_path.rstrip("/").rstrip("\\"))
+                if model_name_from_path:
+                    actual_model_name = re.sub(r'[\\/*?:"<>|]', "-", model_name_from_path)
+                    print(f"从环境变量MODEL_PATH提取到模型名称: {actual_model_name}")
+            # 如果环境变量获取失败，尝试通过API获取
+            else:
+                model_name = await get_model_name_async(args.api_base)
+                
+                # 检查获取到的模型名称是否为空或unknown
+                if model_name and model_name != "unknown" and model_name.strip() != "":
+                    # 格式化模型名称，移除特殊字符
+                    actual_model_name = re.sub(r'[\\/*?:"<>|]', "-", model_name)
+                    print(f"检测到实际模型名称: {actual_model_name}")
+                else:
+                    # 尝试子进程方式获取
+                    print(f"异步获取模型名称失败，尝试使用子进程方式...")
+                    model_name = get_model_name_in_subprocess(args.api_base)
+                    if model_name and model_name != "unknown" and model_name.strip() != "":
+                        actual_model_name = re.sub(r'[\\/*?:"<>|]', "-", model_name)
+                        print(f"通过子进程检测到模型名称: {actual_model_name}")
+                    else:
+                        print(f"无法获取模型名称，使用传入的模型名称: {args.model}")
+        except Exception as e:
+            print(f"获取实际模型名称时出错: {str(e)}")
+            print(f"将使用传入的模型名称: {args.model}")
+        
+        # 如果模型名称仍然为空，使用默认名称
+        if not actual_model_name or actual_model_name.strip() == "":
+            actual_model_name = "unknown_model"
+            print(f"模型名称为空，使用默认名称: {actual_model_name}")
+        
+        # 创建模型专属目录 - 使用获取到的实际模型名称
+        model_dir = os.path.join(results_dir, actual_model_name)
+        os.makedirs(model_dir, exist_ok=True)
+        print(f"结果将保存到: {model_dir}")
+        
         evaluator = Evaluator(domain_name=domain_name, save_dir=model_dir)
         
         # 使用大规模并发API处理所有问题
@@ -557,12 +600,12 @@ async def run_domain_evaluation(
         evaluator.calculate_occupation_metrics()
         
         # 保存结果
-        result_file_path = evaluator.save_results(args.model, domain_stats={
+        result_file_path = evaluator.save_results(actual_model_name, domain_stats={
             "domain_id": domain_id,
             "total_questions": stats.get("total_questions", 0),
             "processed_questions": stats.get("processed_questions", 0),
             "processed_interviewees": len(interviewees),
-            "model": args.model
+            "model": actual_model_name
         })
         
         print(f"评测结果已保存到: {result_file_path}")
@@ -570,8 +613,9 @@ async def run_domain_evaluation(
         # 如果开启了保存prompt信息，则保存完整的提示和回答记录
         if args.print_prompt and results:
             # 使用已保存的结果文件路径构建prompt文件路径
+            timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
             prompt_file = os.path.join(os.path.dirname(result_file_path), 
-                                     f"{domain_name}_full_prompts_{args.model}_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json")
+                                     f"{domain_name}__{actual_model_name}__full_prompts__{timestamp}.json")
             
             # 保存格式化后的提示数据
             with open(prompt_file, "w", encoding="utf-8") as f:
@@ -608,20 +652,60 @@ async def run_all_domains(args: argparse.Namespace) -> None:
     results_dir = os.path.join(os.path.dirname(__file__), "results")
     os.makedirs(results_dir, exist_ok=True)
     
-    # 创建模型专属目录
-    model_dir = os.path.join(results_dir, args.model)
-    os.makedirs(model_dir, exist_ok=True)
-    
     # 打印开始信息
     print(f"\n{'='*60}")
     print(f"开始大规模并发评测所有领域")
     print(f"API基础URL: {args.api_base}")
-    print(f"模型: {args.model}")
+    print(f"模型参数: {args.model}")
     print(f"最大并发请求数: {args.max_concurrent_requests}")
     print(f"批处理大小: {args.batch_size}")
     print(f"数据集大小: {args.dataset_size}")
-    print(f"结果将保存到: {model_dir}")
     print(f"{'='*60}")
+    
+    # 获取实际运行的模型名称 - 仅用于结果保存
+    actual_model_name = args.model  # 默认使用传入的模型名称
+    try:
+        # 检查是否有模型路径环境变量 - 优先使用环境变量
+        model_path = os.environ.get("MODEL_PATH", "")
+        if model_path:
+            # 提取路径中的最后一个目录名作为模型名称
+            model_name_from_path = os.path.basename(model_path.rstrip("/").rstrip("\\"))
+            if model_name_from_path:
+                actual_model_name = re.sub(r'[\\/*?:"<>|]', "-", model_name_from_path)
+                print(f"从环境变量MODEL_PATH提取到模型名称: {actual_model_name}")
+        # 如果环境变量获取失败，尝试通过API获取
+        else:
+            # 通过异步函数获取模型名称
+            print(f"正在从API获取实际运行的模型名称（仅用于结果保存）...")
+            model_name = await get_model_name_async(args.api_base)
+            
+            # 检查获取到的模型名称是否为空或unknown
+            if model_name and model_name != "unknown" and model_name.strip() != "":
+                # 格式化模型名称，移除特殊字符
+                actual_model_name = re.sub(r'[\\/*?:"<>|]', "-", model_name)
+                print(f"检测到实际模型名称: {actual_model_name}")
+            else:
+                # 尝试子进程方式获取
+                print(f"异步获取模型名称失败，尝试使用子进程方式...")
+                model_name = get_model_name_in_subprocess(args.api_base)
+                if model_name and model_name != "unknown" and model_name.strip() != "":
+                    actual_model_name = re.sub(r'[\\/*?:"<>|]', "-", model_name)
+                    print(f"通过子进程检测到模型名称: {actual_model_name}")
+                else:
+                    print(f"无法获取模型名称，使用传入的模型名称: {args.model}")
+    except Exception as e:
+        print(f"获取实际模型名称时出错: {str(e)}")
+        print(f"将使用传入的模型名称: {args.model}")
+    
+    # 如果模型名称仍然为空，使用默认名称
+    if not actual_model_name or actual_model_name.strip() == "":
+        actual_model_name = "unknown_model"
+        print(f"模型名称为空，使用默认名称: {actual_model_name}")
+    
+    # 创建模型专属目录 - 使用获取到的实际模型名称
+    model_dir = os.path.join(results_dir, actual_model_name)
+    os.makedirs(model_dir, exist_ok=True)
+    print(f"结果将保存到: {model_dir}")
     
     # 获取要评测的所有领域ID
     domain_ids = []
@@ -645,11 +729,14 @@ async def run_all_domains(args: argparse.Namespace) -> None:
         try:
             print(f"\n正在评测领域 {domain_name} (ID: {domain_id})...")
             
+            # 创建修改后的参数副本 - 保留原始model参数用于API调用
+            domain_args = argparse.Namespace(**vars(args))
+            
             # 使用独立进程运行评测，确保资源释放
             result = await run_domain_evaluation(
                 domain_id=domain_id,
                 interview_count=args.interview_count,
-                args=args
+                args=domain_args
             )
             
             if result:
@@ -672,14 +759,14 @@ async def run_all_domains(args: argparse.Namespace) -> None:
         # 保存总体评测指标
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
         
-        # 创建模型目录
-        model_dir = os.path.join(results_dir, args.model)
+        # 创建模型目录 - 使用获取到的实际模型名称
+        model_dir = os.path.join(results_dir, actual_model_name)
         os.makedirs(model_dir, exist_ok=True)
         
         # 保存总体评测指标JSON
         overall_metrics = {
             "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
-            "model": args.model,
+            "model": actual_model_name,
             "total_questions": total_count,
             "correct_answers": total_correct,
             "accuracy": total_accuracy,
@@ -687,7 +774,7 @@ async def run_all_domains(args: argparse.Namespace) -> None:
         }
         
         # 保存总体指标JSON
-        overall_json_path = os.path.join(model_dir, f"all_domains_{args.model}_overall_{timestamp}.json")
+        overall_json_path = os.path.join(model_dir, f"all_domains_{actual_model_name}_overall_{timestamp}.json")
         with open(overall_json_path, "w", encoding="utf-8") as f:
             json.dump(overall_metrics, f, ensure_ascii=False, indent=2)
         print(f"所有领域的总体评测指标已保存到: {overall_json_path}")

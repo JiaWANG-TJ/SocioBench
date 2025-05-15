@@ -905,7 +905,8 @@ class Evaluator:
             "6": "Skilled agricultural, forestry and fishery workers",
             "7": "Craft and related trades workers",
             "8": "Plant and machine operators and assemblers",
-            "9": "Elementary occupations"
+            "9": "Elementary occupations",
+            "Unknown": "Unknown or No answer"  # 添加未知职业类别
         }
         
         for result in self.results["detailed_results"]:
@@ -915,17 +916,26 @@ class Evaluator:
             for field in occupation_field_names:
                 if field in result and result[field]:
                     occupation_value = str(result[field]).strip()
+                    # 检查是否为特殊值如"No answer"
+                    if occupation_value.lower() in ["no answer", "not applicable", "refused", "nap", "na", "n/a"]:
+                        occupation_code = "Unknown"
+                        break
                     # 提取ISCO代码的第一位数字（大类）
-                    if occupation_value and occupation_value[0].isdigit():
+                    elif occupation_value and occupation_value[0].isdigit():
                         occupation_code = occupation_value[0]
                         break
             
-            if not occupation_code or occupation_code not in occupation_groups:
-                continue
-                
+            # 如果没有找到有效的职业代码，设为Unknown
+            if not occupation_code:
+                occupation_code = "Unknown"
+            
+            # 如果职业代码不在预定义的职业组中，也设为Unknown
+            if occupation_code not in occupation_groups:
+                occupation_code = "Unknown"
+            
             # 获取职业名称
             occupation_name = occupation_groups[occupation_code]
-                
+            
             # 初始化职业结果
             if occupation_code not in occupation_results:
                 occupation_results[occupation_code] = {
@@ -935,12 +945,12 @@ class Evaluator:
                 }
                 occupation_true_labels[occupation_code] = []
                 occupation_pred_labels[occupation_code] = []
-                
+            
             # 统计结果
             occupation_results[occupation_code]["total_count"] += 1
             if result["result_correctness"]:
                 occupation_results[occupation_code]["correct_count"] += 1
-                
+            
             # 收集F1计算所需的标签
             if "true_answer" in result and "llm_answer" in result and result.get("include_in_evaluation", True):
                 occupation_true_labels[occupation_code].append(str(result["true_answer"]))
@@ -1027,16 +1037,15 @@ class Evaluator:
         # 计算按职业分组的指标
         self.calculate_occupation_metrics()
         
-        # 创建时间戳作为文件名的一部分
+        # 获取当前时间作为时间戳
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
         
-        # 创建模型子文件夹
+        # 创建模型专属目录
         model_dir = os.path.join(self.save_dir, model_name)
-        if not os.path.exists(model_dir):
-            os.makedirs(model_dir)
+        os.makedirs(model_dir, exist_ok=True)
         
-        # 创建文件名
-        results_filename = f"{self.domain_name}_{model_name}_results_{timestamp}.json"
+        # 创建文件名，包含模型名称
+        results_filename = f"{self.domain_name}__results_{model_name}_{timestamp}.json"
         results_filepath = os.path.join(model_dir, results_filename)
         
         # 保存结果 - 创建一个有序的结果字典，确保关键指标在前面
@@ -1147,13 +1156,12 @@ class Evaluator:
         # 创建时间戳
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
         
-        # 创建模型子文件夹
+        # 创建模型专属目录
         model_dir = os.path.join(self.save_dir, model_name)
-        if not os.path.exists(model_dir):
-            os.makedirs(model_dir)
+        os.makedirs(model_dir, exist_ok=True)
         
-        # 创建文件名
-        country_metrics_filename = f"{self.domain_name}_{model_name}_country_metrics_{timestamp}.csv"
+        # 创建文件名，包含模型名称
+        country_metrics_filename = f"{self.domain_name}__country_metrics_{model_name}_{timestamp}.xlsx"
         country_metrics_filepath = os.path.join(model_dir, country_metrics_filename)
         
         # 获取所有国家代码和名称映射
@@ -1190,7 +1198,7 @@ class Evaluator:
         metrics_df = pd.DataFrame(metrics_data)
         
         # 将所有数据合并到一个Excel文件，每个表格一个sheet
-        with pd.ExcelWriter(country_metrics_filepath.replace(".csv", ".xlsx")) as writer:
+        with pd.ExcelWriter(country_metrics_filepath.replace(".xlsx", ".xlsx")) as writer:
             country_code_df.to_excel(writer, sheet_name="国家代码表", index=False)
             metrics_df.to_excel(writer, sheet_name="国家评测指标", index=False)
             
@@ -1207,9 +1215,9 @@ class Evaluator:
             country_mapping_df = pd.DataFrame(country_mapping_data, columns=["国家代码", "国家全称"])
             country_mapping_df.to_excel(writer, sheet_name="国家代码名称映射", index=False)
         
-        print(f"按国家分组的评测指标已保存到: {country_metrics_filepath.replace('.csv', '.xlsx')}")
+        print(f"按国家分组的评测指标已保存到: {country_metrics_filepath}")
         
-        return country_metrics_filepath.replace(".csv", ".xlsx")
+        return country_metrics_filepath
     
     def save_gender_metrics(self, model_name: str = "unknown") -> str:
         """
@@ -1230,13 +1238,12 @@ class Evaluator:
         # 创建时间戳
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
         
-        # 创建模型子文件夹
+        # 创建模型专属目录
         model_dir = os.path.join(self.save_dir, model_name)
-        if not os.path.exists(model_dir):
-            os.makedirs(model_dir)
+        os.makedirs(model_dir, exist_ok=True)
         
-        # 创建文件名
-        gender_metrics_filename = f"{self.domain_name}_{model_name}_gender_metrics_{timestamp}.csv"
+        # 创建文件名，包含模型名称
+        gender_metrics_filename = f"{self.domain_name}__gender_metrics_{model_name}_{timestamp}.xlsx"
         gender_metrics_filepath = os.path.join(model_dir, gender_metrics_filename)
         
         # 创建性别代码与名称对应表 - 使用self.results中的性别类别列表
@@ -1264,7 +1271,7 @@ class Evaluator:
         metrics_df = pd.DataFrame(metrics_data)
         
         # 将所有数据合并到一个Excel文件，每个表格一个sheet
-        with pd.ExcelWriter(gender_metrics_filepath.replace(".csv", ".xlsx")) as writer:
+        with pd.ExcelWriter(gender_metrics_filepath.replace(".xlsx", ".xlsx")) as writer:
             gender_code_df.to_excel(writer, sheet_name="性别代码表", index=False)
             metrics_df.to_excel(writer, sheet_name="性别评测指标", index=False)
             
@@ -1276,13 +1283,13 @@ class Evaluator:
             all_genders_df = pd.DataFrame({"性别类别": self.results.get("gender_categories", [])})
             all_genders_df.to_excel(writer, sheet_name="所有性别类别", index=False)
         
-        print(f"按性别分组的评测指标已保存到: {gender_metrics_filepath.replace('.csv', '.xlsx')}")
+        print(f"按性别分组的评测指标已保存到: {gender_metrics_filepath}")
         
-        return gender_metrics_filepath.replace(".csv", ".xlsx")
+        return gender_metrics_filepath
     
     def save_age_metrics(self, model_name: str = "unknown") -> str:
         """
-        保存按年龄分组的评测指标到Excel文件
+        保存按年龄分组的评测指标到CSV文件
         
         Args:
             model_name: 使用的模型名称
@@ -1299,13 +1306,12 @@ class Evaluator:
         # 创建时间戳
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
         
-        # 创建模型子文件夹
+        # 创建模型专属目录
         model_dir = os.path.join(self.save_dir, model_name)
-        if not os.path.exists(model_dir):
-            os.makedirs(model_dir)
+        os.makedirs(model_dir, exist_ok=True)
         
-        # 创建文件名
-        age_metrics_filename = f"{self.domain_name}_{model_name}_age_metrics_{timestamp}.xlsx"
+        # 创建文件名，包含模型名称
+        age_metrics_filename = f"{self.domain_name}__age_metrics_{model_name}_{timestamp}.xlsx"
         age_metrics_filepath = os.path.join(model_dir, age_metrics_filename)
         
         # 创建年龄分组与代码对应表
@@ -1362,7 +1368,7 @@ class Evaluator:
     
     def save_occupation_metrics(self, model_name: str = "unknown") -> str:
         """
-        保存按职业分组的评测指标到Excel文件
+        保存按职业分组的评测指标到CSV文件
         
         Args:
             model_name: 使用的模型名称
@@ -1379,13 +1385,12 @@ class Evaluator:
         # 创建时间戳
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
         
-        # 创建模型子文件夹
+        # 创建模型专属目录
         model_dir = os.path.join(self.save_dir, model_name)
-        if not os.path.exists(model_dir):
-            os.makedirs(model_dir)
+        os.makedirs(model_dir, exist_ok=True)
         
-        # 创建文件名
-        occupation_metrics_filename = f"{self.domain_name}_{model_name}_occupation_metrics_{timestamp}.xlsx"
+        # 创建文件名，包含模型名称
+        occupation_metrics_filename = f"{self.domain_name}__occupation_metrics_{model_name}_{timestamp}.xlsx"
         occupation_metrics_filepath = os.path.join(model_dir, occupation_metrics_filename)
         
         # 获取所有职业类别
@@ -1448,13 +1453,12 @@ class Evaluator:
         # 创建时间戳
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
         
-        # 创建模型子文件夹
+        # 创建模型专属目录
         model_dir = os.path.join(self.save_dir, model_name)
-        if not os.path.exists(model_dir):
-            os.makedirs(model_dir)
+        os.makedirs(model_dir, exist_ok=True)
         
-        # 创建文件名
-        detailed_filename = f"{self.domain_name}_{model_name}_detailed_results_{timestamp}.csv"
+        # 创建文件名，包含模型名称
+        detailed_filename = f"{self.domain_name}__detailed_results_{model_name}_{timestamp}.csv"
         detailed_filepath = os.path.join(model_dir, detailed_filename)
         
         # 从运行评估模块加载问题选项数据

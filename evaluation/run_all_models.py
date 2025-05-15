@@ -178,18 +178,17 @@ def run_all_models(models, evaluation_script_path, **kwargs):
 
 def parse_args():
     """解析命令行参数"""
-    parser = argparse.ArgumentParser(description='批量评测多个模型')
+    parser = argparse.ArgumentParser(description='批量评测多个社会认知基准模型')
     
-    parser.add_argument('--start_model_index', type=int, default=0, help='从模型列表的哪个索引开始运行（从0开始）')
-    parser.add_argument('--domain_id', type=str, default='all', help='评测的领域ID')
-    parser.add_argument('--interview_count', type=str, default='all', help='评测的面试数量')
-    parser.add_argument('--api_type', type=str, default='vllm', help='API类型')
-    parser.add_argument('--use_async', type=str, default='True', help='是否使用异步模式')
-    parser.add_argument('--concurrent_requests', type=int, default=500, help='并发请求数')
-    parser.add_argument('--concurrent_interviewees', type=int, default=100, help='并发受访者数')
-    parser.add_argument('--start_domain_id', type=int, default=1, help='起始评测的领域ID')
-    parser.add_argument('--print_prompt', type=str, default='True', help='是否打印提示')
-    parser.add_argument('--shuffle_options', type=str, default='True', help='是否打乱选项顺序')
+    parser.add_argument('--domain_id', type=str, nargs='?', default='all')
+    parser.add_argument('--interview_count', type=str, help='采访个数，all表示全部', nargs='?', default='all')
+    parser.add_argument('--api_type', type=str, choices=['config', 'vllm'], default='vllm', help='API类型，默认使用vllm')
+    parser.add_argument('--use_async', type=str2bool, default=True, help='是否使用异步模式（仅在vllm模式下有效）')
+    parser.add_argument('--concurrent_requests', type=int, default=50000, help='同时发起的请求数量（仅在异步模式下有效）')
+    parser.add_argument('--concurrent_interviewees', type=int, default=100, help='同时处理的受访者数量（仅在异步模式下有效）')
+    parser.add_argument('--start_domain_id', type=int, default=1, help='起始评测的领域ID（当domain_id为all时有效）')
+    parser.add_argument('--print_prompt', type=str2bool, default=True, help='打印完整的prompt、问答和LLM回答到json文件中')
+    parser.add_argument('--shuffle_options', type=str2bool, default=True, help='随机打乱问题选项顺序，默认打乱选项顺序')
     parser.add_argument('--dataset_size', type=int, default=500, choices=[500, 5000, 50000], help='数据集大小，500(采样1%)、5000(采样10%)、50000(原始数据集)，默认为500')
     parser.add_argument('--tensor_parallel_size', type=int, default=1, help='张量并行大小，默认为1')
     

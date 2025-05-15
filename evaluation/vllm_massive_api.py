@@ -27,7 +27,7 @@ class VLLMMassiveAPIClient:
         self,
         api_base: str = "http://localhost:8000/v1/chat/completions",
         model: str = "Meta-Llama-3.1-8B-Instruct",
-        max_tokens: int = 2048,
+        max_tokens: int = 1024,
         temperature: float = 0.1,
         max_concurrent_requests: int = 200,
         max_retries: int = 3,
@@ -381,6 +381,7 @@ class MassiveAPIClientAdapter:
         api_type: str = "vllm",
         max_concurrent_requests: int = 200,
         batch_size: int = 50,
+        max_tokens: int = 1024,
         **kwargs
     ):
         """
@@ -392,6 +393,7 @@ class MassiveAPIClientAdapter:
             api_type: API类型（仅支持'vllm'）
             max_concurrent_requests: 最大并发请求数
             batch_size: 批处理大小
+            max_tokens: 最大生成token数
             **kwargs: 其他参数
         """
         self.model = model
@@ -404,14 +406,14 @@ class MassiveAPIClientAdapter:
             model=model,
             max_concurrent_requests=max_concurrent_requests,
             batch_size=batch_size,
-            max_tokens=kwargs.get("max_tokens", 2048),
+            max_tokens=max_tokens,
             temperature=kwargs.get("temperature", 0.1),
             verbose=kwargs.get("verbose", False)
         )
         
         # 兼容性字段
         self.temperature = kwargs.get("temperature", 0.1)
-        self.max_tokens = kwargs.get("max_tokens", 2048)
+        self.max_tokens = max_tokens
         self.top_p = kwargs.get("top_p", 1.0)
     
     async def async_generate(
@@ -490,7 +492,7 @@ def parse_args():
                        help='批处理大小')
     parser.add_argument('--temperature', type=float, default=0.1,
                        help='采样温度')
-    parser.add_argument('--max_tokens', type=int, default=2048,
+    parser.add_argument('--max_tokens', type=int, default=1024,
                        help='最大生成token数')
     parser.add_argument('--request_timeout', type=int, default=60,
                        help='单个请求的超时时间（秒）')
