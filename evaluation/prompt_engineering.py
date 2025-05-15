@@ -133,8 +133,9 @@ You are participating in the International Social Survey Programme. Assume the r
             # 保留符合条件的属性
             filtered_attributes[key] = value
         
-        # 返回过滤后的属性信息JSON
-        return json.dumps(filtered_attributes, ensure_ascii=False, indent=2)
+        # 返回过滤后的属性信息文本，每行一个属性
+        formatted_attributes = "\n".join([f"{key}: {value}" for key, value in filtered_attributes.items()])
+        return formatted_attributes
     
     def format_question_options(self, question: str, options: Union[Dict[str, str], str]) -> tuple:
         """
@@ -204,6 +205,9 @@ You are participating in the International Social Survey Programme. Assume the r
             logging.warning("属性字典为空，这可能导致模型无法基于个人信息回答问题")
             attributes["_note"] = "此处应该包含个人信息，但当前为空"
         
+        # 格式化个人信息
+        attributes_text = self.format_personal_info(attributes)
+        
         # 处理选项键中可能存在的引号
         clean_options = {}
         for option_id, option_text in options.items():
@@ -214,20 +218,14 @@ You are participating in the International Social Survey Programme. Assume the r
                 clean_id = clean_id.replace('"', '').replace("'", "").strip()
             clean_options[clean_id] = option_text
         
-        # 构建选项部分
-        options_text = "\n".join([f"{option_id}. {option_text}" for option_id, option_text in clean_options.items()])
-        
-        # 构建个人属性部分
-        attributes_text = ""
-        if attributes:
-            # 格式化属性，每行一个属性
-            attributes_text = "\n".join([f"{key}: {value}" for key, value in attributes.items()])
+        # 格式化问题和选项
+        formatted_question, formatted_options = self.format_question_options(question, clean_options)
         
         # 构建完整提示
         prompt = self.template.format(
             attributes=attributes_text,
-            question=question,
-            options=options_text
+            question=formatted_question,
+            options=formatted_options
         )
         
         return prompt

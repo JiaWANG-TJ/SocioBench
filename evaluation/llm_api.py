@@ -66,7 +66,7 @@ def start_vllm_server(model_path: str,
                      port: int = 8000, 
                      tensor_parallel_size: int = 1,
                      dtype: str = "auto",
-                     max_model_len: int = 4096,
+                     max_model_len: int = 1024,
                      gpu_memory_utilization: float = 0.9,
                      trust_remote_code: bool = True) -> Optional[int]:
     """
@@ -218,6 +218,9 @@ class LLMAPIClient:
         timeout: int = API_TIMEOUT,
         concurrent_requests: int = 10,
         batch_size: int = DEFAULT_BATCH_SIZE,
+        max_tokens: int = 1024,
+        temperature: float = 0.5,
+        top_p: float = 1.0,
         **kwargs
     ):
         """
@@ -233,6 +236,9 @@ class LLMAPIClient:
             timeout: 请求超时时间（秒）
             concurrent_requests: 并发请求数
             batch_size: 批处理大小，vLLM中有效
+            max_tokens: 最大生成token数（可选）
+            temperature: 温度参数（可选）
+            top_p: 上采样参数（可选）
             **kwargs: 其他参数
         """
         self.model = model
@@ -244,7 +250,12 @@ class LLMAPIClient:
         self.timeout = timeout
         self.concurrent_requests = concurrent_requests
         self.batch_size = batch_size
+        self.max_tokens = max_tokens
+        self.temperature = temperature
+        self.top_p = top_p
         self.kwargs = kwargs
+        self.vllm_engine = None
+        self.real_model_name = None  # 存储实际加载的模型名称
         
         # 检查API类型并设置客户端
         if api_type in ["openai", "vllm"]:
@@ -271,6 +282,20 @@ class LLMAPIClient:
             
             # 创建异步客户端
             self.async_client = AsyncOpenAI(**client_kwargs)
+            
+            # 如果是vllm API类型，额外初始化vLLM引擎
+            if api_type == "vllm":
+                try:
+                    from vllm import LLM, SamplingParams
+                    
+                    # 初始化vLLM引擎
+                    self.vllm_engine = LLM(
+                        model=model,
+                        tensor_parallel_size=kwargs.get("tensor_parallel_size", 1),
+                        **{k: v for k, v in kwargs.items() if k != "tensor_parallel_size"}
+                    )
+                except ImportError:
+                    raise ImportError("To use vLLM API, please install vllm: pip install vllm")
             
         elif api_type == "azure":
             # 处理Azure OpenAI API
@@ -461,4 +486,28 @@ class LLMAPIClient:
             else:
                 final_results.append(result)
         
-        return final_results 
+        return final_results
+
+    async def get_real_model_name(self) -> str:
+        """获取vLLM实际加载的模型名称"""
+        if self.real_model_name:
+            return self.real_model_name
+        
+        if self.api_type == "vllm" and self.vllm_engine:
+            try:
+                # 从vllm引擎获取真实模型名称
+                config = self.vllm_engine.get_vllm_config()
+                if hasattr(config, "model_config") and hasattr(config.model_config, "model"):
+                    self.real_model_name = config.model_config.model
+                    # 格式化模型名称，移除路径部分只保留模型名称
+                    if "/" in self.real_model_name:
+                        self.real_model_name = self.real_model_name.split("/")[-1]
+                    # 替换特殊字符
+                    self.real_model_name = self.real_model_name.replace("/", "-").replace("\\", "-")
+                    return self.real_model_name
+            except Exception as e:
+                print(f"获取vLLM模型名称时出错: {e}")
+        
+        # 返回初始化时提供的模型名称
+        self.real_model_name = self.model
+        return self.real_model_name 

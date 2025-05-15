@@ -33,7 +33,7 @@ import logging
 from pathlib import Path
 
 # 从utils模块导入gc_and_cuda_cleanup函数
-from social_benchmark.evaluation.utils import gc_and_cuda_cleanup
+from social_benchmark.evaluation.utils import gc_and_cuda_cleanup, get_model_name_from_openai_client, get_model_name_from_command
 
 # 设置多进程启动方法为spawn，以解决CUDA初始化问题
 # 这是必须的，因为vLLM使用CUDA，在fork的子进程中无法重新初始化CUDA
@@ -828,7 +828,7 @@ async def process_question_async(question_id, true_answer, question_data, countr
 def run_evaluation(domain_id: int, interview_count: Union[int, str], 
                    api_type: str = "config", use_async: bool = False,
                    concurrent_requests: int = 5, concurrent_interviewees: int = 1,
-                   model_name: str = "Qwen2.5-32B-Instruct", print_prompt: bool = False,
+                   model: str = "Qwen2.5-32B-Instruct", print_prompt: bool = False,
                    shuffle_options: bool = False, dataset_size: int = 500,
                    tensor_parallel_size: int = 1) -> Dict[str, Any]:
     """运行评测"""
@@ -842,6 +842,7 @@ def run_evaluation(domain_id: int, interview_count: Union[int, str],
     import numpy as np
     import time
     from datetime import datetime
+    import re
     
     # 获取领域名称
     domain_name = get_domain_name(domain_id)
@@ -851,7 +852,7 @@ def run_evaluation(domain_id: int, interview_count: Union[int, str],
     
     # 打印评测信息
     print(f"\n{'-'*60}")
-    print(f"开始评测 | 领域: {domain_name} (ID: {domain_id}) | API类型: {api_type} | 模型: {model_name}")
+    print(f"开始评测 | 领域: {domain_name} (ID: {domain_id}) | API类型: {api_type} | 模型: {model}")
     if use_async:
         print(f"异步模式已启用 | 并发请求数: {concurrent_requests}")
     if concurrent_interviewees > 1:
@@ -864,10 +865,6 @@ def run_evaluation(domain_id: int, interview_count: Union[int, str],
     results_dir = os.path.join(os.path.dirname(__file__), "results")
     os.makedirs(results_dir, exist_ok=True)
     
-    # 创建模型专属目录
-    model_dir = os.path.join(results_dir, model_name)
-    os.makedirs(model_dir, exist_ok=True)
-    
     evaluator = None
     llm_client = None
     gc_count = 0
@@ -877,11 +874,48 @@ def run_evaluation(domain_id: int, interview_count: Union[int, str],
         if not option_contents:
             print("警告: 无法加载选项内容，可能影响评测准确度")
         
-        # 创建评估器
-        evaluator = Evaluator(domain_name, save_dir=model_dir)
-        
         # 创建LLM API客户端
-        llm_client = LLMAPIClient(api_type=api_type, model_name=model_name, tensor_parallel_size=tensor_parallel_size)
+        llm_client = LLMAPIClient(api_type=api_type, model=model, tensor_parallel_size=tensor_parallel_size)
+        
+        # 获取vLLM实际加载的模型名称
+        actual_model_name = model  # 默认使用传入的模型名称
+        if api_type == "vllm":
+            try:
+                # 首先尝试使用工具函数直接获取模型名称
+                print(f"正在从API获取实际运行的模型名称...")
+                
+                # 优先使用get_model_name_from_openai_client函数
+                actual_model_name = get_model_name_from_openai_client()
+                
+                # 如果获取失败，尝试使用命令行方式获取
+                if actual_model_name == "unknown":
+                    print("通过客户端获取模型名称失败，尝试使用命令行方式...")
+                    actual_model_name = get_model_name_from_command()
+                
+                # 如果仍然获取失败，最后尝试使用异步方式获取
+                if actual_model_name == "unknown":
+                    print("通过命令行获取模型名称失败，尝试使用API客户端异步方式...")
+                    loop = asyncio.get_event_loop()
+                    actual_model_name = loop.run_until_complete(llm_client.get_model_name_from_api())
+                
+                # 检查获取到的模型名称是否为空
+                if not actual_model_name or actual_model_name.strip() == "" or actual_model_name == "unknown":
+                    print(f"所有方法都无法获取有效的模型名称，使用传入的模型名称: {model}")
+                    actual_model_name = model  # 使用传入的模型名称作为备选
+                else:
+                    # 格式化模型名称用于文件名
+                    actual_model_name = re.sub(r'[\\/*?:"<>|]', "-", actual_model_name)
+                    print(f"检测到实际模型名称: {actual_model_name}")
+            except Exception as e:
+                print(f"获取实际模型名称时出错: {str(e)}")
+                actual_model_name = model  # 保持使用传入的模型名称作为备选
+        
+        # 创建模型专属目录
+        model_dir = os.path.join(results_dir, actual_model_name)
+        os.makedirs(model_dir, exist_ok=True)
+        
+        # 创建评估器，将模型目录作为保存目录
+        evaluator = Evaluator(domain_name, save_dir=results_dir)
         
         # 创建提示工程对象
         prompt_engine = PromptEngineering(shuffle_options=shuffle_options)
@@ -1383,7 +1417,7 @@ def run_evaluation(domain_id: int, interview_count: Union[int, str],
         
         # 打印统计信息
         print(f"\n{'-'*60}")
-        print(f"模型: {model_name}")
+        print(f"模型: {model}")
         print(f"领域: {domain_name} (ID: {domain_id})")
         print(f"受访者总数: {len(interviewees)}")
         print(f"已处理的受访者: {processed_interviewees}")
@@ -1398,8 +1432,8 @@ def run_evaluation(domain_id: int, interview_count: Union[int, str],
         if print_prompt and full_prompts_answers:
             # 获取日期时间字符串，精确到秒
             timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-            # 创建保存文件路径
-            prompt_file = os.path.join(model_dir, f"{domain_name}_full_prompts__{timestamp}.json")
+            # 创建保存文件路径，添加模型名称
+            prompt_file = os.path.join(model_dir, f"{domain_name}__{actual_model_name}__full_prompts__{timestamp}.json")
             
             print(f"\n保存完整提示和回答到: {prompt_file}")
             
@@ -1412,6 +1446,8 @@ def run_evaluation(domain_id: int, interview_count: Union[int, str],
         
         # 保存结果
         domain_stats = {
+            "domain_id": domain_id,
+            "domain_name": domain_name,
             "受访者总数": len(interviewees),
             "处理的受访者": processed_interviewees,
             "跳过的受访者": skipped_interviewees,
@@ -1421,11 +1457,11 @@ def run_evaluation(domain_id: int, interview_count: Union[int, str],
             "macro_F1": evaluator.results["macro_f1"],
             "micro_F1": evaluator.results["micro_f1"],
             "选项距离": evaluator.results["option_distance"],
-            "模型": model_name
+            "模型": actual_model_name
         }
         
-        # 保存评估结果
-        evaluator.save_results(model_name=model_name, domain_stats=domain_stats)
+        # 保存评估结果，使用实际模型名称
+        evaluator.save_results(model_name=actual_model_name, domain_stats=domain_stats)
         
     except Exception as e:
         print(f"评测过程中发生错误: {str(e)}")
@@ -1501,7 +1537,7 @@ def run_evaluation(domain_id: int, interview_count: Union[int, str],
 
 # 将嵌套函数移到模块级别作为全局函数
 def _run_evaluation_in_process(domain_id, interview_count, api_type, use_async, 
-                           concurrent_requests, concurrent_interviewees, model_name,
+                           concurrent_requests, concurrent_interviewees, model,
                            print_prompt=False, shuffle_options=False):
     """在子进程中运行评测，防止内存泄漏"""
     # 设置环境变量，标记这是一个新的子进程
@@ -1516,7 +1552,7 @@ def _run_evaluation_in_process(domain_id, interview_count, api_type, use_async,
             use_async=use_async,
             concurrent_requests=concurrent_requests,
             concurrent_interviewees=concurrent_interviewees,
-            model_name=model_name,
+            model=model,
             print_prompt=print_prompt,
             shuffle_options=shuffle_options
         )
@@ -1528,7 +1564,7 @@ def _run_evaluation_in_process(domain_id, interview_count, api_type, use_async,
 def run_all_domains(api_type: str = "config", interview_count: Union[int, str] = 1,
                    use_async: bool = False, concurrent_requests: int = 5,
                    concurrent_interviewees: int = 1, start_domain_id: int = 1,
-                   model_name: str = "Qwen2.5-32B-Instruct", print_prompt: bool = False,
+                   model: str = "Qwen2.5-32B-Instruct", print_prompt: bool = False,
                    shuffle_options: bool = False, dataset_size: int = 500,
                    tensor_parallel_size: int = 1) -> None:
     """运行所有领域的评测"""
@@ -1542,6 +1578,26 @@ def run_all_domains(api_type: str = "config", interview_count: Union[int, str] =
     from datetime import datetime
     import pandas as pd
     
+    # 先尝试获取正确的模型名称
+    actual_model = model  # 默认使用传入的模型名称
+    if api_type == "vllm":
+        try:
+            print("运行所有领域评测前，先尝试从API获取实际模型名称...")
+            # 优先使用get_model_name_from_openai_client函数
+            actual_model = get_model_name_from_openai_client()
+            
+            # 如果获取失败，尝试使用命令行方式获取
+            if actual_model == "unknown":
+                print("通过客户端获取模型名称失败，尝试使用命令行方式...")
+                actual_model = get_model_name_from_command()
+                
+            # 如果获取成功，使用获取到的模型名称
+            if actual_model != "unknown":
+                print(f"成功获取到模型名称: {actual_model}，将用于所有领域评测")
+                model = actual_model
+        except Exception as e:
+            print(f"获取模型名称时出错: {str(e)}，将使用传入的模型名称: {model}")
+    
     # 如果不是vllm模式，关闭异步
     if api_type != "vllm" and use_async:
         print("警告: 异步模式仅在vllm API类型下可用，已自动关闭异步模式")
@@ -1552,20 +1608,16 @@ def run_all_domains(api_type: str = "config", interview_count: Union[int, str] =
     if not os.path.exists(results_dir):
         os.makedirs(results_dir)
     
-    # 创建模型专属目录
-    model_dir = os.path.join(results_dir, model_name)
-    os.makedirs(model_dir, exist_ok=True)
-    
     # 打印开始信息
     print(f"\n{'='*60}")
-    print(f"开始评测所有领域 | API类型: {api_type} | 模型: {model_name}")
+    print(f"开始评测所有领域 | API类型: {api_type} | 模型: {model}")
     if use_async:
         print(f"异步模式已启用 | 并发请求数: {concurrent_requests}")
     if concurrent_interviewees > 1:
         print(f"多受访者并行模式已启用 | 并行受访者数: {concurrent_interviewees}")
     if shuffle_options:
         print(f"选项随机打乱已启用 | 将随机打乱问题选项顺序")
-    print(f"结果将保存到: {model_dir}")
+    print(f"结果将保存到: {results_dir}")
     print(f"{'='*60}")
     
     # 获取要评测的所有领域ID
@@ -1580,6 +1632,9 @@ def run_all_domains(api_type: str = "config", interview_count: Union[int, str] =
     # 获取当前脚本的绝对路径
     script_path = os.path.abspath(__file__)
     
+    # 记录实际模型名称，从第一次评测中获取
+    actual_model_name = model
+    
     # 加载并评测每个领域
     for domain_id in sorted(domain_ids):
         if domain_id < start_domain_id:
@@ -1587,354 +1642,287 @@ def run_all_domains(api_type: str = "config", interview_count: Union[int, str] =
             
         domain_name = get_domain_name(domain_id)
         if not domain_name:
-            print(f"错误: 无效的领域ID {domain_id}")
+            print(f"未知领域ID: {domain_id}，跳过评测")
             continue
         
-        # 运行评测
+        # 打印评测信息
+        print(f"\n{'='*60}")
+        print(f"评测领域: {domain_name} (ID: {domain_id})")
+        
         try:
-            # 运行当前领域的评测
-            print(f"\n正在评测领域 {domain_name} (ID: {domain_id})...")
+            # 首次运行时，尝试获取实际模型名称
+            if domain_id == start_domain_id and api_type == "vllm":
+                try:
+                    # 使用临时客户端获取模型名称
+                    print(f"\n正在从API获取实际运行的模型名称...")
+                    temp_client = LLMAPIClient(api_type=api_type, model=model, tensor_parallel_size=tensor_parallel_size)
+                    loop = asyncio.get_event_loop()
+                    actual_model_name = loop.run_until_complete(temp_client.get_model_name_from_api())
+                    
+                    # 检查获取到的模型名称是否为空
+                    if not actual_model_name or actual_model_name.strip() == "":
+                        print(f"API返回的模型名称为空，使用传入的模型名称: {model}")
+                        actual_model_name = model  # 使用传入的模型名称作为备选
+                    else:
+                        # 格式化模型名称用于文件名
+                        actual_model_name = re.sub(r'[\\/*?:"<>|]', "-", actual_model_name)
+                        print(f"检测到实际模型名称: {actual_model_name}")
+
+                    # 关闭临时客户端
+                    if hasattr(temp_client, 'close'):
+                        loop.run_until_complete(temp_client.close())
+                except Exception as e:
+                    print(f"获取实际模型名称时出错: {str(e)}")
+                    actual_model_name = model
+                
+                # 创建模型专属目录
+                model_dir = os.path.join(results_dir, actual_model_name)
+                os.makedirs(model_dir, exist_ok=True)
+                print(f"将保存结果到模型专属目录: {model_dir}")
+                
+            # 运行评测函数
+            domain_result = None
             
-            # 使用子进程方式运行单独的Python进程进行评测，完全隔离每个评测任务
-            # 构建命令
-            cmd = [
-                sys.executable,  # 当前Python解释器
-                script_path,     # 当前脚本路径
-                "--domain_id", str(domain_id),
-                "--interview_count", str(interview_count) if isinstance(interview_count, int) else interview_count,
-                "--api_type", api_type
-            ]
-            
-            # 添加可选参数
-            if use_async:
-                cmd.extend(["--use_async", "True"])
-            else:
-                cmd.extend(["--use_async", "False"])
-            
-            cmd.extend(["--concurrent_requests", str(concurrent_requests)])
-            cmd.extend(["--concurrent_interviewees", str(concurrent_interviewees)])
-            cmd.extend(["--model", model_name])
-            
-            # 添加print_prompt参数
-            if print_prompt:
-                cmd.extend(["--print_prompt", "True"])
-            else:
-                cmd.extend(["--print_prompt", "False"])
-            
-            # 添加shuffle_options参数
-            if shuffle_options:
-                cmd.extend(["--shuffle_options", "True"])
-            else:
-                cmd.extend(["--shuffle_options", "False"])
-            
-            # 添加dataset_size参数
-            cmd.extend(["--dataset_size", str(dataset_size)])
-            
-            # 添加tensor_parallel_size参数
-            cmd.extend(["--tensor_parallel_size", str(tensor_parallel_size)])
-            
-            # 设置环境变量
-            env = os.environ.copy()
-            env["VLLM_NEW_PROCESS"] = "1"
-            env["MASTER_PORT"] = str(12355 + domain_id)  # 为每个领域使用不同的端口
-            
-            # 运行子进程
-            print(f"运行命令: {' '.join(cmd)}")
-            process = subprocess.Popen(
-                cmd,
-                stdout=subprocess.PIPE,
-                stderr=subprocess.STDOUT,
-                text=True,
-                env=env,
-                start_new_session=True  # 在新会话中启动，确保完全隔离
+            # 为每个领域创建一个新的子进程，防止内存泄漏
+            # 直接调用函数，确保传递正确的模型名称
+            domain_result = run_evaluation(
+                domain_id=domain_id,
+                interview_count=interview_count,
+                api_type=api_type,
+                use_async=use_async,
+                concurrent_requests=concurrent_requests,
+                concurrent_interviewees=concurrent_interviewees,
+                model=model,  # 使用原始模型名称作为API请求参数
+                print_prompt=print_prompt,
+                shuffle_options=shuffle_options,
+                dataset_size=dataset_size,
+                tensor_parallel_size=tensor_parallel_size
             )
             
-            # 实时打印输出
-            domain_result = None
-            for line in process.stdout:
-                print(line, end='')
-                # 尝试从输出中提取评测结果
-                if line.startswith("评测结果已保存到:"):
-                    # 尝试从评测结果文件中加载数据
-                    try:
-                        result_file = line.strip().split("评测结果已保存到:")[1].strip()
-                        if os.path.exists(result_file):
-                            with open(result_file, 'r', encoding='utf-8') as f:
-                                result_data = json.load(f)
-                                # 创建一个简化的结果对象
-                                domain_result = {
-                                    "domain_id": domain_id,
-                                    "domain_name": domain_name,
-                                    "correct_count": result_data.get("correct_count", 0),
-                                    "total_count": result_data.get("total_count", 0),
-                                    "accuracy": result_data.get("accuracy", 0.0),
-                                    "macro_f1": result_data.get("macro_f1", 0.0),
-                                    "micro_f1": result_data.get("micro_f1", 0.0),
-                                    "country_metrics": result_data.get("country_metrics", {})
-                                }
-                    except Exception as e:
-                        print(f"从文件加载评测结果时出错: {str(e)}")
-            
-            # 等待进程完成
-            return_code = process.wait()
-            if return_code != 0:
-                print(f"警告: 评测进程返回非零状态码: {return_code}")
-            
-            process.stdout.close()
-            process = None
-            
-            # 确保资源被释放
-            print("强制清理资源...")
-            gc.collect()
-            try:
-                import torch
-                if torch.cuda.is_available():
-                    torch.cuda.empty_cache()
-                    print("已清空CUDA缓存")
-            except Exception as e:
-                print(f"清理CUDA资源时出错: {str(e)}")
-            
-            # 等待一段时间让系统完全释放资源
-            print("等待5秒以确保资源完全释放...")
-            time.sleep(5)
-            
-            # 如果成功提取了结果，保存到结果汇总
+            # 添加到结果集合
             if domain_result:
-                all_domain_results[domain_id] = domain_result
+                domain_result["model"] = actual_model_name  # 使用实际模型名称
+                all_domain_results[domain_name] = domain_result
                 
                 # 合并国家指标
-                for country_code, metrics in domain_result.get("country_metrics", {}).items():
-                    if country_code not in all_country_metrics:
-                        all_country_metrics[country_code] = {
-                            "country_name": metrics["country_name"],
-                            "total_count": 0,
-                            "correct_count": 0,
-                            "domains": {},
-                            "y_true": [],
-                            "y_pred": []
-                        }
-                    
-                    # 更新计数
-                    all_country_metrics[country_code]["total_count"] += metrics["total_count"]
-                    all_country_metrics[country_code]["correct_count"] += metrics["correct_count"]
-                    
-                    # 保存领域特定指标
-                    all_country_metrics[country_code]["domains"][domain_name] = {
-                        "total_count": metrics["total_count"],
-                        "correct_count": metrics["correct_count"],
-                        "accuracy": metrics["accuracy"],
-                        "macro_f1": metrics["macro_f1"],
-                        "micro_f1": metrics["micro_f1"]
-                    }
-            else:
-                print(f"警告: 无法从评测中提取结果数据")
-                
+                if "country_metrics" in domain_result and domain_result["country_metrics"]:
+                    for country_code, metrics in domain_result["country_metrics"].items():
+                        if country_code not in all_country_metrics:
+                            all_country_metrics[country_code] = {
+                                "country_name": metrics.get("country_name", ""),
+                                "domains": {}
+                            }
+                        all_country_metrics[country_code]["domains"][domain_name] = metrics
+            
+            # 清理内存
+            gc.collect()
+            if 'torch' in sys.modules:
+                try:
+                    torch.cuda.empty_cache()
+                except:
+                    pass
         except Exception as e:
             print(f"评测领域 {domain_name} 时出错: {str(e)}")
             traceback.print_exc()
-            continue
     
-    # 计算并保存总体评测指标
+    # 所有领域评测完成后，生成汇总报告
     if all_domain_results:
-        print("\n计算并保存所有领域的总体评测指标...")
+        # 创建模型专属目录
+        if not os.path.exists(os.path.join(results_dir, actual_model_name)):
+            os.makedirs(os.path.join(results_dir, actual_model_name), exist_ok=True)
         
-        # 计算总体评测指标
-        total_correct = sum(result["correct_count"] for result in all_domain_results.values())
-        total_count = sum(result["total_count"] for result in all_domain_results.values())
-        total_accuracy = total_correct / total_count if total_count > 0 else 0
-        
-        # 计算所有国家的指标
-        for country_code, metrics in all_country_metrics.items():
-            metrics["accuracy"] = metrics["correct_count"] / metrics["total_count"] if metrics["total_count"] > 0 else 0
-        
-        # 保存总体评测指标
-        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-        
-        # 创建模型目录
-        results_dir = os.path.join(os.path.dirname(__file__), "results")
-        model_dir = os.path.join(results_dir, model_name)
-        if not os.path.exists(model_dir):
-            os.makedirs(model_dir)
-        
-        # 保存总体评测指标JSON
-        overall_metrics = {
-            "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
-            "model": model_name,
-            "total_questions": total_count,
-            "correct_answers": total_correct,
-            "accuracy": total_accuracy,
-            "domains": {str(domain_id): results for domain_id, results in all_domain_results.items()},
-            "country_metrics": {
-                country_code: {
-                    "country_name": metrics["country_name"],
-                    "total_count": metrics["total_count"],
-                    "correct_count": metrics["correct_count"],
-                    "accuracy": metrics["accuracy"],
-                    "domains": metrics["domains"]
-                } for country_code, metrics in all_country_metrics.items()
-            }
-        }
-        
-        # 保存总体指标JSON
-        overall_json_path = os.path.join(model_dir, f"all_domains_{model_name}_overall_{timestamp}.json")
-        with open(overall_json_path, "w", encoding="utf-8") as f:
-            json.dump(overall_metrics, f, ensure_ascii=False, indent=2)
-        print(f"所有领域的总体评测指标已保存到: {overall_json_path}")
-        
-        # 创建并保存国家评测指标Excel
-        country_metrics_path = os.path.join(model_dir, f"all_domains_{model_name}_country_metrics_{timestamp}.xlsx")
-        
-        # 准备国家指标数据
-        country_code_data = [(code, metrics["country_name"]) for code, metrics in all_country_metrics.items()]
-        country_code_df = pd.DataFrame(country_code_data, columns=["国家代码", "国家全称"])
-        
-        metrics_data = []
-        for code, metrics in all_country_metrics.items():
-            metrics_data.append({
-                "国家代码": code,
-                "国家全称": metrics["country_name"],
-                "总题数": metrics["total_count"],
-                "正确数": metrics["correct_count"],
-                "准确率": metrics["accuracy"]
-            })
-        metrics_df = pd.DataFrame(metrics_data)
-        
-        # 保存到Excel
-        with pd.ExcelWriter(country_metrics_path) as writer:
-            country_code_df.to_excel(writer, sheet_name="国家代码表", index=False)
-            metrics_df.to_excel(writer, sheet_name="国家评测指标", index=False)
-            
-            # 合并表格
-            merged_df = pd.merge(country_code_df, metrics_df.drop("国家全称", axis=1), on="国家代码")
-            merged_df.to_excel(writer, sheet_name="合并指标", index=False)
-        
-        print(f"所有领域的国家评测指标已保存到: {country_metrics_path}")
-        
-        # 生成并保存总体评测报告
-        generate_summary_report(all_domain_results, model_name)
-    
-    print(f"\n所有领域评测完成！总共评测了 {len(all_domain_results)} 个领域。")
-    
-    # 最终清理资源
-    print("\n最终清理资源...")
-    gc.collect()
-    try:
-        import torch
-        if torch.cuda.is_available():
-            torch.cuda.empty_cache()
-            print("已清空CUDA缓存")
-    except Exception as e:
-        print(f"清理CUDA资源时出错: {str(e)}")
+        # 生成汇总报告
+        generate_summary_report(all_domain_results, model_name=actual_model_name)
 
 def generate_summary_report(domain_results: Dict[str, Dict[str, Any]], model_name: str = "unknown") -> None:
-    """生成所有领域的汇总报告，包含按领域号排序的指标"""
-    print(f"\n{'='*80}")
-    print(f"{' '*30}各领域评测结果报告{' '*30}")
-    print(f"{'='*80}")
+    """
+    生成总体评测报告
+    
+    Args:
+        domain_results: 所有领域的评测结果
+        model_name: 模型名称
+    """
+    import matplotlib
+    matplotlib.use("Agg")  # 设置后端为非交互式
+    import matplotlib.pyplot as plt
+    import pandas as pd
+    import seaborn as sns
+    from datetime import datetime
+    
+    print("\n生成评测摘要报告...")
     
     # 创建结果保存目录
     results_dir = os.path.join(os.path.dirname(__file__), "results")
     if not os.path.exists(results_dir):
         os.makedirs(results_dir)
-    
-    # 如果是字符串路径，则加载文件内容
-    loaded_results = {}
-    
-    for domain_name, result_path in domain_results.items():
-        if isinstance(result_path, str) and os.path.exists(result_path):
-            try:
-                with open(result_path, "r", encoding="utf-8") as f:
-                    loaded_results[domain_name] = json.load(f)
-            except Exception as e:
-                print(f"加载文件 {result_path} 时出错: {str(e)}")
-                continue
-        else:
-            loaded_results[domain_name] = result_path
-    
-    # 获取领域号和领域名称的映射
-    domain_id_map = {name: id for name, id in DOMAIN_MAPPING.items()}
-    
-    # 创建数据表格
-    summary_data = []
-    
-    # 汇总各领域数据
-    for domain_name, result in loaded_results.items():
-        # 统计信息
-        domain_id = result.get("domain_stats", {}).get("domain_id", domain_id_map.get(domain_name, 0))
         
-        # 获取指标，添加默认值防止KeyError
-        accuracy = result.get("accuracy", 0)
-        macro_f1 = result.get("macro_f1", 0)
-        micro_f1 = result.get("micro_f1", 0)
-        questions = result.get("total_count", 0)
-        correct = result.get("correct_count", 0)
+    # 创建模型专属目录
+    model_dir = os.path.join(results_dir, model_name)
+    os.makedirs(model_dir, exist_ok=True)
         
-        # 添加到数据表格
-        summary_data.append({
-            "领域号": domain_id,
-            "领域": domain_name,
-            "总题数": questions,
-            "正确数": correct,
-            "准确率": accuracy,
-            "准确率(%)": f"{accuracy:.2%}",
-            "macro_F1": macro_f1,
-            "micro_F1": micro_f1
-        })
+    # 总体指标
+    total_correct = sum(result.get("correct_count", 0) for result in domain_results.values())
+    total_questions = sum(result.get("total_count", 0) for result in domain_results.values())
+    total_accuracy = total_correct / total_questions if total_questions > 0 else 0
     
-    # 创建DataFrame并输出表格
-    df = pd.DataFrame(summary_data)
+    # 计算所有领域的平均指标
+    avg_accuracy = sum(result.get("accuracy", 0) for result in domain_results.values()) / len(domain_results) if domain_results else 0
+    avg_macro_f1 = sum(result.get("macro_f1", 0) for result in domain_results.values()) / len(domain_results) if domain_results else 0
+    avg_micro_f1 = sum(result.get("micro_f1", 0) for result in domain_results.values()) / len(domain_results) if domain_results else 0
     
-    # 按领域号排序
-    df_domain_sorted = df.sort_values(by='领域号')
-    print(f"\n按领域号排序的评测结果:")
-    df_display = df_domain_sorted.copy()
-    df_display['准确率'] = df_display['准确率(%)']
-    df_display.drop('准确率(%)', axis=1, inplace=True)
-    print(df_display.to_string(index=False))
-    
-    # 保存汇总报告
+    # 为长名称创建缩写
+    domain_short_names = {}
+    for domain_name in domain_results:
+        short_name = domain_name[:3].upper()
+        if short_name in domain_short_names.values():
+            short_name = domain_name[:4].upper()
+        domain_short_names[domain_name] = short_name
+            
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
     
-    # 创建模型子文件夹
-    model_dir = os.path.join(results_dir, model_name)
-    if not os.path.exists(model_dir):
-        os.makedirs(model_dir)
+    # 创建总体评测指标表格
+    summary_data = []
+    for domain_name, results in domain_results.items():
+        # 使用get方法带默认值避免KeyError
+        summary_data.append({
+            "领域": domain_name,
+            "总题数": results.get("total_count", 0),
+            "正确数": results.get("correct_count", 0),
+            "准确率": results.get("accuracy", 0),
+            "Macro F1": results.get("macro_f1", 0),
+            "Micro F1": results.get("micro_f1", 0)
+        })
     
-    # 保存到CSV - 按领域号排序
-    csv_filename = f"domain_results_{model_name}_{timestamp}.csv"
-    csv_path = os.path.join(model_dir, csv_filename)
-    df_domain_sorted.to_csv(csv_path, index=False, encoding='utf-8')
-    print(f"\n领域评测结果已保存到: {csv_path}")
+    # 添加总计行
+    summary_data.append({
+        "领域": "总计",
+        "总题数": total_questions,
+        "正确数": total_correct,
+        "准确率": total_accuracy,
+        "Macro F1": avg_macro_f1,
+        "Micro F1": avg_micro_f1
+    })
+            
+    # 创建汇总表格
+    summary_df = pd.DataFrame(summary_data)
     
-    # 保存完整的JSON报告 - 包含所有领域的评测结果
-    json_filename = f"domain_results_{model_name}_{timestamp}.json"
-    json_path = os.path.join(model_dir, json_filename)
+    # 生成可视化图表
+    try:
+        plt.figure(figsize=(12, 8))
+        
+        # 创建柱状图数据
+        domains = [domain_short_names.get(domain, domain) for domain in domain_results.keys()]
+        accuracies = [result.get("accuracy", 0) for result in domain_results.values()]
+        macro_f1s = [result.get("macro_f1", 0) for result in domain_results.values()]
+        micro_f1s = [result.get("micro_f1", 0) for result in domain_results.values()]
+        
+        # 绘制柱状图
+        x = range(len(domains))
+        width = 0.25
+        
+        plt.bar([i - width for i in x], accuracies, width=width, label="准确率", color="blue", alpha=0.7)
+        plt.bar(x, macro_f1s, width=width, label="Macro F1", color="green", alpha=0.7)
+        plt.bar([i + width for i in x], micro_f1s, width=width, label="Micro F1", color="red", alpha=0.7)
+        
+        # 添加标题和标签
+        plt.title(f"评测结果摘要 - {model_name}", fontsize=16)
+        plt.xlabel("领域", fontsize=12)
+        plt.ylabel("得分", fontsize=12)
+        plt.xticks(x, domains, rotation=45, ha="right")
+        plt.ylim(0, 1.0)
     
-    # 创建领域报告字典
-    domains_report = {
-        "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
-        "model": model_name,
-        "domains": {}
-    }
+        # 添加平均线
+        plt.axhline(y=avg_accuracy, color="blue", linestyle="--", alpha=0.5, label="平均准确率")
+        plt.axhline(y=avg_macro_f1, color="green", linestyle="--", alpha=0.5, label="平均Macro F1")
+        plt.axhline(y=avg_micro_f1, color="red", linestyle="--", alpha=0.5, label="平均Micro F1")
     
-    # 添加各领域结果（按领域号排序）
-    for domain_data in sorted(summary_data, key=lambda x: x["领域号"]):
-        domain_name = domain_data["领域"]
-        domain_id = domain_data["领域号"]
-        domains_report["domains"][str(domain_id)] = {
-            "id": str(domain_id),
-            "name": domain_name,
-            "total_questions": domain_data.get("总题数", 0),
-            "correct_answers": domain_data.get("正确数", 0),
-            "accuracy": domain_data.get("准确率", 0),
-            "macro_f1": domain_data.get("macro_F1", 0),
-            "micro_f1": domain_data.get("micro_F1", 0)
-        }
+        # 添加数据标签
+        for i, v in enumerate(accuracies):
+            plt.text(i - width, v + 0.02, f"{v:.2f}", ha="center", va="bottom", fontsize=8, rotation=90)
+        for i, v in enumerate(macro_f1s):
+            plt.text(i, v + 0.02, f"{v:.2f}", ha="center", va="bottom", fontsize=8, rotation=90)
+        for i, v in enumerate(micro_f1s):
+            plt.text(i + width, v + 0.02, f"{v:.2f}", ha="center", va="bottom", fontsize=8, rotation=90)
+        
+        # 添加图例
+        plt.legend()
+        plt.grid(True, linestyle="--", alpha=0.3)
+        plt.tight_layout()
+        
+        # 保存图表
+        chart_filename = f"summary_chart_{model_name}_{timestamp}.png"
+        chart_filepath = os.path.join(model_dir, chart_filename)
+        plt.savefig(chart_filepath, dpi=300)
+        plt.close()
+        
+        print(f"评测摘要图表已保存到: {chart_filepath}")
+    except Exception as e:
+        print(f"生成图表时出错: {str(e)}")
     
-    # 保存汇总JSON
-    with open(json_path, 'w', encoding='utf-8') as f:
-        json.dump(domains_report, f, ensure_ascii=False, indent=2)
-    print(f"领域评测结果JSON已保存到: {json_path}")
+    # 保存汇总表格
+    summary_filename = f"summary_table_{model_name}_{timestamp}.xlsx"
+    summary_filepath = os.path.join(model_dir, summary_filename)
+    
+    with pd.ExcelWriter(summary_filepath) as writer:
+        summary_df.to_excel(writer, sheet_name="评测摘要", index=False)
+        
+        # 将每个领域的数据保存到单独的表格
+        for domain_name, results in domain_results.items():
+            # 处理country_metrics
+            if "country_metrics" in results and results["country_metrics"]:
+                country_data = []
+                for country_code, metrics in results["country_metrics"].items():
+                    country_data.append({
+                        "国家代码": country_code,
+                        "国家全称": metrics.get("country_name", ""),
+                        "总题数": metrics.get("total_count", 0),
+                        "正确数": metrics.get("correct_count", 0),
+                        "准确率": metrics.get("accuracy", 0),
+                        "Macro F1": metrics.get("macro_f1", 0),
+                        "Micro F1": metrics.get("micro_f1", 0)
+                    })
+                country_df = pd.DataFrame(country_data)
+                country_df.to_excel(writer, sheet_name=f"{domain_name[:10]}_国家指标", index=False)
+    
+    print(f"评测摘要表格已保存到: {summary_filepath}")
+    
+    # 输出总体摘要
+    print("\n总体评测摘要:")
+    print(f"模型: {model_name}")
+    print(f"总题数: {total_questions}")
+    print(f"正确数: {total_correct}")
+    print(f"整体准确率: {total_accuracy:.4f}")
+    print(f"平均准确率: {avg_accuracy:.4f}")
+    print(f"平均宏观F1: {avg_macro_f1:.4f}")
+    print(f"平均微观F1: {avg_micro_f1:.4f}")
+    
+    # 保存总结报告为文本文件
+    report_filename = f"summary_report_{model_name}_{timestamp}.txt"
+    report_filepath = os.path.join(model_dir, report_filename)
+    
+    with open(report_filepath, "w", encoding="utf-8") as f:
+        f.write("总体评测摘要\n")
+        f.write("=" * 40 + "\n")
+        f.write(f"模型: {model_name}\n")
+        f.write(f"评测时间: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n")
+        f.write(f"总题数: {total_questions}\n")
+        f.write(f"正确数: {total_correct}\n")
+        f.write(f"整体准确率: {total_accuracy:.4f}\n")
+        f.write(f"平均准确率: {avg_accuracy:.4f}\n")
+        f.write(f"平均宏观F1: {avg_macro_f1:.4f}\n")
+        f.write(f"平均微观F1: {avg_micro_f1:.4f}\n\n")
+        
+        f.write("各领域评测结果\n")
+        f.write("-" * 40 + "\n")
+        for domain_name, results in domain_results.items():
+            f.write(f"领域: {domain_name}\n")
+            f.write(f"  总题数: {results.get('total_count', 0)}\n")
+            f.write(f"  正确数: {results.get('correct_count', 0)}\n")
+            f.write(f"  准确率: {results.get('accuracy', 0):.4f}\n")
+            f.write(f"  宏观F1: {results.get('macro_f1', 0):.4f}\n")
+            f.write(f"  微观F1: {results.get('micro_f1', 0):.4f}\n\n")
+    
+    print(f"评测摘要报告已保存到: {report_filepath}")
 
 def str2bool(v):
     """将字符串转换为布尔值
@@ -1970,7 +1958,7 @@ def parse_args():
     parser.add_argument('--model', type=str, default='Qwen2.5-32B-Instruct', help='使用的模型名称或路径（仅在vllm模式下有效）')
     parser.add_argument('--no_log', type=str2bool, default=False, help='禁用日志记录到文件')
     parser.add_argument('--print_prompt', type=str2bool, default=True, help='打印完整的prompt、问答和LLM回答到json文件中')
-    parser.add_argument('--shuffle_options', type=str2bool, default=False, help='随机打乱问题选项顺序，默认按原始顺序显示')
+    parser.add_argument('--shuffle_options', type=str2bool, default=True, help='随机打乱问题选项顺序，默认打乱选项顺序')
     parser.add_argument('--dataset_size', type=int, default=500, choices=[500, 5000, 50000], help='数据集大小，500(采样1%)、5000(采样10%)、50000(原始数据集)，默认为500')
     parser.add_argument('--tensor_parallel_size', type=int, default=1, help='张量并行大小，默认为1')
     
@@ -2169,7 +2157,7 @@ if __name__ == "__main__":
                 concurrent_requests=args.concurrent_requests,
                 concurrent_interviewees=args.concurrent_interviewees,
                 start_domain_id=args.start_domain_id,
-                model_name=args.model,
+                model=args.model,
                 print_prompt=args.print_prompt,
                 shuffle_options=args.shuffle_options,
                 dataset_size=args.dataset_size,
@@ -2191,7 +2179,7 @@ if __name__ == "__main__":
                     use_async=args.use_async,
                     concurrent_requests=args.concurrent_requests,
                     concurrent_interviewees=args.concurrent_interviewees,
-                    model_name=args.model,
+                    model=args.model,
                     print_prompt=args.print_prompt,
                     shuffle_options=args.shuffle_options,
                     dataset_size=args.dataset_size,
