@@ -28,3 +28,5 @@ ENV/
 
 # 结果目录
 results/ 
+
+evaluation/config.md

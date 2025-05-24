@@ -2,8 +2,8 @@
 # -*- coding: utf-8 -*-
 
 """
-大规模并发API客户端
-用于与vLLM API和其他LLM API进行高并发交互
+ModelScope API适配器
+用于与ModelScope API进行交互
 """
 
 import os
@@ -12,126 +12,57 @@ import json
 import asyncio
 import aiohttp
 import time
-from typing import Dict, List, Any, Union, Optional, Tuple
-from tqdm import tqdm
 import traceback
+from typing import Dict, List, Any, Union, Optional, Tuple
+import logging
+from tqdm import tqdm
 
 # 添加项目根目录到Python路径
 current_dir = os.path.dirname(os.path.abspath(__file__))
 project_root = os.path.dirname(os.path.dirname(current_dir))
 sys.path.insert(0, project_root)
 
-# 导入实时导出器
+# 导入基类和实时导出器
+from social_benchmark.evaluation.vllm_massive_api import MassiveAPIClientAdapter
 from social_benchmark.evaluation.realtime_api_exporter import RealTimeAPIExporter
 
-class MassiveAPIClientAdapter:
+class ModelScopeAPIAdapter(MassiveAPIClientAdapter):
     """
-    大规模API客户端适配器基类
-    为不同的API客户端提供统一的接口
-    """
-    
-    def __init__(
-        self,
-        max_concurrent_requests: int = 100,
-        batch_size: int = 50,
-        max_retries: int = 3,
-        retry_interval: int = 2,
-        request_timeout: int = 60,
-        verbose: bool = False
-    ):
-        """
-        初始化大规模API客户端适配器
-        
-        Args:
-            max_concurrent_requests: 最大并发请求数
-            batch_size: 批处理大小
-            max_retries: 最大重试次数
-            retry_interval: 重试间隔（秒）
-            request_timeout: 请求超时时间（秒）
-            verbose: 是否输出详细日志
-        """
-        self.max_concurrent_requests = max_concurrent_requests
-        self.batch_size = batch_size
-        self.max_retries = max_retries
-        self.retry_interval = retry_interval
-        self.request_timeout = request_timeout
-        self.verbose = verbose
-        
-        # 初始化信号量，用于限制并发请求数
-        self._semaphore = None
-        
-        # 初始化统计信息
-        self.stats = {
-            "total_requests": 0,
-            "successful_requests": 0,
-            "failed_requests": 0,
-            "retry_count": 0,
-            "total_time": 0,
-            "min_time": float('inf'),
-            "max_time": 0,
-            "avg_time": 0
-        }
-    
-    async def process_massive_requests(
-        self,
-        prompts: List[Tuple[str, Dict[str, Any]]],
-        system_prompt: Optional[str] = None,
-        show_progress: bool = True,
-        realtime_exporter: Optional[RealTimeAPIExporter] = None,
-        export_frequency: int = 10,
-        **kwargs
-    ) -> List[Tuple[Dict[str, Any], str]]:
-        """
-        处理大规模请求，支持带元数据的请求
-        
-        Args:
-            prompts: 提示词和元数据元组列表 [(prompt, metadata), ...]
-            system_prompt: 系统提示词（可选）
-            show_progress: 是否显示进度条
-            realtime_exporter: 实时数据导出器（可选）
-            export_frequency: 导出频率（可选）
-            **kwargs: 其他参数
-            
-        Returns:
-            List[Tuple[Dict[str, Any], str]]: 元数据和响应元组列表
-        """
-        raise NotImplementedError("子类必须实现此方法")
-
-
-class VLLMMassiveAPIClient(MassiveAPIClientAdapter):
-    """
-    vLLM大规模API客户端
-    用于与vLLM API进行高并发交互
+    ModelScope API适配器类，用于与ModelScope API进行交互
+    继承自MassiveAPIClientAdapter基类，提供统一的接口
     """
     
     def __init__(
         self,
-        api_base: str = "http://localhost:8000/v1/chat/completions",
-        model: str = "Meta-Llama-3-8B-Instruct",
-        max_concurrent_requests: int = 100,
-        batch_size: int = 50,
-        temperature: float = 0.5,
+        base_url: str = "https://api-inference.modelscope.cn/v1/",
+        api_key: str = "",
+        model_id: str = "deepseek-ai/DeepSeek-R1",
         max_tokens: int = 1024,
-        request_timeout: int = 60,
+        temperature: float = 0.1,
+        max_concurrent_requests: int = 20,
         max_retries: int = 3,
         retry_interval: int = 2,
+        request_timeout: int = 60,
+        batch_size: int = 10,
         verbose: bool = False
     ):
         """
-        初始化vLLM大规模API客户端
+        初始化ModelScope API适配器
         
         Args:
-            api_base: API基础URL
-            model: 模型名称
-            max_concurrent_requests: 最大并发请求数
-            batch_size: 批处理大小
-            temperature: 采样温度
+            base_url: API基础URL
+            api_key: API密钥
+            model_id: 模型ID
             max_tokens: 最大生成token数
-            request_timeout: 请求超时时间（秒）
+            temperature: 采样温度
+            max_concurrent_requests: 最大并发请求数
             max_retries: 最大重试次数
             retry_interval: 重试间隔（秒）
+            request_timeout: 请求超时时间（秒）
+            batch_size: 批处理大小
             verbose: 是否输出详细日志
         """
+        # 调用父类构造函数
         super().__init__(
             max_concurrent_requests=max_concurrent_requests,
             batch_size=batch_size,
@@ -141,48 +72,92 @@ class VLLMMassiveAPIClient(MassiveAPIClientAdapter):
             verbose=verbose
         )
         
-        self.api_base = api_base
-        self.model = model
-        self.temperature = temperature
+        self.base_url = base_url
+        self.api_key = api_key
+        self.model_id = model_id
         self.max_tokens = max_tokens
+        self.temperature = temperature
+        
+        # 设置日志
+        logging.basicConfig(
+            level=logging.INFO if verbose else logging.WARNING,
+            format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+        )
+        self.logger = logging.getLogger("ModelScopeAPI")
+        
+        # 检查API密钥是否已提供
+        if not self.api_key:
+            self.logger.warning("未提供API密钥，将无法访问ModelScope API")
     
-    async def _make_request(
+    def _prepare_request(self, prompt: str, system_prompt: Optional[str] = None) -> Dict[str, Any]:
+        """
+        准备API请求数据
+        
+        Args:
+            prompt: 提示词
+            system_prompt: 系统提示词
+            
+        Returns:
+            请求数据字典
+        """
+        # 组装消息
+        messages = []
+        if system_prompt:
+            messages.append({"role": "system", "content": system_prompt})
+        messages.append({"role": "user", "content": prompt})
+        
+        # 构造请求数据
+        data = {
+            "model": self.model_id,
+            "messages": messages,
+            "max_tokens": self.max_tokens,
+            "temperature": self.temperature
+        }
+        
+        return data
+    
+    def _extract_response(self, response_data: Dict[str, Any]) -> str:
+        """
+        从API响应中提取生成的文本
+        
+        Args:
+            response_data: API响应数据
+            
+        Returns:
+            生成的文本
+        """
+        if "choices" not in response_data or not response_data["choices"] or "message" not in response_data["choices"][0]:
+            raise ValueError(f"API响应格式错误: {json.dumps(response_data)}")
+        
+        return response_data["choices"][0]["message"]["content"]
+    
+    async def async_generate(
         self, 
         prompt: str, 
         system_prompt: Optional[str] = None,
         **kwargs
     ) -> str:
         """
-        向vLLM API发送单个请求
+        异步生成文本
         
         Args:
             prompt: 提示词
             system_prompt: 系统提示词（可选）
             **kwargs: 其他参数
-            
+        
         Returns:
-            str: API响应
+            生成的文本
         """
         # 初始化信号量（如果尚未初始化）
         if self._semaphore is None:
             self._semaphore = asyncio.Semaphore(self.max_concurrent_requests)
         
-        # 准备API请求
-        messages = []
-        if system_prompt:
-            messages.append({"role": "system", "content": system_prompt})
-        messages.append({"role": "user", "content": prompt})
-        
-        data = {
-            "model": self.model,
-            "messages": messages,
-            "max_tokens": self.max_tokens,
-            "temperature": self.temperature
-        }
+        # 构造请求数据
+        data = self._prepare_request(prompt, system_prompt)
         
         # 添加可选参数
         for key, value in kwargs.items():
-            if key not in data:
+            if key not in data and key not in ["max_tokens", "temperature"]:
                 data[key] = value
         
         # 限制并发请求数
@@ -199,12 +174,29 @@ class VLLMMassiveAPIClient(MassiveAPIClientAdapter):
                     # 创建超时上下文
                     timeout = aiohttp.ClientTimeout(total=self.request_timeout)
                     
+                    # 设置请求头
+                    headers = {
+                        "Content-Type": "application/json",
+                        "Authorization": f"Bearer {self.api_key}"
+                    }
+                    
+                    # 构建完整URL（避免重复添加端点）
+                    base = self.base_url.rstrip('/')
+                    # 检查base是否已经包含chat/completions
+                    if base.endswith('/chat/completions'):
+                        url = base
+                    else:
+                        url = f"{base}/chat/completions"
+                        
+                    if self.verbose:
+                        self.logger.info(f"API请求URL: {url}")
+                    
                     # 发送请求
                     async with aiohttp.ClientSession(timeout=timeout) as session:
                         async with session.post(
-                            self.api_base,
-                            json=data,
-                            headers={"Content-Type": "application/json"}
+                            url,
+                            headers=headers,
+                            json=data
                         ) as response:
                             if response.status != 200:
                                 error_text = await response.text()
@@ -221,10 +213,7 @@ class VLLMMassiveAPIClient(MassiveAPIClientAdapter):
                             self.stats["successful_requests"] += 1
                             
                             # 提取生成的文本
-                            if "choices" in result and len(result["choices"]) > 0 and "message" in result["choices"][0]:
-                                text = result["choices"][0]["message"]["content"]
-                            else:
-                                raise ValueError(f"API响应格式错误: {json.dumps(result)}")
+                            text = self._extract_response(result)
                             
                             # 更新平均时间
                             self.stats["avg_time"] = self.stats["total_time"] / self.stats["successful_requests"]
@@ -238,12 +227,12 @@ class VLLMMassiveAPIClient(MassiveAPIClientAdapter):
                     
                     if retry_count <= self.max_retries:
                         if self.verbose:
-                            print(f"请求失败 ({retry_count}/{self.max_retries})：{str(e)}，{self.retry_interval}秒后重试")
+                            self.logger.warning(f"请求失败 ({retry_count}/{self.max_retries})：{str(e)}，{self.retry_interval}秒后重试")
                         await asyncio.sleep(self.retry_interval)
                     else:
                         self.stats["failed_requests"] += 1
                         if self.verbose:
-                            print(f"请求失败，已达到最大重试次数：{str(e)}")
+                            self.logger.error(f"请求失败，已达到最大重试次数：{str(e)}")
                         
                         # 返回错误信息而不是抛出异常，这样处理批量请求时可以继续处理其他请求
                         error_message = f"API请求失败: {str(last_error)}"
@@ -252,13 +241,42 @@ class VLLMMassiveAPIClient(MassiveAPIClientAdapter):
             # 如果所有重试都失败，返回错误信息
             return f"所有重试都失败: {str(last_error)}"
     
+    async def async_generate_batch(
+        self, 
+        prompts: List[str], 
+        system_prompt: Optional[str] = None,
+        **kwargs
+    ) -> List[str]:
+        """
+        批量异步生成文本
+        
+        Args:
+            prompts: 提示词列表
+            system_prompt: 系统提示词（可选）
+            **kwargs: 其他参数
+        
+        Returns:
+            生成文本列表
+        """
+        # 将提示词列表分成批次
+        batches = [prompts[i:i + self.batch_size] for i in range(0, len(prompts), self.batch_size)]
+        all_results = []
+        
+        for batch in tqdm(batches, desc="处理批次", disable=not self.verbose):
+            # 并发处理一个批次
+            tasks = [self.async_generate(prompt, system_prompt, **kwargs) for prompt in batch]
+            batch_results = await asyncio.gather(*tasks)
+            all_results.extend(batch_results)
+        
+        return all_results
+    
     async def process_massive_requests(
         self,
         prompts: List[Tuple[str, Dict[str, Any]]],
         system_prompt: Optional[str] = None,
         show_progress: bool = True,
         realtime_exporter: Optional[RealTimeAPIExporter] = None,
-        export_frequency: int = 10,
+        export_frequency: int = 1,  # 默认每次请求都导出数据
         **kwargs
     ) -> List[Tuple[Dict[str, Any], str]]:
         """
@@ -269,7 +287,7 @@ class VLLMMassiveAPIClient(MassiveAPIClientAdapter):
             system_prompt: 系统提示词（可选）
             show_progress: 是否显示进度条
             realtime_exporter: 实时数据导出器（可选）
-            export_frequency: 导出频率（可选）
+            export_frequency: 导出频率（可选），默认为1（每次请求都导出）
             **kwargs: 其他参数
             
         Returns:
@@ -293,21 +311,21 @@ class VLLMMassiveAPIClient(MassiveAPIClientAdapter):
             # 创建任务
             tasks = []
             for prompt in batch_prompts:
-                task = self._make_request(prompt, system_prompt, **kwargs)
+                task = self.async_generate(prompt, system_prompt, **kwargs)
                 tasks.append(task)
             
             # 并发执行任务
             batch_responses = await asyncio.gather(*tasks)
             
             # 组合元数据和响应
-            for metadata, response in zip(batch_metadata, batch_responses):
+            for idx, (metadata, response) in enumerate(zip(batch_metadata, batch_responses)):
                 results.append((metadata, response))
                 
                 # 如果提供了实时导出器，记录API请求
                 if realtime_exporter:
                     try:
                         # 提取提示词
-                        prompt = next((item[0] for item in batch if item[1] == metadata), "")
+                        prompt = batch_prompts[idx]
                         
                         # 记录API请求
                         realtime_exporter.log_api_request(
@@ -316,6 +334,12 @@ class VLLMMassiveAPIClient(MassiveAPIClientAdapter):
                             response=response,
                             request_time=0.0  # 无法获取单个请求的时间
                         )
+                        
+                        # 对于ModelScope API，每次请求后都导出数据，确保数据不丢失
+                        if export_frequency == 1:
+                            realtime_exporter._export_all_data()
+                            if self.verbose:
+                                print(f"已导出单次请求数据 (请求 {batch_idx * self.batch_size + idx + 1}/{len(prompts)})")
                     except Exception as e:
                         print(f"记录API请求时出错: {str(e)}")
                         traceback.print_exc()
@@ -323,8 +347,8 @@ class VLLMMassiveAPIClient(MassiveAPIClientAdapter):
             # 更新进度条
             pbar.update(len(batch))
             
-            # 如果提供了实时导出器，按照指定频率导出数据
-            if realtime_exporter and (batch_idx + 1) % export_frequency == 0:
+            # 如果提供了实时导出器，按照指定频率导出数据（当频率不为1时）
+            if realtime_exporter and export_frequency > 1 and (batch_idx + 1) % export_frequency == 0:
                 try:
                     realtime_exporter._export_all_data()
                     if self.verbose:
@@ -346,4 +370,18 @@ class VLLMMassiveAPIClient(MassiveAPIClientAdapter):
                 print(f"导出最终数据时出错: {str(e)}")
                 traceback.print_exc()
         
-        return results 
+        return results
+    
+    def print_stats(self):
+        """打印API调用统计信息"""
+        print("\n=== ModelScope API调用统计信息 ===")
+        print(f"总请求数: {self.stats['total_requests']}")
+        print(f"成功请求数: {self.stats['successful_requests']}")
+        print(f"失败请求数: {self.stats['failed_requests']}")
+        print(f"重试次数: {self.stats['retry_count']}")
+        
+        if self.stats['successful_requests'] > 0:
+            print(f"最小响应时间: {self.stats['min_time']:.2f}秒")
+            print(f"最大响应时间: {self.stats['max_time']:.2f}秒")
+            print(f"平均响应时间: {self.stats['avg_time']:.2f}秒")
+        print("=================================") 
