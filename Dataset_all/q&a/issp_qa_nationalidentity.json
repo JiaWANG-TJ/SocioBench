@@ -1,0 +1,703 @@
+[
+  {
+    "question_id": "V5",
+    "question": "Q1 How close do you feel to ...?  Q1a ... your town or city?",
+    "answer": {
+      "1": "Very close",
+      "2": "Close",
+      "3": "Not very close",
+      "4": "Not close at all" 
+    },
+    "special": {}
+  },
+  {
+    "question_id": "V6",
+    "question": "Q1 How close do you feel to ...?  Q1b ... your [County]?",
+    "answer": {
+      "1": "Very close",
+      "2": "Close",
+      "3": "Not very close",
+      "4": "Not close at all" 
+    },
+    "special": {}
+  },
+  {
+    "question_id": "V7",
+    "question": "Q1 How close do you feel to ...?  Q1c ... your [Country]?",
+    "answer": {
+      "1": "Very close",
+      "2": "Close",
+      "3": "Not very close",
+      "4": "Not close at all" 
+    },
+    "special": {}
+  },
+  {
+    "question_id": "V8",
+    "question": "Q1 How close do you feel to ...?  Q1d ... your [Continent]?",
+    "answer": {
+      "1": "Very close",
+      "2": "Close",
+      "3": "Not very close",
+      "4": "Not close at all" 
+    },
+    "special": {}
+  },
+  {
+    "question_id": "V9",
+    "question": "Q2 Some people say that the following things are important for being truly [NATIONALITY].  Others say they are not important.  How important do you think each of the following is ...  Q2a ... to have been born in [COUNTRY]?",
+    "answer": {
+      "1": "Very important",
+      "2": "Fairly important",
+      "3": "Not very important",
+      "4": "Not important at all" 
+    },
+    "special": {
+    }
+  },
+  {
+    "question_id": "V10",
+    "question": "Q2 Some people say that the following things are important for being truly [NATIONALITY].  Others say they are not important.  How important do you think each of the following is ...  Q2b ... to have [COUNTRY NATIONALITY] citizenship?",
+    "answer": {
+      "1": "Very important",
+      "2": "Fairly important",
+      "3": "Not very important",
+      "4": "Not important at all" 
+    },
+    "special": {
+    }
+  },
+  {
+    "question_id": "V11",
+    "question": "Q2 Some people say that the following things are important for being truly [NATIONALITY].  Others say they are not important.  How important do you think each of the following is ...  Q2c ... to have lived in [COUNTRY] for most of one's life?",
+    "answer": {
+      "1": "Very important",
+      "2": "Fairly important",
+      "3": "Not very important",
+      "4": "Not important at all" 
+    },
+    "special": {
+    }
+  },
+  {
+    "question_id": "V12",
+    "question": "Q2 Some people say that the following things are important for being truly [NATIONALITY].  Others say they are not important.  How important do you think each of the following is ...  Q2d ... to be able to speak [COUNTRY LANGUAGE]?",
+    "answer": {
+      "1": "Very important",
+      "2": "Fairly important",
+      "3": "Not very important",
+      "4": "Not important at all"
+    },
+    "special": {
+    }
+  },
+  {
+    "question_id": "V13",
+    "question": "Q2 Some people say that the following things are important for being truly [NATIONALITY].  Others say they are not important.  How important do you think each of the following is ...  Q2e ... to be a [religion]?",
+    "answer": {
+      "1": "Very important",
+      "2": "Fairly important",
+      "3": "Not very important",
+      "4": "Not important at all" 
+    },
+    "special": {
+    }
+  },
+  {
+    "question_id": "V14",
+    "question": "Q2 Some people say that the following things are important for being truly [NATIONALITY].  Others say they are not important.  How important do you think each of the following is ...  Q2f ... to respect [COUNTRY NATIONALITY] political institutions and laws?",
+    "answer": {
+      "1": "Very important",
+      "2": "Fairly important",
+      "3": "Not very important",
+      "4": "Not important at all" 
+    },
+    "special": {
+
+    }
+  },
+  {
+    "question_id": "V15",
+    "question": "Q2 Some people say that the following things are important for being truly [NATIONALITY].  Others say they are not important.  How important do you think each of the following is ...  Q2g ... to feel [COUNTRY NATIONALITY]?",
+    "answer": {
+      "1": "Very important",
+      "2": "Fairly important",
+      "3": "Not very important",
+      "4": "Not important at all" 
+    },
+    "special": {
+
+    }
+  },
+  {
+    "question_id": "V16",
+    "question": "Q2 Some people say that the following things are important for being truly [NATIONALITY].  Others say they are not important.  How important do you think each of the following is ...  Q2h ... to have [COUNTRY NATIONALITY] ancestry?",
+    "answer": {
+      "1": "Very important",
+      "2": "Fairly important",
+      "3": "Not very important",
+      "4": "Not important at all" 
+    },
+    "special": {
+
+    }
+  },
+  {
+    "question_id": "V17",
+    "question": "Q3 How much do you agree or disagree with the following statements?  Q3a I would rather be a citizen of [COUNTRY] than of any other country in the world.",
+    "answer": {
+      "1": "Agree strongly",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Disagree strongly" 
+    },
+    "special": {}
+  },
+  {
+    "question_id": "V18",
+    "question": "Q3 How much do you agree or disagree with the following statements?  Q3b There are some things about [COUNTRY] that make me feel ashamed of [COUNTRY].",
+    "answer": {
+      "1": "Agree strongly",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Disagree strongly" 
+    },
+    "special": {}
+  },
+  {
+    "question_id": "V19",
+    "question": "Q3 How much do you agree or disagree with the following statements?  Q3c The world would be a better place if people from other countries were more like the [COUNTRY NATIONALITY].",
+    "answer": {
+      "1": "Agree strongly",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Disagree strongly" 
+    },
+    "special": {}
+  },
+  {
+    "question_id": "V20",
+    "question": "Q3 How much do you agree or disagree with the following statements?  Q3d Generally speaking, [COUNTRY] is a better country than most other countries.",
+    "answer": {
+      "1": "Agree strongly",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Disagree strongly" 
+    },
+    "special": {}
+  },
+  {
+    "question_id": "V21",
+    "question": "Q3 How much do you agree or disagree with the following statements?  Q3e People should support their country even if the country is in the wrong.",
+    "answer": {
+      "1": "Agree strongly",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Disagree strongly" 
+    },
+    "special": {}
+  },
+  {
+    "question_id": "V22",
+    "question": "Q3 How much do you agree or disagree with the following statements?  Q3f When my country does well in international sports, it makes me proud to be [COUNTRY NATIONALITY].",
+    "answer": {
+      "1": "Agree strongly",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Disagree strongly" 
+    },
+    "special": {}
+  },
+  {
+    "question_id": "V23",
+    "question": "Q3 How much do you agree or disagree with the following statements?  Q3g I am often less proud of [COUNTRY] than I would like to be.",
+    "answer": {
+      "1": "Agree strongly",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Disagree strongly" 
+    },
+    "special": {}
+  },
+  {
+    "question_id": "V24",
+    "question": "Q3 How much do you agree or disagree with the following statements?  Q3h The world would be a better place if [COUNTRY NATIONALITY] acknowledged [COUNTRY's] shortcomings.",
+    "answer": {
+      "1": "Agree strongly",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Disagree strongly" 
+    },
+    "special": {}
+  },
+  {
+    "question_id": "V25",
+    "question": "Q4 How proud are you of [COUNTRY] in each of the following?  Q4a The way democracy works.",
+    "answer": {
+      "1": "Very proud",
+      "2": "Somewhat proud",
+      "3": "Not very proud",
+      "4": "Not proud at all" 
+    },
+    "special": {}
+  },
+  {
+    "question_id": "V26",
+    "question": "Q4 How proud are you of [COUNTRY] in each of the following?  Q4b Its political influence in the world.",
+    "answer": {
+      "1": "Very proud",
+      "2": "Somewhat proud",
+      "3": "Not very proud",
+      "4": "Not proud at all" 
+    },
+    "special": {}
+  },
+  {
+    "question_id": "V27",
+    "question": "Q4 How proud are you of [COUNTRY] in each of the following?  Q4c [COUNTRY's] economic achievements.",
+    "answer": {
+      "1": "Very proud",
+      "2": "Somewhat proud",
+      "3": "Not very proud",
+      "4": "Not proud at all" 
+    },
+    "special": {}
+  },
+  {
+    "question_id": "V28",
+    "question": "Q4 How proud are you of [COUNTRY] in each of the following?  Q4d Its social security system.",
+    "answer": {
+      "1": "Very proud",
+      "2": "Somewhat proud",
+      "3": "Not very proud",
+      "4": "Not proud at all" 
+    },
+    "special": {}
+  },
+  {
+    "question_id": "V29",
+    "question": "Q4 How proud are you of [COUNTRY] in each of the following?  Q4e Its scientific and technological achievements.",
+    "answer": {
+      "1": "Very proud",
+      "2": "Somewhat proud",
+      "3": "Not very proud",
+      "4": "Not proud at all" 
+    },
+    "special": {}
+  },
+  {
+    "question_id": "V30",
+    "question": "Q4 How proud are you of [COUNTRY] in each of the following?  Q4f Its achievements in sports.",
+    "answer": {
+      "1": "Very proud",
+      "2": "Somewhat proud",
+      "3": "Not very proud",
+      "4": "Not proud at all" 
+    },
+    "special": {}
+  },
+  {
+    "question_id": "V31",
+    "question": "Q4 How proud are you of [COUNTRY] in each of the following?  Q4g Its achievements in the arts and literature.",
+    "answer": {
+      "1": "Very proud",
+      "2": "Somewhat proud",
+      "3": "Not very proud",
+      "4": "Not proud at all" 
+    },
+    "special": {}
+  },
+  {
+    "question_id": "V32",
+    "question": "Q4 How proud are you of [COUNTRY] in each of the following?  Q4h [COUNTRY's] armed forces.",
+    "answer": {
+      "1": "Very proud",
+      "2": "Somewhat proud",
+      "3": "Not very proud",
+      "4": "Not proud at all" 
+    },
+    "special": {
+    }
+  },
+  {
+    "question_id": "V33",
+    "question": "Q4 How proud are you of [COUNTRY] in each of the following?  Q4i Its history.",
+    "answer": {
+      "1": "Very proud",
+      "2": "Somewhat proud",
+      "3": "Not very proud",
+      "4": "Not proud at all" 
+    },
+    "special": {}
+  },
+  {
+    "question_id": "V34",
+    "question": "Q4 How proud are you of [COUNTRY] in each of the following?  Q4j Its fair and equal treatment of all groups in society.",
+    "answer": {
+      "1": "Very proud",
+      "2": "Somewhat proud",
+      "3": "Not very proud",
+      "4": "Not proud at all" 
+    },
+    "special": {}
+  },
+  {
+    "question_id": "V35",
+    "question": "Q5 How much do you agree or disagree with the following statements?  Q5a [COUNTRY] should limit the import of foreign products in order to protect its national economy.",
+    "answer": {
+      "1": "Agree strongly",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Disagree strongly" 
+    },
+    "special": {}
+  },
+  {
+    "question_id": "V36",
+    "question": "Q5 How much do you agree or disagree with the following statements?  Q5b For certain problems, like environment pollution, international bodies should have the right to enforce solutions.",
+    "answer": {
+      "1": "Agree strongly",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Disagree strongly" 
+    },
+    "special": {}
+  },
+  {
+    "question_id": "V37",
+    "question": "Q5 How much do you agree or disagree with the following statements?  Q5c [COUNTRY] should follow its own interests, even if this leads to conflicts with other nations.",
+    "answer": {
+      "1": "Agree strongly",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Disagree strongly" 
+    },
+    "special": {}
+  },
+  {
+    "question_id": "V38",
+    "question": "Q5 How much do you agree or disagree with the following statements?  Q5d Foreigners should not be allowed to buy land in [COUNTRY].",
+    "answer": {
+      "1": "Agree strongly",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Disagree strongly" 
+    },
+    "special": {}
+  },
+  {
+    "question_id": "V39",
+    "question": "Q5 How much do you agree or disagree with the following statements?  Q5e [COUNTRY's] television should give preference to [COUNTRY] films and programs.",
+    "answer": {
+      "1": "Agree strongly",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Disagree strongly" 
+    },
+    "special": {}
+  },
+  {
+    "question_id": "V40",
+    "question": "Q6 How much do you agree or disagree with the following statements?  Q6a Large international companies are doing more and more damage to local businesses in [COUNTRY].",
+    "answer": {
+      "1": "Agree strongly",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Disagree strongly" 
+    },
+    "special": {}
+  },
+  {
+    "question_id": "V41",
+    "question": "Q6 How much do you agree or disagree with the following statements?  Q6b Free trade leads to better products becoming available in [COUNTRY].",
+    "answer": {
+      "1": "Agree strongly",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Disagree strongly" 
+    },
+    "special": {}
+  },
+  {
+    "question_id": "V42",
+    "question": "Q6 How much do you agree or disagree with the following statements?  Q6c In general, [COUNTRY] should follow the decisions of international organizations to which it belongs, even if the government does not  agree with them.",
+    "answer": {
+      "1": "Agree strongly",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Disagree strongly" 
+    },
+    "special": {}
+  },
+  {
+    "question_id": "V43",
+    "question": "Q6 How much do you agree or disagree with the following statements?  Q6d International organizations are taking away too much power from the [COUNTRY NATIONALITY] government.",
+    "answer": {
+      "1": "Agree strongly",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Disagree strongly" 
+    },
+    "special": {}
+  },
+  {
+    "question_id": "V44",
+    "question": "Q6 How much do you agree or disagree with the following statements?  Q6e I feel more like a citizen of the world than of any country.",
+    "answer": {
+      "1": "Agree strongly",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Disagree strongly" 
+    },
+    "special": {}
+  },
+  {
+    "question_id": "V45",
+    "question": "Q7 How much do you agree or disagree with the following statements?  Q7a It is impossible for people who do not share [COUNTRY'S] customs and traditions to become fully [COUNTRY'S NATIONALITY].",
+    "answer": {
+      "1": "Agree strongly",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Disagree strongly" 
+    },
+    "special": {}
+  },
+  {
+    "question_id": "V46",
+    "question": "Q7 How much do you agree or disagree with the following statements?  Q7b Ethnic minorities should be given government assistance to preserve their customs and traditions.",
+    "answer": {
+      "1": "Agree strongly",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Disagree strongly" 
+    },
+    "special": {}
+  },
+  {
+    "question_id": "V47",
+    "question": "Q8 Some people say that it is better for a country if different racial and ethnic groups maintain their distinct customs and traditions. Others say that it is better if these groups adapt and blend into the large society.  Which of these views comes closer to your own? a) It is better for society if groups maintain their distinct customs and traditions. b) It is better if groups adapt and blend into the larger society.",
+    "answer": {
+      "1": "Maintain traditions",
+      "2": "Adapt into larger society"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "V48",
+    "question": "Q9 There are different opinions about immigrants from other countries living in [COUNTRY]. (By 'immigrants' we mean people who come to settle  in [COUNTRY]). How much do you agree or disagree with each of the following statements?  Q9a Immigrants increase crime rates.",
+    "answer": {
+      "1": "Agree strongly",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Disagree strongly" 
+    },
+    "special": {}
+  },
+  {
+    "question_id": "V49",
+    "question": "Q9 There are different opinions about immigrants from other countries living in [COUNTRY]. (By 'immigrants' we mean people who come to settle  in [COUNTRY]). How much do you agree or disagree with each of the following statements?  Q9b Immigrants are generally good for [COUNTRY'S] economy.",
+    "answer": {
+      "1": "Agree strongly",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Disagree strongly" 
+    },
+    "special": {}
+  },
+  {
+    "question_id": "V50",
+    "question": "Q9 There are different opinions about immigrants from other countries living in [COUNTRY]. (By 'immigrants' we mean people who come to settle  in [COUNTRY]). How much do you agree or disagree with each of the following statements?  Q9c Immigrants take jobs away from people who were born in [COUNTRY].",
+    "answer": {
+      "1": "Agree strongly",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Disagree strongly" 
+    },
+    "special": {}
+  },
+  {
+    "question_id": "V51",
+    "question": "Q9 There are different opinions about immigrants from other countries living in [COUNTRY]. (By 'immigrants' we mean people who come to settle  in [COUNTRY]). How much do you agree or disagree with each of the following statements?  Q9d Immigrants improve [COUNTRY'S NATIONALITY] society by bringing new ideas and cultures.",
+    "answer": {
+      "1": "Agree strongly",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Disagree strongly" 
+    },
+    "special": {}
+  },
+  {
+    "question_id": "V52",
+    "question": "Q9 There are different opinions about immigrants from other countries living in [COUNTRY]. (By 'immigrants' we mean people who come to settle  in [COUNTRY]). How much do you agree or disagree with each of the following statements?  Q9e [COUNTRY'S] culture is generally undermined by immigrants.",
+    "answer": {
+      "1": "Agree strongly",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Disagree strongly" 
+    },
+    "special": {}
+  },
+  {
+    "question_id": "V53",
+    "question": "Q9 There are different opinions about immigrants from other countries living in [COUNTRY]. (By 'immigrants' we mean people who come to settle  in [COUNTRY]). How much do you agree or disagree with each of the following statements?  Q9f Legal immigrants to [COUNTRY] who are not citizens should have the same rights as [COUNTRY NATIONALITY] citizens.",
+    "answer": {
+      "1": "Agree strongly",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Disagree strongly" 
+    },
+    "special": {}
+  },
+  {
+    "question_id": "V54",
+    "question": "Q9 There are different opinions about immigrants from other countries living in [COUNTRY]. (By 'immigrants' we mean people who come to settle  in [COUNTRY]). How much do you agree or disagree with each of the following statements?  Q9g [COUNTRY] should take stronger measures to exclude illegal immigrants.",
+    "answer": {
+      "1": "Agree strongly",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Disagree strongly" 
+    },
+    "special": {}
+  },
+  {
+    "question_id": "V55",
+    "question": "Q9 There are different opinions about immigrants from other countries living in [COUNTRY]. (By 'immigrants' we mean people who come to settle  in [COUNTRY]). How much do you agree or disagree with each of the following statements?  Q9h Legal immigrants should have equal access to public education as [COUNTRY NATIONALITY] citizens.",
+    "answer": {
+      "1": "Agree strongly",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Disagree strongly" 
+    },
+    "special": {}
+  },
+  {
+    "question_id": "V56",
+    "question": "Q10 Do you think the number of immigrants to [COUNTRY] nowadays should be ...",
+    "answer": {
+      "1": "Increased a lot",
+      "2": "Increased a little",
+      "3": "Remain the same as it is",
+      "4": "Reduced a little",
+      "5": "Reduced a lot" 
+    },
+    "special": {}
+  },
+  {
+    "question_id": "V57",
+    "question": "Q11 Which of these statements about immigrants comes closest to your view: - Immigrants should retain their culture of origin and not adopt COUNTRY's culture.  - Immigrants should retain their culture of origin and also adopt COUNTRY's culture.  - Immigrants should give up their culture of origin and adopt COUNTRY's culture.",
+    "answer": {
+      "1": "Immigrants should retain their culture of origin and not adopt COUNTRY's culture",
+      "2": "Immigrants should retain their culture of origin and also adopt COUNTRY's culture",
+      "3": "Immigrants should give up their culture of origin and adopt COUNTRY's culture" 
+    },
+    "special": {}
+  },
+  {
+    "question_id": "V58",
+    "question": "Q12 How proud are you of being [COUNTRY NATIONALITY]? (PLEASE, CHECK ONE BOX BELOW)",
+    "answer": {
+      "0": "I am not [Country Nationality]",
+      "1": "Very proud",
+      "2": "Somewhat proud",
+      "3": "Not very proud",
+      "4": "Not proud at all" 
+    },
+    "special": {}
+  },
+  {
+    "question_id": "V59",
+    "question": "Q13 How much do you agree or disagree that strong patriotic feelings in [COUNTRY] ...  Q13a ... strengthen [COUNTRY's] place in the world.",
+    "answer": {
+      "1": "Agree strongly",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Disagree strongly" 
+    },
+    "special": {}
+  },
+  {
+    "question_id": "V60",
+    "question": "Q13 How much do you agree or disagree that strong patriotic feelings in [COUNTRY] ...  Q13b ... lead to intolerance in [COUNTRY].",
+    "answer": {
+      "1": "Agree strongly",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Disagree strongly" 
+    },
+    "special": {}
+  },
+  {
+    "question_id": "V61",
+    "question": "Q13 How much do you agree or disagree that strong patriotic feelings in [COUNTRY] ...  Q13c ... are needed for [COUNTRY] to remain united.",
+    "answer": {
+      "1": "Agree strongly",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Disagree strongly" 
+    },
+    "special": {}
+  },
+  {
+    "question_id": "V62",
+    "question": "Q13 How much do you agree or disagree that strong patriotic feelings in [COUNTRY] ...  Q13d ... lead to negative attitudes towards immigrants in [COUNTRY].",
+    "answer": {
+      "1": "Agree strongly",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Disagree strongly" 
+    },
+    "special": {}
+  },
+  {
+    "question_id": "V63",
+    "question": "Q14 Are you a citizen of [COUNTRY]?",
+    "answer": {
+      "1": "Yes",
+      "2": "No"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "V64",
+    "question": "Q15 At the time of your birth, were both, one, or neither of your parents citizens of [COUNTRY]?",
+    "answer": {
+      "1": "Both were citizens",
+      "2": "Only father was a citizen",
+      "3": "Only mother was a citizen",
+      "4": "Neither parent was a citizen"
+    },
+    "special": {}
+  }
+]

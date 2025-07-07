@@ -1,0 +1,36 @@
+# 基础依赖 - 按照安装优先级排序
+setuptools==75.8.0
+wheel==0.45.1
+packaging==24.1
+filelock==3.16.1
+numpy==1.26.4
+pandas==2.2.3
+scikit-learn==1.5.2
+requests==2.32.3
+aiohttp==3.10.10
+tqdm==4.66.5
+colorama==0.4.6
+pydantic==2.11.4
+loguru==0.7.3
+jsonlines==4.0.0
+
+# PyTorch与transformer相关依赖
+torch==2.6.0
+transformers==4.51.3
+tokenizers==0.21.1
+accelerate==0.34.2
+protobuf==4.25.7
+huggingface-hub==0.30.1
+sentencepiece==0.2.0
+safetensors==0.4.5
+einops==0.8.0
+
+# API与服务相关依赖
+openai==1.57.0
+fastapi==0.115.12
+uvicorn==0.32.0
+psutil==6.1.0
+msgpack==1.1.0
+
+# vLLM相关依赖
+vllm==0.8.5.post1

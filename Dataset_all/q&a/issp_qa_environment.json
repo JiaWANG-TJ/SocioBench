@@ -1,0 +1,581 @@
+[
+  {
+    "question_id": "v3",
+    "question": "Q2 How much do you agree or disagree with each of these statements?  Q2a Private enterprise is the best way to solve [COUNTRY'S] economic problems.",
+    "answer": {
+      "1": "Agree strongly",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Disagree strongly"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v4",
+    "question": "Q2 How much do you agree or disagree with each of these statements?  Q2b It is the responsibility of the government to reduce the differences in income between people with high incomes and those with low incomes.",
+    "answer": {
+      "1": "Agree strongly",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Disagree strongly"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v5",
+    "question": "Q2 How much do you agree or disagree with each of these statements?  Q2c [COUNTRY] should limit the import of foreign products in order to protect its national economy.",
+    "answer": {
+      "1": "Agree strongly",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Disagree strongly"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v6",
+    "question": "Q2 How much do you agree or disagree with each of these statements?  Q2d [COUNTRY] should limit immigration in order to protect our national way of life.",
+    "answer": {
+      "1": "Agree strongly",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Disagree strongly"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v7",
+    "question": "Q2 How much do you agree or disagree with each of these statements?  Q2e International organizations are taking away too much power from the [COUNTRY NATIONALITY] government.",
+    "answer": {
+      "1": "Agree strongly",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Disagree strongly"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v8",
+    "question": "Q3a please choose one thing you think should be [COUNTRY'S] highest priority, the MOST important thing it should do. [COUNTRY] should …",
+    "answer": {
+      "1": "Maintain order in the nation",
+      "2": "Give people more say in government decisions",
+      "3": "Fight rising prices",
+      "4": "Protect freedom of speech"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v9",
+    "question": "Q3b please choose one thing you think should be [COUNTRY'S] second highest priority, the second most important thing it should do. [COUNTRY] should …",
+    "answer": {
+      "1": "Maintain order in the nation",
+      "2": "Give people more say in government decisions",
+      "3": "Fight rising prices",
+      "4": "Protect freedom of speech"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v11",
+    "question": "Q5 On a scale of 1 to 5 where 1 means no trust at all and 5 means complete trust, how much do you personally trust each of the following institutions? Q5a University research centres",
+    "answer": {
+      "1": "1, No trust at all",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5, Complete trust"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v12",
+    "question": "Q5 On a scale of 1 to 5 where 1 means no trust at all and 5 means complete trust, how much do you personally trust each of the following institutions? Q5b The news media",
+    "answer": {
+      "1": "1, No trust at all",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5, Complete trust"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v13",
+    "question": "Q5 On a scale of 1 to 5 where 1 means no trust at all and 5 means complete trust, how much do you personally trust each of the following institutions? Q5c Business and industry",
+    "answer": {
+      "1": "1, No trust at all",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5, Complete trust"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v14",
+    "question": "Q5 On a scale of 1 to 5 where 1 means no trust at all and 5 means complete trust, how much do you personally trust each of the following institutions? Q5d The [COUNTRY NATIONALITY PARLIAMENT]",
+    "answer": {
+      "1": "1, No trust at all",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5, Complete trust"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v15",
+    "question": "Q6 Generally speaking, how concerned are you about environmental issues? Please tick one box below to indicate what you think, where 1 means you are not at all concerned and 5 means you are very concerned.",
+    "answer": {
+      "1": "1 Not at all concerned",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5 Very concerned"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v17",
+    "question": "Q8 There has been a lot of discussion about the world’s climate and the idea it has been changing in recent decades. Which of the following statements comes closest to your opinion?",
+    "answer": {
+      "1": "The world's climate has not been changing",
+      "2": "The world's climate has been changing mostly due to natural processes",
+      "3": "The world's climate has been changing about equally due to natural processes and human activity",
+      "4": "The world's climate has been changing mostly due to human activity"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v20",
+    "question": "Q10 How much do you agree or disagree with each of these statements?  Q10a Modern science will solve our environmental problems with little change to our way of life.",
+    "answer": {
+      "1": "Agree strongly",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Disagree strongly"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v21",
+    "question": "Q10 How much do you agree or disagree with each of these statements?  Q10b We worry too much about the future of the environment and not enough about prices and jobs today.",
+    "answer": {
+      "1": "Agree strongly",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Disagree strongly"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v22",
+    "question": "Q10 How much do you agree or disagree with each of these statements?  Q10c Almost everything we do in modern life harms the environment.",
+    "answer": {
+      "1": "Agree strongly",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Disagree strongly"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v23",
+    "question": "Q10 How much do you agree or disagree with each of these statements?  Q10d People worry too much about human progress harming the environment.",
+    "answer": {
+      "1": "Agree strongly",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Disagree strongly"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v24",
+    "question": "Q10 How much do you agree or disagree with each of these statements?  Q10e In order to protect the environment [COUNTRY] needs economic growth.",
+    "answer": {
+      "1": "Agree strongly",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Disagree strongly"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v25",
+    "question": "Q10 How much do you agree or disagree with each of these statements?  Q10f Economic growth always harms the environment.",
+    "answer": {
+      "1": "Agree strongly",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Disagree strongly"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v26",
+    "question": "Q11a How willing would you be to pay much higher prices in order to protect the environment?",
+    "answer": {
+      "1": "Very willing",
+      "2": "Fairly willing",
+      "3": "Neither willing nor unwilling",
+      "4": "Fairly unwilling",
+      "5": "Very unwilling"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v27",
+    "question": "Q11b And how willing would you be to pay much higher taxes in order to protect the environment?",
+    "answer": {
+      "1": "Very willing",
+      "2": "Fairly willing",
+      "3": "Neither willing nor unwilling",
+      "4": "Fairly unwilling",
+      "5": "Very unwilling"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v28",
+    "question": "Q11c And how willing would you be to accept cuts in your standard of living in order to protect the environment?",
+    "answer": {
+      "1": "Very willing",
+      "2": "Fairly willing",
+      "3": "Neither willing nor unwilling",
+      "4": "Fairly unwilling",
+      "5": "Very unwilling"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v29",
+    "question": "Q11d How willing would you be to accept a reduction in the size of [COUNTRY's] protected nature areas, in order to open them up for economic development?",
+    "answer": {
+      "1": "Very willing",
+      "2": "Fairly willing",
+      "3": "Neither willing nor unwilling",
+      "4": "Fairly unwilling",
+      "5": "Very unwilling"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v30",
+    "question": "Q12 How much do you agree or disagree with each of these statements? Q12a It is just too difficult for someone like me to do much about the environment.",
+    "answer": {
+      "1": "Agree strongly",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Disagree strongly"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v31",
+    "question": "Q12 How much do you agree or disagree with each of these statements?  Q12b I do what is right for the environment, even when it costs more money or takes more time.",
+    "answer": {
+      "1": "Agree strongly",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Disagree strongly"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v32",
+    "question": "Q12 How much do you agree or disagree with each of these statements?  Q12c There are more important things to do in life than protect the environment.",
+    "answer": {
+      "1": "Agree strongly",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Disagree strongly"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v33",
+    "question": "Q12 How much do you agree or disagree with each of these statements?  Q12d There is no point in doing what I can for the environment unless others do the same.",
+    "answer": {
+      "1": "Agree strongly",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Disagree strongly"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v34",
+    "question": "Q12 How much do you agree or disagree with each of these statements?  Q12e Many of the claims about environmental threats are exaggerated.",
+    "answer": {
+      "1": "Agree strongly",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Disagree strongly"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v35",
+    "question": "Q12 How much do you agree or disagree with each of these statements?  Q12f I find it hard to know whether the way I live is helpful or harmful to the environment.",
+    "answer": {
+      "1": "Agree strongly",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Disagree strongly"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v36",
+    "question": "Q12 How much do you agree or disagree with each of these statements?  Q12g Environmental problems have a direct effect on my everyday life.",
+    "answer": {
+      "1": "Agree strongly",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Disagree strongly"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v37",
+    "question": "Q13a In general, do you think that air pollution caused by cars is …",
+    "answer": {
+      "1": "Extremely dangerous for the environment",
+      "2": "Very dangerous",
+      "3": "Somewhat dangerous",
+      "4": "Not very dangerous",
+      "5": "Not dangerous at all for the environment"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v38",
+    "question": "Q13b In general, do you think that air pollution caused by industry is …",
+    "answer": {
+      "1": "Extremely dangerous for the environment",
+      "2": "Very dangerous",
+      "3": "Somewhat dangerous",
+      "4": "Not very dangerous",
+      "5": "Not dangerous at all for the environment"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v39",
+    "question": "Q13c And do you think that pesticides and chemicals used in farming are …",
+    "answer": {
+      "1": "Extremely dangerous for the environment",
+      "2": "Very dangerous",
+      "3": "Somewhat dangerous",
+      "4": "Not very dangerous",
+      "5": "Not dangerous at all for the environment"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v40",
+    "question": "Q13d And do you think that pollution of COUNTRY'S rivers, lakes and streams is …",
+    "answer": {
+      "1": "Extremely dangerous for the environment",
+      "2": "Very dangerous",
+      "3": "Somewhat dangerous",
+      "4": "Not very dangerous",
+      "5": "Not dangerous at all for the environment"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v41",
+    "question": "Q13e In general, do you think that a rise in the world's temperature caused by climate change is …",
+    "answer": {
+      "1": "Extremely dangerous for the environment",
+      "2": "Very dangerous",
+      "3": "Somewhat dangerous",
+      "4": "Not very dangerous",
+      "5": "Not dangerous at all for the environment"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v42",
+    "question": "Q13f And do you think that modifying the genes of certain crops is …",
+    "answer": {
+      "1": "Extremely dangerous for the environment",
+      "2": "Very dangerous",
+      "3": "Somewhat dangerous",
+      "4": "Not very dangerous",
+      "5": "Not dangerous at all for the environment"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v43",
+    "question": "Q13g And do you think that nuclear power stations are …",
+    "answer": {
+      "1": "Extremely dangerous for the environment",
+      "2": "Very dangerous",
+      "3": "Somewhat dangerous",
+      "4": "Not very dangerous",
+      "5": "Not dangerous at all for the environment"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v44",
+    "question": "Q14a Which of these approaches do you think would be the best way of getting business and industry in [COUNTRY] to protect the environment?",
+    "answer": {
+      "1": "Heavy fines for businesses that damage the environment",
+      "2": "Use the tax system to reward businesses that protect the environment",
+      "3": "More information and education for businesses about the advantages of protecting the environment"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v45",
+    "question": "Q14b Which of these approaches do you think would be the best way of getting people and their families in [COUNTRY] to protect the environment?",
+    "answer": {
+      "1": "Heavy fines for people who damage the environment",
+      "2": "Use the tax system to reward people who protect the environment",
+      "3": "More information and education for people about the advantages of protecting the environment"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v46",
+    "question": "Q15 How much, if at all, do you enjoy being outside in nature?",
+    "answer": {
+      "1": "Not at all",
+      "2": "To a small extent",
+      "3": "To some extent",
+      "4": "To a great extent",
+      "5": "To a very great extent"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v47",
+    "question": "Q16 In the last twelve months how often, if at all, have you engaged in any leisure activities outside in nature, such as hiking, bird watching, swimming,  skiing, other outdoor activities or just relaxing?",
+    "answer": {
+      "1": "Daily",
+      "2": "Several times a week",
+      "3": "Several times a month",
+      "4": "Several times a year",
+      "5": "Never"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v52",
+    "question": "Q19a How often do you make a special effort to sort glass or tins or plastic or newspapers and so on for recycling?",
+    "answer": {
+      "1": "Always",
+      "2": "Often",
+      "3": "Sometimes",
+      "4": "Never"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v53",
+    "question": "Q19b And how often do you avoid buying certain products for environmental reasons? ",
+    "answer": {
+      "1": "Always",
+      "2": "Often",
+      "3": "Sometimes",
+      "4": "Never"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v54",
+    "question": "Q20 Are you a member of any group whose main aim is to preserve or protect the environment?",
+    "answer": {
+      "1": "Yes",
+      "2": "No"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v55",
+    "question": "Q21 In the last five years, have you ...  Q21a Signed a petition about an environmental issue?",
+    "answer": {
+      "1": "Yes, I have",
+      "2": "No, I have not"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v56",
+    "question": "Q21 In the last five years, have you ...  Q21b Given money to an environmental group?",
+    "answer": {
+      "1": "Yes, I have",
+      "2": "No, I have not"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v57",
+    "question": "Q21 In the last five years, have you ...  Q21c Taken part in a protest or demonstration about an environmental issue?",
+    "answer": {
+      "1": "Yes, I have",
+      "2": "No, I have not"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v58",
+    "question": "Q22 Thinking about your neighbourhood, to what extent, if at all, was it affected by the following things over the last twelve months? Q22a Air Pollution",
+    "answer": {
+      "1": "Not at all",
+      "2": "To a small extent",
+      "3": "To some extent",
+      "4": "To a great extent",
+      "5": "To a very great extent"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v59",
+    "question": "Q22 Thinking about your neighbourhood, to what extent, if at all, was it affected by the following things over the last twelve months? Q22b Water Pollution",
+    "answer": {
+      "1": "Not at all",
+      "2": "To a small extent",
+      "3": "To some extent",
+      "4": "To a great extent",
+      "5": "To a very great extent"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v60",
+    "question": "Q22 Thinking about your neighbourhood, to what extent, if at all, was it affected by the following things over the last twelve months? Q22c Extreme weather events (such as severe storms, droughts, floods, heat waves, cold snaps, etc.)",
+    "answer": {
+      "1": "Not at all",
+      "2": "To a small extent",
+      "3": "To some extent",
+      "4": "To a great extent",
+      "5": "To a very great extent"
+    },
+    "special": {}
+  }
+]

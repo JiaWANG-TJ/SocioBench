@@ -1,0 +1,211 @@
+# ===========================================
+# 数据集和大型数据文件
+# ===========================================
+
+# 数据集目录
+Dataset_all/A_GroundTruth/
+Dataset_all/检测采样结果有效性/
+Dataset_all/A_GroundTruth_sampling5000/
+Dataset_all/A_GroundTruth_过滤有效受访者/
+Dataset_all/A_GroundTruth_替换选项/
+Dataset_all/A_GroundTruth_sampling500_old/
+Dataset_all/A_GroundTruth_sampling1000/
+Dataset_all/A_GroundTruth_sampling2000/
+Dataset_all/A_GroundTruth_sampling5000_old/
+Dataset_all/q&a_old/
+Dataset_all/Dataset_备份-domain领域号处理之前.zip
+
+# 完整数据目录
+Dataset/
+Data_process/
+原始数据/
+文字、图资料/
+输入数据/
+
+# ===========================================
+# 评测结果和输出文件
+# ===========================================
+
+# 评测结果目录
+evaluation/results/
+evaluation/结果_allmodel_alldomain/
+evaluation/结果_country&age&gender/
+evaluation/受访者profile信息匹配结果/
+evaluation/随机作答&LLM各受访者众数作答计算/
+evaluation/压缩计算结果文件/
+evaluation/指标计算/
+evaluation/merge_results/
+evaluation/results_old-qa重新采样前/
+evaluation/social_benchmark_country_test/
+
+# 特定结果文件
+evaluation/结果/
+evaluation/结果.zip
+
+# 大型压缩文件和数据文件
+*.zip
+*.rar
+*.7z
+*.tar.gz
+*.tgz
+
+# Excel和CSV结果文件
+**/detailed_results_*.csv
+**/detailed_results_*.xlsx
+**/results_*.json
+**/metrics_*.xlsx
+**/country_metrics_*.xlsx
+**/gender_metrics_*.xlsx
+**/age_metrics_*.xlsx
+**/occupation_metrics_*.xlsx
+
+# 可视化输出文件
+visualizations/
+**/visualizations/
+*.png
+*.pdf
+*.jpg
+*.jpeg
+*.svg
+
+# 配置文件
+evaluation/config.md
+evaluation/config.json
+
+# ===========================================
+# Python 相关文件
+# ===========================================
+
+# 字节码文件
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# 分发/打包
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# 虚拟环境
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# ===========================================
+# IDE 和编辑器文件
+# ===========================================
+
+# PyCharm
+.idea/
+
+# VS Code
+.vscode/
+
+# Vim
+*.swp
+*.swo
+*~
+
+# Emacs
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+auto-save-list
+tramp
+.\#*
+
+# ===========================================
+# 系统和临时文件
+# ===========================================
+
+# 操作系统
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# 临时文件
+*.tmp
+*.temp
+*.log
+*.bak
+*.backup
+
+# ===========================================
+# 项目特定文件
+# ===========================================
+
+# 大型模型文件
+*.bin
+*.safetensors
+*.h5
+*.pkl
+*.pickle
+
+# 输出和缓存
+*.out
+*.cache
+.cache/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# pytest
+.pytest_cache/
+.coverage
+htmlcov/
+
+# MyPy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# ===========================================
+# Adobe 和设计文件
+# ===========================================
+
+# Adobe Illustrator
+*.ai
+
+# 其他设计文件
+*.psd
+*.sketch
+
+social_benchmark\Dataset_all\A_GroundTruth_sampling500\sampling_script.py
+social_benchmark\Dataset_all\A_GroundTruth_sampling500\sampling_stats_citizenship.json
+social_benchmark\Dataset_all\A_GroundTruth_sampling500\sampling_stats_environment.json
+social_benchmark\Dataset_all\A_GroundTruth_sampling500\sampling_stats_family.json
+social_benchmark\Dataset_all\A_GroundTruth_sampling500\sampling_stats_health.json
+social_benchmark\Dataset_all\A_GroundTruth_sampling500\sampling_stats_nationalidentity.json
+social_benchmark\Dataset_all\A_GroundTruth_sampling500\sampling_stats_religion.json
+social_benchmark\Dataset_all\A_GroundTruth_sampling500\sampling_stats_roleofgovernment.json
+social_benchmark\Dataset_all\A_GroundTruth_sampling500\sampling_stats_socialinequality.json
+social_benchmark\Dataset_all\A_GroundTruth_sampling500\sampling_stats_socialnetworks.json
+social_benchmark\Dataset_all\A_GroundTruth_sampling500\sampling_stats_workorientations.json
+social_benchmark\Dataset_all\A_GroundTruth_sampling500\domain_country_continent_statistics.json
+social_benchmark\Dataset_all\A_GroundTruth_sampling500\domain_statistics.py
+social_benchmark\Dataset_all\A_GroundTruth_sampling500\domain_summary.csv

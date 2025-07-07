@@ -1,0 +1,721 @@
+[
+  {
+    "question_id": "V5",
+    "question": "Q1 To begin, we have some questions about women. To what extent do you agree or disagree ...?  Q1a A working mother can establish just as warm and secure a relationship with her children as a mother who does not work.",
+    "answer": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "V6",
+    "question": "Q1 To begin, we have some questions about women. To what extent do you agree or disagree ...?  Q1b A preschool child is likely to suffer if his or her mother works.",
+    "answer": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "V7",
+    "question": "Q1 To begin, we have some questions about women. To what extent do you agree or disagree ...?  Q1c All in all, family life suffers when the woman has a full-time job.",
+    "answer": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "V8",
+    "question": "Q1 To begin, we have some questions about women. To what extent do you agree or disagree ...?  Q1d A job is all right, but what most women really want is a home and children.",
+    "answer": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "V9",
+    "question": "Q1 To begin, we have some questions about women. To what extent do you agree or disagree ...?  Q1e Being a housewife is just as fulfilling as working for pay.",
+    "answer": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "V10",
+    "question": "Q2 And to what extent do you agree or disagree...?  Q2a Both the man and woman should contribute to the household income",
+    "answer": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "V11",
+    "question": "Q2 And to what extent do you agree or disagree...?  Q2b A man's job is to earn money; a woman's job is to look after the home and family.",
+    "answer": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "V12",
+    "question": "Q3 Do you think that women should work outside the home full-time, part-time or not at all under the following circumstances?  Q3a When there is a child under school age.",
+    "answer": {
+      "1": "Work full-time",
+      "2": "Work part-time",
+      "3": "Stay at home"
+    },
+    "special": {
+      "TW": {
+        "6": "women should decide"
+      }
+    }
+  },
+  {
+    "question_id": "V13",
+    "question": "Q3 Do you think that women should work outside the home full-time, part-time or not at all under the following circumstances?  Q3b After the youngest child starts school.",
+    "answer": {
+      "1": "Work full-time",
+      "2": "Work part-time",
+      "3": "Stay at home"
+    },
+    "special": {
+      "TW": {
+        "6": "women should decide"
+      }
+    }
+  },
+  {
+    "question_id": "V14",
+    "question": "Q4 To what extent do you agree or disagree...?  Q4a Married people are generally happier than unmarried people.",
+    "answer": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "V15",
+    "question": "Q4 To what extent do you agree or disagree...?  Q4b People who want children ought to get married.",
+    "answer": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "V16",
+    "question": "Q4 To what extent do you agree or disagree...?  Q4c It is all right for a couple to live together without intending to get married.",
+    "answer": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "V17",
+    "question": "Q4 To what extent do you agree or disagree...?  Q4d Divorce is usually the best solution when a couple can't seem to work out their marriage problems.",
+    "answer": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "V18",
+    "question": "Q5 Children grow up in different kinds of families. To what extent do you agree or disagree to the following statements?  Q5a One parent can bring up a child as well as two parents together.",
+    "answer": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree"
+    },
+    "special": {
+    }
+  },
+  {
+    "question_id": "V19",
+    "question": "Q5 Children grow up in different kinds of families. To what extent do you agree or disagree to the following statements?  Q5b A same sex female couple can bring up a child as well as a male-female couple.",
+    "answer": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree"
+    },
+    "special": {
+    
+    }
+  },
+  {
+    "question_id": "V20",
+    "question": "Q5 Children grow up in different kinds of families. To what extent do you agree or disagree to the following statements?  Q5c A same sex male couple can bring up a child as well as a male-female couple.",
+    "answer": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree"
+    },
+    "special": {
+
+    }
+  },
+  {
+    "question_id": "V22",
+    "question": "Q7 To what extent do you agree or disagree...?  Q7a Watching children grow up is life's greatest joy.",
+    "answer": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "V23",
+    "question": "Q7 To what extent do you agree or disagree...?  Q7b Having children interferes too much with the freedom of parents.",
+    "answer": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "V24",
+    "question": "Q7 To what extent do you agree or disagree...?  Q7c Children are a financial burden on their parents.",
+    "answer": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "V25",
+    "question": "Q7 To what extent do you agree or disagree...?  Q7d Having children restricts the employment and career chances of one or both parents.",
+    "answer": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "V26",
+    "question": "Q7 To what extent do you agree or disagree...?  Q7e Having children increases people's social standing in society.",
+    "answer": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "V27",
+    "question": "Q7 To what extent do you agree or disagree...?  Q7f Adult children are an important source of help for elderly parents.",
+    "answer": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "V29",
+    "question": "Q9 IF THERE SHOULD BE PAID LEAVE And who should pay for this leave? ",
+    "answer": {
+      "1": "The government",
+      "2": "The employer",
+      "3": "Both the government and the employer",
+      "4": "Other sources"
+    },
+    "special": {
+
+    }
+  },
+  {
+    "question_id": "V30",
+    "question": "Q10 IF THERE SHOULD BE PAID LEAVE Still thinking about the same couple, if both are in a similar work situation and are eligible for paid leave, how should this paid leave period be divided between the mother and the father? ",
+    "answer": {
+      "1": "Mother entire, father not any",
+      "2": "Mother most, father some",
+      "3": "Mother and father half",
+      "4": "Father most, mother some",
+      "5": "Father entire, mother not any"
+    },
+    "special": {
+    }
+  },
+  {
+    "question_id": "V31",
+    "question": "Q11a Consider a family with a child under school age. What, in your opinion, is the best way for them to organize their family and work life? ",
+    "answer": {
+      "1": "Mother at home, father full-time",
+      "2": "Mother part-time, father full-time",
+      "3": "Both, mother and father full-time",
+      "4": "Both, mother and father part-time",
+      "5": "Father part-time, mother full-time",
+      "6": "Father at home, mother full-time"
+    },
+    "special": {
+      "ES": {
+        "6": "Not asked"
+      }
+    }
+  },
+  {
+    "question_id": "V32",
+    "question": "Q11b And, in your opinion, which of these options would be the least desirable? ",
+    "answer": {
+      "1": "Mother at home, father full-time",
+      "2": "Mother part-time, father full-time",
+      "3": "Both, mother and father full-time",
+      "4": "Both, mother and father part-time",
+      "5": "Father part-time, mother full-time",
+      "6": "Father at home, mother full-time"
+    },
+    "special": {
+      "ES": {
+        "6": "Not asked"
+      }
+    }
+  },
+  {
+    "question_id": "V33",
+    "question": "Q12 People have different views on childcare for children under school age. Who do you think should primarily provide childcare? ",
+    "answer": {
+      "1": "Family members",
+      "2": "Government agencies",
+      "3": "Non-profit organizations",
+      "4": "Private childcare providers",
+      "5": "Employers"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "V34",
+    "question": "Q13 Who do you think should primarily cover the costs of childcare for children under school age? ",
+    "answer": {
+      "1": "The family itself",
+      "2": "The government/ public funds",
+      "3": "The employers"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "V35",
+    "question": "Q14 Thinking about elderly people who need some help in their everyday lives, such as help with grocery shopping, cleaning the house, doing the laundry etc. Who do you think should primarily provide this help? ",
+    "answer": {
+      "1": "Family members",
+      "2": "Government agencies",
+      "3": "Non-profit organizations",
+      "4": "Private providers"
+    },
+    "special": {
+      "NL": {
+        "5": "Employers"
+      }
+    }
+  },
+  {
+    "question_id": "V36",
+    "question": "Q15 And who do you think should primarily cover the costs of this help to these elderly people? ",
+    "answer": {
+      "1": "The elderly people themselves/ their family",
+      "2": "The government/ public funds"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "V41",
+    "question": "Q18 How do you and your spouse/ partner organize the income that one or both of you receive? Please choose the option that comes closest. ",
+    "answer": {
+      "1": "I manage all and give partner his share",
+      "2": "Partner manages all and gives me my share",
+      "3": "We pool all money, each take out",
+      "4": "We pool some money, rest separate",
+      "5": "We each keep own money separate"
+    },
+    "special": {
+      "TW": {
+        "6": "My son or my daughter-in-law manages the money"
+      }
+    }
+  },
+  {
+    "question_id": "V42",
+    "question": "Q19 In your household who does the following things ...?  Q19a Does the laundry?",
+    "answer": {
+      "1": "Always me",
+      "2": "Usually me",
+      "3": "About equal or both together",
+      "4": "Usually my spouse/ partner",
+      "5": "Always my spouse/ partner",
+      "6": "Is done by a third person"
+    },
+    "special": {
+    }
+  },
+  {
+    "question_id": "V43",
+    "question": "Q19 In your household who does the following things ...?  Q19b Makes small repairs around the house?",
+    "answer": {
+      "1": "Always me",
+      "2": "Usually me",
+      "3": "About equal or both together",
+      "4": "Usually my spouse/ partner",
+      "5": "Always my spouse/ partner",
+      "6": "Is done by a third person"
+    },
+    "special": {
+    }
+  },
+  {
+    "question_id": "V44",
+    "question": "Q19 In your household who does the following things ...?  Q19c Cares for sick family members?",
+    "answer": {
+      "1": "Always me",
+      "2": "Usually me",
+      "3": "About equal or both together",
+      "4": "Usually my spouse/ partner",
+      "5": "Always my spouse/ partner",
+      "6": "Is done by a third person"
+    },
+    "special": {
+    }
+  },
+  {
+    "question_id": "V45",
+    "question": "Q19 In your household who does the following things ...?  Q19d Shops for groceries?",
+    "answer": {
+      "1": "Always me",
+      "2": "Usually me",
+      "3": "About equal or both together",
+      "4": "Usually my spouse/ partner",
+      "5": "Always my spouse/ partner",
+      "6": "Is done by a third person"
+    },
+    "special": {
+    }
+  },
+  {
+    "question_id": "V46",
+    "question": "Q19 In your household who does the following things ...?  Q19e Does the household cleaning?",
+    "answer": {
+      "1": "Always me",
+      "2": "Usually me",
+      "3": "About equal or both together",
+      "4": "Usually my spouse/ partner",
+      "5": "Always my spouse/ partner",
+      "6": "Is done by a third person"
+    },
+    "special": {
+    }
+  },
+  {
+    "question_id": "V47",
+    "question": "Q19 In your household who does the following things ...?  Q19f Prepares the meals?",
+    "answer": {
+      "1": "Always me",
+      "2": "Usually me",
+      "3": "About equal or both together",
+      "4": "Usually my spouse/ partner",
+      "5": "Always my spouse/ partner",
+      "6": "Is done by a third person"
+    },
+    "special": {
+    }
+  },
+  {
+    "question_id": "V48",
+    "question": "Q20 Which of the following best applies to the sharing of household work between you and your spouse/ partner? ",
+    "answer": {
+      "1": "I do much more than my fair share",
+      "2": "I do a bit more than my fair share",
+      "3": "I do roughly my fair share",
+      "4": "I do a bit less than my fair share",
+      "5": "I do much less than my fair share"
+    },
+    "special": {
+    }
+  },
+  {
+    "question_id": "V49",
+    "question": "Q21 When you and your spouse/ partner make decisions about choosing shared weekend activities, who has the final say? ",
+    "answer": {
+      "1": "Mostly me",
+      "2": "Mostly my spouse/ partner",
+      "3": "Sometimes me/ sometimes spouse, partner",
+      "4": "We decide together",
+      "5": "Someone else"
+    },
+    "special": {
+    }
+  },
+  {
+    "question_id": "V50",
+    "question": "Q22 Considering all sources of income, between you and your spouse/ partner, who has the higher income? ",
+    "answer": {
+      "1": "My spouse/ partner has no income",
+      "2": "I have a much higher income",
+      "3": "I have a higher income",
+      "4": "We have about the same income",
+      "5": "My spouse/ partner has a higher income",
+      "6": "My spouse/ partner has a much higher income",
+      "7": "I have no income"
+    },
+    "special": {
+      "TW": {
+        "10": "Both have no income"
+      }
+    }
+  },
+  {
+    "question_id": "V51",
+    "question": "Q23 How often has each of the following happened to you during the past three months?  Q23a I have come home from work too tired to do the chores which need to be done.",
+    "answer": {
+      "0": "Doesn't apply, no job, no family responsibilities",
+      "1": "Several times a week",
+      "2": "Several times a month",
+      "3": "Once or twice",
+      "4": "Never"
+    },
+    "special": {
+    }
+  },
+  {
+    "question_id": "V52",
+    "question": "Q23 How often has each of the following happened to you during the past three months?  Q23b It has been difficult for me to fulfil my family responsibilities because of the amount of time I spent on my job.",
+    "answer": {
+      "0": "Doesn't apply, no job, no family responsibilities",
+      "1": "Several times a week",
+      "2": "Several times a month",
+      "3": "Once or twice",
+      "4": "Never"
+    },
+    "special": {
+    }
+  },
+  {
+    "question_id": "V53",
+    "question": "Q23 How often has each of the following happened to you during the past three months?  Q23c I have arrived at work too tired to function well because of the household work I had done.",
+    "answer": {
+      "0": "Doesn't apply, no job, no family responsibilities",
+      "1": "Several times a week",
+      "2": "Several times a month",
+      "3": "Once or twice",
+      "4": "Never"
+    },
+    "special": {
+    }
+  },
+  {
+    "question_id": "V54",
+    "question": "Q23 How often has each of the following happened to you during the past three months?  Q23d I have found it difficult to concentrate at work because of my family responsibilities.",
+    "answer": {
+      "0": "Doesn't apply, no job, no family responsibilities",
+      "1": "Several times a week",
+      "2": "Several times a month",
+      "3": "Once or twice",
+      "4": "Never"
+    },
+    "special": {
+    }
+  },
+  {
+    "question_id": "V55",
+    "question": "Q24 If you were to consider your life in general, how happy or unhappy would you say you are, on the whole? ",
+    "answer": {
+      "1": "Completely happy",
+      "2": "Very happy",
+      "3": "Fairly happy",
+      "4": "Neither happy nor unhappy",
+      "5": "Fairly unhappy",
+      "6": "Very unhappy",
+      "7": "Completely unhappy"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "V56",
+    "question": "Q25 All things considered, how satisfied are you with your (main) job? ",
+    "answer": {
+      "0": "Doesn't apply, no job",
+      "1": "Completely satisfied",
+      "2": "Very satisfied",
+      "3": "Fairly satisfied",
+      "4": "Neither satisfied nor dissatisfied",
+      "5": "Fairly dissatisfied",
+      "6": "Very dissatisfied",
+      "7": "Completely dissatisfied"
+    },
+    "special": {
+    }
+  },
+  {
+    "question_id": "V57",
+    "question": "Q26 All things considered, how satisfied are you with your family life? ",
+    "answer": {
+      "1": "Completely satisfied",
+      "2": "Very satisfied",
+      "3": "Fairly satisfied",
+      "4": "Neither satisfied nor dissatisfied",
+      "5": "Fairly dissatisfied",
+      "6": "Very dissatisfied",
+      "7": "Completely dissatisfied"
+    },
+    "special": {
+    }
+  },
+  {
+    "question_id": "V58",
+    "question": "Q27 In general, would you say your health is...? ",
+    "answer": {
+      "1": "Excellent",
+      "2": "Very good",
+      "3": "Good",
+      "4": "Fair",
+      "5": "Poor"
+    },
+    "special": {
+      "HU": {
+        "1": "Very good",
+        "2": "Good",
+        "3": "Satisfactory",
+        "4": "Bad",
+        "5": "Very bad"
+      }
+    }
+  },
+  {
+    "question_id": "V59",
+    "question": "Q28 Did your mother ever work for pay for as long as one year, after you were born and before you were 14? ",
+    "answer": {
+      "1": "Yes, she worked for pay",
+      "2": "No",
+      "6": "Doesn't apply, mother not present"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "V60",
+    "question": "Q29 PLEASE RESPOND TO QUESTION 29-31 IF YOU HAVE OR HAVE HAD CHILDREN Did you work outside the home full-time, part-time or not at all ...?  Q29a When a child was under school age?",
+    "answer": {
+      "1": "Worked full-time",
+      "2": "Worked part-time",
+      "3": "Stayed at home"
+    },
+    "special": {
+      "TW": {
+        "4": "Worked at home"
+      }
+    }
+  },
+  {
+    "question_id": "V61",
+    "question": "Q29 PLEASE RESPOND TO QUESTION 29-31 IF YOU HAVE OR HAVE HAD CHILDREN Did you work outside the home full-time, part-time or not at all ...?  Q29b After the youngest child started school?",
+    "answer": {
+      "1": "Worked full-time",
+      "2": "Worked part-time",
+      "3": "Stayed at home"
+    },
+    "special": {
+      "TW": {
+        "4": "Worked at home"
+      }
+    }
+  },
+  {
+    "question_id": "V62",
+    "question": "Q30 PLEASE RESPOND TO QUESTION 29-31 IF YOU HAVE OR HAVE HAD CHILDREN What about your spouse/ partner at that time - did he or she work outside the home full-time, part-time or not at all ...?  Q30a When a child was under school age?",
+    "answer": {
+      "1": "Worked full-time",
+      "2": "Worked part-time",
+      "3": "Stayed at home"
+    },
+    "special": {
+      "TW": {
+        "4": "Worked at home"
+      }
+    }
+  },
+  {
+    "question_id": "V63",
+    "question": "Q30 PLEASE RESPOND TO QUESTION 29-31 IF YOU HAVE OR HAVE HAD CHILDREN What about your spouse/ partner at that time - did he or she work outside the home full-time, part-time or not at all ...?  Q30b After the youngest child started school?",
+    "answer": {
+      "1": "Worked full-time",
+      "2": "Worked part-time",
+      "3": "Stayed at home"
+    },
+    "special": {
+      "TW": {
+        "4": "Worked at home"
+      }
+    }
+  },
+  {
+    "question_id": "V64",
+    "question": "Q31 PLEASE RESPOND TO QUESTIONS 29-31 IF YOU HAVE OR HAVE HAD CHILDREN Who usually makes/ made the decisions about how to bring up your children? ",
+    "answer": {
+      "1": "Mostly me",
+      "2": "Mostly my spouse/ partner",
+      "3": "Sometimes me/ sometimes spouse, partner",
+      "4": "We decide/ decided together",
+      "5": "Someone else"
+    },
+    "special": {
+    }
+  }
+]

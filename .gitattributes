@@ -1,0 +1,10 @@
+原始数据/**/*.sav filter=lfs diff=lfs merge=lfs -text
+原始数据/**/*.xlsx filter=lfs diff=lfs merge=lfs -text
+Dataset/**/* filter=lfs diff=lfs merge=lfs -text
+Data_process/**/* filter=lfs diff=lfs merge=lfs -text
+文字、图资料/**/* filter=lfs diff=lfs merge=lfs -text
+输入数据/**/* filter=lfs diff=lfs merge=lfs -text
+*.sav filter=lfs diff=lfs merge=lfs -text
+*.xlsx filter=lfs diff=lfs merge=lfs -text
+原始数据/量表-原始数据/Family[[:space:]]and[[:space:]]Changing[[:space:]]Gender[[:space:]]Roles/ZA5900_v4-0-0.sav filter=lfs diff=lfs merge=lfs -text
+原始数据/量表-原始数据/Religion/ZA7570_v2-1-0.sav filter=lfs diff=lfs merge=lfs -text

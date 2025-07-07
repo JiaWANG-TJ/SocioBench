@@ -1,0 +1,628 @@
+[
+  {
+    "question_id": "v1",
+    "question": "Q1 If you were to consider your life in general these days, how happy or unhappy would you say you are, on the whole? ",
+    "answer": {
+      "1": "Completely happy",
+      "2": "Very happy",
+      "3": "Fairly happy",
+      "4": "Neither happy nor unhappy",
+      "5": "Fairly unhappy",
+      "6": "Very unhappy",
+      "7": "Completely unhappy"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v2",
+    "question": "Q2 In general, how much confidence do you have in the health care system in [country]? ",
+    "answer": {
+      "1": "Complete confidence",
+      "2": "A great deal of confidence",
+      "3": "Some confidence",
+      "4": "Very little confidence",
+      "5": "No confidence at all"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v3",
+    "question": "Q3 Is it fair or unfair that people with higher incomes can afford better health care than people with lower incomes? ",
+    "answer": {
+      "1": "Very fair",
+      "2": "Somewhat fair",
+      "3": "Neither fair nor unfair",
+      "4": "Somewhat unfair",
+      "5": "Very unfair"
+    },
+    "special": {
+    }
+  },
+  {
+    "question_id": "v4",
+    "question": "Q4 How much do you agree or disagree with the following statements?  Q4a People use health care services more than necessary.",
+    "answer": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v5",
+    "question": "Q4 How much do you agree or disagree with the following statements?  Q4b The government should provide only limited health care services.",
+    "answer": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v6",
+    "question": "Q4 How much do you agree or disagree with the following statements?  Q4c In general, the health care system in [country] is inefficient.",
+    "answer": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v7",
+    "question": "Q5 How willing would you be to pay higher taxes to improve the level of health care for all people in [country]? ",
+    "answer": {
+      "1": "Very willing",
+      "2": "Fairly willing",
+      "3": "Neither willing nor unwilling",
+      "4": "Fairly unwilling",
+      "5": "Very unwilling"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v8",
+    "question": "Q6 How much do you agree or disagree with the following statements?  Q6a People should have access to publicly funded health care even if they do not hold citizenship of [country].",
+    "answer": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v9",
+    "question": "Q6 How much do you agree or disagree with the following statements?  Q6b People should have access to publicly funded health care even if they behave in ways that damage their health.",
+    "answer": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v10",
+    "question": "Q7 In [country], do you think it is easier or harder to get access to health care …  Q7a ... for rich people than for poor people?",
+    "answer": {
+      "1": "Much easier",
+      "2": "Somewhat easier",
+      "3": "About the same",
+      "4": "Somewhat harder",
+      "5": "Much harder"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v11",
+    "question": "Q7 In [country], do you think it is easier or harder to get access to health care …  Q7b ... for old people than for young people?",
+    "answer": {
+      "1": "Much easier",
+      "2": "Somewhat easier",
+      "3": "About the same",
+      "4": "Somewhat harder",
+      "5": "Much harder"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v12",
+    "question": "Q7 In [country], do you think it is easier or harder to get access to health care …  Q7c ... for women than for men?",
+    "answer": {
+      "1": "Much easier",
+      "2": "Somewhat easier",
+      "3": "About the same",
+      "4": "Somewhat harder",
+      "5": "Much harder"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v13",
+    "question": "Q7 In [country], do you think it is easier or harder to get access to health care …  Q7d ... for citizens of [country] than for people who do not hold [country's] citizenship?",
+    "answer": {
+      "1": "Much easier",
+      "2": "Somewhat easier",
+      "3": "About the same",
+      "4": "Somewhat harder",
+      "5": "Much harder"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v14",
+    "question": "Q8 Severe health problems may have many causes. How much do you agree or disagree with the following statements?  Q8a People suffer from severe health problems because they behaved in ways that damaged their health.",
+    "answer": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v15",
+    "question": "Q8 Severe health problems may have many causes. How much do you agree or disagree with the following statements?  Q8b People suffer from severe health problems because of the environment they are exposed to at work or where they live.",
+    "answer": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v16",
+    "question": "Q8 Severe health problems may have many causes. How much do you agree or disagree with the following statements?  Q8c People suffer from severe health problems because of their genes.",
+    "answer": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v17",
+    "question": "Q8 Severe health problems may have many causes. How much do you agree or disagree with the following statements?  Q8d People suffer from severe health problems because they are poor.",
+    "answer": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v18",
+    "question": "Q9 To what extent do you agree or disagree with the following statement: [Alternative/traditional/folk] medicine provides better solutions for health problems than [mainstream/Western conventional] medicine? ",
+    "answer": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v19",
+    "question": "Q10 How much do you agree or disagree with the following statements about doctors in general in [country]?  Q10a All things considered, doctors can be trusted.",
+    "answer": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v20",
+    "question": "Q10 How much do you agree or disagree with the following statements about doctors in general in [country]?  Q10b The medical skills of doctors are not as good as they should be.",
+    "answer": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v21",
+    "question": "Q10 How much do you agree or disagree with the following statements about doctors in general in [country]?  Q10c Doctors care more about their earnings than about their patients.",
+    "answer": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v22",
+    "question": "Q11 During the past 12 months, how often, if at all, did you use the internet on any device (such as computers, tablets and smartphones) to look for health or medical information for yourself or someone else?",
+    "answer": {
+      "1": "Several times a day",
+      "2": "Once a day",
+      "3": "Several times a week",
+      "4": "Several times a month",
+      "5": "Several times a year",
+      "6": "Never or almost never",
+      "-4": "I do not have access to the internet"
+    },
+    "special": {
+      "PL": {
+        "6": "1-2 times a year + Never"
+      }
+    }
+  },
+  {
+    "question_id": "v28",
+    "question": "Q14 To what extent do you agree or disagree with the following statements?  Q14a The internet is useful to help people decide if their symptoms are serious enough to go to the doctor.",
+    "answer": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree"
+    },
+    "special": {
+    }
+  },
+  {
+    "question_id": "v29",
+    "question": "Q14 To what extent do you agree or disagree with the following statements?  Q14b The internet is useful to check that the doctor is giving people appropriate advice.",
+    "answer": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree"
+    },
+    "special": {
+    }
+  },
+  {
+    "question_id": "v30",
+    "question": "Q14 To what extent do you agree or disagree with the following statements?  Q14c It is not easy to distinguish between reliable and unreliable health information on the internet.",
+    "answer": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree"
+    },
+    "special": {
+    }
+  },
+  {
+    "question_id": "v31",
+    "question": "Q15 How much do you agree or disagree with the following statements about vaccinations?  Q15a Overall, vaccinations do more harm than good.",
+    "answer": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v32",
+    "question": "Q15 How much do you agree or disagree with the following statements about vaccinations?  Q15b It is better to develop immunity by getting ill than having a vaccination.",
+    "answer": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v33",
+    "question": "Q16 During the past 4 weeks how often…  Q16a ...have you had difficulties with work or household activities because of health problems?",
+    "answer": {
+      "1": "Never",
+      "2": "Seldom",
+      "3": "Sometimes",
+      "4": "Often",
+      "5": "Very often"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v34",
+    "question": "Q16 During the past 4 weeks how often…  Q16b ...have you had bodily aches or pains?",
+    "answer": {
+      "1": "Never",
+      "2": "Seldom",
+      "3": "Sometimes",
+      "4": "Often",
+      "5": "Very often"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v35",
+    "question": "Q16 During the past 4 weeks how often…  Q16c ...have you felt unhappy and depressed?",
+    "answer": {
+      "1": "Never",
+      "2": "Seldom",
+      "3": "Sometimes",
+      "4": "Often",
+      "5": "Very often"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v36",
+    "question": "Q16 During the past 4 weeks how often…  Q16d ...have you lost confidence in yourself?",
+    "answer": {
+      "1": "Never",
+      "2": "Seldom",
+      "3": "Sometimes",
+      "4": "Often",
+      "5": "Very often"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v37",
+    "question": "Q16 During the past 4 weeks how often…  Q16e ...have you felt you could not overcome your problems?",
+    "answer": {
+      "1": "Never",
+      "2": "Seldom",
+      "3": "Sometimes",
+      "4": "Often",
+      "5": "Very often"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v38",
+    "question": "Q17 During the past 12 months, how often did you visit or were visited by...  Q17a ...a doctor?",
+    "answer": {
+      "1": "Never",
+      "2": "Seldom",
+      "3": "Sometimes",
+      "4": "Often",
+      "5": "Very often"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v39",
+    "question": "Q17 During the past 12 months, how often did you visit or were visited by...  Q17b ...an [alternative/ traditional/ folk] health care practitioner?",
+    "answer": {
+      "1": "Never",
+      "2": "Seldom",
+      "3": "Sometimes",
+      "4": "Often",
+      "5": "Very often"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v40",
+    "question": "Q18 During the past 12 months did it ever happen that you did not get the medical treatment you needed because…  Q18a ...you could not pay for it?",
+    "answer": {
+      "1": "Yes",
+      "2": "No",
+      "-4": "Did not need medical treatment"
+    },
+    "special": {
+    }
+  },
+  {
+    "question_id": "v41",
+    "question": "Q18 During the past 12 months did it ever happen that you did not get the medical treatment you needed because…  Q18b ...you could not take the time off work or had other commitments?",
+    "answer": {
+      "1": "Yes",
+      "2": "No",
+      "-4": "Did not need medical treatment"
+    },
+    "special": {
+    }
+  },
+  {
+    "question_id": "v42",
+    "question": "Q18 During the past 12 months did it ever happen that you did not get the medical treatment you needed because…  Q18c ...the waiting list was too long?",
+    "answer": {
+      "1": "Yes",
+      "2": "No",
+      "-4": "Did not need medical treatment"
+    },
+    "special": {
+    }
+  },
+  {
+    "question_id": "v43",
+    "question": "Q19 How likely is it that if you become seriously ill, you would get or not get the best treatment available in [country] ",
+    "answer": {
+      "1": "It's certain I would get",
+      "2": "It's likely I would get",
+      "3": "Equal chance of getting or not getting",
+      "4": "It's likely I would not get",
+      "5": "It's certain I would not get"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v44",
+    "question": "Q20 In general, how satisfied or dissatisfied are you with the health care system in [country]? ",
+    "answer": {
+      "1": "Completely satisfied",
+      "2": "Very satisfied",
+      "3": "Fairly satisfied",
+      "4": "Neither satisfied nor dissatisfied",
+      "5": "Fairly dissatisfied",
+      "6": "Very dissatisfied",
+      "7": "Completely dissatisfied"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v45",
+    "question": "Q21 How satisfied or dissatisfied were you with the treatment you received…  Q21a ...when you last visited a doctor?",
+    "answer": {
+      "1": "Completely satisfied",
+      "2": "Very satisfied",
+      "3": "Fairly satisfied",
+      "4": "Neither satisfied nor dissatisfied",
+      "5": "Fairly dissatisfied",
+      "6": "Very dissatisfied",
+      "7": "Completely dissatisfied"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v47",
+    "question": "Q22 Do you smoke cigarettes, and if so about how many cigarettes a day? ",
+    "answer": {
+      "1": "Do not smoke and never did",
+      "2": "Do not smoke now but smoked in the past",
+      "3": "Smoke 1-5 cigarettes per day",
+      "4": "Smoke 6-10 cigarettes per day",
+      "5": "Smoke 11-20 cigarettes per day",
+      "6": "Smoke 21-40 cigarettes per day",
+      "7": "Smoke more than 40 cigarettes per day"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v48",
+    "question": "Q23 How often do you…  Q23a ...drink 4 or more alcoholic drinks on the same day?",
+    "answer": {
+      "1": "Never",
+      "2": "Once a month or less often",
+      "3": "Several times a month",
+      "4": "Several times a week",
+      "5": "Daily"
+    },
+    "special": {
+      "TW": {
+        "-9": "I don't drink like this now, but I used to"
+      }
+    }
+  },
+  {
+    "question_id": "v49",
+    "question": "Q23 How often do you…  Q23b ...do physical activity for at least 20 minutes that makes you sweat or breathe more heavily than usual?",
+    "answer": {
+      "1": "Never",
+      "2": "Once a month or less often",
+      "3": "Several times a month",
+      "4": "Several times a week",
+      "5": "Daily"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v50",
+    "question": "Q23 How often do you…  Q23c ...eat fresh fruit or vegetables?",
+    "answer": {
+      "1": "Never",
+      "2": "Once a month or less often",
+      "3": "Several times a month",
+      "4": "Several times a week",
+      "5": "Daily"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v51",
+    "question": "Q24 In general, would you say your health is … ",
+    "answer": {
+      "1": "Excellent",
+      "2": "Very good",
+      "3": "Good",
+      "4": "Fair",
+      "5": "Poor"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v52",
+    "question": "Q25 Do you have a long-standing illness, a chronic condition, or a disability? ",
+    "answer": {
+      "1": "Yes",
+      "2": "No"
+    },
+    "special": {
+
+    }
+  },
+  {
+    "question_id": "v55",
+    "question": "Q27 Do you think the [country] government should or should not have the right to do the following at times of severe epidemics?  Q27a Shut down businesses and places of employment.",
+    "answer": {
+      "1": "Definitely should have the right",
+      "2": "Probably should have the right",
+      "3": "Probably should not have the right",
+      "4": "Definitely should not have the right"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v56",
+    "question": "Q27 Do you think the [country] government should or should not have the right to do the following at times of severe epidemics?  Q27b Demand that people stay at home.",
+    "answer": {
+      "1": "Definitely should have the right",
+      "2": "Probably should have the right",
+      "3": "Probably should not have the right",
+      "4": "Definitely should not have the right"
+    },
+    "special": {
+    }
+  },
+  {
+    "question_id": "v57",
+    "question": "Q27 Do you think the [country] government should or should not have the right to do the following at times of severe epidemics?  Q27c Use digital (mobile phone) surveillance to track infected people.",
+    "answer": {
+      "1": "Definitely should have the right",
+      "2": "Probably should have the right",
+      "3": "Probably should not have the right",
+      "4": "Definitely should not have the right"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v58",
+    "question": "Q27 Do you think the [country] government should or should not have the right to do the following at times of severe epidemics?  Q27d Require people to wear face masks.",
+    "answer": {
+      "1": "Definitely should have the right",
+      "2": "Probably should have the right",
+      "3": "Probably should not have the right",
+      "4": "Definitely should not have the right"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v59",
+    "question": "Q27 Do you think the [country] government should or should not have the right to do the following at times of severe epidemics?  Q27e Ban public gatherings.",
+    "answer": {
+      "1": "Definitely should have the right",
+      "2": "Probably should have the right",
+      "3": "Probably should not have the right",
+      "4": "Definitely should not have the right"
+    },
+    "special": {}
+  }
+]

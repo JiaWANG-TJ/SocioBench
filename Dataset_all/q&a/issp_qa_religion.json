@@ -1,0 +1,844 @@
+[
+  {
+    "question_id": "v1",
+    "question": "Q1 If you were to consider your life in general these days, how happy or unhappy would you say you are, on the whole...",
+    "answer": {
+      "1": "Very happy",
+      "2": "Fairly happy",
+      "3": "Not very happy",
+      "4": "Not at all happy"
+    },
+    "special": {
+    }
+  },
+  {
+    "question_id": "v2",
+    "question": "Q2 All things considered, how satisfied are you with your relationships with family members?",
+    "answer": {
+      "1": "Completely satisfied",
+      "2": "Very satisfied",
+      "3": "Fairly satisfied",
+      "4": "Neither satisfied nor dissatisfied",
+      "5": "Fairly dissatisfied",
+      "6": "Very dissatisfied",
+      "7": "Completely dissatisfied"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v3",
+    "question": "Q3 Do you think it is wrong or not wrong if a MARRIED person has sexual relations with someone OTHER than his or her husband or wife, is it...",
+    "answer": {
+      "1": "Always wrong",
+      "2": "Almost always wrong",
+      "3": "Wrong only sometimes",
+      "4": "Not wrong at all"
+    },
+    "special": {
+    }
+  },
+  {
+    "question_id": "v4",
+    "question": "Q4 And what about sexual relations between two adults of the same sex, is it...",
+    "answer": {
+      "1": "Always wrong",
+      "2": "Almost always wrong",
+      "3": "Wrong only sometimes",
+      "4": "Not wrong at all"
+    },
+    "special": {
+    }
+  },
+  {
+    "question_id": "v5",
+    "question": "Q5 Do you PERSONALLY think it is wrong or not wrong for a woman to have an abortion if the family has a very low income and cannot afford any more children.",
+    "answer": {
+      "1": "Always wrong",
+      "2": "Almost always wrong",
+      "3": "Wrong only sometimes",
+      "4": "Not wrong at all"
+    },
+    "special": {
+    }
+  },
+  {
+    "question_id": "v6",
+    "question": "Q6 Do you agree or disagree with the following statement? A husband's job is to earn money; a wife's job is to look aer the home and family.",
+    "answer": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree"
+    },
+    "special": {
+
+    }
+  },
+  {
+    "question_id": "v7",
+    "question": "Q7 How much confidence do you have in...  Q7a [Parliament] [use national legislature, e.g. U.S. Congress]",
+    "answer": {
+      "1": "Complete confidence",
+      "2": "A great deal of confidence",
+      "3": "Some confidence",
+      "4": "Very little confidence",
+      "5": "No confidence at all"
+    },
+    "special": {
+
+    }
+  },
+  {
+    "question_id": "v8",
+    "question": "Q7 How much confidence do you have in...  Q7b Business and industry",
+    "answer": {
+      "1": "Complete confidence",
+      "2": "A great deal of confidence",
+      "3": "Some confidence",
+      "4": "Very little confidence",
+      "5": "No confidence at all"
+    },
+    "special": {
+
+    }
+  },
+  {
+    "question_id": "v9",
+    "question": "Q7 How much confidence do you have in...  Q7c Churches and religious organizations",
+    "answer": {
+      "1": "Complete confidence",
+      "2": "A great deal of confidence",
+      "3": "Some confidence",
+      "4": "Very little confidence",
+      "5": "No confidence at all"
+    },
+    "special": {
+
+    }
+  },
+  {
+    "question_id": "v10",
+    "question": "Q7 How much confidence do you have in...  Q7d Courts and the legal system",
+    "answer": {
+      "1": "Complete confidence",
+      "2": "A great deal of confidence",
+      "3": "Some confidence",
+      "4": "Very little confidence",
+      "5": "No confidence at all"
+    },
+    "special": {
+
+    }
+  },
+  {
+    "question_id": "v11",
+    "question": "Q7 How much confidence do you have in...  Q7e Schools and the educational system",
+    "answer": {
+      "1": "Complete confidence",
+      "2": "A great deal of confidence",
+      "3": "Some confidence",
+      "4": "Very little confidence",
+      "5": "No confidence at all"
+    },
+    "special": {
+
+    }
+  },
+  {
+    "question_id": "v12",
+    "question": "Q8 How much do you agree or disagree with the following statement? Religious leaders should not try to influence how people vote in elections.",
+    "answer": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree"
+    },
+    "special": {
+
+    }
+  },
+  {
+    "question_id": "v13",
+    "question": "Q9 Please consider the following statements and tell me whether you agree or disagree. Q9a We trust too much in science and not enough in religious faith.",
+    "answer": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree"
+    },
+    "special": {
+
+    }
+  },
+  {
+    "question_id": "v14",
+    "question": "Q9 Please consider the following statements and tell me whether you agree or disagree. Q9b Looking around the world, religions bring more conflict than peace.",
+    "answer": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree"
+    },
+    "special": {
+    }
+  },
+  {
+    "question_id": "v15",
+    "question": "Q9 Please consider the following statements and tell me whether you agree or disagree. Q9c People with very strong religious beliefs are oen too intolerant of others.",
+    "answer": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree"
+    },
+    "special": {
+    }
+  },
+  {
+    "question_id": "v16",
+    "question": "Q10 Do you think that churches and religious organizations in this country have too much power or too little power?",
+    "answer": {
+      "1": "Far too much power",
+      "2": "Too much power",
+      "3": "About the right amount of power",
+      "4": "Too little power",
+      "5": "Far too little power"
+    },
+    "special": {
+
+    }
+  },
+  {
+    "question_id": "v17",
+    "question": "Q11 People have different religions and different religious views. Would you accept a person from a different religion or with a very different religious view from yours marrying a relative of yours?",
+    "answer": {
+      "1": "Definitely accept",
+      "2": "Probably accept",
+      "3": "Probably not accept",
+      "4": "Definitely not accept"
+    },
+    "special": {
+
+    }
+  },
+  {
+    "question_id": "v18",
+    "question": "Q12 There are some people whose views are considered extreme by the majority. Consider religious extremists, that is people who believe that their religion is the only true faith and all other religions should be considered as enemies. Do you think such people should be allowed to... (PLEASE TICK ONE BOX ON EACH LINE) Q12a Hold public meetings to express their views?",
+    "answer": {
+      "1": "Definitely",
+      "2": "Probably",
+      "3": "Probably not",
+      "4": "Definitely not"
+    },
+    "special": {
+
+    }
+  },
+  {
+    "question_id": "v19",
+    "question": "Q12 There are some people whose views are considered extreme by the majority. Consider religious extremists, that is people who believe that their religion is the only true faith and all other religions should be considered as enemies. Do you think such people should be allowed to... (PLEASE TICK ONE BOX ON EACH LINE) Q12b Publish their views on the Internet or social media?",
+    "answer": {
+      "1": "Definitely",
+      "2": "Probably",
+      "3": "Probably not",
+      "4": "Definitely not"
+    },
+    "special": {
+
+    }
+  },
+  {
+    "question_id": "v20",
+    "question": "Q13 Please indicate which statement below comes closest to expressing what you believe about God.",
+    "answer": {
+      "1": "I don't believe in God",
+      "2": "Don't know whether there is a God and no way to find out",
+      "3": "Don't believe in a personal God, but in a Higher Power",
+      "4": "Find myself believing in God sometimes, but not at others",
+      "5": "While I have doubts, I feel that I do believe in God",
+      "6": "I know God really exists and have no doubts about it"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v21",
+    "question": "Q14 Which best describes your beliefs about God?",
+    "answer": {
+      "1": "I don't believe in God now and I never have",
+      "2": "I don't believe in God now, but I used to",
+      "3": "I believe in God now, but I didn't use to",
+      "4": "I believe in God now and I always have"
+    },
+    "special": {
+
+    }
+  },
+  {
+    "question_id": "v22",
+    "question": "Q15 Do you believe in... Q15a Life aer death?",
+    "answer": {
+      "1": "Yes, definitely",
+      "2": "Yes, probably",
+      "3": "No, probably not",
+      "4": "No, definitely not"
+    },
+    "special": {
+
+    }
+  },
+  {
+    "question_id": "v23",
+    "question": "Q15 Do you believe in... Q15b Heaven?",
+    "answer": {
+      "1": "Yes, definitely",
+      "2": "Yes, probably",
+      "3": "No, probably not",
+      "4": "No, definitely not"
+    },
+    "special": {
+
+    }
+  },
+  {
+    "question_id": "v24",
+    "question": "Q15 Do you believe in... Q15c Hell?",
+    "answer": {
+      "1": "Yes, definitely",
+      "2": "Yes, probably",
+      "3": "No, probably not",
+      "4": "No, definitely not"
+    },
+    "special": {
+
+    }
+  },
+  {
+    "question_id": "v25",
+    "question": "Q15 Do you believe in... Q15d Religious miracles?",
+    "answer": {
+      "1": "Yes, definitely",
+      "2": "Yes, probably",
+      "3": "No, probably not",
+      "4": "No, definitely not"
+    },
+    "special": {
+
+    }
+  },
+  {
+    "question_id": "v26",
+    "question": "Q15 Do you believe in... Q15e The supernatural powers of deceased ancestors?",
+    "answer": {
+      "1": "Yes, definitely",
+      "2": "Yes, probably",
+      "3": "No, probably not",
+      "4": "No, definitely not"
+    },
+    "special": {
+
+    }
+  },
+  {
+    "question_id": "v27",
+    "question": "Q16 Do you agree or disagree with the following?  Q16a There is a God who concerns Himself with every human being personally.",
+    "answer": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree"
+    },
+    "special": {
+
+    }
+  },
+  {
+    "question_id": "v28",
+    "question": "Q16 Do you agree or disagree with the following?  Q16b There is little that people can do to change the course of their lives.",
+    "answer": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree"
+    },
+    "special": {
+
+    }
+  },
+  {
+    "question_id": "v29",
+    "question": "Q16 Do you agree or disagree with the following?  Q16c To me, life is meaningful only because God exists.",
+    "answer": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree"
+    },
+    "special": {
+
+    }
+  },
+  {
+    "question_id": "v30",
+    "question": "Q16 Do you agree or disagree with the following?  Q16d In my opinion, life does not serve any purpose.",
+    "answer": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree"
+    },
+    "special": {
+
+    }
+  },
+  {
+    "question_id": "v31",
+    "question": "Q16 Do you agree or disagree with the following?  Q16e Life is only meaningful if you provide the meaning yourself.",
+    "answer": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree"
+    },
+    "special": {
+
+    }
+  },
+  {
+    "question_id": "v32",
+    "question": "Q16 Do you agree or disagree with the following?  Q16f I have my own way of connecting with God without churches or religious services.",
+    "answer": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree"
+    },
+    "special": {
+
+    }
+  },
+  {
+    "question_id": "v33",
+    "question": "Q17 In your opinion, does your religion treat men and women equally, treat men better than women, or treat women better than men?",
+    "answer": {
+      "1": "I don't belong to or follow any religion",
+      "2": "Treats men and women equally",
+      "3": "Treats men better than women",
+      "4": "Treats women better than men"
+    },
+    "special": {
+    }
+  },
+  {
+    "question_id": "v35",
+    "question": "Q18b Mother's religion: compressed groups of religions",
+    "answer": {
+      "0": "No religion",
+      "1": "Catholic",
+      "2": "Protestant",
+      "3": "Orthodox",
+      "4": "Other Christian",
+      "5": "Jewish",
+      "6": "Islamic",
+      "7": "Buddhist",
+      "8": "Hindu",
+      "9": "Other Asian Religions",
+      "10": "Other Religions"
+    },
+    "special": {
+    }
+  },
+  {
+    "question_id": "v37",
+    "question": "Q19b Father's religion: compressed groups of religions",
+    "answer": {
+      "0": "No religion",
+      "1": "Catholic",
+      "2": "Protestant",
+      "3": "Orthodox",
+      "4": "Other Christian",
+      "5": "Jewish",
+      "6": "Islamic",
+      "7": "Buddhist",
+      "8": "Hindu",
+      "9": "Other Asian Religions",
+      "10": "Other Religions"
+    },
+    "special": {
+    }
+  },
+  {
+    "question_id": "v39",
+    "question": "Religion respondent raised in: compressed groups of religions.",
+    "answer": {
+      "0": "No religion",
+      "1": "Catholic",
+      "2": "Protestant",
+      "3": "Orthodox",
+      "4": "Other Christian",
+      "5": "Jewish",
+      "6": "Islamic",
+      "7": "Buddhist",
+      "8": "Hindu",
+      "9": "Other Asian Religions",
+      "10": "Other Religions"
+    },
+    "special": {
+      "NZ": {
+        "4": "Christian"
+      }
+    }
+  },
+  {
+    "question_id": "v40",
+    "question": "When you were a child, how often did your mother attend religious services?",
+    "answer": {
+      "1": "Never",
+      "2": "Less than once a year",
+      "3": "About once or twice a year",
+      "4": "Several times a year",
+      "5": "About once a month",
+      "6": "2-3 times a month",
+      "7": "Nearly every week",
+      "8": "Every week",
+      "9": "Several times a week"
+    },
+    "special": {
+      "KR": {
+        "3": "About once a year"
+      }
+    }
+  },
+  {
+    "question_id": "v41",
+    "question": "When you were a child, how often did your father attend religious services?",
+    "answer": {
+      "1": "Never",
+      "2": "Less than once a year",
+      "3": "About once or twice a year",
+      "4": "Several times a year",
+      "5": "About once a month",
+      "6": "2-3 times a month",
+      "7": "Nearly every week",
+      "8": "Every week",
+      "9": "Several times a week"
+    },
+    "special": {
+      "KR": {
+        "3": "About once a year"
+      }
+    }
+  },
+  {
+    "question_id": "v42",
+    "question": "And what about when you were around 11 or 12, how often did you attend religious services then?",
+    "answer": {
+      "1": "Never",
+      "2": "Less than once a year",
+      "3": "About once or twice a year",
+      "4": "Several times a year",
+      "5": "About once a month",
+      "6": "2-3 times a month",
+      "7": "Nearly every week",
+      "8": "Every week",
+      "9": "Several times a week"
+    },
+    "special": {
+      "KR": {
+        "3": "About once a year"
+      }
+    }
+  },
+  {
+    "question_id": "v44",
+    "question": "How often do you take part in the activities or organizations of a church or place of worship other than attending services?",
+    "answer": {
+      "1": "Never",
+      "2": "Less than once a year",
+      "3": "About once or twice a year",
+      "4": "Several times a year",
+      "5": "About once a month",
+      "6": "2-3 times a month",
+      "7": "Nearly every week",
+      "8": "Every week",
+      "9": "Several times a week"
+    },
+    "special": {
+      "KR": {
+        "0": "No religion",
+        "3": "About once a year"
+      },
+      "US": {
+        "9": "Several times a week/ Once a day/ Several times a day"
+      }
+
+    }
+  },
+  {
+    "question_id": "v45",
+    "question": "During the last 12 months, have you read or listened to the reading of any holy scripture such as the Bible, Buddhist sutra, Koran, Sruti, Torah, or other religious scripture, not counting any reading that happened during a worship service?",
+    "answer": {
+      "1": "Yes",
+      "2": "No"
+    },
+    "special": {
+    }
+  },
+  {
+    "question_id": "v46",
+    "question": "For religious reasons do you have in your home a shrine, altar, or a religious object on display such as a [COUNTRY-SPECIFIC LIST icon, retablo, mezuzah, menorah, or crucifix]?",
+    "answer": {
+      "1": "Yes",
+      "2": "No"
+    },
+    "special": {
+    }
+  },
+  {
+    "question_id": "v47",
+    "question": "How often do you visit a holy place for religious reasons such as going to [COUNTRY-SPECIFIC shrine/ temple/ church/ mosque]? Please do NOT count attending regular religious services at your usual place of worship, if you have one.",
+    "answer": {
+      "1": "Never",
+      "2": "Less than once a year",
+      "3": "About once or twice a year",
+      "4": "Several times a year",
+      "5": "About once a month or more"
+    },
+    "special": {
+      "HU": {
+        "0": "Not religious"
+      }
+    }
+  },
+  {
+    "question_id": "v48",
+    "question": "Would you describe yourself as...",
+    "answer": {
+      "1": "Extremely religious",
+      "2": "Very religious",
+      "3": "Somewhat religious",
+      "4": "Neither religious nor non-religious",
+      "5": "Somewhat non-religious",
+      "6": "Very non-religious",
+      "7": "Extremely non-religious"
+    },
+    "special": {
+    }
+  },
+  {
+    "question_id": "v49",
+    "question": "What best describes you:",
+    "answer": {
+      "1": "I follow a religion, I am a spiritual person",
+      "2": "I follow a religion, I am not a spiritual person",
+      "3": "I don't follow a religion, I am a spiritual person",
+      "4": "I don't follow a religion, I am not a spiritual person"
+    },
+    "special": {
+    }
+  },
+  {
+    "question_id": "v50",
+    "question": "Do you agree or disagree that practicing a religion helps people to… Q31a Make friends?",
+    "answer": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree"
+    },
+    "special": {
+
+    }
+  },
+  {
+    "question_id": "v51",
+    "question": "Do you agree or disagree that practicing a religion helps people to… Q31b Gain comfort in times of trouble or sorrow?",
+    "answer": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree"
+    },
+    "special": {
+
+    }
+  },
+  {
+    "question_id": "v52",
+    "question": "Do you agree or disagree with the following statement? Religions are usually a barrier to equality between women and men.",
+    "answer": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree"
+    },
+    "special": {
+
+    }
+  },
+  {
+    "question_id": "v53",
+    "question": "Do you agree or disagree with the following statements? Q33a Governments should not interfere with the attempts of any religion to spread its faith.",
+    "answer": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree"
+    },
+    "special": {
+
+    }
+  },
+  {
+    "question_id": "v54",
+    "question": "Do you agree or disagree with the following statements? Q33b All things considered, people belonging to different religions cannot get along with each other when living close together.",
+    "answer": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree"
+    },
+    "special": {
+
+    }
+  },
+  {
+    "question_id": "v55",
+    "question": "Do you agree or disagree with each of the following? Q34a In [COUNTRY], religion represents the past and not the future.",
+    "answer": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree"
+    },
+    "special": {
+
+    }
+  },
+  {
+    "question_id": "v56",
+    "question": "Do you agree or disagree with each of the following? Q34b In [COUNTRY], religion is just as relevant to life today as it was in the past.",
+    "answer": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree"
+    },
+    "special": {
+
+    }
+  },
+  {
+    "question_id": "v57",
+    "question": "What is your personal attitude towards members of the following religious groups? Q35a Christians",
+    "answer": {
+      "1": "Very positive",
+      "2": "Somewhat positive",
+      "3": "Neither positive nor negative",
+      "4": "Somewhat negative",
+      "5": "Very negative"
+    },
+    "special": {
+    }
+  },
+  {
+    "question_id": "v58",
+    "question": "What is your personal attitude towards members of the following religious groups? Q35b Muslims",
+    "answer": {
+      "1": "Very positive",
+      "2": "Somewhat positive",
+      "3": "Neither positive nor negative",
+      "4": "Somewhat negative",
+      "5": "Very negative"
+    },
+    "special": {
+
+    }
+  },
+  {
+    "question_id": "v59",
+    "question": "What is your personal attitude towards members of the following religious groups? Q35c Hindus",
+    "answer": {
+      "1": "Very positive",
+      "2": "Somewhat positive",
+      "3": "Neither positive nor negative",
+      "4": "Somewhat negative",
+      "5": "Very negative"
+    },
+    "special": {
+
+    }
+  },
+  {
+    "question_id": "v60",
+    "question": "What is your personal attitude towards members of the following religious groups? Q35d Buddhists",
+    "answer": {
+      "1": "Very positive",
+      "2": "Somewhat positive",
+      "3": "Neither positive nor negative",
+      "4": "Somewhat negative",
+      "5": "Very negative"
+    },
+    "special": {
+
+    }
+  },
+  {
+    "question_id": "v61",
+    "question": "What is your personal attitude towards members of the following religious groups? Q35e Jews",
+    "answer": {
+      "1": "Very positive",
+      "2": "Somewhat positive",
+      "3": "Neither positive nor negative",
+      "4": "Somewhat negative",
+      "5": "Very negative"
+    },
+    "special": {
+
+    }
+  },
+  {
+    "question_id": "v62",
+    "question": "What is your personal attitude towards members of the following religious groups? Q35f Atheists or non-believers",
+    "answer": {
+      "1": "Very positive",
+      "2": "Somewhat positive",
+      "3": "Neither positive nor negative",
+      "4": "Somewhat negative",
+      "5": "Very negative"
+    },
+    "special": {
+
+    }
+  },
+  {
+    "question_id": "v63",
+    "question": "In general, would you say your health is…",
+    "answer": {
+      "1": "Excellent",
+      "2": "Very good",
+      "3": "Good",
+      "4": "Fair",
+      "5": "Poor"
+    },
+    "special": {
+    }
+  }
+]

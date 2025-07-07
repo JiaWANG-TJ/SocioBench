@@ -1,0 +1,554 @@
+[
+  {
+    "question_id": "v1",
+    "question": "Q1 To begin we have some questions about opportunities for getting ahead ... Please make a decision to show how important you think it is for getting ahead in life... Q1a How important is coming from a wealthy family?",
+    "answer": {
+      "1": "Essential",
+      "2": "Very important",
+      "3": "Fairly important",
+      "4": "Not very important",
+      "5": "Not important at all"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v2",
+    "question": "Q1 To begin we have some questions about opportunities for getting ahead ... Please make a decision to show how important you think it is for getting ahead in life... Q1b How important is having well-educated parents?",
+    "answer": {
+      "1": "Essential",
+      "2": "Very important",
+      "3": "Fairly important",
+      "4": "Not very important",
+      "5": "Not important at all"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v3",
+    "question": "Q1 To begin we have some questions about opportunities for getting ahead ... Please make a decision to show how important you think it is for getting ahead in life... Q1c How important is having a good education yourself?",
+    "answer": {
+      "1": "Essential",
+      "2": "Very important",
+      "3": "Fairly important",
+      "4": "Not very important",
+      "5": "Not important at all"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v4",
+    "question": "Q1 To begin we have some questions about opportunities for getting ahead ... Please make a decision to show how important you think it is for getting ahead in life... Q1d How important is hard work?",
+    "answer": {
+      "1": "Essential",
+      "2": "Very important",
+      "3": "Fairly important",
+      "4": "Not very important",
+      "5": "Not important at all"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v5",
+    "question": "Q1 To begin we have some questions about opportunities for getting ahead ... Please make a decision to show how important you think it is for getting ahead in life... Q1e How important is knowing the right people?",
+    "answer": {
+      "1": "Essential",
+      "2": "Very important",
+      "3": "Fairly important",
+      "4": "Not very important",
+      "5": "Not important at all"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v6",
+    "question": "Q1 To begin we have some questions about opportunities for getting ahead ... Please make a decision to show how important you think it is for getting ahead in life... Q1f How important is having political connections?",
+    "answer": {
+      "1": "Essential",
+      "2": "Very important",
+      "3": "Fairly important",
+      "4": "Not very important",
+      "5": "Not important at all"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v7",
+    "question": "Q1 To begin we have some questions about opportunities for getting ahead ... Please make a decision to show how important you think it is for getting ahead in life... Q1g How important is giving bribes?",
+    "answer": {
+      "1": "Essential",
+      "2": "Very important",
+      "3": "Fairly important",
+      "4": "Not very important",
+      "5": "Not important at all"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v8",
+    "question": "Q1 To begin we have some questions about opportunities for getting ahead ... Please make a decision to show how important you think it is for getting ahead in life... Q1h How important is a person's race?",
+    "answer": {
+      "1": "Essential",
+      "2": "Very important",
+      "3": "Fairly important",
+      "4": "Not very important",
+      "5": "Not important at all"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v9",
+    "question": "Q1 To begin we have some questions about opportunities for getting ahead ... Please make a decision to show how important you think it is for getting ahead in life... Q1i How important is a person's religion?",
+    "answer": {
+      "1": "Essential",
+      "2": "Very important",
+      "3": "Fairly important",
+      "4": "Not very important",
+      "5": "Not important at all"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v10",
+    "question": "Q1 To begin we have some questions about opportunities for getting ahead ... Please make a decision to show how important you think it is for getting ahead in life... Q1j How important is being born a man or a woman?",
+    "answer": {
+      "1": "Essential",
+      "2": "Very important",
+      "3": "Fairly important",
+      "4": "Not very important",
+      "5": "Not important at all"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v21",
+    "question": "Q4 To what extent do you agree or disagree with the following statements? Q4a Differences in income in [COUNTRY] are too large.",
+    "answer": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v22",
+    "question": "Q4 To what extent do you agree or disagree with the following statements? Q4b It is the responsibility of the government to reduce the differences in income between people with high incomes and those with low incomes.",
+    "answer": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v23",
+    "question": "Q4 To what extent do you agree or disagree with the following statements? Q4c The government should provide a decent standard of living for the unemployed.",
+    "answer": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v24",
+    "question": "Q4 To what extent do you agree or disagree with the following statements? Q4d It is the responsibility of private companies to reduce the differences in pay between their employees with high pay and those with low pay.",
+    "answer": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v26",
+    "question": "Q6 To what extent do you agree or disagree with the following statement: Most politicians in [COUNTRY] do not care about reducing the differences in income between people with high incomes and people with low incomes. ",
+    "answer": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v27",
+    "question": "Q7 How successful do you think the government in [COUNTRY] is nowadays in reducing the differences in income between people with high incomes and people with low incomes? ",
+    "answer": {
+      "1": "Very successful",
+      "2": "Quite successful",
+      "3": "Neither successful nor unsuccessful",
+      "4": "Quite unsuccessful",
+      "5": "Very unsuccessful"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v28",
+    "question": "Q8a Do you think people with high incomes should pay a larger share of their income in taxes than those with low incomes, the same share, or a smaller share? ",
+    "answer": {
+      "1": "Much larger share",
+      "2": "Larger",
+      "3": "The same share",
+      "4": "Smaller",
+      "5": "Much smaller share"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v29",
+    "question": "Q8b Generally, how would you describe taxes in [COUNTRY] today for those with high incomes? Taxes are... ",
+    "answer": {
+      "1": "Much too high",
+      "2": "Too high",
+      "3": "About right",
+      "4": "Too low",
+      "5": "Much too low"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v30",
+    "question": "Q9a Is it just or unjust - right or wrong - that people with higher incomes can buy better health care than people with lower incomes? ",
+    "answer": {
+      "1": "Very just, definitely right",
+      "2": "Somewhat just, right",
+      "3": "Neither just nor unjust, mixed feelings",
+      "4": "Somewhat unjust, wrong",
+      "5": "Very unjust, definitely wrong"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v31",
+    "question": "Q9b Is it just or unjust - right or wrong - that people with higher incomes can buy better education for their children than people with lower incomes? ",
+    "answer": {
+      "1": "Very just, definitely right",
+      "2": "Somewhat just, right",
+      "3": "Neither just nor unjust, mixed feelings",
+      "4": "Somewhat unjust, wrong",
+      "5": "Very unjust, definitely wrong"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v32",
+    "question": "Q10 Some people feel angry about differences in wealth between the rich and the poor, while others do not. How do you feel when you think about differences in wealth between the rich and the poor in [COUNTRY]? Please place yourself on a scale of 1 to 5 where 1 means not angry at all and 5 means extremely angry.",
+    "answer": {
+      "1": "1, Not angry at all",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5, Extremely angry"
+    },
+    "special": {}
+  },  
+  {
+    "question_id": "v33",
+    "question": "Q11 Turning to international differences. To what extend do you agree with the following statements? Q11a Present economic differences between rich and poor countries are too large.",
+    "answer": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v34",
+    "question": "Q11 Turning to international differences. To what extend do you agree with the following statements? Q11b People in wealthy countries should make an additional tax contribution to help people in poor countries.",
+    "answer": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v35",
+    "question": "Q11 Turning to international differences. To what extend do you agree with the following statements? Q11c People from poor countries should be allowed to work in wealthy countries.",
+    "answer": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v36",
+    "question": "Q12 In all countries, there are differences or even conflicts between different social groups. In your opinion, in [COUNTRY] how much conflict is there between... Q12a Poor people and rich people?",
+    "answer": {
+      "1": "Very strong conflicts",
+      "2": "Strong conflicts",
+      "3": "Not very strong conflicts",
+      "4": "There are no conflicts"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v37",
+    "question": "Q12 In all countries, there are differences or even conflicts between different social groups. In your opinion, in [COUNTRY] how much conflict is there between... Q12b The working class and the middle class?",
+    "answer": {
+      "1": "Very strong conflicts",
+      "2": "Strong conflicts",
+      "3": "Not very strong conflicts",
+      "4": "There are no conflicts"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v38",
+    "question": "Q12 In all countries, there are differences or even conflicts between different social groups. In your opinion, in [COUNTRY] how much conflict is there between... Q12c Management and workers?",
+    "answer": {
+      "1": "Very strong conflicts",
+      "2": "Strong conflicts",
+      "3": "Not very strong conflicts",
+      "4": "There are no conflicts"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v39",
+    "question": "Q12 In all countries, there are differences or even conflicts between different social groups. In your opinion, in [COUNTRY] how much conflict is there between... Q12d Young people and older people?",
+    "answer": {
+      "1": "Very strong conflicts",
+      "2": "Strong conflicts",
+      "3": "Not very strong conflicts",
+      "4": "There are no conflicts"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v40",
+    "question": "Q12 In all countries, there are differences or even conflicts between different social groups. In your opinion, in [COUNTRY] how much conflict is there between... Q12e People born in [COUNTRY] and people from other countries who have come to live in [COUNTRY]?",
+    "answer": {
+      "1": "Very strong conflicts",
+      "2": "Strong conflicts",
+      "3": "Not very strong conflicts",
+      "4": "There are no conflicts"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v41",
+    "question": "Q13a In our society there are groups which tend to be towards the top and groups which tend to be towards the bottom. Below is a scale which runs from top to bottom. Where would you put yourself now on this scale?",
+    "answer": {
+      "1": "Bottom, Lowest, 01",
+      "2": "02",
+      "3": "03",
+      "4": "04",
+      "5": "Top, Highest, 05"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v42",
+    "question": "[Q13a In our society there are groups which tend to be towards the top and groups which tend to be towards the bottom. Below is a scale which runs from top to bottom. Where would you put yourself now on this scale?] Q13b And if you think about the family that you grew up in, where did they fit in then? ",
+    "answer": {
+      "1": "Bottom, Lowest, 01",
+      "2": "02",
+      "3": "03",
+      "4": "04",
+      "5": "Top, Highest, 05"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v43",
+    "question": "[Q13a In our society there are groups which tend to be towards the top and groups which tend to be towards the bottom. Below is a scale which runs from top to bottom. Where would you put yourself now on this scale?] Q13c And thinking ahead 10 years from now, where do you think you will be on a scale of 1 to 10, where 10 is the top and 1 the bottom? ",
+    "answer": {
+      "1": "Bottom, Lowest, 01",
+      "2": "02",
+      "3": "03",
+      "4": "04",
+      "5": "Top, Highest, 05"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v44",
+    "question": "Q14 In deciding how much people ought to earn, how important should each of these things be, in your opinion... Q14a How much responsibility goes with the job - how important do you think that ought to be in deciding pay?",
+    "answer": {
+      "1": "Essential",
+      "2": "Very important",
+      "3": "Fairly important",
+      "4": "Not very important",
+      "5": "Not important at all"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v45",
+    "question": "Q14 In deciding how much people ought to earn, how important should each of these things be, in your opinion... Q14b The number of years spent in education and training?",
+    "answer": {
+      "1": "Essential",
+      "2": "Very important",
+      "3": "Fairly important",
+      "4": "Not very important",
+      "5": "Not important at all"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v46",
+    "question": "Q14 In deciding how much people ought to earn, how important should each of these things be, in your opinion... Q14c Whether the person has children to support - how important should that be in deciding pay?",
+    "answer": {
+      "1": "Essential",
+      "2": "Very important",
+      "3": "Fairly important",
+      "4": "Not very important",
+      "5": "Not important at all"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v47",
+    "question": "Q14 In deciding how much people ought to earn, how important should each of these things be, in your opinion... Q14d How well he or she does the job - how important should that be in deciding pay?",
+    "answer": {
+      "1": "Essential",
+      "2": "Very important",
+      "3": "Fairly important",
+      "4": "Not very important",
+      "5": "Not important at all"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v48",
+    "question": "Q15 These five diagrams show different types of society. Please read the descriptions and look at the diagrams and decide which you think best describes [COUNTRY] ... Q15a First, what type of society is [COUNTRY] today - which diagram comes closest? ",
+    "answer": {
+      "1": "A: Small elite at top, few people in middle, great mass at bottom.",
+      "2": "B: Pyramid with small elite at top, more people in middle, most at bottom.",
+      "3": "C: Pyramid except that just a few people are at the bottom.",
+      "4": "D: Society with most people in the middle.",
+      "5": "E: Many people near the top, and only a few near the bottom."
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v49",
+    "question": "Q15 These five diagrams show different types of society. Please read the descriptions and look at the diagrams and decide which you think best describes [COUNTRY]: Q15b What do you think [COUNTRY] ought to be like - which would you prefer? ",
+    "answer": {
+      "1": "A: Small elite at top, few people in middle, great mass at bottom.",
+      "2": "B: Pyramid with small elite at top, more people in middle, most at bottom.",
+      "3": "C: Pyramid except that just a few people are at the bottom.",
+      "4": "D: Society with most people in the middle.",
+      "5": "E: Many people near the top, and only a few near the bottom."
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v50",
+    "question": "Q16 How fair or unfair do you think the income distribution is in [COUNTRY]? ",
+    "answer": {
+      "1": "Very fair",
+      "2": "Fair",
+      "3": "Unfair",
+      "4": "Very unfair"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v51",
+    "question": "Q17a How oen do you have any contact with people who are A LOT POORER THAN YOU when you are out and about? This might be in the street, on public transport, in shops, in your neighbourhood, or at your workplace. ",
+    "answer": {
+      "1": "Never",
+      "2": "Less than once a month",
+      "3": "Once a month",
+      "4": "Several times a month",
+      "5": "Once a week",
+      "6": "Several times a week",
+      "7": "Every day"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v52",
+    "question": "Q17b How oen do you have any contact with people who are A LOT RICHER THAN YOU when you are out and about? This might be in the street, on public transport, in shops, in your neighbourhood, or at your workplace. ",
+    "answer": {
+      "1": "Never",
+      "2": "Less than once a month",
+      "3": "Once a month",
+      "4": "Several times a month",
+      "5": "Once a week",
+      "6": "Several times a week",
+      "7": "Every day"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v53",
+    "question": "The next questions are about your household's financial situation. Q18a Thinking of your household's total income, including all the sources of income of all the members who contribute to it, how difficult or easy is it currently for your household to make ends meet? ",
+    "answer": {
+      "1": "Very difficult",
+      "2": "Fairly difficult",
+      "3": "Neither easy nor difficult",
+      "4": "Fairly easy",
+      "5": "Very easy"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v54",
+    "question": "The next questions are about your household's financial situation. Q18b And during the next 12 months, how difficult or easy do you think will it be for your household to make ends meet? ",
+    "answer": {
+      "1": "Very difficult",
+      "2": "Fairly difficult",
+      "3": "Neither easy nor difficult",
+      "4": "Fairly easy",
+      "5": "Very easy"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v55",
+    "question": "The next questions are about your household's financial situation. Q18c How oen do you or other members of your household skip a meal because there is not enough money for food? ",
+    "answer": {
+      "1": "Never",
+      "2": "Less than once a month",
+      "3": "Once a month",
+      "4": "Several times a month",
+      "5": "Once a week",
+      "6": "Several times a week",
+      "7": "Every day"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v56",
+    "question": "Q19 Generally speaking, would you say that people can be trusted or that you can't be too careful in dealing with people? ",
+    "answer": {
+      "1": "People can almost always be trusted",
+      "2": "People can usually be trusted",
+      "3": "You usually can’t be too careful in dealing with people",
+      "4": "You almost always can’t be too careful in dealing with people"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v61",
+    "question": "Q22 Most people see themselves as belonging to a particular class. Please tell me which social class you would say you belong to? ",
+    "answer": {
+      "1": "Lower class",
+      "2": "Working class",
+      "3": "Lower middle class",
+      "4": "Middle class",
+      "5": "Upper middle class",
+      "6": "Upper class"
+    },
+    "special": {}
+  }
+]

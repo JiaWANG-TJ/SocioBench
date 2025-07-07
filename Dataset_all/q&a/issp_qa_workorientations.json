@@ -1,0 +1,947 @@
+[
+  {
+    "question_id": "v1",
+    "question": "Q1 Please choose one to show how much you agree or disagree with it, thinking of work in general.  Q1a A job is just a way of earning money - no more.",
+    "answer": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree"
+    },
+    "special": {
+      "VE": {
+        "1": "Agree",
+        "2": "Agree somewhat",
+        "3": "Neither nor",
+        "4": "Disagree somewhat",
+        "5": "Disagree"
+      }
+    }
+  },
+  {
+    "question_id": "v2",
+    "question": "Q1 Please choose one to show how much you agree or disagree with it, thinking of work in general.  Q1b I would enjoy having a paid job even if I did not need the money.",
+    "answer": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree"
+    },
+    "special": {
+      "VE": {
+        "1": "Agree",
+        "2": "Agree somewhat",
+        "3": "Neither nor",
+        "4": "Disagree somewhat",
+        "5": "Disagree"
+      }
+    }
+  },
+  {
+    "question_id": "v3",
+    "question": "Q2 For each of the following, please choose one to show how important you personally think it is in a job. How important is ...  Q2a ... job security?",
+    "answer": {
+      "1": "Very important",
+      "2": "Important",
+      "3": "Neither important nor unimportant",
+      "4": "Not important",
+      "5": "Not important at all"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v4",
+    "question": "Q2 For each of the following, please choose one to show how important you personally think it is in a job. How important is ...  Q2b ... high income?",
+    "answer": {
+      "1": "Very important",
+      "2": "Important",
+      "3": "Neither important nor unimportant",
+      "4": "Not important",
+      "5": "Not important at all"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v5",
+    "question": "Q2 For each of the following, please choose one to show how important you personally think it is in a job. How important is ...  Q2c ... good opportunities for advancement?",
+    "answer": {
+      "1": "Very important",
+      "2": "Important",
+      "3": "Neither important nor unimportant",
+      "4": "Not important",
+      "5": "Not important at all"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v6",
+    "question": "Q2 For each of the following, please choose one to show how important you personally think it is in a job. How important is ...  Q2d ... an interesting job?",
+    "answer": {
+      "1": "Very important",
+      "2": "Important",
+      "3": "Neither important nor unimportant",
+      "4": "Not important",
+      "5": "Not important at all"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v7",
+    "question": "Q2 For each of the following, please choose one to show how important you personally think it is in a job. How important is ...  Q2e ... a job that allows someone to work independently?",
+    "answer": {
+      "1": "Very important",
+      "2": "Important",
+      "3": "Neither important nor unimportant",
+      "4": "Not important",
+      "5": "Not important at all"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v8",
+    "question": "Q2 For each of the following, please choose one to show how important you personally think it is in a job. How important is ...  Q2f ... a job that allows someone to help other people?",
+    "answer": {
+      "1": "Very important",
+      "2": "Important",
+      "3": "Neither important nor unimportant",
+      "4": "Not important",
+      "5": "Not important at all"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v9",
+    "question": "Q2 For each of the following, please choose one to show how important you personally think it is in a job. How important is ...  Q2g ... a job that is useful to society?",
+    "answer": {
+      "1": "Very important",
+      "2": "Important",
+      "3": "Neither important nor unimportant",
+      "4": "Not important",
+      "5": "Not important at all"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v10",
+    "question": "Q2 For each of the following, please choose one to show how important you personally think it is in a job. How important is ...  Q2h ... a job that allows someone to decide their times or days of work?",
+    "answer": {
+      "1": "Very important",
+      "2": "Important",
+      "3": "Neither important nor unimportant",
+      "4": "Not important",
+      "5": "Not important at all"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v11",
+    "question": "Q2 For each of the following, please choose one to show how important you personally think it is in a job. How important is ...  Q2i ... a job that involves personal contact with other people?",
+    "answer": {
+      "1": "Very important",
+      "2": "Important",
+      "3": "Neither important nor unimportant",
+      "4": "Not important",
+      "5": "Not important at all"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v12",
+    "question": "Q3 Have you ever given up or would you give up good job opportunities for the benefit of your family life?  Note in the source questionnaire for translation purposes: 'Family' should be understood in a broader sense.",
+    "answer": {
+      "1": "Yes, I have done so and probably would do so again",
+      "2": "Yes, I have done so but probably would not do so again",
+      "3": "No, I have not done so but probably would do so",
+      "4": "No, I have not done so and probably would not do so"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v13",
+    "question": "Q4 Have you ever remained or would you remain in a job that was not satisfying for you for the benefit of your family life?  Note in the source questionnaire for translation purposes: 'Family' should be understood in a broader sense.",
+    "answer": {
+      "1": "Yes, I have done so and probably would do so again",
+      "2": "Yes, I have done so but probably would not do so again",
+      "3": "No, I have not done so but probably would do so",
+      "4": "No, I have not done so and probably would not do so"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v14",
+    "question": "Q5 Over the past five years, have you been discriminated against with regard to work, for instance when applying for a job, or when being  considered for a pay increase or promotion? ",
+    "answer": {
+      "1": "Yes",
+      "2": "No"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v16",
+    "question": "Q7 Over the past five years, have you been harassed by your superiors or co-workers at your job, for example, have you experienced any  bullying, physical or psychological abuse? ",
+    "answer": {
+      "1": "Yes",
+      "2": "No"
+    },
+    "special": {
+    }
+  },
+  {
+    "question_id": "v17",
+    "question": "Q8 To what extent do you agree or disagree with the following statements?  Q8a Workers need strong trade unions to protect their interests.",
+    "answer": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree"
+    },
+    "special": {
+      "VE": {
+        "1": "Agree",
+        "2": "Agree somewhat",
+        "3": "Neither nor",
+        "4": "Disagree somewhat",
+        "5": "Disagree"
+      }
+    }
+  },
+  {
+    "question_id": "v18",
+    "question": "Q8 To what extent do you agree or disagree with the following statements?  Q8b Strong trade unions are bad for [country’s] economy.",
+    "answer": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree"
+    },
+    "special": {
+      "VE": {
+        "1": "Agree",
+        "2": "Agree somewhat",
+        "3": "Neither nor",
+        "4": "Disagree somewhat",
+        "5": "Disagree"
+      }
+    }
+  },
+  {
+    "question_id": "v19",
+    "question": "Q9 Suppose you could decide on your work situation at present. Which of the following would you prefer?  Clarification note in the source questionnaire: The aim is to get at full-time/ part-time so the verbal labels 'full-time', 'part-time', 'less than', are of  central importance. The numbers in parantheses can vary by country if necessary.",
+    "answer": {
+      "1": "A full-time job [30 hours or more per week]",
+      "2": "A part-time job [10-29 hours per week]",
+      "3": "A job with less than 10 hours a week",
+      "4": "No paid job at all"
+    },
+    "special": {
+      "AT": {
+        "1": "A full-time job [30+ hours per week]",
+        "2": "A part-time job [10-29 hours per week]",
+        "3": "A job with less than 10 hours a week"
+      },
+      "AU": {
+        "1": "A full-time job [35+ hours per week]",
+        "2": "A part-time job [10-34 hours per week]",
+        "3": "A job with less than 10 hours a week"
+      },
+      "BE": {
+        "1": "A full-time job [38+ hours per week]",
+        "2": "A part-time job [10-37 hours per week]",
+        "3": "A job with less than 10 hours a week"
+      },
+      "CH": {
+        "1": "A full-time job [40+ hours per week]",
+        "2": "A part-time job [10-39 hours per week]",
+        "3": "A job with less than 10 hours a week"
+      },
+      "CL": {
+        "1": "A full-time job [30+ hours per week]",
+        "2": "A part-time job [10-29 hours per week]",
+        "3": "A job with less than 10 hours a week"
+      },
+      "CN": {
+        "1": "A full-time job",
+        "2": "A part-time job [more than 10 hours per week]",
+        "3": "A job with less than 10 hours a week"
+      },
+      "CZ": {
+        "1": "A full-time job [40+ hours per week]",
+        "2": "A part-time job [15-39 hours per week]",
+        "3": "A job with less than 15 hours a week"
+      },
+      "DE": {
+        "1": "A full-time job [30+ hours per week]",
+        "2": "A part-time job [10-29 hours per week]",
+        "3": "A job with less than 10 hours a week"
+      },
+      "DK": {
+        "1": "A full-time job [30+ hours per week]",
+        "2": "A part-time job [10-29 hours per week]",
+        "3": "A job with less than 10 hours a week"
+      },
+      "EE": {
+        "1": "A full-time job [35+ hours per week]",
+        "2": "A part-time job [12-34 hours per week]",
+        "3": "A job with less than 12 hours a week"
+      },
+      "ES": {
+        "1": "A full-time job [30+ hours per week]",
+        "2": "A part-time job [10-29 hours per week]",
+        "3": "A job with less than 10 hours a week"
+      },
+      "FI": {
+        "1": "A full-time job [35+ hours per week]",
+        "2": "A part-time job [10-34 hours per week]",
+        "3": "A job with less than 10 hours a week"
+      },
+      "FR": {
+        "1": "A full-time job [35+ hours per week]",
+        "2": "A part-time job [15-34 hours per week]",
+        "3": "A job with less than 15 hours a week"
+      },
+      "GB-GBN": {
+        "1": "A full-time job [30+ hours per week]",
+        "2": "A part-time job [10-29 hours per week]",
+        "3": "A job with less than 10 hours a week"
+      },
+      "GE": {
+        "1": "A full-time job [40 hours per week]",
+        "2": "A part-time job [10-20 hours per week]",
+        "3": "A job with less than 10 hours a week"
+      },
+      "HR": {
+        "1": "A full-time job [30+ hours per week]",
+        "2": "A part-time job [10-29 hours per week]",
+        "3": "A job with less than 10 hours a week"
+      },
+      "HU": {
+        "1": "A full-time job [40+ hours per week]",
+        "2": "A part-time job [20-39 hours per week]",
+        "3": "A job with less than 20 hours a week"
+      },
+      "IL": {
+        "1": "A full-time job [35+ hours per week]",
+        "2": "A part-time job [10-34 hours per week]",
+        "3": "A job with less than 10 hours a week"
+      },
+      "IN": {
+        "1": "A full-time job [30+ hours per week]",
+        "2": "A part-time job [10-29 hours per week]",
+        "3": "A job with less than 10 hours a week"
+      },
+      "IS": {
+        "1": "A full-time job [30+ hours per week]",
+        "2": "A part-time job [10-29 hours per week]",
+        "3": "A job with less than 10 hours a week"
+      },
+      "JP": {
+        "1": "A full-time job [35+ hours per week]",
+        "2": "A part-time job [10-34 hours per week]",
+        "3": "A job with less than 10 hours a week"
+      },
+      "LT": {
+        "1": "A full-time job [40+ hours per week]",
+        "2": "A part-time job [20-39 hours per week]",
+        "3": "A job with less than 20 hours a week"
+      },
+      "LV": {
+        "1": "A full-time job [40+ hours per week]",
+        "2": "A part-time job [15-39 hours per week]",
+        "3": "A job with less than 15 hours a week"
+      },
+      "NO": {
+        "1": "A full-time job [30+ hours per week]",
+        "2": "A part-time job [10-29 hours per week]",
+        "3": "A job with less than 10 hours a week"
+      },
+      "PH": {
+        "1": "A full-time job [40+ hours per week]",
+        "2": "A part-time job [10-39 hours per week]",
+        "3": "A job with less than 10 hours a week"
+      },
+      "PL": {
+        "1": "A full-time job [40+ hours per week]",
+        "2": "A part-time job [about 20 hours per week]",
+        "3": "A job with less than 20 hours a week"
+      },
+      "RU": {
+        "1": "A full-time job [30+ hours per week]",
+        "2": "A part-time job [10-29 hours per week]",
+        "3": "A job with less than 10 hours a week"
+      },
+      "SE": {
+        "1": "A full-time job [30+ hours per week]",
+        "2": "A part-time job [10-29 hours per week]",
+        "3": "A job with less than 10 hours a week"
+      },
+      "SI": {
+        "1": "A full-time job [30+ hours per week]",
+        "2": "A part-time job [10-29 hours per week]",
+        "3": "A job with less than 10 hours a week"
+      },
+      "SK": {
+        "1": "A full-time job [35+ hours per week]",
+        "2": "A part-time job [15-34 hours per week]",
+        "3": "A job with less than 15 hours a week"
+      },
+      "SR": {
+        "1": "A full-time job [35+ hours per week]",
+        "2": "A part-time job [12-34 hours per week]",
+        "3": "A job with less than 12 hours a week"
+      },
+      "TW": {
+        "1": "A full-time job [35+ hours per week]",
+        "2": "A part-time job [10-34 hours per week]",
+        "3": "A job with less than 10 hours a week"
+      },
+      "US": {
+        "1": "A full-time job [30+ hours per week]",
+        "2": "A part-time job [10-29 hours per week]",
+        "3": "A job with less than 10 hours a week"
+      },
+      "VE": {
+        "1": "A full-time job [30+ hours per week]",
+        "2": "A part-time job [10-29 hours per week]",
+        "3": "A job with less than 10 hours a week"
+      },
+      "ZA": {
+        "1": "A full-time job [30+ hours per week]",
+        "2": "A part-time job [10-29 hours per week]",
+        "3": "A job with less than 10 hours a week"
+      }
+    }
+  },
+  {
+    "question_id": "v21",
+    "question": "Q11 IF YOU ARE CURRENTLY WORKING FOR PAY (OR ON LEAVE BUT ARE IN AN EMPLOYMENT RELATIONSHIP) Think of the number of hours you work, and the money you earn in your main job, including any regular overtime. If you had only one of these  three choices, which of the following would you prefer? ",
+    "answer": {
+      "1": "Work longer, earn more money",
+      "2": "Same number of hours, same money",
+      "3": "Work fewer, earn less money"
+    },
+    "special": {
+
+    }
+  },
+  {
+    "question_id": "v22",
+    "question": "Q12 IF YOU ARE CURRENTLY WORKING FOR PAY (OR ON LEAVE BUT ARE IN AN EMPLOYMENT RELATIONSHIP) For each of these statements about your (main) job, please choose one to show how much you agree or disagree that it applies to your  job.  Q12a My job is secure.",
+    "answer": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree"
+    },
+    "special": {
+      "VE": {
+        "1": "Agree",
+        "2": "Agree somewhat",
+        "3": "Neither nor",
+        "4": "Disagree somewhat",
+        "5": "Disagree"
+      }
+    }
+  },
+  {
+    "question_id": "v23",
+    "question": "Q12 IF YOU ARE CURRENTLY WORKING FOR PAY (OR ON LEAVE BUT ARE IN AN EMPLOYMENT RELATIONSHIP) For each of these statements about your (main) job, please choose one to show how much you agree or disagree that it applies to your  job.  Q12b My income is high.",
+    "answer": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree"
+    },
+    "special": {
+      "VE": {
+        "1": "Agree",
+        "2": "Agree somewhat",
+        "3": "Neither nor",
+        "4": "Disagree somewhat",
+        "5": "Disagree"
+      }
+    }
+  },
+  {
+    "question_id": "v24",
+    "question": "Q12 IF YOU ARE CURRENTLY WORKING FOR PAY (OR ON LEAVE BUT ARE IN AN EMPLOYMENT RELATIONSHIP) For each of these statements about your (main) job, please choose one to show how much you agree or disagree that it applies to your  job.  Q12c My opportunities for advancement are high.",
+    "answer": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree"
+    },
+    "special": {
+      "VE": {
+        "1": "Agree",
+        "2": "Agree somewhat",
+        "3": "Neither nor",
+        "4": "Disagree somewhat",
+        "5": "Disagree"
+      }
+    }
+  },
+  {
+    "question_id": "v25",
+    "question": "Q12 IF YOU ARE CURRENTLY WORKING FOR PAY (OR ON LEAVE BUT ARE IN AN EMPLOYMENT RELATIONSHIP) For each of these statements about your (main) job, please choose one to show how much you agree or disagree that it applies to your  job.  Q12d My job is interesting.",
+    "answer": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree"
+    },
+    "special": {
+      "VE": {
+        "1": "Agree",
+        "2": "Agree somewhat",
+        "3": "Neither nor",
+        "4": "Disagree somewhat",
+        "5": "Disagree"
+      }
+    }
+  },
+  {
+    "question_id": "v26",
+    "question": "Q12 IF YOU ARE CURRENTLY WORKING FOR PAY (OR ON LEAVE BUT ARE IN AN EMPLOYMENT RELATIONSHIP) For each of these statements about your (main) job, please choose one to show how much you agree or disagree that it applies to your  job.  Q12e I can work independently.",
+    "answer": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree"
+    },
+    "special": {
+      "VE": {
+        "1": "Agree",
+        "2": "Agree somewhat",
+        "3": "Neither nor",
+        "4": "Disagree somewhat",
+        "5": "Disagree"
+      }
+    }
+  },
+  {
+    "question_id": "v27",
+    "question": "Q12 IF YOU ARE CURRENTLY WORKING FOR PAY (OR ON LEAVE BUT ARE IN AN EMPLOYMENT RELATIONSHIP) For each of these statements about your (main) job, please choose one to show how much you agree or disagree that it applies to your  job.  Q12f In my job I can help other people.",
+    "answer": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree"
+    },
+    "special": {
+      "VE": {
+        "1": "Agree",
+        "2": "Agree somewhat",
+        "3": "Neither nor",
+        "4": "Disagree somewhat",
+        "5": "Disagree"
+      }
+    }
+  },
+  {
+    "question_id": "v28",
+    "question": "Q12 IF YOU ARE CURRENTLY WORKING FOR PAY (OR ON LEAVE BUT ARE IN AN EMPLOYMENT RELATIONSHIP) For each of these statements about your (main) job, please choose one to show how much you agree or disagree that it applies to your  job.  Q12g My job is useful to society.",
+    "answer": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree"
+    },
+    "special": {
+      "VE": {
+        "1": "Agree",
+        "2": "Agree somewhat",
+        "3": "Neither nor",
+        "4": "Disagree somewhat",
+        "5": "Disagree"
+      }
+    }
+  },
+  {
+    "question_id": "v29",
+    "question": "Q12 IF YOU ARE CURRENTLY WORKING FOR PAY (OR ON LEAVE BUT ARE IN AN EMPLOYMENT RELATIONSHIP) For each of these statements about your (main) job, please choose one to show how much you agree or disagree that it applies to your  job.  Q12h In my job, I have personal contact with other people.",
+    "answer": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree"
+    },
+    "special": {
+      "VE": {
+        "1": "Agree",
+        "2": "Agree somewhat",
+        "3": "Neither nor",
+        "4": "Disagree somewhat",
+        "5": "Disagree"
+      }
+    }
+  },
+  {
+    "question_id": "v30",
+    "question": "Q13 IF YOU ARE CURRENTLY WORKING FOR PAY (OR ON LEAVE BUT ARE IN AN EMPLOYMENT RELATIONSHIP) Now some more questions about your working conditions. Please choose one to show how often it applies to your work.  How often ...  Q13a ... do you have to do hard physical work?",
+    "answer": {
+      "1": "Always",
+      "2": "Often",
+      "3": "Sometimes",
+      "4": "Hardly ever",
+      "5": "Never"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v31",
+    "question": "Q13 IF YOU ARE CURRENTLY WORKING FOR PAY (OR ON LEAVE BUT ARE IN AN EMPLOYMENT RELATIONSHIP) Now some more questions about your working conditions. Please choose one to show how often it applies to your work.  How often ...  Q13b ... do you find your work stressful?",
+    "answer": {
+      "1": "Always",
+      "2": "Often",
+      "3": "Sometimes",
+      "4": "Hardly ever",
+      "5": "Never"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v32",
+    "question": "Q14 IF YOU ARE CURRENTLY WORKING FOR PAY (OR ON LEAVE BUT ARE IN AN EMPLOYMENT RELATIONSHIP) And how often ...  Q14a ... do you work at home during your usual working hours?",
+    "answer": {
+      "1": "Always",
+      "2": "Often",
+      "3": "Sometimes",
+      "4": "Hardly ever",
+      "5": "Never"
+    },
+    "special": {
+    }
+  },
+  {
+    "question_id": "v33",
+    "question": "Q14 IF YOU ARE CURRENTLY WORKING FOR PAY (OR ON LEAVE BUT ARE IN AN EMPLOYMENT RELATIONSHIP) And how often ...  Q14b ... does your job involve working on weekends?",
+    "answer": {
+      "1": "Always",
+      "2": "Often",
+      "3": "Sometimes",
+      "4": "Hardly ever",
+      "5": "Never"
+    },
+    "special": {
+    }
+  },
+  {
+    "question_id": "v34",
+    "question": "Q15 IF YOU ARE CURRENTLY WORKING FOR PAY (OR ON LEAVE BUT ARE IN AN EMPLOYMENT RELATIONSHIP) Which of the following statements best describes how your working hours are decided?  (By working hours we mean here the times you start and finish work, and not the total hours you work per week or month.) ",
+    "answer": {
+      "1": "I cannot change, fixed time",
+      "2": "I can decide within certain limits",
+      "3": "I am entirely free to decide"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v35",
+    "question": "Q16 IF YOU ARE CURRENTLY WORKING FOR PAY (OR ON LEAVE BUT ARE IN AN EMPLOYMENT RELATIONSHIP) Which of the following statements best describes your usual working schedule in your main job? ",
+    "answer": {
+      "1": "I have a regular schedule or shift",
+      "2": "I have a schedule or shift which regularly changes",
+      "3": "I have a schedule where daily working times are decided at short notice by my employer"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v36",
+    "question": "Q17 IF YOU ARE CURRENTLY WORKING FOR PAY (OR ON LEAVE BUT ARE IN AN EMPLOYMENT RELATIONSHIP) Which of the following statements best describes how your daily work is organized? ",
+    "answer": {
+      "1": "I am free to decide",
+      "2": "Decide within certain limits",
+      "3": "I am not free to decide"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v37",
+    "question": "Q18 IF YOU ARE CURRENTLY WORKING FOR PAY (OR ON LEAVE BUT ARE IN AN EMPLOYMENT RELATIONSHIP) How difficult would it be for you to take an hour or two off during working hours, to take care of personal or family matters? ",
+    "answer": {
+      "1": "Not difficult at all",
+      "2": "Not too difficult",
+      "3": "Somewhat difficult",
+      "4": "Very difficult"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v38",
+    "question": "Q19  IF YOU ARE CURRENTLY WORKING FOR PAY (OR ON LEAVE BUT ARE IN AN EMPLOYMENT RELATIONSHIP) How often do you feel that …  Q19a ... the demands of your job interfere with your family life?",
+    "answer": {
+      "1": "Always",
+      "2": "Often",
+      "3": "Sometimes",
+      "4": "Hardly ever",
+      "5": "Never"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v39",
+    "question": "Q19 IF YOU ARE CURRENTLY WORKING FOR PAY (OR ON LEAVE BUT ARE IN AN EMPLOYMENT RELATIONSHIP) How often do you feel that …  Q19b ... the demands of your family life interfere with your job?",
+    "answer": {
+      "1": "Always",
+      "2": "Often",
+      "3": "Sometimes",
+      "4": "Hardly ever",
+      "5": "Never"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v40",
+    "question": "Q20 IF YOU ARE CURRENTLY WORKING FOR PAY (OR ON LEAVE BUT ARE IN AN EMPLOYMENT RELATIONSHIP) How much of your past work experience and/ or job skills can you make use of in your present job? ",
+    "answer": {
+      "1": "Almost none",
+      "2": "A little",
+      "3": "A lot",
+      "4": "Almost all"
+    },
+    "special": {
+      "ES": {
+        "5": "Never had another job"
+      },
+      "RU": {
+        "5": "Never had another job"
+      }
+    }
+  },
+  {
+    "question_id": "v41",
+    "question": "Q21 IF YOU ARE CURRENTLY WORKING FOR PAY (OR ON LEAVE BUT ARE IN AN EMPLOYMENT RELATIONSHIP) Over the past 12 months, have you had any training to improve your job skills, either at the workplace or somewhere else? ",
+    "answer": {
+      "1": "Yes",
+      "2": "No"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v42",
+    "question": "Q22 IF YOU ARE CURRENTLY WORKING FOR PAY (OR ON LEAVE BUT ARE IN AN EMPLOYMENT RELATIONSHIP) In general, how would you describe relations at your workplace …  Q22a ... between management and employees?",
+    "answer": {
+      "1": "Very good",
+      "2": "Quite good",
+      "3": "Neither good nor bad",
+      "4": "Quite bad",
+      "5": "Very bad"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v43",
+    "question": "Q22 IF YOU ARE CURRENTLY WORKING FOR PAY (OR ON LEAVE BUT ARE IN AN EMPLOYMENT RELATIONSHIP) In general, how would you describe relations at your workplace …  Q22b ... between workmates/ colleagues?",
+    "answer": {
+      "1": "Very good",
+      "2": "Quite good",
+      "3": "Neither good nor bad",
+      "4": "Quite bad",
+      "5": "Very bad"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v44",
+    "question": "Q23 IF YOU ARE CURRENTLY WORKING FOR PAY (OR ON LEAVE BUT ARE IN AN EMPLOYMENT RELATIONSHIP) All things considered, how satisfied are you with your (main) job? ",
+    "answer": {
+      "1": "Completely satisfied",
+      "2": "Very satisfied",
+      "3": "Fairly satisfied",
+      "4": "Neither satisfied nor dissatisfied",
+      "5": "Fairly dissatisfied",
+      "6": "Very dissatisfied",
+      "7": "Completely dissatisfied"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v45",
+    "question": "Q24 IF YOU ARE CURRENTLY WORKING FOR PAY (OR ON LEAVE BUT ARE IN AN EMPLOYMENT RELATIONSHIP) To what extent do you agree or disagree with each of the following statements?  Q24a I am willing to work harder than I have to in order to help the firm or organization I work for succeed.",
+    "answer": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v46",
+    "question": "Q24 IF YOU ARE CURRENTLY WORKING FOR PAY (OR ON LEAVE BUT ARE IN AN EMPLOYMENT RELATIONSHIP) To what extent do you agree or disagree with each of the following statements?  Q24b I am proud to be working for my firm or organization.",
+    "answer": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v47",
+    "question": "Q24 IF YOU ARE CURRENTLY WORKING FOR PAY (OR ON LEAVE BUT ARE IN AN EMPLOYMENT RELATIONSHIP) To what extent do you agree or disagree with each of the following statements?  Q24c I would turn down another job that offered quite a bit more pay in order to stay with this organization.",
+    "answer": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v48",
+    "question": "Q25 IF YOU ARE CURRENTLY WORKING FOR PAY (OR ON LEAVE BUT ARE IN AN EMPLOYMENT RELATIONSHIP) Now think of the type of work you do, irrespective of the firm or organization you work for. To what extent do you agree or disagree with  each of the following statements?  Q25a Given the chance, I would change my present type of work for something different.",
+    "answer": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v49",
+    "question": "Q25 IF YOU ARE CURRENTLY WORKING FOR PAY (OR ON LEAVE BUT ARE IN AN EMPLOYMENT RELATIONSHIP) Now think of the type of work you do, irrespective of the firm or organization you work for. To what extent do you agree or disagree with  each of the following statements?  Q25b I am proud of the type of work I do.",
+    "answer": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v50",
+    "question": "Q26 IF YOU ARE CURRENTLY WORKING FOR PAY (OR ON LEAVE BUT ARE IN AN EMPLOYMENT RELATIONSHIP) How difficult or easy do you think it would be for you to find a job at least as good as your current one? ",
+    "answer": {
+      "1": "Very easy",
+      "2": "Fairly easy",
+      "3": "Neither easy nor difficult",
+      "4": "Fairly difficult",
+      "5": "Very difficult"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v51",
+    "question": "Q27 IF YOU ARE CURRENTLY WORKING FOR PAY (OR ON LEAVE BUT ARE IN AN EMPLOYMENT RELATIONSHIP) All in all, how likely is it that you will try to find a job with another firm or organization within the next 12 months? ",
+    "answer": {
+      "1": "Very likely",
+      "2": "Likely",
+      "3": "Unlikely",
+      "4": "Very unlikely"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v52",
+    "question": "Q28 IF YOU ARE CURRENTLY WORKING FOR PAY (OR ON LEAVE BUT ARE IN AN EMPLOYMENT RELATIONSHIP) To what extent, if at all, do you worry about the possibility of losing your job? ",
+    "answer": {
+      "1": "I worry a great deal",
+      "2": "I worry to some extent",
+      "3": "I worry a little",
+      "4": "I don't worry at all"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v53",
+    "question": "Q29 IF YOU ARE CURRENTLY WORKING FOR PAY (OR ON LEAVE BUT ARE IN AN EMPLOYMENT RELATIONSHIP) To what extent do you agree or disagree with the following statements? In order to avoid unemployment I would be willing …  Q29a ... to accept a job that requires new skills",
+    "answer": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v54",
+    "question": "Q29 IF YOU ARE CURRENTLY WORKING FOR PAY (OR ON LEAVE BUT ARE IN AN EMPLOYMENT RELATIONSHIP) To what extent do you agree or disagree with the following statements? In order to avoid unemployment I would be willing …  Q29b ... to accept a position with lower pay.",
+    "answer": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v55",
+    "question": "Q29 IF YOU ARE CURRENTLY WORKING FOR PAY (OR ON LEAVE BUT ARE IN AN EMPLOYMENT RELATIONSHIP) To what extent do you agree or disagree with the following statements? In order to avoid unemployment I would be willing …  Q29c ... to accept temporary employment.",
+    "answer": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v56",
+    "question": "Q29 IF YOU ARE CURRENTLY WORKING FOR PAY (OR ON LEAVE BUT ARE IN AN EMPLOYMENT RELATIONSHIP) To what extent do you agree or disagree with the following statements? In order to avoid unemployment I would be willing …  Q29d ... to travel longer to get to work.",
+    "answer": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v57",
+    "question": "Q29 IF YOU ARE CURRENTLY WORKING FOR PAY (OR ON LEAVE BUT ARE IN AN EMPLOYMENT RELATIONSHIP) To what extent do you agree or disagree with the following statements? In order to get a job I would be willing ...  Q29e ... to move within [country].",
+    "answer": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v58",
+    "question": "Q29 IF YOU ARE CURRENTLY WORKING FOR PAY (OR ON LEAVE BUT ARE IN AN EMPLOYMENT RELATIONSHIP) To what extent do you agree or disagree with the following statements? In order to get a job I would be willing …  Q29f ... to move to a different country.",
+    "answer": {
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Strongly disagree"
+    },
+    "special": {}
+  },
+  {
+    "question_id": "v59",
+    "question": "Q30 IF YOU ARE CURRENTLY WORKING FOR PAY (OR ON LEAVE BUT ARE IN AN EMPLOYMENT RELATIONSHIP) Over the past 12 months, in addition to your main job, have you done any other work for pay? ",
+    "answer": {
+      "1": "Yes, during all of that period",
+      "2": "Yes, during most of that period",
+      "3": "Yes, during some of that period",
+      "4": "No"
+    },
+    "special": {}
+  }
+]
