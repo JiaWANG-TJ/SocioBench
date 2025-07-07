@@ -296,23 +296,31 @@ def load_option_contents(domain_id: int) -> Dict[str, Dict[str, str]]:
         # 格式化领域名称用于文件路径
         formatted_domain_name = domain_name.lower().replace(" ", "")
         
-        # 构建文件路径 - 首先尝试Dataset_all/profile
-        file_paths = [
-            os.path.join(os.path.dirname(__file__), "..", "Dataset_all", "A_GroundTruth_sampling500", f"issp_profile_{formatted_domain_name}.json"),
-            os.path.join(os.path.dirname(__file__), "..", "Dataset_all", "A_GroundTruth_sampling5000", f"issp_profile_{formatted_domain_name}.json"),
-            os.path.join(os.path.dirname(__file__), "..", "Dataset_all", "profile", f"issp_profile_{formatted_domain_name}.json"),
-            os.path.join(os.path.dirname(__file__), "..", "Dataset", "A_GroundTruth", f"issp_profile_{formatted_domain_name}.json"),
-            os.path.join(os.path.dirname(__file__), "..", "Dataset", "A_GroundTruth", f"issp_profile_{domain_name}.json")
+        # 构建多种可能的文件名格式
+        possible_names = [
+            f"issp_profile_{formatted_domain_name}.json",  # 全小写格式
+            f"issp_profile_{domain_name}.json",            # 原始格式（驼峰命名）
         ]
         
-        # 尝试查找其他可能的路径
+        # 构建文件路径 - 尝试多种目录和文件名组合
+        file_paths = []
+        base_dirs = [
+            os.path.join(os.path.dirname(__file__), "..", "Dataset_all", "A_GroundTruth_sampling500"),
+            os.path.join(os.path.dirname(__file__), "..", "Dataset_all", "A_GroundTruth_sampling1000"),
+            os.path.join(os.path.dirname(__file__), "..", "Dataset_all", "A_GroundTruth_sampling2000"),
+            os.path.join(os.path.dirname(__file__), "..", "Dataset_all", "profile"),
+            os.path.join(os.path.dirname(__file__), "..", "Dataset", "A_GroundTruth"),
+        ]
+        
+        for base_dir in base_dirs:
+            for name in possible_names:
+                file_paths.append(os.path.join(base_dir, name))
+        
+        # 尝试查找其他可能的路径（递归搜索）
         for root_dir in [os.path.join(os.path.dirname(__file__), ".."), project_root]:
-            pattern = os.path.join(root_dir, "**", f"issp_profile_{formatted_domain_name}.json")
-            file_paths.extend(glob.glob(pattern, recursive=True))
-            
-            # 也尝试查找不同大小写的文件名
-            pattern = os.path.join(root_dir, "**", f"issp_profile_{domain_name}.json")
-            file_paths.extend(glob.glob(pattern, recursive=True))
+            for name in possible_names:
+                pattern = os.path.join(root_dir, "**", name)
+                file_paths.extend(glob.glob(pattern, recursive=True))
         
         # 去重
         file_paths = list(set(file_paths))
@@ -464,7 +472,7 @@ def load_ground_truth(domain_name: str, dataset_size: int = 500) -> List[Dict[st
     
     Args:
         domain_name: 领域名称
-        dataset_size: 数据集大小，可选值为500(采样1%)、5000(采样10%)、50000(原始数据集)
+        dataset_size: 数据集大小，可选值为500、1000、2000
         
     Returns:
         真实答案数据列表
@@ -472,10 +480,10 @@ def load_ground_truth(domain_name: str, dataset_size: int = 500) -> List[Dict[st
     # 根据dataset_size参数选择对应的数据集路径
     if dataset_size == 500:
         dir_path = "A_GroundTruth_sampling500"
-    elif dataset_size == 5000:
-        dir_path = "A_GroundTruth_sampling5000"
-    elif dataset_size == 50000:
-        dir_path = "A_GroundTruth"
+    elif dataset_size == 1000:
+        dir_path = "A_GroundTruth_sampling1000"
+    elif dataset_size == 2000:
+        dir_path = "A_GroundTruth_sampling2000"
     else:
         # 默认使用500大小的数据集
         dir_path = "A_GroundTruth_sampling500"
@@ -1959,7 +1967,7 @@ def parse_args():
     parser.add_argument('--no_log', type=str2bool, default=False, help='禁用日志记录到文件')
     parser.add_argument('--print_prompt', type=str2bool, default=True, help='打印完整的prompt、问答和LLM回答到json文件中')
     parser.add_argument('--shuffle_options', type=str2bool, default=True, help='随机打乱问题选项顺序，默认打乱选项顺序')
-    parser.add_argument('--dataset_size', type=int, default=500, choices=[500, 5000, 50000], help='数据集大小，500(采样1%)、5000(采样10%)、50000(原始数据集)，默认为500')
+    parser.add_argument('--dataset_size', type=int, default=500, choices=[500, 1000, 2000], help='数据集大小，可选值为500、1000、2000，默认为500')
     parser.add_argument('--tensor_parallel_size', type=int, default=1, help='张量并行大小，默认为1')
     
     return parser.parse_args()
