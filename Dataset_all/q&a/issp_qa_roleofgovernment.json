@@ -4,35 +4,29 @@
     "question": "Q1 In general, would you say that people should obey the law without exception, or are there exceptional occasions on which people should follow their consciences even if it means breaking the law?",
     "answer": {
       "1": "Obey the law without exception",
-      "2": "Follow conscience on occasions",
-      "8": "Can't choose",
-      "9": "No answer"
+      "2": "Follow conscience on occasions"
     },
     "special": {}
   },
   {
     "question_id": "v2",
-    "question": "Q2 There are many ways people or organisations can protest against a government action they strongly oppose. Please show which you think should be allowed and which should not be allowed by ticking a box on each line. Q2a Organising public meetings to protest against the government.",
+    "question": "Q2 There are many ways people or organisations can protest against a government action they strongly oppose. Please show which you think should be allowed and which should not be allowed. Q2a Organising public meetings to protest against the government.",
     "answer": {
       "1": "Definitely allowed",
       "2": "Probably allowed",
       "3": "Probably not allowed",
-      "4": "Definitely not allowed",
-      "8": "Can't choose",
-      "9": "No answer"
+      "4": "Definitely not allowed"
     },
     "special": {}
   },
   {
     "question_id": "v3",
-    "question": "Q2 There are many ways people or organisations can protest against a government action they strongly oppose. Please show which you think should be allowed and which should not be allowed by ticking a box on each line. Q2b Organising protest marches and demonstrations.",
+    "question": "Q2 There are many ways people or organisations can protest against a government action they strongly oppose. Please show which you think should be allowed and which should not be allowed. Q2b Organising protest marches and demonstrations.",
     "answer": {
       "1": "Definitely allowed",
       "2": "Probably allowed",
       "3": "Probably not allowed",
-      "4": "Definitely not allowed",
-      "8": "Can't choose",
-      "9": "No answer"
+      "4": "Definitely not allowed"
     },
     "special": {}
   },
@@ -43,9 +37,7 @@
       "1": "Definitely allowed",
       "2": "Probably allowed",
       "3": "Probably not allowed",
-      "4": "Definitely not allowed",
-      "8": "Can't choose",
-      "9": "No answer"
+      "4": "Definitely not allowed"
     },
     "special": {}
   },
@@ -56,9 +48,7 @@
       "1": "Definitely allowed",
       "2": "Probably allowed",
       "3": "Probably not allowed",
-      "4": "Definitely not allowed",
-      "8": "Can't choose",
-      "9": "No answer"
+      "4": "Definitely not allowed"
     },
     "special": {}
   },
@@ -67,9 +57,7 @@
     "question": "Q4 All systems of justice make mistakes, but which do you think is worse...",
     "answer": {
       "1": "Convict an innocent person",
-      "2": "Let a guilty person go free",
-      "8": "Can't choose",
-      "9": "No answer"
+      "2": "Let a guilty person go free"
     },
     "special": {}
   },
@@ -81,9 +69,7 @@
       "2": "In favour of",
       "3": "Neither in favour of nor against",
       "4": "Against",
-      "5": "Strongly against",
-      "8": "Can't choose",
-      "9": "No answer"
+      "5": "Strongly against"
     },
     "special": {}
   },
@@ -95,9 +81,7 @@
       "2": "In favour of",
       "3": "Neither in favour of nor against",
       "4": "Against",
-      "5": "Strongly against",
-      "8": "Can't choose",
-      "9": "No answer"
+      "5": "Strongly against"
     },
     "special": {}
   },
@@ -109,9 +93,7 @@
       "2": "In favour of",
       "3": "Neither in favour of nor against",
       "4": "Against",
-      "5": "Strongly against",
-      "8": "Can't choose",
-      "9": "No answer"
+      "5": "Strongly against"
     },
     "special": {}
   },
@@ -123,9 +105,7 @@
       "2": "In favour of",
       "3": "Neither in favour of nor against",
       "4": "Against",
-      "5": "Strongly against",
-      "8": "Can't choose",
-      "9": "No answer"
+      "5": "Strongly against"
     },
     "special": {}
   },
@@ -137,9 +117,7 @@
       "2": "In favour of",
       "3": "Neither in favour of nor against",
       "4": "Against",
-      "5": "Strongly against",
-      "8": "Can't choose",
-      "9": "No answer"
+      "5": "Strongly against"
     },
     "special": {}
   },
@@ -151,9 +129,7 @@
       "2": "In favour of",
       "3": "Neither in favour of nor against",
       "4": "Against",
-      "5": "Strongly against",
-      "8": "Can't choose",
-      "9": "No answer"
+      "5": "Strongly against"
     },
     "special": {}
   },
@@ -165,9 +141,7 @@
       "2": "Spend more",
       "3": "Spend the same as now",
       "4": "Spend less",
-      "5": "Spend much less",
-      "8": "Can't choose",
-      "9": "No answer"
+      "5": "Spend much less"
     },
     "special": {}
   },
@@ -179,9 +153,7 @@
       "2": "Spend more",
       "3": "Spend the same as now",
       "4": "Spend less",
-      "5": "Spend much less",
-      "8": "Can't choose",
-      "9": "No answer"
+      "5": "Spend much less"
     },
     "special": {}
   },
@@ -193,9 +165,7 @@
       "2": "Spend more",
       "3": "Spend the same as now",
       "4": "Spend less",
-      "5": "Spend much less",
-      "8": "Can't choose",
-      "9": "No answer"
+      "5": "Spend much less"
     },
     "special": {}
   },
@@ -207,9 +177,7 @@
       "2": "Spend more",
       "3": "Spend the same as now",
       "4": "Spend less",
-      "5": "Spend much less",
-      "8": "Can't choose",
-      "9": "No answer"
+      "5": "Spend much less"
     },
     "special": {}
   },
@@ -221,14 +189,10 @@
       "2": "Spend more",
       "3": "Spend the same as now",
       "4": "Spend less",
-      "5": "Spend much less",
-      "8": "Can't choose",
-      "9": "No answer"
+      "5": "Spend much less"
     },
     "special": {
-      "IS": {
-        "0": "Not available"
-      }
+
     }
   },
   {
@@ -239,9 +203,7 @@
       "2": "Spend more",
       "3": "Spend the same as now",
       "4": "Spend less",
-      "5": "Spend much less",
-      "8": "Can't choose",
-      "9": "No answer"
+      "5": "Spend much less"
     },
     "special": {}
   },
@@ -253,14 +215,9 @@
       "2": "Spend more",
       "3": "Spend the same as now",
       "4": "Spend less",
-      "5": "Spend much less",
-      "8": "Can't choose",
-      "9": "No answer"
+      "5": "Spend much less"
     },
     "special": {
-      "PH": {
-        "0": "Not available, not applicable in the Philippines"
-      }
     }
   },
   {
@@ -271,9 +228,7 @@
       "2": "Spend more",
       "3": "Spend the same as now",
       "4": "Spend less",
-      "5": "Spend much less",
-      "8": "Can't choose",
-      "9": "No answer"
+      "5": "Spend much less"
     },
     "special": {}
   },
@@ -284,9 +239,7 @@
       "1": "Definitely should be",
       "2": "Probably should be",
       "3": "Probably should not be",
-      "4": "Definitely should not be",
-      "8": "Can't choose",
-      "9": "No answer"
+      "4": "Definitely should not be"
     },
     "special": {}
   },
@@ -297,9 +250,7 @@
       "1": "Definitely should be",
       "2": "Probably should be",
       "3": "Probably should not be",
-      "4": "Definitely should not be",
-      "8": "Can't choose",
-      "9": "No answer"
+      "4": "Definitely should not be"
     },
     "special": {}
   },
@@ -310,9 +261,7 @@
       "1": "Definitely should be",
       "2": "Probably should be",
       "3": "Probably should not be",
-      "4": "Definitely should not be",
-      "8": "Can't choose",
-      "9": "No answer"
+      "4": "Definitely should not be"
     },
     "special": {}
   },
@@ -323,9 +272,7 @@
       "1": "Definitely should be",
       "2": "Probably should be",
       "3": "Probably should not be",
-      "4": "Definitely should not be",
-      "8": "Can't choose",
-      "9": "No answer"
+      "4": "Definitely should not be"
     },
     "special": {}
   },
@@ -336,9 +283,7 @@
       "1": "Definitely should be",
       "2": "Probably should be",
       "3": "Probably should not be",
-      "4": "Definitely should not be",
-      "8": "Can't choose",
-      "9": "No answer"
+      "4": "Definitely should not be"
     },
     "special": {}
   },
@@ -349,14 +294,9 @@
       "1": "Definitely should be",
       "2": "Probably should be",
       "3": "Probably should not be",
-      "4": "Definitely should not be",
-      "8": "Can't choose",
-      "9": "No answer"
+      "4": "Definitely should not be"
     },
     "special": {
-      "GE": {
-        "0": "Not available"
-      }
     }
   },
   {
@@ -366,9 +306,7 @@
       "1": "Definitely should be",
       "2": "Probably should be",
       "3": "Probably should not be",
-      "4": "Definitely should not be",
-      "8": "Can't choose",
-      "9": "No answer"
+      "4": "Definitely should not be"
     },
     "special": {}
   },
@@ -379,9 +317,7 @@
       "1": "Definitely should be",
       "2": "Probably should be",
       "3": "Probably should not be",
-      "4": "Definitely should not be",
-      "8": "Can't choose",
-      "9": "No answer"
+      "4": "Definitely should not be"
     },
     "special": {}
   },
@@ -392,9 +328,7 @@
       "1": "Definitely should be",
       "2": "Probably should be",
       "3": "Probably should not be",
-      "4": "Definitely should not be",
-      "8": "Can't choose",
-      "9": "No answer"
+      "4": "Definitely should not be"
     },
     "special": {}
   },
@@ -405,9 +339,7 @@
       "1": "Definitely should be",
       "2": "Probably should be",
       "3": "Probably should not be",
-      "4": "Definitely should not be",
-      "8": "Can't choose",
-      "9": "No answer"
+      "4": "Definitely should not be"
     },
     "special": {}
   },
@@ -418,9 +350,7 @@
       "1": "Definitely should be",
       "2": "Probably should be",
       "3": "Probably should not be",
-      "4": "Definitely should not be",
-      "8": "Can't choose",
-      "9": "No answer"
+      "4": "Definitely should not be"
     },
     "special": {}
   },
@@ -432,9 +362,7 @@
       "2": "Private companies/ for-profit organisations",
       "3": "Non-profit organisations/ charities/ cooperatives",
       "4": "Religious organisations",
-      "5": "Family, relatives or friends",
-      "8": "Can't choose",
-      "9": "No answer"
+      "5": "Family, relatives or friends"
     },
     "special": {}
   },
@@ -446,9 +374,7 @@
       "2": "Private companies/ for-profit organisations",
       "3": "Non-profit organisations/ charities/ cooperatives",
       "4": "Religious organisations",
-      "5": "Family, relatives or friends",
-      "8": "Can't choose",
-      "9": "No answer"
+      "5": "Family, relatives or friends"
     },
     "special": {}
   },
@@ -460,15 +386,13 @@
       "2": "Private companies/ for-profit organisations",
       "3": "Non-profit organisations/ charities/ cooperatives",
       "4": "Religious organisations",
-      "5": "Family, relatives or friends",
-      "8": "Can't choose",
-      "9": "No answer"
+      "5": "Family, relatives or friends"
     },
     "special": {}
   },
   {
     "question_id": "v35",
-    "question": "Q9 Here is a list of people and organisations that can influence government actions. Q9a Please read through the list and write in the boxes below the letters corresponding to the ones you think have the MOST influence on the actions of the [COUNTRY] government?",
+    "question": "Q9 Here is a list of people and organisations that can influence government actions. Q9a Please read through the list and select the one that you think have the MOST influence on the actions of the [COUNTRY] government?",
     "answer": {
       "1": "The media",
       "2": "Trade unions",
@@ -479,15 +403,13 @@
       "7": "People who vote for the party/ the parties in government",
       "8": "Citizens in general",
       "9": "Civic and voluntary organisations",
-      "10": "International organisations (e.g. United Nations, International Monetary Fund)",
-      "98": "Can't choose",
-      "99": "No answer"
+      "10": "International organisations (e.g. United Nations, International Monetary Fund)"
     },
     "special": {}
   },
   {
     "question_id": "v36",
-    "question": "Q9 Here is a list of people and organisations that can influence government actions. Q9b Please read through the list and write in the boxes below the letters corresponding to the ones you think have the SECOND MOST influence on the actions of the [COUNTRY] government?",
+    "question": "Q9 Here is a list of people and organisations that can influence government actions. Q9b Please read through the list and select the one that you think have the SECOND MOST influence on the actions of the [COUNTRY] government?",
     "answer": {
       "1": "The media",
       "2": "Trade unions",
@@ -498,9 +420,7 @@
       "7": "People who vote for the party/ the parties in government",
       "8": "Citizens in general",
       "9": "Civic and voluntary organisations",
-      "10": "International organisations (e.g. United Nations, International Monetary Fund)",
-      "98": "Can't choose",
-      "99": "No answer, no second most influence"
+      "10": "International organisations (e.g. United Nations, International Monetary Fund)"
     },
     "special": {}
   },
@@ -509,9 +429,7 @@
     "question": "Q10 Here are two opinions about what affects policies in [COUNTRY]. Which of them comes closest to your view?",
     "answer": {
       "1": "Policies in [COUNTRY] depend more on what is happening in the world economy, rather than who is in government",
-      "2": "Policies in [COUNTRY] depend more on who is in government, rather than what is happening in the world economy",
-      "8": "Can't choose",
-      "9": "No answer"
+      "2": "Policies in [COUNTRY] depend more on who is in government, rather than what is happening in the world economy"
     },
     "special": {}
   },
@@ -522,14 +440,9 @@
       "1": "Definitely should have right",
       "2": "Probably should have right",
       "3": "Probably should not have right",
-      "4": "Definitely should not have right",
-      "8": "Can't choose",
-      "9": "No answer"
+      "4": "Definitely should not have right"
     },
     "special": {
-      "HU": {
-        "8": "Should have or not, can't choose"
-      }
     }
   },
   {
@@ -539,33 +452,20 @@
       "1": "Definitely should have right",
       "2": "Probably should have right",
       "3": "Probably should not have right",
-      "4": "Definitely should not have right",
-      "8": "Can't choose",
-      "9": "No answer"
+      "4": "Definitely should not have right"
     },
     "special": {
-      "HU": {
-        "8": "Should have or not, can't choose"
-      }
     }
   },
   {
     "question_id": "v40",
-    "question": "Q12 Here is a scale from 0 to 10 where 0 is 'all government information should be publicly available, even if this meant a risk to public security' and 10 is 'public security should be given priority, even if this meant limiting access to government information'. Where would you place yourself on such a scale?",
+    "question": "Q12 Here is a scale from 1 to 5 where 1 is 'All government information should be publicly available, even if this meant a risk to public security' and 5 is 'Public security should be given priority, even if this meant limiting access to government information'. Where would you place yourself on such a scale?",
     "answer": {
-      "0": "All government information should be publicly available, even if this meant a risk to public security, 0",
-      "1": "01",
-      "2": "02",
-      "3": "03",
-      "4": "04",
-      "5": "05",
-      "6": "06",
-      "7": "07",
-      "8": "08",
-      "9": "09",
-      "10": "Public security should be given priority, even if this meant limiting access to government information, 10",
-      "98": "Can't choose",
-      "99": "No answer"
+      "1": "1, All government information should be publicly available, even if this meant a risk to public security",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5, Public security should be given priority, even if this meant limiting access to government information"
     },
     "special": {}
   },
@@ -576,29 +476,10 @@
       "1": "Definitely should have right",
       "2": "Probably should have right",
       "3": "Probably should not have right",
-      "4": "Definitely should not have right",
-      "8": "Can't choose",
-      "9": "No answer"
+      "4": "Definitely should not have right"
     },
     "special": {
-      "HU": {
-        "0": "NAP: Question differs from ISSP standard"
-      }
     }
-  },
-  {
-    "question_id": "HU_v41",
-    "question": "Q13 Some people believe that the government should have the right to take some measures in the name of national security. Others do not agree. Please use this ANSWER SHEET to tell me your opinion if the government should have the right to... Q13a ...collect information about anyone living in [COUNTRY] without their knowledge.",
-    "answer": {
-      "0": "NAP, other countries",
-      "1": "Almost always",
-      "2": "Often",
-      "3": "Sometimes",
-      "4": "Almost never",
-      "8": "Can't choose",
-      "9": "No answer"
-    },
-    "special": {}
   },
   {
     "question_id": "v42",
@@ -607,29 +488,10 @@
       "1": "Definitely should have right",
       "2": "Probably should have right",
       "3": "Probably should not have right",
-      "4": "Definitely should not have right",
-      "8": "Can't choose",
-      "9": "No answer"
+      "4": "Definitely should not have right"
     },
     "special": {
-      "HU": {
-        "0": "NAP: Question differs from ISSP standard"
-      }
     }
-  },
-  {
-    "question_id": "HU_v42",
-    "question": "Q13 Some people believe that the government should have the right to take some measures in the name of national security. Others do not agree. Please use this ANSWER SHEET to tell me your opinion if the government should have the right to... Q13b ...collect information about anyone living in other countries without their knowledge.",
-    "answer": {
-      "0": "NAP, other countries",
-      "1": "Almost always",
-      "2": "Often",
-      "3": "Sometimes",
-      "4": "Almost never",
-      "8": "Can't choose",
-      "9": "No answer"
-    },
-    "special": {}
   },
   {
     "question_id": "v43",
@@ -638,9 +500,7 @@
       "1": "Definitely should have right",
       "2": "Probably should have right",
       "3": "Probably should not have right",
-      "4": "Definitely should not have right",
-      "8": "Can't choose",
-      "9": "No answer"
+      "4": "Definitely should not have right"
     },
     "special": {}
   },
@@ -651,9 +511,7 @@
       "1": "Definitely should have right",
       "2": "Probably should have right",
       "3": "Probably should not have right",
-      "4": "Definitely should not have right",
-      "8": "Can't choose",
-      "9": "No answer"
+      "4": "Definitely should not have right"
     },
     "special": {}
   },
@@ -664,9 +522,7 @@
       "1": "Definitely should have right",
       "2": "Probably should have right",
       "3": "Probably should not have right",
-      "4": "Definitely should not have right",
-      "8": "Can't choose",
-      "9": "No answer"
+      "4": "Definitely should not have right"
     },
     "special": {}
   },
@@ -678,41 +534,20 @@
       "2": "Fairly interested",
       "3": "Somewhat interested",
       "4": "Not very interested",
-      "5": "Not at all interested",
-      "8": "Can't choose",
-      "9": "No answer"
+      "5": "Not at all interested"
     },
     "special": {
-      "NZ": {
-        "0": "NAP: Answer categories differ from ISSP standard"
-      }
     }
   },
   {
-    "question_id": "NZ_v46",
-    "question": "Q15 How interested would you say you personally are in politics?",
-    "answer": {
-      "0": "NAP, other countries",
-      "1": "Very interested",
-      "2": "Fairly interested",
-      "3": "Not very interested",
-      "4": "Not at all interested",
-      "8": "Can't choose",
-      "9": "No answer"
-    },
-    "special": {}
-  },
-  {
     "question_id": "v47",
-    "question": "Q16 Please tick one box on each line to show how much you agree or disagree with each of the following statements. Q16a People like me don't have any say about what the government does.",
+    "question": "Q16 Please make a selection to show how much you agree or disagree with each of the following statements. Q16a People like me don't have any say about what the government does.",
     "answer": {
       "1": "Strongly agree",
       "2": "Agree",
       "3": "Neither agree nor disagree",
       "4": "Disagree",
-      "5": "Strongly disagree",
-      "8": "Can't choose",
-      "9": "No answer"
+      "5": "Strongly disagree"
     },
     "special": {
       "JP": {
@@ -726,15 +561,13 @@
   },
   {
     "question_id": "v48",
-    "question": "Q16 Please tick one box on each line to show how much you agree or disagree with each of the following statements. Q16b I feel that I have a pretty good understanding of the important political issues facing our country.",
+    "question": "Q16 Please make a selection to show how much you agree or disagree with each of the following statements. Q16b I feel that I have a pretty good understanding of the important political issues facing our country.",
     "answer": {
       "1": "Strongly agree",
       "2": "Agree",
       "3": "Neither agree nor disagree",
       "4": "Disagree",
-      "5": "Strongly disagree",
-      "8": "Can't choose",
-      "9": "No answer"
+      "5": "Strongly disagree"
     },
     "special": {
       "JP": {
@@ -748,15 +581,13 @@
   },
   {
     "question_id": "v49",
-    "question": "Q16 Please tick one box on each line to show how much you agree or disagree with each of the following statements. Q16c People we elect as MPs try to keep the promises they have made during the election.",
+    "question": "Q16 Please make a selection to show how much you agree or disagree with each of the following statements. Q16c People we elect as MPs try to keep the promises they have made during the election.",
     "answer": {
       "1": "Strongly agree",
       "2": "Agree",
       "3": "Neither agree nor disagree",
       "4": "Disagree",
-      "5": "Strongly disagree",
-      "8": "Can't choose",
-      "9": "No answer"
+      "5": "Strongly disagree"
     },
     "special": {
       "JP": {
@@ -770,15 +601,13 @@
   },
   {
     "question_id": "v50",
-    "question": "Q16 Please tick one box on each line to show how much you agree or disagree with each of the following statements. Q16d Most civil servants can be trusted to do what is best for the country.",
+    "question": "Q16 Please make a selection to show how much you agree or disagree with each of the following statements. Q16d Most civil servants can be trusted to do what is best for the country.",
     "answer": {
       "1": "Strongly agree",
       "2": "Agree",
       "3": "Neither agree nor disagree",
       "4": "Disagree",
-      "5": "Strongly disagree",
-      "8": "Can't choose",
-      "9": "No answer"
+      "5": "Strongly disagree"
     },
     "special": {
       "JP": {
@@ -798,9 +627,7 @@
       "2": "Too high",
       "3": "About right",
       "4": "Too low",
-      "5": "Much too low",
-      "8": "Can't choose",
-      "9": "No answer"
+      "5": "Much too low"
     },
     "special": {}
   },
@@ -812,9 +639,7 @@
       "2": "Too high",
       "3": "About right",
       "4": "Too low",
-      "5": "Much too low",
-      "8": "Can't choose",
-      "9": "No answer"
+      "5": "Much too low"
     },
     "special": {}
   },
@@ -826,9 +651,7 @@
       "2": "Too high",
       "3": "About right",
       "4": "Too low",
-      "5": "Much too low",
-      "8": "Can't choose",
-      "9": "No answer"
+      "5": "Much too low"
     },
     "special": {}
   },
@@ -839,9 +662,7 @@
       "1": "Almost always",
       "2": "Often",
       "3": "Sometimes",
-      "4": "Almost never",
-      "8": "Can't choose",
-      "9": "No answer"
+      "4": "Almost never"
     },
     "special": {}
   },
@@ -852,9 +673,7 @@
       "1": "Almost always",
       "2": "Often",
       "3": "Sometimes",
-      "4": "Almost never",
-      "8": "Can't choose",
-      "9": "No answer"
+      "4": "Almost never"
     },
     "special": {}
   },
@@ -865,9 +684,7 @@
       "1": "Almost always",
       "2": "Often",
       "3": "Sometimes",
-      "4": "Almost never",
-      "8": "Can't choose",
-      "9": "No answer"
+      "4": "Almost never"
     },
     "special": {}
   },
@@ -878,9 +695,7 @@
       "1": "Almost always",
       "2": "Often",
       "3": "Sometimes",
-      "4": "Almost never",
-      "8": "Can't choose",
-      "9": "No answer"
+      "4": "Almost never"
     },
     "special": {}
   },
@@ -892,9 +707,7 @@
       "2": "A few",
       "3": "Some",
       "4": "Quite a lot",
-      "5": "Almost all",
-      "8": "Can't choose",
-      "9": "No answer"
+      "5": "Almost all"
     },
     "special": {}
   },
@@ -906,9 +719,7 @@
       "2": "A few",
       "3": "Some",
       "4": "Quite a lot",
-      "5": "Almost all",
-      "8": "Can't choose",
-      "9": "No answer"
+      "5": "Almost all"
     },
     "special": {}
   },
@@ -920,157 +731,8 @@
       "2": "Seldom",
       "3": "Occasionally",
       "4": "Quite often",
-      "5": "Very often",
-      "8": "Can't choose",
-      "9": "No answer"
+      "5": "Very often"
     },
     "special": {}
-  },
-  {
-    "question_id": "v61",
-    "question": "OPTIONAL QUESTION Q23 How successful do you think the government in [COUNTRY] is nowadays in each of the following areas? Q23a Providing health care for the sick?",
-    "answer": {
-      "1": "Very successful",
-      "2": "Quite successful",
-      "3": "Neither successful nor unsuccessful",
-      "4": "Quite unsuccessful",
-      "5": "Very unsuccessful",
-      "8": "Can't choose",
-      "9": "No answer"
-    },
-    "special": {
-      "BE": {
-        "0": "Not available"
-      },
-      "CL": {
-        "0": "Not available"
-      },
-      "DE": {
-        "0": "Not available"
-      },
-      "ES": {
-        "0": "Not available"
-      },
-      "HU": {
-        "0": "Not available"
-      },
-      "IL": {
-        "0": "Not available"
-      },
-      "NO": {
-        "0": "Not available"
-      },
-      "SI": {
-        "0": "Not available"
-      },
-      "SK": {
-        "0": "Not available"
-      },
-      "TW": {
-        "0": "Not available"
-      },
-      "US": {
-        "0": "Not available"
-      },
-      "ZA": {
-        "0": "Not available"
-      }
-    }
-  },
-  {
-    "question_id": "v62",
-    "question": "OPTIONAL QUESTION Q23 How successful do you think the government in [COUNTRY] is nowadays in each of the following areas? Q23b Providing a decent standard of living for the old?",
-    "answer": {
-      "1": "Very successful",
-      "2": "Quite successful",
-      "3": "Neither successful nor unsuccessful",
-      "4": "Quite unsuccessful",
-      "5": "Very unsuccessful",
-      "8": "Can't choose",
-      "9": "No answer"
-    },
-    "special": {
-      "BE": {
-        "0": "Not available"
-      },
-      "CL": {
-        "0": "Not available"
-      },
-      "DE": {
-        "0": "Not available"
-      },
-      "ES": {
-        "0": "Not available"
-      },
-      "HU": {
-        "0": "Not available"
-      },
-      "IL": {
-        "0": "Not available"
-      },
-      "NO": {
-        "0": "Not available"
-      },
-      "SI": {
-        "0": "Not available"
-      },
-      "SK": {
-        "0": "Not available"
-      },
-      "US": {
-        "0": "Not available"
-      },
-      "ZA": {
-        "0": "Not available"
-      }
-    }
-  },
-  {
-    "question_id": "v63",
-    "question": "OPTIONAL QUESTION Q23 How successful do you think the government in [COUNTRY] is nowadays in each of the following areas? Q23c Dealing with threats to [COUNTRY'S] security?",
-    "answer": {
-      "1": "Very successful",
-      "2": "Quite successful",
-      "3": "Neither successful nor unsuccessful",
-      "4": "Quite unsuccessful",
-      "5": "Very unsuccessful",
-      "8": "Can't choose",
-      "9": "No answer"
-    },
-    "special": {
-      "BE": {
-        "0": "Not available"
-      },
-      "CL": {
-        "0": "Not available"
-      },
-      "DE": {
-        "0": "Not available"
-      },
-      "ES": {
-        "0": "Not available"
-      },
-      "HU": {
-        "0": "Not available"
-      },
-      "IL": {
-        "0": "Not available"
-      },
-      "NO": {
-        "0": "Not available"
-      },
-      "SI": {
-        "0": "Not available"
-      },
-      "SK": {
-        "0": "Not available"
-      },
-      "US": {
-        "0": "Not available"
-      },
-      "ZA": {
-        "0": "Not available"
-      }
-    }
   }
 ]

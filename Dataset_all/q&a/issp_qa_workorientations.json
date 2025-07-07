@@ -1,15 +1,13 @@
 [
   {
     "question_id": "v1",
-    "question": "Q1\nPlease tick one box for each statement below to show how much you agree or disagree with it, thinking of work in general.\n(PLEASE TICK ONE BOX ON EACH LINE)\nQ1a\nA job is just a way of earning money - no more.",
+    "question": "Q1 Please choose one to show how much you agree or disagree with it, thinking of work in general.  Q1a A job is just a way of earning money - no more.",
     "answer": {
       "1": "Strongly agree",
       "2": "Agree",
       "3": "Neither agree nor disagree",
       "4": "Disagree",
-      "5": "Strongly disagree",
-      "8": "Can't choose",
-      "9": "No answer, refused"
+      "5": "Strongly disagree"
     },
     "special": {
       "VE": {
@@ -23,15 +21,13 @@
   },
   {
     "question_id": "v2",
-    "question": "Q1\nPlease tick one box for each statement below to show how much you agree or disagree with it, thinking of work in general.\n(PLEASE TICK ONE BOX ON EACH LINE)\nQ1b\nI would enjoy having a paid job even if I did not need the money.",
+    "question": "Q1 Please choose one to show how much you agree or disagree with it, thinking of work in general.  Q1b I would enjoy having a paid job even if I did not need the money.",
     "answer": {
       "1": "Strongly agree",
       "2": "Agree",
       "3": "Neither agree nor disagree",
       "4": "Disagree",
-      "5": "Strongly disagree",
-      "8": "Can't choose",
-      "9": "No answer, refused"
+      "5": "Strongly disagree"
     },
     "special": {
       "VE": {
@@ -45,251 +41,162 @@
   },
   {
     "question_id": "v3",
-    "question": "Q2\nFor each of the following, please tick one box to show how important you personally think it is in a job. How important is ...\n(PLEASE TICK ONE BOX ON EACH LINE)\nQ2a\n... job security?",
+    "question": "Q2 For each of the following, please choose one to show how important you personally think it is in a job. How important is ...  Q2a ... job security?",
     "answer": {
       "1": "Very important",
       "2": "Important",
       "3": "Neither important nor unimportant",
       "4": "Not important",
-      "5": "Not important at all",
-      "8": "Can't choose",
-      "9": "No answer, refused"
+      "5": "Not important at all"
     },
     "special": {}
   },
   {
     "question_id": "v4",
-    "question": "Q2\nFor each of the following, please tick one box to show how important you personally think it is in a job. How important is ...\n(PLEASE TICK ONE BOX ON EACH LINE)\nQ2b\n... high income?",
+    "question": "Q2 For each of the following, please choose one to show how important you personally think it is in a job. How important is ...  Q2b ... high income?",
     "answer": {
       "1": "Very important",
       "2": "Important",
       "3": "Neither important nor unimportant",
       "4": "Not important",
-      "5": "Not important at all",
-      "8": "Can't choose",
-      "9": "No answer, refused"
+      "5": "Not important at all"
     },
     "special": {}
   },
   {
     "question_id": "v5",
-    "question": "Q2\nFor each of the following, please tick one box to show how important you personally think it is in a job. How important is ...\n(PLEASE TICK ONE BOX ON EACH LINE)\nQ2c\n... good opportunities for advancement?",
+    "question": "Q2 For each of the following, please choose one to show how important you personally think it is in a job. How important is ...  Q2c ... good opportunities for advancement?",
     "answer": {
       "1": "Very important",
       "2": "Important",
       "3": "Neither important nor unimportant",
       "4": "Not important",
-      "5": "Not important at all",
-      "8": "Can't choose",
-      "9": "No answer, refused"
+      "5": "Not important at all"
     },
     "special": {}
   },
   {
     "question_id": "v6",
-    "question": "Q2\nFor each of the following, please tick one box to show how important you personally think it is in a job. How important is ...\n(PLEASE TICK ONE BOX ON EACH LINE)\nQ2d\n... an interesting job?",
+    "question": "Q2 For each of the following, please choose one to show how important you personally think it is in a job. How important is ...  Q2d ... an interesting job?",
     "answer": {
       "1": "Very important",
       "2": "Important",
       "3": "Neither important nor unimportant",
       "4": "Not important",
-      "5": "Not important at all",
-      "8": "Can't choose",
-      "9": "No answer, refused"
+      "5": "Not important at all"
     },
     "special": {}
   },
   {
     "question_id": "v7",
-    "question": "Q2\nFor each of the following, please tick one box to show how important you personally think it is in a job. How important is ...\n(PLEASE TICK ONE BOX ON EACH LINE)\nQ2e\n... a job that allows someone to work independently?",
+    "question": "Q2 For each of the following, please choose one to show how important you personally think it is in a job. How important is ...  Q2e ... a job that allows someone to work independently?",
     "answer": {
       "1": "Very important",
       "2": "Important",
       "3": "Neither important nor unimportant",
       "4": "Not important",
-      "5": "Not important at all",
-      "8": "Can't choose",
-      "9": "No answer, refused"
+      "5": "Not important at all"
     },
     "special": {}
   },
   {
     "question_id": "v8",
-    "question": "Q2\nFor each of the following, please tick one box to show how important you personally think it is in a job. How important is ...\n(PLEASE TICK ONE BOX ON EACH LINE)\nQ2f\n... a job that allows someone to help other people?",
+    "question": "Q2 For each of the following, please choose one to show how important you personally think it is in a job. How important is ...  Q2f ... a job that allows someone to help other people?",
     "answer": {
       "1": "Very important",
       "2": "Important",
       "3": "Neither important nor unimportant",
       "4": "Not important",
-      "5": "Not important at all",
-      "8": "Can't choose",
-      "9": "No answer, refused"
+      "5": "Not important at all"
     },
     "special": {}
   },
   {
     "question_id": "v9",
-    "question": "Q2\nFor each of the following, please tick one box to show how important you personally think it is in a job. How important is ...\n(PLEASE TICK ONE BOX ON EACH LINE)\nQ2g\n... a job that is useful to society?",
+    "question": "Q2 For each of the following, please choose one to show how important you personally think it is in a job. How important is ...  Q2g ... a job that is useful to society?",
     "answer": {
       "1": "Very important",
       "2": "Important",
       "3": "Neither important nor unimportant",
       "4": "Not important",
-      "5": "Not important at all",
-      "8": "Can't choose",
-      "9": "No answer, refused"
+      "5": "Not important at all"
     },
     "special": {}
   },
   {
     "question_id": "v10",
-    "question": "Q2\nFor each of the following, please tick one box to show how important you personally think it is in a job. How important is ...\n(PLEASE TICK ONE BOX ON EACH LINE)\nQ2h\n... a job that allows someone to decide their times or days of work?",
+    "question": "Q2 For each of the following, please choose one to show how important you personally think it is in a job. How important is ...  Q2h ... a job that allows someone to decide their times or days of work?",
     "answer": {
       "1": "Very important",
       "2": "Important",
       "3": "Neither important nor unimportant",
       "4": "Not important",
-      "5": "Not important at all",
-      "8": "Can't choose",
-      "9": "No answer, refused"
+      "5": "Not important at all"
     },
     "special": {}
   },
   {
     "question_id": "v11",
-    "question": "Q2\nFor each of the following, please tick one box to show how important you personally think it is in a job. How important is ...\n(PLEASE TICK ONE BOX ON EACH LINE)\nQ2i\n... a job that involves personal contact with other people?",
+    "question": "Q2 For each of the following, please choose one to show how important you personally think it is in a job. How important is ...  Q2i ... a job that involves personal contact with other people?",
     "answer": {
       "1": "Very important",
       "2": "Important",
       "3": "Neither important nor unimportant",
       "4": "Not important",
-      "5": "Not important at all",
-      "8": "Can't choose",
-      "9": "No answer, refused"
+      "5": "Not important at all"
     },
     "special": {}
   },
   {
     "question_id": "v12",
-    "question": "Q3\nHave you ever given up or would you give up good job opportunities for the benefit of your family life?\n(PLEASE TICK ONE BOX ONLY)\nNote in the source questionnaire for translation purposes: 'Family' should be understood in a broader sense.",
+    "question": "Q3 Have you ever given up or would you give up good job opportunities for the benefit of your family life?  Note in the source questionnaire for translation purposes: 'Family' should be understood in a broader sense.",
     "answer": {
       "1": "Yes, I have done so and probably would do so again",
       "2": "Yes, I have done so but probably would not do so again",
       "3": "No, I have not done so but probably would do so",
-      "4": "No, I have not done so and probably would not do so",
-      "8": "Can't choose",
-      "9": "No answer, refused"
+      "4": "No, I have not done so and probably would not do so"
     },
     "special": {}
   },
   {
     "question_id": "v13",
-    "question": "Q4\nHave you ever remained or would you remain in a job that was not satisfying for you for the benefit of your family life?\n(PLEASE TICK ONE BOX ONLY)\nNote in the source questionnaire for translation purposes: 'Family' should be understood in a broader sense.",
+    "question": "Q4 Have you ever remained or would you remain in a job that was not satisfying for you for the benefit of your family life?  Note in the source questionnaire for translation purposes: 'Family' should be understood in a broader sense.",
     "answer": {
       "1": "Yes, I have done so and probably would do so again",
       "2": "Yes, I have done so but probably would not do so again",
       "3": "No, I have not done so but probably would do so",
-      "4": "No, I have not done so and probably would not do so",
-      "8": "Can't choose",
-      "9": "No answer, refused"
+      "4": "No, I have not done so and probably would not do so"
     },
     "special": {}
   },
   {
     "question_id": "v14",
-    "question": "Q5\nOver the past five years, have you been discriminated against with regard to work, for instance when applying for a job, or when being \nconsidered for a pay increase or promotion?\n(PLEASE TICK ONE BOX ONLY)",
+    "question": "Q5 Over the past five years, have you been discriminated against with regard to work, for instance when applying for a job, or when being  considered for a pay increase or promotion? ",
     "answer": {
-      "0": "Does not apply: Did not work or did not seek work",
       "1": "Yes",
-      "2": "No",
-      "8": "Don't know",
-      "9": "No answer, refused"
+      "2": "No"
     },
     "special": {}
   },
   {
-    "question_id": "v15",
-    "question": "Q6\nIn your opinion, what was the main reason for the discrimination?\n(PLEASE TICK ONE BOX ONLY)",
-    "answer": {
-      "0": "Not applicable (code 2,0 in v14)",
-      "1": "My age",
-      "2": "My race, ethnicity",
-      "3": "My nationality",
-      "4": "My sex",
-      "5": "My religion",
-      "6": "My disability/ mental or physical illness",
-      "7": "My family responsibilities",
-      "8": "My political beliefs",
-      "9": "Other reason",
-      "98": "Can't choose",
-      "99": "No answer, refused"
-    },
-    "special": {
-      "CN": {
-        "95": "Other"
-      },
-      "CZ": {
-        "95": "Other"
-      },
-      "EE": {
-        "95": "Other"
-      },
-      "ES": {
-        "95": "Other"
-      },
-      "IS": {
-        "99": "No answer, refused including other (studying)"
-      },
-      "NZ": {
-        "95": "Other including moved away"
-      },
-      "PH": {
-        "95": "Other"
-      },
-      "TW": {
-        "95": "Other including health factors"
-      },
-      "VE": {
-        "99": "No answer, refused including other"
-      }
-    }
-  },
-  {
     "question_id": "v16",
-    "question": "Q7\nOver the past five years, have you been harassed by your superiors or co-workers at your job, for example, have you experienced any \nbullying, physical or psychological abuse?\n(PLEASE TICK ONE BOX ONLY)",
+    "question": "Q7 Over the past five years, have you been harassed by your superiors or co-workers at your job, for example, have you experienced any  bullying, physical or psychological abuse? ",
     "answer": {
-      "0": "Does not apply (I do not have a job/ superior/ co-worker)",
       "1": "Yes",
-      "2": "No",
-      "8": "Don't know",
-      "9": "No answer, refused"
+      "2": "No"
     },
     "special": {
-      "AT": {
-        "0": "Does not apply including code 2 in v14"
-      },
-      "CH": {
-        "0": "Does not apply including code 2 in v14"
-      },
-      "EE": {
-        "0": "Does not apply including code 2 in v14"
-      },
-      "NO": {
-        "0": "Does not apply including code 2 in v14"
-      }
     }
   },
   {
     "question_id": "v17",
-    "question": "Q8\nTo what extent do you agree or disagree with the following statements?\n(PLEASE TICK ONE BOX ON EACH LINE)\nQ8a\nWorkers need strong trade unions to protect their interests.",
+    "question": "Q8 To what extent do you agree or disagree with the following statements?  Q8a Workers need strong trade unions to protect their interests.",
     "answer": {
       "1": "Strongly agree",
       "2": "Agree",
       "3": "Neither agree nor disagree",
       "4": "Disagree",
-      "5": "Strongly disagree",
-      "8": "Can't choose",
-      "9": "No answer"
+      "5": "Strongly disagree"
     },
     "special": {
       "VE": {
@@ -303,15 +210,13 @@
   },
   {
     "question_id": "v18",
-    "question": "Q8\nTo what extent do you agree or disagree with the following statements?\n(PLEASE TICK ONE BOX ON EACH LINE)\nQ8b\nStrong trade unions are bad for [country’s] economy.",
+    "question": "Q8 To what extent do you agree or disagree with the following statements?  Q8b Strong trade unions are bad for [country’s] economy.",
     "answer": {
       "1": "Strongly agree",
       "2": "Agree",
       "3": "Neither agree nor disagree",
       "4": "Disagree",
-      "5": "Strongly disagree",
-      "8": "Can't choose",
-      "9": "No answer"
+      "5": "Strongly disagree"
     },
     "special": {
       "VE": {
@@ -325,14 +230,12 @@
   },
   {
     "question_id": "v19",
-    "question": "Q9\nSuppose you could decide on your work situation at present. Which of the following would you prefer?\n(PLEASE TICK ONE BOX ONLY)\nClarification note in the source questionnaire: The aim is to get at full-time/ part-time so the verbal labels 'full-time', 'part-time', 'less than', are of \ncentral importance. The numbers in parantheses can vary by country if necessary.",
+    "question": "Q9 Suppose you could decide on your work situation at present. Which of the following would you prefer?  Clarification note in the source questionnaire: The aim is to get at full-time/ part-time so the verbal labels 'full-time', 'part-time', 'less than', are of  central importance. The numbers in parantheses can vary by country if necessary.",
     "answer": {
       "1": "A full-time job [30 hours or more per week]",
       "2": "A part-time job [10-29 hours per week]",
       "3": "A job with less than 10 hours a week",
-      "4": "No paid job at all",
-      "8": "Can't choose",
-      "9": "No answer, refused"
+      "4": "No paid job at all"
     },
     "special": {
       "AT": {
@@ -513,44 +416,26 @@
     }
   },
   {
-    "question_id": "v20",
-    "question": "Q10\nAre you currently working for pay?\n(PLEASE TICK ONE BOX ONLY)\nClarification note in the source questionnaire: 'Currently working' refers to both self-employed and employees, and should include persons on \nleave if they are in an employment relationship.",
-    "answer": {
-      "1": "Yes",
-      "2": "No",
-      "9": "No answer, refused"
-    },
-    "special": {}
-  },
-  {
     "question_id": "v21",
-    "question": "Q11\nIF YOU ARE CURRENTLY WORKING FOR PAY (OR ON LEAVE BUT ARE IN AN EMPLOYMENT RELATIONSHIP)\nThink of the number of hours you work, and the money you earn in your main job, including any regular overtime. If you had only one of these \nthree choices, which of the following would you prefer?\n(PLEASE TICK ONE BOX ONLY)",
+    "question": "Q11 IF YOU ARE CURRENTLY WORKING FOR PAY (OR ON LEAVE BUT ARE IN AN EMPLOYMENT RELATIONSHIP) Think of the number of hours you work, and the money you earn in your main job, including any regular overtime. If you had only one of these  three choices, which of the following would you prefer? ",
     "answer": {
-      "0": "Not applicable (code 2 in v20/ [codes 2,3 in WORK])",
       "1": "Work longer, earn more money",
       "2": "Same number of hours, same money",
-      "3": "Work fewer, earn less money",
-      "8": "Can't choose",
-      "9": "No answer, refused"
+      "3": "Work fewer, earn less money"
     },
     "special": {
-      "VE": {
-        "0": "Not available"
-      }
+
     }
   },
   {
     "question_id": "v22",
-    "question": "Q12\nIF YOU ARE CURRENTLY WORKING FOR PAY (OR ON LEAVE BUT ARE IN AN EMPLOYMENT RELATIONSHIP)\nFor each of these statements about your (main) job, please tick one box to show how much you agree or disagree that it applies to your \njob.\n(PLEASE TICK ONE BOX ON EACH LINE)\nQ12a\nMy job is secure.",
+    "question": "Q12 IF YOU ARE CURRENTLY WORKING FOR PAY (OR ON LEAVE BUT ARE IN AN EMPLOYMENT RELATIONSHIP) For each of these statements about your (main) job, please choose one to show how much you agree or disagree that it applies to your  job.  Q12a My job is secure.",
     "answer": {
-      "0": "Not applicable (code 2 in v20/ [codes 2,3 in WORK])",
       "1": "Strongly agree",
       "2": "Agree",
       "3": "Neither agree nor disagree",
       "4": "Disagree",
-      "5": "Strongly disagree",
-      "8": "Can't choose",
-      "9": "No answer, refused"
+      "5": "Strongly disagree"
     },
     "special": {
       "VE": {
@@ -564,16 +449,13 @@
   },
   {
     "question_id": "v23",
-    "question": "Q12\nIF YOU ARE CURRENTLY WORKING FOR PAY (OR ON LEAVE BUT ARE IN AN EMPLOYMENT RELATIONSHIP)\nFor each of these statements about your (main) job, please tick one box to show how much you agree or disagree that it applies to your \njob.\n(PLEASE TICK ONE BOX ON EACH LINE)\nQ12b\nMy income is high.",
+    "question": "Q12 IF YOU ARE CURRENTLY WORKING FOR PAY (OR ON LEAVE BUT ARE IN AN EMPLOYMENT RELATIONSHIP) For each of these statements about your (main) job, please choose one to show how much you agree or disagree that it applies to your  job.  Q12b My income is high.",
     "answer": {
-      "0": "Not applicable (code 2 in v20/ [codes 2,3 in WORK])",
       "1": "Strongly agree",
       "2": "Agree",
       "3": "Neither agree nor disagree",
       "4": "Disagree",
-      "5": "Strongly disagree",
-      "8": "Can't choose",
-      "9": "No answer, refused"
+      "5": "Strongly disagree"
     },
     "special": {
       "VE": {
@@ -587,16 +469,13 @@
   },
   {
     "question_id": "v24",
-    "question": "Q12\nIF YOU ARE CURRENTLY WORKING FOR PAY (OR ON LEAVE BUT ARE IN AN EMPLOYMENT RELATIONSHIP)\nFor each of these statements about your (main) job, please tick one box to show how much you agree or disagree that it applies to your \njob.\n(PLEASE TICK ONE BOX ON EACH LINE)\nQ12c\nMy opportunities for advancement are high.",
+    "question": "Q12 IF YOU ARE CURRENTLY WORKING FOR PAY (OR ON LEAVE BUT ARE IN AN EMPLOYMENT RELATIONSHIP) For each of these statements about your (main) job, please choose one to show how much you agree or disagree that it applies to your  job.  Q12c My opportunities for advancement are high.",
     "answer": {
-      "0": "Not applicable (code 2 in v20/ [codes 2,3 in WORK])",
       "1": "Strongly agree",
       "2": "Agree",
       "3": "Neither agree nor disagree",
       "4": "Disagree",
-      "5": "Strongly disagree",
-      "8": "Can't choose",
-      "9": "No answer, refused"
+      "5": "Strongly disagree"
     },
     "special": {
       "VE": {
@@ -610,16 +489,13 @@
   },
   {
     "question_id": "v25",
-    "question": "Q12\nIF YOU ARE CURRENTLY WORKING FOR PAY (OR ON LEAVE BUT ARE IN AN EMPLOYMENT RELATIONSHIP)\nFor each of these statements about your (main) job, please tick one box to show how much you agree or disagree that it applies to your \njob.\n(PLEASE TICK ONE BOX ON EACH LINE)\nQ12d\nMy job is interesting.",
+    "question": "Q12 IF YOU ARE CURRENTLY WORKING FOR PAY (OR ON LEAVE BUT ARE IN AN EMPLOYMENT RELATIONSHIP) For each of these statements about your (main) job, please choose one to show how much you agree or disagree that it applies to your  job.  Q12d My job is interesting.",
     "answer": {
-      "0": "Not applicable (code 2 in v20/ [codes 2,3 in WORK])",
       "1": "Strongly agree",
       "2": "Agree",
       "3": "Neither agree nor disagree",
       "4": "Disagree",
-      "5": "Strongly disagree",
-      "8": "Can't choose",
-      "9": "No answer, refused"
+      "5": "Strongly disagree"
     },
     "special": {
       "VE": {
@@ -633,16 +509,13 @@
   },
   {
     "question_id": "v26",
-    "question": "Q12\nIF YOU ARE CURRENTLY WORKING FOR PAY (OR ON LEAVE BUT ARE IN AN EMPLOYMENT RELATIONSHIP)\nFor each of these statements about your (main) job, please tick one box to show how much you agree or disagree that it applies to your \njob.\n(PLEASE TICK ONE BOX ON EACH LINE)\nQ12e\nI can work independently.",
+    "question": "Q12 IF YOU ARE CURRENTLY WORKING FOR PAY (OR ON LEAVE BUT ARE IN AN EMPLOYMENT RELATIONSHIP) For each of these statements about your (main) job, please choose one to show how much you agree or disagree that it applies to your  job.  Q12e I can work independently.",
     "answer": {
-      "0": "Not applicable (code 2 in v20/ [codes 2,3 in WORK])",
       "1": "Strongly agree",
       "2": "Agree",
       "3": "Neither agree nor disagree",
       "4": "Disagree",
-      "5": "Strongly disagree",
-      "8": "Can't choose",
-      "9": "No answer, refused"
+      "5": "Strongly disagree"
     },
     "special": {
       "VE": {
@@ -656,16 +529,13 @@
   },
   {
     "question_id": "v27",
-    "question": "Q12\nIF YOU ARE CURRENTLY WORKING FOR PAY (OR ON LEAVE BUT ARE IN AN EMPLOYMENT RELATIONSHIP)\nFor each of these statements about your (main) job, please tick one box to show how much you agree or disagree that it applies to your \njob.\n(PLEASE TICK ONE BOX ON EACH LINE)\nQ12f\nIn my job I can help other people.",
+    "question": "Q12 IF YOU ARE CURRENTLY WORKING FOR PAY (OR ON LEAVE BUT ARE IN AN EMPLOYMENT RELATIONSHIP) For each of these statements about your (main) job, please choose one to show how much you agree or disagree that it applies to your  job.  Q12f In my job I can help other people.",
     "answer": {
-      "0": "Not applicable (code 2 in v20/ [codes 2,3 in WORK])",
       "1": "Strongly agree",
       "2": "Agree",
       "3": "Neither agree nor disagree",
       "4": "Disagree",
-      "5": "Strongly disagree",
-      "8": "Can't choose",
-      "9": "No answer, refused"
+      "5": "Strongly disagree"
     },
     "special": {
       "VE": {
@@ -679,16 +549,13 @@
   },
   {
     "question_id": "v28",
-    "question": "Q12\nIF YOU ARE CURRENTLY WORKING FOR PAY (OR ON LEAVE BUT ARE IN AN EMPLOYMENT RELATIONSHIP)\nFor each of these statements about your (main) job, please tick one box to show how much you agree or disagree that it applies to your \njob.\n(PLEASE TICK ONE BOX ON EACH LINE)\nQ12g\nMy job is useful to society.",
+    "question": "Q12 IF YOU ARE CURRENTLY WORKING FOR PAY (OR ON LEAVE BUT ARE IN AN EMPLOYMENT RELATIONSHIP) For each of these statements about your (main) job, please choose one to show how much you agree or disagree that it applies to your  job.  Q12g My job is useful to society.",
     "answer": {
-      "0": "Not applicable (code 2 in v20/ [codes 2,3 in WORK])",
       "1": "Strongly agree",
       "2": "Agree",
       "3": "Neither agree nor disagree",
       "4": "Disagree",
-      "5": "Strongly disagree",
-      "8": "Can't choose",
-      "9": "No answer, refused"
+      "5": "Strongly disagree"
     },
     "special": {
       "VE": {
@@ -702,16 +569,13 @@
   },
   {
     "question_id": "v29",
-    "question": "Q12\nIF YOU ARE CURRENTLY WORKING FOR PAY (OR ON LEAVE BUT ARE IN AN EMPLOYMENT RELATIONSHIP)\nFor each of these statements about your (main) job, please tick one box to show how much you agree or disagree that it applies to your \njob.\n(PLEASE TICK ONE BOX ON EACH LINE)\nQ12h\nIn my job, I have personal contact with other people.",
+    "question": "Q12 IF YOU ARE CURRENTLY WORKING FOR PAY (OR ON LEAVE BUT ARE IN AN EMPLOYMENT RELATIONSHIP) For each of these statements about your (main) job, please choose one to show how much you agree or disagree that it applies to your  job.  Q12h In my job, I have personal contact with other people.",
     "answer": {
-      "0": "Not applicable (code 2 in v20/ [codes 2,3 in WORK])",
       "1": "Strongly agree",
       "2": "Agree",
       "3": "Neither agree nor disagree",
       "4": "Disagree",
-      "5": "Strongly disagree",
-      "8": "Can't choose",
-      "9": "No answer, refused"
+      "5": "Strongly disagree"
     },
     "special": {
       "VE": {
@@ -725,166 +589,127 @@
   },
   {
     "question_id": "v30",
-    "question": "Q13\nIF YOU ARE CURRENTLY WORKING FOR PAY (OR ON LEAVE BUT ARE IN AN EMPLOYMENT RELATIONSHIP)\nNow some more questions about your working conditions. Please tick one box for each item below to show how often it applies to your work. \nHow often ...\n(PLEASE TICK ONE BOX ON EACH LINE)\nQ13a\n... do you have to do hard physical work?",
+    "question": "Q13 IF YOU ARE CURRENTLY WORKING FOR PAY (OR ON LEAVE BUT ARE IN AN EMPLOYMENT RELATIONSHIP) Now some more questions about your working conditions. Please choose one to show how often it applies to your work.  How often ...  Q13a ... do you have to do hard physical work?",
     "answer": {
-      "0": "Not applicable (code 2 in v20/ [codes 2,3 in WORK])",
       "1": "Always",
       "2": "Often",
       "3": "Sometimes",
       "4": "Hardly ever",
-      "5": "Never",
-      "8": "Can't choose",
-      "9": "No answer, refused"
+      "5": "Never"
     },
     "special": {}
   },
   {
     "question_id": "v31",
-    "question": "Q13\nIF YOU ARE CURRENTLY WORKING FOR PAY (OR ON LEAVE BUT ARE IN AN EMPLOYMENT RELATIONSHIP)\nNow some more questions about your working conditions. Please tick one box for each item below to show how often it applies to your work. \nHow often ...\n(PLEASE TICK ONE BOX ON EACH LINE)\nQ13b\n... do you find your work stressful?",
+    "question": "Q13 IF YOU ARE CURRENTLY WORKING FOR PAY (OR ON LEAVE BUT ARE IN AN EMPLOYMENT RELATIONSHIP) Now some more questions about your working conditions. Please choose one to show how often it applies to your work.  How often ...  Q13b ... do you find your work stressful?",
     "answer": {
-      "0": "Not applicable (code 2 in v20/ [codes 2,3 in WORK])",
       "1": "Always",
       "2": "Often",
       "3": "Sometimes",
       "4": "Hardly ever",
-      "5": "Never",
-      "8": "Can't choose",
-      "9": "No answer, refused"
+      "5": "Never"
     },
     "special": {}
   },
   {
     "question_id": "v32",
-    "question": "Q14\nIF YOU ARE CURRENTLY WORKING FOR PAY (OR ON LEAVE BUT ARE IN AN EMPLOYMENT RELATIONSHIP)\nAnd how often ...\n(PLEASE TICK ONE BOX ON EACH LINE)\nQ14a\n... do you work at home during your usual working hours?",
+    "question": "Q14 IF YOU ARE CURRENTLY WORKING FOR PAY (OR ON LEAVE BUT ARE IN AN EMPLOYMENT RELATIONSHIP) And how often ...  Q14a ... do you work at home during your usual working hours?",
     "answer": {
-      "0": "Not applicable (code 2 in v20/ [codes 2,3 in WORK])",
       "1": "Always",
       "2": "Often",
       "3": "Sometimes",
       "4": "Hardly ever",
-      "5": "Never",
-      "8": "Can't choose",
-      "9": "No answer, refused"
+      "5": "Never"
     },
     "special": {
-      "DK": {
-        "0": "Not available"
-      }
     }
   },
   {
     "question_id": "v33",
-    "question": "Q14\nIF YOU ARE CURRENTLY WORKING FOR PAY (OR ON LEAVE BUT ARE IN AN EMPLOYMENT RELATIONSHIP)\nAnd how often ...\n(PLEASE TICK ONE BOX ON EACH LINE)\nQ14b\n... does your job involve working on weekends?",
+    "question": "Q14 IF YOU ARE CURRENTLY WORKING FOR PAY (OR ON LEAVE BUT ARE IN AN EMPLOYMENT RELATIONSHIP) And how often ...  Q14b ... does your job involve working on weekends?",
     "answer": {
-      "0": "Not applicable (code 2 in v20/ [codes 2,3 in WORK])",
       "1": "Always",
       "2": "Often",
       "3": "Sometimes",
       "4": "Hardly ever",
-      "5": "Never",
-      "8": "Can't choose",
-      "9": "No answer, refused"
+      "5": "Never"
     },
     "special": {
-      "DK": {
-        "0": "Not available"
-      }
     }
   },
   {
     "question_id": "v34",
-    "question": "Q15\nIF YOU ARE CURRENTLY WORKING FOR PAY (OR ON LEAVE BUT ARE IN AN EMPLOYMENT RELATIONSHIP)\nWhich of the following statements best describes how your working hours are decided? \n(By working hours we mean here the times you start and finish work, and not the total hours you work per week or month.)\n(PLEASE TICK ONE BOX ONLY)",
+    "question": "Q15 IF YOU ARE CURRENTLY WORKING FOR PAY (OR ON LEAVE BUT ARE IN AN EMPLOYMENT RELATIONSHIP) Which of the following statements best describes how your working hours are decided?  (By working hours we mean here the times you start and finish work, and not the total hours you work per week or month.) ",
     "answer": {
-      "0": "Not applicable (code 2 in v20/ [codes 2,3 in WORK])",
       "1": "I cannot change, fixed time",
       "2": "I can decide within certain limits",
-      "3": "I am entirely free to decide",
-      "8": "Don't know",
-      "9": "No answer, refused"
+      "3": "I am entirely free to decide"
     },
     "special": {}
   },
   {
     "question_id": "v35",
-    "question": "Q16\nIF YOU ARE CURRENTLY WORKING FOR PAY (OR ON LEAVE BUT ARE IN AN EMPLOYMENT RELATIONSHIP)\nWhich of the following statements best describes your usual working schedule in your main job?\n(PLEASE TICK ONE BOX ONLY)",
+    "question": "Q16 IF YOU ARE CURRENTLY WORKING FOR PAY (OR ON LEAVE BUT ARE IN AN EMPLOYMENT RELATIONSHIP) Which of the following statements best describes your usual working schedule in your main job? ",
     "answer": {
-      "0": "Not applicable (code 2 in v20/ [codes 2,3 in WORK])",
       "1": "I have a regular schedule or shift",
       "2": "I have a schedule or shift which regularly changes",
-      "3": "I have a schedule where daily working times are decided at short notice by my employer",
-      "8": "Can't choose",
-      "9": "No answer, refused"
+      "3": "I have a schedule where daily working times are decided at short notice by my employer"
     },
     "special": {}
   },
   {
     "question_id": "v36",
-    "question": "Q17\nIF YOU ARE CURRENTLY WORKING FOR PAY (OR ON LEAVE BUT ARE IN AN EMPLOYMENT RELATIONSHIP)\nWhich of the following statements best describes how your daily work is organized?\n(PLEASE TICK ONE BOX ONLY)",
+    "question": "Q17 IF YOU ARE CURRENTLY WORKING FOR PAY (OR ON LEAVE BUT ARE IN AN EMPLOYMENT RELATIONSHIP) Which of the following statements best describes how your daily work is organized? ",
     "answer": {
-      "0": "Not applicable (code 2 in v20/ [codes 2,3 in WORK])",
       "1": "I am free to decide",
       "2": "Decide within certain limits",
-      "3": "I am not free to decide",
-      "8": "Can't choose",
-      "9": "No answer, refused"
+      "3": "I am not free to decide"
     },
     "special": {}
   },
   {
     "question_id": "v37",
-    "question": "Q18\nIF YOU ARE CURRENTLY WORKING FOR PAY (OR ON LEAVE BUT ARE IN AN EMPLOYMENT RELATIONSHIP)\nHow difficult would it be for you to take an hour or two off during working hours, to take care of personal or family matters?\n(PLEASE TICK ONE BOX ONLY)",
+    "question": "Q18 IF YOU ARE CURRENTLY WORKING FOR PAY (OR ON LEAVE BUT ARE IN AN EMPLOYMENT RELATIONSHIP) How difficult would it be for you to take an hour or two off during working hours, to take care of personal or family matters? ",
     "answer": {
-      "0": "Not applicable (code 2 in v20/ [codes 2,3 in WORK])",
       "1": "Not difficult at all",
       "2": "Not too difficult",
       "3": "Somewhat difficult",
-      "4": "Very difficult",
-      "8": "Can't choose",
-      "9": "No answer, refused"
+      "4": "Very difficult"
     },
     "special": {}
   },
   {
     "question_id": "v38",
-    "question": "Q19\n IF YOU ARE CURRENTLY WORKING FOR PAY (OR ON LEAVE BUT ARE IN AN EMPLOYMENT RELATIONSHIP)\nHow often do you feel that …\n(PLEASE TICK ONE BOX ON EACH LINE)\nQ19a\n... the demands of your job interfere with your family life?",
+    "question": "Q19  IF YOU ARE CURRENTLY WORKING FOR PAY (OR ON LEAVE BUT ARE IN AN EMPLOYMENT RELATIONSHIP) How often do you feel that …  Q19a ... the demands of your job interfere with your family life?",
     "answer": {
-      "0": "Not applicable (code 2 in v20/ [codes 2,3 in WORK])",
       "1": "Always",
       "2": "Often",
       "3": "Sometimes",
       "4": "Hardly ever",
-      "5": "Never",
-      "8": "Can't choose",
-      "9": "No answer, refused"
+      "5": "Never"
     },
     "special": {}
   },
   {
     "question_id": "v39",
-    "question": "Q19\nIF YOU ARE CURRENTLY WORKING FOR PAY (OR ON LEAVE BUT ARE IN AN EMPLOYMENT RELATIONSHIP)\nHow often do you feel that …\n(PLEASE TICK ONE BOX ON EACH LINE)\nQ19b\n... the demands of your family life interfere with your job?",
+    "question": "Q19 IF YOU ARE CURRENTLY WORKING FOR PAY (OR ON LEAVE BUT ARE IN AN EMPLOYMENT RELATIONSHIP) How often do you feel that …  Q19b ... the demands of your family life interfere with your job?",
     "answer": {
-      "0": "Not applicable (code 2 in v20/ [codes 2,3 in WORK])",
       "1": "Always",
       "2": "Often",
       "3": "Sometimes",
       "4": "Hardly ever",
-      "5": "Never",
-      "8": "Can't choose",
-      "9": "No answer, refused"
+      "5": "Never"
     },
     "special": {}
   },
   {
     "question_id": "v40",
-    "question": "Q20\nIF YOU ARE CURRENTLY WORKING FOR PAY (OR ON LEAVE BUT ARE IN AN EMPLOYMENT RELATIONSHIP)\nHow much of your past work experience and/ or job skills can you make use of in your present job?\n(PLEASE TICK ONE BOX ONLY)",
+    "question": "Q20 IF YOU ARE CURRENTLY WORKING FOR PAY (OR ON LEAVE BUT ARE IN AN EMPLOYMENT RELATIONSHIP) How much of your past work experience and/ or job skills can you make use of in your present job? ",
     "answer": {
-      "0": "Not applicable (code 2 in v20/ [codes 2,3 in WORK])",
       "1": "Almost none",
       "2": "A little",
       "3": "A lot",
-      "4": "Almost all",
-      "8": "Can't choose",
-      "9": "No answer, refused"
+      "4": "Almost all"
     },
     "special": {
       "ES": {
@@ -897,851 +722,226 @@
   },
   {
     "question_id": "v41",
-    "question": "Q21\nIF YOU ARE CURRENTLY WORKING FOR PAY (OR ON LEAVE BUT ARE IN AN EMPLOYMENT RELATIONSHIP)\nOver the past 12 months, have you had any training to improve your job skills, either at the workplace or somewhere else?\n(PLEASE TICK ONE BOX ONLY)",
+    "question": "Q21 IF YOU ARE CURRENTLY WORKING FOR PAY (OR ON LEAVE BUT ARE IN AN EMPLOYMENT RELATIONSHIP) Over the past 12 months, have you had any training to improve your job skills, either at the workplace or somewhere else? ",
     "answer": {
-      "0": "Not applicable (code 2 in v20/ [codes 2,3 in WORK])",
       "1": "Yes",
-      "2": "No",
-      "8": "Can't choose",
-      "9": "No answer, refused"
+      "2": "No"
     },
     "special": {}
   },
   {
     "question_id": "v42",
-    "question": "Q22\nIF YOU ARE CURRENTLY WORKING FOR PAY (OR ON LEAVE BUT ARE IN AN EMPLOYMENT RELATIONSHIP)\nIn general, how would you describe relations at your workplace …\n(PLEASE TICK ONE BOX ON EACH LINE)\nQ22a\n... between management and employees?",
+    "question": "Q22 IF YOU ARE CURRENTLY WORKING FOR PAY (OR ON LEAVE BUT ARE IN AN EMPLOYMENT RELATIONSHIP) In general, how would you describe relations at your workplace …  Q22a ... between management and employees?",
     "answer": {
-      "0": "Not applicable (code 2 in v20/ [codes 2,3 in WORK])",
       "1": "Very good",
       "2": "Quite good",
       "3": "Neither good nor bad",
       "4": "Quite bad",
-      "5": "Very bad",
-      "8": "Can't choose",
-      "9": "No answer, refused"
+      "5": "Very bad"
     },
     "special": {}
   },
   {
     "question_id": "v43",
-    "question": "Q22\nIF YOU ARE CURRENTLY WORKING FOR PAY (OR ON LEAVE BUT ARE IN AN EMPLOYMENT RELATIONSHIP)\nIn general, how would you describe relations at your workplace …\n(PLEASE TICK ONE BOX ON EACH LINE)\nQ22b\n... between workmates/ colleagues?",
+    "question": "Q22 IF YOU ARE CURRENTLY WORKING FOR PAY (OR ON LEAVE BUT ARE IN AN EMPLOYMENT RELATIONSHIP) In general, how would you describe relations at your workplace …  Q22b ... between workmates/ colleagues?",
     "answer": {
-      "0": "Not applicable (code 2 in v20/ [codes 2,3 in WORK])",
       "1": "Very good",
       "2": "Quite good",
       "3": "Neither good nor bad",
       "4": "Quite bad",
-      "5": "Very bad",
-      "8": "Can't choose",
-      "9": "No answer, refused"
+      "5": "Very bad"
     },
     "special": {}
   },
   {
     "question_id": "v44",
-    "question": "Q23\nIF YOU ARE CURRENTLY WORKING FOR PAY (OR ON LEAVE BUT ARE IN AN EMPLOYMENT RELATIONSHIP)\nAll things considered, how satisfied are you with your (main) job?\n(PLEASE TICK ONE BOX ONLY)",
+    "question": "Q23 IF YOU ARE CURRENTLY WORKING FOR PAY (OR ON LEAVE BUT ARE IN AN EMPLOYMENT RELATIONSHIP) All things considered, how satisfied are you with your (main) job? ",
     "answer": {
-      "0": "Not applicable (code 2 in v20/ [codes 2,3 in WORK])",
       "1": "Completely satisfied",
       "2": "Very satisfied",
       "3": "Fairly satisfied",
       "4": "Neither satisfied nor dissatisfied",
       "5": "Fairly dissatisfied",
       "6": "Very dissatisfied",
-      "7": "Completely dissatisfied",
-      "8": "Can't choose",
-      "9": "No answer, refused"
+      "7": "Completely dissatisfied"
     },
     "special": {}
   },
   {
     "question_id": "v45",
-    "question": "Q24\nIF YOU ARE CURRENTLY WORKING FOR PAY (OR ON LEAVE BUT ARE IN AN EMPLOYMENT RELATIONSHIP)\nTo what extent do you agree or disagree with each of the following statements?\n(PLEASE TICK ONE BOX ON EACH LINE)\nQ24a\nI am willing to work harder than I have to in order to help the firm or organization I work for succeed.",
+    "question": "Q24 IF YOU ARE CURRENTLY WORKING FOR PAY (OR ON LEAVE BUT ARE IN AN EMPLOYMENT RELATIONSHIP) To what extent do you agree or disagree with each of the following statements?  Q24a I am willing to work harder than I have to in order to help the firm or organization I work for succeed.",
     "answer": {
-      "0": "Not applicable (code 2 in v20/ [codes 2,3 in WORK])",
       "1": "Strongly agree",
       "2": "Agree",
       "3": "Neither agree nor disagree",
       "4": "Disagree",
-      "5": "Strongly disagree",
-      "8": "Can't choose",
-      "9": "No answer, refused"
+      "5": "Strongly disagree"
     },
     "special": {}
   },
   {
     "question_id": "v46",
-    "question": "Q24\nIF YOU ARE CURRENTLY WORKING FOR PAY (OR ON LEAVE BUT ARE IN AN EMPLOYMENT RELATIONSHIP)\nTo what extent do you agree or disagree with each of the following statements?\n(PLEASE TICK ONE BOX ON EACH LINE)\nQ24b\nI am proud to be working for my firm or organization.",
+    "question": "Q24 IF YOU ARE CURRENTLY WORKING FOR PAY (OR ON LEAVE BUT ARE IN AN EMPLOYMENT RELATIONSHIP) To what extent do you agree or disagree with each of the following statements?  Q24b I am proud to be working for my firm or organization.",
     "answer": {
-      "0": "Not applicable (code 2 in v20/ [codes 2,3 in WORK])",
       "1": "Strongly agree",
       "2": "Agree",
       "3": "Neither agree nor disagree",
       "4": "Disagree",
-      "5": "Strongly disagree",
-      "8": "Can't choose",
-      "9": "No answer, refused"
+      "5": "Strongly disagree"
     },
     "special": {}
   },
   {
     "question_id": "v47",
-    "question": "Q24\nIF YOU ARE CURRENTLY WORKING FOR PAY (OR ON LEAVE BUT ARE IN AN EMPLOYMENT RELATIONSHIP)\nTo what extent do you agree or disagree with each of the following statements?\n(PLEASE TICK ONE BOX ON EACH LINE)\nQ24c\nI would turn down another job that offered quite a bit more pay in order to stay with this organization.",
+    "question": "Q24 IF YOU ARE CURRENTLY WORKING FOR PAY (OR ON LEAVE BUT ARE IN AN EMPLOYMENT RELATIONSHIP) To what extent do you agree or disagree with each of the following statements?  Q24c I would turn down another job that offered quite a bit more pay in order to stay with this organization.",
     "answer": {
-      "0": "Not applicable (code 2 in v20/ [codes 2,3 in WORK])",
       "1": "Strongly agree",
       "2": "Agree",
       "3": "Neither agree nor disagree",
       "4": "Disagree",
-      "5": "Strongly disagree",
-      "8": "Can't choose",
-      "9": "No answer, refused"
+      "5": "Strongly disagree"
     },
     "special": {}
   },
   {
     "question_id": "v48",
-    "question": "Q25\nIF YOU ARE CURRENTLY WORKING FOR PAY (OR ON LEAVE BUT ARE IN AN EMPLOYMENT RELATIONSHIP)\nNow think of the type of work you do, irrespective of the firm or organization you work for. To what extent do you agree or disagree with \neach of the following statements?\n(PLEASE TICK ONE BOX ON EACH LINE)\nQ25a\nGiven the chance, I would change my present type of work for something different.",
+    "question": "Q25 IF YOU ARE CURRENTLY WORKING FOR PAY (OR ON LEAVE BUT ARE IN AN EMPLOYMENT RELATIONSHIP) Now think of the type of work you do, irrespective of the firm or organization you work for. To what extent do you agree or disagree with  each of the following statements?  Q25a Given the chance, I would change my present type of work for something different.",
     "answer": {
-      "0": "Not applicable (code 2 in v20/ [codes 2,3 in WORK])",
       "1": "Strongly agree",
       "2": "Agree",
       "3": "Neither agree nor disagree",
       "4": "Disagree",
-      "5": "Strongly disagree",
-      "8": "Can't choose",
-      "9": "No answer, refused"
+      "5": "Strongly disagree"
     },
     "special": {}
   },
   {
     "question_id": "v49",
-    "question": "Q25\nIF YOU ARE CURRENTLY WORKING FOR PAY (OR ON LEAVE BUT ARE IN AN EMPLOYMENT RELATIONSHIP)\nNow think of the type of work you do, irrespective of the firm or organization you work for. To what extent do you agree or disagree with \neach of the following statements?\n(PLEASE TICK ONE BOX ON EACH LINE)\nQ25b\nI am proud of the type of work I do.",
+    "question": "Q25 IF YOU ARE CURRENTLY WORKING FOR PAY (OR ON LEAVE BUT ARE IN AN EMPLOYMENT RELATIONSHIP) Now think of the type of work you do, irrespective of the firm or organization you work for. To what extent do you agree or disagree with  each of the following statements?  Q25b I am proud of the type of work I do.",
     "answer": {
-      "0": "Not applicable (code 2 in v20/ [codes 2,3 in WORK])",
       "1": "Strongly agree",
       "2": "Agree",
       "3": "Neither agree nor disagree",
       "4": "Disagree",
-      "5": "Strongly disagree",
-      "8": "Can't choose",
-      "9": "No answer, refused"
+      "5": "Strongly disagree"
     },
     "special": {}
   },
   {
     "question_id": "v50",
-    "question": "Q26\nIF YOU ARE CURRENTLY WORKING FOR PAY (OR ON LEAVE BUT ARE IN AN EMPLOYMENT RELATIONSHIP)\nHow difficult or easy do you think it would be for you to find a job at least as good as your current one?\n(PLEASE TICK ONE BOX ONLY)",
+    "question": "Q26 IF YOU ARE CURRENTLY WORKING FOR PAY (OR ON LEAVE BUT ARE IN AN EMPLOYMENT RELATIONSHIP) How difficult or easy do you think it would be for you to find a job at least as good as your current one? ",
     "answer": {
-      "0": "Not applicable (code 2 in v20/ [codes 2,3 in WORK])",
       "1": "Very easy",
       "2": "Fairly easy",
       "3": "Neither easy nor difficult",
       "4": "Fairly difficult",
-      "5": "Very difficult",
-      "8": "Can't choose",
-      "9": "No answer, refused"
+      "5": "Very difficult"
     },
     "special": {}
   },
   {
     "question_id": "v51",
-    "question": "Q27\nIF YOU ARE CURRENTLY WORKING FOR PAY (OR ON LEAVE BUT ARE IN AN EMPLOYMENT RELATIONSHIP)\nAll in all, how likely is it that you will try to find a job with another firm or organization within the next 12 months?\n(PLEASE TICK ONE BOX ONLY)",
+    "question": "Q27 IF YOU ARE CURRENTLY WORKING FOR PAY (OR ON LEAVE BUT ARE IN AN EMPLOYMENT RELATIONSHIP) All in all, how likely is it that you will try to find a job with another firm or organization within the next 12 months? ",
     "answer": {
-      "0": "Not applicable (code 2 in v20/ [codes 2,3 in WORK])",
       "1": "Very likely",
       "2": "Likely",
       "3": "Unlikely",
-      "4": "Very unlikely",
-      "8": "Can't choose",
-      "9": "No answer, refused"
+      "4": "Very unlikely"
     },
     "special": {}
   },
   {
     "question_id": "v52",
-    "question": "Q28\nIF YOU ARE CURRENTLY WORKING FOR PAY (OR ON LEAVE BUT ARE IN AN EMPLOYMENT RELATIONSHIP)\nTo what extent, if at all, do you worry about the possibility of losing your job?\n(PLEASE TICK ONE BOX ONLY)",
+    "question": "Q28 IF YOU ARE CURRENTLY WORKING FOR PAY (OR ON LEAVE BUT ARE IN AN EMPLOYMENT RELATIONSHIP) To what extent, if at all, do you worry about the possibility of losing your job? ",
     "answer": {
-      "0": "Not applicable (code 2 in v20/ [codes 2,3 in WORK])",
       "1": "I worry a great deal",
       "2": "I worry to some extent",
       "3": "I worry a little",
-      "4": "I don't worry at all",
-      "8": "Don't know",
-      "9": "No answer, refused"
+      "4": "I don't worry at all"
     },
     "special": {}
   },
   {
     "question_id": "v53",
-    "question": "Q29\nIF YOU ARE CURRENTLY WORKING FOR PAY (OR ON LEAVE BUT ARE IN AN EMPLOYMENT RELATIONSHIP)\nTo what extent do you agree or disagree with the following statements? In order to avoid unemployment I would be willing …\n(PLEASE TICK ONE BOX ON EACH LINE)\nQ29a\n... to accept a job that requires new skills",
+    "question": "Q29 IF YOU ARE CURRENTLY WORKING FOR PAY (OR ON LEAVE BUT ARE IN AN EMPLOYMENT RELATIONSHIP) To what extent do you agree or disagree with the following statements? In order to avoid unemployment I would be willing …  Q29a ... to accept a job that requires new skills",
     "answer": {
-      "0": "Not applicable (code 2, 0 in v66)",
       "1": "Strongly agree",
       "2": "Agree",
       "3": "Neither agree nor disagree",
       "4": "Disagree",
-      "5": "Strongly disagree",
-      "8": "Can't choose",
-      "9": "No answer, refused"
+      "5": "Strongly disagree"
     },
     "special": {}
   },
   {
     "question_id": "v54",
-    "question": "Q29\nIF YOU ARE CURRENTLY WORKING FOR PAY (OR ON LEAVE BUT ARE IN AN EMPLOYMENT RELATIONSHIP)\nTo what extent do you agree or disagree with the following statements? In order to avoid unemployment I would be willing …\n(PLEASE TICK ONE BOX ON EACH LINE)\nQ29b\n... to accept a position with lower pay.",
+    "question": "Q29 IF YOU ARE CURRENTLY WORKING FOR PAY (OR ON LEAVE BUT ARE IN AN EMPLOYMENT RELATIONSHIP) To what extent do you agree or disagree with the following statements? In order to avoid unemployment I would be willing …  Q29b ... to accept a position with lower pay.",
     "answer": {
-      "0": "Not applicable (code 2, 0 in v66)",
       "1": "Strongly agree",
       "2": "Agree",
       "3": "Neither agree nor disagree",
       "4": "Disagree",
-      "5": "Strongly disagree",
-      "8": "Can't choose",
-      "9": "No answer, refused"
+      "5": "Strongly disagree"
     },
     "special": {}
   },
   {
     "question_id": "v55",
-    "question": "Q29\nIF YOU ARE CURRENTLY WORKING FOR PAY (OR ON LEAVE BUT ARE IN AN EMPLOYMENT RELATIONSHIP)\nTo what extent do you agree or disagree with the following statements? In order to avoid unemployment I would be willing …\n(PLEASE TICK ONE BOX ON EACH LINE)\nQ29c\n... to accept temporary employment.",
+    "question": "Q29 IF YOU ARE CURRENTLY WORKING FOR PAY (OR ON LEAVE BUT ARE IN AN EMPLOYMENT RELATIONSHIP) To what extent do you agree or disagree with the following statements? In order to avoid unemployment I would be willing …  Q29c ... to accept temporary employment.",
     "answer": {
-      "0": "Not applicable (code 2, 0 in v66)",
       "1": "Strongly agree",
       "2": "Agree",
       "3": "Neither agree nor disagree",
       "4": "Disagree",
-      "5": "Strongly disagree",
-      "8": "Can't choose",
-      "9": "No answer, refused"
+      "5": "Strongly disagree"
     },
     "special": {}
   },
   {
     "question_id": "v56",
-    "question": "Q29\nIF YOU ARE CURRENTLY WORKING FOR PAY (OR ON LEAVE BUT ARE IN AN EMPLOYMENT RELATIONSHIP)\nTo what extent do you agree or disagree with the following statements? In order to avoid unemployment I would be willing …\n(PLEASE TICK ONE BOX ON EACH LINE)\nQ29d\n... to travel longer to get to work.",
+    "question": "Q29 IF YOU ARE CURRENTLY WORKING FOR PAY (OR ON LEAVE BUT ARE IN AN EMPLOYMENT RELATIONSHIP) To what extent do you agree or disagree with the following statements? In order to avoid unemployment I would be willing …  Q29d ... to travel longer to get to work.",
     "answer": {
-      "0": "Not applicable (code 2, 0 in v66)",
       "1": "Strongly agree",
       "2": "Agree",
       "3": "Neither agree nor disagree",
       "4": "Disagree",
-      "5": "Strongly disagree",
-      "8": "Can't choose",
-      "9": "No answer, refused"
+      "5": "Strongly disagree"
     },
     "special": {}
   },
   {
     "question_id": "v57",
-    "question": "Q29\nIF YOU ARE CURRENTLY WORKING FOR PAY (OR ON LEAVE BUT ARE IN AN EMPLOYMENT RELATIONSHIP)\nTo what extent do you agree or disagree with the following statements? In order to get a job I would be willing ...\n(PLEASE TICK ONE BOX ON EACH LINE)\nQ29e\n... to move within [country].",
+    "question": "Q29 IF YOU ARE CURRENTLY WORKING FOR PAY (OR ON LEAVE BUT ARE IN AN EMPLOYMENT RELATIONSHIP) To what extent do you agree or disagree with the following statements? In order to get a job I would be willing ...  Q29e ... to move within [country].",
     "answer": {
-      "0": "Not applicable (code 2, 0 in v66)",
       "1": "Strongly agree",
       "2": "Agree",
       "3": "Neither agree nor disagree",
       "4": "Disagree",
-      "5": "Strongly disagree",
-      "8": "Can't choose",
-      "9": "No answer, refused"
+      "5": "Strongly disagree"
     },
     "special": {}
   },
   {
     "question_id": "v58",
-    "question": "Q29\nIF YOU ARE CURRENTLY WORKING FOR PAY (OR ON LEAVE BUT ARE IN AN EMPLOYMENT RELATIONSHIP)\nTo what extent do you agree or disagree with the following statements? In order to get a job I would be willing …\n(PLEASE TICK ONE BOX ON EACH LINE)\nQ29f\n... to move to a different country.",
+    "question": "Q29 IF YOU ARE CURRENTLY WORKING FOR PAY (OR ON LEAVE BUT ARE IN AN EMPLOYMENT RELATIONSHIP) To what extent do you agree or disagree with the following statements? In order to get a job I would be willing …  Q29f ... to move to a different country.",
     "answer": {
-      "0": "Not applicable (code 2, 0 in v66)",
       "1": "Strongly agree",
       "2": "Agree",
       "3": "Neither agree nor disagree",
       "4": "Disagree",
-      "5": "Strongly disagree",
-      "8": "Can't choose",
-      "9": "No answer, refused"
+      "5": "Strongly disagree"
     },
     "special": {}
   },
   {
     "question_id": "v59",
-    "question": "Q30\nIF YOU ARE CURRENTLY WORKING FOR PAY (OR ON LEAVE BUT ARE IN AN EMPLOYMENT RELATIONSHIP)\nOver the past 12 months, in addition to your main job, have you done any other work for pay?\n(PLEASE TICK ONE BOX ONLY)",
+    "question": "Q30 IF YOU ARE CURRENTLY WORKING FOR PAY (OR ON LEAVE BUT ARE IN AN EMPLOYMENT RELATIONSHIP) Over the past 12 months, in addition to your main job, have you done any other work for pay? ",
     "answer": {
-      "0": "Not applicable (code 2, 0 in v66)",
       "1": "Yes, during all of that period",
       "2": "Yes, during most of that period",
       "3": "Yes, during some of that period",
-      "4": "No",
-      "8": "Don't know",
-      "9": "No answer, refused"
+      "4": "No"
     },
     "special": {}
-  },
-  {
-    "question_id": "v60",
-    "question": "Q31\nIF YOU ARE CURRENTLY WORKING FOR PAY (OR ON LEAVE BUT ARE IN AN EMPLOYMENT RELATIONSHIP)/ IF DONE ANY \nOTHER WORK FOR PAY OVER THE PAST 12 MONTHS IN ADDITION TO MAIN JOB\nOver the entire 12 months, how much did you earn from your additional job(s) in total compared with your main job? \n(PLEASE TICK ONE BOX ONLY)\nFrom my additional job(s), I earned ...",
-    "answer": {
-      "0": "Not applicable (code 4, 0 in v59)",
-      "1": "Much less than from main job",
-      "2": "Less than from main job",
-      "3": "About the same as from main job",
-      "4": "More than from main job",
-      "5": "Much more than from main job",
-      "8": "Can't choose",
-      "9": "No answer, refused"
-    },
-    "special": {}
-  },
-  {
-    "question_id": "v61",
-    "question": "Q32\nPLEASE ANSWER QUESTIONS 32 - 44 IF YOU ARE NOT CURRENTLY WORKING FOR PAY\nHave you ever had a paid job for one year or more?\n(PLEASE TICK ONE BOX ONLY)",
-    "answer": {
-      "0": "Not applicable (code 1 in v20)",
-      "1": "Yes",
-      "2": "No",
-      "8": "Don't know",
-      "9": "No answer, refused"
-    },
-    "special": {}
-  },
-  {
-    "question_id": "v63",
-    "question": "Q33\nPLEASE ANSWER QUESTIONS 32 - 44 IF YOU ARE NOT CURRENTLY WORKING FOR PAY/ EVER HAD PAID JOB FOR ONE YEAR \nOR MORE\nWhen did your last paid job end?\nQ33b\nIn ____ (month)",
-    "answer": {
-      "0": "Not applicable (code 2, 0 in v61)",
-      "1": "January",
-      "2": "February",
-      "3": "March",
-      "4": "April",
-      "5": "May",
-      "6": "June",
-      "7": "July",
-      "8": "August",
-      "9": "September",
-      "10": "October",
-      "11": "November",
-      "12": "December",
-      "98": "Don't know",
-      "99": "No answer, refused"
-    },
-    "special": {}
-  },
-  {
-    "question_id": "v64",
-    "question": "Q34\nPLEASE ANSWER QUESTIONS 32 - 44 IF YOU ARE NOT CURRENTLY WORKING FOR PAY/ EVER HAD PAID JOB FOR ONE YEAR \nOR MORE\nHow satisfied were you in your last job?\n(PLEASE TICK ONE BOX ONLY)",
-    "answer": {
-      "0": "Not applicable (code 2, 0 in v61)",
-      "1": "Completely satisfied",
-      "2": "Very satisfied",
-      "3": "Fairly satisfied",
-      "4": "Neither satisfied nor dissatisfied",
-      "5": "Fairly dissatisfied",
-      "6": "Very dissatisfied",
-      "7": "Completely dissatisfied",
-      "8": "Can't choose",
-      "9": "No answer, refused"
-    },
-    "special": {}
-  },
-  {
-    "question_id": "v65",
-    "question": "Q35\nPLEASE ANSWER QUESTIONS 32 - 44 IF YOU ARE NOT CURRENTLY WORKING FOR PAY/ EVER HAD PAID JOB FOR ONE YEAR \nOR MORE\nWhat was the main reason that your job ended?\n(PLEASE TICK ONE BOX ONLY)",
-    "answer": {
-      "0": "Not applicable (code 2, 0 in v61)",
-      "1": "I reached retirement age",
-      "2": "I retired early, by choice",
-      "3": "I retired early, not by choice",
-      "4": "I became (permanently) disabled",
-      "5": "My place of work shut down",
-      "6": "I was dismissed",
-      "7": "My term of employment/contract ended",
-      "8": "Family responsibilities",
-      "9": "I got married",
-      "98": "Don't know",
-      "99": "No answer, refused"
-    },
-    "special": {
-      "CN": {
-        "95": "Other"
-      },
-      "CZ": {
-        "95": "Other"
-      },
-      "EE": {
-        "95": "Other"
-      },
-      "ES": {
-        "95": "Other"
-      },
-      "IS": {
-        "99": "No answer, refused including other (studying)"
-      },
-      "NZ": {
-        "95": "Other including moved away"
-      },
-      "PH": {
-        "95": "Other"
-      },
-      "TW": {
-        "95": "Other including health factors"
-      },
-      "VE": {
-        "99": "No answer, refused including other"
-      }
-    }
-  },
-  {
-    "question_id": "v66",
-    "question": "Q36\nPLEASE ANSWER QUESTIONS 32 - 44 IF YOU ARE NOT CURRENTLY WORKING FOR PAY\nWould you like to have a paid job, either now or in the future?\n(PLEASE TICK ONE BOX ONLY)",
-    "answer": {
-      "0": "Not applicable (code 1 in v20)",
-      "1": "Yes",
-      "2": "No",
-      "8": "Don't know",
-      "9": "No answer, refused"
-    },
-    "special": {}
-  },
-  {
-    "question_id": "v67",
-    "question": "Q37\nPLEASE ANSWER QUESTIONS 32 - 44 IF YOU ARE NOT CURRENTLY WORKING FOR PAY/ IF LIKE TO HAVE A PAID JOB \nHow likely do you think it is that you would find a job?\n(PLEASE TICK ONE BOX ONLY)",
-    "answer": {
-      "0": "Not applicable (code 2, 0 in v66)",
-      "1": "Very likely",
-      "2": "Likely",
-      "3": "Unlikely",
-      "4": "Very unlikely",
-      "8": "Can't choose",
-      "9": "No answer, refused"
-    },
-    "special": {}
-  },
-  {
-    "question_id": "v68",
-    "question": "Q38\nPLEASE ANSWER QUESTIONS 32 - 44 IF YOU ARE NOT CURRENTLY WORKING FOR PAY/ IF LIKE TO HAVE A PAID JOB \nTo what extent, if at all, do you worry about the possibility of not finding a job?\n(PLEASE TICK ONE BOX ONLY)",
-    "answer": {
-      "0": "Not applicable (code 2, 0 in v66)",
-      "1": "I worry a great deal",
-      "2": "I worry to some extent",
-      "3": "I worry a little",
-      "4": "I don't worry at all",
-      "8": "Don't know",
-      "9": "No answer, refused"
-    },
-    "special": {}
-  },
-  {
-    "question_id": "v69",
-    "question": "Q39\nPLEASE ANSWER QUESTIONS 32 - 44 IF YOU ARE NOT CURRENTLY WORKING FOR PAY/ IF LIKE TO HAVE A PAID JOB \nTo what extent do you agree or disagree with the following statements? In order to get a job I would be willing ...\n(PLEASE TICK ONE BOX ON EACH LINE)\nQ39a\n... to accept a job that requires new skills.",
-    "answer": {
-      "0": "Not applicable (code 2, 0 in v66)",
-      "1": "Strongly agree",
-      "2": "Agree",
-      "3": "Neither agree nor disagree",
-      "4": "Disagree",
-      "5": "Strongly disagree",
-      "8": "Can't choose",
-      "9": "No answer, refused"
-    },
-    "special": {}
-  },
-  {
-    "question_id": "v70",
-    "question": "Q39\nPLEASE ANSWER QUESTIONS 32 - 44 IF YOU ARE NOT CURRENTLY WORKING FOR PAY/ IF LIKE TO HAVE A PAID JOB \nTo what extent do you agree or disagree with the following statements? In order to get a job I would be willing …\n(PLEASE TICK ONE BOX ON EACH LINE)\nQ39b\n... to accept a position with low pay.",
-    "answer": {
-      "0": "Not applicable (code 2, 0 in v66)",
-      "1": "Strongly agree",
-      "2": "Agree",
-      "3": "Neither agree nor disagree",
-      "4": "Disagree",
-      "5": "Strongly disagree",
-      "8": "Can't choose",
-      "9": "No answer, refused"
-    },
-    "special": {}
-  },
-  {
-    "question_id": "v71",
-    "question": "Q39\nPLEASE ANSWER QUESTIONS 32 - 44 IF YOU ARE NOT CURRENTLY WORKING FOR PAY/ IF LIKE TO HAVE A PAID JOB \nTo what extent do you agree or disagree with the following statements? In order to get a job I would be willing ...\n(PLEASE TICK ONE BOX ON EACH LINE)\nQ39c\n... to accept temporary employment.",
-    "answer": {
-      "0": "Not applicable (code 2, 0 in v66)",
-      "1": "Strongly agree",
-      "2": "Agree",
-      "3": "Neither agree nor disagree",
-      "4": "Disagree",
-      "5": "Strongly disagree",
-      "8": "Can't choose",
-      "9": "No answer, refused"
-    },
-    "special": {}
-  },
-  {
-    "question_id": "v72",
-    "question": "Q39\nPLEASE ANSWER QUESTIONS 32 - 44 IF YOU ARE NOT CURRENTLY WORKING FOR PAY/ IF LIKE TO HAVE A PAID JOB \nTo what extent do you agree or disagree with the following statements? In order to get a job I would be willing ...\n(PLEASE TICK ONE BOX ON EACH LINE)\nQ39d\n... to travel a long time to get to work.",
-    "answer": {
-      "0": "Not applicable (code 2, 0 in v66)",
-      "1": "Strongly agree",
-      "2": "Agree",
-      "3": "Neither agree nor disagree",
-      "4": "Disagree",
-      "5": "Strongly disagree",
-      "8": "Can't choose",
-      "9": "No answer, refused"
-    },
-    "special": {}
-  },
-  {
-    "question_id": "v73",
-    "question": "Q39\nPLEASE ANSWER QUESTIONS 32 - 44 IF YOU ARE NOT CURRENTLY WORKING FOR PAY/ IF LIKE TO HAVE A PAID JOB \nTo what extent do you agree or disagree with the following statements? In order to get a job I would be willing ...\n(PLEASE TICK ONE BOX ON EACH LINE)\nQ39e\n... to move within [country].",
-    "answer": {
-      "0": "Not applicable (code 2, 0 in v66)",
-      "1": "Strongly agree",
-      "2": "Agree",
-      "3": "Neither agree nor disagree",
-      "4": "Disagree",
-      "5": "Strongly disagree",
-      "8": "Can't choose",
-      "9": "No answer, refused"
-    },
-    "special": {}
-  },
-  {
-    "question_id": "v74",
-    "question": "Q39\nPLEASE ANSWER QUESTIONS 32 - 44 IF YOU ARE NOT CURRENTLY WORKING FOR PAY/ IF LIKE TO HAVE A PAID JOB \nTo what extent do you agree or disagree with the following statements? In order to get a job I would be willing ...\n(PLEASE TICK ONE BOX ON EACH LINE)\nQ39f\n... to move to a different country.",
-    "answer": {
-      "0": "Not applicable (code 2, 0 in v66)",
-      "1": "Strongly agree",
-      "2": "Agree",
-      "3": "Neither agree nor disagree",
-      "4": "Disagree",
-      "5": "Strongly disagree",
-      "8": "Can't choose",
-      "9": "No answer, refused"
-    },
-    "special": {}
-  },
-  {
-    "question_id": "v75",
-    "question": "Q40\nPLEASE ANSWER QUESTIONS 32 - 44 IF YOU ARE NOT CURRENTLY WORKING FOR PAY/ IF LIKE TO HAVE A PAID JOB \nThinking about the past 12 months, have you done any of the following in order to find a job?\n(PLEASE TICK ONE BOX ON EACH LINE)\nQ40a\nRegistered at a public employment agency?",
-    "answer": {
-      "0": "Not applicable (code 2, 0 in v66)",
-      "1": "No",
-      "2": "Yes, once or twice",
-      "3": "Yes, more than twice",
-      "8": "Don't know",
-      "9": "No answer, refused"
-    },
-    "special": {}
-  },
-  {
-    "question_id": "v76",
-    "question": "Q40\nPLEASE ANSWER QUESTIONS 32 - 44 IF YOU ARE NOT CURRENTLY WORKING FOR PAY/ IF LIKE TO HAVE A PAID JOB \nThinking about the past 12 months, have you done any of the following in order to find a job?\n(PLEASE TICK ONE BOX ON EACH LINE)\nQ40b\nRegistered at a private employment agency?",
-    "answer": {
-      "0": "Not applicable (code 2, 0 in v66)",
-      "1": "No",
-      "2": "Yes, once or twice",
-      "3": "Yes, more than twice",
-      "8": "Don't know",
-      "9": "No answer, refused"
-    },
-    "special": {}
-  },
-  {
-    "question_id": "v77",
-    "question": "Q40\nPLEASE ANSWER QUESTIONS 32 - 44 IF YOU ARE NOT CURRENTLY WORKING FOR PAY/ IF LIKE TO HAVE A PAID JOB \nThinking about the past 12 months, have you done any of the following in order to find a job?\n(PLEASE TICK ONE BOX ON EACH LINE)\nQ40c\nAnswered advertisements for jobs?",
-    "answer": {
-      "0": "Not applicable (code 2, 0 in v66)",
-      "1": "No",
-      "2": "Yes, once or twice",
-      "3": "Yes, more than twice",
-      "8": "Don't know",
-      "9": "No answer, refused"
-    },
-    "special": {}
-  },
-  {
-    "question_id": "v78",
-    "question": "Q40\nPLEASE ANSWER QUESTIONS 32 - 44 IF YOU ARE NOT CURRENTLY WORKING FOR PAY/ IF LIKE TO HAVE A PAID JOB \nThinking about the past 12 months, have you done any of the following in order to find a job?\n(PLEASE TICK ONE BOX ON EACH LINE)\nQ40d\nAdvertised yourself for a job, for example on the internet or in newspapers?",
-    "answer": {
-      "0": "Not applicable (code 2, 0 in v66)",
-      "1": "No",
-      "2": "Yes, once or twice",
-      "3": "Yes, more than twice",
-      "8": "Don't know",
-      "9": "No answer, refused"
-    },
-    "special": {}
-  },
-  {
-    "question_id": "v79",
-    "question": "Q40\nPLEASE ANSWER QUESTIONS 32 - 44 IF YOU ARE NOT CURRENTLY WORKING FOR PAY/ IF LIKE TO HAVE A PAID JOB \nThinking about the past 12 months, have you done any of the following in order to find a job?\n(PLEASE TICK ONE BOX ON EACH LINE)\nQ40e\nApplied directly to employers?",
-    "answer": {
-      "0": "Not applicable (code 2, 0 in v66)",
-      "1": "No",
-      "2": "Yes, once or twice",
-      "3": "Yes, more than twice",
-      "8": "Don't know",
-      "9": "No answer, refused"
-    },
-    "special": {}
-  },
-  {
-    "question_id": "v80",
-    "question": "Q40\nPLEASE ANSWER QUESTIONS 32 - 44 IF YOU ARE NOT CURRENTLY WORKING FOR PAY/ IF LIKE TO HAVE A PAID JOB \nThinking about the past 12 months, have you done any of the following in order to find a job?\n(PLEASE TICK ONE BOX ON EACH LINE)\nQ40f\nAsked relatives, friends, or colleagues to help you find a job?",
-    "answer": {
-      "0": "Not applicable (code 2, 0 in v66)",
-      "1": "No",
-      "2": "Yes, once or twice",
-      "3": "Yes, more than twice",
-      "8": "Don't know",
-      "9": "No answer, refused"
-    },
-    "special": {}
-  },
-  {
-    "question_id": "v81",
-    "question": "Q41\nPLEASE ANSWER QUESTIONS 32 - 44 IF YOU ARE NOT CURRENTLY WORKING FOR PAY/ IF LIKE TO HAVE A PAID JOB \nOver the past 12 months, have you had any training to improve your job skills?\n(PLEASE TICK ONE BOX ONLY)",
-    "answer": {
-      "0": "Not applicable (code 2, 0 in v66)",
-      "1": "Yes",
-      "2": "No",
-      "8": "Can't choose",
-      "9": "No answer, refused"
-    },
-    "special": {}
-  },
-  {
-    "question_id": "v82",
-    "question": "Q42\nPLEASE ANSWER QUESTIONS 32 - 44 IF YOU ARE NOT CURRENTLY WORKING FOR PAY/ IF LIKE TO HAVE A PAID JOB \nAre you currently looking for a job?\n(PLEASE TICK ONE BOX ONLY)",
-    "answer": {
-      "0": "Not applicable (code 2, 0 in v66)",
-      "1": "Yes",
-      "2": "No",
-      "8": "Don't know",
-      "9": "No answer, refused"
-    },
-    "special": {}
-  },
-  {
-    "question_id": "v83",
-    "question": "Q43\nPLEASE ANSWER QUESTIONS 32 - 44 IF YOU ARE NOT CURRENTLY WORKING FOR PAY\nWhat is your main source of economic support?\n(PLEASE TICK ONE BOX ONLY)",
-    "answer": {
-      "0": "Not applicable (code 1 in v20)",
-      "1": "Current spouse/ partner",
-      "2": "Other family members",
-      "3": "Pension (private/ state)",
-      "4": "Unemployment benefits",
-      "5": "Social assistance/ welfare",
-      "6": "Occasional work",
-      "7": "Student loans/ stipends",
-      "8": "Savings",
-      "9": "Investments or rental income",
-      "95": "Other",
-      "98": "Don't know",
-      "99": "No answer, refused"
-    },
-    "special": {
-      "VE": {
-        "99": "No answer, refused including other"
-      }
-    }
-  },
-  {
-    "question_id": "v84",
-    "question": "PLEASE ANSWER QUESTIONS 32 - 44 IF YOU ARE NOT CURRENTLY WORKING FOR PAY To what extent, if at all, do you worry about the possibility of losing this main economic support? (PLEASE TICK ONE BOX ONLY)",
-    "answer": {
-      "0": "Not applicable (code 1 in v20)",
-      "1": "I worry a great deal",
-      "2": "I worry to some extent",
-      "3": "I worry a little",
-      "4": "I don't worry at all",
-      "8": "Don't know",
-      "9": "No answer, refused"
-    },
-    "special": {}
-  },
-  {
-    "question_id": "v86",
-    "question": "Over the past five years, have you ever worked for pay? (PLEASE TICK ONE BOX ONLY)",
-    "answer": {
-      "0": "NAP (code 1 in v20); Not available (CN, CZ, DK, ES, FI, FR, GB-GBN, JP, MX, NO, SE, SI, SK, SR, TW, US, VE, ZA)",
-      "1": "Yes",
-      "2": "No",
-      "8": "Don't know",
-      "9": "No answer, refused"
-    },
-    "special": {}
-  },
-  {
-    "question_id": "v87",
-    "question": "Over the past five years, did you experience any of the following changes in your working life? I was unemployed for a period longer than three months. (PLEASE TICK ONE BOX ON EACH LINE)",
-    "answer": {
-      "0": "NAP (code 2 in v86); Not available (CN, CZ, DK, ES, FR, GB-GBN, JP, MX, NO, SE, SI, SK, SR,TW, US, VE, ZA)",
-      "1": "No",
-      "2": "Yes, once",
-      "3": "Yes, twice",
-      "4": "Yes, three times",
-      "5": "Yes, more than three times",
-      "8": "Can't choose",
-      "9": "No answer, refused"
-    },
-    "special": {}
-  },
-  {
-    "question_id": "v88",
-    "question": "Over the past five years, did you experience any of the following changes in your working life? I changed my employer. (PLEASE TICK ONE BOX ON EACH LINE)",
-    "answer": {
-      "0": "NAP (code 2 in v86); Not available (CN, CZ, DK, ES, FR, GB-GBN, JP, MX, NO, SE, SI, SK, SR, TW, US, VE, ZA)",
-      "1": "No",
-      "2": "Yes, once",
-      "3": "Yes, twice",
-      "4": "Yes, three times",
-      "5": "Yes, more than three times",
-      "8": "Can't choose",
-      "9": "No answer, refused"
-    },
-    "special": {}
-  },
-  {
-    "question_id": "v89",
-    "question": "Over the past five years, did you experience any of the following changes in your working life? I changed my occupation. (PLEASE TICK ONE BOX ON EACH LINE)",
-    "answer": {
-      "0": "NAP (code 2 in v86); Not available (CN, CZ, DK, ES, FR, GB-GBN, JP, MX, NO, SE, SI, SK, SR, TW, US, VE, ZA)",
-      "1": "No",
-      "2": "Yes, once",
-      "3": "Yes, twice",
-      "4": "Yes, three times",
-      "5": "Yes, more than three times",
-      "8": "Can't choose",
-      "9": "No answer, refused"
-    },
-    "special": {}
-  },
-  {
-    "question_id": "v90",
-    "question": "Over the past five years, did you experience any of the following changes in your working life? I started my own business/ became self-employed. (PLEASE TICK ONE BOX ON EACH LINE)",
-    "answer": {
-      "0": "NAP (code 2 in v86); Not available (CN, CZ, DK, ES, FR, GB-GBN, JP, MX, NO, SE, SI, SK, SR, TW, US, VE, ZA)",
-      "1": "No",
-      "2": "Yes, once",
-      "3": "Yes, twice",
-      "4": "Yes, three times",
-      "5": "Yes, more than three times",
-      "8": "Can't choose",
-      "9": "No answer, refused"
-    },
-    "special": {}
-  },
-  {
-    "question_id": "v91",
-    "question": "Over the past five years, did you experience any of the following changes in your working life? I took up an additional job. (PLEASE TICK ONE BOX ON EACH LINE)",
-    "answer": {
-      "0": "NAP (code 2 in v86); Not available (CN, CZ, DK, ES, FR, GB-GBN, JP, MX, NO, SE, SI, SK, SR, TW, US, VE, ZA)",
-      "1": "No",
-      "2": "Yes, once",
-      "3": "Yes, twice",
-      "4": "Yes, three times",
-      "5": "Yes, more than three times",
-      "8": "Can't choose",
-      "9": "No answer, refused"
-    },
-    "special": {}
-  },
-  {
-    "question_id": "v92",
-    "question": "How would you generally rate your current financial situation? My current financial situation is... (PLEASE TICK ONE BOX ONLY)",
-    "answer": {
-      "0": "Not available (AT, CN, CZ, DE, DK, ES, FI, FR, GB-GBN, JP, MX, NO, SE, SI, SK, SR, TW, US, VE, ZA)",
-      "1": "Very good",
-      "2": "Good",
-      "3": "Neither good nor bad",
-      "4": "Bad",
-      "5": "Very bad",
-      "8": "Can't choose",
-      "9": "No answer, refused"
-    },
-    "special": {}
-  },
-  {
-    "question_id": "v93",
-    "question": "Compared to five years ago, how do you think your financial situation has changed? My current financial situation is... (PLEASE TICK ONE BOX ONLY)",
-    "answer": {
-      "0": "Not available (AT, BE, CN, CZ, DE, DK, ES, FI, FR, GB-GBN, HU, MX, NO, SE, SI, SK, SR, TW, US, VE, ZA)",
-      "1": "Much better than five years ago",
-      "2": "Somewhat better than five years ago",
-      "3": "The same as five years ago",
-      "4": "Somewhat worse than five years ago",
-      "5": "Much worse than five years ago",
-      "8": "Can't choose",
-      "9": "No answer, refused"
-    },
-    "special": {}
-  },
-  {
-    "question_id": "v94",
-    "question": "And what will your financial situation likely be in five years? My financial situation in five years will likely be... (PLEASE TICK ONE BOX ONLY)",
-    "answer": {
-      "0": "Not available (AT, BE, CN, CZ, DE, DK, ES, FI, FR, GB-GBN, HU, MX, NO, SE, SI, SK, SR, TW, US, VE, ZA)",
-      "1": "Much better than today",
-      "2": "Somewhat better than today",
-      "3": "The same as today",
-      "4": "Somewhat worse than today",
-      "5": "Much worse than today",
-      "8": "Can't choose",
-      "9": "No answer, refused"
-    },
-    "special": {}
-  },
-  {
-    "question_id": "v95",
-    "question": "To what extent do you agree or disagree with the following statements? It is good for [country’s] economy that people aged 60 and over are employed. (PLEASE TICK ONE BOX ON EACH LINE)",
-    "answer": {
-      "0": "Not available (BE, CN, CZ, DK, ES, FR, GB-GBN, IL, MX, NO, SE, SI, SK, SR, US, VE, ZA)",
-      "1": "Strongly agree",
-      "2": "Agree",
-      "3": "Neither agree nor disagree",
-      "4": "Disagree",
-      "5": "Strongly disagree",
-      "8": "Can't choose",
-      "9": "No answer, refused"
-    },
-    "special": {}
-  },
-  {
-    "question_id": "v96",
-    "question": "To what extent do you agree or disagree with the following statements? When people aged 60 and over are employed, they take jobs away from younger people. (PLEASE TICK ONE BOX ON EACH LINE)",
-    "answer": {
-      "0": "Not available (BE, CN, CZ, DK, ES, FR, GB-GBN, IL, MX, NO, SE, SI, SK, SR, US, VE, ZA)",
-      "1": "Strongly agree",
-      "2": "Agree",
-      "3": "Neither agree nor disagree",
-      "4": "Disagree",
-      "5": "Strongly disagree",
-      "8": "Can't choose",
-      "9": "No answer, refused"
-    },
-    "special": {}
-  },
-  {
-    "question_id": "v97",
-    "question": "In general, would you say your health is … (PLEASE TICK ONE BOX ONLY)",
-    "answer": {
-      "0": "Not available (DK, ES, FI, GB-GBN, GE, MX, NO, NZ, SE, SI, SK, SR, US, VE, ZA)",
-      "1": "Excellent",
-      "2": "Very good",
-      "3": "Good",
-      "4": "Fair",
-      "5": "Poor",
-      "8": "Can't choose",
-      "9": "No answer, refused"
-    },
-    "special": {
-      "HU": {
-        "1": "Very good",
-        "2": "Good",
-        "3": "Satisfactory",
-        "4": "Poor",
-        "5": "Very poor"
-      }
-    }
   }
 ]

@@ -1,1227 +1,703 @@
 [
   {
     "question_id": "V5",
-    "question": "Q1\nHow close do you feel to ...?\n(PLEASE, CHECK ONE BOX ON EACH LINE)\nQ1a ... your town or city?",
+    "question": "Q1 How close do you feel to ...?  Q1a ... your town or city?",
     "answer": {
       "1": "Very close",
       "2": "Close",
       "3": "Not very close",
-      "4": "Not close at all",
-      "8": "Can't choose",
-      "9": "No answer"
+      "4": "Not close at all" 
     },
     "special": {}
   },
   {
     "question_id": "V6",
-    "question": "Q1\nHow close do you feel to ...?\n(PLEASE, CHECK ONE BOX ON EACH LINE)\nQ1b ... your [County]?",
+    "question": "Q1 How close do you feel to ...?  Q1b ... your [County]?",
     "answer": {
       "1": "Very close",
       "2": "Close",
       "3": "Not very close",
-      "4": "Not close at all",
-      "8": "Can't choose",
-      "9": "No answer"
+      "4": "Not close at all" 
     },
     "special": {}
   },
   {
     "question_id": "V7",
-    "question": "Q1\nHow close do you feel to ...?\n(PLEASE, CHECK ONE BOX ON EACH LINE)\nQ1c ... your [Country]?",
+    "question": "Q1 How close do you feel to ...?  Q1c ... your [Country]?",
     "answer": {
       "1": "Very close",
       "2": "Close",
       "3": "Not very close",
-      "4": "Not close at all",
-      "8": "Can't choose",
-      "9": "No answer"
+      "4": "Not close at all" 
     },
     "special": {}
   },
   {
     "question_id": "V8",
-    "question": "Q1\nHow close do you feel to ...?\n(PLEASE, CHECK ONE BOX ON EACH LINE)\nQ1d ... your [Continent]?",
+    "question": "Q1 How close do you feel to ...?  Q1d ... your [Continent]?",
     "answer": {
       "1": "Very close",
       "2": "Close",
       "3": "Not very close",
-      "4": "Not close at all",
-      "8": "Can't choose",
-      "9": "No answer"
+      "4": "Not close at all" 
     },
     "special": {}
   },
   {
     "question_id": "V9",
-    "question": "Q2\nSome people say that the following things are important for being truly [NATIONALITY]. \nOthers say they are not important. \nHow important do you think each of the following is ...\n(PLEASE, CHECK ONE BOX ON EACH LINE)\nQ2a ... to have been born in [COUNTRY]?",
+    "question": "Q2 Some people say that the following things are important for being truly [NATIONALITY].  Others say they are not important.  How important do you think each of the following is ...  Q2a ... to have been born in [COUNTRY]?",
     "answer": {
-      "0": "NAV;ZA: answer categories differ from ISSP standard",
       "1": "Very important",
       "2": "Fairly important",
       "3": "Not very important",
-      "4": "Not important at all",
-      "8": "Can't choose",
-      "9": "No answer"
+      "4": "Not important at all" 
     },
     "special": {
-      "ZA": {
-        "0": "NAV;ZA: answer categories differ from ISSP standard"
-      }
     }
-  },
-  {
-    "question_id": "ZA_V9",
-    "question": "Q2\nSome people say that the following things are important for being truly [NATIONALITY]. \nOthers say they are not important. \nHow important do you think each of the following is ...\n(PLEASE, CHECK ONE BOX ON EACH LINE)\nQ2a ... to have been born in [COUNTRY]?",
-    "answer": {
-      "0": "NAP, other countries",
-      "1": "Very important",
-      "2": "Fairly important",
-      "3": "Neither nor",
-      "4": "Not very important",
-      "5": "Not important at all",
-      "8": "Can't choose",
-      "9": "No answer"
-    },
-    "special": {}
   },
   {
     "question_id": "V10",
-    "question": "Q2\nSome people say that the following things are important for being truly [NATIONALITY]. \nOthers say they are not important. \nHow important do you think each of the following is ...\n(PLEASE, CHECK ONE BOX ON EACH LINE)\nQ2b ... to have [COUNTRY NATIONALITY] citizenship?",
+    "question": "Q2 Some people say that the following things are important for being truly [NATIONALITY].  Others say they are not important.  How important do you think each of the following is ...  Q2b ... to have [COUNTRY NATIONALITY] citizenship?",
     "answer": {
-      "0": "NAV;ZA: answer categories differ from ISSP standard",
       "1": "Very important",
       "2": "Fairly important",
       "3": "Not very important",
-      "4": "Not important at all",
-      "8": "Can't choose",
-      "9": "No answer"
+      "4": "Not important at all" 
     },
     "special": {
-      "ZA": {
-        "0": "NAV;ZA: answer categories differ from ISSP standard"
-      }
     }
-  },
-  {
-    "question_id": "ZA_V10",
-    "question": "Q2\nSome people say that the following things are important for being truly [NATIONALITY]. \nOthers say they are not important. \nHow important do you think each of the following is ...\n(PLEASE, CHECK ONE BOX ON EACH LINE)\nQ2b ... to have [COUNTRY NATIONALITY] citizenship?",
-    "answer": {
-      "0": "NAP, other countries",
-      "1": "Very important",
-      "2": "Fairly important",
-      "3": "Neither nor",
-      "4": "Not very important",
-      "5": "Not important at all",
-      "8": "Can't choose",
-      "9": "No answer"
-    },
-    "special": {}
   },
   {
     "question_id": "V11",
-    "question": "Q2\nSome people say that the following things are important for being truly [NATIONALITY]. \nOthers say they are not important. \nHow important do you think each of the following is ...\n(PLEASE, CHECK ONE BOX ON EACH LINE)\nQ2c ... to have lived in [COUNTRY] for most of one's life?",
+    "question": "Q2 Some people say that the following things are important for being truly [NATIONALITY].  Others say they are not important.  How important do you think each of the following is ...  Q2c ... to have lived in [COUNTRY] for most of one's life?",
     "answer": {
-      "0": "NAV;ZA: answer categories differ from ISSP standard",
       "1": "Very important",
       "2": "Fairly important",
       "3": "Not very important",
-      "4": "Not important at all",
-      "8": "Can't choose",
-      "9": "No answer"
+      "4": "Not important at all" 
     },
     "special": {
-      "ZA": {
-        "0": "NAV;ZA: answer categories differ from ISSP standard"
-      }
     }
-  },
-  {
-    "question_id": "ZA_V11",
-    "question": "Q2\nSome people say that the following things are important for being truly [NATIONALITY]. \nOthers say they are not important. \nHow important do you think each of the following is ...\n(PLEASE, CHECK ONE BOX ON EACH LINE)\nQ2c ... to have lived in [COUNTRY] for most of one's life?",
-    "answer": {
-      "0": "NAP, other countries",
-      "1": "Very important",
-      "2": "Fairly important",
-      "3": "Neither nor",
-      "4": "Not very important",
-      "5": "Not important at all",
-      "8": "Can't choose",
-      "9": "No answer"
-    },
-    "special": {}
   },
   {
     "question_id": "V12",
-    "question": "Q2\nSome people say that the following things are important for being truly [NATIONALITY]. \nOthers say they are not important. \nHow important do you think each of the following is ...\n(PLEASE, CHECK ONE BOX ON EACH LINE)\nQ2d ... to be able to speak [COUNTRY LANGUAGE]?",
+    "question": "Q2 Some people say that the following things are important for being truly [NATIONALITY].  Others say they are not important.  How important do you think each of the following is ...  Q2d ... to be able to speak [COUNTRY LANGUAGE]?",
     "answer": {
-      "0": "NAV;ZA: answer categories differ from ISSP standard",
       "1": "Very important",
       "2": "Fairly important",
       "3": "Not very important",
-      "4": "Not important at all",
-      "8": "Cant choose",
-      "9": "No answer"
+      "4": "Not important at all"
     },
     "special": {
-      "ZA": {
-        "0": "NAV;ZA: answer categories differ from ISSP standard"
-      }
     }
-  },
-  {
-    "question_id": "ZA_V12",
-    "question": "Q2\nSome people say that the following things are important for being truly [NATIONALITY]. \nOthers say they are not important. \nHow important do you think each of the following is ...\n(PLEASE, CHECK ONE BOX ON EACH LINE)\nQ2d ... to be able to speak [COUNTRY LANGUAGE]?",
-    "answer": {
-      "0": "NAP, other countries",
-      "1": "Very important",
-      "2": "Fairly important",
-      "3": "Neither nor",
-      "4": "Not very important",
-      "5": "Not important at all",
-      "8": "Can't choose",
-      "9": "No answer"
-    },
-    "special": {}
   },
   {
     "question_id": "V13",
-    "question": "Q2\nSome people say that the following things are important for being truly [NATIONALITY]. \nOthers say they are not important. \nHow important do you think each of the following is ...\n(PLEASE, CHECK ONE BOX ON EACH LINE)\nQ2e ... to be a [religion]?",
+    "question": "Q2 Some people say that the following things are important for being truly [NATIONALITY].  Others say they are not important.  How important do you think each of the following is ...  Q2e ... to be a [religion]?",
     "answer": {
-      "0": "NAV;ZA: answer categories differ from ISSP standard",
       "1": "Very important",
       "2": "Fairly important",
       "3": "Not very important",
-      "4": "Not important at all",
-      "8": "Can't choose",
-      "9": "No answer"
+      "4": "Not important at all" 
     },
     "special": {
-      "ZA": {
-        "0": "NAV;ZA: answer categories differ from ISSP standard"
-      }
     }
-  },
-  {
-    "question_id": "ZA_V13",
-    "question": "Q2\nSome people say that the following things are important for being truly [NATIONALITY]. \nOthers say they are not important. \nHow important do you think each of the following is ...\n(PLEASE, CHECK ONE BOX ON EACH LINE)\nQ2e ... to be a [religion]?",
-    "answer": {
-      "0": "NAP, other countries",
-      "1": "Very important",
-      "2": "Fairly important",
-      "3": "Neither nor",
-      "4": "Not very important",
-      "5": "Not important at all",
-      "8": "Can't choose",
-      "9": "No answer"
-    },
-    "special": {}
   },
   {
     "question_id": "V14",
-    "question": "Q2\nSome people say that the following things are important for being truly [NATIONALITY]. \nOthers say they are not important. \nHow important do you think each of the following is ...\n(PLEASE, CHECK ONE BOX ON EACH LINE)\nQ2f ... to respect [COUNTRY NATIONALITY] political institutions and laws?",
+    "question": "Q2 Some people say that the following things are important for being truly [NATIONALITY].  Others say they are not important.  How important do you think each of the following is ...  Q2f ... to respect [COUNTRY NATIONALITY] political institutions and laws?",
     "answer": {
-      "0": "NAV;ZA: answer categories differ from ISSP standard",
       "1": "Very important",
       "2": "Fairly important",
       "3": "Not very important",
-      "4": "Not important at all",
-      "8": "Can't choose",
-      "9": "No answer"
+      "4": "Not important at all" 
     },
     "special": {
-      "ZA": {
-        "0": "NAV;ZA: answer categories differ from ISSP standard"
-      }
+
     }
-  },
-  {
-    "question_id": "ZA_V14",
-    "question": "Q2\nSome people say that the following things are important for being truly [NATIONALITY]. \nOthers say they are not important. \nHow important do you think each of the following is ...\n(PLEASE, CHECK ONE BOX ON EACH LINE)\nQ2f ... to respect [COUNTRY NATIONALITY] political institutions and laws?",
-    "answer": {
-      "0": "NAP, other countries",
-      "1": "Very important",
-      "2": "Fairly important",
-      "3": "Neither nor",
-      "4": "Not very important",
-      "5": "Not important at all",
-      "8": "Can't choose",
-      "9": "No answer"
-    },
-    "special": {}
   },
   {
     "question_id": "V15",
-    "question": "Q2\nSome people say that the following things are important for being truly [NATIONALITY]. \nOthers say they are not important. \nHow important do you think each of the following is ...\n(PLEASE, CHECK ONE BOX ON EACH LINE)\nQ2g ... to feel [COUNTRY NATIONALITY]?",
+    "question": "Q2 Some people say that the following things are important for being truly [NATIONALITY].  Others say they are not important.  How important do you think each of the following is ...  Q2g ... to feel [COUNTRY NATIONALITY]?",
     "answer": {
-      "0": "NAV;ZA: answer categories differ from ISSP standard",
       "1": "Very important",
       "2": "Fairly important",
       "3": "Not very important",
-      "4": "Not important at all",
-      "8": "Can't choose",
-      "9": "No answer"
+      "4": "Not important at all" 
     },
     "special": {
-      "ZA": {
-        "0": "NAV;ZA: answer categories differ from ISSP standard"
-      }
+
     }
-  },
-  {
-    "question_id": "ZA_V15",
-    "question": "Q2\nSome people say that the following things are important for being truly [NATIONALITY]. \nOthers say they are not important. \nHow important do you think each of the following is ...\n(PLEASE, CHECK ONE BOX ON EACH LINE)\nQ2g ... to feel [COUNTRY NATIONALITY]?",
-    "answer": {
-      "0": "NAP, other countries",
-      "1": "Very important",
-      "2": "Fairly important",
-      "3": "Neither nor",
-      "4": "Not very important",
-      "5": "Not important at all",
-      "8": "Can't choose",
-      "9": "No answer"
-    },
-    "special": {}
   },
   {
     "question_id": "V16",
-    "question": "Q2\nSome people say that the following things are important for being truly [NATIONALITY]. \nOthers say they are not important. \nHow important do you think each of the following is ...\n(PLEASE, CHECK ONE BOX ON EACH LINE)\nQ2h ... to have [COUNTRY NATIONALITY] ancestry?",
+    "question": "Q2 Some people say that the following things are important for being truly [NATIONALITY].  Others say they are not important.  How important do you think each of the following is ...  Q2h ... to have [COUNTRY NATIONALITY] ancestry?",
     "answer": {
-      "0": "NAV;ZA: answer categories differ from ISSP standard",
       "1": "Very important",
       "2": "Fairly important",
       "3": "Not very important",
-      "4": "Not important at all",
-      "8": "Can't choose",
-      "9": "No answer"
+      "4": "Not important at all" 
     },
     "special": {
-      "ZA": {
-        "0": "NAV;ZA: answer categories differ from ISSP standard"
-      }
+
     }
   },
   {
-    "question_id": "ZA_V16",
-    "question": "Q2\nSome people say that the following things are important for being truly [NATIONALITY]. \nOthers say they are not important. \nHow important do you think each of the following is ...\n(PLEASE, CHECK ONE BOX ON EACH LINE)\nQ2h ... to have [COUNTRY NATIONALITY] ancestry?",
-    "answer": {
-      "0": "NAP, other countries",
-      "1": "Very important",
-      "2": "Fairly important",
-      "3": "Neither nor",
-      "4": "Not very important",
-      "5": "Not Important at all",
-      "8": "Can't choose",
-      "9": "No answer"
-    },
-    "special": {}
-  },
-  {
     "question_id": "V17",
-    "question": "Q3\nHow much do you agree or disagree with the following statements?\n(PLEASE, CHECK ONE BOX ON EACH LINE)\nQ3a I would rather be a citizen of [COUNTRY] than of any other country in the world.",
+    "question": "Q3 How much do you agree or disagree with the following statements?  Q3a I would rather be a citizen of [COUNTRY] than of any other country in the world.",
     "answer": {
       "1": "Agree strongly",
       "2": "Agree",
       "3": "Neither agree nor disagree",
       "4": "Disagree",
-      "5": "Disagree strongly",
-      "8": "Can't choose",
-      "9": "No answer"
+      "5": "Disagree strongly" 
     },
     "special": {}
   },
   {
     "question_id": "V18",
-    "question": "Q3\nHow much do you agree or disagree with the following statements?\n(PLEASE, CHECK ONE BOX ON EACH LINE)\nQ3b There are some things about [COUNTRY] that make me feel ashamed of [COUNTRY].",
+    "question": "Q3 How much do you agree or disagree with the following statements?  Q3b There are some things about [COUNTRY] that make me feel ashamed of [COUNTRY].",
     "answer": {
       "1": "Agree strongly",
       "2": "Agree",
       "3": "Neither agree nor disagree",
       "4": "Disagree",
-      "5": "Disagree strongly",
-      "8": "Can't choose",
-      "9": "No answer"
+      "5": "Disagree strongly" 
     },
     "special": {}
   },
   {
     "question_id": "V19",
-    "question": "Q3\nHow much do you agree or disagree with the following statements?\n(PLEASE, CHECK ONE BOX ON EACH LINE)\nQ3c The world would be a better place if people from other countries were more like the [COUNTRY NATIONALITY].",
+    "question": "Q3 How much do you agree or disagree with the following statements?  Q3c The world would be a better place if people from other countries were more like the [COUNTRY NATIONALITY].",
     "answer": {
       "1": "Agree strongly",
       "2": "Agree",
       "3": "Neither agree nor disagree",
       "4": "Disagree",
-      "5": "Disagree strongly",
-      "8": "Can't choose",
-      "9": "No answer"
+      "5": "Disagree strongly" 
     },
     "special": {}
   },
   {
     "question_id": "V20",
-    "question": "Q3\nHow much do you agree or disagree with the following statements?\n(PLEASE, CHECK ONE BOX ON EACH LINE)\nQ3d Generally speaking, [COUNTRY] is a better country than most other countries.",
+    "question": "Q3 How much do you agree or disagree with the following statements?  Q3d Generally speaking, [COUNTRY] is a better country than most other countries.",
     "answer": {
       "1": "Agree strongly",
       "2": "Agree",
       "3": "Neither agree nor disagree",
       "4": "Disagree",
-      "5": "Disagree strongly",
-      "8": "Can't choose",
-      "9": "No answer"
+      "5": "Disagree strongly" 
     },
     "special": {}
   },
   {
     "question_id": "V21",
-    "question": "Q3\nHow much do you agree or disagree with the following statements?\n(PLEASE, CHECK ONE BOX ON EACH LINE)\nQ3e People should support their country even if the country is in the wrong.",
+    "question": "Q3 How much do you agree or disagree with the following statements?  Q3e People should support their country even if the country is in the wrong.",
     "answer": {
       "1": "Agree strongly",
       "2": "Agree",
       "3": "Neither agree nor disagree",
       "4": "Disagree",
-      "5": "Disagree strongly",
-      "8": "Can't choose",
-      "9": "No answer"
+      "5": "Disagree strongly" 
     },
     "special": {}
   },
   {
     "question_id": "V22",
-    "question": "Q3\nHow much do you agree or disagree with the following statements?\n(PLEASE, CHECK ONE BOX ON EACH LINE)\nQ3f When my country does well in international sports, it makes me proud to be [COUNTRY NATIONALITY].",
+    "question": "Q3 How much do you agree or disagree with the following statements?  Q3f When my country does well in international sports, it makes me proud to be [COUNTRY NATIONALITY].",
     "answer": {
       "1": "Agree strongly",
       "2": "Agree",
       "3": "Neither agree nor disagree",
       "4": "Disagree",
-      "5": "Disagree strongly",
-      "8": "Can't choose",
-      "9": "No answer"
+      "5": "Disagree strongly" 
     },
     "special": {}
   },
   {
     "question_id": "V23",
-    "question": "Q3\nHow much do you agree or disagree with the following statements?\n(PLEASE, CHECK ONE BOX ON EACH LINE)\nQ3g I am often less proud of [COUNTRY] than I would like to be.",
+    "question": "Q3 How much do you agree or disagree with the following statements?  Q3g I am often less proud of [COUNTRY] than I would like to be.",
     "answer": {
       "1": "Agree strongly",
       "2": "Agree",
       "3": "Neither agree nor disagree",
       "4": "Disagree",
-      "5": "Disagree strongly",
-      "8": "Can't choose",
-      "9": "No answer"
+      "5": "Disagree strongly" 
     },
     "special": {}
   },
   {
     "question_id": "V24",
-    "question": "Q3\nHow much do you agree or disagree with the following statements?\n(PLEASE, CHECK ONE BOX ON EACH LINE)\nQ3h The world would be a better place if [COUNTRY NATIONALITY] acknowledged [COUNTRY's] shortcomings.",
+    "question": "Q3 How much do you agree or disagree with the following statements?  Q3h The world would be a better place if [COUNTRY NATIONALITY] acknowledged [COUNTRY's] shortcomings.",
     "answer": {
       "1": "Agree strongly",
       "2": "Agree",
       "3": "Neither agree nor disagree",
       "4": "Disagree",
-      "5": "Disagree strongly",
-      "8": "Can't choose",
-      "9": "No answer"
+      "5": "Disagree strongly" 
     },
     "special": {}
   },
   {
     "question_id": "V25",
-    "question": "Q4\nHow proud are you of [COUNTRY] in each of the following?\n(PLEASE, CHECK ONE BOX ON EACH LINE)\nQ4a The way democracy works.",
+    "question": "Q4 How proud are you of [COUNTRY] in each of the following?  Q4a The way democracy works.",
     "answer": {
       "1": "Very proud",
       "2": "Somewhat proud",
       "3": "Not very proud",
-      "4": "Not proud at all",
-      "8": "Can't choose",
-      "9": "No answer"
+      "4": "Not proud at all" 
     },
     "special": {}
   },
   {
     "question_id": "V26",
-    "question": "Q4\nHow proud are you of [COUNTRY] in each of the following?\n(PLEASE, CHECK ONE BOX ON EACH LINE)\nQ4b Its political influence in the world.",
+    "question": "Q4 How proud are you of [COUNTRY] in each of the following?  Q4b Its political influence in the world.",
     "answer": {
       "1": "Very proud",
       "2": "Somewhat proud",
       "3": "Not very proud",
-      "4": "Not proud at all",
-      "8": "Can't choose",
-      "9": "No answer"
+      "4": "Not proud at all" 
     },
     "special": {}
   },
   {
     "question_id": "V27",
-    "question": "Q4\nHow proud are you of [COUNTRY] in each of the following?\n(PLEASE, CHECK ONE BOX ON EACH LINE)\nQ4c [COUNTRY's] economic achievements.",
+    "question": "Q4 How proud are you of [COUNTRY] in each of the following?  Q4c [COUNTRY's] economic achievements.",
     "answer": {
       "1": "Very proud",
       "2": "Somewhat proud",
       "3": "Not very proud",
-      "4": "Not proud at all",
-      "8": "Can't choose",
-      "9": "No answer"
+      "4": "Not proud at all" 
     },
     "special": {}
   },
   {
     "question_id": "V28",
-    "question": "Q4\nHow proud are you of [COUNTRY] in each of the following?\n(PLEASE, CHECK ONE BOX ON EACH LINE)\nQ4d Its social security system.",
+    "question": "Q4 How proud are you of [COUNTRY] in each of the following?  Q4d Its social security system.",
     "answer": {
       "1": "Very proud",
       "2": "Somewhat proud",
       "3": "Not very proud",
-      "4": "Not proud at all",
-      "8": "Can't choose",
-      "9": "No answer"
+      "4": "Not proud at all" 
     },
     "special": {}
   },
   {
     "question_id": "V29",
-    "question": "Q4\nHow proud are you of [COUNTRY] in each of the following?\n(PLEASE, CHECK ONE BOX ON EACH LINE)\nQ4e Its scientific and technological achievements.",
+    "question": "Q4 How proud are you of [COUNTRY] in each of the following?  Q4e Its scientific and technological achievements.",
     "answer": {
       "1": "Very proud",
       "2": "Somewhat proud",
       "3": "Not very proud",
-      "4": "Not proud at all",
-      "8": "Can't choose",
-      "9": "No answer"
+      "4": "Not proud at all" 
     },
     "special": {}
   },
   {
     "question_id": "V30",
-    "question": "Q4\nHow proud are you of [COUNTRY] in each of the following?\n(PLEASE, CHECK ONE BOX ON EACH LINE)\nQ4f Its achievements in sports.",
+    "question": "Q4 How proud are you of [COUNTRY] in each of the following?  Q4f Its achievements in sports.",
     "answer": {
       "1": "Very proud",
       "2": "Somewhat proud",
       "3": "Not very proud",
-      "4": "Not proud at all",
-      "8": "Can't choose",
-      "9": "No answer"
+      "4": "Not proud at all" 
     },
     "special": {}
   },
   {
     "question_id": "V31",
-    "question": "Q4\nHow proud are you of [COUNTRY] in each of the following?\n(PLEASE, CHECK ONE BOX ON EACH LINE)\nQ4g Its achievements in the arts and literature.",
+    "question": "Q4 How proud are you of [COUNTRY] in each of the following?  Q4g Its achievements in the arts and literature.",
     "answer": {
       "1": "Very proud",
       "2": "Somewhat proud",
       "3": "Not very proud",
-      "4": "Not proud at all",
-      "8": "Can't choose",
-      "9": "No answer"
+      "4": "Not proud at all" 
     },
     "special": {}
   },
   {
     "question_id": "V32",
-    "question": "Q4\nHow proud are you of [COUNTRY] in each of the following?\n(PLEASE, CHECK ONE BOX ON EACH LINE)\nQ4h [COUNTRY's] armed forces.",
+    "question": "Q4 How proud are you of [COUNTRY] in each of the following?  Q4h [COUNTRY's] armed forces.",
     "answer": {
-      "0": "Not available, not asked (IS)",
       "1": "Very proud",
       "2": "Somewhat proud",
       "3": "Not very proud",
-      "4": "Not proud at all",
-      "8": "Can't choose",
-      "9": "No answer"
+      "4": "Not proud at all" 
     },
     "special": {
-      "IS": {
-        "0": "Not available, not asked (IS)"
-      }
     }
   },
   {
     "question_id": "V33",
-    "question": "Q4\nHow proud are you of [COUNTRY] in each of the following?\n(PLEASE, CHECK ONE BOX ON EACH LINE)\nQ4i Its history.",
+    "question": "Q4 How proud are you of [COUNTRY] in each of the following?  Q4i Its history.",
     "answer": {
       "1": "Very proud",
       "2": "Somewhat proud",
       "3": "Not very proud",
-      "4": "Not proud at all",
-      "8": "Can't choose",
-      "9": "No answer"
+      "4": "Not proud at all" 
     },
     "special": {}
   },
   {
     "question_id": "V34",
-    "question": "Q4\nHow proud are you of [COUNTRY] in each of the following?\n(PLEASE, CHECK ONE BOX ON EACH LINE)\nQ4j Its fair and equal treatment of all groups in society.",
+    "question": "Q4 How proud are you of [COUNTRY] in each of the following?  Q4j Its fair and equal treatment of all groups in society.",
     "answer": {
       "1": "Very proud",
       "2": "Somewhat proud",
       "3": "Not very proud",
-      "4": "Not proud at all",
-      "8": "Can't choose",
-      "9": "No answer"
+      "4": "Not proud at all" 
     },
     "special": {}
   },
   {
     "question_id": "V35",
-    "question": "Q5\nHow much do you agree or disagree with the following statements?\n(PLEASE, CHECK ONE BOX ON EACH LINE)\nQ5a [COUNTRY] should limit the import of foreign products in order to protect its national economy.",
+    "question": "Q5 How much do you agree or disagree with the following statements?  Q5a [COUNTRY] should limit the import of foreign products in order to protect its national economy.",
     "answer": {
       "1": "Agree strongly",
       "2": "Agree",
       "3": "Neither agree nor disagree",
       "4": "Disagree",
-      "5": "Disagree strongly",
-      "8": "Can't choose",
-      "9": "No answer"
+      "5": "Disagree strongly" 
     },
     "special": {}
   },
   {
     "question_id": "V36",
-    "question": "Q5\nHow much do you agree or disagree with the following statements?\n(PLEASE, CHECK ONE BOX ON EACH LINE)\nQ5b For certain problems, like environment pollution, international bodies should have the right to enforce solutions.",
+    "question": "Q5 How much do you agree or disagree with the following statements?  Q5b For certain problems, like environment pollution, international bodies should have the right to enforce solutions.",
     "answer": {
       "1": "Agree strongly",
       "2": "Agree",
       "3": "Neither agree nor disagree",
       "4": "Disagree",
-      "5": "Disagree strongly",
-      "8": "Can't choose",
-      "9": "No answer"
+      "5": "Disagree strongly" 
     },
     "special": {}
   },
   {
     "question_id": "V37",
-    "question": "Q5\nHow much do you agree or disagree with the following statements?\n(PLEASE, CHECK ONE BOX ON EACH LINE)\nQ5c [COUNTRY] should follow its own interests, even if this leads to conflicts with other nations.",
+    "question": "Q5 How much do you agree or disagree with the following statements?  Q5c [COUNTRY] should follow its own interests, even if this leads to conflicts with other nations.",
     "answer": {
       "1": "Agree strongly",
       "2": "Agree",
       "3": "Neither agree nor disagree",
       "4": "Disagree",
-      "5": "Disagree strongly",
-      "8": "Can't choose",
-      "9": "No answer"
+      "5": "Disagree strongly" 
     },
     "special": {}
   },
   {
     "question_id": "V38",
-    "question": "Q5\nHow much do you agree or disagree with the following statements?\n(PLEASE, CHECK ONE BOX ON EACH LINE)\nQ5d Foreigners should not be allowed to buy land in [COUNTRY].",
+    "question": "Q5 How much do you agree or disagree with the following statements?  Q5d Foreigners should not be allowed to buy land in [COUNTRY].",
     "answer": {
       "1": "Agree strongly",
       "2": "Agree",
       "3": "Neither agree nor disagree",
       "4": "Disagree",
-      "5": "Disagree strongly",
-      "8": "Can't choose",
-      "9": "No answer"
+      "5": "Disagree strongly" 
     },
     "special": {}
   },
   {
     "question_id": "V39",
-    "question": "Q5\nHow much do you agree or disagree with the following statements?\n(PLEASE, CHECK ONE BOX ON EACH LINE)\nQ5e [COUNTRY's] television should give preference to [COUNTRY] films and programs.",
+    "question": "Q5 How much do you agree or disagree with the following statements?  Q5e [COUNTRY's] television should give preference to [COUNTRY] films and programs.",
     "answer": {
       "1": "Agree strongly",
       "2": "Agree",
       "3": "Neither agree nor disagree",
       "4": "Disagree",
-      "5": "Disagree strongly",
-      "8": "Can't choose",
-      "9": "No answer"
+      "5": "Disagree strongly" 
     },
     "special": {}
   },
   {
     "question_id": "V40",
-    "question": "Q6\nHow much do you agree or disagree with the following statements?\n(PLEASE, CHECK ONE BOX ON EACH LINE)\nQ6a Large international companies are doing more and more damage to local businesses in [COUNTRY].",
+    "question": "Q6 How much do you agree or disagree with the following statements?  Q6a Large international companies are doing more and more damage to local businesses in [COUNTRY].",
     "answer": {
       "1": "Agree strongly",
       "2": "Agree",
       "3": "Neither agree nor disagree",
       "4": "Disagree",
-      "5": "Disagree strongly",
-      "8": "Can't choose",
-      "9": "No answer"
+      "5": "Disagree strongly" 
     },
     "special": {}
   },
   {
     "question_id": "V41",
-    "question": "Q6\nHow much do you agree or disagree with the following statements?\n(PLEASE, CHECK ONE BOX ON EACH LINE)\nQ6b Free trade leads to better products becoming available in [COUNTRY].",
+    "question": "Q6 How much do you agree or disagree with the following statements?  Q6b Free trade leads to better products becoming available in [COUNTRY].",
     "answer": {
       "1": "Agree strongly",
       "2": "Agree",
       "3": "Neither agree nor disagree",
       "4": "Disagree",
-      "5": "Disagree strongly",
-      "8": "Can't choose",
-      "9": "No answer"
+      "5": "Disagree strongly" 
     },
     "special": {}
   },
   {
     "question_id": "V42",
-    "question": "Q6\nHow much do you agree or disagree with the following statements?\n(PLEASE, CHECK ONE BOX ON EACH LINE)\nQ6c In general, [COUNTRY] should follow the decisions of international organizations to which it belongs, even if the government does not \nagree with them.",
+    "question": "Q6 How much do you agree or disagree with the following statements?  Q6c In general, [COUNTRY] should follow the decisions of international organizations to which it belongs, even if the government does not  agree with them.",
     "answer": {
       "1": "Agree strongly",
       "2": "Agree",
       "3": "Neither agree nor disagree",
       "4": "Disagree",
-      "5": "Disagree strongly",
-      "8": "Can't choose",
-      "9": "No answer"
+      "5": "Disagree strongly" 
     },
     "special": {}
   },
   {
     "question_id": "V43",
-    "question": "Q6\nHow much do you agree or disagree with the following statements?\n(PLEASE, CHECK ONE BOX ON EACH LINE)\nQ6d International organizations are taking away too much power from the [COUNTRY NATIONALITY] government.",
+    "question": "Q6 How much do you agree or disagree with the following statements?  Q6d International organizations are taking away too much power from the [COUNTRY NATIONALITY] government.",
     "answer": {
       "1": "Agree strongly",
       "2": "Agree",
       "3": "Neither agree nor disagree",
       "4": "Disagree",
-      "5": "Disagree strongly",
-      "8": "Can't choose",
-      "9": "No answer"
+      "5": "Disagree strongly" 
     },
     "special": {}
   },
   {
     "question_id": "V44",
-    "question": "Q6\nHow much do you agree or disagree with the following statements?\n(PLEASE, CHECK ONE BOX ON EACH LINE)\nQ6e I feel more like a citizen of the world than of any country.",
+    "question": "Q6 How much do you agree or disagree with the following statements?  Q6e I feel more like a citizen of the world than of any country.",
     "answer": {
       "1": "Agree strongly",
       "2": "Agree",
       "3": "Neither agree nor disagree",
       "4": "Disagree",
-      "5": "Disagree strongly",
-      "8": "Can't choose",
-      "9": "No answer"
+      "5": "Disagree strongly" 
     },
     "special": {}
   },
   {
     "question_id": "V45",
-    "question": "Q7\nHow much do you agree or disagree with the following statements?\n(PLEASE, CHECK ONE BOX ON EACH LINE)\nQ7a It is impossible for people who do not share [COUNTRY'S] customs and traditions to become fully [COUNTRY'S NATIONALITY].",
+    "question": "Q7 How much do you agree or disagree with the following statements?  Q7a It is impossible for people who do not share [COUNTRY'S] customs and traditions to become fully [COUNTRY'S NATIONALITY].",
     "answer": {
       "1": "Agree strongly",
       "2": "Agree",
       "3": "Neither agree nor disagree",
       "4": "Disagree",
-      "5": "Disagree strongly",
-      "8": "Can't choose",
-      "9": "No answer"
+      "5": "Disagree strongly" 
     },
     "special": {}
   },
   {
     "question_id": "V46",
-    "question": "Q7\nHow much do you agree or disagree with the following statements?\n(PLEASE, CHECK ONE BOX ON EACH LINE)\nQ7b Ethnic minorities should be given government assistance to preserve their customs and traditions.",
+    "question": "Q7 How much do you agree or disagree with the following statements?  Q7b Ethnic minorities should be given government assistance to preserve their customs and traditions.",
     "answer": {
       "1": "Agree strongly",
       "2": "Agree",
       "3": "Neither agree nor disagree",
       "4": "Disagree",
-      "5": "Disagree strongly",
-      "8": "Can't choose",
-      "9": "No answer"
+      "5": "Disagree strongly" 
     },
     "special": {}
   },
   {
     "question_id": "V47",
-    "question": "Q8\nSome people say that it is better for a country if different racial and ethnic groups maintain their distinct customs and traditions.\nOthers say that it is better if these groups adapt and blend into the large society. \nWhich of these views comes closer to your own?\na) It is better for society if groups maintain their distinct customs and traditions.\nb) It is better if groups adapt and blend into the larger society.",
+    "question": "Q8 Some people say that it is better for a country if different racial and ethnic groups maintain their distinct customs and traditions. Others say that it is better if these groups adapt and blend into the large society.  Which of these views comes closer to your own? a) It is better for society if groups maintain their distinct customs and traditions. b) It is better if groups adapt and blend into the larger society.",
     "answer": {
       "1": "Maintain traditions",
-      "2": "Adapt into larger society",
-      "8": "Don't know",
-      "9": "No answer"
+      "2": "Adapt into larger society"
     },
     "special": {}
   },
   {
     "question_id": "V48",
-    "question": "Q9\nThere are different opinions about immigrants from other countries living in [COUNTRY]. (By 'immigrants' we mean people who come to settle \nin [COUNTRY]).\nHow much do you agree or disagree with each of the following statements?\n(PLEASE, CHECK ONE BOX ON EACH LINE)\nQ9a Immigrants increase crime rates.",
+    "question": "Q9 There are different opinions about immigrants from other countries living in [COUNTRY]. (By 'immigrants' we mean people who come to settle  in [COUNTRY]). How much do you agree or disagree with each of the following statements?  Q9a Immigrants increase crime rates.",
     "answer": {
       "1": "Agree strongly",
       "2": "Agree",
       "3": "Neither agree nor disagree",
       "4": "Disagree",
-      "5": "Disagree strongly",
-      "8": "Can't choose",
-      "9": "No answer"
+      "5": "Disagree strongly" 
     },
     "special": {}
   },
   {
     "question_id": "V49",
-    "question": "Q9\nThere are different opinions about immigrants from other countries living in [COUNTRY]. (By 'immigrants' we mean people who come to settle \nin [COUNTRY]).\nHow much do you agree or disagree with each of the following statements?\n(PLEASE, CHECK ONE BOX ON EACH LINE)\nQ9b Immigrants are generally good for [COUNTRY'S] economy.",
+    "question": "Q9 There are different opinions about immigrants from other countries living in [COUNTRY]. (By 'immigrants' we mean people who come to settle  in [COUNTRY]). How much do you agree or disagree with each of the following statements?  Q9b Immigrants are generally good for [COUNTRY'S] economy.",
     "answer": {
       "1": "Agree strongly",
       "2": "Agree",
       "3": "Neither agree nor disagree",
       "4": "Disagree",
-      "5": "Disagree strongly",
-      "8": "Can't choose",
-      "9": "No answer"
+      "5": "Disagree strongly" 
     },
     "special": {}
   },
   {
     "question_id": "V50",
-    "question": "Q9\nThere are different opinions about immigrants from other countries living in [COUNTRY]. (By 'immigrants' we mean people who come to settle \nin [COUNTRY]).\nHow much do you agree or disagree with each of the following statements?\n(PLEASE, CHECK ONE BOX ON EACH LINE)\nQ9c Immigrants take jobs away from people who were born in [COUNTRY].",
+    "question": "Q9 There are different opinions about immigrants from other countries living in [COUNTRY]. (By 'immigrants' we mean people who come to settle  in [COUNTRY]). How much do you agree or disagree with each of the following statements?  Q9c Immigrants take jobs away from people who were born in [COUNTRY].",
     "answer": {
       "1": "Agree strongly",
       "2": "Agree",
       "3": "Neither agree nor disagree",
       "4": "Disagree",
-      "5": "Disagree strongly",
-      "8": "Can't choose",
-      "9": "No answer"
+      "5": "Disagree strongly" 
     },
     "special": {}
   },
   {
     "question_id": "V51",
-    "question": "Q9\nThere are different opinions about immigrants from other countries living in [COUNTRY]. (By 'immigrants' we mean people who come to settle \nin [COUNTRY]).\nHow much do you agree or disagree with each of the following statements?\n(PLEASE, CHECK ONE BOX ON EACH LINE)\nQ9d Immigrants improve [COUNTRY'S NATIONALITY] society by bringing new ideas and cultures.",
+    "question": "Q9 There are different opinions about immigrants from other countries living in [COUNTRY]. (By 'immigrants' we mean people who come to settle  in [COUNTRY]). How much do you agree or disagree with each of the following statements?  Q9d Immigrants improve [COUNTRY'S NATIONALITY] society by bringing new ideas and cultures.",
     "answer": {
       "1": "Agree strongly",
       "2": "Agree",
       "3": "Neither agree nor disagree",
       "4": "Disagree",
-      "5": "Disagree strongly",
-      "8": "Can't choose",
-      "9": "No answer"
+      "5": "Disagree strongly" 
     },
     "special": {}
   },
   {
     "question_id": "V52",
-    "question": "Q9\nThere are different opinions about immigrants from other countries living in [COUNTRY]. (By 'immigrants' we mean people who come to settle \nin [COUNTRY]).\nHow much do you agree or disagree with each of the following statements?\n(PLEASE, CHECK ONE BOX ON EACH LINE)\nQ9e [COUNTRY'S] culture is generally undermined by immigrants.",
+    "question": "Q9 There are different opinions about immigrants from other countries living in [COUNTRY]. (By 'immigrants' we mean people who come to settle  in [COUNTRY]). How much do you agree or disagree with each of the following statements?  Q9e [COUNTRY'S] culture is generally undermined by immigrants.",
     "answer": {
       "1": "Agree strongly",
       "2": "Agree",
       "3": "Neither agree nor disagree",
       "4": "Disagree",
-      "5": "Disagree strongly",
-      "8": "Can't choose",
-      "9": "No answer"
+      "5": "Disagree strongly" 
     },
     "special": {}
   },
   {
     "question_id": "V53",
-    "question": "Q9\nThere are different opinions about immigrants from other countries living in [COUNTRY]. (By 'immigrants' we mean people who come to settle \nin [COUNTRY]).\nHow much do you agree or disagree with each of the following statements?\n(PLEASE, CHECK ONE BOX ON EACH LINE)\nQ9f Legal immigrants to [COUNTRY] who are not citizens should have the same rights as [COUNTRY NATIONALITY] citizens.",
+    "question": "Q9 There are different opinions about immigrants from other countries living in [COUNTRY]. (By 'immigrants' we mean people who come to settle  in [COUNTRY]). How much do you agree or disagree with each of the following statements?  Q9f Legal immigrants to [COUNTRY] who are not citizens should have the same rights as [COUNTRY NATIONALITY] citizens.",
     "answer": {
       "1": "Agree strongly",
       "2": "Agree",
       "3": "Neither agree nor disagree",
       "4": "Disagree",
-      "5": "Disagree strongly",
-      "8": "Can't choose",
-      "9": "No answer"
+      "5": "Disagree strongly" 
     },
     "special": {}
   },
   {
     "question_id": "V54",
-    "question": "Q9\nThere are different opinions about immigrants from other countries living in [COUNTRY]. (By 'immigrants' we mean people who come to settle \nin [COUNTRY]).\nHow much do you agree or disagree with each of the following statements?\n(PLEASE, CHECK ONE BOX ON EACH LINE)\nQ9g [COUNTRY] should take stronger measures to exclude illegal immigrants.",
+    "question": "Q9 There are different opinions about immigrants from other countries living in [COUNTRY]. (By 'immigrants' we mean people who come to settle  in [COUNTRY]). How much do you agree or disagree with each of the following statements?  Q9g [COUNTRY] should take stronger measures to exclude illegal immigrants.",
     "answer": {
       "1": "Agree strongly",
       "2": "Agree",
       "3": "Neither agree nor disagree",
       "4": "Disagree",
-      "5": "Disagree strongly",
-      "8": "Can't choose",
-      "9": "No answer"
+      "5": "Disagree strongly" 
     },
     "special": {}
   },
   {
     "question_id": "V55",
-    "question": "Q9\nThere are different opinions about immigrants from other countries living in [COUNTRY]. (By 'immigrants' we mean people who come to settle \nin [COUNTRY]).\nHow much do you agree or disagree with each of the following statements?\n(PLEASE, CHECK ONE BOX ON EACH LINE)\nQ9h Legal immigrants should have equal access to public education as [COUNTRY NATIONALITY] citizens.",
+    "question": "Q9 There are different opinions about immigrants from other countries living in [COUNTRY]. (By 'immigrants' we mean people who come to settle  in [COUNTRY]). How much do you agree or disagree with each of the following statements?  Q9h Legal immigrants should have equal access to public education as [COUNTRY NATIONALITY] citizens.",
     "answer": {
       "1": "Agree strongly",
       "2": "Agree",
       "3": "Neither agree nor disagree",
       "4": "Disagree",
-      "5": "Disagree strongly",
-      "8": "Can't choose",
-      "9": "No answer"
+      "5": "Disagree strongly" 
     },
     "special": {}
   },
   {
     "question_id": "V56",
-    "question": "Q10\nDo you think the number of immigrants to [COUNTRY] nowadays should be ...",
+    "question": "Q10 Do you think the number of immigrants to [COUNTRY] nowadays should be ...",
     "answer": {
       "1": "Increased a lot",
       "2": "Increased a little",
       "3": "Remain the same as it is",
       "4": "Reduced a little",
-      "5": "Reduced a lot",
-      "8": "Can't choose",
-      "9": "No answer"
+      "5": "Reduced a lot" 
     },
     "special": {}
   },
   {
     "question_id": "V57",
-    "question": "Q11\nWhich of these statements about immigrants comes closest to your view:\n- Immigrants should retain their culture of origin and not adopt COUNTRY's culture. \n- Immigrants should retain their culture of origin and also adopt COUNTRY's culture. \n- Immigrants should give up their culture of origin and adopt COUNTRY's culture.",
+    "question": "Q11 Which of these statements about immigrants comes closest to your view: - Immigrants should retain their culture of origin and not adopt COUNTRY's culture.  - Immigrants should retain their culture of origin and also adopt COUNTRY's culture.  - Immigrants should give up their culture of origin and adopt COUNTRY's culture.",
     "answer": {
       "1": "Immigrants should retain their culture of origin and not adopt COUNTRY's culture",
       "2": "Immigrants should retain their culture of origin and also adopt COUNTRY's culture",
-      "3": "Immigrants should give up their culture of origin and adopt COUNTRY's culture",
-      "8": "Can't choose",
-      "9": "No answer"
+      "3": "Immigrants should give up their culture of origin and adopt COUNTRY's culture" 
     },
     "special": {}
   },
   {
     "question_id": "V58",
-    "question": "Q12\nHow proud are you of being [COUNTRY NATIONALITY]?\n(PLEASE, CHECK ONE BOX BELOW)",
+    "question": "Q12 How proud are you of being [COUNTRY NATIONALITY]? (PLEASE, CHECK ONE BOX BELOW)",
     "answer": {
       "0": "I am not [Country Nationality]",
       "1": "Very proud",
       "2": "Somewhat proud",
       "3": "Not very proud",
-      "4": "Not proud at all",
-      "8": "Can't choose",
-      "9": "No answer"
+      "4": "Not proud at all" 
     },
     "special": {}
   },
   {
     "question_id": "V59",
-    "question": "Q13\nHow much do you agree or disagree that strong patriotic feelings in [COUNTRY] ...\n(PLEASE, CHECK ONE BOX ON EACH LINE)\nQ13a ... strengthen [COUNTRY's] place in the world.",
+    "question": "Q13 How much do you agree or disagree that strong patriotic feelings in [COUNTRY] ...  Q13a ... strengthen [COUNTRY's] place in the world.",
     "answer": {
       "1": "Agree strongly",
       "2": "Agree",
       "3": "Neither agree nor disagree",
       "4": "Disagree",
-      "5": "Disagree strongly",
-      "8": "Can't choose",
-      "9": "No answer"
+      "5": "Disagree strongly" 
     },
     "special": {}
   },
   {
     "question_id": "V60",
-    "question": "Q13\nHow much do you agree or disagree that strong patriotic feelings in [COUNTRY] ...\n(PLEASE, CHECK ONE BOX ON EACH LINE)\nQ13b ... lead to intolerance in [COUNTRY].",
+    "question": "Q13 How much do you agree or disagree that strong patriotic feelings in [COUNTRY] ...  Q13b ... lead to intolerance in [COUNTRY].",
     "answer": {
       "1": "Agree strongly",
       "2": "Agree",
       "3": "Neither agree nor disagree",
       "4": "Disagree",
-      "5": "Disagree strongly",
-      "8": "Can't choose",
-      "9": "No answer"
+      "5": "Disagree strongly" 
     },
     "special": {}
   },
   {
     "question_id": "V61",
-    "question": "Q13\nHow much do you agree or disagree that strong patriotic feelings in [COUNTRY] ...\n(PLEASE, CHECK ONE BOX ON EACH LINE)\nQ13c ... are needed for [COUNTRY] to remain united.",
+    "question": "Q13 How much do you agree or disagree that strong patriotic feelings in [COUNTRY] ...  Q13c ... are needed for [COUNTRY] to remain united.",
     "answer": {
       "1": "Agree strongly",
       "2": "Agree",
       "3": "Neither agree nor disagree",
       "4": "Disagree",
-      "5": "Disagree strongly",
-      "8": "Can't choose",
-      "9": "No answer"
+      "5": "Disagree strongly" 
     },
     "special": {}
   },
   {
     "question_id": "V62",
-    "question": "Q13\nHow much do you agree or disagree that strong patriotic feelings in [COUNTRY] ...\n(PLEASE, CHECK ONE BOX ON EACH LINE)\nQ13d ... lead to negative attitudes towards immigrants in [COUNTRY].",
+    "question": "Q13 How much do you agree or disagree that strong patriotic feelings in [COUNTRY] ...  Q13d ... lead to negative attitudes towards immigrants in [COUNTRY].",
     "answer": {
       "1": "Agree strongly",
       "2": "Agree",
       "3": "Neither agree nor disagree",
       "4": "Disagree",
-      "5": "Disagree strongly",
-      "8": "Can't choose",
-      "9": "No answer"
+      "5": "Disagree strongly" 
     },
     "special": {}
   },
   {
     "question_id": "V63",
-    "question": "Q14\nAre you a citizen of [COUNTRY]?",
+    "question": "Q14 Are you a citizen of [COUNTRY]?",
     "answer": {
       "1": "Yes",
-      "2": "No",
-      "8": "Don't know",
-      "9": "No answer"
+      "2": "No"
     },
     "special": {}
   },
   {
     "question_id": "V64",
-    "question": "Q15\nAt the time of your birth, were both, one, or neither of your parents citizens of [COUNTRY]?",
+    "question": "Q15 At the time of your birth, were both, one, or neither of your parents citizens of [COUNTRY]?",
     "answer": {
       "1": "Both were citizens",
       "2": "Only father was a citizen",
       "3": "Only mother was a citizen",
-      "4": "Neither parent was a citizen",
-      "8": "Can't choose",
-      "9": "No answer, refused"
+      "4": "Neither parent was a citizen"
     },
     "special": {}
-  },
-  {
-    "question_id": "V65",
-    "question": "Q16\nASK QUESTION IF YOU HAVE AN APPROPRIATE REGIONAL ASSOCIATION LIKE THE EU OR NAFTA. IF YOU HAVE NO \nAPPROPRIATE ASSOCIATION, OMIT THE OPTIONAL QUESTIONS\nHow much have you heard or read about [the European Union, North American Free Trade Agreement, etc.]?\n(If \"Nothing at all\", the rest of the optional items should be skipped.)",
-    "answer": {
-      "0": "DE,IL,JP,NO,PT,RU,TW:Not asked/no appropriate regional association",
-      "1": "A lot",
-      "2": "Quite a bit",
-      "3": "Not much",
-      "4": "Nothing at all",
-      "5": "GB:Nothing at all, but answer in V66 to V70",
-      "8": "Can't choose",
-      "9": "No answer"
-    },
-    "special": {
-      "DE": {
-        "0": "DE,IL,JP,NO,PT,RU,TW:Not asked/no appropriate regional association"
-      },
-      "IL": {
-        "0": "DE,IL,JP,NO,PT,RU,TW:Not asked/no appropriate regional association"
-      },
-      "JP": {
-        "0": "DE,IL,JP,NO,PT,RU,TW:Not asked/no appropriate regional association"
-      },
-      "NO": {
-        "0": "DE,IL,JP,NO,PT,RU,TW:Not asked/no appropriate regional association"
-      },
-      "PT": {
-        "0": "DE,IL,JP,NO,PT,RU,TW:Not asked/no appropriate regional association"
-      },
-      "RU": {
-        "0": "DE,IL,JP,NO,PT,RU,TW:Not asked/no appropriate regional association"
-      },
-      "TW": {
-        "0": "DE,IL,JP,NO,PT,RU,TW:Not asked/no appropriate regional association"
-      },
-      "GB": {
-        "5": "GB:Nothing at all, but answer in V66 to V70"
-      }
-    }
-  },
-  {
-    "question_id": "V66",
-    "question": "Q17\nASK QUESTION IF YOU HAVE AN APPROPRIATE REGIONAL ASSOCIATION LIKE THE EU OR NAFTA\nFor MEMBERS of EU, NAFTA, etc.:\nGenerally speaking, would you say that [COUNTRY] benefits or does not benefit from being a member of [the European Union, the North \nAmerican Free Trade Agreement, etc.]?\nFor NON MEMBERS of EU, NAFTA, etc.:\nGenerally speaking, would you say that [COUNTRY] would benefit or would not benefit from being a member of [the European Union, the \nNorth American Free Trade Agreement, etc.]?",
-    "answer": {
-      "0": "NAV (DE,IL,JP,KR,NO,SE,SK,RU,TW);NAP,never heard of [the EU]",
-      "1": "Greatly benefits",
-      "2": "Largely benefits",
-      "3": "Somewhat benefits",
-      "4": "Benefits only a little",
-      "5": "Does not benefit at all",
-      "8": "Don't know",
-      "9": "No answer"
-    },
-    "special": {
-      "DE": {
-        "0": "NAV (DE,IL,JP,KR,NO,SE,SK,RU,TW);NAP,never heard of [the EU]"
-      },
-      "IL": {
-        "0": "NAV (DE,IL,JP,KR,NO,SE,SK,RU,TW);NAP,never heard of [the EU]"
-      },
-      "JP": {
-        "0": "NAV (DE,IL,JP,KR,NO,SE,SK,RU,TW);NAP,never heard of [the EU]"
-      },
-      "KR": {
-        "0": "NAV (DE,IL,JP,KR,NO,SE,SK,RU,TW);NAP,never heard of [the EU]"
-      },
-      "NO": {
-        "0": "NAV (DE,IL,JP,KR,NO,SE,SK,RU,TW);NAP,never heard of [the EU]"
-      },
-      "SE": {
-        "0": "NAV (DE,IL,JP,KR,NO,SE,SK,RU,TW);NAP,never heard of [the EU]"
-      },
-      "SK": {
-        "0": "NAV (DE,IL,JP,KR,NO,SE,SK,RU,TW);NAP,never heard of [the EU]"
-      },
-      "RU": {
-        "0": "NAV (DE,IL,JP,KR,NO,SE,SK,RU,TW);NAP,never heard of [the EU]"
-      },
-      "TW": {
-        "0": "NAV (DE,IL,JP,KR,NO,SE,SK,RU,TW);NAP,never heard of [the EU]"
-      }
-    }
-  },
-  {
-    "question_id": "V67",
-    "question": "Q18\nASK QUESTION IF YOU HAVE AN APPROPRIATE REGIONAL ASSOCIATION LIKE THE EU OR NAFTA\n[COUNTRY] should follow [European Union, North American Free Trade Agreement, etc.] decisions, even if it does not agree with them.",
-    "answer": {
-      "0": "NAV (CH,DE,IL,KR,JP,NO,RU,SK,TW,US,ZA);NAP,never heard of [the EU]",
-      "1": "Agree strongly",
-      "2": "Agree",
-      "3": "Neither agree nor disagree",
-      "4": "Disagree",
-      "5": "Disagree strongly",
-      "8": "Can't choose",
-      "9": "No answer"
-    },
-    "special": {
-      "CH": {
-        "0": "NAV (CH,DE,IL,KR,JP,NO,RU,SK,TW,US,ZA);NAP,never heard of [the EU]"
-      },
-      "DE": {
-        "0": "NAV (CH,DE,IL,KR,JP,NO,RU,SK,TW,US,ZA);NAP,never heard of [the EU]"
-      },
-      "IL": {
-        "0": "NAV (CH,DE,IL,KR,JP,NO,RU,SK,TW,US,ZA);NAP,never heard of [the EU]"
-      },
-      "KR": {
-        "0": "NAV (CH,DE,IL,KR,JP,NO,RU,SK,TW,US,ZA);NAP,never heard of [the EU]"
-      },
-      "JP": {
-        "0": "NAV (CH,DE,IL,KR,JP,NO,RU,SK,TW,US,ZA);NAP,never heard of [the EU]"
-      },
-      "NO": {
-        "0": "NAV (CH,DE,IL,KR,JP,NO,RU,SK,TW,US,ZA);NAP,never heard of [the EU]"
-      },
-      "RU": {
-        "0": "NAV (CH,DE,IL,KR,JP,NO,RU,SK,TW,US,ZA);NAP,never heard of [the EU]"
-      },
-      "SK": {
-        "0": "NAV (CH,DE,IL,KR,JP,NO,RU,SK,TW,US,ZA);NAP,never heard of [the EU]"
-      },
-      "TW": {
-        "0": "NAV (CH,DE,IL,KR,JP,NO,RU,SK,TW,US,ZA);NAP,never heard of [the EU]"
-      },
-      "US": {
-        "0": "NAV (CH,DE,IL,KR,JP,NO,RU,SK,TW,US,ZA);NAP,never heard of [the EU]"
-      },
-      "ZA": {
-        "0": "NAV (CH,DE,IL,KR,JP,NO,RU,SK,TW,US,ZA);NAP,never heard of [the EU]"
-      }
-    }
-  },
-  {
-    "question_id": "V68",
-    "question": "Q19\nASK QUESTION IF YOU HAVE AN APPROPRIATE REGIONAL ASSOCIATION LIKE THE EU OR NAFTA\nGenerally, do you think that [the European Union, the North American Free Trade Agreement, etc.] should have much more, more, as much, \nless, or much less power than the national government of its member states?",
-    "answer": {
-      "0": "NAV (DE,EE,IL,KR,JP,MX,NO,RU,SK,TW,US,ZA);NAP,never heard of [the EU]",
-      "1": "Much more",
-      "2": "More",
-      "3": "As much",
-      "4": "Less",
-      "5": "Much less",
-      "8": "Can't choose",
-      "9": "No answer"
-    },
-    "special": {
-      "DE": {
-        "0": "NAV (DE,EE,IL,KR,JP,MX,NO,RU,SK,TW,US,ZA);NAP,never heard of [the EU]"
-      },
-      "EE": {
-        "0": "NAV (DE,EE,IL,KR,JP,MX,NO,RU,SK,TW,US,ZA);NAP,never heard of [the EU]"
-      },
-      "IL": {
-        "0": "NAV (DE,EE,IL,KR,JP,MX,NO,RU,SK,TW,US,ZA);NAP,never heard of [the EU]"
-      },
-      "KR": {
-        "0": "NAV (DE,EE,IL,KR,JP,MX,NO,RU,SK,TW,US,ZA);NAP,never heard of [the EU]"
-      },
-      "JP": {
-        "0": "NAV (DE,EE,IL,KR,JP,MX,NO,RU,SK,TW,US,ZA);NAP,never heard of [the EU]"
-      },
-      "MX": {
-        "0": "NAV (DE,EE,IL,KR,JP,MX,NO,RU,SK,TW,US,ZA);NAP,never heard of [the EU]"
-      },
-      "NO": {
-        "0": "NAV (DE,EE,IL,KR,JP,MX,NO,RU,SK,TW,US,ZA);NAP,never heard of [the EU]"
-      },
-      "RU": {
-        "0": "NAV (DE,EE,IL,KR,JP,MX,NO,RU,SK,TW,US,ZA);NAP,never heard of [the EU]"
-      },
-      "SK": {
-        "0": "NAV (DE,EE,IL,KR,JP,MX,NO,RU,SK,TW,US,ZA);NAP,never heard of [the EU]"
-      },
-      "TW": {
-        "0": "NAV (DE,EE,IL,KR,JP,MX,NO,RU,SK,TW,US,ZA);NAP,never heard of [the EU]"
-      },
-      "US": {
-        "0": "NAV (DE,EE,IL,KR,JP,MX,NO,RU,SK,TW,US,ZA);NAP,never heard of [the EU]"
-      },
-      "ZA": {
-        "0": "NAV (DE,EE,IL,KR,JP,MX,NO,RU,SK,TW,US,ZA);NAP,never heard of [the EU]"
-      }
-    }
-  },
-  {
-    "question_id": "V69",
-    "question": "Q20\nASK QUESTION IF YOU HAVE AN APPROPRIATE REGIONAL ASSOCIATION LIKE THE EU OR NAFTA/ FOR PROSPECTIVE EU OR \nNAFTA MEMBERS ONLY\nIf there were a referendum today to decide whether [COUNTRY] does or does not become a member of [the European Union/ North \nAmerican Free Trade Agreement, etc.], would you vote in favour or would you vote against?",
-    "answer": {
-      "0": "Not available; Not applicable",
-      "1": "Vote in favour",
-      "2": "Vote against",
-      "8": "Can't choose",
-      "9": "No answer"
-    },
-    "special": {}
-  },
-  {
-    "question_id": "V70",
-    "question": "Q21\nASK QUESTION IF YOU HAVE AN APPROPRIATE REGIONAL ASSOCIATION LIKE THE EU OR NAFTA/ FOR CURRENT EU OR \nNAFTA MEMBERS ONLY\nIf there were a referendum today to decide whether [COUNTRY] does or does not remain a member of [the European Union/ North American \nFree Trade Agreement, etc.], would you vote in favour or would you vote against?",
-    "answer": {
-      "0": "NAV(CH,DE,GE,IL,IS,KR,JP,MX,NO,PH,RU,SK,TW,US);NAP,never heard of [the EU]",
-      "1": "Vote in favour",
-      "2": "Vote against",
-      "8": "Can't choose",
-      "9": "No answer"
-    },
-    "special": {
-      "CH": {
-        "0": "NAV(CH,DE,GE,IL,IS,KR,JP,MX,NO,PH,RU,SK,TW,US);NAP,never heard of [the EU]"
-      },
-      "DE": {
-        "0": "NAV(CH,DE,GE,IL,IS,KR,JP,MX,NO,PH,RU,SK,TW,US);NAP,never heard of [the EU]"
-      },
-      "GE": {
-        "0": "NAV(CH,DE,GE,IL,IS,KR,JP,MX,NO,PH,RU,SK,TW,US);NAP,never heard of [the EU]"
-      },
-      "IL": {
-        "0": "NAV(CH,DE,GE,IL,IS,KR,JP,MX,NO,PH,RU,SK,TW,US);NAP,never heard of [the EU]"
-      },
-      "IS": {
-        "0": "NAV(CH,DE,GE,IL,IS,KR,JP,MX,NO,PH,RU,SK,TW,US);NAP,never heard of [the EU]"
-      },
-      "KR": {
-        "0": "NAV(CH,DE,GE,IL,IS,KR,JP,MX,NO,PH,RU,SK,TW,US);NAP,never heard of [the EU]"
-      },
-      "JP": {
-        "0": "NAV(CH,DE,GE,IL,IS,KR,JP,MX,NO,PH,RU,SK,TW,US);NAP,never heard of [the EU]"
-      },
-      "MX": {
-        "0": "NAV(CH,DE,GE,IL,IS,KR,JP,MX,NO,PH,RU,SK,TW,US);NAP,never heard of [the EU]"
-      },
-      "NO": {
-        "0": "NAV(CH,DE,GE,IL,IS,KR,JP,MX,NO,PH,RU,SK,TW,US);NAP,never heard of [the EU]"
-      },
-      "PH": {
-        "0": "NAV(CH,DE,GE,IL,IS,KR,JP,MX,NO,PH,RU,SK,TW,US);NAP,never heard of [the EU]"
-      },
-      "RU": {
-        "0": "NAV(CH,DE,GE,IL,IS,KR,JP,MX,NO,PH,RU,SK,TW,US);NAP,never heard of [the EU]"
-      },
-      "SK": {
-        "0": "NAV(CH,DE,GE,IL,IS,KR,JP,MX,NO,PH,RU,SK,TW,US);NAP,never heard of [the EU]"
-      },
-      "TW": {
-        "0": "NAV(CH,DE,GE,IL,IS,KR,JP,MX,NO,PH,RU,SK,TW,US);NAP,never heard of [the EU]"
-      },
-      "US": {
-        "0": "NAV(CH,DE,GE,IL,IS,KR,JP,MX,NO,PH,RU,SK,TW,US);NAP,never heard of [the EU]"
-      }
-    }
   }
 ]

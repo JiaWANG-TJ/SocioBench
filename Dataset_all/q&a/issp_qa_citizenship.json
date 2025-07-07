@@ -1,541 +1,381 @@
 [
   {
     "question_id": "V5",
-    "question": "Q1\nThere are different opinions as to what it takes to be a good citizen. As far as you are concerned personally on a scale of 1 to 7, where 1 is \nnot at all important and 7 is very important, how important is it:\nAlways to vote in elections",
+    "question": "Q1 There are different opinions as to what it takes to be a good citizen. As far as you are concerned personally on a scale of 1 to 3, where 1 is  not at all important and 3 is very important, how important is it: Always to vote in elections",
     "answer": {
       "1": "1, Not at all important",
       "2": "2",
-      "3": "3",
-      "4": "4",
-      "5": "5",
-      "6": "6",
-      "7": "7, Very important",
-      "8": "Can't choose",
-      "9": "No answer"
+      "3": "3, Very important"
     },
     "special": {}
   },
   {
     "question_id": "V6",
-    "question": "Q2\nThere are different opinions as to what it takes to be a good citizen. As far as you are concerned personally on a scale of 1 to 7, where 1 is \nnot at all important and 7 is very important, how important is it:\nNever to try to evade taxes",
+    "question": "Q2 There are different opinions as to what it takes to be a good citizen. As far as you are concerned personally on a scale of 1 to 3, where 1 is  not at all important and 3 is very important, how important is it: Never to try to evade taxes",
     "answer": {
       "1": "1, Not at all important",
       "2": "2",
-      "3": "3",
-      "4": "4",
-      "5": "5",
-      "6": "6",
-      "7": "7, Very important",
-      "8": "Can't choose",
-      "9": "No answer"
+      "3": "3, Very important"
     },
     "special": {}
   },
   {
     "question_id": "V7",
-    "question": "Q3\nThere are different opinions as to what it takes to be a good citizen. As far as you are concerned personally on a scale of 1 to 7, where 1 is \nnot at all important and 7 is very important, how important is it: \nAlways to obey laws and regulations",
+    "question": "Q3 There are different opinions as to what it takes to be a good citizen. As far as you are concerned personally on a scale of 1 to 3, where 1 is  not at all important and 3 is very important, how important is it:  Always to obey laws and regulations",
     "answer": {
       "1": "1, Not at all important",
       "2": "2",
-      "3": "3",
-      "4": "4",
-      "5": "5",
-      "6": "6",
-      "7": "7, Very important",
-      "8": "Can't choose",
-      "9": "No answer"
+      "3": "3, Very important"
     },
     "special": {}
   },
   {
     "question_id": "V8",
-    "question": "Q4 \nThere are different opinions as to what it takes to be a good citizen. As far as you are concerned personally on a scale of 1 to 7, where 1 is \nnot at all important and 7 is very important, how important is it:\nTo keep watch on the actions of government",
+    "question": "Q4  There are different opinions as to what it takes to be a good citizen. As far as you are concerned personally on a scale of 1 to 3, where 1 is  not at all important and 3 is very important, how important is it: To keep watch on the actions of government",
     "answer": {
       "1": "1, Not at all important",
       "2": "2",
-      "3": "3",
-      "4": "4",
-      "5": "5",
-      "6": "6",
-      "7": "7, Very important",
-      "8": "Can't choose",
-      "9": "No answer"
+      "3": "3, Very important"
     },
     "special": {}
   },
   {
     "question_id": "V9",
-    "question": "Q5\nThere are different opinions as to what it takes to be a good citizen. As far as you are concerned personally on a scale of 1 to 7, where 1 is \nnot at all important and 7 is very important, how important is it:\nTo be active in social or political associations",
+    "question": "Q5 There are different opinions as to what it takes to be a good citizen. As far as you are concerned personally on a scale of 1 to 3, where 1 is  not at all important and 3 is very important, how important is it: To be active in social or political associations",
     "answer": {
       "1": "1, Not at all important",
       "2": "2",
-      "3": "3",
-      "4": "4",
-      "5": "5",
-      "6": "6",
-      "7": "7, Very important",
-      "8": "Can't choose",
-      "9": "No answer"
+      "3": "3, Very important"
     },
     "special": {}
   },
   {
     "question_id": "V10",
-    "question": "Q6\nThere are different opinions as to what it takes to be a good citizen. As far as you are concerned personally on a scale of 1 to 7, where 1 is \nnot at all important and 7 is very important, how important is it:\nTo try to understand the reasoning of people with other opinions",
+    "question": "Q6 There are different opinions as to what it takes to be a good citizen. As far as you are concerned personally on a scale of 1 to 3, where 1 is  not at all important and 3 is very important, how important is it: To try to understand the reasoning of people with other opinions",
     "answer": {
       "1": "1, Not at all important",
       "2": "2",
-      "3": "3",
-      "4": "4",
-      "5": "5",
-      "6": "6",
-      "7": "7, Very important",
-      "8": "Can't choose",
-      "9": "No answer"
+      "3": "3, Very important"
     },
     "special": {}
   },
   {
     "question_id": "V11",
-    "question": "Q7\nThere are different opinions as to what it takes to be a good citizen. As far as you are concerned personally on a scale of 1 to 7, where 1 is \nnot at all important and 7 is very important, how important is it:\nTo choose products for political, ethical or environmental reasons, even if they cost a bit more",
+    "question": "Q7 There are different opinions as to what it takes to be a good citizen. As far as you are concerned personally on a scale of 1 to 3, where 1 is  not at all important and 3 is very important, how important is it: To choose products for political, ethical or environmental reasons, even if they cost a bit more",
     "answer": {
       "1": "1, Not at all important",
       "2": "2",
-      "3": "3",
-      "4": "4",
-      "5": "5",
-      "6": "6",
-      "7": "7, Very important",
-      "8": "Can't choose",
-      "9": "No answer"
+      "3": "3, Very important"
     },
     "special": {}
   },
   {
     "question_id": "V12",
-    "question": "Q8\nThere are different opinions as to what it takes to be a good citizen. As far as you are concerned personally on a scale of 1 to 7, where 1 is \nnot at all important and 7 is very important, how important is it:\nTo help people in [COUNTRY] who are worse off than yourself",
+    "question": "Q8 There are different opinions as to what it takes to be a good citizen. As far as you are concerned personally on a scale of 1 to 3, where 1 is  not at all important and 3 is very important, how important is it: To help people in [COUNTRY] who are worse off than yourself",
     "answer": {
       "1": "1, Not at all important",
       "2": "2",
-      "3": "3",
-      "4": "4",
-      "5": "5",
-      "6": "6",
-      "7": "7, Very important",
-      "8": "Can't choose",
-      "9": "No answer"
+      "3": "3, Very important"
     },
     "special": {}
   },
   {
     "question_id": "V13",
-    "question": "Q9\nThere are different opinions as to what it takes to be a good citizen. As far as you are concerned personally on a scale of 1 to 7, where 1 is \nnot at all important and 7 is very important, how important is it:\nTo help people in the rest of the world who are worse off than yourself",
+    "question": "Q9 There are different opinions as to what it takes to be a good citizen. As far as you are concerned personally on a scale of 1 to 3, where 1 is  not at all important and 3 is very important, how important is it: To help people in the rest of the world who are worse off than yourself",
     "answer": {
       "1": "1, Not at all important",
       "2": "2",
-      "3": "3",
-      "4": "4",
-      "5": "5",
-      "6": "6",
-      "7": "7, Very important",
-      "8": "Can't choose",
-      "9": "No answer"
+      "3": "3, Very important"
     },
     "special": {}
   },
   {
     "question_id": "V14",
-    "question": "Q10\nThere are a number of groups in society. What do you think about the following groups holding public meetings? \nShould religious extremists be allowed to hold public meetings?",
+    "question": "Q10 There are a number of groups in society. What do you think about the following groups holding public meetings?  Should religious extremists be allowed to hold public meetings?",
     "answer": {
       "1": "Should definitely be allowed",
       "2": "Should probably be allowed",
       "3": "Should probably not be allowed",
-      "4": "Should definitely not be allowed",
-      "8": "Can't choose",
-      "9": "No answer"
+      "4": "Should definitely not be allowed"
     },
     "special": {}
   },
   {
     "question_id": "V15",
-    "question": "Q11\nThere are a number of groups in society. What do you think about the following groups holding public meetings? \nShould people who want to overthrow the government by force be allowed to hold public meetings?",
+    "question": "Q11 There are a number of groups in society. What do you think about the following groups holding public meetings?  Should people who want to overthrow the government by force be allowed to hold public meetings?",
     "answer": {
       "1": "Should definitely be allowed",
       "2": "Should probably be allowed",
       "3": "Should probably not be allowed",
-      "4": "Should definitely not be allowed",
-      "8": "Can't choose",
-      "9": "No answer"
+      "4": "Should definitely not be allowed"
     },
     "special": {}
   },
   {
     "question_id": "V16",
-    "question": "Q12\nThere are a number of groups in society. What do you think about the following groups holding public meetings?\nShould people prejudiced against any racial or ethnic group be allowed to hold public meetings?",
+    "question": "Q12 There are a number of groups in society. What do you think about the following groups holding public meetings? Should people prejudiced against any racial or ethnic group be allowed to hold public meetings?",
     "answer": {
       "1": "Should definitely be allowed",
       "2": "Should probably be allowed",
       "3": "Should probably not be allowed",
-      "4": "Should definitely not be allowed",
-      "8": "Can't choose",
-      "9": "No answer"
+      "4": "Should definitely not be allowed"
     },
     "special": {}
   },
   {
     "question_id": "V17",
-    "question": "Q13\nHere are some different forms of political and social action, that people can take. Please indicate, for each one, whether you have done any \nof these things in the past year, whether you have done it in the more distant past, whether you have not done it but might do it or have not \ndone it and would never, under any circumstances, do it.\nSigned a petition",
+    "question": "Q13 Here are some different forms of political and social action, that people can take. Please indicate, for each one, whether you have done any  of these things in the past year, whether you have done it in the more distant past, whether you have not done it but might do it or have not  done it and would never, under any circumstances, do it. Signed a petition",
     "answer": {
       "1": "Have done it in the past year",
       "2": "Have done it in the more distant past",
       "3": "Have not done it but might do it",
-      "4": "Have not done it and would never do it",
-      "8": "Can't choose",
-      "9": "No answer"
+      "4": "Have not done it and would never do it"
     },
     "special": {}
   },
   {
     "question_id": "V18",
-    "question": "Q14\nHere are some different forms of political and social action, that people can take. Please indicate, for each one, whether you have done any \nof these things in the past year, whether you have done it in the more distant past, whether you have not done it but might do it or have not \ndone it and would never, under any circumstances, do it.\nBoycotted, or deliberately bought, certain products for political, ethical or environmental reasons",
+    "question": "Q14 Here are some different forms of political and social action, that people can take. Please indicate, for each one, whether you have done any  of these things in the past year, whether you have done it in the more distant past, whether you have not done it but might do it or have not  done it and would never, under any circumstances, do it. Boycotted, or deliberately bought, certain products for political, ethical or environmental reasons",
     "answer": {
       "1": "Have done it in the past year",
       "2": "Have done it in the more distant past",
       "3": "Have not done it but might do it",
-      "4": "Have not done it and would never do it",
-      "8": "Can't choose",
-      "9": "No answer"
+      "4": "Have not done it and would never do it"
     },
     "special": {}
   },
   {
     "question_id": "V19",
-    "question": "Q15\nHere are some different forms of political and social action, that people can take. Please indicate, for each one, whether you have done any \nof these things in the past year, whether you have done it in the more distant past, whether you have not done it but might do it or have not \ndone it and would never, under any circumstances, do it.\nTook part in a demonstration (any kind of demonstration)",
+    "question": "Q15 Here are some different forms of political and social action, that people can take. Please indicate, for each one, whether you have done any  of these things in the past year, whether you have done it in the more distant past, whether you have not done it but might do it or have not  done it and would never, under any circumstances, do it. Took part in a demonstration (any kind of demonstration)",
     "answer": {
       "1": "Have done it in the past year",
       "2": "Have done it in the more distant past",
       "3": "Have not done it but might do it",
-      "4": "Have not done it and would never do it",
-      "8": "Can't choose",
-      "9": "No answer"
+      "4": "Have not done it and would never do it"
     },
     "special": {}
   },
   {
     "question_id": "V20",
-    "question": "Q16\nHere are some different forms of political and social action, that people can take. Please indicate, for each one, whether you have done any \nof these things in the past year, whether you have done it in the more distant past, whether you have not done it but might do it or have not \ndone it and would never, under any circumstances, do it.\nAttended a political meeting or rally",
+    "question": "Q16 Here are some different forms of political and social action, that people can take. Please indicate, for each one, whether you have done any  of these things in the past year, whether you have done it in the more distant past, whether you have not done it but might do it or have not  done it and would never, under any circumstances, do it. Attended a political meeting or rally",
     "answer": {
       "1": "Have done it in the past year",
       "2": "Have done it in the more distant past",
       "3": "Have not done it but might do it",
-      "4": "Have not done it and would never do it",
-      "8": "Can't choose",
-      "9": "No answer"
+      "4": "Have not done it and would never do it"
     },
     "special": {}
   },
   {
     "question_id": "V21",
-    "question": "Q17\nHere are some different forms of political and social action, that people can take. Please indicate, for each one, whether you have done any \nof these things in the past year, whether you have done it in the more distant past, whether you have not done it but might do it or have not \ndone it and would never, under any circumstances, do it.\nContacted, or attempted to contact, a politician or a civil servant to express your views",
+    "question": "Q17 Here are some different forms of political and social action, that people can take. Please indicate, for each one, whether you have done any  of these things in the past year, whether you have done it in the more distant past, whether you have not done it but might do it or have not  done it and would never, under any circumstances, do it. Contacted, or attempted to contact, a politician or a civil servant to express your views",
     "answer": {
       "1": "Have done it in the past year",
       "2": "Have done it in the more distant past",
       "3": "Have not done it but might do it",
-      "4": "Have not done it and would never do it",
-      "8": "Can't choose",
-      "9": "No answer"
+      "4": "Have not done it and would never do it"
     },
     "special": {}
   },
   {
     "question_id": "V22",
-    "question": "Q18\nHere are some different forms of political and social action, that people can take. Please indicate, for each one, whether you have done any \nof these things in the past year, whether you have done it in the more distant past, whether you have not done it but might do it or have not \ndone it and would never, under any circumstances, do it.\nDonated money or raised funds for a social or political activity",
+    "question": "Q18 Here are some different forms of political and social action, that people can take. Please indicate, for each one, whether you have done any  of these things in the past year, whether you have done it in the more distant past, whether you have not done it but might do it or have not  done it and would never, under any circumstances, do it. Donated money or raised funds for a social or political activity",
     "answer": {
       "1": "Have done it in the past year",
       "2": "Have done it in the more distant past",
       "3": "Have not done it but might do it",
-      "4": "Have not done it and would never do it",
-      "8": "Can't choose",
-      "9": "No answer"
+      "4": "Have not done it and would never do it"
     },
     "special": {}
   },
   {
     "question_id": "V23",
-    "question": "Q19\nHere are some different forms of political and social action, that people can take. Please indicate, for each one, whether you have done any \nof these things in the past year, whether you have done it in the more distant past, whether you have not done it but might do it or have not \ndone it and would never, under any circumstances, do it.\nContacted or appeared in the media to express your views",
+    "question": "Q19 Here are some different forms of political and social action, that people can take. Please indicate, for each one, whether you have done any  of these things in the past year, whether you have done it in the more distant past, whether you have not done it but might do it or have not  done it and would never, under any circumstances, do it. Contacted or appeared in the media to express your views",
     "answer": {
       "1": "Have done it in the past year",
       "2": "Have done it in the more distant past",
       "3": "Have not done it but might do it",
-      "4": "Have not done it and would never do it",
-      "8": "Can't choose",
-      "9": "No answer"
+      "4": "Have not done it and would never do it"
     },
     "special": {}
   },
   {
     "question_id": "V24",
-    "question": "Q20\nHere are some different forms of political and social action, that people can take. Please indicate, for each one, whether you have done any \nof these things in the past year, whether you have done it in the more distant past, whether you have not done it but might do it or have not \ndone it and would never, under any circumstances, do it.\nExpressed political views on the internet. Expression could be public or private in nature",
+    "question": "Q20 Here are some different forms of political and social action, that people can take. Please indicate, for each one, whether you have done any  of these things in the past year, whether you have done it in the more distant past, whether you have not done it but might do it or have not  done it and would never, under any circumstances, do it. Expressed political views on the internet. Expression could be public or private in nature",
     "answer": {
       "1": "Have done it in the past year",
       "2": "Have done it in the more distant past",
       "3": "Have not done it but might do it",
-      "4": "Have not done it and would never do it",
-      "8": "Can't choose",
-      "9": "No answer"
-    },
-    "special": {}
-  },
-  {
-    "question_id": "V25",
-    "question": "Q21\nHow often do you use the media, including television, newspapers, radio and the internet, to get political news or information?",
-    "answer": {
-      "1": "Several times a day",
-      "2": "Once a day",
-      "3": "5-6 days a week",
-      "4": "3-4 days a week",
-      "5": "1-2 days a week",
-      "6": "Less than 1 day a week",
-      "7": "Never",
-      "8": "Can't choose",
-      "9": "No answer"
+      "4": "Have not done it and would never do it"
     },
     "special": {}
   },
   {
     "question_id": "V26",
-    "question": "Q22\nOn average, about how many people do you have contact with in a typical week day, including people you live with. \nWe are interested in contact on a one-to-one basis, including everyone with whom you chat, talk, or discuss matters. This can be face-to-face, by telephone, by mail, or on the internet. Please include only people you know.\nPlease select one from the following categories that best matches your estimate.",
+    "question": "Q22 On average, about how many people do you have contact with in a typical week day, including people you live with.  We are interested in contact on a one-to-one basis, including everyone with whom you chat, talk, or discuss matters. This can be face-to-face, by telephone, by mail, or on the internet. Please include only people you know. Please select one from the following categories that best matches your estimate.",
     "answer": {
       "1": "0-4 persons",
       "2": "5-9 persons",
       "3": "10-19 persons",
       "4": "20-49 persons",
-      "5": "50 persons or more",
-      "8": "Can't choose",
-      "9": "No answer"
+      "5": "50 persons or more"
     },
     "special": {}
   },
   {
     "question_id": "V27",
-    "question": "Q23\nPeople sometimes belong to different kinds of groups or associations. For each type of group, please indicate whether you, belong and \nactively participate, belong but don’t actively participate, used to belong but do not any more, or have never belonged to it.\nA political party",
+    "question": "Q23 People sometimes belong to different kinds of groups or associations. For each type of group, please indicate whether you, belong and  actively participate, belong but don't actively participate, used to belong but do not any more, or have never belonged to it. A political party",
     "answer": {
       "1": "Belong and actively participate",
       "2": "Belong but don't actively participate",
       "3": "Used to belong but do not any more",
-      "4": "Never belonged to it",
-      "8": "Can't choose",
-      "9": "No answer"
+      "4": "Never belonged to it"
     },
     "special": {}
   },
   {
     "question_id": "V28",
-    "question": "Q24\nPeople sometimes belong to different kinds of groups or associations. For each type of group, please indicate whether you, belong and \nactively participate, belong but don’t actively participate, used to belong but do not any more, or have never belonged to it.\nA trade union, business, or professional association",
+    "question": "Q24 People sometimes belong to different kinds of groups or associations. For each type of group, please indicate whether you, belong and  actively participate, belong but don't actively participate, used to belong but do not any more, or have never belonged to it. A trade union, business, or professional association",
     "answer": {
       "1": "Belong and actively participate",
       "2": "Belong but don't actively participate",
       "3": "Used to belong but do not any more",
-      "4": "Never belonged to it",
-      "8": "Can't choose",
-      "9": "No answer"
+      "4": "Never belonged to it"
     },
     "special": {}
   },
   {
     "question_id": "V29",
-    "question": "Q25\nPeople sometimes belong to different kinds of groups or associations. For each type of group, please indicate whether you, belong and \nactively participate, belong but don’t actively participate, used to belong but do not any more, or have never belonged to it.\nA church or other religious organization",
+    "question": "Q25 People sometimes belong to different kinds of groups or associations. For each type of group, please indicate whether you, belong and  actively participate, belong but don't actively participate, used to belong but do not any more, or have never belonged to it. A church or other religious organization",
     "answer": {
       "1": "Belong and actively participate",
       "2": "Belong but don't actively participate",
       "3": "Used to belong but do not any more",
-      "4": "Never belonged to it",
-      "8": "Can't choose",
-      "9": "No answer"
+      "4": "Never belonged to it"
     },
     "special": {}
   },
   {
     "question_id": "V30",
-    "question": "Q26\nPeople sometimes belong to different kinds of groups or associations. For each type of group, please indicate whether you, belong and \nactively participate, belong but don’t actively participate, used to belong but do not any more, or have never belonged to it.\nA sports, leisure or cultural group",
+    "question": "Q26 People sometimes belong to different kinds of groups or associations. For each type of group, please indicate whether you, belong and  actively participate, belong but don't actively participate, used to belong but do not any more, or have never belonged to it. A sports, leisure or cultural group",
     "answer": {
       "1": "Belong and actively participate",
       "2": "Belong but don't actively participate",
       "3": "Used to belong but do not any more",
-      "4": "Never belonged to it",
-      "8": "Can't choose",
-      "9": "No answer"
+      "4": "Never belonged to it"
     },
     "special": {}
   },
   {
     "question_id": "V31",
-    "question": "Q27\nPeople sometimes belong to different kinds of groups or associations. For each type of group, please indicate whether you, belong and \nactively participate, belong but don’t actively participate, used to belong but do not any more, or have never belonged to it.\nAnother voluntary association",
+    "question": "Q27 People sometimes belong to different kinds of groups or associations. For each type of group, please indicate whether you, belong and  actively participate, belong but don't actively participate, used to belong but do not any more, or have never belonged to it. Another voluntary association",
     "answer": {
       "1": "Belong and actively participate",
       "2": "Belong but don't actively participate",
       "3": "Used to belong but do not any more",
-      "4": "Never belonged to it",
-      "8": "Can't choose",
-      "9": "No answer"
+      "4": "Never belonged to it"
     },
     "special": {}
   },
   {
     "question_id": "V32",
-    "question": "Q28\nThere are different opinions about people's rights in a democracy. On a scale of 1 to 7, where 1 is not at all important and 7 is very important, \nhow important is it:\nThat all citizens have an adequate standard of living",
+    "question": "Q28 There are different opinions about people's rights in a democracy. On a scale of 1 to 3, where 1 is not at all important and 3 is very important,  how important is it: That all citizens have an adequate standard of living",
     "answer": {
       "1": "1, Not at all important",
       "2": "2",
-      "3": "3",
-      "4": "4",
-      "5": "5",
-      "6": "6",
-      "7": "7, Very important",
-      "8": "Can't choose",
-      "9": "No answer"
+      "3": "3, Very important"
     },
     "special": {}
   },
   {
     "question_id": "V33",
-    "question": "Q29\nThere are different opinions about people's rights in a democracy. On a scale of 1 to 7, where 1 is not at all important and 7 is very important, \nhow important is it:\nThat government authorities respect and protect the rights of minorities",
+    "question": "Q29 There are different opinions about people's rights in a democracy. On a scale of 1 to 3, where 1 is not at all important and 3 is very important,  how important is it: That government authorities respect and protect the rights of minorities",
     "answer": {
       "1": "1, Not at all important",
       "2": "2",
-      "3": "3",
-      "4": "4",
-      "5": "5",
-      "6": "6",
-      "7": "7, Very important",
-      "8": "Can't choose",
-      "9": "No answer"
+      "3": "3, Very important"
     },
     "special": {}
   },
   {
     "question_id": "V34",
-    "question": "Q30\nThere are different opinions about people's rights in a democracy. On a scale of 1 to 7, where 1 is not at all important and 7 is very important, \nhow important is it:\nThat people be given more opportunities to participate in public decision-making",
+    "question": "Q30 There are different opinions about people's rights in a democracy. On a scale of 1 to 3, where 1 is not at all important and 3 is very important,  how important is it: That people be given more opportunities to participate in public decision-making",
     "answer": {
       "1": "1, Not at all important",
       "2": "2",
-      "3": "3",
-      "4": "4",
-      "5": "5",
-      "6": "6",
-      "7": "7, Very important",
-      "8": "Can't choose",
-      "9": "No answer"
+      "3": "3, Very important"
     },
     "special": {}
   },
   {
     "question_id": "V35",
-    "question": "Q31\nThere are different opinions about people's rights in a democracy. On a scale of 1 to 7, where 1 is not at all important and 7 is very important, \nhow important is it:\nThat citizens may engage in acts of civil disobedience when they oppose government actions",
+    "question": "Q31 There are different opinions about people's rights in a democracy. On a scale of 1 to 3, where 1 is not at all important and 3 is very important,  how important is it: That citizens may engage in acts of civil disobedience when they oppose government actions",
     "answer": {
       "1": "1, Not at all important",
       "2": "2",
-      "3": "3",
-      "4": "4",
-      "5": "5",
-      "6": "6",
-      "7": "7, Very important",
-      "8": "Can't choose",
-      "9": "No answer"
+      "3": "3, Very important"
     },
     "special": {}
   },
   {
     "question_id": "V36",
-    "question": "Q32\nThere are different opinions about people's rights in a democracy. On a scale of 1 to 7, where 1 is not at all important and 7 is very important, \nhow important is it:\nThat governments respect democratic rights whatever the circumstances",
+    "question": "Q32 There are different opinions about people's rights in a democracy. On a scale of 1 to 3, where 1 is not at all important and 3 is very important,  how important is it: That governments respect democratic rights whatever the circumstances",
     "answer": {
       "1": "1, Not at all important",
       "2": "2",
-      "3": "3",
-      "4": "4",
-      "5": "5",
-      "6": "6",
-      "7": "7, Very important",
-      "8": "Can't choose",
-      "9": "No answer"
+      "3": "3, Very important"
     },
     "special": {}
   },
   {
     "question_id": "V37",
-    "question": "Q33\nThere are different opinions about people's rights in a democracy. On a scale of 1 to 7, where 1 is not at all important and 7 is very important, \nhow important is it:\nThat people convicted of serious crimes lose their citizen rights",
+    "question": "Q33 There are different opinions about people's rights in a democracy. On a scale of 1 to 3, where 1 is not at all important and 3 is very important,  how important is it: That people convicted of serious crimes lose their citizen rights",
     "answer": {
       "1": "1, Not at all important",
       "2": "2",
-      "3": "3",
-      "4": "4",
-      "5": "5",
-      "6": "6",
-      "7": "7, Very important",
-      "8": "Can't choose",
-      "9": "No answer"
+      "3": "3, Very important"
     },
     "special": {}
   },
   {
     "question_id": "V38",
-    "question": "Q34\nThere are different opinions about people's rights in a democracy. On a scale of 1 to 7, where 1 is not at all important and 7 is very important, \nhow important is it:\nThat long-term residents of a country, who are not citizens, have the right to vote in that country's national elections",
+    "question": "Q34 There are different opinions about people's rights in a democracy. On a scale of 1 to 3, where 1 is not at all important and 3 is very important,  how important is it: That long-term residents of a country, who are not citizens, have the right to vote in that country's national elections",
     "answer": {
       "1": "1, Not at all important",
       "2": "2",
-      "3": "3",
-      "4": "4",
-      "5": "5",
-      "6": "6",
-      "7": "7, Very important",
-      "8": "Can't choose",
-      "9": "No answer"
+      "3": "3, Very important"
     },
     "special": {}
   },
   {
     "question_id": "V39",
-    "question": "Q35\nThere are different opinions about people's rights in a democracy. On a scale of 1 to 7, where 1 is not at all important and 7 is very important, \nhow important is it:\nThat citizens have the right NOT to vote",
+    "question": "Q35 There are different opinions about people's rights in a democracy. On a scale of 1 to 3, where 1 is not at all important and 3 is very important,  how important is it: That citizens have the right NOT to vote",
     "answer": {
       "1": "1, Not at all important",
       "2": "2",
-      "3": "3",
-      "4": "4",
-      "5": "5",
-      "6": "6",
-      "7": "7, Very important",
-      "8": "Can't choose",
-      "9": "No answer"
+      "3": "3, Very important"
     },
     "special": {}
   },
   {
     "question_id": "V40",
-    "question": "Q36\nThere are different opinions about people's rights in a democracy. On a scale of 1 to 7, where 1 is not at all important and 7 is very important, \nhow important is it:\nThat health care be provided for everyone",
+    "question": "Q36 There are different opinions about people's rights in a democracy. On a scale of 1 to 3, where 1 is not at all important and 3 is very important,  how important is it: That health care be provided for everyone",
     "answer": {
       "1": "1, Not at all important",
       "2": "2",
-      "3": "3",
-      "4": "4",
-      "5": "5",
-      "6": "6",
-      "7": "7, Very important",
-      "8": "Can't choose",
-      "9": "No answer"
+      "3": "3, Very important"
     },
     "special": {}
   },
   {
     "question_id": "V41",
-    "question": "Q37\nTo what extent do you agree or disagree with the following statements?\nPeople like me don't have any say about what the government does",
+    "question": "Q37 To what extent do you agree or disagree with the following statements? People like me don't have any say about what the government does",
     "answer": {
       "1": "Strongly agree",
       "2": "Agree",
       "3": "Neither agree nor disagree",
       "4": "Disagree",
-      "5": "Strongly disagree",
-      "8": "Can't choose",
-      "9": "No answer"
+      "5": "Strongly disagree"
     },
     "special": {
       "JP": {
@@ -556,15 +396,13 @@
   },
   {
     "question_id": "V42",
-    "question": "Q38\nTo what extent do you agree or disagree with the following statements?\nI don't think the government cares much what people like me think",
+    "question": "Q38 To what extent do you agree or disagree with the following statements? I don't think the government cares much what people like me think",
     "answer": {
       "1": "Strongly agree",
       "2": "Agree",
       "3": "Neither agree nor disagree",
       "4": "Disagree",
-      "5": "Strongly disagree",
-      "8": "Can't choose",
-      "9": "No answer"
+      "5": "Strongly disagree"
     },
     "special": {
       "JP": {
@@ -585,15 +423,13 @@
   },
   {
     "question_id": "V43",
-    "question": "Q39\nTo what extent do you agree or disagree with the following statements?\nI feel I have a pretty good understanding of the important political issues facing [COUNTRY].",
+    "question": "Q39 To what extent do you agree or disagree with the following statements? I feel I have a pretty good understanding of the important political issues facing [COUNTRY].",
     "answer": {
       "1": "Strongly agree",
       "2": "Agree",
       "3": "Neither agree nor disagree",
       "4": "Disagree",
-      "5": "Strongly disagree",
-      "8": "Can't choose",
-      "9": "No answer"
+      "5": "Strongly disagree"
     },
     "special": {
       "JP": {
@@ -614,15 +450,13 @@
   },
   {
     "question_id": "V44",
-    "question": "Q40\nTo what extent do you agree or disagree with the following statements?\nI think most people in [COUNTRY] are better informed about politics and government than I am.",
+    "question": "Q40 To what extent do you agree or disagree with the following statements? I think most people in [COUNTRY] are better informed about politics and government than I am.",
     "answer": {
       "1": "Strongly agree",
       "2": "Agree",
       "3": "Neither agree nor disagree",
       "4": "Disagree",
-      "5": "Strongly disagree",
-      "8": "Can't choose",
-      "9": "No answer"
+      "5": "Strongly disagree"
     },
     "special": {
       "JP": {
@@ -643,82 +477,58 @@
   },
   {
     "question_id": "V45",
-    "question": "Q41\nSuppose a law were being considered by [appropriate national legislature] that you considered to be unjust or harmful.\nIf such a case arose, how likely is it that you, acting alone or together with others, would be able to try to do something about it?",
+    "question": "Q41 Suppose a law were being considered by [appropriate national legislature] that you considered to be unjust or harmful. If such a case arose, how likely is it that you, acting alone or together with others, would be able to try to do something about it?",
     "answer": {
       "1": "Very likely",
       "2": "Fairly likely",
       "3": "Not very likely",
-      "4": "Not at all likely",
-      "8": "Can't choose",
-      "9": "No answer"
+      "4": "Not at all likely"
     },
     "special": {}
   },
   {
     "question_id": "V46",
-    "question": "Q42\nIf you made such an effort, how likely is it that [appropriate national legislature] would give serious attention to your demands?",
+    "question": "Q42 If you made such an effort, how likely is it that [appropriate national legislature] would give serious attention to your demands?",
     "answer": {
       "1": "Very likely",
       "2": "Fairly likely",
       "3": "Not very likely",
-      "4": "Not at all likely",
-      "8": "Can't choose",
-      "9": "No answer"
+      "4": "Not at all likely"
     },
-    "special": {
-      "PL": {
-        "9": "No answer incl. not applicable (code 3, 4, 8 in V45)"
-      }
-    }
+    "special": {}
   },
   {
     "question_id": "V47",
-    "question": "Q43\nHow interested would you say you personally are in politics?",
+    "question": "Q43 How interested would you say you personally are in politics?",
     "answer": {
       "1": "Very interested",
       "2": "Fairly interested",
       "3": "Not very interested",
-      "4": "Not at all interested",
-      "8": "Can't choose",
-      "9": "No answer"
+      "4": "Not at all interested"
     },
     "special": {}
   },
   {
     "question_id": "V48",
-    "question": "Q44\nIn politics people sometimes talk of left and right. Where would you place yourself on a scale from 0 to 10 where 0 means the left and 10 \nmeans the right?",
+    "question": "Q44 In politics people sometimes talk of left and right. Where would you place yourself on a scale from 1 to 5 where 1 means the left and 5 means the right?",
     "answer": {
-      "0": "0, Left",
-      "1": "1",
+      "1": "1, Left",
       "2": "2",
       "3": "3",
       "4": "4",
-      "5": "5",
-      "6": "6",
-      "7": "7",
-      "8": "8",
-      "9": "9",
-      "10": "10, Right",
-      "98": "Can't choose",
-      "99": "No answer"
+      "5": "5, Right"
     },
-    "special": {
-      "CL": {
-        "98": "Don't know"
-      }
-    }
+    "special": {}
   },
   {
     "question_id": "V49",
-    "question": "Q45\nTo what extent do you agree or disagree with the following statements?\nMost of the time we can trust people in government to do what is right",
+    "question": "Q45 To what extent do you agree or disagree with the following statements? Most of the time we can trust people in government to do what is right",
     "answer": {
       "1": "Strongly agree",
       "2": "Agree",
       "3": "Neither agree nor disagree",
       "4": "Disagree",
-      "5": "Strongly disagree",
-      "8": "Can't choose",
-      "9": "No answer"
+      "5": "Strongly disagree"
     },
     "special": {
       "JP": {
@@ -739,15 +549,13 @@
   },
   {
     "question_id": "V50",
-    "question": "Q46\nTo what extent do you agree or disagree with the following statements?\nMost politicians are in politics only for what they can get out of it personally",
+    "question": "Q46 To what extent do you agree or disagree with the following statements? Most politicians are in politics only for what they can get out of it personally",
     "answer": {
       "1": "Strongly agree",
       "2": "Agree",
       "3": "Neither agree nor disagree",
       "4": "Disagree",
-      "5": "Strongly disagree",
-      "8": "Can't choose",
-      "9": "No answer"
+      "5": "Strongly disagree"
     },
     "special": {
       "JP": {
@@ -768,14 +576,12 @@
   },
   {
     "question_id": "V51",
-    "question": "Q47\nHow often do you think that people would try to take advantage of you if they got the chance, and how often would they try to be fair?",
+    "question": "Q47 How often do you think that people would try to take advantage of you if they got the chance, and how often would they try to be fair?",
     "answer": {
       "1": "Try to take advantage almost all of the time",
       "2": "Try to take advantage most of the time",
       "3": "Try to be fair most of the time",
-      "4": "Try to be fair almost all of the time",
-      "8": "Can't choose",
-      "9": "No answer"
+      "4": "Try to be fair almost all of the time"
     },
     "special": {
       "VE": {
@@ -788,14 +594,12 @@
   },
   {
     "question_id": "V52",
-    "question": "Q48\nGenerally speaking, would you say that people can be trusted or that you can't be too careful in dealing with people?",
+    "question": "Q48 Generally speaking, would you say that people can be trusted or that you can't be too careful in dealing with people?",
     "answer": {
       "1": "People can almost always be trusted",
       "2": "People can usually be trusted",
       "3": "You usually can't be too careful in dealing with people",
-      "4": "You almost always can't be too careful in dealing with people",
-      "8": "Can't choose",
-      "9": "No answer"
+      "4": "You almost always can't be too careful in dealing with people"
     },
     "special": {
       "VE": {
@@ -808,14 +612,12 @@
   },
   {
     "question_id": "V53",
-    "question": "Q49\nWhen you get together with your friends, relatives or fellow workers, how often do you discuss politics?",
+    "question": "Q49 When you get together with your friends, relatives or fellow workers, how often do you discuss politics?",
     "answer": {
       "1": "Often",
       "2": "Sometimes",
       "3": "Rarely",
-      "4": "Never",
-      "8": "Can't choose",
-      "9": "No answer"
+      "4": "Never"
     },
     "special": {
       "VE": {
@@ -828,14 +630,12 @@
   },
   {
     "question_id": "V54",
-    "question": "Q50\nWhen you hold a strong opinion about politics, how often do you try to persuade your friends, relatives or fellow workers to share your \nviews?",
+    "question": "Q50 When you hold a strong opinion about politics, how often do you try to persuade your friends, relatives or fellow workers to share your  views?",
     "answer": {
       "1": "Often",
       "2": "Sometimes",
       "3": "Rarely",
-      "4": "Never",
-      "8": "Can't choose",
-      "9": "No answer"
+      "4": "Never"
     },
     "special": {
       "VE": {
@@ -848,15 +648,13 @@
   },
   {
     "question_id": "V55",
-    "question": "Q51\nThinking now about politics in [COUNTRY], to what extent do you agree or disagree with the following statements?\nPolitical parties encourage people to become active in politics",
+    "question": "Q51 Thinking now about politics in [COUNTRY], to what extent do you agree or disagree with the following statements? Political parties encourage people to become active in politics",
     "answer": {
       "1": "Strongly agree",
       "2": "Agree",
       "3": "Neither agree nor disagree",
       "4": "Disagree",
-      "5": "Strongly disagree",
-      "8": "Can't choose",
-      "9": "No answer"
+      "5": "Strongly disagree"
     },
     "special": {
       "JP": {
@@ -877,15 +675,13 @@
   },
   {
     "question_id": "V56",
-    "question": "Q52\nThinking now about politics in [COUNTRY], to what extent do you agree or disagree with the following statements?\nPolitical parties do not give voters real policy choices",
+    "question": "Q52 Thinking now about politics in [COUNTRY], to what extent do you agree or disagree with the following statements? Political parties do not give voters real policy choices",
     "answer": {
       "1": "Strongly agree",
       "2": "Agree",
       "3": "Neither agree nor disagree",
       "4": "Disagree",
-      "5": "Strongly disagree",
-      "8": "Can't choose",
-      "9": "No answer"
+      "5": "Strongly disagree"
     },
     "special": {
       "JP": {
@@ -906,15 +702,13 @@
   },
   {
     "question_id": "V57",
-    "question": "Q53\nThinking now about politics in [COUNTRY], to what extent do you agree or disagree with the following statements?\nReferendums are a good way to decide important political questions",
+    "question": "Q53 Thinking now about politics in [COUNTRY], to what extent do you agree or disagree with the following statements? Referendums are a good way to decide important political questions",
     "answer": {
       "1": "Strongly agree",
       "2": "Agree",
       "3": "Neither agree nor disagree",
       "4": "Disagree",
-      "5": "Strongly disagree",
-      "8": "Can't choose",
-      "9": "No answer"
+      "5": "Strongly disagree"
     },
     "special": {
       "JP": {
@@ -935,15 +729,13 @@
   },
   {
     "question_id": "V58",
-    "question": "Q54\nThinking of the last national election in [COUNTRY], how honest was it regarding the counting and reporting of the votes?",
+    "question": "Q54 Thinking of the last national election in [COUNTRY], how honest was it regarding the counting and reporting of the votes?",
     "answer": {
       "1": "Very honest",
       "2": "Somewhat honest",
       "3": "Neither honest nor dishonest",
       "4": "Somewhat dishonest",
-      "5": "Very dishonest",
-      "8": "Can't choose",
-      "9": "No answer"
+      "5": "Very dishonest"
     },
     "special": {
       "HR": {
@@ -957,234 +749,72 @@
   },
   {
     "question_id": "V59",
-    "question": "Q55\nThinking of the last national election in [COUNTRY], how fair was it regarding the opportunities of the candidates and parties to \ncampaign?",
+    "question": "Q55 Thinking of the last national election in [COUNTRY], how fair was it regarding the opportunities of the candidates and parties to  campaign?",
     "answer": {
       "1": "Very fair",
       "2": "Somewhat fair",
       "3": "Neither fair nor unfair",
       "4": "Somewhat unfair",
-      "5": "Very unfair",
-      "8": "Can't choose",
-      "9": "No answer"
+      "5": "Very unfair"
     },
     "special": {}
   },
   {
     "question_id": "V60",
-    "question": "Q56\nThinking of the public service in [COUNTRY], how committed is it to serve the people?",
+    "question": "Q56 Thinking of the public service in [COUNTRY], how committed is it to serve the people?",
     "answer": {
       "1": "Very committed",
       "2": "Somewhat committed",
       "3": "Not very committed",
-      "4": "Not at all committed",
-      "8": "Can't choose",
-      "9": "No answer"
+      "4": "Not at all committed"
     },
-    "special": {
-      "HU": {
-        "0": "Not available"
-      }
-    }
+    "special": {}
   },
   {
     "question_id": "V61",
-    "question": "Q57\nHow widespread do you think corruption is in the public service in [COUNTRY]?",
+    "question": "Q57 How widespread do you think corruption is in the public service in [COUNTRY]?",
     "answer": {
       "1": "Hardly anyone is involved",
       "2": "A small number is involved",
       "3": "A moderate number is involved",
       "4": "A lot of people are involved",
-      "5": "Almost everyone is involved",
-      "8": "Can't choose",
-      "9": "No answer"
+      "5": "Almost everyone is involved"
     },
     "special": {}
   },
   {
     "question_id": "V62",
-    "question": "Q58\nOn the whole, on a scale of 0 to 10 where 0 is very poorly and 10 is very well.\nHow well does democracy work in [COUNTRY] today?",
+    "question": "Q58 On the whole, on a scale of 1 to 5 where 1 is very poorly and 5 is very well. How well does democracy work in [COUNTRY] today?",
     "answer": {
-      "0": "00, Very poorly",
-      "1": "01",
-      "2": "02",
-      "3": "03",
-      "4": "04",
-      "5": "05",
-      "6": "06",
-      "7": "07",
-      "8": "08",
-      "9": "09",
-      "10": "10, Very well",
-      "98": "Can't choose",
-      "99": "No answer"
+      "1": "1, Very poorly",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5, Very well"
     },
     "special": {}
   },
   {
     "question_id": "V63",
-    "question": "Q59\nOn the whole, on a scale of 0 to 10 where 0 is very poorly and 10 is very well.\nAnd what about 10 years ago? How well did democracy work in [COUNTRY] then?",
+    "question": "Q59 On the whole, on a scale of 1 to 5 where 1 is very poorly and 5 is very well. And what about 10 years ago? How well did democracy work in [COUNTRY] then?",
     "answer": {
-      "0": "00, Very poorly",
-      "1": "01",
-      "2": "02",
-      "3": "03",
-      "4": "04",
-      "5": "05",
-      "6": "06",
-      "7": "07",
-      "8": "08",
-      "9": "09",
-      "10": "10, Very well",
-      "98": "Can't choose",
-      "99": "No answer"
+      "1": "1, Very poorly",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5, Very well"
     },
     "special": {}
   },
   {
     "question_id": "V64",
-    "question": "Q60\nOn the whole, on a scale of 0 to 10 where 0 is very poorly and 10 is very well.\nAnd how about 10 years from now? How well do you think democracy will work in [COUNTRY] then?",
+    "question": "Q60 On the whole, on a scale of 1 to 5 where 1 is very poorly and 5 is very well. And how about 10 years from now? How well do you think democracy will work in [COUNTRY] then?",
     "answer": {
-      "0": "00, Very poorly",
-      "1": "01",
-      "2": "02",
-      "3": "03",
-      "4": "04",
-      "5": "05",
-      "6": "06",
-      "7": "07",
-      "8": "08",
-      "9": "09",
-      "10": "10, Very well",
-      "98": "Can't choose",
-      "99": "No answer"
-    },
-    "special": {}
-  },
-  {
-    "question_id": "V65",
-    "question": "OPTIONAL QUESTION\nQ61 \nOn average, how often do you: \nRead the political content of a newspaper?",
-    "answer": {
-      "0": "Not available; CZ: answer categories differ from ISSP standard",
-      "1": "Several times a day",
-      "2": "Once a day",
-      "3": "5-6 days a week",
-      "4": "3-4 days a week",
-      "5": "1-2 days a week",
-      "6": "Less than 1 day a week",
-      "7": "Never",
-      "8": "Can't choose",
-      "9": "No answer"
-    },
-    "special": {}
-  },
-  {
-    "question_id": "CZ_V65",
-    "question": "OPTIONAL QUESTION (CZ)\nQ61\nOn average, how often do you: \nRead the political content of a newspaper?",
-    "answer": {
-      "0": "NAP, other countries",
-      "1": "Daily",
-      "2": "3-4 times a week",
-      "3": "1-2 times a week",
-      "4": "Less than 1-2 times a week",
-      "5": "Never",
-      "8": "Can't choose",
-      "9": "No answer"
-    },
-    "special": {}
-  },
-  {
-    "question_id": "V66",
-    "question": "OPTIONAL QUESTION\nQ62\nOn average, how often do you: \nWatch political news on television?",
-    "answer": {
-      "0": "Not available; CZ: answer categories differ from ISSP standard",
-      "1": "Several times a day",
-      "2": "Once a day",
-      "3": "5-6 days a week",
-      "4": "3-4 days a week",
-      "5": "1-2 days a week",
-      "6": "Less than 1 day a week",
-      "7": "Never",
-      "8": "Can't choose",
-      "9": "No answer"
-    },
-    "special": {}
-  },
-  {
-    "question_id": "CZ_V66",
-    "question": "OPTIONAL QUESTION (CZ)\nQ62 \nOn average, how often do you: \nWatch political news on television?",
-    "answer": {
-      "0": "NAP, other countries",
-      "1": "Daily",
-      "2": "3-4 times a week",
-      "3": "1-2 times a week",
-      "4": "Less than 1-2 times a week",
-      "5": "Never",
-      "8": "Can't choose",
-      "9": "No answer"
-    },
-    "special": {}
-  },
-  {
-    "question_id": "V67",
-    "question": "OPTIONAL QUESTION\nQ63\nOn average, how often do you: \nListen to political news on the radio?",
-    "answer": {
-      "0": "Not available; CZ: answer categories differ from ISSP standard",
-      "1": "Several times a day",
-      "2": "Once a day",
-      "3": "5-6 days a week",
-      "4": "3-4 days a week",
-      "5": "1-2 days a week",
-      "6": "Less than 1 day a week",
-      "7": "Never",
-      "8": "Can't choose",
-      "9": "No answer"
-    },
-    "special": {}
-  },
-  {
-    "question_id": "CZ_V67",
-    "question": "OPTIONAL QUESTION (CZ)\nQ63 \nOn average, how often do you: \nListen to political news on the radio?",
-    "answer": {
-      "0": "NAP, other countries",
-      "1": "Daily",
-      "2": "3-4 times a week",
-      "3": "1-2 times a week",
-      "4": "Less than 1-2 times a week",
-      "5": "Never",
-      "8": "Can't choose",
-      "9": "No answer"
-    },
-    "special": {}
-  },
-  {
-    "question_id": "V68",
-    "question": "OPTIONAL QUESTION\nQ64\nOn average, how often do you: \nUse the Internet to get political news or information?",
-    "answer": {
-      "0": "Not available; CZ: answer categories differ from ISSP standard",
-      "1": "Several times a day",
-      "2": "Once a day",
-      "3": "5-6 days a week",
-      "4": "3-4 days a week",
-      "5": "1-2 days a week",
-      "6": "Less than 1 day a week",
-      "7": "Never",
-      "8": "Can't choose",
-      "9": "No answer"
-    },
-    "special": {}
-  },
-  {
-    "question_id": "CZ_V68",
-    "question": "OPTIONAL QUESTION (CZ)\nQ64\nOn average, how often do you: \nUse the Internet to get political news or information?",
-    "answer": {
-      "0": "NAP, other countries",
-      "1": "Daily",
-      "2": "3-4 times a week",
-      "3": "1-2 times a week",
-      "4": "Less than 1-2 times a week",
-      "5": "Never",
-      "8": "Can't choose",
-      "9": "No answer"
+      "1": "1, Very poorly",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5, Very well"
     },
     "special": {}
   }
