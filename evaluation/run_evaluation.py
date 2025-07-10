@@ -33,7 +33,7 @@ import logging
 from pathlib import Path
 
 # 从utils模块导入gc_and_cuda_cleanup函数
-from social_benchmark.evaluation.utils import gc_and_cuda_cleanup, get_model_name_from_openai_client, get_model_name_from_command
+from SocioBench.evaluation.utils import gc_and_cuda_cleanup, get_model_name_from_openai_client, get_model_name_from_command
 
 # 设置多进程启动方法为spawn，以解决CUDA初始化问题
 # 这是必须的，因为vLLM使用CUDA，在fork的子进程中无法重新初始化CUDA
@@ -53,10 +53,10 @@ project_root = os.path.dirname(os.path.dirname(current_dir))
 sys.path.insert(0, project_root)
 
 # 导入自定义模块
-from social_benchmark.evaluation.llm_api import LLMAPIClient
-from social_benchmark.evaluation.evaluation import Evaluator
-from social_benchmark.evaluation.prompt_engineering import PromptEngineering
-from social_benchmark.evaluation.logger_setup import setup_logging, teardown_logging
+from SocioBench.evaluation.llm_api import LLMAPIClient
+from SocioBench.evaluation.evaluation import Evaluator
+from SocioBench.evaluation.prompt_engineering import PromptEngineering
+from SocioBench.evaluation.logger_setup import setup_logging, teardown_logging
 
 # 领域名称与领域号映射表
 DOMAIN_MAPPING = {
@@ -1416,12 +1416,6 @@ def run_evaluation(domain_id: int, interview_count: Union[int, str],
         
         # 计算全局指标
         evaluator.calculate_accuracy()
-        evaluator.calculate_f1_scores()
-        evaluator.calculate_option_distance()
-        evaluator.calculate_country_metrics()
-        evaluator.calculate_gender_metrics()  
-        evaluator.calculate_age_metrics()
-        evaluator.calculate_occupation_metrics()
         
         # 打印统计信息
         print(f"\n{'-'*60}")
@@ -1431,9 +1425,6 @@ def run_evaluation(domain_id: int, interview_count: Union[int, str],
         print(f"已处理的受访者: {processed_interviewees}")
         print(f"跳过的受访者: {skipped_interviewees}")
         print(f"准确率: {evaluator.results['accuracy']:.2%}")
-        print(f"Macro F1: {evaluator.results['macro_f1']:.4f}")
-        print(f"Micro F1: {evaluator.results['micro_f1']:.4f}")
-        print(f"选项距离: {evaluator.results['option_distance']:.4f}")
         print(f"{'-'*60}")
         
         # 保存完整的提示和回答
@@ -1462,9 +1453,6 @@ def run_evaluation(domain_id: int, interview_count: Union[int, str],
             "总题数": evaluator.results["total_count"],
             "正确数": evaluator.results["correct_count"],
             "准确率": evaluator.results["accuracy"],
-            "macro_F1": evaluator.results["macro_f1"],
-            "micro_F1": evaluator.results["micro_f1"],
-            "选项距离": evaluator.results["option_distance"],
             "模型": actual_model_name
         }
         
@@ -1520,13 +1508,7 @@ def run_evaluation(domain_id: int, interview_count: Union[int, str],
             "domain_name": domain_name,
             "correct_count": evaluator.results["correct_count"],
             "total_count": evaluator.results["total_count"],
-            "accuracy": evaluator.results["accuracy"],
-            "macro_f1": evaluator.results["macro_f1"],
-            "micro_f1": evaluator.results["micro_f1"],
-            "country_metrics": evaluator.results["country_metrics"],
-            "gender_metrics": evaluator.results["gender_metrics"],
-            "age_metrics": evaluator.results["age_metrics"],
-            "occupation_metrics": evaluator.results["occupation_metrics"]
+            "accuracy": evaluator.results["accuracy"]
         }
     else:
         return {
@@ -1534,13 +1516,7 @@ def run_evaluation(domain_id: int, interview_count: Union[int, str],
             "domain_name": domain_name,
             "correct_count": 0,
             "total_count": 0,
-            "accuracy": 0,
-            "macro_f1": 0,
-            "micro_f1": 0,
-            "country_metrics": {},
-            "gender_metrics": {},
-            "age_metrics": {},
-            "occupation_metrics": {}
+            "accuracy": 0
         }
 
 # 将嵌套函数移到模块级别作为全局函数
@@ -1635,7 +1611,6 @@ def run_all_domains(api_type: str = "config", interview_count: Union[int, str] =
     
     # 评测结果汇总
     all_domain_results = {}
-    all_country_metrics = {}
     
     # 获取当前脚本的绝对路径
     script_path = os.path.abspath(__file__)
@@ -1712,15 +1687,7 @@ def run_all_domains(api_type: str = "config", interview_count: Union[int, str] =
                 domain_result["model"] = actual_model_name  # 使用实际模型名称
                 all_domain_results[domain_name] = domain_result
                 
-                # 合并国家指标
-                if "country_metrics" in domain_result and domain_result["country_metrics"]:
-                    for country_code, metrics in domain_result["country_metrics"].items():
-                        if country_code not in all_country_metrics:
-                            all_country_metrics[country_code] = {
-                                "country_name": metrics.get("country_name", ""),
-                                "domains": {}
-                            }
-                        all_country_metrics[country_code]["domains"][domain_name] = metrics
+                # 不再处理国家指标
             
             # 清理内存
             gc.collect()
@@ -1775,8 +1742,6 @@ def generate_summary_report(domain_results: Dict[str, Dict[str, Any]], model_nam
     
     # 计算所有领域的平均指标
     avg_accuracy = sum(result.get("accuracy", 0) for result in domain_results.values()) / len(domain_results) if domain_results else 0
-    avg_macro_f1 = sum(result.get("macro_f1", 0) for result in domain_results.values()) / len(domain_results) if domain_results else 0
-    avg_micro_f1 = sum(result.get("micro_f1", 0) for result in domain_results.values()) / len(domain_results) if domain_results else 0
     
     # 为长名称创建缩写
     domain_short_names = {}
@@ -1796,9 +1761,7 @@ def generate_summary_report(domain_results: Dict[str, Dict[str, Any]], model_nam
             "领域": domain_name,
             "总题数": results.get("total_count", 0),
             "正确数": results.get("correct_count", 0),
-            "准确率": results.get("accuracy", 0),
-            "Macro F1": results.get("macro_f1", 0),
-            "Micro F1": results.get("micro_f1", 0)
+            "准确率": results.get("accuracy", 0)
         })
     
     # 添加总计行
@@ -1806,9 +1769,7 @@ def generate_summary_report(domain_results: Dict[str, Dict[str, Any]], model_nam
         "领域": "总计",
         "总题数": total_questions,
         "正确数": total_correct,
-        "准确率": total_accuracy,
-        "Macro F1": avg_macro_f1,
-        "Micro F1": avg_micro_f1
+        "准确率": total_accuracy
     })
             
     # 创建汇总表格
@@ -1821,16 +1782,11 @@ def generate_summary_report(domain_results: Dict[str, Dict[str, Any]], model_nam
         # 创建柱状图数据
         domains = [domain_short_names.get(domain, domain) for domain in domain_results.keys()]
         accuracies = [result.get("accuracy", 0) for result in domain_results.values()]
-        macro_f1s = [result.get("macro_f1", 0) for result in domain_results.values()]
-        micro_f1s = [result.get("micro_f1", 0) for result in domain_results.values()]
-        
+
         # 绘制柱状图
         x = range(len(domains))
-        width = 0.25
-        
-        plt.bar([i - width for i in x], accuracies, width=width, label="准确率", color="blue", alpha=0.7)
-        plt.bar(x, macro_f1s, width=width, label="Macro F1", color="green", alpha=0.7)
-        plt.bar([i + width for i in x], micro_f1s, width=width, label="Micro F1", color="red", alpha=0.7)
+
+        plt.bar(x, accuracies, label="准确率", color="blue", alpha=0.7)
         
         # 添加标题和标签
         plt.title(f"评测结果摘要 - {model_name}", fontsize=16)
@@ -1841,16 +1797,10 @@ def generate_summary_report(domain_results: Dict[str, Dict[str, Any]], model_nam
     
         # 添加平均线
         plt.axhline(y=avg_accuracy, color="blue", linestyle="--", alpha=0.5, label="平均准确率")
-        plt.axhline(y=avg_macro_f1, color="green", linestyle="--", alpha=0.5, label="平均Macro F1")
-        plt.axhline(y=avg_micro_f1, color="red", linestyle="--", alpha=0.5, label="平均Micro F1")
-    
+
         # 添加数据标签
         for i, v in enumerate(accuracies):
-            plt.text(i - width, v + 0.02, f"{v:.2f}", ha="center", va="bottom", fontsize=8, rotation=90)
-        for i, v in enumerate(macro_f1s):
             plt.text(i, v + 0.02, f"{v:.2f}", ha="center", va="bottom", fontsize=8, rotation=90)
-        for i, v in enumerate(micro_f1s):
-            plt.text(i + width, v + 0.02, f"{v:.2f}", ha="center", va="bottom", fontsize=8, rotation=90)
         
         # 添加图例
         plt.legend()
@@ -1874,23 +1824,7 @@ def generate_summary_report(domain_results: Dict[str, Dict[str, Any]], model_nam
     with pd.ExcelWriter(summary_filepath) as writer:
         summary_df.to_excel(writer, sheet_name="评测摘要", index=False)
         
-        # 将每个领域的数据保存到单独的表格
-        for domain_name, results in domain_results.items():
-            # 处理country_metrics
-            if "country_metrics" in results and results["country_metrics"]:
-                country_data = []
-                for country_code, metrics in results["country_metrics"].items():
-                    country_data.append({
-                        "国家代码": country_code,
-                        "国家全称": metrics.get("country_name", ""),
-                        "总题数": metrics.get("total_count", 0),
-                        "正确数": metrics.get("correct_count", 0),
-                        "准确率": metrics.get("accuracy", 0),
-                        "Macro F1": metrics.get("macro_f1", 0),
-                        "Micro F1": metrics.get("micro_f1", 0)
-                    })
-                country_df = pd.DataFrame(country_data)
-                country_df.to_excel(writer, sheet_name=f"{domain_name[:10]}_国家指标", index=False)
+        # 不再保存额外的指标表格
     
     print(f"评测摘要表格已保存到: {summary_filepath}")
     
@@ -1901,8 +1835,6 @@ def generate_summary_report(domain_results: Dict[str, Dict[str, Any]], model_nam
     print(f"正确数: {total_correct}")
     print(f"整体准确率: {total_accuracy:.4f}")
     print(f"平均准确率: {avg_accuracy:.4f}")
-    print(f"平均宏观F1: {avg_macro_f1:.4f}")
-    print(f"平均微观F1: {avg_micro_f1:.4f}")
     
     # 保存总结报告为文本文件
     report_filename = f"summary_report_{model_name}_{timestamp}.txt"
@@ -1916,9 +1848,7 @@ def generate_summary_report(domain_results: Dict[str, Dict[str, Any]], model_nam
         f.write(f"总题数: {total_questions}\n")
         f.write(f"正确数: {total_correct}\n")
         f.write(f"整体准确率: {total_accuracy:.4f}\n")
-        f.write(f"平均准确率: {avg_accuracy:.4f}\n")
-        f.write(f"平均宏观F1: {avg_macro_f1:.4f}\n")
-        f.write(f"平均微观F1: {avg_micro_f1:.4f}\n\n")
+        f.write(f"平均准确率: {avg_accuracy:.4f}\n\n")
         
         f.write("各领域评测结果\n")
         f.write("-" * 40 + "\n")
@@ -1926,9 +1856,7 @@ def generate_summary_report(domain_results: Dict[str, Dict[str, Any]], model_nam
             f.write(f"领域: {domain_name}\n")
             f.write(f"  总题数: {results.get('total_count', 0)}\n")
             f.write(f"  正确数: {results.get('correct_count', 0)}\n")
-            f.write(f"  准确率: {results.get('accuracy', 0):.4f}\n")
-            f.write(f"  宏观F1: {results.get('macro_f1', 0):.4f}\n")
-            f.write(f"  微观F1: {results.get('micro_f1', 0):.4f}\n\n")
+            f.write(f"  准确率: {results.get('accuracy', 0):.4f}\n\n")
     
     print(f"评测摘要报告已保存到: {report_filepath}")
 
@@ -1975,7 +1903,7 @@ def parse_args():
 
 """
 # Linux示例命令
-python /inspire/hdd/ws-f4d69b29-e0a5-44e6-bd92-acf4de9990f0/public-project/wangjia-240108610168/social_benchmark/evaluation/run_evaluation.py \
+python /inspire/hdd/ws-f4d69b29-e0a5-44e6-bd92-acf4de9990f0/public-project/wangjia-240108610168/SocioBench/evaluation/run_evaluation.py \
   --domain_id all \
   --interview_count all \
   --api_type vllm \
@@ -1989,7 +1917,7 @@ python /inspire/hdd/ws-f4d69b29-e0a5-44e6-bd92-acf4de9990f0/public-project/wangj
   --dataset_size 500 \
   --tensor_parallel_size 2
 
-python /inspire/hdd/ws-f4d69b29-e0a5-44e6-bd92-acf4de9990f0/public-project/wangjia-240108610168/social_benchmark/evaluation/run_evaluation.py \
+python /inspire/hdd/ws-f4d69b29-e0a5-44e6-bd92-acf4de9990f0/public-project/wangjia-240108610168/SocioBench/evaluation/run_evaluation.py \
   --domain_id 1 \
   --interview_count 5 \
   --api_type vllm \
@@ -2002,9 +1930,9 @@ python /inspire/hdd/ws-f4d69b29-e0a5-44e6-bd92-acf4de9990f0/public-project/wangj
   --model=Qwen2.5-7B-Instruct \
   --dataset_size 500 \
   --tensor_parallel_size 1
-  
+
   # Windows示例命令
-python C:/Users/26449/PycharmProjects/pythonProject/interview_scenario/social_benchmark/evaluation/run_evaluation.py `
+python C:/Users/26449/PycharmProjects/pythonProject/interview_scenario/SocioBench/evaluation/run_evaluation.py `
   --domain_id 1 `
   --interview_count 1 `
   --api_type config `
@@ -2013,9 +1941,9 @@ python C:/Users/26449/PycharmProjects/pythonProject/interview_scenario/social_be
   --shuffle_options=False `
   --start_domain_id 1
 
-  
 
-python C:/Users/26449/PycharmProjects/pythonProject/interview_scenario/social_benchmark/evaluation/run_evaluation.py `
+
+python C:/Users/26449/PycharmProjects/pythonProject/interview_scenario/SocioBench/evaluation/run_evaluation.py `
   --domain_id all `
   --interview_count 10 `
   --api_type vllm `

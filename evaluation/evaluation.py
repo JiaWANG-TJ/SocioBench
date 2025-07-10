@@ -350,7 +350,7 @@ class Evaluator:
         correct_count = 0
         
         # 从运行评估模块导入函数
-        from social_benchmark.evaluation.run_evaluation import (
+        from SocioBench.evaluation.run_evaluation import (
             is_invalid_answer, is_invalid_answer_meaning, should_include_in_evaluation
         )
         
@@ -364,7 +364,7 @@ class Evaluator:
             result_correctness = detail["result_correctness"]
             
             # 获取问题国家代码
-            from social_benchmark.evaluation.run_evaluation import get_question_country_code
+            from SocioBench.evaluation.run_evaluation import get_question_country_code
             question_id = detail["question_id"]
             country_code = detail["country_code"]
             question_country = get_question_country_code(question_id) if question_id else None
@@ -428,8 +428,8 @@ class Evaluator:
         y_pred = []
         
         # 从运行评估模块导入函数
-        from social_benchmark.evaluation.run_evaluation import (
-            is_invalid_answer, is_invalid_answer_meaning, should_include_in_evaluation, 
+        from SocioBench.evaluation.run_evaluation import (
+            is_invalid_answer, is_invalid_answer_meaning, should_include_in_evaluation,
             get_question_country_code
         )
         
@@ -500,8 +500,8 @@ class Evaluator:
         country_name_map = {}  # 保存国家代码与国家名称的映射关系
         
         # 从运行评估模块导入函数
-        from social_benchmark.evaluation.run_evaluation import (
-            is_invalid_answer, is_invalid_answer_meaning, should_include_in_evaluation, 
+        from SocioBench.evaluation.run_evaluation import (
+            is_invalid_answer, is_invalid_answer_meaning, should_include_in_evaluation,
             get_question_country_code
         )
         
@@ -616,8 +616,8 @@ class Evaluator:
         distances = []
         
         # 从运行评估模块导入函数
-        from social_benchmark.evaluation.run_evaluation import (
-            is_invalid_answer, is_invalid_answer_meaning, should_include_in_evaluation, 
+        from SocioBench.evaluation.run_evaluation import (
+            is_invalid_answer, is_invalid_answer_meaning, should_include_in_evaluation,
             get_question_country_code
         )
         
@@ -1016,26 +1016,8 @@ class Evaluator:
         Returns:
             保存的文件路径
         """
-        # 计算F1分数
-        self.calculate_f1_scores()
-        
         # 计算准确率
         self.calculate_accuracy()
-        
-        # 计算选项距离
-        self.calculate_option_distance()
-        
-        # 计算按国家分组的指标
-        self.calculate_country_metrics()
-        
-        # 计算按性别分组的指标
-        self.calculate_gender_metrics()
-        
-        # 计算按年龄分组的指标
-        self.calculate_age_metrics()
-        
-        # 计算按职业分组的指标
-        self.calculate_occupation_metrics()
         
         # 获取当前时间作为时间戳
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
@@ -1048,38 +1030,16 @@ class Evaluator:
         results_filename = f"{self.domain_name}__results_{model_name}_{timestamp}.json"
         results_filepath = os.path.join(model_dir, results_filename)
         
-        # 保存结果 - 创建一个有序的结果字典，确保关键指标在前面
+        # 保存结果 - 仅保留核心指标
         ordered_results = {
             "correct_count": self.results["correct_count"],
             "total_count": self.results["total_count"],
-            "accuracy": self.results["accuracy"],
-            "macro_f1": self.results["macro_f1"],
-            "micro_f1": self.results["micro_f1"],
-            "option_distance": self.results["option_distance"],
-            "detailed_results": self.results["detailed_results"],
-            "true_labels": self.results["true_labels"],
-            "pred_labels": self.results["pred_labels"],
-            "country_metrics": self.results["country_metrics"],
-            "gender_metrics": self.results["gender_metrics"],
-            "age_metrics": self.results["age_metrics"],
-            "occupation_metrics": self.results["occupation_metrics"]
+            "accuracy": self.results["accuracy"]
         }
         
         # 保存结果
         with open(results_filepath, "w", encoding="utf-8") as f:
             json.dump(ordered_results, f, ensure_ascii=False, indent=2)
-        
-        # 保存按国家分组的指标
-        self.save_country_metrics(model_name)
-        
-        # 新增：保存按性别分组的指标
-        self.save_gender_metrics(model_name)
-        
-        # 新增：保存按年龄分组的指标
-        self.save_age_metrics(model_name)
-        
-        # 新增：保存按职业分组的指标
-        self.save_occupation_metrics(model_name)
         
         # 新增：保存详细的评测结果
         self.save_detailed_results(model_name)
@@ -1462,9 +1422,9 @@ class Evaluator:
         detailed_filepath = os.path.join(model_dir, detailed_filename)
         
         # 从运行评估模块加载问题选项数据
-        from social_benchmark.evaluation.run_evaluation import (
-            load_qa_file, get_special_options, is_invalid_answer, 
-            is_invalid_answer_meaning, get_question_country_code, 
+        from SocioBench.evaluation.run_evaluation import (
+            load_qa_file, get_special_options, is_invalid_answer,
+            is_invalid_answer_meaning, get_question_country_code,
             should_include_in_evaluation
         )
         
@@ -1526,21 +1486,19 @@ class Evaluator:
             except Exception as e:
                 print(f"获取问题 {question_id} 的选项内容时出错: {str(e)}")
             
-            # 创建详细数据字典，并将person_id放在第一列
+            # 创建详细数据字典，并将person_id放在第一列，表头使用英语
             data_dict = {
-                "受访者ID": detail.get("person_id", ""),  # 添加受访者ID作为第一列
-                "问题ID": question_id,
-                "国家代码": detail["country_code"],
-                "国家全称": detail["country_name"],
-                "真实答案": true_answer,
-                "真实答案含义": detail["true_answer_meaning"],
-                # "真实答案选项内容": true_answer_text,
-                "LLM答案": llm_answer,
-                "LLM答案含义": detail["llm_answer_meaning"],
-                # "LLM答案选项内容": llm_answer_text,
-                "是否正确": detail["result_correctness"],
-                "是否国家特定问题": detail["is_country_specific"],
-                "是否纳入评测": included_in_evaluation
+                "Respondent_ID": detail.get("person_id", ""),  # 添加受访者ID作为第一列
+                "Question_ID": question_id,
+                "Country_Code": detail["country_code"],
+                "Country_Name": detail["country_name"],
+                "True_Answer": true_answer,
+                "True_Answer_Meaning": detail["true_answer_meaning"],
+                "LLM_Answer": llm_answer,
+                "LLM_Answer_Meaning": detail["llm_answer_meaning"],
+                "Is_Correct": detail["result_correctness"],
+                "Is_Country_Specific": detail["is_country_specific"],
+                "Included_In_Evaluation": included_in_evaluation
             }
             details_data.append(data_dict)
         

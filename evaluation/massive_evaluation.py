@@ -25,12 +25,12 @@ project_root = os.path.dirname(os.path.dirname(current_dir))
 sys.path.insert(0, project_root)
 
 # 导入评测系统模块
-from social_benchmark.evaluation.prompt_engineering import PromptEngineering
-from social_benchmark.evaluation.evaluation import Evaluator
-from social_benchmark.evaluation.vllm_massive_api import MassiveAPIClientAdapter, VLLMMassiveAPIClient
-from social_benchmark.evaluation.utils import get_model_name_async, get_model_name_in_subprocess
-from social_benchmark.evaluation.run_evaluation import (
-    DOMAIN_MAPPING, COUNTRY_MAPPING, 
+from SocioBench.evaluation.prompt_engineering import PromptEngineering
+from SocioBench.evaluation.evaluation import Evaluator
+from SocioBench.evaluation.vllm_massive_api import MassiveAPIClientAdapter, VLLMMassiveAPIClient
+from SocioBench.evaluation.utils import get_model_name_async, get_model_name_in_subprocess
+from SocioBench.evaluation.run_evaluation import (
+    DOMAIN_MAPPING, COUNTRY_MAPPING,
     get_domain_name, load_option_contents, load_qa_file, load_ground_truth,
     get_special_options, get_country_code, is_invalid_answer,
     is_invalid_answer_meaning, should_include_in_evaluation,
@@ -590,14 +590,8 @@ async def run_domain_evaluation(
         # 打印评测摘要
         evaluator.print_summary()
         
-        # 确保计算所有的评测指标
+        # 确保计算核心评测指标
         evaluator.calculate_accuracy()
-        evaluator.calculate_f1_scores()
-        evaluator.calculate_option_distance()
-        evaluator.calculate_country_metrics()
-        evaluator.calculate_gender_metrics()
-        evaluator.calculate_age_metrics()
-        evaluator.calculate_occupation_metrics()
         
         # 保存结果
         result_file_path = evaluator.save_results(actual_model_name, domain_stats={
@@ -630,9 +624,6 @@ async def run_domain_evaluation(
             "correct_count": evaluator.results["correct_count"],
             "total_count": evaluator.results["total_count"],
             "accuracy": evaluator.results["accuracy"],
-            "macro_f1": evaluator.results["macro_f1"],
-            "micro_f1": evaluator.results["micro_f1"],
-            "country_metrics": evaluator.results["country_metrics"],
             "stats": stats
         }
         
