@@ -35,12 +35,41 @@ vllm serve \
 ### 2. 并发评测
 
 ```bash
-cd ../
+# 重要：确保在包含SocioBench文件夹的目录中执行以下命令
+# 如果您的目录结构是 /path/to/your/project/SocioBench/
+# 请确保您在 /path/to/your/project/ 目录下
 
+# 检查当前目录结构
+ls -la
+
+# 确认SocioBench目录存在后执行
+python -c "from openai import OpenAI; client = OpenAI(base_url='http://localhost:8000/v1', api_key='EMPTY'); models = client.models.list(); model_name = models.data[0].id; print(model_name)"
+
+# 评测所有领域（使用相对路径）
+python SocioBench/evaluation/massive_evaluation.py \
+  --domain_id all\
+  --interview_count all\
+  --api_base "http://localhost:8000/v1/chat/completions" \
+  --model "" \
+  --temperature 0.5 \
+  --max_concurrent_requests 100000\
+  --batch_size 10000\
+  --request_timeout 100000000\
+  --shuffle_options=True\
+  --start_domain_id 1
+
+# 如果上述命令报错，请尝试使用绝对路径（替换为您的实际路径）
+# python /完整路径/SocioBench/evaluation/massive_evaluation.py ...
+```
+
+**或者，直接在SocioBench目录内执行（推荐）：**
+
+```bash
+# 在SocioBench目录内执行
 python -c "from openai import OpenAI; client = OpenAI(base_url='http://localhost:8000/v1', api_key='EMPTY'); models = client.models.list(); model_name = models.data[0].id; print(model_name)"
 
 # 评测所有领域
-python SocioBench\evaluation\massive_evaluation.py \
+python evaluation/massive_evaluation.py \
   --domain_id all\
   --interview_count all\
   --api_base "http://localhost:8000/v1/chat/completions" \

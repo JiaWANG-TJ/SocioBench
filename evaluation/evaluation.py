@@ -1040,12 +1040,12 @@ class Evaluator:
         # 保存结果
         with open(results_filepath, "w", encoding="utf-8") as f:
             json.dump(ordered_results, f, ensure_ascii=False, indent=2)
-        
+
         # 新增：保存详细的评测结果
         self.save_detailed_results(model_name)
-        
+
         print(f"评测结果已保存到: {results_filepath}")
-        
+
         return results_filepath
     
     def save_summary_metrics(self, model_name: str = "unknown") -> str:
@@ -1552,9 +1552,7 @@ class Evaluator:
         print(f"总样本数: {stats['total_count']}")
         print(f"有效样本数: {stats['valid_count']}")
         print(f"有效样本中正确数: {stats['valid_correct_count']}")
-        print(f"准确率(基于有效样本): {stats['accuracy']:.4f}")
-        print(f"宏观F1: {stats.get('macro_f1', 0.0):.4f}")
-        print(f"微观F1: {stats.get('micro_f1', 0.0):.4f}")
+        print(f"准确率: {stats['accuracy']:.4f}")
         print("="*50 + "\n")
         
         # 打印无效答案统计

@@ -602,8 +602,6 @@ async def run_domain_evaluation(
             "model": actual_model_name
         })
         
-        print(f"评测结果已保存到: {result_file_path}")
-        
         # 如果开启了保存prompt信息，则保存完整的提示和回答记录
         if args.print_prompt and results:
             # 使用已保存的结果文件路径构建prompt文件路径
