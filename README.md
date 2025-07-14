@@ -32,7 +32,7 @@ vllm serve \
   --enforce-eager 
 ```
 
-### 2. 并发评测
+### 2. 并发评测-本地模型
 
 ```bash
 
@@ -42,6 +42,7 @@ python -c "from openai import OpenAI; client = OpenAI(base_url='http://localhost
 python /<full path>/SocioBench/evaluation/massive_evaluation.py \
   --domain_id all\
   --interview_count all\
+  --api_mode vllm\
   --api_base "http://localhost:8000/v1/chat/completions" \
   --model "" \
   --temperature 0.5 \
@@ -49,17 +50,38 @@ python /<full path>/SocioBench/evaluation/massive_evaluation.py \
   --batch_size 10000\
   --request_timeout 100000000\
   --shuffle_options=True\
-  --start_domain_id 1
+  --start_domain_id 1\
 
 ```
 
-### 3. 关键参数配置
+### 3. 并发评测-商用api
+
+```bash
+
+# 评测所有领域
+python /<full path>/SocioBench/evaluation/massive_evaluation.py \
+  --domain_id all \
+  --interview_count all \
+  --api_mode commercial \
+  --api_key "<your api key>" \
+  --commercial_model "<your model name>" \
+  --commercial_base_url "<your api base url>" \
+  --temperature 0.5 \
+  --max_concurrent_requests 100000\
+  --batch_size 10000\
+  --request_timeout 100000000\
+  --shuffle_options=True\
+  --start_domain_id 1
+```
+
+### 4. 关键参数配置
 
 - `--domain_id`：领域ID（1-11）或"all"
 - `--interview_count`：受访者数量或"all"
 - `--concurrent_requests`：并发请求数
+-  `--api_mode`：通过 vLLM调用本地模型或通过商业api调用模型
 
-### 4. 结果文件说明
+### 5. 结果文件说明
 
 评测完成后，结果保存在 `SocioBench/evaluation/results/{model_name}/`目录：
 

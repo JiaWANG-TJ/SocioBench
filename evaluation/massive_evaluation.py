@@ -1,11 +1,5 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-
-"""
-大规模并发社会认知基准评测脚本
-使用vLLM API实现高并发评测
-"""
-
 import os
 import sys
 import argparse
@@ -40,7 +34,7 @@ from SocioBench.evaluation.run_evaluation import (
 def parse_args():
     """解析命令行参数"""
     parser = argparse.ArgumentParser(description='大规模并发社会认知基准评测')
-    
+
     parser.add_argument('--domain_id', type=str, nargs='?', default='all',
                        help='评测领域ID (1-11)或"all"表示所有领域')
     parser.add_argument('--interview_count', type=str, default='all',
@@ -75,7 +69,17 @@ def parse_args():
                        help='数据集大小，可选值为500(采样1%)、5000(采样10%)和50000(全量)')
     parser.add_argument('--verbose', action='store_true',
                        help='是否输出详细日志')
-    
+
+    # 新增商业API支持参数
+    parser.add_argument('--api_mode', type=str, default='vllm', choices=['vllm', 'commercial'],
+                       help='API调用模式: vllm(本地vLLM) 或 commercial(商业API)')
+    parser.add_argument('--api_key', type=str, default='',
+                       help='商业API的API密钥(仅在api_mode=commercial时使用)')
+    parser.add_argument('--commercial_model', type=str, default='',
+                       help='商业API的模型名称(仅在api_mode=commercial时使用)')
+    parser.add_argument('--commercial_base_url', type=str, default='',
+                       help='商业API的基础URL(仅在api_mode=commercial时使用)')
+
     return parser.parse_args()
 
 async def process_questions_massive(
@@ -468,8 +472,14 @@ async def run_domain_evaluation(
     # 打印开始信息
     print(f"\n{'='*60}")
     print(f"开始大规模并发评测 | 领域: {domain_name} (ID: {domain_id})")
-    print(f"API基础URL: {args.api_base}")
-    print(f"模型参数: {args.model}")
+    print(f"API模式: {args.api_mode}")
+    if args.api_mode == 'commercial':
+        print(f"商业API URL: {args.commercial_base_url}")
+        print(f"商业API模型: {args.commercial_model}")
+        print(f"API密钥: {args.api_key[:10]}...")
+    else:
+        print(f"vLLM API URL: {args.api_base}")
+        print(f"vLLM模型: {args.model}")
     print(f"最大并发请求数: {args.max_concurrent_requests}")
     print(f"批处理大小: {args.batch_size}")
     print(f"最大重试次数: {args.max_retries}")
@@ -505,57 +515,100 @@ async def run_domain_evaluation(
     print("正在初始化模型和加载数据...")
     
     try:
-        # 创建大规模API客户端 - 使用命令行传入的模型参数
-        api_client = VLLMMassiveAPIClient(
-            api_base=args.api_base,
-            model=args.model,  # 使用传入的模型参数进行API调用
-            max_concurrent_requests=args.max_concurrent_requests,
-            batch_size=args.batch_size,
-            temperature=args.temperature,
-            max_tokens=args.max_tokens,
-            request_timeout=args.request_timeout,
-            max_retries=args.max_retries,
-            retry_interval=args.retry_interval,
-            verbose=args.verbose
-        )
+        # 根据API模式创建不同的API客户端
+        if args.api_mode == 'commercial':
+            # 验证商业API必需参数
+            if not args.api_key:
+                raise ValueError("使用商业API模式时必须提供 --api_key 参数")
+            if not args.commercial_model:
+                raise ValueError("使用商业API模式时必须提供 --commercial_model 参数")
+            if not args.commercial_base_url:
+                raise ValueError("使用商业API模式时必须提供 --commercial_base_url 参数")
+
+            print(f"使用商业API模式:")
+            print(f"  模型: {args.commercial_model}")
+            print(f"  基础URL: {args.commercial_base_url}")
+            print(f"  API密钥: {args.api_key[:10]}...")
+
+            # 导入商业API客户端
+            from SocioBench.evaluation.commercial_api import VLLMMassiveAPIClient as CommercialAPIClient
+
+            # 创建商业API客户端，使用与vLLM相同的接口
+            api_client = CommercialAPIClient(
+                api_base=args.commercial_base_url,
+                model=args.commercial_model,
+                api_key=args.api_key,
+                max_concurrent_requests=args.max_concurrent_requests,
+                batch_size=args.batch_size,
+                temperature=args.temperature,
+                max_tokens=args.max_tokens,
+                request_timeout=args.request_timeout,
+                max_retries=args.max_retries,
+                retry_interval=args.retry_interval,
+                verbose=args.verbose
+            )
+        else:
+            # 使用vLLM API客户端 - 使用命令行传入的模型参数
+            print(f"使用vLLM API模式:")
+            print(f"  API基础URL: {args.api_base}")
+            print(f"  模型: {args.model}")
+
+            api_client = VLLMMassiveAPIClient(
+                api_base=args.api_base,
+                model=args.model,  # 使用传入的模型参数进行API调用
+                max_concurrent_requests=args.max_concurrent_requests,
+                batch_size=args.batch_size,
+                temperature=args.temperature,
+                max_tokens=args.max_tokens,
+                request_timeout=args.request_timeout,
+                max_retries=args.max_retries,
+                retry_interval=args.retry_interval,
+                verbose=args.verbose
+            )
         
         # 创建提示工程和评估器
         prompt_engine = PromptEngineering(shuffle_options=args.shuffle_options)
         
         # 获取实际运行的模型名称 - 仅用于结果保存
-        actual_model_name = args.model  # 默认使用传入的模型名称
-        try:
-            # 通过异步函数获取模型名称
-            print(f"正在从API获取实际运行的模型名称（仅用于结果保存）...")
-            # 检查是否有模型路径环境变量 - 优先使用环境变量
-            model_path = os.environ.get("MODEL_PATH", "")
-            if model_path:
-                # 提取路径中的最后一个目录名作为模型名称
-                model_name_from_path = os.path.basename(model_path.rstrip("/").rstrip("\\"))
-                if model_name_from_path:
-                    actual_model_name = re.sub(r'[\\/*?:"<>|]', "-", model_name_from_path)
-                    print(f"从环境变量MODEL_PATH提取到模型名称: {actual_model_name}")
-            # 如果环境变量获取失败，尝试通过API获取
-            else:
-                model_name = await get_model_name_async(args.api_base)
-                
-                # 检查获取到的模型名称是否为空或unknown
-                if model_name and model_name != "unknown" and model_name.strip() != "":
-                    # 格式化模型名称，移除特殊字符
-                    actual_model_name = re.sub(r'[\\/*?:"<>|]', "-", model_name)
-                    print(f"检测到实际模型名称: {actual_model_name}")
+        if args.api_mode == 'commercial':
+            # 商业API模式直接使用指定的模型名称，清理路径中的特殊字符
+            actual_model_name = re.sub(r'[\\/*?:"<>|]', "-", args.commercial_model)
+            print(f"商业API模式，使用指定的模型名称: {actual_model_name}")
+        else:
+            # vLLM模式尝试获取实际模型名称
+            actual_model_name = args.model  # 默认使用传入的模型名称
+            try:
+                # 通过异步函数获取模型名称
+                print(f"正在从vLLM API获取实际运行的模型名称（仅用于结果保存）...")
+                # 检查是否有模型路径环境变量 - 优先使用环境变量
+                model_path = os.environ.get("MODEL_PATH", "")
+                if model_path:
+                    # 提取路径中的最后一个目录名作为模型名称
+                    model_name_from_path = os.path.basename(model_path.rstrip("/").rstrip("\\"))
+                    if model_name_from_path:
+                        actual_model_name = re.sub(r'[\\/*?:"<>|]', "-", model_name_from_path)
+                        print(f"从环境变量MODEL_PATH提取到模型名称: {actual_model_name}")
+                # 如果环境变量获取失败，尝试通过API获取
                 else:
-                    # 尝试子进程方式获取
-                    print(f"异步获取模型名称失败，尝试使用子进程方式...")
-                    model_name = get_model_name_in_subprocess(args.api_base)
+                    model_name = await get_model_name_async(args.api_base)
+
+                    # 检查获取到的模型名称是否为空或unknown
                     if model_name and model_name != "unknown" and model_name.strip() != "":
+                        # 格式化模型名称，移除特殊字符
                         actual_model_name = re.sub(r'[\\/*?:"<>|]', "-", model_name)
-                        print(f"通过子进程检测到模型名称: {actual_model_name}")
+                        print(f"检测到实际模型名称: {actual_model_name}")
                     else:
-                        print(f"无法获取模型名称，使用传入的模型名称: {args.model}")
-        except Exception as e:
-            print(f"获取实际模型名称时出错: {str(e)}")
-            print(f"将使用传入的模型名称: {args.model}")
+                        # 尝试子进程方式获取
+                        print(f"异步获取模型名称失败，尝试使用子进程方式...")
+                        model_name = get_model_name_in_subprocess(args.api_base)
+                        if model_name and model_name != "unknown" and model_name.strip() != "":
+                            actual_model_name = re.sub(r'[\\/*?:"<>|]', "-", model_name)
+                            print(f"通过子进程检测到模型名称: {actual_model_name}")
+                        else:
+                            print(f"无法获取模型名称，使用传入的模型名称: {args.model}")
+            except Exception as e:
+                print(f"获取实际模型名称时出错: {str(e)}")
+                print(f"将使用传入的模型名称: {args.model}")
         
         # 如果模型名称仍然为空，使用默认名称
         if not actual_model_name or actual_model_name.strip() == "":
@@ -644,47 +697,59 @@ async def run_all_domains(args: argparse.Namespace) -> None:
     # 打印开始信息
     print(f"\n{'='*60}")
     print(f"开始大规模并发评测所有领域")
-    print(f"API基础URL: {args.api_base}")
-    print(f"模型参数: {args.model}")
+    print(f"API模式: {args.api_mode}")
+    if args.api_mode == 'commercial':
+        print(f"商业API URL: {args.commercial_base_url}")
+        print(f"商业API模型: {args.commercial_model}")
+        print(f"API密钥: {args.api_key[:10]}...")
+    else:
+        print(f"vLLM API URL: {args.api_base}")
+        print(f"vLLM模型: {args.model}")
     print(f"最大并发请求数: {args.max_concurrent_requests}")
     print(f"批处理大小: {args.batch_size}")
     print(f"数据集大小: {args.dataset_size}")
     print(f"{'='*60}")
     
     # 获取实际运行的模型名称 - 仅用于结果保存
-    actual_model_name = args.model  # 默认使用传入的模型名称
-    try:
-        # 检查是否有模型路径环境变量 - 优先使用环境变量
-        model_path = os.environ.get("MODEL_PATH", "")
-        if model_path:
-            # 提取路径中的最后一个目录名作为模型名称
-            model_name_from_path = os.path.basename(model_path.rstrip("/").rstrip("\\"))
-            if model_name_from_path:
-                actual_model_name = re.sub(r'[\\/*?:"<>|]', "-", model_name_from_path)
-                print(f"从环境变量MODEL_PATH提取到模型名称: {actual_model_name}")
-        # 如果环境变量获取失败，尝试通过API获取
-        else:
-            # 通过异步函数获取模型名称
-            print(f"正在从API获取实际运行的模型名称（仅用于结果保存）...")
-            model_name = await get_model_name_async(args.api_base)
-            
-            # 检查获取到的模型名称是否为空或unknown
-            if model_name and model_name != "unknown" and model_name.strip() != "":
-                # 格式化模型名称，移除特殊字符
-                actual_model_name = re.sub(r'[\\/*?:"<>|]', "-", model_name)
-                print(f"检测到实际模型名称: {actual_model_name}")
+    if args.api_mode == 'commercial':
+        # 商业API模式直接使用指定的模型名称，清理路径中的特殊字符
+        actual_model_name = re.sub(r'[\\/*?:"<>|]', "-", args.commercial_model)
+        print(f"商业API模式，使用指定的模型名称: {actual_model_name}")
+    else:
+        # vLLM模式尝试获取实际模型名称
+        actual_model_name = args.model  # 默认使用传入的模型名称
+        try:
+            # 检查是否有模型路径环境变量 - 优先使用环境变量
+            model_path = os.environ.get("MODEL_PATH", "")
+            if model_path:
+                # 提取路径中的最后一个目录名作为模型名称
+                model_name_from_path = os.path.basename(model_path.rstrip("/").rstrip("\\"))
+                if model_name_from_path:
+                    actual_model_name = re.sub(r'[\\/*?:"<>|]', "-", model_name_from_path)
+                    print(f"从环境变量MODEL_PATH提取到模型名称: {actual_model_name}")
+            # 如果环境变量获取失败，尝试通过API获取
             else:
-                # 尝试子进程方式获取
-                print(f"异步获取模型名称失败，尝试使用子进程方式...")
-                model_name = get_model_name_in_subprocess(args.api_base)
+                # 通过异步函数获取模型名称
+                print(f"正在从vLLM API获取实际运行的模型名称（仅用于结果保存）...")
+                model_name = await get_model_name_async(args.api_base)
+
+                # 检查获取到的模型名称是否为空或unknown
                 if model_name and model_name != "unknown" and model_name.strip() != "":
+                    # 格式化模型名称，移除特殊字符
                     actual_model_name = re.sub(r'[\\/*?:"<>|]', "-", model_name)
-                    print(f"通过子进程检测到模型名称: {actual_model_name}")
+                    print(f"检测到实际模型名称: {actual_model_name}")
                 else:
-                    print(f"无法获取模型名称，使用传入的模型名称: {args.model}")
-    except Exception as e:
-        print(f"获取实际模型名称时出错: {str(e)}")
-        print(f"将使用传入的模型名称: {args.model}")
+                    # 尝试子进程方式获取
+                    print(f"异步获取模型名称失败，尝试使用子进程方式...")
+                    model_name = get_model_name_in_subprocess(args.api_base)
+                    if model_name and model_name != "unknown" and model_name.strip() != "":
+                        actual_model_name = re.sub(r'[\\/*?:"<>|]', "-", model_name)
+                        print(f"通过子进程检测到模型名称: {actual_model_name}")
+                    else:
+                        print(f"无法获取模型名称，使用传入的模型名称: {args.model}")
+        except Exception as e:
+            print(f"获取实际模型名称时出错: {str(e)}")
+            print(f"将使用传入的模型名称: {args.model}")
     
     # 如果模型名称仍然为空，使用默认名称
     if not actual_model_name or actual_model_name.strip() == "":
