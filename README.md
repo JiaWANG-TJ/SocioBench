@@ -6,7 +6,8 @@ SocioBench是一个基于ISSP国际社会调查数据的大语言模型社会调
 
 ## 重要
 
-SocioBench的使用必须严格遵守ISSP和GESIS的数据使用要求（https://www.gesis.org/en/institute/data-usage-terms）。我们真诚感谢 GESIS专家团队在整个研究过程中提供的关键数据支持和指导。
+SocioBench的使用必须严格遵守ISSP和GESIS的数据使用要求（https://www.gesis.org/en/institute/data-usage-terms）
+我们真诚感谢 GESIS专家团队在整个研究过程中提供的关键数据支持和指导
 
 ## 环境安装
 
