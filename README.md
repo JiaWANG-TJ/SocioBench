@@ -1,5 +1,8 @@
-# SocioBench
+# SocioBench: Modeling Human Behavior in Sociological Surveys with Large Language Models
 
+## News
+
+- [2025.11] SocioBench has been accepted to the EMNLP 2025 Main Conference.
 ## 项目简介
 
 SocioBench是一个基于ISSP国际社会调查数据的大语言模型社会调查评测基准。本系统通过模拟真实社会调查场景，评测模型在公民权利、环境、家庭、健康、国家认同、宗教、政府角色、社会不平等、社交网络、工作导向等10个社会学议题中的个体社会行为模拟的性能。
@@ -96,3 +99,28 @@ python /<full path>/SocioBench/evaluation/massive_evaluation.py \
 - `{domain_name}__results_{model_name}_{timestamp}.json`：评测结果，包含正确数量、总数量、准确率
 - `{domain_name}__detailed_results_{model_name}_{timestamp}.csv`：详细评测数据，包含每个问题的LLM response option number/meaning、Ground-truth answer option number/meaning、正确性判断等
 - `{domain_name}__{model_name}__full_prompts__{timestamp}.json`：完整对话历史（启用 `--print_prompt=True`参数，默认启用）
+
+## 引用
+```
+@inproceedings{wang-etal-2025-sociobench,
+    title = "{S}ocio{B}ench: Modeling Human Behavior in Sociological Surveys with Large Language Models",
+    author = "Wang, Jia  and
+      Zhao, Ziyu  and
+      Ni, Tingjuntao  and
+      Wei, Zhongyu",
+    editor = "Christodoulopoulos, Christos  and
+      Chakraborty, Tanmoy  and
+      Rose, Carolyn  and
+      Peng, Violet",
+    booktitle = "Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing",
+    month = nov,
+    year = "2025",
+    address = "Suzhou, China",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2025.emnlp-main.1335/",
+    doi = "10.18653/v1/2025.emnlp-main.1335",
+    pages = "26268--26300",
+    ISBN = "979-8-89176-332-6",
+    abstract = "Large language models (LLMs) show strong potential for simulating human social behaviors and interactions, yet lack large-scale, systematically constructed benchmarks for evaluating their alignment with real-world social attitudes. To bridge this gap, we introduce SocioBench{---}a comprehensive benchmark derived from the annually collected, standardized survey data of the \textit{International Social Survey Programme (ISSP)}. The benchmark aggregates over 480,000 real respondent records from more than 30 countries, spanning 10 sociological domains and over 40 demographic attributes. Our experiments indicate that LLMs achieve only 30{--}40{\%} accuracy when simulating individuals in complex survey scenarios, with statistically significant differences across domains and demographic subgroups. These findings highlight several limitations of current LLMs in survey scenarios, including insufficient individual-level data coverage, inadequate scenario diversity, and missing group-level modeling. We have open-sourced \textbf{SocioBench} at \url{https://github.com/JiaWANG-TJ/SocioBench}."
+}
+```
