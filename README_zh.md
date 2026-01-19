@@ -1,0 +1,131 @@
+
+# SocioBench: Modeling Human Behavior in Sociological Surveys with Large Language Models
+
+[English](README.md) | [简体中文](README_zh.md)
+
+## News
+
+- [2025.11] SocioBench has been accepted to the EMNLP 2025 Main Conference.
+
+## 项目简介
+
+SocioBench是一个基于ISSP国际社会调查数据的大语言模型社会调查评测基准。本系统通过模拟真实社会调查场景，评测模型在公民权利、环境、家庭、健康、国家认同、宗教、政府角色、社会不平等、社交网络、工作导向等10个社会学议题中的个体社会行为模拟的性能。
+
+## 重要
+
+SocioBench的使用必须严格遵守ISSP和GESIS的数据使用要求，https://www.gesis.org/en/institute/data-usage-terms
+
+我们真诚感谢 GESIS专家团队在整个研究过程中提供的关键数据支持和指导
+
+## 环境安装
+
+```bash
+# 安装评测系统所需依赖
+pip install -r SocioBench/evaluation/requirements.txt
+```
+
+## 评测启动流程
+
+### 1. 启动vLLM
+
+```bash
+export TORCH_CUDA_ARCH_LIST="8.9+PTX" 
+
+# 启动vllm serve
+vllm serve \
+  <YOUR_MODEL_PATH> \
+  --trust-remote-code \
+  --tensor-parallel-size 4 \
+  --gpu-memory-utilization 0.9\
+  --max-model-len 4096\
+  --enable-chunked-prefill \
+  --enable-prefix-caching \
+  --max-num-seqs 256\
+  --max-num-batched-tokens 1024\
+  --enforce-eager 
+```
+
+### 2. 并发评测-本地模型
+
+```bash
+
+python -c "from openai import OpenAI; client = OpenAI(base_url='http://localhost:8000/v1', api_key='EMPTY'); models = client.models.list(); model_name = models.data[0].id; print(model_name)"
+
+# 评测所有领域
+python /<full path>/SocioBench/evaluation/massive_evaluation.py \
+  --domain_id all\
+  --interview_count all\
+  --api_mode vllm\
+  --api_base "http://localhost:8000/v1/chat/completions" \
+  --model "" \
+  --temperature 0.5 \
+  --max_concurrent_requests 100000\
+  --batch_size 10000\
+  --request_timeout 100000000\
+  --shuffle_options=True\
+  --start_domain_id 1\
+
+```
+
+### 3. 并发评测-商用api
+
+```bash
+
+# 评测所有领域
+python /<full path>/SocioBench/evaluation/massive_evaluation.py \
+  --domain_id all \
+  --interview_count all \
+  --api_mode commercial \
+  --api_key "<your api key>" \
+  --commercial_model "<your model name>" \
+  --commercial_base_url "<your api base url>" \
+  --temperature 0.5 \
+  --max_concurrent_requests 100000\
+  --batch_size 10000\
+  --request_timeout 100000000\
+  --shuffle_options=True\
+  --start_domain_id 1
+```
+
+### 4. 关键参数配置
+
+- `--domain_id`：领域ID（1-11）或"all"
+- `--interview_count`：受访者数量或"all"
+- `--concurrent_requests`：并发请求数
+- `--api_mode`：通过 vLLM调用本地模型或通过商业api调用模型
+
+### 5. 结果文件说明
+
+评测完成后，结果保存在 `SocioBench/evaluation/results/{model_name}/`目录：
+
+**指标文件：**
+
+- `{domain_name}__results_{model_name}_{timestamp}.json`：评测结果，包含正确数量、总数量、准确率
+- `{domain_name}__detailed_results_{model_name}_{timestamp}.csv`：详细评测数据，包含每个问题的LLM response option number/meaning、Ground-truth answer option number/meaning、正确性判断等
+- `{domain_name}__{model_name}__full_prompts__{timestamp}.json`：完整对话历史（启用 `--print_prompt=True`参数，默认启用）
+
+## 引用
+
+```
+@inproceedings{wang-etal-2025-sociobench,
+    title = "{S}ocio{B}ench: Modeling Human Behavior in Sociological Surveys with Large Language Models",
+    author = "Wang, Jia  and
+      Zhao, Ziyu  and
+      Ni, Tingjuntao  and
+      Wei, Zhongyu",
+    editor = "Christodoulopoulos, Christos  and
+      Chakraborty, Tanmoy  and
+      Rose, Carolyn  and
+      Peng, Violet",
+    booktitle = "Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing",
+    month = nov,
+    year = "2025",
+    address = "Suzhou, China",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2025.emnlp-main.1335/",
+    doi = "10.18653/v1/2025.emnlp-main.1335",
+    pages = "26268--26300",
+    ISBN = "979-8-89176-332-6",
+    abstract = "Large language models (LLMs) show strong potential for simulating human social behaviors and interactions, yet lack large-scale, systematically constructed benchmarks for evaluating their alignment with real-world social attitudes. To bridge this gap, we introduce SocioBench{---}a comprehensive benchmark derived from the annually collected, standardized survey data of the \textit{International Social Survey Programme (ISSP)}. The benchmark aggregates over 480,000 real respondent records from more than 30 countries, spanning 10 sociological domains and over 40 demographic attributes. Our experiments indicate that LLMs achieve only 30{--}40{\%} accuracy when simulating individuals in complex survey scenarios, with statistically significant differences across domains and demographic subgroups. These findings highlight several limitations of current LLMs in survey scenarios, including insufficient individual-level data coverage, inadequate scenario diversity, and missing group-level modeling. We have open-sourced \textbf{SocioBench} at \url{https://github.com/JiaWANG-TJ/SocioBench}."
+}
+```
