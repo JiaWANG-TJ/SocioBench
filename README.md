@@ -1,33 +1,37 @@
+
 # SocioBench: Modeling Human Behavior in Sociological Surveys with Large Language Models
+
+[English](README.md) | [简体中文](README_zh.md)
 
 ## News
 
 - [2025.11] SocioBench has been accepted to the EMNLP 2025 Main Conference.
-## 项目简介
 
-SocioBench是一个基于ISSP国际社会调查数据的大语言模型社会调查评测基准。本系统通过模拟真实社会调查场景，评测模型在公民权利、环境、家庭、健康、国家认同、宗教、政府角色、社会不平等、社交网络、工作导向等10个社会学议题中的个体社会行为模拟的性能。
+## Overview
 
-## 重要
+SocioBench is a comprehensive benchmark for evaluating Large Language Models (LLMs) on sociological survey simulation tasks, built upon the International Social Survey Programme (ISSP) dataset. This benchmark evaluates model performance in simulating individual social behaviors across 10 sociological domains: citizenship, environment, family and changing gender roles, health and healthcare, national identity, religion, role of government, social inequality, social networks, and work orientations.
 
-SocioBench的使用必须严格遵守ISSP和GESIS的数据使用要求，https://www.gesis.org/en/institute/data-usage-terms
+## Important Notice
 
-我们真诚感谢 GESIS专家团队在整个研究过程中提供的关键数据支持和指导
+The use of SocioBench must strictly comply with the data usage requirements of ISSP and GESIS: https://www.gesis.org/en/institute/data-usage-terms
 
-## 环境安装
+We sincerely acknowledge the GESIS expert team for their critical data support and guidance throughout the research process.
+
+## Environment Setup
 
 ```bash
-# 安装评测系统所需依赖
+# Install required dependencies for the evaluation system
 pip install -r SocioBench/evaluation/requirements.txt
 ```
 
-## 评测启动流程
+## Evaluation Workflow
 
-### 1. 启动vLLM
+### 1. Launch vLLM Server
 
 ```bash
 export TORCH_CUDA_ARCH_LIST="8.9+PTX" 
 
-# 启动vllm serve
+# Start vLLM serve
 vllm serve \
   <YOUR_MODEL_PATH> \
   --trust-remote-code \
@@ -41,13 +45,13 @@ vllm serve \
   --enforce-eager 
 ```
 
-### 2. 并发评测-本地模型
+### 2. Concurrent Evaluation - Local Model
 
 ```bash
 
 python -c "from openai import OpenAI; client = OpenAI(base_url='http://localhost:8000/v1', api_key='EMPTY'); models = client.models.list(); model_name = models.data[0].id; print(model_name)"
 
-# 评测所有领域
+# Evaluate all domains
 python /<full path>/SocioBench/evaluation/massive_evaluation.py \
   --domain_id all\
   --interview_count all\
@@ -63,11 +67,11 @@ python /<full path>/SocioBench/evaluation/massive_evaluation.py \
 
 ```
 
-### 3. 并发评测-商用api
+### 3. Concurrent Evaluation - Commercial API
 
 ```bash
 
-# 评测所有领域
+# Evaluate all domains
 python /<full path>/SocioBench/evaluation/massive_evaluation.py \
   --domain_id all \
   --interview_count all \
@@ -83,24 +87,25 @@ python /<full path>/SocioBench/evaluation/massive_evaluation.py \
   --start_domain_id 1
 ```
 
-### 4. 关键参数配置
+### 4. Key Parameter Configuration
 
-- `--domain_id`：领域ID（1-11）或"all"
-- `--interview_count`：受访者数量或"all"
-- `--concurrent_requests`：并发请求数
--  `--api_mode`：通过 vLLM调用本地模型或通过商业api调用模型
+- `--domain_id`: Domain ID (1-11) or "all"
+- `--interview_count`: Number of respondents or "all"
+- `--concurrent_requests`: Number of concurrent requests
+- `--api_mode`: API mode for model invocation (vLLM for local models or commercial for API-based models)
 
-### 5. 结果文件说明
+### 5. Output Files Description
 
-评测完成后，结果保存在 `SocioBench/evaluation/results/{model_name}/`目录：
+After evaluation completion, results are saved in the `SocioBench/evaluation/results/{model_name}/` directory:
 
-**指标文件：**
+**Metric Files:**
 
-- `{domain_name}__results_{model_name}_{timestamp}.json`：评测结果，包含正确数量、总数量、准确率
-- `{domain_name}__detailed_results_{model_name}_{timestamp}.csv`：详细评测数据，包含每个问题的LLM response option number/meaning、Ground-truth answer option number/meaning、正确性判断等
-- `{domain_name}__{model_name}__full_prompts__{timestamp}.json`：完整对话历史（启用 `--print_prompt=True`参数，默认启用）
+- `{domain_name}__results_{model_name}_{timestamp}.json`: Evaluation results including number of correct responses, total count, and accuracy
+- `{domain_name}__detailed_results_{model_name}_{timestamp}.csv`: Detailed evaluation data containing LLM response option number/meaning, ground-truth answer option number/meaning, correctness judgment, etc.
+- `{domain_name}__{model_name}__full_prompts__{timestamp}.json`: Complete conversation history (enabled with `--print_prompt=True` parameter, enabled by default)
 
-## 引用
+## Citation
+
 ```
 @inproceedings{wang-etal-2025-sociobench,
     title = "{S}ocio{B}ench: Modeling Human Behavior in Sociological Surveys with Large Language Models",
