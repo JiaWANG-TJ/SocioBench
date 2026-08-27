@@ -87,18 +87,17 @@ python /<full path>/SocioBench/evaluation/massive_evaluation.py \
   --start_domain_id 1
 ```
 
-use OrcaRouter
+To access OrcaRouter through the OpenAI Python SDK, initialize the client as follows:
 
-```toml
-model = "orcarouter/auto"
-model_provider = "orcarouter"
+```python
+from openai import OpenAI
 
-[model_providers.orcarouter]
-name = "OrcaRouter"
-base_url = "https://api.orcarouter.ai/v1"
-wire_api = "responses"
-env_key = "ORCA_KEY"
+client = OpenAI(
+    base_url="https://api.orcarouter.ai/v1",
+    api_key="sk-orca-YOUR_KEY",  # Get key at https://api.orcarouter.ai/ref/ref_e040e6859a2260597298
+)
 ```
+
 
 ### 4. Key Parameter Configuration
 
