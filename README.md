@@ -87,6 +87,19 @@ python /<full path>/SocioBench/evaluation/massive_evaluation.py \
   --start_domain_id 1
 ```
 
+use OrcaRouter
+
+```toml
+model = "orcarouter/auto"
+model_provider = "orcarouter"
+
+[model_providers.orcarouter]
+name = "OrcaRouter"
+base_url = "https://api.orcarouter.ai/v1"
+wire_api = "responses"
+env_key = "ORCA_KEY"
+```
+
 ### 4. Key Parameter Configuration
 
 - `--domain_id`: Domain ID (1-11) or "all"
